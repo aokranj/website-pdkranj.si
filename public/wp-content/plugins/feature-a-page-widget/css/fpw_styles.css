@@ -1,0 +1,59 @@
+/* This file is an attempt to lighly standardize the layout without beating up the theme */
+
+/*
+ * Our HTML element needs to be blocky
+ * See plugin FAQ for IE8 support
+ */
+article {
+	display: block;
+}
+
+/* A clearfix solution just for this plugin */
+/* Thanks for catching this, Jeremy Green! */
+.fpw-clearfix:before, .fpw-clearfix:after { content:" "; display:table; }  
+.fpw-clearfix:after { clear:both; }  
+.fpw-clearfix { *zoom:1; }  
+
+/* Nice and tight padding/margin */
+.widget_fpw_widget .widget-title,
+.widget_fpw_widget .fpw-page-title,
+.widget_fpw_widget .fpw-featured-image {
+	margin: 0 0 10px 0;
+	padding-top: 0;
+}
+.fpw-featured-image img {
+	margin: 0;
+	padding: 0;
+}
+
+/* a friendly font size suggestions */
+.fpw-page-title {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+/* Responsive images */
+/* Going for the 1.5 retina technique. Feedback is welcome. */
+.fpw-featured-image,
+.fpw-featured-image img {
+	max-width: 100% !important;
+	height: auto !important;
+}
+
+/* Wrapped Layout */
+.fpw-layout-wrapped .fpw-featured-image {
+	float: right;
+	width: 45%;
+	margin-left: 10px;
+	overflow: hidden;
+}
+
+/* Break words for nicer looking text with the floated image */
+.fpw-layout-wrapped .fpw-excerpt {
+	word-wrap: break-word;
+}
+
+/* Fixes an issue in Kubrick and probably other themes */
+a .fpw-page-title {
+    color: inherit;
+}

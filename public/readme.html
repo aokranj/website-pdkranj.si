@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<title>WordPress &#8250; PreberiMe</title> 
+	<link rel="stylesheet" href="wp-admin/css/install.css?ver=20100228" type="text/css" /> 
+</head> 
+<body> 
+<h1 id="logo"> 
+	<a href="http://wordpress.org/"><img alt="WordPress" src="wp-admin/images/wordpress-logo.png" /></a> 
+	<br /> Različica 3.5
+</h1> 
+<p style="text-align: center">Osebna Semantična Platforma za Objavljanje</p> 
+ 
+<h1>Za začetek</h1> 
+<p>Dobrodošli. WordPress je zame zelo poseben projekt. Vsak razvijalec in sodelavec prispeva nekaj edinstvenega - in skupaj sestavimo nekaj čudovitega, na kar sem jaz zelo ponosen. Tisoče ur je šlo v WordPress in namenili smo se ga še izboljšati. Hvala, ker ste izbrali WordPress.</p> 
+<p style="text-align: right">&#8212; Matt Mullenweg</p> 
+ 
+<h1>Namestitev: 5-minutna namestitev</h1> 
+<ol> 
+	<li>Odpakirajte paket v prazno mapo in naložite vse na spletno mesto.</li> 
+	<li>Odprite <span class="file"><a href="wp-admin/install.php">wp-admin/install.php</a></span> v vašem brskalniku. Postopek vas bo popeljal čez pripravo <code>wp-config.php</code> datoteke z vašimi podatki.
+		<ol> 
+			<li>Če, iz katerega koli razloga, to ne bo delovalo, ne skrbite. Ne deluje na vseh spletnih ponudnikih. Odprite <code>wp-config-sample.php</code> z urejevalnikom besedil kot je Notepad++ ali podobnim, in vnesite svoje osebne nastavitve.</li> 
+			<li>Shranite datoteko kot <code>wp-config.php</code> in jo naložite na strežnik.</li> 
+			<li>Odprite <span class="file"><a href="wp-admin/install.php">wp-admin/install.php</a></span> v vašem brskalniku.</li> 
+		</ol> 
+	</li> 
+	<li>Ko je enkrat konfiguracijska datoteka pripravljena, bo namestitev pripravila vse tabele v bazi potrebne za vaš blog. V primeru napake preverite vašo <code>wp-config.php</code> datoteko in poskusite znova. Če se napaka znova pojavi, obiščite stran <a href="http://wordpress.org/support/" title="WordPress support">podpornih forumov (angleščina)</a> z vsemi podrobnostmi, ki jih lahko napišete.</li> 
+	<li><strong>Če niste vpisali gesla, bo geslo samodejno nastavljeno.</strong> Če niste napisali uporabniškega imena, bo izbrano ime <code>admin</code>.</li> 
+	<li>Namestitev vas potem mora pripeljati na <a href="wp-login.php">stran za prijavo</a>. Prijavite se z uporabniškim imenom in geslom, katerega ste izbrali med namestitvijo. Če gesla niste podali, je bilo le to za vas pripravljeno - da ga spremenite, kliknite na 'Profil'.</li> 
+</ol> 
+ 
+<h1>Posdabljanje</h1> 
+<h2>Uporaba samodejnega posodabljanja</h2> 
+<p>Če posodabljate iz različice 2.7 ali višje, je na voljo samodejno posodabljanje:</p> 
+<ol> 
+	<li>Odprite <span class="file"><a href="wp-admin/update-core.php">wp-admin/update-core.php</a></span> v vašem brskalniku in sledite navodilom.</li> 
+	<li>Ste pričakovali več? To je vse!</li> 
+</ol> 
+ 
+<h2>Ročno posodabljanje</h2> 
+<ol> 
+	<li>Preden karkoli naredite, se prepričajte da imate varnostne kopije vseh datotek, ki ste jih spremenili kot naprimer <code>index.php</code> ali celotno mapo <code>wp-config/</code>.</li> 
+	<li>Izbrišite stare WordPress datoteke, pri čemer shranite tiste, katere ste spremenili.</li> 
+	<li>Naložite nove datoteke.</li> 
+	<li>Usmerite vaš brskalnik na <span class="file"><a href="wp-admin/upgrade.php">/wp-admin/upgrade.php</a>.</span></li> 
+</ol> 
+ 
+<h2>Spremembe predlog tem</h2> 
+<p>Če ste prikrojili vaše predloge, jih boste mogoče morali spremeniti pri večji posodobitvi različice teme.</p> 
+ 
+<h1>Migracija iz drugih sistemov</h1> 
+<p>WordPress lahko <a href="http://codex.wordpress.org/Importing_Content">uvozi podatke iz veliko drugih sistemov</a>. Najprej morate WordPress namestiti in nastaviti kot je opisano zgoraj, preden uporabite <a href="wp-admin/import.php" title="Import to WordPress">orodja za uvoz</a>.</p> 
+ 
+<h1>Sistemske zahteve</h1> 
+<ul> 
+	<li><a href="http://php.net/">PHP</a> različice <strong>5.2.4</strong> ali več.</li> 
+	<li><a href="http://www.mysql.com/">MySQL</a> različice <strong>5.0</strong> ali več.</li> 
+</ul> 
+ 
+<h2>Priporočila</h2> 
+<ul> 
+	<li><a href="http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html">mod_rewrite</a> Apache modul.</li> 
+	<li>Povezava na <a href="http://wordpress.org/">http://wordpress.org</a> oziroma <a href="http://sl.wordpress.org/">http://sl.wordpress.org</a> na vaši strani.</li> 
+</ul> 
+ 
+<h1>Spletni Viri</h1> 
+<p>Če imate vprašanje, ki ni odgovorjeno zgoraj, prosim uporabite to množico bogatih (angleških) spletnih virov:</p> 
+<dl> 
+	<dt><a href="http://codex.wordpress.org/">WordPress Codex</a></dt> 
+		<dd>Codex je enciklopedija za WordPress. To je najbolj popoln vir informacij za WordPress, ki je na voljo.</dd> 
+	<dt><a href="http://wordpress.org/news/">WordPress Blog</a></dt> 
+		<dd>Tukaj boste našli najnovejše WordPress posodobitve in novice. Najnovejše novice so privzeto na voljo prek vaše Delovne mize.</dd> 
+	<dt><a href="http://planet.wordpress.org/">WordPress Planet</a></dt> 
+		<dd>WordPress Planet je kraj, kjer se najdejo najrazličnejše novice iz WordPress vse naokoli.</dd> 
+	<dt><a href="http://wordpress.org/support/">WordPress Podporni forumi</a></dt> 
+		<dd>Če ste iskali povsod in še kar ne najdete odgovora, so forumi zelo aktivni in polni članov skupnosti, kateri so pripravljeni priskočiti na pomoč. Za dober odgovor poskrbite, da boste vaš problem zelo dobro opisali.</dd> 
+	<dt><a href="http://codex.wordpress.org/IRC">WordPress <abbr title="Internet Relay Chat">IRC</abbr> Kanal</a></dt> 
+		<dd>Obstaja tudi spletni kanal za klepetanje, ki je uporabljen za diskusijo med uporabnki WordPress-a in občasno za podporo. Zgornja povezava na wiki vas bo usmerila nanj. (<a href="irc://irc.freenode.net/wordpress">irc.freenode.net #wordpress</a>)</dd> 
+	<dt><a href="http://sl.wordpress.org">WordPress Slovenija</a></dt> 
+		<dd>Občasno je pa tudi kakšna objava na strani <a href="http://sl.wordpress.org/">sl.wordpress.org</a>, kjer so na voljo tudi najnovejše prevedene datoteke za WordPress v slovenščini</dd> 
+</dl> 
+ 
+<h1><abbr title="eXtensible Markup Language">XML</abbr>-<abbr title="Remote Procedure Call">RPC</abbr> in vmesnik Atom</h1> 
+<p>Na vašo spletno mesto lahko objavljate tudi z <a href="http://download.live.com/writer">Windows Live Writer-jem</a>, <a href="http://illuminex.com/ecto/">Ecto</a>, <a href="http://bloggar.com/">w.bloggar</a>, <a href="http://radio.userland.com/">Radio Userland</a> (pomeni da lahko uporabite Radio email-na-blog funkcijo), <a href="http://www.newzcrawler.com/">NewzCrawler</a> in druga orodja, ki podpirajo bloganje prek <abbr title="application programming interface">API-jev</abbr>! :) Več o tem lahko preberete na <a href="http://codex.wordpress.org/XML-RPC_Support"><abbr>XML</abbr>-<abbr>RPC</abbr> podpori na Codex-u</a>.</p> 
+ 
+<h1>Objavljanje prek E-pošte</h1> 
+<p>Objavljate lahko tudi prek e-poštnega odjemalca!  Da to nastavite, pojdite na vašo stran za nastavitve &quot;Pisanja&quot; in izpolnite podatke za povezavo na vaš skrivni <abbr title="Post Office Protocol version 3">POP3</abbr> račun. Potem morate nastaviti le še <code>wp-mail.php</code> da se izvaja periodično zaradi preverjanja nabiralnika za novo pošto. To lahko storite z <a href="http://en.wikipedia.org/wiki/Cron">cron</a>-jobs ali če vaš ponudnik tega ne podpira, lahko uporabite kakšen "website-monitoring service" in ga usmerite na vaš <code>wp-mail.php</code> <abbr title="Uniform Resource Locator">URL</abbr>.</p> 
+<p>Objavljanje je enostavno: Vsaka pošta, poslana na ta naslov bo objavljena z naslovom v naslovu pošte. Najbolje, da imate čim bolj diskreten naslov. Ta skripta bo <em>izbrisala</em> vso pošto, ki je bila uspešno objavljena.</p> 
+ 
+<h1>Vloge Uporabnikov</h1> 
+<p>V različici 2.0 smo dodali zelo fleksibilen sistem za vloge. Več o tem si lahko preberete na strani za <a href="http://codex.wordpress.org/Roles_and_Capabilities" title="WordPress roles and capabilities">Vloge in zmožnosti v Codex-u</a>.</p> 
+ 
+<h1>Končne opombe</h1> 
+<ul> 
+	<li>Če imate kakšen predlog, idejo ali komentar, ali če ste (joj!) našli hroč, se nam pridružite na <a href="http://wordpress.org/support/">Podpornih forumih</a>.</li> 
+	<li>WordPress ima robusten <abbr title="application programming interface">API</abbr> vtičnikov, ki omogoča enostavno razširjanje kode. Če ste razvijalec, kateri bi rad to izkorisil, poglejte <a href="http://codex.wordpress.org/Plugin_API" title="WordPress plugin API">dokumentacijo za vtičnike v Codex-u</a>. Kode jedra ni potrebno spreminjati.</li> 
+</ul> 
+ 
+<h1>Delite z drugimi</h1> 
+<p>WordPress nima nobene multi-miljonske kampanje za pridobivanje sredstev ali sponzorjev, imamo pa nekaj boljšega &#8212;vas. Če uživate z WordPress-u, potem ga predlagajte prijatelju, pomagajte z namestitvijo nekomu manj spretnemu ali pišite avtorjem prispevkov, ki so nas spregledali.</p> 
+ 
+<p>WordPress je uradno nadaljevanje <a href="http://cafelog.com/">b2/caf&#233;log</a>, od Michela V. Delo je bilo nadaljevano s strani <a href="http://wordpress.org/about/">WordPress razvijalcev</a>. Če bi radi podprli  WordPress, prosim, razmislite o <a href="http://wordpress.org/donate/" title="Donate to WordPress">donaciji</a>.</p> 
+ 
+<h1>Licenca</h1> 
+<p>WordPress je svobodno programje in je posredovano pod pogoji <abbr title="GNU General Public License">GPL</abbr> različice 2 ali (po želji) katere koli novejše različice. Poglejte <a href="license.txt">license.txt</a>.</p> 
+ 
+</body> 
+</html>

@@ -1,0 +1,580 @@
+# Translation of Twenty Eleven in Slovenian
+# This file is distributed under the same license as the Twenty Eleven package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2013-06-22 06:51:38+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Twenty Eleven\n"
+
+#: 404.php:17
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "To je nekoliko neprijetno, kajne?"
+
+#: 404.php:21
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help."
+msgstr "Zdi se, da ne moremo najti, kar iščete. Morda iskanje, ali ena od spodnjih povezav, lahko pomaga."
+
+#: 404.php:28
+msgid "Most Used Categories"
+msgstr "Najbolj uporabljene kategorije"
+
+#: 404.php:36
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Poskusite pogledati v mesečne arhive. %1$s"
+
+#: archive.php:25
+msgid "Daily Archives: %s"
+msgstr "Dnevni arhivi: %s"
+
+#: archive.php:27
+msgid "Monthly Archives: %s"
+msgstr "Mesečni arhivi: %s"
+
+#: archive.php:27
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:29
+msgid "Yearly Archives: %s"
+msgstr "Letni arhivi: %s"
+
+#: archive.php:29
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:31
+msgid "Blog Archives"
+msgstr "Arhiv Bloga"
+
+#: archive.php:57 author.php:74 category.php:50 index.php:37 search.php:42
+#: tag.php:50
+msgid "Nothing Found"
+msgstr "Ni zadetkov"
+
+#: archive.php:61 author.php:78 category.php:54 index.php:41 tag.php:54
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr "Oprostite, noben rezultat ni bil najden za željen arhiv. Mogoče bo iskanje pripeljalo do sorodnega prispevka."
+
+#: author.php:28
+msgid "Author Archives: %s"
+msgstr "Arhivi avtorja:%s"
+
+#: author.php:49 content-single.php:60
+msgid "About %s"
+msgstr "O %s"
+
+#: category.php:19
+msgid "Category Archives: %s"
+msgstr "Arhiv Kategorije: %s"
+
+#: comments.php:17
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Ta prispevek je zaščiten z geslom. Vnesite geslo za ogled komentarjev."
+
+#: comments.php:33
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Ena misel na &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s misel na &ldquo;%2$s&rdquo;"
+msgstr[2] "%1$s misli na &ldquo;%2$s&rdquo;"
+msgstr[3] " %1$s misli na &ldquo;%2$s&rdquo;"
+
+#: comments.php:40 comments.php:60
+msgid "Comment navigation"
+msgstr "Navigacija komentarjev"
+
+#: comments.php:41 comments.php:61
+msgid "&larr; Older Comments"
+msgstr "&larr; Starejši komentarji"
+
+#: comments.php:42 comments.php:62
+msgid "Newer Comments &rarr;"
+msgstr "Novejši komentarji &rarr;"
+
+#: comments.php:71
+msgid "Comments are closed."
+msgstr "Komentiranje zaprto."
+
+#: content-aside.php:16 content-featured.php:14 content-gallery.php:16
+#: content-gallery.php:48 content-image.php:15 content-link.php:16
+#: content-quote.php:14 content-status.php:15 content.php:15 content.php:19
+#: inc/widgets.php:89 showcase.php:120 showcase.php:199
+msgid "Permalink to %s"
+msgstr "Trajna povezave do %s"
+
+#: content-aside.php:17
+msgid "Aside"
+msgstr "Ob strani"
+
+#: content-aside.php:22 content-image.php:21 content-link.php:22
+#: content-quote.php:24 content-status.php:21 content.php:30
+msgid "Reply"
+msgstr "Odgovori"
+
+#: content-aside.php:22 content-image.php:21 content-link.php:22
+#: content-quote.php:24 content-status.php:21 content.php:30
+msgctxt "comments number"
+msgid "1"
+msgstr "1"
+
+#: content-aside.php:22 content-image.php:21 content-link.php:22
+#: content-quote.php:24 content-status.php:21 content.php:30
+msgctxt "comments number"
+msgid "%"
+msgstr "%"
+
+#: content-aside.php:33 content-gallery.php:32 content-image.php:27
+#: content-link.php:33 content-quote.php:35 content-status.php:34
+#: content.php:41 functions.php:345
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Beri naprej <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-aside.php:34 content-featured.php:23 content-gallery.php:54
+#: content-image.php:28 content-intro.php:18 content-link.php:34
+#: content-page.php:18 content-quote.php:36 content-single.php:24
+#: content-status.php:35 content.php:42 image.php:90
+msgid "Pages:"
+msgstr "Strani:"
+
+#: content-aside.php:42 content-gallery.php:87 content-image.php:64
+#: content-link.php:42 content-quote.php:69 content-status.php:43
+#: content.php:79 showcase.php:201
+msgid "Leave a reply"
+msgstr "Pusti odgovor"
+
+#: content-aside.php:42 content-gallery.php:87 content-image.php:64
+#: content-link.php:42 content-quote.php:69 content-status.php:43
+#: content.php:79 showcase.php:201
+msgid "<b>1</b> Reply"
+msgstr "<b>1</b> Odgovor"
+
+#: content-aside.php:42 content-gallery.php:87 content-image.php:64
+#: content-link.php:42 content-quote.php:69 content-status.php:43
+#: content.php:79 showcase.php:201
+msgid "<b>%</b> Replies"
+msgstr "<b>%</b> Odgovorov"
+
+#: content-aside.php:44 content-featured.php:45 content-gallery.php:90
+#: content-image.php:68 content-intro.php:19 content-link.php:44
+#: content-page.php:21 content-quote.php:72 content-single.php:52
+#: content-status.php:45 content.php:82 functions.php:525 functions.php:553
+#: image.php:41
+msgid "Edit"
+msgstr "Uredi"
+
+#: content-featured.php:29 content-featured.php:38 content-gallery.php:62
+#: content-gallery.php:72 content-image.php:47 content-image.php:56
+#: content-quote.php:44 content-quote.php:54 content-single.php:30
+#: content-single.php:33 content.php:51 content.php:63
+msgid ", "
+msgstr ", "
+
+#: content-featured.php:31
+msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Ta prispevek je objavljen v %1$s in označen z %2$s. Dodajte zaznamek do <a href=\"%3$s\" title=\"Trajna povezava na %4$s\" rel=\"bookmark\">trajne povezave</a>."
+
+#: content-featured.php:33
+msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Ta vnos je objavljen v %1$s. Dodaj zaznamek do <a href=\"%3$s\" title=\"Trajna povezava do %4$s\" rel=\"bookmark\">trajne povezave</a> ."
+
+#: content-gallery.php:17
+msgid "Gallery"
+msgstr "Galerija"
+
+#: content-gallery.php:47
+msgid "This gallery contains <a %1$s>%2$s photo</a>."
+msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
+msgstr[0] "Ta galerija vsebuje <a %1$s>%2$s sliko</a>."
+msgstr[1] "Ta galerija vsebuje <a %1$s>%2$s sliki</a>."
+msgstr[2] "Ta galerija vsebuje <a %1$s>%2$s slike</a>."
+msgstr[3] "Ta galerija vsebuje <a %1$s>%2$s slik</a>."
+
+#: content-gallery.php:66 content-image.php:51 content-quote.php:48
+#: content.php:55
+msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+msgstr "<span class=\"%1$s\">Objavljeno v</span> %2$s"
+
+#: content-gallery.php:78 content-image.php:59 content-quote.php:60
+#: content.php:69
+msgid "<span class=\"%1$s\">Tagged</span> %2$s"
+msgstr "<span class=\"%1$s\">Značke</span> %2$s"
+
+#: content-image.php:16
+msgid "Image"
+msgstr "Slika"
+
+#: content-image.php:34
+msgid "<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%2$s\">%3$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
+msgstr "<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%2$s\">%3$s</time></a><span class=\"by-author\"> <span class=\"sep\"> objavil </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
+
+#: content-image.php:39 functions.php:590
+msgid "View all posts by %s"
+msgstr "Poglej vsa sporočila od %s"
+
+#: content-link.php:17
+msgid "Link"
+msgstr "Povezava"
+
+#: content-quote.php:15
+msgid "Quote"
+msgstr "Citiraj"
+
+#: content-single.php:35
+msgid "This entry was posted in %1$s and tagged %2$s by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Ta vnos je objavil <a href=\"%6$s\">%5$s</a> v %1$s in zaznamoval z %2$s . Dodaj zaznamek do <a href=\"%3$s\" title=\"Trajna povezava do %4$s\" rel=\"bookmark\">trajne povezave</a> ."
+
+#: content-single.php:37
+msgid "This entry was posted in %1$s by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Ta vnos je objavil <a href=\"%6$s\">%5$s</a> v %1$s. Dodaj zaznamek do <a href=\"%3$s\" title=\"Trajna povezava do %4$s\" rel=\"bookmark\">trajne povezave</a> ."
+
+#: content-single.php:39
+msgid "This entry was posted by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Ta prispevek je napisal <a href=\"%6$s\">%5$s</a>. Dodajte zaznamek do <a href=\"%3$s\" title=\"Trajna povezava na %4$s\" rel=\"bookmark\">trajne povezave</a>."
+
+#: content-single.php:64
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Poglej vse prispevke od %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-status.php:16
+msgid "Status"
+msgstr "Status"
+
+#: content.php:16
+msgid "Featured"
+msgstr "Izbrano"
+
+#: footer.php:27
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: footer.php:27
+msgid "Semantic Personal Publishing Platform"
+msgstr "Semantična platforma za objavljanje"
+
+#: footer.php:27
+msgid "Proudly powered by %s"
+msgstr "Poganja %s"
+
+#: functions.php:95
+msgid "Primary Menu"
+msgstr "Glavni menu"
+
+#: functions.php:164
+msgid "Wheel"
+msgstr "Kolo"
+
+#: functions.php:170
+msgid "Shore"
+msgstr "Kopno"
+
+#: functions.php:176
+msgid "Trolley"
+msgstr "Voziček"
+
+#: functions.php:182
+msgid "Pine Cone"
+msgstr "Storž"
+
+#: functions.php:188
+msgid "Chessboard"
+msgstr "Šahovnica"
+
+#: functions.php:194
+msgid "Lanterns"
+msgstr "Luči"
+
+#: functions.php:200
+msgid "Willow"
+msgstr "Vrba"
+
+#: functions.php:206
+msgid "Hanoi Plant"
+msgstr "Rastlina Hanoi"
+
+#: functions.php:394
+msgid "Main Sidebar"
+msgstr "Glavna stranska vrstica"
+
+#: functions.php:403
+msgid "Showcase Sidebar"
+msgstr "Stranska vrstica Showcase"
+
+#: functions.php:405
+msgid "The sidebar for the optional Showcase Template"
+msgstr "Stranska vrstica za neobvezno Showcase predlogo"
+
+#: functions.php:413
+msgid "Footer Area One"
+msgstr "Polje noga ena"
+
+#: functions.php:415 functions.php:425 functions.php:435
+msgid "An optional widget area for your site footer"
+msgstr "Neobvezno polje v nogi vaše spletne strani"
+
+#: functions.php:423
+msgid "Footer Area Two"
+msgstr "Polje noga dve"
+
+#: functions.php:433
+msgid "Footer Area Three"
+msgstr "Polje noga tri"
+
+#: functions.php:453 single.php:18
+msgid "Post navigation"
+msgstr "Navigacija prispevkov"
+
+#: functions.php:454
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Starejši prispevki"
+
+#: functions.php:455
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Novejši prispevki <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:525
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: functions.php:542
+msgid "%1$s on %2$s <span class=\"says\">said:</span>"
+msgstr "%1$s je dne %2$s <span class=\"says\">rekel:</span>"
+
+#: functions.php:548
+msgid "%1$s at %2$s"
+msgstr "%1$s ob %2$s"
+
+#: functions.php:557
+msgid "Your comment is awaiting moderation."
+msgstr "Vaš komentar čaka na odobritev."
+
+#: functions.php:566
+msgid "Reply <span>&darr;</span>"
+msgstr "Odgovori <span>&darr;</span>"
+
+#: functions.php:584
+msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr "<span class=\"sep\">Objavljeno </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></a><span class=\"by-author\"> <span class=\"sep\">, </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+
+#: header.php:45
+msgid "Page %s"
+msgstr "Stran %s"
+
+#: header.php:129
+msgid "Main menu"
+msgstr "Glavni meni"
+
+#: header.php:131
+msgid "Skip to primary content"
+msgstr "Preskoči na glavno vsebino"
+
+#: header.php:132
+msgid "Skip to secondary content"
+msgstr "Preskoči na sekundarno vsebino"
+
+#: image.php:18
+msgid "Image navigation"
+msgstr "Slikovna navigacija"
+
+#: image.php:19
+msgid "&larr; Previous"
+msgstr "&larr; Prejšnja"
+
+#: image.php:20
+msgid "Next &rarr;"
+msgstr "Naslednja &rarr;"
+
+#: image.php:30
+msgid "<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+msgstr "<span class=\"meta-prep meta-prep-entry-date\">Objavljeno </span> <span class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> ob <a href=\"%3$s\" title=\"Povezave do cele slike\">%4$s &times; %5$s</a> v <a href=\"%6$s\" title=\"Nazaj na %7$s\" rel=\"gallery\">%7$s</a>"
+
+#: inc/theme-options.php:55 inc/theme-options.php:474
+msgid "Color Scheme"
+msgstr "Barvna shema"
+
+#: inc/theme-options.php:61 inc/theme-options.php:491
+msgid "Link Color"
+msgstr "Barva povezave"
+
+#: inc/theme-options.php:62
+msgid "Default Layout"
+msgstr "Privzeta postavitev"
+
+#: inc/theme-options.php:94 inc/theme-options.php:95
+msgid "Theme Options"
+msgstr "Možnosti teme"
+
+#: inc/theme-options.php:110
+msgid "Some themes provide customization options that are grouped together on a Theme Options screen. If you change themes, options may change or disappear, as they are theme-specific. Your current theme, Twenty Eleven, provides the following Theme Options:"
+msgstr "Nekatere teme ponujajo spreminjanje možnosti. Če spremenite temo, se lahko možnosti spremenijo ali izginejo ker so vezane na temo. Vaša trenutna tema, Twenty Eleven, ponuja te možnosti:"
+
+#: inc/theme-options.php:112
+msgid "<strong>Color Scheme</strong>: You can choose a color palette of \"Light\" (light background with dark text) or \"Dark\" (dark background with light text) for your site."
+msgstr "<strong>Barvna shema</strong>: Izberete lahko svetlo barvno shemo z temnim besedilom, ali temno z svetlim besedilom."
+
+#: inc/theme-options.php:113
+msgid "<strong>Link Color</strong>: You can choose the color used for text links on your site. You can enter the HTML color or hex code, or you can choose visually by clicking the \"Select a Color\" button to pick from a color wheel."
+msgstr "<strong>Barva povezav</strong>: Izberete lahko barvo, uporabljeno za povezave na strani. Vpišete lahko HTML barvo ali hex kodo. Lahko pa tudi izberete z uporabo gumba \"Izberi barvo\"."
+
+#: inc/theme-options.php:114
+msgid "<strong>Default Layout</strong>: You can choose if you want your site&#8217;s default layout to have a sidebar on the left, the right, or not at all."
+msgstr "<strong>Privzeta postavitev</strong>: Izberete lahko, ali bo imela vaša stran stransko vrstico na levi, desni, ali pa sploh ne."
+
+#: inc/theme-options.php:116
+msgid "Remember to click \"Save Changes\" to save any changes you have made to the theme options."
+msgstr "Ne pozabite stisniti \"Shrani Spremebe\", da shranite spremembe, katere ste naredili na nastavitvah teme."
+
+#: inc/theme-options.php:118
+msgid "For more information:"
+msgstr "Za več informacij:"
+
+#: inc/theme-options.php:119
+msgid "<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" target=\"_blank\">Documentation on Theme Options</a>"
+msgstr "<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" target=\"_blank\">Dokumentacija o Nastavitvah teme.</a>"
+
+#: inc/theme-options.php:120
+msgid "<a href=\"http://wordpress.org/support/\" target=\"_blank\">Support Forums</a>"
+msgstr "<a href=\"http://wordpress.org/support/\" target=\"_blank\">Forumi za podporo</a>"
+
+#: inc/theme-options.php:127
+msgid "Overview"
+msgstr "Pregled"
+
+#: inc/theme-options.php:149
+msgid "Light"
+msgstr "Svetlo"
+
+#: inc/theme-options.php:155
+msgid "Dark"
+msgstr "Temna"
+
+#: inc/theme-options.php:173
+msgid "Content on left"
+msgstr "Vsebina na levi"
+
+#: inc/theme-options.php:178
+msgid "Content on right"
+msgstr "Vsebina na desni"
+
+#: inc/theme-options.php:183
+msgid "One-column, no sidebar"
+msgstr "En stolpec, brez stranske vrstice"
+
+#: inc/theme-options.php:273
+msgid "Select a Color"
+msgstr "Izberi barvo"
+
+#: inc/theme-options.php:276
+msgid "Default color: %s"
+msgstr "Privzeta barva: %s"
+
+#: inc/theme-options.php:312
+msgid "%s Theme Options"
+msgstr "%s Možnosti teme"
+
+#: inc/theme-options.php:498
+msgid "Layout"
+msgstr "Postavitev"
+
+#: inc/widgets.php:19
+msgid "Use this widget to list your recent Aside, Status, Quote, and Link posts"
+msgstr "Uporabite ta gradnik za vaše najnovejše stranske dodatke, stanja, citate ali povezave."
+
+#: inc/widgets.php:20
+msgid "Twenty Eleven Ephemera"
+msgstr "Twenty Eleven Ephemera"
+
+#: inc/widgets.php:52
+msgid "Ephemera"
+msgstr "Ephemera"
+
+#: inc/widgets.php:91 inc/widgets.php:107
+msgid "0 <span class=\"reply\">comments &rarr;</span>"
+msgstr "0 <span class=\"reply\">komentarjev &rarr;</span>"
+
+#: inc/widgets.php:91 inc/widgets.php:107
+msgid "1 <span class=\"reply\">comment &rarr;</span>"
+msgstr "1 <span class=\"reply\">komentar &rarr;</span>"
+
+#: inc/widgets.php:91 inc/widgets.php:107
+msgid "% <span class=\"reply\">comments &rarr;</span>"
+msgstr "% <span class=\"reply\">komentarji &rarr;</span>"
+
+#: inc/widgets.php:105
+msgid "Link to %s"
+msgstr "Povezava na %s"
+
+#: inc/widgets.php:157
+msgid "Title:"
+msgstr "Naslov:"
+
+#: inc/widgets.php:160
+msgid "Number of posts to show:"
+msgstr "Število prispevkov za prikaz:"
+
+#: search.php:18
+msgid "Search Results for: %s"
+msgstr "Rezultati iskanja za: %s"
+
+#: search.php:46
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Žal se nič ne ujema vašim iskalnim kriterijem. Poskusite znova z drugačnimi ključnimi besedami."
+
+#: searchform.php:11 searchform.php:12 searchform.php:13
+msgid "Search"
+msgstr "Išči"
+
+#: showcase.php:77
+msgid "Featured Post"
+msgstr "Izbrani prispevek"
+
+#: showcase.php:150
+msgid "Featuring: %s"
+msgstr "Predstavlja: %s"
+
+#: showcase.php:160
+msgid "Recent Posts"
+msgstr "Najnovejši Prispevki"
+
+#: sidebar.php:19
+msgid "Archives"
+msgstr "Arhivi"
+
+#: sidebar.php:26
+msgid "Meta"
+msgstr "Meta"
+
+#: single.php:19
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr "<span class=\"meta-nav\">&larr;</span> Nazaj"
+
+#: single.php:20
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Naprej <span class=\"meta-nav\">&rarr;</span>"
+
+#: tag.php:19
+msgid "Tag Archives: %s"
+msgstr "Arhivi značke: %s"
+
+msgid "Twenty Eleven"
+msgstr "Twenty Eleven"
+
+msgid "http://wordpress.org/extend/themes/twentyeleven"
+msgstr "http://wordpress.org/extend/themes/twentyeleven"
+
+msgid "The 2011 theme for WordPress is sophisticated, lightweight, and adaptable. Make it yours with a custom menu, header image, and background -- then go further with available theme options for light or dark color scheme, custom link colors, and three layout choices. Twenty Eleven comes equipped with a Showcase page template that transforms your front page into a showcase to show off your best content, widget support galore (sidebar, three footer areas, and a Showcase page widget area), and a custom \"Ephemera\" widget to display your Aside, Link, Quote, or Status posts. Included are styles for print and for the admin editor, support for featured images (as custom header images on posts and pages and as large images on featured \"sticky\" posts), and special styles for six different post formats."
+msgstr "Tema 2011 za WordPress je sofisticirana, majhna in prilagodljiva. Prikrojite si jo z menijem po meri, sliko v zaglavju in ozadju -- pojdite še dlje z možnostmi za svetlo in temno barvno shemo, izbiro barve povezav in tremi različnimi postavitvami. Twenty Eleven ima tudi Showcase stran (katera prikazuje vaše najboljše prispevke), veliko prostora za gradnike ( stranska vrstica, tri prostore v nogi, ter prostor Showcase), in poseben gradnik Ephemera, kateri lahko prikazuje vaše stranske dodatke, povezave, citate ali stanje. Dodani so stili za tiskanje in za urejanje, podpora za izpostavljene slike (kot prikrojene slike v glavi in kot velike slike na prilepljenih prispevkih ), ter posebni stili za šest različnih tipov prispevkov."
+
+msgid "the WordPress team"
+msgstr "Ekipa WordPress"
+
+msgid "Showcase Template"
+msgstr "Predloga Predstavitve"
+
+msgid "Sidebar Template"
+msgstr "Predloga stranske vrstice"

@@ -1,0 +1,161 @@
+/**
+ * Styles for the featured page widget entry form
+ */
+
+/* Widget Form Tweaks
+ * ------------------------------------------------------------- */
+.fpw-widget-heading {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.fpw-layouts input {
+	margin-bottom: 5px;
+}
+
+/* "Hide" the select list */
+.fpw-page-select {
+	visibility: hidden;
+	opacity: 0;
+}
+
+/* Fallback for no JS or accessibility mode */
+.no-js .fpw-page-select,
+.widgets_access .fpw-page-select {
+	visibility: visible;
+	opacity: 1;
+}
+
+
+/* Page Status Changes
+ * ------------------------------------------------------------- */
+/* General styles */
+.fpw-page-status {
+	display: none;
+	margin-bottom: 1.5em !important;
+}
+/* ^^^ we'll display this with javascript as it requires that to update. there's a <noscript> alternative help message */
+
+.fpw-page-status img {
+	vertical-align: bottom;
+}
+
+/* dynamic colors */
+.fpw-page-status-excerpt,
+.fpw-page-status-image {
+	font-weight: bold;
+	color: #A91616;
+}
+
+.featured-image .fpw-page-status-image,
+.excerpt .fpw-page-status-excerpt {
+	color: #28AB38;
+}
+
+/* dynamic icons */
+.fpw-page-status-set {
+	display: none;
+}
+
+.featured-image .fpw-page-status-image .fpw-page-status-set,
+.excerpt .fpw-page-status-excerpt .fpw-page-status-set {
+	display: inline;
+}
+
+.featured-image .fpw-page-status-image .fpw-page-status-missing,
+.excerpt .fpw-page-status-excerpt .fpw-page-status-missing {
+	display: none;
+}
+
+
+ /* Layouts Preview
+ * ------------------------------------------------------------- */
+.fpw-layouts {
+ 	position: relative;
+}
+
+.fpw-layouts:before,
+.fpw-layouts label:before {
+	display: block; content: '';
+	width: 88px; height: 80px;
+}
+
+.fpw-layouts:before {
+	float: right;
+	margin: 0 0 10px 10px;
+	border: 1px dashed #ccc;
+}
+
+.fpw-layouts label:before {
+	position: absolute; top: 0; right: 0;
+	width: 90px; height: 82px;
+	background: transparent url(../img/layoutsIcons.png) scroll 0 82px no-repeat;
+}
+
+.fpw-layouts .fpw-layout-wrapped:checked + label:before {
+	background-position: 0 0;
+}
+.fpw-layouts .fpw-layout-banner:checked + label:before {
+	background-position: 0 -82px;
+}
+.fpw-layouts .fpw-layout-big:checked + label:before {
+	background-position: 0 -164px;
+}
+
+
+/* Chosen Styles
+ * ------------------------------------------------------------- */
+.chzn-container .chzn-drop li {
+	position: relative;
+	padding: 5px 40px 5px 5px;
+}
+
+.chzn-drop li:before {
+	content:' '; display: block; position: absolute;
+	top: 5px; right: 5px;
+	width: 30px; height:15px;
+	background: transparent url(../img/fpwFieldsPreview.png) no-repeat top left;
+}
+
+/* Featured Image only */
+.chzn-drop li.featured-image:before {
+	background-position: 0 -15px;
+}
+
+/* Excerpt only */
+.chzn-drop li.excerpt:before {
+	background-position: 0 -30px;
+}
+
+/* Both */
+.chzn-drop li.featured-image.excerpt:before {
+	background-position: 0 -45px;
+}
+
+/* Fix 100% width
+ * Fix for this issue in widget admin interface:
+ * https://github.com/harvesthq/chosen/issues/92#issuecomment-8566813 */
+.chzn-container, .chzn-drop, .chzn-drop .chzn-search, .chzn-drop .chzn-search input {
+  min-width: 100% !important;
+  max-width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+/* Contextual Help
+ * ------------------------------------------------------------- */
+#tab-panel-fpw_help_tab img {
+	vertical-align: bottom;
+}
+
+#tab-panel-fpw_help_tab a[target="_blank"]:after {
+	display: inline-block;
+	content: ' ';
+	width: 16px;
+	height: 16px;
+	vertical-align: bottom;
+	background: url(../img/external_link.png) right center no-repeat;
+}
