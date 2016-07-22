@@ -1,19 +1,23 @@
 // Fire off Chosen plugin on the select list.
 jQuery(document).ready(function($) {
 
+	// Activate chosen select menus on each FaPW widgets
 	function fpwActivateChosen() {
 		$( '#widgets-right .widget[id*="fpw_widget"]' ).each( function() {
 			fpwSetChosen( $(this) );
 		});
 	}
 
+	// Configures a single page select menu to use chosen
+	// Accepts a widget ID to target specific widget
 	function fpwSetChosen( widget ) {
 		$widget = $(widget);
 		$selectList = $('.fpw-page-select', $widget);
 
 		$selectList.chosen({
 			no_results_text: 'No pages match:',
-			allow_single_deselect: true 
+			allow_single_deselect: true,
+			disable_search_threshold: 8 // roughly height of menu
 		}).change(
 			function(event){
 				$selectList = event.currentTarget;
@@ -24,6 +28,7 @@ jQuery(document).ready(function($) {
 		fpwUpdateStatus( $selectList );
 	}
 
+	// Update the Excerpt/Featured Image indicators below page menu & set href for pencil icon
 	function fpwUpdateStatus( selectList ) {
 
 		$selectList = $(selectList);
@@ -53,12 +58,14 @@ jQuery(document).ready(function($) {
 	}
 
 	// Fire off chosen on save-widget callback, else the vanilla select reappears.
-	//Thanks http://www.johngadbois.com/adding-your-own-callbacks-to-wordpress-ajax-requests/
+	// Thanks http://www.johngadbois.com/adding-your-own-callbacks-to-wordpress-ajax-requests/
 	$(document).ajaxSuccess(function(e, xhr, settings) {
 
 		if(settings.data.search('action=save-widget') != -1 && settings.data.search('id_base=fpw_widget') != -1) {
-			$widget = $(e.currentTarget.activeElement).parents('.widget');
-			fpwSetChosen( $widget );
+			// as of WP 3.6, the activeElement isn't within the widget anymore :( so this doesn't work.
+			// $widget = $(e.currentTarget.activeElement).parents('.widget');
+			// fpwSetChosen( $widget );
+			fpwActivateChosen();
 		}
 
 		if(settings.data.search('action=widgets-order') != -1) {
@@ -79,7 +86,7 @@ jQuery(document).ready(function($) {
 			$('#contextual-help-link').trigger('click');
 	});
 
-	// fire on page load
+	// init chosen on page load
 	fpwActivateChosen();
 
 	// Set overflow to visible so select list isn't chopped off

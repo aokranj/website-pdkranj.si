@@ -10,7 +10,11 @@ class Facebook_Settings {
 	 * All plugin features supported
 	 *
 	 * @since 1.1
-	 * @var array
+	 *
+	 * @var array {
+	 *     @type string feature slug
+	 *     @type bool true
+	 * }
 	 */
 	public static $features = array( 'like' => true, 'send' => true, 'follow' => true, 'recommendations_bar' => true, 'comments' => true, 'social_publisher' => true );
 
@@ -18,9 +22,10 @@ class Facebook_Settings {
 	 * Add hooks
 	 *
 	 * @since 1.1
+	 *
+	 * @return void
 	 */
 	public static function init() {
-		add_action( 'admin_init', array( 'Facebook_Settings', 'migrate_options' ), 0, 0 );
 		add_action( 'admin_menu', array( 'Facebook_Settings', 'settings_menu_items' ) );
 		add_filter( 'plugin_action_links', array( 'Facebook_Settings', 'plugin_action_links' ), 10, 2 );
 		add_action( 'admin_init', array( 'Facebook_Settings', 'load_social_settings' ), 1 );
@@ -28,9 +33,12 @@ class Facebook_Settings {
 	}
 
 	/**
-	 * Load extra settings only if Facebook application credentials exist
+	 * Load extra settings only if Facebook application credentials exist.
 	 *
 	 * @since 1.2
+	 *
+	 * @global Facebook_Loader $facebook_loader check for stored Facebook application credentials before loading features.
+	 * @return void
 	 */
 	public static function load_social_settings() {
 		global $facebook_loader;
@@ -38,14 +46,28 @@ class Facebook_Settings {
 		if ( ! ( isset( $facebook_loader ) && $facebook_loader->app_access_token_exists() ) )
 			return;
 
+		/**
+		 * Limit Facebook plugin for WordPress features or functionality available on the site
+		 *
+		 * @since 1.1.9
+		 *
+		 * @see Facebook_Settings::$features
+		 * @param array {
+		 *     All available features.
+		 *
+		 *     @type string feature slug
+		 *     @type bool true
+		 * }
+		 */
 		$available_features = apply_filters( 'facebook_features', self::$features );
 		if ( is_array( $available_features ) && ! empty( $available_features ) ) {
 			if ( isset( $available_features['social_publisher'] ) ) {
 				// check user capability to publish to Facebook
-				$current_user = wp_get_current_user();
-				if ( user_can( $current_user, 'edit_posts' ) ) {
+				if ( current_user_can( 'edit_posts' ) ) {
+					// display Facebook account management in profile admin
 					if ( ! class_exists( 'Facebook_User_Profile' ) )
 						require_once( dirname(__FILE__) . '/profile.php' );
+
 					add_action( 'load-profile.php', array( 'Facebook_User_Profile', 'init' ) );
 				}
 			}
@@ -53,37 +75,95 @@ class Facebook_Settings {
 	}
 
 	/**
-	 * Enqueue scripts and styles
+	 * Enqueue scripts and styles.
 	 *
 	 * @since 1.1.6
+	 *
+	 * @uses wp_enqueue_style()
+	 * @return void
 	 */
 	public static function enqueue_scripts() {
-		wp_enqueue_style( 'facebook-admin-icons', plugins_url( 'static/css/admin/icons' . ( ( defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ) ? '' : '.min' ) . '.css', dirname( __FILE__ ) ), array(), '1.1.9' );
+		wp_enqueue_style( 'facebook-admin-icons', plugins_url( 'static/css/admin/icons' . ( ( defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ) ? '' : '.min' ) . '.css', dirname( __FILE__ ) ), array(), '1.5' );
 	}
 
 	/**
-	 * Check if Facebook application credentials are stored for the current site
-	 * Limit displayed features based on the existence of app data
+	 * Register the JavaScript file used for Facebook Login.
+	 *
+	 * Localize strings used in the JavaScript file.
+	 *
+	 * @since 1.5
+	 *
+	 * @uses wp_register_script()
+	 * @global Facebook_Loader $facebook_loader reference plugin directory
+	 * @global WP_Scripts $wp_scripts associate an extra script block with the Facebook Login script handle
+	 * @return string Facebook Login JavaScript handle registered with WordPress
+	 */
+	public static function register_login_script() {
+		global $facebook_loader, $wp_scripts;
+
+		$suffix = '.min';
+		if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG )
+			$suffix = '';
+
+		$handle = 'facebook-login';
+		wp_register_script( $handle, plugins_url( 'static/js/admin/login' . $suffix . '.js', $facebook_loader->plugin_directory . 'facebook.php' ), array( 'jquery', 'facebook-jssdk' ), '1.5', true );
+
+		$script = 'jQuery(document).one("facebook-login-load",function(){';
+		foreach( array(
+			'FB_WP.admin.login.messages.form_submit_prompt' => __( 'Please save your edits by submitting the form', 'facebook' ),
+			'FB_WP.admin.login.page.messages.add_manage_pages' => __( 'Allow new posts to a Facebook Page', 'facebook' ),
+			'FB_WP.admin.login.page.messages.delete_stored_page' => _x( 'None: remove %s', 'Choose none of the options and remove the object', 'facebook' ),
+			'FB_WP.admin.login.page.messages.select_new' => _x( 'Select a new page:', 'Displayed above a list of choices', 'facebook' ),
+			'FB_WP.admin.login.page.messages.no_create_content_pages' => _x( 'No new published pages with create content permission found', 'No Facebook Pages found for the user where the user has been granted permission to create content', 'facebook' ),
+			'FB_WP.admin.login.person.messages.associate_account' => __( 'Associate my WordPress account with my Facebook account', 'facebook' ),
+			'FB_WP.admin.login.person.messages.associate_account_publish' => __( 'Associate my WordPress account with my Facebook account and allow new posts to my Facebook Timeline', 'facebook' ),
+			'FB_WP.admin.login.person.messages.add_publish_actions' => _x( 'Allow new posts to my Facebook Timeline', 'Allow the application to publish to the Facebook Timeline of the viewer', 'facebook' ),
+			'FB_WP.admin.login.person.messages.edit_permissions' => __( 'Manage app permissions and visibility', 'facebook' )
+		) as $variable => $translated_text ) {
+			$script .= $variable . '=' . json_encode( $translated_text ) . ';';
+		}
+		$script .= '});';
+
+		$data = $wp_scripts->get_data( $handle, 'data' );
+		if ( $data )
+			$script = $data . "\n" . $script;
+		$wp_scripts->add_data( $handle, 'data', $script );
+
+		return $handle;
+	}
+
+	/**
+	 * Check if Facebook application credentials are stored for the current site.
+	 *
+	 * Limit displayed features based on the existence of app data.
 	 *
 	 * @since 1.1
-	 * @return bool true if app_id and app_secret stored
+	 *
+	 * @global Facebook_Loader $facebook_loader access already requested Facebook application credentials
+	 * @return bool True if app_id and app_secret stored.
 	 */
 	public static function app_credentials_exist() {
 		global $facebook_loader;
 
 		if ( isset( $facebook_loader ) && isset( $facebook_loader->credentials ) && isset( $facebook_loader->credentials['app_id'] ) && isset( $facebook_loader->credentials['app_secret'] ) )
 			return true;
+
 		return false;
 	}
 
 	/**
-	 * Add Facebook to the WordPress administration menu
+	 * Add Facebook settings to the WordPress administration menu.
 	 *
 	 * @since 1.1
+	 *
+	 * @global Facebook_Loader $facebook_loader Access loaded Facebook application credentials
+	 * @global $submenu array submenu created for the menu slugs
+	 * @return void
 	 */
 	public static function settings_menu_items() {
 		global $facebook_loader, $submenu;
 
+		// main settings page
 		if ( ! class_exists( 'Facebook_Application_Settings' ) )
 			require_once( dirname( __FILE__ ) . '/settings-app.php' );
 
@@ -95,11 +175,18 @@ class Facebook_Settings {
 
 		$menu_slug = Facebook_Application_Settings::PAGE_SLUG;
 
+		// duplicate_hook
 		$available_features = apply_filters( 'facebook_features', self::$features );
 
 		// publisher could short-circuit all features
 		if ( ! is_array( $available_features ) || empty( $available_features ) )
 			return;
+
+		// remove features for child directed sites
+		if ( get_option( 'facebook_kid_directed_site' ) ) {
+			unset( $available_features['recommendations_bar'] );
+			unset( $available_features['comments'] );
+		}
 
 		if ( isset( $available_features['like'] ) ) {
 			if ( ! class_exists( 'Facebook_Like_Button_Settings' ) )
@@ -167,32 +254,31 @@ class Facebook_Settings {
 	}
 
 	/**
-	 * Prompt a logged-in user to associate his or her account with a Facebook account
+	 * Standardize the form flow through settings API.
 	 *
 	 * @since 1.1
-	 */
-	public static function prompt_user_login() {
-		if ( ! class_exists( 'Facebook_Admin_Login' ) )
-			require_once( dirname(__FILE__) . '/login.php' );
-
-		// show admin dialog on post creation, post edit, or user profile screen
-		foreach( array( 'post-new.php','post.php','profile.php' ) as $pagenow ) {
-			add_action( 'load-' . $pagenow, array( 'Facebook_Admin_Login', 'connect_facebook_account' ) );
-		} 
-	}
-
-	/**
-	 * Standardize the form flow through settings API
 	 *
-	 * @since 1.1
 	 * @uses settings_fields()
 	 * @uses do_settings_sections()
 	 * @param string $page_slug constructs custom actions. passed to Settings API functions
+	 * @param string $page_title placed in a <h2> at the top of the page
+	 * @return void
 	 */
 	public static function settings_page_template( $page_slug, $page_title ) {
 		echo '<div class="wrap">';
+
+		/**
+		 * Echo content before the page header.
+		 *
+		 * @since 1.1
+		 */
 		do_action( 'facebook_settings_before_header_' . $page_slug );
 		echo '<header><h2>' . esc_html( $page_title ) . '</h2></header>';
+		/**
+		 * Echo content after the page header.
+		 *
+		 * @since 1.1
+		 */
 		do_action( 'facebook_settings_after_header_' . $page_slug );
 
 		// handle general messages such as settings updated up top
@@ -207,6 +293,12 @@ class Facebook_Settings {
 		submit_button();
 		echo '</form>';
 		echo '</div>';
+
+		/**
+		 * Echo content at the bottom of the page.
+		 *
+		 * @since 1.1
+		 */
 		do_action( 'facebook_settings_footer_' . $page_slug );
 		self::stats_beacon();
 	}
@@ -215,6 +307,7 @@ class Facebook_Settings {
 	 * Link to settings from the plugin listing page
 	 *
 	 * @since 1.1
+	 *
 	 * @param array $links links displayed under the plugin
 	 * @param string $file plugin main file path relative to plugin dir
 	 * @return array links array passed in, possibly with our settings link added
@@ -234,7 +327,10 @@ class Facebook_Settings {
 	 * Report basic usage data back to Facebook
 	 *
 	 * @since 1.1
+	 *
+	 * @uses Facebook_Settings::debug_output()
 	 * @param string $app_id Facebook application identifier
+	 * @return void
 	 */
 	public static function stats_beacon( $app_id = '' ) {
 		$debug = self::debug_output( $app_id );
@@ -246,23 +342,32 @@ class Facebook_Settings {
 	 * Identify active features for debugging purposes or sent via a Facebook beacon
 	 *
 	 * @since 1.1
-	 * @param string $app_id application identifier
-	 * @return array debug information
+	 *
+	 * @global Facebook_Loader $facebook_loader Access Facebook application information
+	 * @param string $app_id Facebook application identifier
+	 * @return array {
+	 *     debug information
+	 *
+	 *     @type string parameter to include in debugger (typically as a URI query parameter)
+	 *     @type string|array information about the current site installation
+	 * }
 	 */
 	public static function debug_output( $app_id = '' ) {
 		global $facebook_loader;
 
-		if ( ! $app_id && isset( $facebook_loader ) && isset( $facebook_loader->credentials['app_id'] ) )
-			$app_id = $facebook_loader->credentials['app_id'];
-
 		$debug = array();
 
+		// Facebook application identifier
+		if ( ! $app_id && isset( $facebook_loader ) && isset( $facebook_loader->credentials['app_id'] ) )
+			$app_id = $facebook_loader->credentials['app_id'];
 		if ( $app_id )
 			$debug['appid'] = $app_id;
 
+		// plugin version
 		if ( isset( $facebook_loader ) )
 			$debug['version'] = Facebook_Loader::VERSION;
 
+		// site domain
 		$hostname = parse_url( site_url(), PHP_URL_HOST );
 		if ( $hostname )
 			$debug['domain'] = $hostname;
@@ -287,6 +392,7 @@ class Facebook_Settings {
 			$debug['features'] = $enabled_features;
 		unset( $enabled_features );
 
+		// active widgets
 		$widgets = self::get_active_widgets();
 		if ( ! empty( $widgets ) )
 			$debug['widgets'] = $widgets;
@@ -295,9 +401,11 @@ class Facebook_Settings {
 	}
 
 	/**
-	 * Get a list of Facebook widgets in one or more sidebars
+	 * Get a list of Facebook widgets in one or more sidebars.
 	 *
 	 * @since 1.1.6
+	 *
+	 * @uses wp_get_sidebars_widgets()
 	 * @return array Facebook widget feature slugs
 	 */
 	public static function get_active_widgets() {
@@ -327,84 +435,6 @@ class Facebook_Settings {
 			return array_keys( $widgets );
 
 		return array();
-	}
-
-	/**
-	 * Check if the wordpress user has plugins that may conflict with the Facebook plugin due to Open Graph.
-	 * Display an admin dialog if conflicts found
-	 */
-	public static function plugin_conflicts() {
-		$og_conflicting_plugins = apply_filters( 'fb_conflicting_plugins', array(
-			'http://wordpress.org/extend/plugins/opengraph/' => true,
-			'http://wordbooker.tty.org.uk' => true,
-			'http://ottopress.com/wordpress-plugins/simple-facebook-connect/' => true,
-			'http://www.whiletrue.it' => true,
-			'http://aaroncollegeman.com/sharepress' => true
-		) );
-
-		// allow for short circuit
-		if ( ! is_array( $og_conflicting_plugins ) || empty( $og_conflicting_plugins ) )
-			return;
-
-		//fetch activated plugins
-		$plugins_list = get_option( 'active_plugins' );
-		if ( ! is_array( $plugins_list ) )
-			$plugins_list = array();
-
-		$conflicting_plugins = array();
-
-		// iterate through activated plugins, checking if they are in the list of conflict plugins
-		foreach ( $plugins_list as $val ) {
-			$plugin_data = get_plugin_data( WP_PLUGIN_DIR . '/' . $val );
-			if ( ! ( isset( $plugin_data['PluginURI'] ) && isset( $plugin_data['Name'] ) ) || $plugin_data['PluginURI'] === 'http://wordpress.org/extend/plugins/facebook/' )
-				continue;
-
-			if ( isset( $og_conflicting_plugins[ $plugin_data['PluginURI'] ] ) )
-				$conflicting_plugins[] = esc_html( $plugin_data['Name'] );
-
-			unset( $plugin_data );
-		}
-
-		//if there are more than 1 plugins relying on Open Graph, warn the user on this plugins page
-		if ( ! empty( $conflicting_plugins ) ) {
-			echo '<div id="facebook-warning" class="error fade"><p>' . sprintf( esc_html( __( 'You have plugins installed that could potentially conflict with the Facebook plugin. Please consider disabling the following plugins on the %s:', 'facebook' ) . '<br />' . implode( ', ', $conflicting_plugins ) ), '<a href="' . admin_url( 'plugins.php' ) .'">' . esc_html( __( 'Plugins Settings page', 'facebook' ) ) . '</a>' ) . '</p></div>';
-		}
-	}
-
-	/**
-	 * Migrate options from plugin version 1.0
-	 *
-	 * @since 1.1
-	 */
-	public static function migrate_options() {
-		if ( get_option( 'facebook_migration_118' ) )
-			return;
-
-		// wait for an appropirate user
-		if ( ! current_user_can( 'manage_options' ) )
-			return;
-
-		// the options migration from 1.1 sets migrations from 1.1.5 and 1.1.8
-		if ( get_option( 'facebook_migration_10' ) ) {
-			// run 1.1.5 migration if 1.0 migration already run
-			if ( ! get_option( 'facebook_migration_115' ) ) {
-				if ( ! class_exists( 'Facebook_Migrate_Options_115' ) )
-					require_once( dirname(__FILE__) . '/migrate-options-115.php' );
-				Facebook_Migrate_Options_115::migrate();
-				update_option( 'facebook_migration_115', '1' );
-			}
-			if ( ! class_exists( 'Facebook_Migrate_Options_118' ) )
-				require_once( dirname(__FILE__) . '/migrate-options-118.php' );
-			Facebook_Migrate_Options_118::migrate();
-			update_option( 'facebook_migration_118', '1' );
-		} else {
-			if ( ! class_exists( 'Facebook_Migrate_Options_10' ) )
-				require_once( dirname(__FILE__) . '/migrate-options-10.php' );
-			Facebook_Migrate_Options_10::migrate();
-			update_option( 'facebook_migration_10', '1' );
-			update_option( 'facebook_migration_115', '1' ); // 1.0 covers the changes from 1.1.5
-			update_option( 'facebook_migration_118', '1' ); // 1.0 covers the changes from 1.1.8
-		}
 	}
 }
 ?>

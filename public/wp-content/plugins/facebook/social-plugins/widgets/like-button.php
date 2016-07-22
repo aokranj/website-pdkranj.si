@@ -9,6 +9,10 @@ class Facebook_Like_Button_Widget extends WP_Widget {
 
 	/**
 	 * Register widget with WordPress
+	 *
+	 * @since 1.0
+	 *
+	 * @return void
 	 */
 	public function __construct() {
 		parent::__construct(
@@ -25,8 +29,12 @@ class Facebook_Like_Button_Widget extends WP_Widget {
 	 *
 	 * @see WP_Widget::widget()
 	 *
+	 * @since 1.0
+	 *
 	 * @param array $args     Widget arguments.
 	 * @param array $instance Saved values from database.
+	 *
+	 * @return void
 	 */
 	public function widget( $args, $instance ) {
 		extract( $args );
@@ -63,6 +71,8 @@ class Facebook_Like_Button_Widget extends WP_Widget {
 	 *
 	 * @see WP_Widget::update()
 	 *
+	 * @since 1.0
+	 *
 	 * @param array $new_instance Values just sent to be saved.
 	 * @param array $old_instance Previously saved values from database.
 	 *
@@ -70,9 +80,17 @@ class Facebook_Like_Button_Widget extends WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
+		$new_instance = (array) $new_instance;
 
 		if ( ! empty( $new_instance['title'] ) )
 			$instance['title'] = strip_tags( $new_instance['title'] );
+
+		foreach( array( 'share', 'show_faces' ) as $bool_option ) {
+			if ( isset( $new_instance[ $bool_option ] ) )
+				$new_instance[ $bool_option ] = true;
+			else
+				$new_instance[ $bool_option ] = false;
+		}
 
 		if ( ! class_exists( 'Facebook_Like_Button' ) )
 			require_once( dirname( dirname(__FILE__) ) . '/class-facebook-like-button.php' );
@@ -93,11 +111,26 @@ class Facebook_Like_Button_Widget extends WP_Widget {
 	 *
 	 * @see WP_Widget::form()
 	 *
+	 * @since 1.0
+	 *
 	 * @param array $instance Previously saved values from database.
+	 * @return void
 	 */
 	public function form( $instance ) {
-		$this->display_title( empty( $instance['title'] ) ? '' : $instance['title'] );
-		$this->display_href( empty( $instance['href'] ) ? '' : $instance['href'] );
+		$instance = wp_parse_args( (array) $instance, array(
+			'title' => '',
+			'href' => '',
+			'share' => false,
+			'layout' => 'standard',
+			'show_faces' => false,
+			'width' => 0,
+			'action' => 'like',
+			'font' => '',
+			'colorscheme' => 'light'
+		) );
+
+		$this->display_title( $instance['title'] );
+		$this->display_href( $instance['href'] );
 
 		if ( ! class_exists( 'Facebook_Like_Button_Settings' ) )
 			require_once( dirname( dirname( dirname( __FILE__ ) ) ) . '/admin/settings-like-button.php' );
@@ -105,9 +138,9 @@ class Facebook_Like_Button_Widget extends WP_Widget {
 		$like_button_settings = new Facebook_Like_Button_Settings( $instance );
 
 		echo '<div>';
-		$like_button_settings->display_send( array(
-			'id' => $this->get_field_id( 'send' ),
-			'name' => $this->get_field_name( 'send' )
+		$like_button_settings->display_share( array(
+			'id' => $this->get_field_id( 'share' ),
+			'name' => $this->get_field_name( 'share' )
 		) );
 		echo '</div><p></p>';
 
@@ -155,11 +188,14 @@ class Facebook_Like_Button_Widget extends WP_Widget {
 	}
 
 	/**
-	 * Allow a publisher to customize the title displayed above the widget area
+	 * Allow a publisher to customize the title displayed above the widget area.
+	 *
 	 * e.g. Like us on Facebook!
 	 *
 	 * @since 1.1
+	 *
 	 * @param string $existing_value saved title
+	 * @return void
 	 */
 	public function display_title( $existing_value = '' ) {
 		echo '<p><label>' . esc_html( __( 'Title', 'facebook' ) ) . ': ';
@@ -170,10 +206,12 @@ class Facebook_Like_Button_Widget extends WP_Widget {
 	}
 
 	/**
-	 * Customize the Like target
+	 * Customize the Like target.
 	 *
 	 * @since 1.1
+	 *
 	 * @param string $existing_value stored URL value
+	 * @return void
 	 */
 	public function display_href( $existing_value = '' ) {
 		echo '<p><label>URL: <input type="url" id="' . $this->get_field_id( 'href' ) . '" name="' . $this->get_field_name( 'href' ) . '" class="widefat"';

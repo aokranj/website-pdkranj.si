@@ -2,6 +2,10 @@
  * imsanity admin javascript functions
  */
 
+// this must run inline so that the script is detected correctly
+var imsanity_scripts = document.getElementsByTagName("script");
+var imsanity_script_url = imsanity_scripts[imsanity_scripts.length-1].src;
+
 /**
  * Begin the process of re-sizing all of the checked images
  */
@@ -20,6 +24,16 @@ function imsanity_resize_images()
 	// start the recursion
 	imsanity_resize_next(images,0);
 }
+
+/**
+ * Detect the base url for the imsanity plugin folder
+ * @returns
+ */
+function imsanity_get_base_url()
+{
+	return imsanity_script_url.substring(0,imsanity_script_url.indexOf('scripts/imsanity.js'));
+}
+
 
 /** 
  * recursive function for resizing images
@@ -74,7 +88,7 @@ function imsanity_load_images(container_id)
 
 	var target = jQuery('#imsanity_target');
 
-	target.html('<div><image src="'+ imsanity_plugin_url  +'/images/ajax-loader.gif" style="margin-bottom: .25em; vertical-align:middle;" /> Examining existing attachments.  This may take a few moments...</div>');
+	target.html('<div><image src="'+ imsanity_get_base_url()  +'images/ajax-loader.gif" style="margin-bottom: .25em; vertical-align:middle;" /> Examining existing attachments.  This may take a few moments...</div>');
 
 	target.animate({height: [250,'swing']},500, function()
 	{

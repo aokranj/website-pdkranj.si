@@ -1726,3 +1726,14 @@ img#wpstats {
 		margin-left: 3.57142857rem;
 	}
 }
+
+.chlan {
+	/*border: 1px solid red;*/
+}
+
+.chlan a {
+	text-decoration: none;
+	font-size: 28px;
+	text-transform: uppercase;
+	color: red !important;
+}

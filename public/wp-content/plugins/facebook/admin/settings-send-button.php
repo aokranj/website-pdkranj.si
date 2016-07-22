@@ -11,25 +11,37 @@ if ( ! class_exists( 'Facebook_Social_Plugin_Button_Settings' ) )
 class Facebook_Send_Button_Settings extends Facebook_Social_Plugin_Button_Settings {
 
 	/**
-	 * Setting page identifier
+	 * Setting page identifier.
 	 *
 	 * @since 1.1
+	 *
 	 * @var string
 	 */
 	const PAGE_SLUG = 'facebook-send-button';
 
 	/**
-	 * Define our option array value
+	 * Define our option array value.
 	 *
 	 * @since 1.1
+	 *
 	 * @var string
 	 */
 	const OPTION_NAME = 'facebook_send_button';
 
 	/**
-	 * Initialize with an options array
+	 * The hook suffix assigned by add_submenu_page()
 	 *
 	 * @since 1.1
+	 *
+	 * @var string
+	 */
+	protected $hook_suffix = '';
+
+	/**
+	 * Initialize with an options array.
+	 *
+	 * @since 1.1
+	 *
 	 * @param array $options existing options
 	 */
 	public function __construct( $options = array() ) {
@@ -40,9 +52,10 @@ class Facebook_Send_Button_Settings extends Facebook_Social_Plugin_Button_Settin
 	}
 
 	/**
-	 * Reference the social plugin by name
+	 * Reference the social plugin by name.
 	 *
 	 * @since 1.1
+	 *
 	 * @return string social plugin name
 	 */
 	public static function social_plugin_name() {
@@ -50,9 +63,10 @@ class Facebook_Send_Button_Settings extends Facebook_Social_Plugin_Button_Settin
 	}
 
 	/**
-	 * Navigate to the settings page through the Facebook top-level menu item
+	 * Navigate to the settings page through the Facebook top-level menu item.
 	 *
 	 * @since 1.1
+	 *
 	 * @uses add_submenu_page()
 	 * @param string $parent_slug Facebook top-level menu item slug
 	 * @return string submenu hook suffix
@@ -79,7 +93,7 @@ class Facebook_Send_Button_Settings extends Facebook_Social_Plugin_Button_Settin
 	}
 
 	/**
-	 * Load stored options and scripts on settings page view
+	 * Load stored options and scripts on settings page view.
 	 *
 	 * @since 1.1
 	 */
@@ -93,9 +107,11 @@ class Facebook_Send_Button_Settings extends Facebook_Social_Plugin_Button_Settin
 	}
 
 	/**
-	 * Load the page
+	 * Load the page.
 	 *
 	 * @since 1.1
+	 *
+	 * @return void
 	 */
 	public function settings_page() {
 		if ( ! isset( $this->hook_suffix ) )
@@ -105,12 +121,13 @@ class Facebook_Send_Button_Settings extends Facebook_Social_Plugin_Button_Settin
 	}
 
 	/**
-	 * Hook into the settings API
+	 * Hook into the settings API.
 	 *
 	 * @since 1.1
+	 *
 	 * @uses add_settings_section()
 	 * @uses add_settings_field()
-	 * @param string $page target grouping
+	 * @return void
 	 */
 	private function settings_api_init() {
 		if ( ! isset( $this->hook_suffix ) )
@@ -127,14 +144,14 @@ class Facebook_Send_Button_Settings extends Facebook_Social_Plugin_Button_Settin
 		// when, where
 		add_settings_field(
 			'facebook-send-show-on',
-			__( 'Show on', 'facebook' ),
+			_x( 'Show on', 'Display the social plugin in specific areas of a website', 'facebook' ),
 			array( &$this, 'display_show_on' ),
 			$this->hook_suffix,
 			$section
 		);
 		add_settings_field(
 			'facebook-send-position',
-			__( 'Position', 'facebook' ),
+			_x( 'Position', 'Desired position of a Facebook social plugin relative to main post content.', 'facebook' ),
 			array( &$this, 'display_position' ),
 			$this->hook_suffix,
 			$section,
@@ -160,14 +177,16 @@ class Facebook_Send_Button_Settings extends Facebook_Social_Plugin_Button_Settin
 	}
 
 	/**
-	 * Introduce publishers to the Send Button social plugin
+	 * Introduce publishers to the Send Button social plugin.
 	 *
 	 * @since 1.1
+	 *
+	 * @return void
 	 */
 	public function section_header() {
 		echo '<p>';
-		echo esc_html( sprintf( __( 'Help site visitors send your URL in a message to any email address, a message to his or her %1$s friends, or a post to a %1$s group.', 'facebook' ), 'Facebook' ) );
-		echo ' ' . ' <a href="https://developers.facebook.com/docs/reference/plugins/send/" title="' . esc_attr( sprintf( __( '%s social plugin documentation', 'facebook' ), 'Facebook ' . self::social_plugin_name() ) ) . '">' . esc_html( __( 'Read more...', 'facebook' ) ) . '</a>';
+		echo esc_html( __( 'Help site visitors send your URL in a message to any email address, a message to his or her Facebook friends, or a post to a Facebook group.', 'facebook' ) );
+		echo ' ' . ' <a href="https://developers.facebook.com/docs/plugins/send-button/" title="' . esc_attr( sprintf( __( '%s social plugin documentation', 'facebook' ), 'Facebook ' . self::social_plugin_name() ) ) . '">' . esc_html( __( 'Read more...', 'facebook' ) ) . '</a>';
 		echo '</p>';
 	}
 
@@ -175,7 +194,9 @@ class Facebook_Send_Button_Settings extends Facebook_Social_Plugin_Button_Settin
 	 * Where should the button appear?
 	 *
 	 * @since 1.1
+	 *
 	 * @param array $extra_attributes custom form attributes
+	 * @return void
 	 */
 	public function display_show_on( $extra_attributes = array() ) {
 		$key = 'show_on';
@@ -227,10 +248,12 @@ class Facebook_Send_Button_Settings extends Facebook_Social_Plugin_Button_Settin
 	}
 
 	/**
-	 * Choose a custom font
+	 * Choose a custom font.
 	 *
 	 * @since 1.1
+	 *
 	 * @param array $extra_attributes custom form attributes
+	 * @return void
 	 */
 	public function display_font( $extra_attributes = array() ) {
 		$key = 'font';
@@ -251,10 +274,12 @@ class Facebook_Send_Button_Settings extends Facebook_Social_Plugin_Button_Settin
 	}
 
 	/**
-	 * Customize the color scheme
+	 * Customize the color scheme.
 	 *
 	 * @since 1.1
+	 *
 	 * @param array $extra_attributes custom form attributes
+	 * @return void
 	 */
 	public function display_colorscheme( $extra_attributes = array() ) {
 		$key = 'colorscheme';
@@ -278,14 +303,13 @@ class Facebook_Send_Button_Settings extends Facebook_Social_Plugin_Button_Settin
 	 * Sanitize Send Button settings before they are saved to the database
 	 *
 	 * @since 1.1
+	 *
 	 * @param array $options Send Button options
 	 * @return array clean option sets. note: we remove Send Button social plugin default options, storing only custom settings (e.g. dark color scheme stored, light is default and therefore not stored)
 	 */
 	public static function sanitize_options( $options ) {
 		if ( ! is_array( $options ) || empty( $options ) )
 			return array();
-
-		$clean_options = array();
 
 		if ( ! class_exists( 'Facebook_Send_Button' ) )
 			require_once( dirname( dirname(__FILE__) ) . '/social-plugins/class-facebook-send-button.php' );

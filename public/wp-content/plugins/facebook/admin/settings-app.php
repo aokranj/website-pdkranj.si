@@ -1,28 +1,53 @@
 <?php
 
+/**
+ * Display a settings page for Facebook application data
+ *
+ * @since 1.1
+ */
 class Facebook_Application_Settings {
 	/**
-	 * Settings page identifier
+	 * Settings page identifier.
 	 *
 	 * @since 1.1
+	 *
 	 * @var string
 	 */
 	const PAGE_SLUG = 'facebook-application-settings';
 
 	/**
-	 * Define our option array value
+	 * Define our option array value.
 	 *
 	 * @since 1.1
+	 *
 	 * @var string
 	 */
 	const OPTION_NAME = 'facebook_application';
 
 	/**
-	 * Initialize with an options array
+	 * Define the kid-directed option value.
+	 *
+	 * @since 1.5
+	 *
+	 * @var string
+	 */
+	const OPTION_NAME_KID_DIRECTED = 'facebook_kid_directed_site';
+
+	/**
+	 * The hook suffix assigned by add_submenu_page()
 	 *
 	 * @since 1.1
+	 *
+	 * @var string
+	 */
+	protected $hook_suffix = '';
+
+	/**
+	 * Initialize with an options array.
+	 *
+	 * @since 1.1
+	 *
 	 * @param array $options existing options
-	 * @param string $hook_suffix (optional) page slug. used to build settings fields
 	 */
 	public function __construct( $options = array() ) {
 		if ( is_array( $options ) && ! empty( $options ) )
@@ -32,9 +57,10 @@ class Facebook_Application_Settings {
 	}
 
 	/**
-	 * Add a menu item to WordPress admin
+	 * Add a menu item to WordPress admin.
 	 *
 	 * @since 1.1
+	 *
 	 * @uses add_utility_page()
 	 * @return string page hook
 	 */
@@ -42,12 +68,12 @@ class Facebook_Application_Settings {
 		$app_settings = new Facebook_Application_Settings();
 
 		$hook_suffix = add_utility_page(
-			sprintf( __( '%s Plugin Settings', 'facebook' ), 'Facebook' ), // page <title>
+			__( 'Facebook Plugin Settings', 'facebook' ), // page <title>
 			'Facebook', // menu title
 			'manage_options', // capability needed
 			self::PAGE_SLUG, // what should I call you?
 			array( &$app_settings, 'settings_page' ), // pageload callback
-			plugins_url( 'static/img/icon-bw.png', dirname(__FILE__) ) // icon make pretty
+			'none' // to be replaced by Facebook dashicon
 		);
 
 		// conditional load CSS, scripts
@@ -61,9 +87,12 @@ class Facebook_Application_Settings {
 	}
 
 	/**
-	 * Load stored options and scripts on settings page view
+	 * Load stored options and scripts on settings page view.
 	 *
 	 * @since 1.1
+	 *
+	 * @uses get_option() load existing options
+	 * @return void
 	 */
 	public function onload() {
 		$options = get_option( self::OPTION_NAME );
@@ -71,23 +100,39 @@ class Facebook_Application_Settings {
 			$options = array();
 		$this->existing_options = $options;
 
+		// notify of lack of HTTPS
+		if ( ! wp_http_supports( array( 'ssl' => true ) ) )
+			add_action( 'admin_notices', array( 'Facebook_Application_Settings', 'admin_notice' ) );
+
 		$this->settings_api_init();
 
 		add_action( 'admin_enqueue_scripts', array( 'Facebook_Application_Settings', 'enqueue_scripts' ) );
 	}
 
 	/**
-	 * Load the settings page
+	 * Warn of minimum requirements not met for app access token.
+	 *
+	 * @since 1.5
+	 *
+	 * @return void
+	 */
+	public static function admin_notice() {
+		echo '<div class="error">';
+		echo '<p>' . esc_html( __( 'Your server does not support communication with Facebook servers over HTTPS.', 'facebook' ) ) . '</p>';
+		echo '<p>' . esc_html( __( 'Facebook application functionality such as posting to your Facebook Timeline requires a HTTPS connection to Facebook servers.', 'facebook' ) ) . '</p>';
+		echo '</div>';
+	}
+
+	/**
+	 * Load the settings page.
 	 *
 	 * @since 1.1
+	 *
+	 * @return void
 	 */
 	public function settings_page() {
 		if ( ! isset( $this->hook_suffix ) )
 			return;
-
-		// notify of conflicts on the main settings page
-		// tie to an action to allow easy removal on sites/networks that rather not run checks
-		add_action( 'facebook_notify_plugin_conflicts', array( 'Facebook_Settings', 'plugin_conflicts' ) );
 
 		add_action( 'facebook_settings_after_header_' . $this->hook_suffix, array( 'Facebook_Application_Settings', 'after_header' ) );
 
@@ -95,42 +140,47 @@ class Facebook_Application_Settings {
 	}
 
 	/**
-	 * Enhance settings page with JavaScript
+	 * Enhance settings page with JavaScript.
 	 *
 	 * @since 1.1
+	 *
 	 * @uses wp_enqueue_script()
+	 * @return void
 	 */
-	public function enqueue_scripts() {
+	public static function enqueue_scripts() {
 		wp_enqueue_script( 'facebook-jssdk' );
 	}
 
 	/**
-	 * Facebook Like Button after header
+	 * Facebook Like Button after header.
 	 *
 	 * @since 1.1
+	 *
+	 * @return void
 	 */
 	public static function after_header() {
+		// Facebook Like Button social plugin markup builder
 		if ( ! class_exists( 'Facebook_Like_Button' ) )
 			require_once( dirname( dirname(__FILE__) ) . '/social-plugins/class-facebook-like-button.php' );
 
 		// promote Facebook for WordPress page on Facebook Developers site
 		$like_button = new Facebook_Like_Button(false);
-		$like_button->setURL( 'http://developers.facebook.com/wordpress/' );
+		$like_button->setURL( 'https://developers.facebook.com/docs/wordpress/' );
 		$like_button->setLayout( 'button_count' );
-		$like_button->includeSendButton();
+		$like_button->includeShareButton();
 		$like_button->setFont( 'arial' );
 		$like_button->setReference( 'wp-admin' );
 		echo $like_button->asHTML();
-
-		do_action( 'facebook_notify_plugin_conflicts' );
 	}
 
 	/**
-	 * Hook into the settings API
+	 * Hook into the settings API.
 	 *
 	 * @since 1.1
+	 *
 	 * @uses add_settings_section()
 	 * @uses add_settings_field()
+	 * @return void
 	 */
 	private function settings_api_init() {
 		if ( ! isset( $this->hook_suffix ) )
@@ -145,11 +195,9 @@ class Facebook_Application_Settings {
 			$this->hook_suffix
 		);
 
-		$app_abbr = '<abbr title="' . esc_attr( _x( 'application', 'computer application or program', 'facebook' ) ) . '">' . esc_html( _x( 'App', 'application', 'facebook' ) ) . '</abbr>';
-
 		add_settings_field(
 			'facebook-app-id',
-			sprintf( __( '%s ID', 'facebook' ), $app_abbr ),
+			_x( '<abbr title="application">App</abbr> ID', 'Facebook application identifier', 'facebook' ),
 			array( &$this, 'display_app_id' ),
 			$this->hook_suffix,
 			$section,
@@ -157,20 +205,40 @@ class Facebook_Application_Settings {
 		);
 		add_settings_field(
 			'facebook-app-secret',
-			sprintf( __( '%s secret', 'facebook' ), $app_abbr ),
+			_x( '<abbr title="application">App</abbr> Secret', 'Facebook application secret', 'facebook' ),
 			array( &$this, 'display_app_secret' ),
 			$this->hook_suffix,
 			$section,
 			array( 'label_for' => 'facebook-app-secret' )
 		);
 
+		$section = 'facebook-restrictions';
+
+		add_settings_section(
+			$section,
+			__( 'Restrictions', 'facebook' ),
+			array( 'Facebook_Application_Settings', 'restriction_section_header' ),
+			$this->hook_suffix
+		);
+
+		add_settings_field(
+			'facebook-kid-directed-site',
+			__( 'Child-Directed Site', 'facebook' ),
+			array( 'Facebook_Application_Settings', 'display_kid_directed_site' ),
+			$this->hook_suffix,
+			$section,
+			array( 'label_for' => 'facebook-kid-directed-site' )
+		);
+
 		$this->inline_help_content();
 	}
 
 	/**
-	 * Introduction to the application settings section
+	 * Introduction to the application settings section.
 	 *
 	 * @since 1.1
+	 *
+	 * @return void
 	 */
 	public function section_header() {
 		if ( ! empty( $this->existing_options['app_id'] ) )
@@ -180,9 +248,22 @@ class Facebook_Application_Settings {
 	}
 
 	/**
-	 * Display the application ID input field
+	 * Introduction to Facebook restrictions configurations.
+	 *
+	 * @since 1.5
+	 *
+	 * @return void
+	 */
+	public static function restriction_section_header() {
+		echo '<p>' . esc_html( _x( 'Limit Facebook functionality', 'Section header for options limiting Facebook on your site', 'facebook' ) ) . '</p>';
+	}
+
+	/**
+	 * Display the application ID input field.
 	 *
 	 * @since 1.1
+	 *
+	 * @return void
 	 */
 	public function display_app_id() {
 		$key = 'app_id';
@@ -199,13 +280,15 @@ class Facebook_Application_Settings {
 			echo ' value="' . esc_attr( $existing_value ) . '"';
 		echo ' maxlength="32" size="40" autocomplete="off" pattern="[0-9]+" />';
 
-		echo '<p class="description">' . esc_html( sprintf( __( 'An application identifier associates your site, its pages, and visitor actions with a registered %s application.', 'facebook' ), 'Facebook' ) ) . '</p>';
+		echo '<p class="description">' . esc_html( __( 'An application identifier associates your site, its pages, and visitor actions with a registered Facebook application.', 'facebook' ) ) . '</p>';
 	}
 
 	/**
-	 * Display the Facebook application secret input field
+	 * Display the Facebook application secret input field.
 	 *
 	 * @since 1.1
+	 *
+	 * @return void
 	 */
 	public function display_app_secret() {
 		$key = 'app_secret';
@@ -222,18 +305,43 @@ class Facebook_Application_Settings {
 			echo ' value="' . esc_attr( $existing_value ) . '"';
 		echo ' size="40" autocomplete="off" pattern="[0-9a-f]+" />';
 
-		echo '<p class="description">' . esc_html( sprintf( __( 'An application secret is a secret shared between %s and your application, similar to a password.', 'facebook' ), 'Facebook' ) ) . '</p>';
+		echo '<p class="description">' . esc_html( __( 'An application secret is a secret shared between Facebook and your application, similar to a password.', 'facebook' ) ) . '</p>';
 	}
 
 	/**
-	 * Clean user inputs before saving to database
+	 * Display a checkbox to designate the site as child-focused.
+	 *
+	 * @since 1.5
+	 *
+	 * @global Facebook_Loader $facebook_loader determine child directed site status
+	 * @return void
+	 */
+	public static function display_kid_directed_site() {
+		global $facebook_loader;
+
+		echo '<label><input type="checkbox" name="' . self::OPTION_NAME . '[kid_directed_site]" id="facebook-kid-directed-site" value="1"';
+		checked( $facebook_loader->kid_directed );
+		echo ' /> ';
+		echo esc_html( __( 'Is your site directed at children in the United States under the age of 13?', 'facebook' ) );
+		echo '</label>';
+	}
+
+	/**
+	 * Clean user inputs before saving to database.
 	 *
 	 * @since 1.1
+	 *
 	 * @param array $options form options values
+	 * @return array $options sanitized options
 	 */
 	public static function sanitize_options( $options ) {
 		// start fresh
 		$clean_options = array();
+
+		if ( isset( $options['kid_directed_site'] ) )
+			update_option( self::OPTION_NAME_KID_DIRECTED, '1' );
+		else
+			delete_option( self::OPTION_NAME_KID_DIRECTED );
 
 		if ( isset( $options['app_id'] ) ) {
 			// leading spaces is a common copy-paste mistake
@@ -275,16 +383,22 @@ class Facebook_Application_Settings {
 			if ( wp_http_supports( array( 'ssl' => true ) ) ) {
 				$access_token = Facebook_WP_Extend::get_app_access_token( $clean_options['app_id'], $clean_options['app_secret'] );
 				if ( $access_token ) {
-					$app_info = Facebook_WP_Extend::get_app_details_by_access_token( $access_token, array( 'id', 'namespace' ) );
+					$app_secret_proof = hash_hmac( 'sha256', $access_token, $clean_options['app_secret'] );
+					$app_info = Facebook_WP_Extend::get_app_details_by_access_token( $access_token, array( 'id', 'namespace' ), $app_secret_proof );
 					if ( empty( $app_info ) ) {
+						if ( function_exists( 'add_settings_error' ) )
+							add_settings_error( 'facebook-app-auth', 'facebook-app-auth-error', __( 'Application access token failed on authentication with Facebook.', 'facebook' ) );
 						unset( $clean_options['app_id'] );
 						unset( $clean_options['app_secret'] );
 					} else {
 						if ( isset( $app_info['namespace'] ) )
 							$clean_options['app_namespace'] = $app_info['namespace'];
 						$clean_options['access_token'] = $access_token;
+						if ( $app_secret_proof )
+							$clean_options['appsecret_proof'] = $app_secret_proof;
 					}
 					unset( $app_info );
+					unset( $app_secret_proof );
 				} else {
 					if ( function_exists( 'add_settings_error' ) )
 						add_settings_error( 'facebook-app-auth', 'facebook-app-auth-error', __( 'Application ID and secret failed on authentication with Facebook.', 'facebook' ) );
@@ -295,6 +409,8 @@ class Facebook_Application_Settings {
 			} else {
 				$app_info = Facebook_WP_Extend::get_app_details( $clean_options['app_id'], array( 'id','namespace' ) );
 				if ( empty( $app_info ) ) {
+					if ( function_exists( 'add_settings_error' ) )
+							add_settings_error( 'facebook-app-info', 'facebook-app-info-error', __( 'Unable to request application data from Facebook.', 'facebook' ) );
 					unset( $clean_options['app_id'] );
 					unset( $clean_options['app_secret'] );
 				} else if ( isset( $app_info['namespace'] ) ) {
@@ -311,19 +427,20 @@ class Facebook_Application_Settings {
 	}
 
 	/**
-	 * Display helpful information about setting up a new application
+	 * Display helpful information about setting up a new application.
 	 *
 	 * @since 1.1
+	 *
 	 * @return string HTML content
 	 */
 	public static function help_tab_new_app() {
-		$content = '<p>' . sprintf ( esc_html( __( '%1$s to take advantage of advantage of advanced %2$s features such as post to timeline, recommendations bar, and more.', 'facebook' ) ), '<a href="https://developers.facebook.com/apps/">' . __( 'Register for a Facebook application', 'facebook' ) . '</a>', 'Facebook' ) . ' ' . esc_html( sprintf( __( 'You may need to register your %1$s account as a developer account if this is your first time managing a %1$s application.', 'facebook' ), 'Facebook' ) ) . '</p>';
+		$content = '<p>' . sprintf ( esc_html( __( '%s to take advantage of advantage of advanced Facebook features such as post to timeline, recommendations bar, and more.', 'facebook' ) ), '<a href="https://developers.facebook.com/apps/">' . __( 'Register for a Facebook application', 'facebook' ) . '</a>' ) . ' ' . esc_html( sprintf( __( 'You may need to register your %1$s account as a developer account if this is your first time managing a %1$s application.', 'facebook' ), 'Facebook' ) ) . '</p>';
 
 		$content .= '<p>' . sprintf( esc_html( __( 'Click the %s button near the top right corner of the page to trigger an application creation dialog.', 'facebook' ) ), '<span style="background-color:#EEE;border:1px solid #999;color:#333;font-family:\'lucinda grande\',tahoma,verdana,arial,sans-serif;font-size:11px;font-weight:bold;line-height:13px;margin:0;padding-top:1px;padding-right:0;padding-bottom:2px;padding-left:0;text-align:center;white-space:nowrap;">+ Create New App</span>' ) . '</p>';
 
-		$content .= '<div style="text-align:center"><img alt="' . esc_attr( sprintf( __( '%s new application creation dialog', 'facebook' ), 'Facebook' ) ) . '" src="' . plugins_url( 'static/img/create-app.png', dirname(__FILE__) ) .  '" width="610" height="179" /></div>';
+		$content .= '<div style="text-align:center"><img alt="' . esc_attr( __( 'Facebook new application creation dialog', 'facebook' ) ) . '" src="' . plugins_url( 'static/img/create-app.png', dirname(__FILE__) ) .  '" width="665" height="225" /></div>';
 
-		$content .= '<p>' . sprintf( esc_html( __( 'Uniquely identify your site on %1$s with an application name.', 'facebook' ) ), 'Facebook' );
+		$content .= '<p>' . esc_html( __( 'Uniquely identify your site on Facebook with an application name.', 'facebook' ) );
 		$site_name = get_bloginfo( 'name' );
 		if ( $site_name ) {
 			$content .= ' ';
@@ -337,7 +454,7 @@ class Facebook_Application_Settings {
 				$content .= esc_html( sprintf( __( 'You must choose an application name shorter than "%s."','facebook' ), $site_name ) );
 				$content .= ' ' . esc_html( sprintf( __( 'An application name must be between %1$u and %2$u characters in length.', 'facebook' ), $min_length, $max_length ) );
 			} else {
-				$content .= esc_html( sprintf( __( 'You may choose to use "%1$s" as your %2$s application name.', 'facebook' ), $site_name, 'Facebook' ) );
+				$content .= esc_html( sprintf( __( 'You may choose to use "%s" as your Facebook application name.', 'facebook' ), $site_name ) );
 			}
 		}
 		$content .= '</p>';
@@ -345,9 +462,10 @@ class Facebook_Application_Settings {
 	}
 
 	/**
-	 * Display helpful information about retrieving application credentials from Facebook Developers site
+	 * Display helpful information about retrieving application credentials from Facebook Developers site.
 	 *
 	 * @since 1.1
+	 *
 	 * @return string HTML content
 	 */
 	public static function help_tab_existing_app() {
@@ -366,9 +484,11 @@ class Facebook_Application_Settings {
 	}
 
 	/**
-	 * Help applications associate basic data with their Facebook application
+	 * Help applications associate basic data with their Facebook application.
 	 *
 	 * @since 1.1
+	 *
+	 * @param string $app_id application identifier. used to construct a link to the Facebook Developers site
 	 * @return string HTML content
 	 */
 	public static function help_tab_edit_app( $app_id = '' ) {
@@ -416,9 +536,27 @@ class Facebook_Application_Settings {
 	}
 
 	/**
+	 * Explain the child-directed site option
+	 *
+	 * @since 1.5
+	 *
+	 * @return string HTML string
+	 */
+	public static function help_tab_kid_directed() {
+		$content = '<p>' . esc_html( __( 'Comply with privacy laws of your audience including information collected about children.', 'facebook' ) ) . '</p>';
+		$content .= '<p>' . esc_html( __( 'Example: a site primary directed at children in the United States under the age of 13 might set this option to comply with privacy policies in the United States.', 'facebook' ) ) . '</p>';
+		$content .= '<p><a href="https://developers.facebook.com/docs/plugins/restrictions/">' . esc_html( __( 'Facebook social plugins: Information for Child-Directed Sites and Services', 'facebook' ) ) . '</a></p>';
+
+		return $content;
+	}
+
+	/**
 	 * Display help content on the settings page
 	 *
 	 * @since 1.1
+	 *
+	 * @uses get_current_screen()
+	 * @return void
 	 */
 	private function inline_help_content() {
 		$screen = get_current_screen();
@@ -431,13 +569,13 @@ class Facebook_Application_Settings {
 			$app_id = '';
 			$screen->add_help_tab( array(
 				'id' => 'facebook-new-app-help',
-				'title' => sprintf( __( 'Create a %s application', 'facebook' ), 'Facebook' ),
+				'title' => __( 'Create a Facebook application', 'facebook' ),
 				'content' => self::help_tab_new_app()
 			) );
 		} else {
 			$screen->add_help_tab( array(
 				'id' => 'facebook-existing-app-help',
-				'title' => sprintf( __( 'Existing %s application', 'facebook' ), 'Facebook' ),
+				'title' => __( 'Existing Facebook application', 'facebook' ),
 				'content' => self::help_tab_existing_app()
 			) );
 		}
@@ -448,7 +586,13 @@ class Facebook_Application_Settings {
 			'content' => self::help_tab_edit_app( $app_id )
 		) );
 
-		$screen->set_help_sidebar( '<p><a href="https://developers.facebook.com/apps/">' . esc_html( sprintf( __( '%s Apps Tool', 'facebook' ), 'Facebook' ) ) . '</a></p>' );
+		$screen->add_help_tab( array(
+			'id' => 'facebook-kid-directed-help',
+			'title' => __( 'Child directed', 'facebook' ),
+			'content' => self::help_tab_kid_directed()
+		) );
+
+		$screen->set_help_sidebar( '<p><a href="https://developers.facebook.com/apps/">' . esc_html( __( 'Facebook Apps Tool', 'facebook' ) ) . '</a></p>' );
 	}
 }
 

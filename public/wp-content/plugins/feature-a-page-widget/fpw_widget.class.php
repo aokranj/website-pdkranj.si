@@ -141,6 +141,10 @@ class FPW_Widget extends WP_Widget {
 
 	// outputs the content of the widget
 	public function widget( $args, $instance ) {
+
+		// enqueue stylesheet for widget
+		// enqueuing here ensure that styles only load when plugin is being displayed
+		wp_enqueue_style( 'fpw_styles_css', plugins_url( 'css/fpw_styles.css', __FILE__), false, FPW_VERSION );
 		
 		/** 
 		 * Extract, sanitize, and compile attributes

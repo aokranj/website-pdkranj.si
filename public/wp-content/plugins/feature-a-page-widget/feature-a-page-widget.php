@@ -3,7 +3,7 @@
 * Plugin Name: Feature a Page Widget
 * Description: Feature a single page in any sidebar.
 * Plugin URI: http://mrwweb.com/feature-a-page-widget-plugin-wordpress/
-* Version: 1.2.3
+* Version: 1.2.5
 * Author: Mark Root-Wiley (MRWweb)
 * Author URI: http://mrwweb.com
 * Donate Link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=522061398
@@ -30,8 +30,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // because...
 defined('ABSPATH') or die("Cannot access pages directly.");
 
-define('FPW_VERSION', '1.2.2');
+define('FPW_VERSION', '1.2.5');
 
+// Updates plugin version saved as option in database
 function fpw_update_version() {
 	// Update the Plugin Version if it doesn't exist or is out of sync
 	$fpw_options = get_option( 'fpw_options' );
@@ -41,36 +42,39 @@ function fpw_update_version() {
 	}
 }
 
+// Update/Add version when activating plugin
 function fpw_activate() {
 	fpw_update_version();
 }
 
+// Update/Add version when upgrading plugin
 function fpw_upgrade() {
 	fpw_update_version();
 }
 
+// Clean up plugin option on uninstall
 function fpw_uninstall() {
-	// Delete Plugin Options on Uninstall
 	delete_option( 'fpw_options' );
 }
 
+// Register scripts & styles for plugin in the admin
+// Unregister any conflicting assets from other plugins
 function fpw_admin_scripts( $hook ) {
 	// Keep the rest of WordPress snappy. Only run on the widgets.php page.
 	if( 'widgets.php' == $hook ) {
+		// dequeue conflicting Chosens
+		wp_dequeue_style( 'tribe-events-chosen-style' );
+		wp_dequeue_script( 'tribe-events-chosen-jquery' );
+
 		// The Chosen jQuery Plugin - http://harvesthq.github.com/chosen/
-		wp_enqueue_script( 'fpw_chosen_js', plugins_url( 'chosen/chosen.jquery.min.js', __FILE__ ), array( 'jquery' ), '0.9.11' );
-		wp_enqueue_style( 'fpw_chosen_css', plugins_url( 'chosen/chosen.css', __FILE__ ), false, '0.9.11' );
+		wp_enqueue_script( 'fpw_chosen_js', plugins_url( 'chosen/chosen.jquery.min.js', __FILE__ ), array( 'jquery' ), '1.0.0' );
+		wp_enqueue_style( 'fpw_chosen_css', plugins_url( 'chosen/chosen.css', __FILE__ ), false, '1.0.0' );
 
 		// Plugin JS
 		wp_enqueue_script( 'fpw_admin_js', plugins_url( 'js/fpw_admin.js', __FILE__ ), array( 'jquery', 'fpw_chosen_js' ), FPW_VERSION );
 		// Plugin CSS
 		wp_enqueue_style( 'fpw_admin_css', plugins_url( 'css/fpw_admin.css', __FILE__ ), false, FPW_VERSION );
 	}
-}
-
-// enqueue styles to layout widget on front end
-function fpw_styles() {
-	wp_enqueue_style( 'fpw_styles_css', plugins_url( 'css/fpw_styles.css', __FILE__), false, FPW_VERSION );
 }
 
 // Register necessary features to make this work
@@ -128,9 +132,9 @@ register_activation_hook( __FILE__, 'fpw_activate' );
 add_action( 'admin_init', 'fpw_upgrade' );
 register_uninstall_hook( __FILE__, 'fpw_uninstall' );
 
-// Load Scripts and Styles
-add_action( 'admin_enqueue_scripts', 'fpw_admin_scripts' );
-add_action( 'wp_enqueue_scripts', 'fpw_styles' );
+// Admin Load Scripts and Styles
+// (front-end styles are loaded in the widget class)
+add_action( 'admin_enqueue_scripts', 'fpw_admin_scripts', 100 );
 
 // Enable Excerpts, Post Thumbnails, and Custom Image Sizes. Load textdomain
 add_action( 'init', 'fpw_page_supports', 20 );

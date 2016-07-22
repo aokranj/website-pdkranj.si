@@ -8,6 +8,10 @@ class Facebook_Follow_Button_Widget extends WP_Widget {
 
 	/**
 	 * Register widget with WordPress
+	 *
+	 * @since 1.0
+	 *
+	 * @return void
 	 */
 	public function __construct() {
 		parent::__construct(
@@ -20,10 +24,13 @@ class Facebook_Follow_Button_Widget extends WP_Widget {
 	/**
 	 * Front-end display of widget.
 	 *
+	 * @since 1.0
+	 *
 	 * @see WP_Widget::widget()
 	 *
 	 * @param array $args     Widget arguments.
 	 * @param array $instance Saved values from database.
+	 * @return void
 	 */
 	public function widget( $args, $instance ) {
 		// no follow target. fail early
@@ -57,6 +64,8 @@ class Facebook_Follow_Button_Widget extends WP_Widget {
 	/**
 	 * Sanitize widget form values as they are saved.
 	 *
+	 * @since 1.0
+	 *
 	 * @see WP_Widget::update()
 	 *
 	 * @param array $new_instance Values just sent to be saved.
@@ -66,9 +75,18 @@ class Facebook_Follow_Button_Widget extends WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
+		$new_instance = (array) $new_instance;
 
 		if ( ! empty( $new_instance['title'] ) )
 			$instance['title'] = strip_tags( $new_instance['title'] );
+
+		if ( isset( $new_instance['show_faces'] ) )
+			$new_instance['show_faces'] = true;
+		else
+			$new_instance['show_faces'] = false;
+
+		if ( isset( $new_instance['width'] ) )
+			$new_instance['width'] = absint( $new_instance['width'] );
 
 		if ( ! class_exists( 'Facebook_Follow_Button' ) )
 			require_once( dirname( dirname(__FILE__) ) . '/class-facebook-follow-button.php' );
@@ -87,11 +105,24 @@ class Facebook_Follow_Button_Widget extends WP_Widget {
 	/**
 	 * Back-end widget form.
 	 *
+	 * @since 1.0
+	 *
 	 * @see WP_Widget::form()
 	 *
 	 * @param array $instance Previously saved values from database.
+	 * @return void
 	 */
 	public function form( $instance ) {
+		$instance = wp_parse_args( (array) $instance, array(
+			'title' => '',
+			'href' => '',
+			'layout' => 'standard',
+			'show_faces' => false,
+			'colorscheme' => 'light',
+			'font' => '',
+			'width' => 0
+		) );
+
 		$this->display_title( isset( $instance['title'] ) ? $instance['title'] : '' );
 		$this->display_href( isset( $instance['href'] ) ? $instance['href'] : '' );
 
@@ -138,10 +169,13 @@ class Facebook_Follow_Button_Widget extends WP_Widget {
 
 	/**
 	 * Allow a publisher to customize the title displayed above the widget area
+	 *
 	 * e.g. Like us on Facebook!
 	 *
 	 * @since 1.1
+	 *
 	 * @param string $existing_value saved title
+	 * @return void
 	 */
 	public function display_title( $existing_value = '' ) {
 		echo '<p><label>' . esc_html( __( 'Title', 'facebook' ) ) . ': ';
@@ -155,7 +189,9 @@ class Facebook_Follow_Button_Widget extends WP_Widget {
 	 * Customize the Like target
 	 *
 	 * @since 1.1
+	 *
 	 * @param string $existing_value stored URL value
+	 * @return void
 	 */
 	public function display_href( $existing_value = '' ) {
 		echo '<p><label>URL: <input type="url" id="' . $this->get_field_id( 'href' ) . '" name="' . $this->get_field_name( 'href' ) . '" class="widefat" required';

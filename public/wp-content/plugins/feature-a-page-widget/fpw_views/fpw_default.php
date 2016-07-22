@@ -1,11 +1,19 @@
 <?php
 
+
+
+
 /*
  * DO NOT MODIFY THIS FILE!
  * Instead, copy the /fpw_views/ folder to your active theme's folder.
  * Modify the file in the theme's folder and the plugin will use it.
  * See: http://wordpress.org/extend/plugins/feature-a-page-widget/faq/
  */
+
+
+
+
+
 
 /*
  * A LIST OF AVAILABLE VARIABLES
@@ -35,7 +43,7 @@ if( $title ) {
 }
 
 // Open the article element for the page
-printf( '<article class="%1$s">',
+printf( '<article class="%1$s fpw-widget-page">',
 	esc_attr( $post_classes )
 );
 

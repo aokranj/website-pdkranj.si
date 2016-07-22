@@ -1,0 +1,40 @@
+/* CSS Starter Styles for Feature a Page Widget
+ *
+ * This stylesheet contains commented selectors to help target the widget display.
+ * 
+ * Modifying this file has no effect. Instead do one of the following:
+ * 1) copy the styles you need to an existing stylesheet.
+ * 2) create a new stylesheet in your theme or child theme and use wp_enqueue_style to load it.
+ * 
+ */
+
+/* The widget wrapper (in most themes like Twenty Ten, but dependant on how sidebars are registered) */
+.widget_fpw_widget {}
+
+/* <article> element that wraps featured page output, as of v1.2.4 */
+.fpw-widget-page {}
+
+/* conditional classes on <article> depending on selected layout */
+.fpw-layout-wrapped {} /* Wrapped Image Layout */
+.fpw-layout-banner {} /* Banner Image Layout */
+.fpw-layout-big {} /* Big Image Layout */
+
+/* Featured Page title */
+.fpw-page-title {}
+
+/* Link that wraps both page title and featured image */
+.fpw-featured-link {}
+
+/* <div> element wrapping featured image */
+.fpw-featured-image {}
+
+/* the actual featured image image */
+.fpw-featured-image img {} /* Wrapped Image Layout */
+
+/* classes on .fpw-featured-image <div>, depending on selected layout */
+.size-fpw_square {} /* Wrapped Image Layout */
+.size-fpw_banner {} /* Banner Image Layout */
+.size_fpw-big {} /* Big Image Layout */
+
+/* featured page excerpt */
+.fpw-excerpt {}

@@ -15,15 +15,11 @@ article {
 .fpw-clearfix { *zoom:1; }  
 
 /* Nice and tight padding/margin */
-.widget_fpw_widget .widget-title,
-.widget_fpw_widget .fpw-page-title,
-.widget_fpw_widget .fpw-featured-image {
+.fpw-widget-page .widget-title,
+.fpw-widget-page .fpw-page-title,
+.fpw-widget-page .fpw-featured-image {
 	margin: 0 0 10px 0;
 	padding-top: 0;
-}
-.fpw-featured-image img {
-	margin: 0;
-	padding: 0;
 }
 
 /* a friendly font size suggestions */
@@ -33,9 +29,11 @@ article {
 }
 
 /* Responsive images */
-/* Going for the 1.5 retina technique. Feedback is welcome. */
+/* Going for the 1.5x retina technique. Feedback is welcome. */
 .fpw-featured-image,
 .fpw-featured-image img {
+	margin: 0;
+	padding: 0;
 	max-width: 100% !important;
 	height: auto !important;
 }
