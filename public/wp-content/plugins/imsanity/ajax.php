@@ -73,7 +73,7 @@ function imsanity_get_images()
 			}
 
 			// make sure we only return a limited number of records so we don't overload the ajax features
-			if ($count >= 250) break;
+			if ($count >= IMSANITY_AJAX_MAX_RECORDS) break;
 		}
 	}
 
@@ -185,7 +185,9 @@ function imsanity_resize_image()
 		$results = array('success'=>false,'id'=> $id, 'message' => sprintf(__('ERROR: (Attachment with ID of %s not found) ','imsanity') , htmlentities($id) ) );
 	}
 
-
+	// if there is a quota we need to reset the directory size cache so it will re-calculate
+	delete_transient('dirsize_cache');
+	
 	echo json_encode($results);
 	die(); // required by wordpress
 }

@@ -1,0 +1,68 @@
+# Copyright (C) 2012 Feature a Page Widget
+# This file is distributed under the same license as the Feature a Page Widget package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Feature a Page Widget 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/feature-a-page-widget\n"
+"POT-Creation-Date: 2012-11-14 14:45:41+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-10-17 09:16+0100\n"
+"Last-Translator: Borisa Djuraskovic <borisad@webhostinghub.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#. #-#-#-#-#  plugin.pot (Feature a Page Widget 1.0.0)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: fpw_widget.class.php:9
+msgid "Feature a Page Widget"
+msgstr "Karakteristika widgeta stranice"
+
+#: fpw_widget.class.php:10
+msgid "A widget to feature a single page"
+msgstr "Widget da karakterise jednu stranicu"
+
+#: fpw_widget.class.php:45
+msgid "Widget Title"
+msgstr "Naslov Widget-a"
+
+#: fpw_widget.class.php:52
+msgid "Page to feature:"
+msgstr "stranica za funkcionisanje"
+
+#: fpw_widget.class.php:54
+msgid "Select Featured Page&hellip;"
+msgstr "Izaberite karakteristike stranice i pomoc"
+
+#: fpw_widget.class.php:74
+msgid "Layout Options:"
+msgstr "Opcije okvira"
+
+#: fpw_widget.class.php:77
+msgid "Wrapped Image"
+msgstr "Umotana Slika"
+
+#: fpw_widget.class.php:81
+msgid "Banner Image"
+msgstr "Slika Banera"
+
+#: fpw_widget.class.php:85
+msgid "Big Image"
+msgstr "Velika Slika"
+
+#. Plugin URI of the plugin/theme
+msgid "http://mrwweb.com/feature-a-page-widget-plugin-wordpress/"
+msgstr "http://mrwweb.com/feature-a-page-widget-plugin-wordpress/"
+
+#. Description of the plugin/theme
+msgid "Feature a single page in any sidebar."
+msgstr "Karakter jedne stranice u sidebaru"
+
+#. Author of the plugin/theme
+msgid "Mark Root-Wiley (MRWweb)"
+msgstr "Mark Root-Wiley (MRWweb)"
+
+#. Author URI of the plugin/theme
+msgid "http://mrwweb.com"
+msgstr "http://mrwweb.com"

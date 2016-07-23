@@ -1,44 +1,48 @@
 <?php
 /**
- * Osnovna Konfiguracija WordPress-a.
+ * The base configuration for WordPress
  *
- * Ta datoteka ima naslednje konfiguracije: MySQL, Predpona tabel (Table Prefix),
- * Skrivni Ključi, WordPress Jezik in ABSPATH. Več informacij lahko dobite,
- * če obiščete {@link http://codex.wordpress.org/Editing_wp-config.php Editing
- * wp-config.php} Codex strani. MySQL nastavitve lahko dobite od vašega ponudnika.
+ * The wp-config.php creation script uses this file during the
+ * installation. You don't have to use the web site, you can
+ * copy this file to "wp-config.php" and fill in the values.
  *
- * To datoteko uporabi skripta za pripravo wp-config.php datoteke med namestitvijo.
- * Uporaba spletne strani ni nujno potrebna, lahko le prekopirate to datoteko v
- * "wp-config.php" in spremenite ustrezne vrednosti.
+ * This file contains the following configurations:
+ *
+ * * MySQL settings
+ * * Secret keys
+ * * Database table prefix
+ * * ABSPATH
+ *
+ * @link https://codex.wordpress.org/Editing_wp-config.php
  *
  * @package WordPress
  */
 
-// ** MySQL nastavitve - Te lahko pridobite od vašega ponudnika spletnih storitev ** //
-/** Ime baze za WordPress */
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
 define('DB_NAME', 'database_name_here');
 
-/** MySQL uporabniško ime */
+/** MySQL database username */
 define('DB_USER', 'username_here');
 
-/** MySQL geslo */
+/** MySQL database password */
 define('DB_PASSWORD', 'password_here');
 
-/** MySQL ime gostitelja (hostname) */
+/** MySQL hostname */
 define('DB_HOST', 'localhost');
 
-/** Nabor znakov za nove tabele */
+/** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
-/** Zbirni tip baze (Database Collate). Če ste v dvomih, tega ne spreminjate */
+/** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
 /**#@+
- * Autentifikacijski ključi in kriptografska sol
+ * Authentication Unique Keys and Salts.
  *
- * Spremenite to v unikatne vrednosti!
- * Tukaj je generator teh vrednosti: {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * Te vrednosti lahko spremenite kadarkoli. Pri tem boste razveljavili vse brskalniške piškotke in vsi uporabniki se bodo mogli ponovno vpisati.
+ * Change these to different unique phrases!
+ * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
+ * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
  *
  * @since 2.6.0
  */
@@ -54,37 +58,32 @@ define('NONCE_SALT',       'put your unique phrase here');
 /**#@-*/
 
 /**
- * Predpona (prefix) WordPress Tabel
+ * WordPress Database Table prefix.
  *
- * V eni bazi lahko imate več namestitev WordPress-a, če ima vsaka svojo predpono.
- * Samo številke, črke in podčrtaji!
+ * You can have multiple installations in one database if you give each
+ * a unique prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix  = 'wp_';
 
 /**
- * WordPress Jezik.
+ * For developers: WordPress debugging mode.
  *
- * Spremenite to, da spremenite jezik WordPress-a. Pripadajoča MO datoteka za izbran
- * jezik mora biti nameščena v "wp-content/languages". Trenutno je nameščen paket
- * sl_SI.mo v wp-content/languages in WPLANG nastavljen na 'si_SL', kar omogoča
- * podporo slovenščine.
- */
-define('WPLANG', 'sl_SI');
-
-/**
- * Za razvijalce: WordPress Način Razhroščevanja
+ * Change this to true to enable the display of notices during development.
+ * It is strongly recommended that plugin and theme developers use WP_DEBUG
+ * in their development environments.
  *
- * Spremenite to v true, da omogočite prikaz obvestil med razvijanju.
- * Priporočeno je, da razvijalci tem in vtičnikov uporabijo WP_DEBUG
- * v njihovem razvijalnem okolju..
+ * For information on other constants that can be used for debugging,
+ * visit the Codex.
+ *
+ * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
 
-/* To je vse. Veselo blogganje!  */
+/* That's all, stop editing! Happy blogging. */
 
-/** Absolutna pot v WordPress mapo */
+/** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-/** Nastavi WordPress in vključene datoteke. */
+/** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

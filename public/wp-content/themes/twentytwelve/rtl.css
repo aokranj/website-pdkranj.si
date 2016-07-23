@@ -4,7 +4,7 @@ Description: Adds support for languages written in a Right To Left (RTL) directi
 It's easy, just a matter of overwriting all the horizontal positioning attributes
 of your CSS stylesheet in a separate stylesheet file named rtl.css.
 
-See http://codex.wordpress.org/Right_to_Left_Language_Support
+See https://codex.wordpress.org/Right_to_Left_Language_Support
 */
 
 
@@ -117,7 +117,7 @@ article.format-link .entry-content {
 	left: 0;
 	right: auto;
 }
-.comments-area li.bypostauthor cite span {
+.comments-area .bypostauthor cite span {
 	margin-right: 5px;
 	margin-right: 0.357142857rem;
 	margin-left: auto;

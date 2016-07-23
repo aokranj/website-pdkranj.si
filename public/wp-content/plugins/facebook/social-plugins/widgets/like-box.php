@@ -81,7 +81,7 @@ class Facebook_Like_Box_Widget extends WP_Widget {
 			try {
 				$page_info = Facebook_WP_Extend::graph_api_with_app_access_token( '/fql', 'GET', array( 'q' => 'SELECT page_url FROM page WHERE ' . $where ) );
 			} catch ( WP_FacebookApiException $e ) {
-				break;
+				//break;
 			}
 			unset( $where );
 
@@ -131,7 +131,7 @@ class Facebook_Like_Box_Widget extends WP_Widget {
 		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
 		if ( $title )
-			echo $before_title . esc_html( $title ) . $after_title;
+			echo $before_title . $title . $after_title;
 
 		echo $box_html;
 

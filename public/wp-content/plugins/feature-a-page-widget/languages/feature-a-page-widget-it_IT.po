@@ -1,0 +1,250 @@
+# Copyright (C) 2014 Feature a Page Widget
+# This file is distributed under the same license as the Feature a Page Widget package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Feature a Page Widget 2.0.0-beta2\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/feature-a-page-widget\n"
+"POT-Creation-Date: 2015-07-08 10:52+0200\n"
+"PO-Revision-Date: 2015-07-09 12:32+0200\n"
+"Last-Translator: Maciej Gryniuk <maciejka45@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.2\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: D:/Programy/xampp/apps/wordpress/htdocs/wp-content/plugins/"
+"feature-a-page-widget/inc\n"
+"Language: it\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: feature-a-page-widget.php:4
+msgid "Feature a Page, Post, or Custom Post Type in any sidebar."
+msgstr "Evidenzia una Pagina, un Articolo, o gli Aritcoli Custom Type in una sidebar."
+
+#: fpw_help.php:28
+msgid "Feature a Page Widget"
+msgstr ""
+
+#: fpw_help.php:29
+msgid "Feature a Page Widget Help"
+msgstr "Feature a Page Widget Aiuto"
+
+#: fpw_help.php:29
+#, php-format
+msgid ""
+"The Feature a Page Widget uses the \"Featured Image\" and \"Excerpt\" fields "
+"<strong>which are saved and edited on the page you want to feature</strong>. The "
+"widget indicates whether those fields are set in the \"Page to Feature\" select list "
+"(%1$s) and widget form (%2$s / %3$s)."
+msgstr ""
+"Feature a Page Widget utilizza i valori dei campi \"Immagine in evidenza\" e "
+"\"Riassunto\" <strong>della Pagina che vuoi evidenziare</strong>. Il widget indica "
+"se questi campi sono stati impostati nella Pagina, nel campo a lista \"Pagina da "
+"evidenziare\" mediante i simboli (%1$s), e nel pannello del widget con i simboli "
+"(%2$s / %3$s)."
+
+#: fpw_help.php:29
+#, php-format
+msgid ""
+" If you need to add or modify the Featured Image or Excerpt, click the edit link "
+"(%4$s) in the widget settings form to edit the page in a new tab or window."
+msgstr ""
+"Se devi aggiungere o modificare l'Immagine in evidenza o il Riassunto, puoi farlo "
+"direttamente dal pannello delle impostazioni del widget cliccando sul link modifica "
+"(%4$s), la pagina da modificare verrà aperta in una nuova tab o finestra."
+
+#: fpw_help.php:29
+msgid "Frequently Asked Questions &amp; Support"
+msgstr "Domande frequenti &amp; Assistenza"
+
+#: fpw_help.php:29
+#, php-format
+msgid ""
+"For information about setting the Excerpt and Featured Image, changing the widget's "
+"look &amp; feel, modifying the widget output, and more, please visit the plugin's <a "
+"target=\"_blank\" href=\"http://wordpress.org/extend/plugins/feature-a-page-widget/"
+"faq/\">FAQ page</a> or <a href=\"%5$s\" target=\"_blank\">readme.txt</a>."
+msgstr ""
+"Per informazioni su come impostare il Riassunto e l'Immagine in evidenza, cambiare "
+"l'aspetto del widget, modificare l'output del widget, e moltro altro, visita la <a "
+"target=\"_blank\" href=\"http://wordpress.org/extend/plugins/feature-a-page-widget/"
+"faq/\">pagina FAQ</a> oppure il file <a href=\"%5$s\" target=\"_blank\">readme.txt</"
+"a>."
+
+#: fpw_help.php:29
+msgid ""
+"If you are still having problems with the widget after reading the above help text "
+"and plugin FAQ, you can open a thread on <a href=\"http://wordpress.org/support/"
+"plugin/feature-a-page-widget\" target=\"_blank\">the plugin's support forum</a>."
+msgstr ""
+"Se continui ad avere problemi e non hai trovato una soluzione nel testo di aiuto o "
+"nelle FAQ del plugin, puoi aprire un thread su <a href=\"http://wordpress.org/"
+"support/plugin/feature-a-page-widget\" target=\"_blank\">sul forum di supporto dei "
+"plugin</a>."
+
+#: fpw_help.php:29
+msgid "Feedback, &amp; Future Versions"
+msgstr "Feedback, &amp; Versioni successive"
+
+#: fpw_help.php:29
+msgid ""
+"Feature additions and improvements to the plugin are primarily made in response to "
+"user feedback. Once you have used the plugin, please consider:"
+msgstr ""
+"Funzionalità aggiunte e miglioramenti del plugin sono stati principalmente eseguiti "
+"sulla base delle richieste dei feedback degli utenti. Una volta che utilizzi il "
+"plugin, per cortesia considera:"
+
+#: fpw_help.php:29
+msgid "Voting for and suggesting new features"
+msgstr "Per votare e suggerire nuove funzionalità"
+
+#: fpw_help.php:29
+msgid "Submitting feedback to the author"
+msgstr "Invia un feedback all'autore"
+
+#: fpw_help.php:29
+msgid "Rating and reviewing the plugin on WordPress.org"
+msgstr "Valutazioni e revisioni del plugin su WordPress.org"
+
+#: fpw_help.php:30
+msgid "\"Featured Image\" Icon"
+msgstr "\"Immagine in evidenza\" Icon"
+
+#: fpw_help.php:30
+msgid "\"Excerpt\" Icon"
+msgstr "\"Riassunto\" Icon"
+
+#: fpw_help.php:31
+msgid "\"Yes\" Icon"
+msgstr "\"Si\" Icon"
+
+#: fpw_help.php:32
+msgid "\"No\" Icon"
+msgstr "\"No\" Icona"
+
+#: fpw_help.php:33
+msgid "\"Edit\" Icon"
+msgstr "\"Modifica\" Icona"
+
+#: fpw_helper_functions.php:145
+msgid "Wrapped Image"
+msgstr "Immagine e Testo"
+
+#: fpw_helper_functions.php:146
+msgid "Banner Image"
+msgstr "Immagine Banner"
+
+#: fpw_helper_functions.php:147
+msgid "Big Image"
+msgstr "Immagine Grande"
+
+#: fpw_template_filters.php:136
+msgid "Read More"
+msgstr "Leggi più"
+
+#: fpw_widget.class.php:18
+msgid "Feature a Page"
+msgstr ""
+
+#: fpw_widget.class.php:19
+msgid "A widget to feature a single page"
+msgstr "Un widget che evidenzia una singola pagina "
+
+#: fpw_widget.class.php:46
+msgid "Widget Title"
+msgstr "Titolo Widget"
+
+#: fpw_widget.class.php:53
+msgid "Page to Feature"
+msgstr "Pagina da evidenziare"
+
+#: fpw_widget.class.php:54
+msgid "Select Featured Page&hellip;"
+msgstr "Seleziona la Pagina da evidenziare&hellip"
+
+#: fpw_widget.class.php:62
+msgid ""
+"This widget will display the Title, Featured Image, and Excerpt from the page you "
+"select. Make sure those fields are set for any page you wish to feature."
+msgstr ""
+"Questo widget mostra il Titolo, l'Immagine in evidenza, e il Riassunto della Pagina "
+"selezionata. Assicurarsi che questi campi sono impostati per ogni pagina che si "
+"desidera evidenziare."
+
+#: fpw_widget.class.php:69
+msgid "Featured Page Status"
+msgstr "Stato della Pagina in evidenza"
+
+#: fpw_widget.class.php:76
+msgid "What is this?"
+msgstr "Che cos'è questo?"
+
+#: fpw_widget.class.php:82
+msgid "Edit Page in New Window"
+msgstr "Modifica la Pagina in una nuova finestra"
+
+#: fpw_widget.class.php:89
+msgid "Featured Image:"
+msgstr "Immagine in evidenza:"
+
+#: fpw_widget.class.php:91 fpw_widget.class.php:103
+msgid "Set"
+msgstr "Imposta"
+
+#: fpw_widget.class.php:95 fpw_widget.class.php:107
+msgid "Missing"
+msgstr "Mancante"
+
+#: fpw_widget.class.php:101
+msgid "Excerpt:"
+msgstr "Riassunto:"
+
+#: fpw_widget.class.php:125
+msgid "Layout Options"
+msgstr "Opzioni Layout"
+
+#: fpw_widget.class.php:150
+msgid ""
+"Your theme is using an outdated widget template. It will continue to work, but new "
+"widget options added in Version 2.0 will not. Please rename or remove the custom "
+"template and update to one or more new templates."
+msgstr ""
+"Se il tuo tema utilizza un widget template obsoleto, è possibile continuare ad "
+"utilizzarlo, ma le nuove opzioni aggiunte nella Versione 2.0 del widget non "
+"funzioneranno. Quindi devi rinominare o rimuovere il template personalizzato e "
+"aggiornarlo con un nuovo template."
+
+#: fpw_widget.class.php:150
+msgid ""
+"<a href=\"http://mrwweb.com/wordpress-plugins/feature-a-page-widget/version-2-"
+"documentation/\" target=\"_blank\">Full Version 2.0 Documentation</a>"
+msgstr ""
+"<a href=\"http://mrwweb.com/wordpress-plugins/feature-a-page-widget/version-2-"
+"documentation/\" target=\"_blank\">Documentazione Full Version 2.0</a>"
+
+#: fpw_widget.class.php:161
+msgid "Show Page Elements"
+msgstr "Mostra Elementi Pagina"
+
+#: fpw_widget.class.php:164
+msgid "Page Title"
+msgstr "Titolo Pagina"
+
+#: fpw_widget.class.php:165
+msgid "Featured Image"
+msgstr "Immagine in evidenza"
+
+#: fpw_widget.class.php:166
+msgid "Excerpt"
+msgstr "Riassunto"
+
+#: fpw_widget.class.php:167
+msgid "\"Read More\" Link"
+msgstr "\"Leggi più\" Link"
+
+#: fpw_widget.class.php:174
+msgid "Show "
+msgstr "Mostra"

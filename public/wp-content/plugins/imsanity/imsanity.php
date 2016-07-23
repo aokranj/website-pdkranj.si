@@ -4,21 +4,24 @@ Plugin Name: Imsanity
 Plugin URI: http://verysimple.com/products/imsanity/
 Description: Imsanity stops insanely huge image uploads
 Author: Jason Hinkle
-Version: 2.2.5
+Version: 2.3.6
 Author URI: http://verysimple.com/
 */
 
-define('IMSANITY_VERSION','2.2.5');
+define('IMSANITY_VERSION','2.3.6');
 define('IMSANITY_SCHEMA_VERSION','1.1');
 
-define('IMSANITY_DEFAULT_MAX_WIDTH',1024);
-define('IMSANITY_DEFAULT_MAX_HEIGHT',1024);
+define('IMSANITY_DEFAULT_MAX_WIDTH',2048);
+define('IMSANITY_DEFAULT_MAX_HEIGHT',2048);
 define('IMSANITY_DEFAULT_BMP_TO_JPG',1);
+define('IMSANITY_DEFAULT_PNG_TO_JPG',0);
 define('IMSANITY_DEFAULT_QUALITY',90);
 
 define('IMSANITY_SOURCE_POST',1);
 define('IMSANITY_SOURCE_LIBRARY',2);
 define('IMSANITY_SOURCE_OTHER',4);
+
+if (!defined('IMSANITY_AJAX_MAX_RECORDS')) define('IMSANITY_AJAX_MAX_RECORDS',250);
 
 /**
  * Load Translations
@@ -32,6 +35,15 @@ include_once(plugin_dir_path(__FILE__).'libs/utils.php');
 include_once(plugin_dir_path(__FILE__).'settings.php');
 include_once(plugin_dir_path(__FILE__).'ajax.php');
 
+/**
+ * Fired with the WordPress upload dialog is displayed
+ */
+function imsanity_upload_ui()
+{
+	// TODO: output a message on the upload form showing that imanity is enabled
+	// echo '<p class="imsanity-upload-message">' . __("Imsanity plugin is enabled.  Add the text 'noresize' to the filename to bypass.") . '</p>';	
+}
+
 
 /**
  * Inspects the request and determines where the upload came from
@@ -39,9 +51,18 @@ include_once(plugin_dir_path(__FILE__).'ajax.php');
  */
 function imsanity_get_source()
 {
-	return array_key_exists('post_id', $_REQUEST)
-		?  ($_REQUEST['post_id'] == 0 ? IMSANITY_SOURCE_LIBRARY : IMSANITY_SOURCE_POST)
-		: IMSANITY_SOURCE_OTHER;
+
+	$id = array_key_exists('post_id', $_REQUEST) ? $_REQUEST['post_id'] : '';
+	$action = array_key_exists('action', $_REQUEST) ? $_REQUEST['action'] : '';
+	
+	// a post_id indicates image is attached to a post
+	if ($id > 0) return IMSANITY_SOURCE_POST; 
+	
+	// post_id of 0 is 3.x otherwise use the action parameter
+	if ($id === 0 || $action == 'upload-attachment') return IMSANITY_SOURCE_LIBRARY;
+	
+	// we don't know where this one came from but $_REQUEST['_wp_http_referer'] may contain info
+	return IMSANITY_SOURCE_OTHER;
 }
 
 /**
@@ -81,18 +102,30 @@ function imsanity_handle_upload($params)
 {
 	/* debug logging... */
 	// file_put_contents ( "debug.txt" , print_r($params,1) . "\n" );
+	
+	// if "noresize" is included in the filename then we will bypass imsanity scaling
+	if (strpos($params['file'],'noresize') !== false) return $params;
 
-	$option_convert_bmp = imsanity_get_option('imsanity_bmp_to_jpg',IMSANITY_DEFAULT_BMP_TO_JPG);
-
-	if ($params['type'] == 'image/bmp' && $option_convert_bmp)
-	{
-		$params = imsanity_bmp_to_jpg($params);
+	// if preferences specify so then we can convert an original bmp or png file into jpg
+	if ($params['type'] == 'image/bmp' && imsanity_get_option('imsanity_bmp_to_jpg',IMSANITY_DEFAULT_BMP_TO_JPG)) {
+		$params = imsanity_convert_to_jpg('bmp',$params);
+	}
+	
+	if ($params['type'] == 'image/png' && imsanity_get_option('imsanity_png_to_jpg',IMSANITY_DEFAULT_PNG_TO_JPG)) {
+		$params = imsanity_convert_to_jpg('png',$params);
 	}
 
 	// make sure this is a type of image that we want to convert and that it exists
 	// @TODO when uploads occur via RPC the image may not exist at this location
 	$oldPath = $params['file'];
 
+	// @HACK not currently working
+	// @see https://wordpress.org/support/topic/images-dont-resize-when-uploaded-via-mobile-device
+// 	if (!file_exists($oldPath)) {
+// 		$ud = wp_upload_dir();
+// 		$oldPath = $ud['path'] . DIRECTORY_SEPARATOR . $oldPath;
+// 	}
+	
 	if ( (!is_wp_error($params)) && file_exists($oldPath) && in_array($params['type'], array('image/png','image/gif','image/jpeg')))
 	{
 
@@ -129,19 +162,28 @@ function imsanity_handle_upload($params)
 			/* uncomment to debug error handling code: */
 			// $resizeResult = new WP_Error('invalid_image', __(print_r($_REQUEST)), $oldPath);
 
-			// regardless of success/fail we're going to remove the original upload
-			unlink($oldPath);
-
 			if (!is_wp_error($resizeResult))
 			{
 				$newPath = $resizeResult;
-
-				// remove original and replace with re-sized image
-				rename($newPath, $oldPath);
+				
+				if (filesize($newPath) <  filesize($oldPath)) {
+					// we saved some file space. remove original and replace with resized image
+					unlink($oldPath);
+					rename($newPath, $oldPath);
+				}
+				else {
+					// theresized image is actually bigger in filesize (most likely due to jpg quality).
+					// keep the old one and just get rid of the resized image
+					unlink($newPath);
+				}
 			}
 			else
 			{
 				// resize didn't work, likely because the image processing libraries are missing
+				
+				// remove the old image so we don't leave orphan files hanging around
+				unlink($oldPath);
+				
 				$params = wp_handle_upload_error( $oldPath ,
 					sprintf( __("Oh Snap! Imsanity was unable to resize this image "
 					. "for the following reason: '%s'
@@ -159,35 +201,54 @@ function imsanity_handle_upload($params)
 
 
 /**
- * If the uploaded image is a bmp this function handles the details of converting
- * the bmp to a jpg, saves the new file and adjusts the params array as necessary
+ * read in the image file from the params and then save as a new jpg file.
+ * if successful, remove the original image and alter the return
+ * parameters to return the new jpg instead of the original
  *
+ * @param string 'bmp' or 'png'
  * @param array $params
+ * @return array altered params
  */
-function imsanity_bmp_to_jpg($params)
+function imsanity_convert_to_jpg($type,$params)
 {
 
-	// read in the bmp file and then save as a new jpg file.
-	// if successful, remove the original bmp and alter the return
-	// parameters to return the new jpg instead of the bmp
+	$img = null;
+	
+	if ($type == 'bmp') {
+		include_once('libs/imagecreatefrombmp.php');
+		$img = imagecreatefrombmp($params['file']);
+	}
+	elseif ($type == 'png') {
+		
+		if(!function_exists('imagecreatefrompng')) {
+			return wp_handle_upload_error( $params['file'],'imsanity_convert_to_jpg requires gd library enabled');
+		}
 
-	include_once('libs/imagecreatefrombmp.php');
+		$img = imagecreatefrompng($params['file']);
+		// convert png transparency to white
+		$bg = imagecreatetruecolor(imagesx($img), imagesy($img));
+		imagefill($bg, 0, 0, imagecolorallocate($bg, 255, 255, 255));
+		imagealphablending($bg, TRUE);
+		imagecopy($bg, $img, 0, 0, 0, 0, imagesx($img), imagesy($img));
 
-	$bmp = imagecreatefrombmp($params['file']);
+	}
+	else {
+		return wp_handle_upload_error( $params['file'],'Unknown image type specified in imsanity_convert_to_jpg');
+	}
 
-	// we need to change the extension from .bmp to .jpg so we have to ensure it will be a unique filename
+	// we need to change the extension from the original to .jpg so we have to ensure it will be a unique filename
 	$uploads = wp_upload_dir();
 	$oldFileName = basename($params['file']);
-	$newFileName = basename(str_ireplace(".bmp", ".jpg", $oldFileName));
+	$newFileName = basename(str_ireplace(".".$type, ".jpg", $oldFileName));
 	$newFileName = wp_unique_filename( $uploads['path'], $newFileName );
-
+	
 	$quality = imsanity_get_option('imsanity_quality',IMSANITY_DEFAULT_QUALITY);
-
-	if (imagejpeg($bmp,$uploads['path'] . '/' . $newFileName, $quality))
+	
+	if (imagejpeg($img,$uploads['path'] . '/' . $newFileName, $quality))
 	{
 		// conversion succeeded.  remove the original bmp & remap the params
 		unlink($params['file']);
-
+	
 		$params['file'] = $uploads['path'] . '/' . $newFileName;
 		$params['url'] = $uploads['url'] . '/' . $newFileName;
 		$params['type'] = 'image/jpeg';
@@ -195,18 +256,24 @@ function imsanity_bmp_to_jpg($params)
 	else
 	{
 		unlink($params['file']);
-
+	
 		return wp_handle_upload_error( $oldPath,
-			__("Oh Snap! Imsanity was Unable to process the BMP file.  "
-			."If you continue to see this error you may need to disable the BMP-To-JPG "
-			."feature in Imsanity settings.", 'imsanity' ) );
+				__("Oh Snap! Imsanity was Unable to process the $type file.  "
+						."If you continue to see this error you may need to disable the $type-To-JPG "
+						."feature in Imsanity settings.", 'imsanity' ) );
 	}
-
+	
 	return $params;
 }
 
+
 /* add filters to hook into uploads */
 add_filter( 'wp_handle_upload', 'imsanity_handle_upload' );
+
+/* add filters/actions to customize upload page */
+add_action('post-upload-ui', 'imsanity_upload_ui');
+
+
 
 
 // TODO: if necessary to update the post data in the future...

@@ -57,22 +57,20 @@ jQuery(document).ready(function($) {
 
 	}
 
-	// Fire off chosen on save-widget callback, else the vanilla select reappears.
-	// Thanks http://www.johngadbois.com/adding-your-own-callbacks-to-wordpress-ajax-requests/
-	$(document).ajaxSuccess(function(e, xhr, settings) {
+	// 3.9+
+	$( document ).on( 'widget-updated', fpwActivateChosen );
+	$( document ).on( 'widget-added', fpwActivateChosen );
 
-		if(settings.data.search('action=save-widget') != -1 && settings.data.search('id_base=fpw_widget') != -1) {
-			// as of WP 3.6, the activeElement isn't within the widget anymore :( so this doesn't work.
-			// $widget = $(e.currentTarget.activeElement).parents('.widget');
-			// fpwSetChosen( $widget );
-			fpwActivateChosen();
-		}
+	// PageOrigins Site Builder Support
+	// https://siteorigin.com/docs/page-builder/widget-compatibility/
+	$(document).on('panelsopen', function(e) {
+		var dialog = $(e.target);
+		
+		// Check that this is for our widget class
+		if( !dialog.has('.fpw-featured-page-id') ) return;
 
-		if(settings.data.search('action=widgets-order') != -1) {
-			fpwActivateChosen();
-		}
-
-	});	
+		fpwSetChosen( this );
+	});
 
 	/* Thanks to Codestyling Localization for this snippet to trigger contextual help */
 	$('.fpw-help-button').live('click', function(event) {
