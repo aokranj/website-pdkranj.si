@@ -1,3 +1,18 @@
+### Redirect www.pdkranj.si to pdkranj.si
+#
+RewriteCond   %{HTTP_HOST}      ^pdkranj.si$
+RewriteRule   ^/?(.*)           https://www.pdkranj.si/$1   [R=302,L]
+
+
+
+### Redirect all traffic to HTTPS
+#
+RewriteCond   %{HTTP_HOST}    ^(www.)?pdkranj.si$
+RewriteCond   %{HTTPS}        off
+RewriteRule   ^/?(.*)         https://www.pdkranj.si%{REQUEST_URI}   [R=302,L]
+
+
+
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
