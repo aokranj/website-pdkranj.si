@@ -1,3 +1,2 @@
-uploads.tar.gz
-/public/wp-config.php
+/conf/wp-config.php
 /public/wp-content/uploads/*

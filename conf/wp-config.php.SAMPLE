@@ -1,0 +1,45 @@
+<?php
+
+
+
+/*
+ * Define/force site URI
+ */
+define('WP_HOME',    'https://...');
+define('WP_SITEURL', 'https://...');
+
+
+
+/*
+ * The site is behind the SSL-terminating proxy (ingress).
+ */
+if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) {
+    $_SERVER['HTTPS'] = 'on';
+}
+
+
+
+/*
+ * Database access
+ */
+define('DB_HOST',     '');
+define('DB_NAME',     '');
+define('DB_USER',     '');
+define('DB_PASSWORD', '');
+
+
+
+/*
+ * Authentication Unique Keys and Salts.
+ *
+ * May be generated here:
+ * https://api.wordpress.org/secret-key/1.1/salt/
+ */
+define('AUTH_KEY',         '');
+define('SECURE_AUTH_KEY',  '');
+define('LOGGED_IN_KEY',    '');
+define('NONCE_KEY',        '');
+define('AUTH_SALT',        '');
+define('SECURE_AUTH_SALT', '');
+define('LOGGED_IN_SALT',   '');
+define('NONCE_SALT',       '');
