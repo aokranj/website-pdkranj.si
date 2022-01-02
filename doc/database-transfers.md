@@ -2,26 +2,52 @@
 
 A short guide how to migrate one environement's database into another environment (i.e. prod to stg).
 
+Prerequisites:
+- Access to target environment
+- Access to source environment from the target environment
+- If target environment is accessible via SSH, authentication forwarding must be enabled
 
 
-## Steps
 
-Step #1 - dump the production database:
+## Steps (stg to dev)
+
+Step #1 - Go to your dev environment:
 ```
-ssh pd-prod@www.pdkranj.si
-cd www/www.pdkranj.si
-
-./sbin/db-dump > pd-prod.sql
-```
-Now transfer the generated dump file over to the stg environment.
-
-Step #2 - import the database dump into the staging database:
-```
-./sbin/wp db import pd-prod.sql
+cd website-pdkranj.si
 ```
 
-Step #3 - adjust the URLs embedded in the database content:
+Alternative step #1 - SSH into your dev environment with auth forwarding enabled (`-A`):
+```
+ssh your-username@your-env.dev.pdkranj.si -A
+cd www/your-env.dev.pdkranj.si
+```
+
+Step #2 - dump+import the database in one go:
+```
+ssh pd-stg@stg.pdkranj.si ./www/stg.pdkranj.si/sbin/db-dump | ./sbin/wp db import -
+```
+
+Step #3 - fix the URLs in the new database copy
+```
+./sbin/wp search-replace 'https://stg.pdkranj.si' 'https://your-env.dev.pdkranj.si'
+```
+
+
+
+## Steps (prod to stg)
+
+Step #1 - SSH into the stg environment with auth forwarding enabled (`-A`):
+```
+ssh pd-stg@stg.pdkranj.si -A
+cd www/stg.pdkranj.si
+```
+
+Step #2 - dump+import the database in one go:
+```
+ssh pd-prod@www.pdkranj.si ./www/www.pdkranj.si/sbin/db-dump | ./sbin/wp db import -
+```
+
+Step #3 - fix the URLs in the new database copy
 ```
 ./sbin/wp search-replace 'https://www.pdkranj.si' 'https://stg.pdkranj.si'
 ```
-After this is done, you'll probably need to transfer the `public/wp-content/uploads` content too.
