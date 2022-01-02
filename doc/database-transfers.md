@@ -6,6 +6,7 @@ Prerequisites:
 - Access to target environment
 - Access to source environment from the target environment
 - If target environment is accessible via SSH, authentication forwarding must be enabled
+- Source and target environment must have the same WP code deployed
 
 
 
