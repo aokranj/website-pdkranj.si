@@ -14,9 +14,11 @@ set -o pipefail
 #
 ./sbin/wp cli             update
 ./sbin/wp core            update
-./sbin/wp language core   update
 ./sbin/wp plugin          update --all
 ./sbin/wp theme           update --all
+./sbin/wp language core   update
+./sbin/wp language plugin update --all
+./sbin/wp language theme  update --all
 
 
 
