@@ -16,17 +16,22 @@
 	left: 18px;
 }
 
-.bstw-links .icon16:before {
+.bstw-links .dashicons-before:before {
 	padding: 0;
 }
 
-.bstw-links .icon16 {
+.bstw-links .dashicons-before {
 	float: right;
 	padding: 3px 6px;
 	margin: -6px -8px 0 -2px;
 }
 
-.rtl .bstw-links .icon16 {
+.bstw-links .dashicons-before:focus {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.rtl .bstw-links .dashicons-before {
 	float: left;
 	margin: -6px -2px 0 -8px;
 }
@@ -79,11 +84,20 @@ div[id*="black-studio-tinymce"] .wp-editor-wrap {
 }
 
 
-/* Put TinyMCE panels foreground in Customizer */
+/* Put TinyMCE panels foreground */
 
-.wp-customizer .mce-floatpanel.mce-popover,
-.wp-customizer .mce-panel.mce-menu {
+.wp-customizer #mce-modal-block,
+.wp-admin #mce-modal-block {
 	z-index: 500000 !important;
+}
+
+.wp-customizer .mce-menu,
+.wp-customizer .mce-popover,
+.wp-customizer .mce-window,
+.wp-admin .mce-menu,
+.wp-admin .mce-popover,
+.wp-admin .mce-window {
+	z-index: 500010 !important;
 }
 
 
@@ -128,6 +142,21 @@ div[id*="black-studio-tinymce"] .mce-wp-fullscreen {
 .wp-customizer .ui-autocomplete.wplink-autocomplete,
 .wp-customizer div.mce-inline-toolbar-grp {
 	z-index: 500025;
+}
+
+/* Fix z-index to avoid the (open) widget go behind the admin menu on small screen */
+
+.open.widget[id*="black-studio-tinymce"] {
+	z-index: 100000 !important;
+}
+
+
+/* Fix for wide widgets left positioning on Customizer with large screens */
+
+@media (min-width: 1666px) {
+	.customize-control-widget_form.wide-widget-control .widget-inside {
+		left: 18%;
+	}
 }
 
 

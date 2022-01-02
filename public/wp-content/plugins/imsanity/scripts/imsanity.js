@@ -2,67 +2,109 @@
  * imsanity admin javascript functions
  */
 
-// this must run inline so that the script is detected correctly
-var imsanity_scripts = document.getElementsByTagName("script");
-var imsanity_script_url = imsanity_scripts[imsanity_scripts.length-1].src;
+jQuery(document).ready(function($) {$(".fade").fadeTo(5000,1).fadeOut(3000);});
+
+// Handle a manual resize from the media library.
+jQuery(document).on('click', '.imsanity-manual-resize', function() {
+	var post_id = jQuery(this).data('id');
+	var imsanity_nonce = jQuery(this).data('nonce');
+	jQuery('#imsanity-media-status-' + post_id ).html( imsanity_vars.resizing );
+	jQuery.post(
+		ajaxurl,
+		{_wpnonce: imsanity_nonce, action: 'imsanity_resize_image', id: post_id},
+		function(response) {
+			var target = jQuery('#imsanity-media-status-' + post_id );
+			try {
+				var result = JSON.parse(response);
+				target.html(result['message']);
+			} catch(e) {
+				target.html(imsanity_vars.invalid_response);
+				if (console) {
+					console.warn(post_id + ': '+ e.message);
+					console.warn('Invalid JSON Response: ' + response);
+				}
+			}
+		}
+	);
+	return false;
+});
+
+// Handle an original image removal request from the media library.
+jQuery(document).on('click', '.imsanity-manual-remove-original', function() {
+	var post_id = jQuery(this).data('id');
+	var imsanity_nonce = jQuery(this).data('nonce');
+	jQuery('#imsanity-media-status-' + post_id ).html( imsanity_vars.resizing );
+	jQuery.post(
+		ajaxurl,
+		{_wpnonce: imsanity_nonce, action: 'imsanity_remove_original', id: post_id},
+		function(response) {
+			var target = jQuery('#imsanity-media-status-' + post_id );
+			try {
+				var result = JSON.parse(response);
+				if (! result['success']) {
+					target.html(imsanity_vars.removal_failed);
+				} else {
+					target.html(imsanity_vars.removal_succeeded);
+				}
+			} catch(e) {
+				target.html(imsanity_vars.invalid_response);
+				if (console) {
+					console.warn(post_id + ': '+ e.message);
+					console.warn('Invalid JSON Response: ' + response);
+				}
+			}
+		}
+	);
+	return false;
+});
+
+jQuery(document).on('submit', '#imsanity-bulk-stop', function() {
+	jQuery(this).hide();
+	imsanity_vars.stopped = true;
+	imsanity_vars.attachments = [];
+	jQuery('#imsanity_loading').html(imsanity_vars.operation_stopped);
+	jQuery('#imsanity_loading').show();
+	return false;
+});
 
 /**
  * Begin the process of re-sizing all of the checked images
  */
-function imsanity_resize_images()
-{
-	var images = [];
-	jQuery('.imsanity_image_cb:checked').each(function(i) {
-       images.push(this.value);
-    });
-
-	var target = jQuery('#resize_results'); 
-	target.html('');
-	target.show();
-	jQuery(document).scrollTop(target.offset().top);
-
+function imsanity_resize_images() {
 	// start the recursion
-	imsanity_resize_next(images,0);
+	imsanity_resize_next(0);
 }
 
 /**
- * Detect the base url for the imsanity plugin folder
- * @returns
- */
-function imsanity_get_base_url()
-{
-	return imsanity_script_url.substring(0,imsanity_script_url.indexOf('scripts/imsanity.js'));
-}
-
-
-/** 
  * recursive function for resizing images
  */
-function imsanity_resize_next(images,next_index)
-{
-	if (next_index >= images.length) return imsanity_resize_complete();
-	
+function imsanity_resize_next(next_index) {
+	if (next_index >= imsanity_vars.attachments.length) return imsanity_resize_complete();
+	var total_images = imsanity_vars.attachments.length;
+	var target = jQuery('#resize_results');
+	target.show();
+
 	jQuery.post(
 		ajaxurl, // (defined by wordpress - points to admin-ajax.php)
-		{action: 'imsanity_resize_image', id: images[next_index]}, 
-		function(response) 
-		{
+		{_wpnonce: imsanity_vars._wpnonce, action: 'imsanity_resize_image', id: imsanity_vars.attachments[next_index], resumable: 1},
+		function (response) {
 			var result;
-			var target = jQuery('#resize_results'); 
-			
+			jQuery('#bulk-resize-beginning').hide();
+
 			try {
 				result = JSON.parse(response);
-				target.append('<div>' + (next_index+1) + ' of ' + images.length + ' &gt;&gt; ' + result['message'] +'</div>');
+				target.append('<div>' + (next_index+1) + '/' + total_images + ' &gt;&gt; ' + result['message'] +'</div>');
+			} catch(e) {
+				target.append('<div>' + imsanity_vars.invalid_response + '</div>');
+				if (console) {
+					console.warn(imsanity_vars.attachments[next_index] + ': '+ e.message);
+					console.warn('Invalid JSON Response: ' + response);
+				}
 			}
-			catch(e) {
-				target.append('<div>Error parsing server response for POST ' + images[next_index] + ': '+ e.message +'.  Check the console for details.</div>');
-				if (console) console.warn('Invalid JSON Response: ' + response);
-		    }
 
-			target.animate({scrollTop: target.height()}, 500);
-
+			target.animate({scrollTop: target.prop('scrollHeight')}, 200);
 			// recurse
-			imsanity_resize_next(images,next_index+1);
+			imsanity_resize_next(next_index+1);
 		}
 	);
 }
@@ -70,55 +112,57 @@ function imsanity_resize_next(images,next_index)
 /**
  * fired when all images have been resized
  */
-function imsanity_resize_complete()
-{
-	var target = jQuery('#resize_results'); 
-	target.append('<div>RESIZE COMPLETE</div>');
-	target.animate({scrollTop: target.height()}, 500);
+function imsanity_resize_complete() {
+	var target = jQuery('#resize_results');
+	if (! imsanity_vars.stopped) {
+		jQuery('#imsanity-bulk-stop').hide();
+		target.append('<div><strong>' + imsanity_vars.resizing_complete + '</strong></div>');
+		jQuery.post(
+			ajaxurl, // (global defined by wordpress - points to admin-ajax.php)
+			{_wpnonce: imsanity_vars._wpnonce, action: 'imsanity_bulk_complete'}
+		);
+	}
+	target.animate({scrollTop: target.prop('scrollHeight')});
 }
 
-/** 
- * ajax post to return all images that are candidates for resizing
+/**
+ * ajax post to return all images from the library
  * @param string the id of the html element into which results will be appended
  */
-function imsanity_load_images(container_id)
-{
-	var container = jQuery('#'+container_id);
-	container.html('<div id="imsanity_target" style="border: solid 2px #666666; padding: 10px; height: 0px; overflow: auto;" />');
+function imsanity_load_images() {
+	var imsanity_really_resize_all = confirm(imsanity_vars.resize_all_prompt);
+	if ( ! imsanity_really_resize_all ) {
+		return;
+	}
+	jQuery('#imsanity-examine-button').hide();
+	jQuery('.imsanity-bulk-text').hide();
+	jQuery('#imsanity-bulk-reset').hide();
+	jQuery('#imsanity_loading').show();
 
-	var target = jQuery('#imsanity_target');
+	jQuery.post(
+		ajaxurl, // (global defined by wordpress - points to admin-ajax.php)
+		{_wpnonce: imsanity_vars._wpnonce, action: 'imsanity_get_images', resume_id: imsanity_vars.resume_id},
+		function(response) {
+			var is_json = true;
+			try {
+				var images = JSON.parse(response);
+			} catch ( err ) {
+				is_json = false;
+			}
+			if ( ! is_json ) {
+				console.log( response );
+				return false;
+			}
 
-	target.html('<div><image src="'+ imsanity_get_base_url()  +'images/ajax-loader.gif" style="margin-bottom: .25em; vertical-align:middle;" /> Examining existing attachments.  This may take a few moments...</div>');
-
-	target.animate({height: [250,'swing']},500, function()
-	{
-		jQuery(document).scrollTop(container.offset().top);
-
-		jQuery.post(
-				ajaxurl, // (global defined by wordpress - points to admin-ajax.php)
-				{action: 'imsanity_get_images'}, 
-				function(response) 
-				{
-					var images = JSON.parse(response); 
-
-					if (images.length > 0)
-					{
-						target.html('<div><input id="imsanity_check_all" type="checkbox" checked="checked" onclick="jQuery(\'.imsanity_image_cb\').attr(\'checked\', this.checked);" /> Select All</div>');
-						
-						for (var i = 0; i < images.length; i++)
-						{
-							target.append('<div><input class="imsanity_image_cb" name="imsanity_images" value="' + images[i].id + '" type="checkbox" checked="checked" /> POST ' + images[i].id + ': ' + images[i].file +' ('+images[i].width+' x '+images[i].height+')</div>');
-						}
-
-						container.append('<p class="submit"><button class="button-primary" onclick="imsanity_resize_images();">Resize Checked Images...</button></p>');
-						container.append('<div id="resize_results" style="display: none; border: solid 2px #666666; padding: 10px; height: 250px; overflow: auto;" />');
-					}
-					else
-					{
-						target.html('<div>There are no existing attachments that require resizing.  Blam!</div>');
-						
-					}
-				}
-			);
-	});
+			jQuery('#imsanity_loading').hide();
+			if (images.length > 0) {
+				imsanity_vars.attachments = images;
+				imsanity_vars.stopped = false;
+				jQuery('#imsanity-bulk-stop').show();
+				imsanity_resize_images();
+			} else {
+				jQuery('#imsanity_loading').html('<div>' + imsanity_vars.none_found + '</div>');
+			}
+		}
+	);
 }

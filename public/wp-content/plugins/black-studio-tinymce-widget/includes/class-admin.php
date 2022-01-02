@@ -60,6 +60,9 @@ if ( ! class_exists( 'Black_Studio_TinyMCE_Admin' ) ) {
 			// Register action and filter hooks
 			add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
 			add_action( 'admin_init', array( $this, 'admin_init' ), 20 );
+			if ( strstr( $_SERVER['REQUEST_URI'], 'widget-types/black-studio-tinymce/encode' ) ) {
+				add_action( 'rest_api_init', array( $this, 'rest_api_init' ) );
+			}
 		}
 
 		/**
@@ -125,8 +128,28 @@ if ( ! class_exists( 'Black_Studio_TinyMCE_Admin' ) ) {
 				add_filter( 'tiny_mce_before_init', array( $this, 'tinymce_fix_rtl' ), 10 );
 				add_filter( 'tiny_mce_before_init', array( $this, 'tinymce_fullscreen' ), 10, 2 );
 				add_filter( 'quicktags_settings', array( $this, 'quicktags_fullscreen' ), 10, 2 );
+				if ( ! user_can_richedit() ) {
+					add_action( 'admin_notices', array( $this, 'visual_editor_disabled_notice' ) );
+				}
+				add_action( 'wp_ajax_bstw_visual_editor_disabled_dismiss_notice', array( $this, 'visual_editor_disabled_dismiss_notice' ) );
 				do_action( 'black_studio_tinymce_load' );
 			}
+		}
+
+		/**
+		 * Add actions and filters for block editor widgets
+		 *
+		 * @uses add_action()
+		 * @uses add_filter()
+		 *
+		 * @return void
+		 * @since 2.7.0
+		 */
+		public function rest_api_init() {
+			$this->init_links();
+			add_action( 'black_studio_tinymce_before_editor', array( $this, 'display_links' ) ); // consider donating if you remove links
+			add_action( 'black_studio_tinymce_editor', array( $this, 'editor' ), 10, 4 );
+			add_action( 'black_studio_tinymce_after_editor', array( $this, 'fix_the_editor_content_filter' ) );
 		}
 
 		/**
@@ -235,7 +258,7 @@ if ( ! class_exists( 'Black_Studio_TinyMCE_Admin' ) ) {
 		 * @since 2.0.0
 		 */
 		public function localize_script() {
-			$container_selectors = apply_filters( 'black_studio_tinymce_container_selectors', array(  'div.widget', 'div.widget-inside' ) );
+			$container_selectors = apply_filters( 'black_studio_tinymce_container_selectors', array(  'div.widget', 'div.widget-inside', 'div.wp-block-legacy-widget' ) );
 			$activate_events = apply_filters( 'black_studio_tinymce_activate_events', array() );
 			$deactivate_events = apply_filters( 'black_studio_tinymce_deactivate_events', array() );
 			$data = array(
@@ -271,7 +294,15 @@ if ( ! class_exists( 'Black_Studio_TinyMCE_Admin' ) ) {
 		 * @since 2.0.0
 		 */
 		public function editor( $text, $editor_id, $name = '', $type = 'visual' ) {
+			global $wp_styles;
+			if ( is_a( $wp_styles, 'WP_Styles' ) ) {
+				$wp_styles->remove( 'editor-buttons' );
+			}
 			wp_editor( $text, $editor_id, array( 'textarea_name' => $name, 'default_editor' => $type == 'visual' ? 'tmce' : 'html' ) );
+			if ( is_a( $wp_styles, 'WP_Styles' ) ) {
+				$suffix = SCRIPT_DEBUG ? '' : '.min';
+				$wp_styles->add( 'editor-buttons', "/wp-includes/css/editor$suffix.css", array( 'dashicons' ) );
+			}
 		}
 
 		/**
@@ -330,18 +361,16 @@ if ( ! class_exists( 'Black_Studio_TinyMCE_Admin' ) ) {
 		 */
 		public function init_links() {
 			$this->links = array(
-				/* translators: text used for plugin home link */
-				'https://wordpress.org/plugins/black-studio-tinymce-widget/' => __( 'Home', 'black-studio-tinymce-widget' ),
+				/* translators: text used for plugin page link */
+				'https://wordpress.org/plugins/black-studio-tinymce-widget/' => __( 'Plugin page', 'black-studio-tinymce-widget' ),
 				/* translators: text used for support faq link */
 				'https://wordpress.org/plugins/black-studio-tinymce-widget/faq/' => __( 'FAQ', 'black-studio-tinymce-widget' ),
 				/* translators: text used for support forum link */
 				'https://wordpress.org/support/plugin/black-studio-tinymce-widget' => __( 'Support', 'black-studio-tinymce-widget' ),
 				/* translators: text used for reviews link */
 				'https://wordpress.org/support/view/plugin-reviews/black-studio-tinymce-widget' => __( 'Rate', 'black-studio-tinymce-widget' ),
-				/* translators: text used for follow on twitter link */
-				'https://twitter.com/blackstudioita' => __( 'Follow', 'black-studio-tinymce-widget' ),
 				/* translators: text used for donation link */
-				'http://www.blackstudio.it/en/wordpress-plugins/black-studio-tinymce-widget/' => __( 'Donate', 'black-studio-tinymce-widget' ),
+				'https://www.blackstudio.it/en/wordpress-plugins/black-studio-tinymce-widget/' => __( 'Donate', 'black-studio-tinymce-widget' ),
 			);
 		}
 
@@ -361,7 +390,8 @@ if ( ! class_exists( 'Black_Studio_TinyMCE_Admin' ) ) {
 			}
 			echo "\t\t</span>\n";
 			/* translators: text used for the icon that shows the plugin links */
-			echo "\t\t<a class='bstw-links-icon icon16 icon-plugins' href='#' title='" . esc_attr( __( 'About Black Studio TinyMCE Widget plugin', 'black-studio-tinymce-widget' ) ) . "'></a>\n";
+			$link_title = esc_attr( __( 'About Black Studio TinyMCE Widget plugin', 'black-studio-tinymce-widget' ) );
+			echo "\t\t<a class='bstw-links-icon dashicons-before dashicons-admin-plugins' href='#' title='" . $link_title . "' aria-label='" . $link_title . "'></a>\n";
 			echo "\t</div>\n";
 		}
 
@@ -433,6 +463,44 @@ if ( ! class_exists( 'Black_Studio_TinyMCE_Admin' ) ) {
 				$settings['buttons'] = str_replace( ',fullscreen', '', $settings['buttons'] );
 			}
 			return $settings;
+		}
+
+		/**
+		 * Show admin notice when visual editor is disabled in current user's profile settings
+		 *
+		 * @uses get_user_meta()
+		 * @uses get_current_user_id()
+		 *
+		 * @return void
+		 * @since 2.4.0
+		 */
+		public function visual_editor_disabled_notice() {
+			global $pagenow;
+			$dismissed = false;
+			if ( function_exists( 'get_user_meta' ) ) {
+				$dismissed = get_user_meta( get_current_user_id(), '_bstw_visual_editor_disabled_notice_dismissed', true );
+			}
+			if ( 'widgets.php' == $pagenow && empty( $dismissed ) ) {
+				echo '<div class="bstw-visual-editor-disabled-notice notice notice-warning is-dismissible">';
+				/* translators: warning message shown when when visual editor is disabled in current user's profile settings */
+				echo '<p>' . esc_html( __( 'Visual Editor is disabled in your Profile settings. You need to enable it in order to use the Visual Editor widget at its full potential.', 'black-studio-tinymce-widget' ) ) . '</p>';
+				echo '</div>';
+			}
+		}
+
+		/**
+		 * Store dismission of the "Visual Editor disabled" notice for the current user
+		 *
+		 * @uses add_user_meta()
+		 * @uses get_current_user_id()
+		 *
+		 * @return void
+		 * @since 2.4.0
+		 */
+		public function visual_editor_disabled_dismiss_notice() {
+			if ( function_exists( 'add_user_meta' ) ) {
+				add_user_meta( get_current_user_id(), '_bstw_visual_editor_disabled_notice_dismissed', true );
+			}
 		}
 
 	} // END class Black_Studio_TinyMCE_Admin

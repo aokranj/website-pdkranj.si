@@ -3,11 +3,11 @@
 Plugin Name: Black Studio TinyMCE Widget
 Plugin URI: https://wordpress.org/plugins/black-studio-tinymce-widget/
 Description: Adds a new "Visual Editor" widget type based on the native WordPress TinyMCE editor.
-Version: 2.2.10
+Version: 2.7.0
 Author: Black Studio
-Author URI: http://www.blackstudio.it
+Author URI: https://www.blackstudio.it
 Requires at least: 3.1
-Tested up to: 4.5
+Tested up to: 5.8
 License: GPLv3
 Text Domain: black-studio-tinymce-widget
 Domain Path: /languages
@@ -35,7 +35,7 @@ if ( ! class_exists( 'Black_Studio_TinyMCE_Plugin' ) ) {
 		 * @var string
 		 * @since 2.0.0
 		 */
-		public static $version = '2.2.10';
+		public static $version = '2.7.0';
 
 		/**
 		 * The single instance of the plugin class
@@ -166,15 +166,18 @@ if ( ! class_exists( 'Black_Studio_TinyMCE_Plugin' ) ) {
 		protected function __construct() {
 			// Include required files
 			include_once( plugin_dir_path( __FILE__ ) . 'includes/class-widget.php' );
-			// Include and instantiate admin class on admin pages
-			if ( is_admin() ) {
+			// Include and instantiate admin class on admin pages and REST requests
+			if ( is_admin() || ( function_exists( 'wp_is_json_request' ) && wp_is_json_request() ) ) {
 				include_once( plugin_dir_path( __FILE__ ) . 'includes/class-admin.php' );
 				self::$admin = Black_Studio_TinyMCE_Admin::instance();
+			}
+			// Include and instantiate admin pointer class on admin pages
+			if ( is_admin() ) {
 				include_once( plugin_dir_path( __FILE__ ) . 'includes/class-admin-pointer.php' );
 				self::$admin_pointer = Black_Studio_TinyMCE_Admin_Pointer::instance();
 			}
 			// Include and instantiate text filter class on frontend pages
-			else {
+			if ( ! is_admin() ) {
 				include_once( plugin_dir_path( __FILE__ ) . 'includes/class-text-filters.php' );
 				self::$text_filters = Black_Studio_TinyMCE_Text_Filters::instance();
 			}

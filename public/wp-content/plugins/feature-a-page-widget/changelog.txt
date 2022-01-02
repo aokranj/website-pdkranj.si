@@ -1,0 +1,160 @@
+= 2.1.1 (June 8, 2017) =
+- Increase "Page to Feature" list transient caching time from 1 to 4 hours following no reported problems since 2.1.0 release.
+- [Fix] Revise widget query to avoid conflict with plugins including Events Manager. [Props @betyonfire](https://wordpress.org/support/topic/custom-post-types-appear-in-widget-but-not-on-page/)
+- Improve inline documentation thoroughness, clearness, and formatting
+- Increase and standardize whitespace throughout plugin
+
+= 2.1.0 (May 18, 2017) =
+* [New] Implement caching on Widgets admin screen for massive performance improvements (70-80% reduction in query time in testing) on sites with lots of pages and multiple widgets.
+* [Fix] Make sure layout previews appear in browsers other than Chrome.
+* [Fix] Update layout image to SVG in supporting browsers so it stays crisp on zoomed pages.
+* Update Chosen to 1.7.0
+* Rename enqueued Chosen CSS handle to "chosen" (previously "chosen_css") to hopefully reduce potential for plugin and theme conflicts.
+* Technical note: The select list HTML is now saved as a transient that expires after 1 hour. The transient is also reset after any time a supported published post is first published or updated. There were no problems during testing, but please be sure to [open a support ticket](https://wordpress.org/support/plugin/feature-a-page-widget) if you have problems with the "Page to Feature."
+* Removed 2.0 upgrade info and pre-2.0 documentation. See old version of plugin readme to access that information.
+* See also: 2.0.11 changelog
+
+= 2.0.11 (March 31, 2017 - Not publicly released on wordpress.org) =
+* [Fix] "Read More" link screen reader text should always contain title, even when "Hide Title" option is true.
+* [Fix] Correct logic to hide widgets that don't have a set featured page ID.
+* [Workaround] Added way to disable widget select list to resolve performance problems when above fix is still insufficient. Use `add_filter( 'fpw_temp_memory_fix', '__return_true' );`
+* Theoretical query performance improvements on Widgets admin screen
+* Remove redundant `esc_attr()` ([Props @flyjam](https://wordpress.org/support/topic/using-filter-at-widget_title-to-have-tags-in-it/))
+* Ditch PHP "typecasting" with `(int)` for `intval()`
+* Cleaned up readme following new plugin repo design.
+
+= 2.0.10 (April 29, 2016) =
+* **[Important Notice] Feature a Page Widget now requires WordPress 3.9 or higher.**
+* [Fix] Custom Sidebars compatibility fix.
+
+= 2.0.9 (March 29, 2016) =
+* [Fix] Restore compatibility with Site Origin Page Builder plugin
+
+= 2.0.8 (March 28, 2016) =
+* [Fix] Inexplicable partial update caused old script names to attempt to be loaded. This completes the 2.0.7 update of Chosen and should resolve any issues.
+
+= 2.0.7 (March 27, 2016) =
+* [New] Support "selective refresh" feature in WordPress 4.5 for faster previews when using the widget in the customizer.
+* Update Chosen to 1.5.1
+* Bump "Tested up to:" to 4.5
+
+= 2.0.6 (Dec 15, 2015) =
+* [Fix] Add isset checks to resolve AJAX warnings. ([Props @maxwelton.](https://wordpress.org/support/topic/ajax-php-warning))
+* [Fix] Support WPML in dropdown page list via `suppress_filters`. (Thanks, Maarten.)
+* [Security][i18n] Escape translated strings for improved security.
+* [Fix] Show Help Text again on Contextual Help tab of widget screen.
+* [Layout] Center images if they don't fill full-width of widget.
+
+= 2.0.5 (Sep 7, 2015) =
+* [i18n] New Dutch translation. Thanks to [Patrick Catthoor](https://profiles.wordpress.org/pc1271)!
+* [i18n News] If you have translation for this plugin, I would love to include it, ideally before the [move to translate.wordpress.org for plugins](https://make.wordpress.org/plugins/2015/09/01/plugin-translations-on-wordpress-org/). [Contact me](http://mrwweb.com/contact/) if you're interested.
+* Bump "Tested to:" number
+
+= 2.0.4 (Aug 28, 2015) =
+- [Fix] Compatibility fix for WPMU Custom Sidebars (Thanks [oxygensmith for reporting](https://wordpress.org/support/topic/conflict-with-wpmu-custom-sidebars?replies=1))
+- [i18n] New Italian translation. Thanks to [Carmine Scaglione](https://profiles.wordpress.org/scaglione).
+
+= 2.0.3 (May 29, 2015) =
+* [i18n] Spanish Translations. Thanks to [Luuuciano](https://wordpress.org/support/profile/luuuciano)!
+
+= 2.0.2 (May 1, 2015) =
+* [Fix] One string missing i18n. (Thanks, Maciej Gryniuk!)
+* [Fix] Prevent clipped radio buttons with browser zoom.
+* [New] `fpw_read_more_ellipsis` to filter punctuation in read more link. [Forum request.](https://wordpress.org/support/topic/excerpt-ellipses?replies=2#post-6861677)
+* [i18n] Polish Translation from Maciej Gryniuk! (Update .pot file too.)
+* [New] Added  missing space in "Read More" link noted in ["WordPress Plugin Review: Feature a Page Widget."](http://beyond-paper.com/wordpress-plugin-review-feature-a-page-widget/)
+* [Documentation] New sticky [Support Forum post about accessible read more link](https://wordpress.org/support/topic/does-your-read-more-link-say-read-more-about-title).
+
+= 2.0.1 (April 19, 2015) =
+* [Fix] Give `fieldset` a full `name` attribute to avoid SiteOrigin Page Builder error.
+* [New] Explicitly support SiteOrigin Page Builder via new script/style enqueues and JS event bindings.
+* [Change] Rename "Chosen" library slug CSS/JS to hopefully avoid conflicts with other bundled versions.
+* [Change] Remove priority of enqueues in admin. Not really sure why it was there in the first place...
+
+= 2.0.0 (April 14, 2015) =
+* **MAJOR UPDATE** Requires WordPress 3.8+. New template override system. Please update templates ASAP.
+* [New] Updated widget form design matches WordPress 3.8 admin and replaces all but one image with Dashicons.
+* [New] Options for hiding Title, Image, and Excerpt and adding "Read More" link.
+* [New] Features Posts by default! (And new filter for adding other post types!)
+* [New] Changes to templates for great flexibility. (Old templates will partially still work but support may be removed in future versions.)
+* [New] Filters for adding post types, modifying "Read More" link, adding custom layouts, and more!
+* [New] Docblock commenting throughout plugin for better in-code documentation.
+* [Change] Rename widget title to "Feature a Page" in admin.
+* [Fix] Remove `/assets/` folder from plugin package for faster downloads.
+* [Fix] Drop hAtom support because it was broken without author and date. (Would you like to see schema.org support? Let me know.)
+* [New] Introduce plugin compatibility fixes for Jetpack, DiggDigg, and podPress.
+* Various small CSS changes to widget layouts for [hopefully] improved consistency.
+* Reorganized files, WordPress code formatting improvements, and cleaner markup in most places
+* Remove use of `extract()` for more readable code.
+* [i18n] German translation files by [Christoph Toschko](https://profiles.wordpress.org/jomit/). Thanks, Christoph!
+* [i18n] Serbian translation from Ogi Djuraskovic of [FirstSiteGuide.com](http://firstsiteguide.com/). Thanks, Ogi!
+* [Update] Update Chosen JS library to v1.4.2.
+
+= 1.2.5 (September 27, 2013) =
+* [Fix] Removed compatibility "fixes" for Digg Digg and PodPress. See support forum for details and recommended fixes.
+* Thanks to [@phrenq](http://wordpress.org/support/profile/phrenq) for troubleshooting help.
+
+= 1.2.4 (September 18, 2013) =
+* [Fix] Page selection menu no longer disappears after saving widget in WordPress 3.6.
+* [Fix] Remove `the_excerpt` filters for Digg Digg and podPress plugins before outputting widget excerpt.
+* [Fix] Add class to `<article>` wrapper to consistently apply bottom-margin to Widget Title, Page Title, and Image
+* [Improvement] Minor CSS tweaks to admin interface.
+* [Improvement] Only load frontend CSS if widget is active.
+* [New] Example stylesheet added to `/css/fpw_start_styles.css`.
+* [Update] Now using Chosen v1.0.0! (Dev note: new CSS classes & events)
+* [News] This bug fix update should be the last one before v1.5.0 which will include new features including the ability to feature Posts!
+
+= 1.2.3 =
+* [Fix] Modification to widget HTML. Wrap excerpt in div element, not paragraph. Developers: If you have changed the `fpw_default.php` files, please make this change in line 66. Overly-specific CSS selectors (e.g. `p.fpw-excerpt`) may break on this change.
+* [Notice] Developers, please copy the `/fpw_views/` folder to your theme rather than modifying the core plugin file.
+
+= 1.2.2 =
+* [New] Apply `the_excerpt` and `get_the_excerpt` filters to excerpt in widget.
+* [New] First-pass at qTranslate support
+* [New] Tested with Advanced Excerpt plugin
+* Tested with 3.6-beta2
+
+= 1.2.1 =
+* "Read More" filter fix.
+* Accessibility mode invisible "Page Select List" fix.
+* Upgraded to most recent version of Chosen script. (And included Chosen MIT License for clarity.)
+
+= 1.2.0 =
+* New "Page Status" instant feedback determines whether the featured image and excerpt are set for selected page.
+* New contextual help. (And access to it via help button in widget settings.)
+* Fixed Rich Text Excerpts support
+* Minor JS improvement: Only reactivate "chosen" script on saved widget instance.
+
+= 1.1.2 =
+* Fixed image-size class.
+
+= 1.1.1 =
+* Fixed version number and plugin update hook.
+* Added post classes & hAtom markup to widget view (see [thread](http://wordpress.org/support/topic/applying-a-ahover-featured-image-possible?replies=5)). If you have customized `fpw_default.php`, review changes to the template (see [diff #644501](http://plugins.trac.wordpress.org/changeset/644501#file1), lines 31-32, 37, 66) and update your copy to take advantage of new classes.
+* Added known incompatibilites list to "Other Notes" section.
+
+= 1.1.0 =
+* Tested for WordPress 3.5 support.
+* Fixed i18n issues. Added `.pot` file and `/languages/` folder.
+* Only load admin scripts & styles on widgets page.
+* Added support for ["Rich Text Excerpts" plugin](http://wordpress.org/extend/plugins/rich-text-excerpts/).
+
+= 1.0.0 =
+* Public release into repository.
+* Thanks to awesome tester: [Jeremy Green](http://endocreative.com/) (clearfix!)
+
+= 0.9.5 =
+ * Private beta release for #wpseattle.
+ * Awesome new icons to indicate whether page has featured image and/or excerpt.
+ * Fix for fatal error. That was bad.
+ * Change `require_once()` to `require()` to allow multiple widget instances.
+ * Fix for select list not working when widget first added to sidebar.
+ * Some other small CSS compatibility tweaks.
+ * Significantly more complete `readme.txt`.
+ * Caught some strings missing i18n. Pig Latin plugin says this is i18n ready.
+ * Lots more testing on themes and with Developer plugin.
+ * Thanks to awesome testers: [Bob Dunn](http://BobWP.com) and [Grant Landram](http://GrantLandram.com)
+
+= 0.9.0 =
+* Initial private alpha release.
+* Thanks to awesome tester: [Christine Winckler](http://ChristineTheDesigner.com)

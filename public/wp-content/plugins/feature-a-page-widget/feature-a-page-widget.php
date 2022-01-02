@@ -3,10 +3,10 @@
 * Plugin Name: Feature a Page Widget
 * Description: Feature a Page, Post, or Custom Post Type in any sidebar.
 * Plugin URI: http://mrwweb.com/wordpress-plugins/feature-a-page-widget/version-2-documentation/
-* Version: 2.0.10
+* Version: 2.2.0
 * Author: Mark Root-Wiley (MRWweb)
 * Author URI: http://mrwweb.com
-* Donate Link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=522061398
+* Donate Link: https://www.paypal.me/rootwiley
 * License: GPLv2 or later
 * Text Domain: feature-a-page-widget
 * Domain Path: /languages

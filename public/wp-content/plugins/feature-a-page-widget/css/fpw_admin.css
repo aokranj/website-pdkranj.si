@@ -40,11 +40,6 @@
 	margin-bottom: 0;
 }
 
-.fpw-layouts label {
-	display: block;
-	margin-bottom: 7px;
-	line-height: 1.5;
-}
 
 /* "Hide" the select list */
 .fpw-page-select {
@@ -134,34 +129,54 @@
  	position: relative;
 }
 
+.fpw-layouts .layout-option {
+	margin-bottom: 7px;
+	line-height: 1.5;
+}
+
+.fpw-layouts label {
+	vertical-align: text-bottom;
+}
+
 .fpw-layouts::before,
-.fpw-layouts input::after {
+.fpw-layouts label::after {
 	display: block;
 	content: '';
-	width: 90px;
-	height: 82px;
+	top: 1.5em;
+	width: 92px;
+	height: 84px;
 }
 
 .fpw-layouts::before {
 	float: right;
+	position: relative;
 }
 
-.fpw-layouts input::after {
+.fpw-layouts label::after {
+	display: none;
 	position: absolute;
-	top: 15px;
 	right: 0;
 	width: 91px;
 	height: 82px;
-	background: transparent url(../img/layoutsIcons.png) scroll 0 82px no-repeat;
+	border: 1px solid #E5E5E5;
+	background-attachment: scroll;
+	background-position: 0 82px;
+	background-repeat:  no-repeat;
+	background-image: url(../img/layoutsIcons.png);
+	background-image: url(../img/layoutIcons.svg), linear-gradient( transparent, transparent );
 }
 
-.fpw-layouts .fpw-layout-wrapped:checked::after {
+.fpw-layouts input:checked + label::after {
+	display: block;
+}
+
+.fpw-layouts .fpw-layout-wrapped:checked + label::after {
 	background-position: 0 0;
 }
-.fpw-layouts .fpw-layout-banner:checked::after {
+.fpw-layouts .fpw-layout-banner:checked + label::after {
 	background-position: 0 -82px;
 }
-.fpw-layouts .fpw-layout-big:checked::after {
+.fpw-layouts .fpw-layout-big:checked + label::after {
 	background-position: 0 -164px;
 }
 

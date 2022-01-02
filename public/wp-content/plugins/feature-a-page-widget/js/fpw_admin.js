@@ -73,7 +73,7 @@ jQuery(document).ready(function($) {
 	});
 
 	/* Thanks to Codestyling Localization for this snippet to trigger contextual help */
-	$('.fpw-help-button').live('click', function(event) {
+	$(document).on('click', '.fpw-help-button', function(event) {
 		event.preventDefault();
 		
 		window.scrollTo(0,0);
