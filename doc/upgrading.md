@@ -39,3 +39,8 @@ Step 2 - migrade the database
 ```
 ./sbin/wp core update-db
 ```
+
+Alternative step 2:
+```
+./sbin/deploy-here.sh
+```

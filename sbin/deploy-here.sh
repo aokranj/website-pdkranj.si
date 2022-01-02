@@ -2,6 +2,13 @@
 
 
 
+### Common script initialization (changes directory into repo root)
+#
+MYDIR_REL=`dirname $0`
+. "$MYDIR_REL/_init-script.sh"
+
+
+
 ### Configure shell
 #
 set -e
@@ -9,7 +16,7 @@ set -u
 
 
 
-### Create temporary directories & set permissions - TODO
+### Create temporary directories & set permissions
 #
 # If you configure new directories here, you need to ensure the same paths have
 # PHP processing disabled in the Apache vhost configuration.
@@ -20,15 +27,8 @@ set -u
 mkdir -p  public/wp-content/uploads
 chmod 777 public/wp-content/uploads
 
-#mkdir -p  public/tmp
-#chmod 777 public/tmp
-
-#mkdir -p  public/wp-content/plugins/si-captcha-for-wordpress/captcha/cache
-#chmod 777 public/wp-content/plugins/si-captcha-for-wordpress/captcha/cache
-
 
 
 ### Update DB structure
 #
-#cd ./public
-#./wp core update-db
+./sbin/wp core update-db
