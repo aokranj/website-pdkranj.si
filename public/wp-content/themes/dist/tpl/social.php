@@ -11,7 +11,7 @@
   </a>
   */ ?>
   |
-  <a href="mailto:pdkranj@pzs.si">pdkranj@pzs.si</a>
+  <a href="mailto:pisarna@pdkranj.si">pisarna@pdkranj.si</a>
   |
   <a href="tel:+38642367850">04 236 78 50</a>
 </div>
