@@ -39,4 +39,4 @@ MYDIR_REL=`dirname $0`
   --complete-insert \
   --skip-extended-insert \
   --disable-keys \
-  -
+  $@ -
