@@ -16,7 +16,6 @@ return [
         0 => 'imsanity/imsanity.php',
         1 => 'simple-page-to-sidebar/simple-page-to-sidebar.php',
         2 => 'wp-cli-configmaps/wp-cli-configmaps.php',
-        3 => 'wp-cli-dbconf/wp-cli-dbconf.php',
       ],
     ],
     'admin_email' => 'bojan.hribernik@gmail.com',
