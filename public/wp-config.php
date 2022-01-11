@@ -13,6 +13,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once ABSPATH . '/../conf/wp-config.php';
 
 /*
+ * Verify retrieved configuration
+ */
+if (!defined('WP_ENV')) {
+    throw new Exception("Constant WP_ENV not defined");
+}
+
+/*
+ * Define config maps (for `wp configmaps ...` CLI tool)
+ */
+$configMaps = [
+    'common' => ABSPATH . '../conf/maps/common.php',
+    WP_ENV   => ABSPATH . '../conf/maps/' . WP_ENV . '.php',
+];
+$localConfigMapPath = ABSPATH . '../conf/maps/local.php';
+if (file_exists($localConfigMapPath)) {
+    $configMaps['local'] = $localConfigMapPath;
+}
+define('WP_CLI_CONFIGMAPS', $configMaps);
+unset($configMaps);
+
+/*
  * Fill in common configuration directives, if undefined
  */
 if (!defined('DB_HOST'))    define('DB_HOST',    'localhost');
