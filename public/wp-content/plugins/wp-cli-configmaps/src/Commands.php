@@ -272,19 +272,23 @@ More information is available at https://github.com/wp-cli-configmaps/wp-cli-con
      *
      * ## OPTIONS
      *
+     * [--commit]
+     * : Actually commit the changes to the database
+     *
      * [--dry-run]
-     * : Only show what is about to be done
+     * : Only show what is about to be done (default)
      *
      * ## EXAMPLES
      *
-     * wp configmaps apply
+     * wp configmaps apply             # Does a --dry-run too
      * wp configmaps apply --dry-run
+     * wp configmaps apply --commit    # Actually manipulates the database values
      *
-     * @synopsis [--dry-run]
+     * @synopsis [--commit] [--dry-run]
      */
     public function apply ($args, $assocArgs)
     {
-        if (isset($assocArgs['dry-run'])) {
+        if (!isset($assocArgs['commit'])) {
             $dryRun = true;
         } else {
             $dryRun = false;
@@ -299,9 +303,9 @@ More information is available at https://github.com/wp-cli-configmaps/wp-cli-con
             WP_CLI::line("Change summary:");
             WP_CLI\Utils\format_items('table', $changedItems, array_keys($changedItems[0]));
             if ($dryRun) {
-                WP_CLI::warning("Dry run requested - requested changes were NOT applied to the database.");
+                WP_CLI::warning("DRY RUN: Listed changes were NOT applied to the database. Rerun with `--commit` flag to perform the update.");
             } else {
-                WP_CLI::success("All changes applied successfully.");
+                WP_CLI::success("All listed changes were applied to the database successfully.");
             }
         }
     }

@@ -17,6 +17,7 @@ We're using [wp-cli-configmaps](https://github.com/wp-cli-configmaps/wp-cli-conf
 Commands:
 ```
 wp configmaps apply --dry-run
+wp configmaps apply --commit
 wp configmaps update
 ```
 
