@@ -5,6 +5,7 @@
 /*
  * Define/force site URI
  */
+define('WP_ENV',     '');   // Valid options: 'dev', 'stg' and 'prod'
 define('WP_HOME',    'https://...');
 define('WP_SITEURL', 'https://...');
 //$_SERVER['HTTPS'] = 'on';   // The site is behind the SSL-terminating proxy already (k8s ingress)

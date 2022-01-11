@@ -1,2 +1,3 @@
 /conf/wp-config.php
+/conf/maps/local.php
 /public/wp-content/uploads/*
