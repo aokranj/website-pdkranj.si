@@ -2,6 +2,13 @@
 
 
 
+## 2022-01-12 - Release 1.0.2
+
+Bugs fixed:
+- Add missing handling for `optionSpec['undef-key-action-apply'] == 'delete'` definition
+
+
+
 ## 2022-01-12 - Release 1.0.1
 
 Bugs fixed:

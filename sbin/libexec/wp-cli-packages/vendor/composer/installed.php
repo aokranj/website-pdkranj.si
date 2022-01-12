@@ -13,12 +13,12 @@
   array (
     'wp-cli-configmaps/wp-cli-configmaps' => 
     array (
-      'pretty_version' => '1.0.1',
-      'version' => '1.0.1.0',
+      'pretty_version' => '1.0.2',
+      'version' => '1.0.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'e3fab09a78c615d758a95ba1a593bae2cc8b5cf5',
+      'reference' => 'a6e00b68ebb843af87c3ee0f84bb1d9fa19a08b1',
     ),
     'wp-cli/wp-cli' => 
     array (

@@ -2,24 +2,24 @@
     "packages": [
         {
             "name": "wp-cli-configmaps/wp-cli-configmaps",
-            "version": "1.0.1",
-            "version_normalized": "1.0.1.0",
+            "version": "1.0.2",
+            "version_normalized": "1.0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli-configmaps/wp-cli-configmaps.git",
-                "reference": "e3fab09a78c615d758a95ba1a593bae2cc8b5cf5"
+                "reference": "a6e00b68ebb843af87c3ee0f84bb1d9fa19a08b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli-configmaps/wp-cli-configmaps/zipball/e3fab09a78c615d758a95ba1a593bae2cc8b5cf5",
-                "reference": "e3fab09a78c615d758a95ba1a593bae2cc8b5cf5",
+                "url": "https://api.github.com/repos/wp-cli-configmaps/wp-cli-configmaps/zipball/a6e00b68ebb843af87c3ee0f84bb1d9fa19a08b1",
+                "reference": "a6e00b68ebb843af87c3ee0f84bb1d9fa19a08b1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.4.0",
                 "wp-cli/wp-cli": "^2.5"
             },
-            "time": "2022-01-12T16:01:42+00:00",
+            "time": "2022-01-12T17:46:50+00:00",
             "type": "wp-cli-package",
             "installation-source": "source",
             "autoload": {
@@ -52,7 +52,7 @@
             ],
             "support": {
                 "issues": "https://github.com/wp-cli-configmaps/wp-cli-configmaps/issues",
-                "source": "https://github.com/wp-cli-configmaps/wp-cli-configmaps/tree/1.0.1"
+                "source": "https://github.com/wp-cli-configmaps/wp-cli-configmaps/tree/1.0.2"
             },
             "install-path": "../wp-cli-configmaps/wp-cli-configmaps"
         }

@@ -626,8 +626,15 @@ class ConfigMapService
                 }
 
                 if (!isset($targetValueMap[$optionName])) {
-                    $targetValueMap[$optionName] = [];
-                    $targetValueMap[$optionName]['value'] = [];
+                    $targetValueMap[$optionName] = [
+                        'type'                   => $optionSpec['type'],
+                        'action-apply'           => $optionSpec['action-apply'],
+                        'action-dump'            => $optionSpec['action-dump'],
+                        'undef-key-action-apply' => $optionSpec['undef-key-action-apply'],
+                        'undef-key-action-dump'  => $optionSpec['undef-key-action-dump'],
+                        'value'                  => [],
+                        'source-map-id'          => $optionSpec['source-map-id'],
+                    ];
 
                     $changes[] = [
                         'Option name'   => $parentNames . $optionName,
@@ -640,6 +647,23 @@ class ConfigMapService
                 foreach ($optionSpec['value'] as $arrayOptionName => $arrayOptionSpec) {
                     $newChanges = self::applyOptionSpec($targetValueMap[$optionName]['value'], $arrayOptionName, $arrayOptionSpec, $parentNames.$optionName." => ");
                     $changes = array_merge($changes, $newChanges);
+                }
+
+                if ($optionSpec['undef-key-action-apply'] == 'delete') {
+                    foreach ($targetValueMap[$optionName]['value'] as $arrayOptionName => $arrayOptionSpec) {
+                        if (!isset($optionSpec['value'][$arrayOptionName])) {
+                            $oldValue = $arrayOptionSpec['value'];
+                            unset($targetValueMap[$optionName]['value'][$arrayOptionName]);
+
+                            $changes[] = [
+                                'Option name'   => $parentNames . $optionName ." => " . $arrayOptionName,
+                                'Action'        => 'Delete',
+                                'Before'        => $oldValue,
+                                'After'         => '',
+                                'Config map ID' => $optionSpec['source-map-id'],
+                            ];
+                        }
+                    }
                 }
 
                 break;
