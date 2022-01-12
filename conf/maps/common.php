@@ -15,7 +15,11 @@ return [
       'value' => [
         0 => 'imsanity/imsanity.php',
         1 => 'simple-page-to-sidebar/simple-page-to-sidebar.php',
-        2 => 'wp-cli-configmaps/wp-cli-configmaps.php',
+        2 => [
+          'type' => 'string',
+          'action-apply' => 'delete',
+          'value' => 'wp-cli-configmaps/wp-cli-configmaps.php',
+        ],
       ],
     ],
     'admin_email' => 'bojan.hribernik@gmail.com',

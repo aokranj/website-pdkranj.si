@@ -1,3 +1,4 @@
 /conf/wp-config.php
 /conf/maps/local.php
 /public/wp-content/uploads/*
+/sbin/libexec/wp-cli-packages/cache/

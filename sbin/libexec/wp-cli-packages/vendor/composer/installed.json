@@ -1,0 +1,63 @@
+{
+    "packages": [
+        {
+            "name": "wp-cli-configmaps/wp-cli-configmaps",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-cli-configmaps/wp-cli-configmaps.git",
+                "reference": "94ce7e83a389e413db7da1cb14cddf57aa2a3764"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-cli-configmaps/wp-cli-configmaps/zipball/94ce7e83a389e413db7da1cb14cddf57aa2a3764",
+                "reference": "94ce7e83a389e413db7da1cb14cddf57aa2a3764",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4.0",
+                "wp-cli/wp-cli": "^2.5"
+            },
+            "time": "2022-01-12T01:34:58+00:00",
+            "default-branch": true,
+            "type": "wp-cli-package",
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "WP\\CLI\\ConfigMaps\\": "src/"
+                },
+                "files": [
+                    "wp-cli-configmaps.php"
+                ]
+            },
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Bostjan Skufca Jese",
+                    "homepage": "https://github.com/bostjan",
+                    "role": "Developer"
+                }
+            ],
+            "description": "ConfigMaps for WP-CLI - Configuration management for your wp_options table",
+            "homepage": "https://github.com/wp-cli-configmaps/wp-cli-configmaps",
+            "keywords": [
+                "configuration management",
+                "options",
+                "settings",
+                "wordpress",
+                "wp-cli",
+                "wp_options"
+            ],
+            "support": {
+                "issues": "https://github.com/wp-cli-configmaps/wp-cli-configmaps/issues",
+                "source": "https://github.com/wp-cli-configmaps/wp-cli-configmaps/tree/master"
+            },
+            "install-path": "../wp-cli-configmaps/wp-cli-configmaps"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}
