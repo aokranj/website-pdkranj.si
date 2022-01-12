@@ -157,7 +157,7 @@ $configMap = [
         'action-apply'           => 'walk',
         'action-dump'            => 'walk',
         'undef-key-action-apply' => 'ignore',
-        'undef-key-action-dump'  => 'walk',
+        'undef-key-action-dump'  => 'add',
         'value'                  => [
             '1' => [
                 'type'         => 'string',
@@ -185,8 +185,8 @@ An option definition of type `array` supports the following fields:
 | `action`       | `dump`, `apply` | `walk`, `copy-as-is`, `ignore` | `walk` | How to transfer the option value in both directions |
 | `action-apply` | `apply`         | `walk`, `copy-as-is`, `ignore`, `delete` | `walk` | How to transfer the option value from a config map into the `wp_options` table |
 | `action-dump`  | `dump`          | `walk`, `copy-as-is`, `ignore` | `walk` | How to transfer the option value from `wp_options` table into a config map |
-| `undef-key-action-apply` | `apply` | `ignore`, `delete` | `ignore` | How to treat keys found in the `wp_options` table that are not defined by any config map |
-| `undef-key-action-dump`  | `dump`  | `ignore`, `walk` | `walk` | How to treat keys found in the `wp_options` table when dumping `wp_options` content into config maps |
+| `undef-key-action-apply` | `apply` | `ignore`, `delete` | `ignore` | When applying config maps, how to treat keys found in the `wp_options` table that are not defined by any config map |
+| `undef-key-action-dump`  | `dump`  | `ignore`, `add` | `add` | When updating config maps, how to treat keys found in the `wp_options` table that are not (yet) defined by any config map |
 | `value`        | `dump`, `apply` | array | (undefined) | An array of option definitions |
 
 

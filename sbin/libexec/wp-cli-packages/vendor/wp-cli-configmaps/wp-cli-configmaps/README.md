@@ -1,4 +1,4 @@
-# ConfigMaps for WP-CLI - Configuration management for your wp_options table
+# ConfigMaps for WordPress WP-CLI - Configuration management for your wp_options table
 
 This is a [CLI](https://wp-cli.org/)-based tool for managing
 [WordPress](https://wordpress.org/) settings defined in the
@@ -85,7 +85,7 @@ Now `git commit -av`, `git push`, `git pull` and `wp configmaps apply` are all t
 
 ```
 /*
- * ConfigMaps for WordPress CLI - Configuration management for your wp_options table
+ * ConfigMaps for WordPress WP-CLI - Configuration management for your wp_options table
  *
  * Copyright (C) 2022 Bostjan Skufca Jese
  *

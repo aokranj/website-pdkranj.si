@@ -1,6 +1,6 @@
 <?php
 /*
- * ConfigMaps for WP-CLI - Configuration management for your wp_options table
+ * ConfigMaps for WordPress WP-CLI - Configuration management for your wp_options table
  *
  * Copyright (C) 2022 Bostjan Skufca Jese
  *

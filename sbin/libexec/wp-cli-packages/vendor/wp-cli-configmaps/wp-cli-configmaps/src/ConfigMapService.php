@@ -1,6 +1,6 @@
 <?php
 /*
- * ConfigMaps for WP-CLI - Configuration management for your wp_options table
+ * ConfigMaps for WordPress WP-CLI - Configuration management for your wp_options table
  *
  * Copyright (C) 2022 Bostjan Skufca Jese
  *
@@ -250,7 +250,7 @@ class ConfigMapService
                 'action-apply'           => 'walk',
                 'action-dump'            => 'walk',
                 'undef-key-action-apply' => 'ignore',
-                'undef-key-action-dump'  => 'walk',
+                'undef-key-action-dump'  => 'add',
                 'value'                  => [],
             ];
             foreach ($optionValue as $key => $val) {
@@ -323,6 +323,7 @@ class ConfigMapService
 
                         if ($optionSpec['action'] == 'walk') {
                             $optionSpec['value'] = self::minimizeMap($optionSpec['value']);
+                            unset($optionSpec['action']);
                         }
 
                     } elseif ($optionSpec['action-apply'] == 'walk') {
@@ -335,7 +336,7 @@ class ConfigMapService
                     if ($optionSpec['undef-key-action-apply'] == 'ignore') {
                         unset($optionSpec['undef-key-action-apply']);
                     }
-                    if ($optionSpec['undef-key-action-dump'] == 'walk') {
+                    if ($optionSpec['undef-key-action-dump'] == 'add') {
                         unset($optionSpec['undef-key-action-dump']);
                     }
 
@@ -389,7 +390,7 @@ class ConfigMapService
                             $optionSpec['undef-key-action-apply'] = 'ignore';
                         }
                         if (!isset($optionSpec['undef-key-action-dump'])) {
-                            $optionSpec['undef-key-action-dump'] = 'walk';
+                            $optionSpec['undef-key-action-dump'] = 'add';
                         }
 
                         if ($optionSpec['value'] != NULL) {
@@ -706,9 +707,10 @@ class ConfigMapService
      *
      * @param   array   $configMap      A config map to work on
      * @param   array   $newValueMap    A value map to use (it's essentially a config map, but all non-value metadata is ignored)
+     * @param   array   $undefKeyAction Action to take with option keys that only appear in $newValueMap ('add' or 'ignore')
      * @return  array                   An updated config map
      */
-    public static function updateMapValues ($configMap, $newValueMap)
+    public static function updateMapValues ($configMap, $newValueMap, $undefKeyAction)
     {
         $updatedConfigMap = [];
 
@@ -731,11 +733,19 @@ class ConfigMapService
 
                 case 'array':
                     $updatedConfigMap[$optionName] = $optionSpec;
-                    $updatedConfigMap[$optionName]['value'] = self::updateMapValues($optionSpec['value'], $newValueMap[$optionName]['value']);
+                    $updatedConfigMap[$optionName]['value'] = self::updateMapValues($optionSpec['value'], $newValueMap[$optionName]['value'], $optionSpec['undef-key-action-dump']);
                     break;
 
                 default:
                     throw new Exception("Unsupported value type '". $optionSpec['type'] ."' found (encountered at '$optionName')");
+            }
+        }
+
+        if ($undefKeyAction == 'add') {
+            foreach ($newValueMap as $optionName => $optionSpec) {
+                if (!isset($configMap[$optionName])) {
+                    $updatedConfigMap[$optionName] = $optionSpec;
+                }
             }
         }
 
