@@ -79,9 +79,9 @@ return [
           'action' => 'walk',
           'type' => 'array',
           'value' => [
-            'home' => 'https://b.dev.pdkranj.si',
+            'home' => 'https://UNDEFINED-IN-CONFIGMAPS.dev.pdkranj.si',
             'items' => 10,
-            'link' => 'http://blogsearch.google.com/blogsearch?scoring=d&partner=wordpress&q=link:https://b.dev.pdkranj.si/',
+            'link' => 'http://blogsearch.google.com/blogsearch?scoring=d&partner=wordpress&q=link:https://UNDEFINED-IN-CONFIGMAPS.dev.pdkranj.si/',
             'show_date' => false,
             'url' => 'http://blogsearch.google.com/blogsearch_feeds?scoring=d&ie=utf-8&num=10&output=rss&partner=wordpress&q=link:http://pdkranj.lan/',
           ],
@@ -159,7 +159,7 @@ return [
     ],
     'gmt_offset' => '',
     'hack_file' => '0',
-    'home' => 'https://b.dev.pdkranj.si',
+    'home' => 'https://UNDEFINED-IN-CONFIGMAPS.dev.pdkranj.si',
     'html_type' => 'text/html',
     'image_default_align' => '',
     'image_default_link_type' => 'file',
@@ -584,7 +584,7 @@ return [
       ],
     ],
     'site_icon' => '2996',
-    'siteurl' => 'https://b.dev.pdkranj.si',
+    'siteurl' => 'https://UNDEFINED-IN-CONFIGMAPS.dev.pdkranj.si',
     'start_of_week' => '1',
     'sticky_posts' => [
       'action' => 'walk',
@@ -619,15 +619,15 @@ return [
       'encoding' => 'serialize',
       'type' => 'array',
       'value' => [
-        'header_image' => 'https://b.dev.pdkranj.si/wp-content/uploads/2013/07/pdkranj.jpg',
+        'header_image' => 'https://UNDEFINED-IN-CONFIGMAPS.dev.pdkranj.si/wp-content/uploads/2013/07/pdkranj.jpg',
         'header_image_data' => [
           'action' => 'walk',
           'type' => 'array',
           'value' => [
             'attachment_id' => 4,
             'height' => 250,
-            'thumbnail_url' => 'https://b.dev.pdkranj.si/wp-content/uploads/2013/07/pdkranj.jpg',
-            'url' => 'https://b.dev.pdkranj.si/wp-content/uploads/2013/07/pdkranj.jpg',
+            'thumbnail_url' => 'https://UNDEFINED-IN-CONFIGMAPS.dev.pdkranj.si/wp-content/uploads/2013/07/pdkranj.jpg',
+            'url' => 'https://UNDEFINED-IN-CONFIGMAPS.dev.pdkranj.si/wp-content/uploads/2013/07/pdkranj.jpg',
             'width' => 960,
           ],
         ],
@@ -990,7 +990,7 @@ return [
           'type' => 'array',
           'value' => [
             'filter' => false,
-            'text' => '<img src="https://b.dev.pdkranj.si/wp-content/uploads/2021/05/pd-kranj-logo.png" style="display:block;margin: 0 auto;max-width:100%" alt="PD Kranj" />',
+            'text' => '<img src="https://UNDEFINED-IN-CONFIGMAPS.dev.pdkranj.si/wp-content/uploads/2021/05/pd-kranj-logo.png" style="display:block;margin: 0 auto;max-width:100%" alt="PD Kranj" />',
             'title' => '',
           ],
         ],

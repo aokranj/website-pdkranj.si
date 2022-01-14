@@ -5,9 +5,9 @@
 /*
  * Define/force site URI
  */
-define('WP_ENV',     '');   // Valid options: 'dev', 'stg' and 'prod'
-define('WP_HOME',    'https://...');
-define('WP_SITEURL', 'https://...');
+define('WP_ENV',     'dev');   // Valid options: 'dev', 'stg' and 'prod'
+define('WP_HOME',    'http://docker.dev.pdkranj.si');
+define('WP_SITEURL', 'http://docker.dev.pdkranj.si');
 //$_SERVER['HTTPS'] = 'on';   // The site is behind the SSL-terminating proxy already (k8s ingress)
 
 
@@ -15,10 +15,10 @@ define('WP_SITEURL', 'https://...');
 /*
  * Database access
  */
-define('DB_HOST',     '');
-define('DB_NAME',     '');
-define('DB_USER',     '');
-define('DB_PASSWORD', '');
+define('DB_HOST',     'mariadb');
+define('DB_NAME',     'pd_www_dev_docker');
+define('DB_USER',     'pd_www_dev_docker');
+define('DB_PASSWORD', 'pd_www_dev_docker');
 
 
 
