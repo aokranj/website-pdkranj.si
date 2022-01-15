@@ -17,7 +17,7 @@ return [
         2 => 'simple-page-to-sidebar/simple-page-to-sidebar.php',
       ],
     ],
-    'admin_email' => 'janez.nastran@gmail.com',
+    'admin_email' => 'janez.nastran@pdkranj.si',
     'admin_email_lifespan' => '2000000000',
     'auto_core_update_notified' => [
       'encoding' => 'serialize',
