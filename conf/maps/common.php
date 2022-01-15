@@ -13,12 +13,8 @@ return [
       'type' => 'array',
       'value' => [
         0 => 'imsanity/imsanity.php',
-        1 => 'simple-page-to-sidebar/simple-page-to-sidebar.php',
-        2 => [
-          'type' => 'string',
-          'action-apply' => 'delete',
-          'value' => 'wp-cli-configmaps/wp-cli-configmaps.php',
-        ],
+        1 => 'post-expirator/post-expirator.php',
+        2 => 'simple-page-to-sidebar/simple-page-to-sidebar.php',
       ],
     ],
     'admin_email' => 'bojan.hribernik@gmail.com',
@@ -987,6 +983,7 @@ return [
                 'promote_users' => true,
                 'publish_pages' => true,
                 'publish_posts' => true,
+                'publishpress_future_expire_post' => true,
                 'read' => true,
                 'read_private_pages' => true,
                 'read_private_posts' => true,
