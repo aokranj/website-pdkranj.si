@@ -13,8 +13,9 @@ return [
       'type' => 'array',
       'value' => [
         0 => 'imsanity/imsanity.php',
-        1 => 'post-expirator/post-expirator.php',
-        2 => 'simple-page-to-sidebar/simple-page-to-sidebar.php',
+        1 => 'pdkranj-robotstxt/pdkranj-robotstxt.php',
+        2 => 'post-expirator/post-expirator.php',
+        3 => 'simple-page-to-sidebar/simple-page-to-sidebar.php',
       ],
     ],
     'admin_email' => 'janez.nastran@pdkranj.si',
