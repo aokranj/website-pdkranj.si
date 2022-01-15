@@ -9,29 +9,6 @@ MYDIR_REL=`dirname $0`
 
 
 
-# ### Get DB credentials
-# #
-# DB_HOST=`cat $CONFIGDIR/wp-config.php | grep DB_HOST | cut -d"'" -f4`
-# DB_USER=`cat $CONFIGDIR/wp-config.php | grep DB_USER | cut -d"'" -f4`
-# DB_PASS=`cat $CONFIGDIR/wp-config.php | grep DB_PASSWORD | cut -d"'" -f4`
-# DB_NAME=`cat $CONFIGDIR/wp-config.php | grep DB_NAME | cut -d"'" -f4`
-# 
-# 
-# 
-# ### Dump database
-# #
-# mysqldump \
-#   --host=$DB_HOST \
-#   --user=$DB_USER \
-#   --password=$DB_PASS \
-#   --no-create-db \
-#   --complete-insert \
-#   --skip-extended-insert \
-#   --disable-keys \
-#   $DB_NAME
-
-
-
 ### Just use wp-cli
 #
 ./sbin/wp db export \
