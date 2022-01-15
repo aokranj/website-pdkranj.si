@@ -44,7 +44,10 @@ return [
     'blog_public' => '1',
     'blogdescription' => 'Planinsko društvo Kranj',
     'blogname' => 'PD Kranj',
-    'can_compress_scripts' => '0',
+    'can_compress_scripts' => [
+      'action' => 'ignore',
+      'type' => 'string',
+    ],
     'category_base' => '',
     'category_children' => [
       'encoding' => 'serialize',
@@ -125,7 +128,10 @@ return [
     'facebook_migration_115' => '1',
     'facebook_migration_118' => '1',
     'finished_splitting_shared_terms' => '1',
-    'finished_updating_comment_type' => '0',
+    'finished_updating_comment_type' => [
+      'action' => 'ignore',
+      'type' => 'string',
+    ],
     'fpw_options' => [
       'encoding' => 'serialize',
       'type' => 'array',
