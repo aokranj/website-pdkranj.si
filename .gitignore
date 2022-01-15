@@ -1,4 +1,4 @@
-/conf/wp-config.php
+/conf/wp-config-local.php
 /conf/maps/local.php
 /docker/data/mariadb/*
 /public/wp-content/uploads/*

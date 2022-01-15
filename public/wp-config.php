@@ -10,13 +10,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 /*
  * Include the actual site configuration that is stored outside public directory
  */
-require_once ABSPATH . '/../conf/wp-config.php';
+require_once ABSPATH . '/../conf/wp-config-local.php';
 
 /*
  * Verify retrieved configuration
  */
 if (!defined('WP_ENV')) {
-    throw new Exception("Constant WP_ENV not defined");
+    throw new Exception("Constant WP_ENV not defined. You must define it in your conf/wp-config-local.php file.");
 }
 
 /*
