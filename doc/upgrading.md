@@ -34,7 +34,7 @@ Here, make sure that you're pulling from the correct remote repository
 
 **Step #2** - Upgrade the code:
 ```
-./sbin/upgrade-code.sh
+./sbin/upgrade-code
 ```
 
 **Step #3** - Migrate the database:
@@ -69,7 +69,7 @@ ssh pd-stg@stg.pdkranj.si -A
 # Then as `pd-stg` user on the host system:
 cd www/stg.pdkranj.si
 git pull
-./sbin/deploy-here.sh
+./sbin/deploy-here
 ```
 Done.
 
@@ -92,7 +92,7 @@ ssh pd-prod@www.pdkranj.si -A
 cd www/www.pdkranj.si
 # At this point, `prod` branch should already be checked out here
 git pull
-./sbin/deploy-here.sh
+./sbin/deploy-here
 ```
 Done.
 
@@ -106,6 +106,6 @@ git pull
 
 **Step #2 - Migrate the database + do other deployment-related tasks:
 ```
-./sbin/deploy-here.sh
+./sbin/deploy-here
 ```
 That's it.

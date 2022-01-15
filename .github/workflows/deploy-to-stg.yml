@@ -27,4 +27,4 @@ jobs:
                     script: |
                         cd www/stg.pdkranj.si
                         git pull
-                        ./sbin/deploy-here.sh
+                        ./sbin/deploy-here
