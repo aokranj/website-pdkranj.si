@@ -10,9 +10,11 @@ return [
     'dashboard_widget_options' => [
       'encoding' => 'serialize',
       'type' => 'array',
+      'undef-key-action-dump' => 'ignore',
       'value' => [
         'dashboard_incoming_links' => [
           'type' => 'array',
+          'undef-key-action-dump' => 'ignore',
           'value' => [
             'home' => 'http://docker.dev.pdkranj.si',
             'link' => 'http://blogsearch.google.com/blogsearch?scoring=d&partner=wordpress&q=link:http://docker.dev.pdkranj.si/',
@@ -40,9 +42,11 @@ return [
     'widget_text' => [
       'encoding' => 'serialize',
       'type' => 'array',
+      'undef-key-action-dump' => 'ignore',
       'value' => [
         5 => [
           'type' => 'array',
+          'undef-key-action-dump' => 'ignore',
           'value' => [
             'text' => '<img src="http://docker.dev.pdkranj.si/wp-content/uploads/2021/05/pd-kranj-logo.png" style="display:block;margin: 0 auto;max-width:100%" alt="PD Kranj" />',
           ],
