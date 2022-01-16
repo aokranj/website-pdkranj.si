@@ -28,10 +28,12 @@ return [
     'theme_mods_twentytwelve' => [
       'encoding' => 'serialize',
       'type' => 'array',
+      'undef-key-action-dump' => 'ignore',
       'value' => [
         'header_image' => 'http://docker.dev.pdkranj.si/wp-content/uploads/2013/07/pdkranj.jpg',
         'header_image_data' => [
           'type' => 'array',
+          'undef-key-action-dump' => 'ignore',
           'value' => [
             'thumbnail_url' => 'http://docker.dev.pdkranj.si/wp-content/uploads/2013/07/pdkranj.jpg',
             'url' => 'http://docker.dev.pdkranj.si/wp-content/uploads/2013/07/pdkranj.jpg',
