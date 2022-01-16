@@ -18,6 +18,11 @@ require_once ABSPATH . '/../conf/wp-config-local.php';
 if (!defined('WP_ENV')) {
     throw new Exception("Constant WP_ENV not defined. You must define it in your conf/wp-config-local.php file.");
 }
+if (WP_ENV != 'prod') {
+    if (!defined('WP_DEBUG')) {
+        define('WP_DEBUG', true);
+    }
+}
 
 /*
  * Define config maps (for `wp configmaps ...` CLI tool)
