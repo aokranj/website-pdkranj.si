@@ -39,13 +39,13 @@ Step #4 - Start the Docker-based dev environment:
 
 Step #5 - dump+import the staging database:
 ```
-ssh pd-stg@stg.pdkranj.si ./www/stg.pdkranj.si/sbin/db-dump | docker exec -i pdkranj-webserver /data/pd-dev/docker.dev.pdkranj.si/sbin/wp --allow-root db import -
+ssh pd-stg@stg.pdkranj.si ./www/stg.pdkranj.si/sbin/db-dump | ./sbin/wp-in-docker db import -
 ```
 
 
 Step #6 - Fix the URLs in the new database copy
 ```
-docker exec -i pdkranj-webserver /data/pd-dev/docker.dev.pdkranj.si/sbin/wp --allow-root search-replace 'https://stg.pdkranj.si' 'http://docker.dev.pdkranj.si'
+./sbin/wp-in-docker search-replace 'https://stg.pdkranj.si' 'http://docker.dev.pdkranj.si'
 ```
 
 
@@ -63,8 +63,7 @@ chmod -R 777 public/wp-content/uploads
 
 Step #9 (optional) - Create a local WP administrator:
 ```
-docker exec -i pdkranj-webserver /data/pd-dev/docker.dev.pdkranj.si/sbin/wp --allow-root \
-    user create YOUR-USERNAME-HERE YOUR-EMAIL-HERE --role=administrator --user_pass=YOUR-PASSWORD-HERE
+./sbin/wp-in-docker user create YOUR-USERNAME-HERE YOUR-EMAIL-HERE --role=administrator --user_pass=YOUR-PASSWORD-HERE
 ```
 
 

@@ -10,17 +10,11 @@ Prerequisites:
 
 
 
-## Steps (stg to dev)
+## Steps (stg to docker dev)
 
 Step #1 - Go to your dev environment:
 ```
 cd website-pdkranj.si
-```
-
-Alternative step #1 - SSH into your dev environment with auth forwarding enabled (`-A`):
-```
-ssh your-username@your-env.dev.pdkranj.si -A
-cd www/your-env.dev.pdkranj.si
 ```
 
 Step #2 - dump+import the database in one go:
@@ -30,7 +24,7 @@ ssh pd-stg@stg.pdkranj.si ./www/stg.pdkranj.si/sbin/db-dump | ./sbin/wp db impor
 
 Step #3 - fix the URLs in the new database copy
 ```
-./sbin/wp search-replace 'https://stg.pdkranj.si' 'https://your-env.dev.pdkranj.si'
+./sbin/wp search-replace 'https://stg.pdkranj.si' 'http://docker.dev.pdkranj.si'
 ```
 
 
