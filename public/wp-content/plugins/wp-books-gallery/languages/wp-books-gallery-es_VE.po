@@ -1,0 +1,725 @@
+# Translation of Plugins - WordPress Books Gallery - Development (trunk) in Spanish (Venezuela)
+# This file is distributed under the same license as the Plugins - WordPress Books Gallery - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-07-01 06:04:51+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: es_VE\n"
+"Project-Id-Version: Plugins - WordPress Books Gallery - Development (trunk)\n"
+
+#: front/view/wbg-single-book.php:244
+msgid "Back"
+msgstr "Volver"
+
+#: front/view/wbg-single-book.php:201
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: front/view/wbg-front-view.php:246
+msgid "No Image Available"
+msgstr "No hay una imagen disponible"
+
+#: front/view/wbg-front-view.php:215
+msgid "Books Found!"
+msgstr "¡Libros encontrados!"
+
+#: front/view/wbg-front-view.php:215
+msgid "Total"
+msgstr "Total"
+
+#: admin/view/wbg-details-settings.php:57
+msgid "Coming Soon"
+msgstr "Próximamente"
+
+#: admin/cls-books-gallery-admin.php:155
+msgid "Book Category"
+msgstr "Categoría del libro"
+
+#: admin/cls-books-gallery-admin.php:324
+msgid "Remove Book Cover Here"
+msgstr "Elimina aquí la cubierta del libro"
+
+#: admin/cls-books-gallery-admin.php:323
+msgid "Set Book Cover Here"
+msgstr "Establece aquí la cubierta del libro"
+
+#: admin/view/wbg-general-settings.php:165
+msgid "Description:"
+msgstr "Descripción:"
+
+#: admin/view/wbg-general-settings.php:156
+#: admin/view/wbg-general-settings.php:179
+msgid "Font Size:"
+msgstr "Tamaño de la fuente:"
+
+#: admin/view/wbg-general-settings.php:147
+msgid "Hover Color:"
+msgstr "Color al pasar el cursor:"
+
+#: admin/view/wbg-general-settings.php:138
+#: admin/view/wbg-general-settings.php:170
+msgid "Font Color:"
+msgstr "Color de la fuente:"
+
+#: admin/view/wbg-general-settings.php:133
+msgid "Title:"
+msgstr "Título:"
+
+#: admin/view/partial/wbg-general-settings-content.php:156
+msgid "Display Total Books"
+msgstr "Mostrar el total de libros"
+
+#: admin/view/partial/wbg-general-settings-content.php:147
+msgid "Button Text"
+msgstr "Texto del botón"
+
+#: admin/cls-books-gallery-admin.php:181
+msgid "Book Information"
+msgstr "Información del libro"
+
+#: admin/view/wbg-search-settings.php:200
+#: admin/view/wbg-search-settings.php:224
+#: admin/view/wbg-search-settings.php:248
+#: admin/view/wbg-search-settings.php:272
+#: admin/view/wbg-search-settings.php:296
+msgid "Default Option :"
+msgstr "Opción por defecto:"
+
+#: admin/view/wbg-search-settings.php:190
+#: admin/view/wbg-search-settings.php:214
+#: admin/view/wbg-search-settings.php:238
+#: admin/view/wbg-search-settings.php:262
+#: admin/view/wbg-search-settings.php:286
+msgid "Order By :"
+msgstr "Ordenar por:"
+
+#: admin/view/wbg-search-settings.php:162
+#: admin/view/wbg-search-settings.php:176
+msgid "Placeholder Text :"
+msgstr "Texto del marcador de posición:"
+
+#: admin/view/partial/wbg-single-settings-content.php:183
+msgid "Description"
+msgstr "Descripción"
+
+#: admin/view/partial/wbg-single-settings-content.php:160
+msgid "File Size"
+msgstr "Tamaño del archivo"
+
+#: admin/view/partial/wbg-single-settings-content.php:145
+msgid "Dimension"
+msgstr "Dimensión"
+
+#: admin/view/partial/wbg-single-settings-content.php:100
+msgid "Pages"
+msgstr "Páginas"
+
+#: admin/view/partial/wbg-single-settings-content.php:60
+msgid "Published"
+msgstr "Publicado"
+
+#: admin/view/partial/wbg-general-settings-content.php:103
+#: admin/view/partial/wbg-single-settings-content.php:30
+msgid "Category"
+msgstr "Categoría"
+
+#: admin/view/partial/wbg-general-settings-content.php:176
+#: admin/view/partial/wbg-single-settings-content.php:189
+#: admin/view/wbg-search-settings.php:313
+msgid "Save Settings"
+msgstr "Guardar los ajustes"
+
+#: admin/view/partial/wbg-general-settings-content.php:150
+msgid "Download/Buynow"
+msgstr "Descargar/Comprar ahora"
+
+#: admin/view/partial/wbg-general-settings-content.php:119
+msgid "By:"
+msgstr "Por:"
+
+#: admin/view/wbg-details-settings.php:62
+#: admin/view/wbg-general-settings.php:194
+#: admin/view/wbg-search-settings.php:143
+msgid "Content Settings :"
+msgstr "Ajustes del contenido:"
+
+#: admin/view/wbg-general-settings.php:187
+msgid "Save Styles"
+msgstr "Guardar los estilos"
+
+#: admin/view/wbg-general-settings.php:110
+msgid "Download Button:"
+msgstr "Botón de descarga:"
+
+#: admin/view/wbg-details-settings.php:56
+#: admin/view/wbg-general-settings.php:105
+#: admin/view/wbg-search-settings.php:99
+msgid "Styles Settings :"
+msgstr "Ajustes de los estilos:"
+
+#: admin/view/partial/wbg-book-information.php:103
+msgid "Inactive"
+msgstr "Inactivo"
+
+#: admin/view/partial/wbg-book-information.php:100
+msgid "Active"
+msgstr "Activo"
+
+#: admin/view/wbg-search-settings.php:304
+msgid "Search Button Text:"
+msgstr "Texto del botón de búsqueda:"
+
+#: admin/view/wbg-search-settings.php:170
+msgid "Search By ISBN?"
+msgstr "¿Buscar por el ISBN?"
+
+#: admin/view/wbg-search-settings.php:280
+msgid "Search By Language?"
+msgstr "¿Buscar por idioma?"
+
+#: admin/view/wbg-search-settings.php:256
+msgid "Search By Year?"
+msgstr "¿Buscar por año?"
+
+#: admin/view/wbg-details-settings.php:44
+#: admin/view/wbg-general-settings.php:94 admin/view/wbg-search-settings.php:88
+msgid "Content Settings"
+msgstr "Ajustes del contenido"
+
+#: admin/view/wbg-search-settings.php:136
+msgid "Update Styles"
+msgstr "Actualizar los estilos"
+
+#: admin/view/wbg-general-settings.php:124
+#: admin/view/wbg-search-settings.php:128
+msgid "Button Font Color:"
+msgstr "Color de la fuente del botón:"
+
+#: admin/view/wbg-search-settings.php:119
+msgid "Button Border Color:"
+msgstr "Color del borde del botón:"
+
+#: admin/view/wbg-general-settings.php:115
+#: admin/view/wbg-search-settings.php:110
+msgid "Button Color:"
+msgstr "Color del botón:"
+
+#: admin/view/wbg-search-settings.php:104
+msgid "Button:"
+msgstr "Botón:"
+
+#: admin/view/wbg-details-settings.php:45
+#: admin/view/wbg-general-settings.php:95 admin/view/wbg-search-settings.php:89
+msgid "Styles Settings"
+msgstr "Ajustes de los estilos"
+
+#: admin/view/partial/wbg-general-settings-content.php:66
+msgid "Enable Book Details Page"
+msgstr "Activar la página de detalles del libro"
+
+#: admin/view/partial/wbg-general-settings-content.php:60
+#: admin/view/wbg-search-settings.php:197
+#: admin/view/wbg-search-settings.php:221
+#: admin/view/wbg-search-settings.php:245
+#: admin/view/wbg-search-settings.php:269
+#: admin/view/wbg-search-settings.php:293
+msgid "Descending"
+msgstr "Descendente"
+
+#: admin/view/partial/wbg-general-settings-content.php:57
+#: admin/view/wbg-search-settings.php:194
+#: admin/view/wbg-search-settings.php:218
+#: admin/view/wbg-search-settings.php:242
+#: admin/view/wbg-search-settings.php:266
+#: admin/view/wbg-search-settings.php:290
+msgid "Ascending"
+msgstr "Ascendente"
+
+#: admin/view/partial/wbg-general-settings-content.php:53
+msgid "Order By"
+msgstr "Ordenar por"
+
+#: admin/view/partial/wbg-general-settings-content.php:30
+msgid "Default"
+msgstr "Por defecto"
+
+#: admin/view/partial/wbg-general-settings-content.php:26
+msgid "Book Cover Width"
+msgstr "Ancho de la cubierta del libro"
+
+#: admin/view/partial/wbg-general-settings-content.php:17
+msgid "Mobile"
+msgstr "Móvil"
+
+#: admin/view/partial/wbg-general-settings-content.php:9
+msgid "Desktop"
+msgstr "Escritorio"
+
+#: admin/cls-books-gallery-admin.php:61 admin/cls-books-gallery-admin.php:62
+msgid "Help & Usage"
+msgstr "Ayuda y uso"
+
+#: front/view/wbg-front-view.php:338
+msgid "No books found."
+msgstr "No se han encontrado libros."
+
+#: admin/view/partial/wbg-single-settings-content.php:85
+#: admin/view/wbg-search-settings.php:179
+msgid "ISBN"
+msgstr "ISBN"
+
+#: admin/view/wbg-search-settings.php:203
+msgid "All Categories"
+msgstr "Todas las categorías"
+
+#: admin/view/wbg-search-settings.php:299
+msgid "All Languages"
+msgstr "Todos los idiomas"
+
+#: admin/view/wbg-search-settings.php:275
+msgid "All Years"
+msgstr "Todos los años"
+
+#. Author URI of the plugin
+msgid "https://hmplugin.com"
+msgstr "https://hmplugin.com"
+
+#. Author of the plugin
+msgid "HM Plugin"
+msgstr "HM Plugin"
+
+#: admin/view/partial/wbg-general-settings-content.php:11
+#: admin/view/partial/wbg-general-settings-content.php:19
+msgid "1"
+msgstr "1"
+
+#: admin/view/partial/wbg-single-settings-content.php:71
+msgid "Only Year"
+msgstr "Solo el año"
+
+#: admin/view/partial/wbg-general-settings-content.php:33
+#: admin/view/partial/wbg-single-settings-content.php:68
+msgid "Full"
+msgstr "Completo"
+
+#: admin/view/partial/wbg-single-settings-content.php:64
+msgid "Date Format:"
+msgstr "Formato de fecha:"
+
+#: admin/view/wbg-search-settings.php:232
+msgid "Search By Publisher?"
+msgstr "¿Buscar por editor?"
+
+#: admin/view/wbg-search-settings.php:208
+msgid "Search By Author?"
+msgstr "¿Buscar por autor?"
+
+#: admin/view/wbg-search-settings.php:184
+msgid "Search By Category?"
+msgstr "¿Buscar por categoría?"
+
+#: admin/view/wbg-search-settings.php:156
+msgid "Search By Book Name?"
+msgstr "¿Buscar por el nombre del libro?"
+
+#: admin/view/wbg-search-settings.php:148
+msgid "Display Search Panel?"
+msgstr "¿Mostrar el panel de búsqueda?"
+
+#: admin/view/partial/wbg-general-settings-content.php:132
+msgid "Description Word Length"
+msgstr "Longitud en palabras de la descripción"
+
+#: admin/view/wbg-general-settings.php:82
+msgid "Books Gallery Settings"
+msgstr "Ajustes de la galería de libros"
+
+#: admin/cls-books-gallery-admin.php:41 admin/cls-books-gallery-admin.php:42
+#: admin/view/wbg-search-settings.php:76
+msgid "Search Panel Settings"
+msgstr "Ajustes de panel de búsqueda"
+
+#: wp-books-gallery.php:34
+msgid "Donate us"
+msgstr "Haznos una donación"
+
+#: wp-books-gallery.php:34
+msgid "Plugin Additional Links"
+msgstr "Enlaces adicionales del plugin"
+
+#: admin/view/wbg-search-settings.php:307
+msgid "Search Books"
+msgstr "Buscar libros"
+
+#: admin/view/wbg-search-settings.php:251
+msgid "All Publishers"
+msgstr "Todos los editores"
+
+#: admin/view/wbg-search-settings.php:227
+msgid "All Authors"
+msgstr "Todos los autores"
+
+#: admin/view/wbg-search-settings.php:165
+msgid "Book Name"
+msgstr "Nombre del libro"
+
+#. Description of the plugin
+msgid "A simple plugin to display Books Gallery in your Page, using Shortcode: [wp_books_gallery]"
+msgstr "Un sencillo plugin para mostrar una galería de libros en tu página, usando el shortcode: [wp_books_gallery]"
+
+#: admin/view/partial/wbg-general-settings-content.php:49
+#: admin/view/partial/wbg-single-settings-content.php:115
+msgid "Country"
+msgstr "País"
+
+#: admin/view/partial/wbg-general-settings-content.php:48
+#: admin/view/partial/wbg-single-settings-content.php:130
+msgid "Language"
+msgstr "Idioma"
+
+#: admin/view/partial/wbg-general-settings-content.php:47
+msgid "Published On"
+msgstr "Publicado en"
+
+#: admin/view/partial/wbg-general-settings-content.php:46
+#: admin/view/partial/wbg-single-settings-content.php:45
+msgid "Publisher"
+msgstr "Editor"
+
+#: admin/view/partial/wbg-general-settings-content.php:45
+msgid "Date"
+msgstr "Fecha"
+
+#: admin/view/partial/wbg-general-settings-content.php:44
+#: admin/view/partial/wbg-single-settings-content.php:15
+msgid "Author"
+msgstr "Autor"
+
+#: admin/view/partial/wbg-general-settings-content.php:43
+msgid "Name"
+msgstr "Nombre"
+
+#: admin/view/partial/wbg-general-settings-content.php:38
+msgid "Sorting By"
+msgstr "Ordenar por"
+
+#: admin/view/partial/wbg-single-settings-content.php:180
+msgid "Description Label:"
+msgstr "Etiqueta de la descripción:"
+
+#: admin/view/partial/wbg-single-settings-content.php:174
+msgid "Display Description:"
+msgstr "Mostrar la descripción:"
+
+#: admin/view/partial/wbg-single-settings-content.php:166
+msgid "Display Download / BuyNow Button:"
+msgstr "Mostrar el botón Descargar / Comprar ahora:"
+
+#: admin/view/partial/wbg-single-settings-content.php:157
+msgid "File Size Label:"
+msgstr "Etiqueta del tamaño del archivo:"
+
+#: admin/view/partial/wbg-single-settings-content.php:151
+msgid "Display File Size:"
+msgstr "Mostrar el tamaño del archivo:"
+
+#: admin/view/partial/wbg-single-settings-content.php:142
+msgid "Dimension Label:"
+msgstr "Etiqueta de las dimensiones:"
+
+#: admin/view/partial/wbg-single-settings-content.php:136
+msgid "Display Dimension:"
+msgstr "Mostrar las dimensiones:"
+
+#: admin/view/partial/wbg-single-settings-content.php:127
+msgid "Language Label:"
+msgstr "Etiqueta del idioma:"
+
+#: admin/view/partial/wbg-single-settings-content.php:121
+msgid "Display Language:"
+msgstr "Mostrar el idioma:"
+
+#: admin/view/partial/wbg-single-settings-content.php:112
+msgid "Country Label:"
+msgstr "Etiqueta del país:"
+
+#: admin/view/partial/wbg-single-settings-content.php:106
+msgid "Display Country:"
+msgstr "Mostrar el país:"
+
+#: admin/view/partial/wbg-single-settings-content.php:97
+msgid "Pages Label:"
+msgstr "Etiqueta de las páginas:"
+
+#: admin/view/partial/wbg-single-settings-content.php:91
+msgid "Display Pages:"
+msgstr "Mostrar las páginas:"
+
+#: admin/view/partial/wbg-single-settings-content.php:82
+msgid "ISBN Label:"
+msgstr "Etiqueta ISBN:"
+
+#: admin/view/partial/wbg-single-settings-content.php:76
+msgid "Display ISBN:"
+msgstr "Mostrar el ISBN:"
+
+#: admin/view/partial/wbg-single-settings-content.php:57
+msgid "Publish Date Label:"
+msgstr "Etiqueta de la fecha de publicación:"
+
+#: admin/view/partial/wbg-single-settings-content.php:51
+msgid "Display Publish Date:"
+msgstr "Mostrar la fecha de publicación:"
+
+#: admin/view/partial/wbg-single-settings-content.php:42
+msgid "Publisher Label:"
+msgstr "Etiqueta del editor:"
+
+#: admin/view/partial/wbg-single-settings-content.php:36
+msgid "Display Publisher:"
+msgstr "Mostrar el editor:"
+
+#: admin/view/partial/wbg-single-settings-content.php:27
+msgid "Category Label:"
+msgstr "Etiqueta de la categoría:"
+
+#: admin/view/partial/wbg-single-settings-content.php:21
+msgid "Display Category:"
+msgstr "Mostrar la categoría:"
+
+#: admin/view/partial/wbg-single-settings-content.php:12
+msgid "Author Label:"
+msgstr "Etiqueta del autor:"
+
+#: admin/view/partial/wbg-single-settings-content.php:6
+msgid "Display Author:"
+msgstr "Mostrar el autor:"
+
+#: admin/view/wbg-details-settings.php:32
+msgid "Book Details Settings"
+msgstr "Ajustes de los detalles del libro"
+
+#: admin/view/partial/wbg-general-settings-content.php:140
+msgid "Display Buynow/Download Button"
+msgstr "Mostrar el botón «Comprar ahora / Descargar»"
+
+#: admin/view/partial/wbg-general-settings-content.php:125
+msgid "Display Description"
+msgstr "Mostrar la descripción"
+
+#: admin/view/partial/wbg-general-settings-content.php:116
+msgid "Author Label Text"
+msgstr "Texto de la etiqueta del autor"
+
+#: admin/view/partial/wbg-general-settings-content.php:109
+msgid "Display Author"
+msgstr "Mostrar el autor"
+
+#: admin/view/partial/wbg-general-settings-content.php:100
+msgid "Category Label Text"
+msgstr "Texto de etiqueta de la categoría"
+
+#: admin/view/partial/wbg-general-settings-content.php:93
+msgid "Display Category"
+msgstr "Mostrar la categoría"
+
+#: admin/view/partial/wbg-general-settings-content.php:85
+msgid "Title Word Length"
+msgstr "Longitud en palabras del título"
+
+#: admin/view/partial/wbg-general-settings-content.php:76
+msgid "Open Book Details in New Tab"
+msgstr "Abrir los detalles del libro en una nueva pestaña"
+
+#: admin/view/partial/wbg-general-settings-content.php:14
+msgid "4"
+msgstr "4"
+
+#: admin/view/partial/wbg-general-settings-content.php:13
+msgid "3"
+msgstr "3"
+
+#: admin/view/partial/wbg-general-settings-content.php:12
+#: admin/view/partial/wbg-general-settings-content.php:20
+msgid "2"
+msgstr "2"
+
+#: admin/view/partial/wbg-general-settings-content.php:42
+msgid "--Select One--"
+msgstr "-- Seleccionar uno --"
+
+#: admin/view/partial/wbg-general-settings-content.php:6
+msgid "Gallary Columns"
+msgstr "Columnas de la galería"
+
+#: admin/view/partial/wbg-book-information.php:76
+msgid "External Url:"
+msgstr "URL externa:"
+
+#: admin/cls-books-gallery-admin.php:51 admin/cls-books-gallery-admin.php:52
+msgid "Book Detail Settings"
+msgstr "Ajustes de los detalles del libro"
+
+#: admin/cls-books-gallery-admin.php:31 admin/cls-books-gallery-admin.php:32
+msgid "Gallery Settings"
+msgstr "Ajustes de la galería"
+
+#: front/view/wbg-front-view.php:328
+msgid " »"
+msgstr " »"
+
+#: front/view/wbg-front-view.php:327
+msgid "« "
+msgstr "« "
+
+#: admin/view/partial/wbg-book-information.php:96
+msgid "Status:"
+msgstr "Estado:"
+
+#: admin/view/partial/wbg-book-information.php:85
+msgid "File Size:"
+msgstr "Tamaño del archivo:"
+
+#: admin/view/partial/wbg-book-information.php:68
+msgid "Dimension:"
+msgstr "Dimensiones:"
+
+#: admin/view/partial/wbg-book-information.php:60
+msgid "Language:"
+msgstr "Idioma:"
+
+#: admin/view/partial/wbg-book-information.php:52
+msgid "Country:"
+msgstr "País:"
+
+#: admin/view/partial/wbg-book-information.php:44
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: admin/view/partial/wbg-book-information.php:36
+msgid "ISBN:"
+msgstr "ISBN:"
+
+#: admin/view/partial/wbg-book-information.php:27
+msgid "Published On:"
+msgstr "Publicado en:"
+
+#: admin/view/partial/wbg-book-information.php:15
+msgid "Publisher:"
+msgstr "Editor:"
+
+#: admin/view/partial/wbg-book-information.php:7
+msgid "Author:"
+msgstr "Autor:"
+
+#: admin/cls-books-gallery-admin.php:154 admin/cls-books-gallery-admin.php:164
+msgid "Book Categories"
+msgstr "Categorías de libros"
+
+#: admin/cls-books-gallery-admin.php:163
+msgid "New Book Category Name"
+msgstr "Nombre de la nueva categoría de libros"
+
+#: admin/cls-books-gallery-admin.php:162
+msgid "Add New Book Category"
+msgstr "Añadir una nueva categoría de libros"
+
+#: admin/cls-books-gallery-admin.php:161
+msgid "Update Book Category"
+msgstr "Actualizar la categoría de libros"
+
+#: admin/cls-books-gallery-admin.php:160
+msgid "Edit Book Category"
+msgstr "Editar la categoría de libros"
+
+#: admin/cls-books-gallery-admin.php:159
+msgid "Parent Book Category:"
+msgstr "Categoría principal de libros:"
+
+#: admin/cls-books-gallery-admin.php:158
+msgid "Parent Book Category"
+msgstr "Categoría principal de libros:"
+
+#: admin/cls-books-gallery-admin.php:157
+msgid "All Book Categories"
+msgstr "Todas las categorías de libros"
+
+#: admin/cls-books-gallery-admin.php:156
+msgid "Search Book Categories"
+msgstr "Buscar categorías de libros"
+
+#: admin/cls-books-gallery-admin.php:126
+msgid "Description For Books"
+msgstr "Descripción para los libros"
+
+#: admin/cls-books-gallery-admin.php:125
+msgid "books"
+msgstr "libros"
+
+#: admin/cls-books-gallery-admin.php:121
+msgid "Not found in Trash"
+msgstr "No encontrado en la papelera"
+
+#: admin/cls-books-gallery-admin.php:120
+msgid "Not Found"
+msgstr "No encontrado"
+
+#: admin/cls-books-gallery-admin.php:119
+msgid "Search Book"
+msgstr "Buscar libros"
+
+#: admin/cls-books-gallery-admin.php:118
+msgid "Update Book"
+msgstr "Actualizar el libro"
+
+#: admin/cls-books-gallery-admin.php:117
+msgid "Edit Book"
+msgstr "Editar el libro"
+
+#: admin/cls-books-gallery-admin.php:116
+msgid "Add New"
+msgstr "Añadir nuevo"
+
+#: admin/cls-books-gallery-admin.php:115
+msgid "Add New Book"
+msgstr "Añadir un nuevo libro"
+
+#: admin/cls-books-gallery-admin.php:114
+msgid "View Book"
+msgstr "Ver el libro"
+
+#: admin/cls-books-gallery-admin.php:113
+msgid "All Books"
+msgstr "Todos los libros"
+
+#: admin/cls-books-gallery-admin.php:112
+msgid "Parent Book"
+msgstr "Libro principal"
+
+#: admin/cls-books-gallery-admin.php:111
+msgid "WBG Books"
+msgstr "Libros de WBG"
+
+#: admin/cls-books-gallery-admin.php:110
+msgid "Book"
+msgstr "Libro"
+
+#: admin/cls-books-gallery-admin.php:109
+msgid "Books"
+msgstr "Libros"
+
+#: admin/view/partial/wbg-general-settings-content.php:168
+msgid "Shortcode:"
+msgstr "Shortcode:"
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/wp-books-gallery/"
+msgstr "https://ve.wordpress.org/plugins/wp-books-gallery/"
+
+#. Plugin Name of the plugin
+msgid "WP Books Gallery"
+msgstr "WP Books Gallery"

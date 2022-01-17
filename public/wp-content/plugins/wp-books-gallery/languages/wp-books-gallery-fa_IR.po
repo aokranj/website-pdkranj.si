@@ -1,0 +1,850 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Books Gallery\n"
+"POT-Creation-Date: 2021-07-09 16:48+0600\n"
+"PO-Revision-Date: 2021-10-01 16:24+0000\n"
+"Language-Team: Persian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"X-Poedit-KeywordsList: esc_attr_e;esc_attr__;esc_html__;esc_html_e;__;_e\n"
+"Last-Translator: Hossni Mubarak\n"
+"Language: fa_IR\n"
+"X-Poedit-SearchPath-0: admin/view/wbg-details-settings.php\n"
+"X-Poedit-SearchPath-1: admin/view/wbg-general-settings.php\n"
+"X-Poedit-SearchPath-2: admin/view/wbg-search-settings.php\n"
+"X-Poedit-SearchPath-3: front/view/wbg-front-view.php\n"
+"X-Poedit-SearchPath-4: front/view/wbg-single-book.php\n"
+"X-Poedit-SearchPath-5: admin\n"
+"X-Poedit-SearchPath-6: front\n"
+"Report-Msgid-Bugs-To: \n"
+"X-Loco-Version: 2.5.4; wp-5.8.1"
+
+#: admin/view/partial/general-content.php:25
+#: admin/view/partial/general-content.php:33
+msgid "1"
+msgstr "1"
+
+#: admin/view/partial/general-content.php:26
+#: admin/view/partial/general-content.php:34
+msgid "2"
+msgstr "2"
+
+#: admin/view/partial/general-content.php:27
+msgid "3"
+msgstr "3"
+
+#: admin/view/partial/general-content.php:28
+msgid "4"
+msgstr "4"
+
+#: admin/view/partial/wbg-book-information.php:201
+msgid "Active"
+msgstr "فعال"
+
+#: admin/cls-books-gallery-admin.php:129
+msgid "Add New"
+msgstr "افزودن جدید"
+
+#: admin/cls-books-gallery-admin.php:128
+msgid "Add New Book"
+msgstr "اضافه کردن کتاب جدید"
+
+#: admin/cls-books-gallery-admin.php:176
+msgid "Add New Book Category"
+msgstr "اضافه کردن دسته کتاب جدید"
+
+#: admin/cls-books-gallery-admin.php:202
+msgid "Add New Book Format"
+msgstr "اضافه کردن کتاب های جدید با فرمت"
+
+#: admin/cls-books-gallery-admin.php:227
+msgid "Add New Book Series"
+msgstr "اضافه کردن کتاب های جدید سری"
+
+#: admin/view/partial/search-content-settings.php:185
+msgid "All Authors"
+msgstr "همه مولفان"
+
+#: admin/cls-books-gallery-admin.php:171
+msgid "All Book Categories"
+msgstr "همه دسته های کتاب"
+
+#: admin/cls-books-gallery-admin.php:197
+msgid "All Book Formates"
+msgstr "همه کتاب Formates"
+
+#: admin/cls-books-gallery-admin.php:222
+msgid "All Book Series"
+msgstr "همه سری کتاب"
+
+#: admin/cls-books-gallery-admin.php:126
+msgid "All Books"
+msgstr "همه کتاب ها"
+
+#: admin/view/partial/search-content-settings.php:98
+msgid "All Categories"
+msgstr "همه دسته ها"
+
+#: admin/view/partial/search-content-settings.php:245
+msgid "All Formates"
+msgstr "همه Formates"
+
+#: admin/view/partial/search-content-settings.php:156
+msgid "All Languages"
+msgstr "همه زبانها"
+
+#: admin/view/partial/search-content-settings.php:214
+msgid "All Publishers"
+msgstr "همه ناشران"
+
+#: admin/view/partial/search-content-settings.php:274
+msgid "All Series"
+msgstr "همه سری"
+
+#: admin/view/partial/search-content-settings.php:127
+msgid "All Years"
+msgstr "تمام سالها"
+
+#: admin/view/partial/general-content.php:82
+#: admin/view/partial/search-content-settings.php:89
+#: admin/view/partial/search-content-settings.php:118
+#: admin/view/partial/search-content-settings.php:147
+#: admin/view/partial/search-content-settings.php:176
+#: admin/view/partial/search-content-settings.php:205
+#: admin/view/partial/search-content-settings.php:236
+#: admin/view/partial/search-content-settings.php:265
+msgid "Ascending"
+msgstr "صعودی"
+
+#: admin/view/partial/general-content.php:69
+#: admin/view/partial/wbg-book-information.php:27
+msgid "Author"
+msgstr "مولف"
+
+#: admin/view/partial/single-content.php:23
+#, fuzzy
+#| msgid "Author Label:"
+msgid "Author Label"
+msgstr "برچسب مولف:"
+
+#: admin/view/partial/general-content.php:141
+msgid "Author Label Text"
+msgstr "متن برچسب نام مولف"
+
+#: front/view/wbg-single-book.php:324
+msgid "Back"
+msgstr "برگشت"
+
+#: admin/view/partial/general-styles.php:54
+#: admin/view/partial/search-styles-settings.php:26
+msgid "Background Color"
+msgstr "رنگ پس زمینه"
+
+#: admin/cls-books-gallery-admin.php:123
+msgid "Book"
+msgstr "کتاب"
+
+#: admin/cls-books-gallery-admin.php:168 admin/cls-books-gallery-admin.php:178
+msgid "Book Categories"
+msgstr "دسته های کتاب"
+
+#: admin/cls-books-gallery-admin.php:169
+msgid "Book Category"
+msgstr "دسته کتاب"
+
+#: admin/cls-books-gallery-admin.php:262
+msgid "Book Cover Image"
+msgstr "کتاب تصویر جلد"
+
+#: admin/cls-books-gallery-admin.php:51 admin/cls-books-gallery-admin.php:52
+msgid "Book Detail Settings"
+msgstr "تنظیمات جزئیات کتاب"
+
+#: admin/cls-books-gallery-admin.php:273
+msgid "Book External Image Url"
+msgstr "کتاب های خارجی Url تصویر"
+
+#: admin/cls-books-gallery-admin.php:204
+msgid "Book Formates"
+msgstr "کتاب Formates"
+
+#: admin/cls-books-gallery-admin.php:251
+msgid "Book Information"
+msgstr "اطلاعات کتاب"
+
+#: admin/view/partial/general-styles.php:40
+msgid "Book Item:"
+msgstr "اقلام کتاب:"
+
+#: admin/view/partial/search-content-settings.php:50
+msgid "Book Name"
+msgstr "نام کتاب"
+
+#: admin/cls-books-gallery-admin.php:229
+msgid "Book Series"
+msgstr "سری کتاب"
+
+#: admin/cls-books-gallery-admin.php:122 front/view/wbg-front-view.php:191
+msgid "Books"
+msgstr "کتاب ها"
+
+#: admin/cls-books-gallery-admin.php:138
+msgid "books"
+msgstr "کتاب ها"
+
+#: admin/view/partial/general-content.php:191
+msgid "Books Per Page"
+msgstr "کتاب در هر صفحه"
+
+#: admin/view/partial/general-styles.php:45
+#: admin/view/partial/search-styles-settings.php:35
+msgid "Border Color"
+msgstr "رنگ حاشیه"
+
+#: admin/view/partial/search-content-settings.php:292
+#: admin/view/partial/search-styles-settings.php:21
+#, fuzzy
+#| msgid "Button:"
+msgid "Button"
+msgstr "دکمه:"
+
+#: admin/view/partial/general-styles.php:68
+msgid "Button Color"
+msgstr "رنگ دکمه"
+
+#: admin/view/partial/general-styles.php:77
+msgid "Button Font Color"
+msgstr "رنگ فونت دکمه"
+
+#: admin/view/partial/general-content.php:172
+msgid "Button Text"
+msgstr "متن دکمه"
+
+#: admin/view/partial/wbg-book-information.php:102
+msgid "Buy From Link"
+msgstr "خرید از لینک"
+
+#: front/view/wbg-front-view.php:346 front/view/wbg-single-book.php:297
+msgid "Buy Now"
+msgstr "خرید در حال حاضر"
+
+#: admin/view/partial/general-content.php:144
+msgid "By:"
+msgstr "توسط:"
+
+#: admin/view/partial/general-content.php:128
+msgid "Category"
+msgstr "دسته"
+
+#: admin/view/partial/single-content.php:38
+#, fuzzy
+#| msgid "Category Label:"
+msgid "Category Label"
+msgstr "برچسب دسته:"
+
+#: admin/view/partial/general-content.php:125
+msgid "Category Label Text"
+msgstr "متن برچسب دسته"
+
+#: admin/view/wbg-details-settings.php:36
+msgid "Coming Soon"
+msgstr "به زودی"
+
+#: admin/view/wbg-details-settings.php:22
+#: admin/view/wbg-general-settings.php:22 admin/view/wbg-search-settings.php:22
+msgid "Content"
+msgstr "مطالب"
+
+#: admin/view/partial/wbg-book-information.php:130
+msgid "Cost Type"
+msgstr "هزینه تایپ"
+
+#: admin/view/partial/general-content.php:74
+#: admin/view/partial/wbg-book-information.php:70
+msgid "Country"
+msgstr "کشور"
+
+#: admin/view/partial/single-content.php:123
+#, fuzzy
+#| msgid "Country Label:"
+msgid "Country Label"
+msgstr "برچسب کشور:"
+
+#: admin/view/partial/general-content.php:232
+msgid "Currency"
+msgstr "ارز"
+
+#: admin/view/partial/general-content.php:70
+msgid "Date"
+msgstr "تاریخ"
+
+#: admin/view/partial/single-content.php:75
+#, fuzzy
+#| msgid "Date Format:"
+msgid "Date Format"
+msgstr "قالب تاریخ:"
+
+#: admin/view/partial/search-content-settings.php:95
+#: admin/view/partial/search-content-settings.php:124
+#: admin/view/partial/search-content-settings.php:153
+#: admin/view/partial/search-content-settings.php:182
+#: admin/view/partial/search-content-settings.php:211
+#: admin/view/partial/search-content-settings.php:242
+#: admin/view/partial/search-content-settings.php:271
+msgid "Default Option"
+msgstr "گزینه پیش فرض"
+
+#: admin/view/partial/general-content.php:85
+#: admin/view/partial/search-content-settings.php:92
+#: admin/view/partial/search-content-settings.php:121
+#: admin/view/partial/search-content-settings.php:150
+#: admin/view/partial/search-content-settings.php:179
+#: admin/view/partial/search-content-settings.php:208
+#: admin/view/partial/search-content-settings.php:239
+#: admin/view/partial/search-content-settings.php:268
+msgid "Descending"
+msgstr "نزولی"
+
+#: admin/view/partial/general-styles.php:118
+msgid "Description"
+msgstr "شرح"
+
+#: admin/cls-books-gallery-admin.php:139
+msgid "Description For Books"
+msgstr "شرح کتاب ها"
+
+#: admin/view/partial/single-content.php:183
+#, fuzzy
+#| msgid "Description Label:"
+msgid "Description Label"
+msgstr "برچسب شرح کتاب:"
+
+#: admin/view/partial/general-content.php:157
+msgid "Description Word Length"
+msgstr "تعداد کلمات شرح کتاب"
+
+#: admin/view/partial/general-content.php:23
+msgid "Desktop"
+msgstr "دسکتاپ"
+
+#: admin/view/wbg-details-settings.php:9
+#, fuzzy
+#| msgid "Book Details Settings"
+msgid "Details Settings"
+msgstr "تنظیمات جزئیات کتاب"
+
+#: admin/view/partial/wbg-book-information.php:86
+msgid "Dimension"
+msgstr "قطع کتاب"
+
+#: admin/view/partial/single-content.php:153
+#, fuzzy
+#| msgid "Dimension Label:"
+msgid "Dimension Label"
+msgstr "برچسب قطع کتاب:"
+
+#: admin/view/partial/wbg-book-information.php:174
+msgid "Discount Price"
+msgstr "قیمت تخفیف"
+
+#: admin/view/partial/general-content.php:134
+#: admin/view/partial/search-content-settings.php:166
+#: admin/view/partial/single-content.php:17
+msgid "Display Author"
+msgstr "نمایش مولف"
+
+#: admin/view/partial/search-content-settings.php:226
+msgid "Display Book Format"
+msgstr "نمایش کتاب با فرمت"
+
+#: admin/view/partial/search-content-settings.php:41
+msgid "Display Book Name"
+msgstr "نمایش کتاب نام"
+
+#: admin/view/partial/general-content.php:165
+msgid "Display Buynow/Download Button"
+msgstr "نمایش دکمه خرید/دانلود"
+
+#: admin/view/partial/general-content.php:118
+#: admin/view/partial/search-content-settings.php:79
+#: admin/view/partial/single-content.php:32
+msgid "Display Category"
+msgstr "نمایش دسته"
+
+#: admin/view/partial/single-content.php:117
+#, fuzzy
+#| msgid "Display Country:"
+msgid "Display Country"
+msgstr "نمایش کشور:"
+
+#: admin/view/partial/general-content.php:150
+#: admin/view/partial/single-content.php:177
+msgid "Display Description"
+msgstr "نمایش شرح کتاب"
+
+#: admin/view/partial/single-content.php:147
+#, fuzzy
+#| msgid "Display Dimension:"
+msgid "Display Dimension"
+msgstr "نمایش قطع کتاب:"
+
+#: admin/view/partial/single-content.php:192
+#, fuzzy
+#| msgid "Display Download / BuyNow Button:"
+msgid "Display Download/BuyNow Button"
+msgstr "نمایش دکمه دانلود/خرید:"
+
+#: admin/view/partial/single-content.php:162
+#, fuzzy
+#| msgid "Display File Size:"
+msgid "Display File Size"
+msgstr "نمایش اندازه فایل:"
+
+#: admin/view/partial/search-content-settings.php:60
+#: admin/view/partial/single-content.php:87
+#, fuzzy
+#| msgid "Display ISBN:"
+msgid "Display ISBN"
+msgstr "نمایش شابک:"
+
+#: admin/view/partial/search-content-settings.php:137
+#: admin/view/partial/single-content.php:132
+#, fuzzy
+#| msgid "Display Language:"
+msgid "Display Language"
+msgstr "نمایش زبان:"
+
+#: admin/view/partial/single-content.php:102
+#, fuzzy
+#| msgid "Display Pages:"
+msgid "Display Pages"
+msgstr "نمایش تعداد صفحات:"
+
+#: admin/view/partial/general-content.php:211
+msgid "Display Pagination"
+msgstr "نمایش صفحه بندی"
+
+#: admin/view/partial/single-content.php:62
+#, fuzzy
+#| msgid "Display Publish Date:"
+msgid "Display Publish Date"
+msgstr "نمایش تاریخ انتشار:"
+
+#: admin/view/partial/search-content-settings.php:195
+#: admin/view/partial/single-content.php:47
+#, fuzzy
+#| msgid "Display Publisher:"
+msgid "Display Publisher"
+msgstr "نمایش ناشر:"
+
+#: admin/view/partial/search-content-settings.php:21
+msgid "Display Search Panel"
+msgstr "نمایش پانل جستجو"
+
+#: admin/view/partial/search-content-settings.php:255
+msgid "Display Series"
+msgstr "صفحه نمایش سری"
+
+#: admin/view/partial/single-content.php:200
+msgid "Display Sidebar"
+msgstr "نمایش نوار کناری"
+
+#: admin/view/partial/general-content.php:181
+msgid "Display Total Books"
+msgstr "نمایش جمع کل کتاب ها"
+
+#: admin/view/partial/search-content-settings.php:108
+msgid "Display Year"
+msgstr "نمایش سال"
+
+#: admin/view/partial/general-styles.php:63
+msgid "Download Button"
+msgstr "دکمه دانلود"
+
+#: admin/view/partial/wbg-book-information.php:94
+msgid "Download Link"
+msgstr "لینک دانلود"
+
+#: admin/view/partial/general-content.php:175
+msgid "Download/Buynow"
+msgstr "دانلود/خرید"
+
+#: admin/cls-books-gallery-admin.php:130
+msgid "Edit Book"
+msgstr "ویرایش کتاب"
+
+#: admin/cls-books-gallery-admin.php:174
+msgid "Edit Book Category"
+msgstr "ویرایش دسته کتاب"
+
+#: admin/cls-books-gallery-admin.php:200
+msgid "Edit Book Format"
+msgstr "ویرایش قالب کتاب"
+
+#: admin/cls-books-gallery-admin.php:225
+msgid "Edit Book Series"
+msgstr "ویرایش سری کتاب"
+
+#: admin/view/partial/general-content.php:91
+msgid "Enable Book Details Page"
+msgstr "فعال کردن صفحه جزئیات کتاب"
+
+#: admin/view/partial/wbg-book-information.php:122
+msgid "File Size"
+msgstr "اندازه فایل"
+
+#: admin/view/partial/single-content.php:168
+#, fuzzy
+#| msgid "File Size Label:"
+msgid "File Size Label"
+msgstr "برچسب اندازه فایل:"
+
+#: admin/view/partial/general-styles.php:91
+#: admin/view/partial/general-styles.php:123
+#: admin/view/partial/search-styles-settings.php:44
+msgid "Font Color"
+msgstr "رنگ فونت"
+
+#: admin/view/partial/general-styles.php:109
+#: admin/view/partial/general-styles.php:132
+msgid "Font Size"
+msgstr "اندازه فونت"
+
+#: front/view/wbg-single-book.php:111
+msgid "Format"
+msgstr "فرمت"
+
+#: admin/view/partial/wbg-book-information.php:143
+msgid "Free"
+msgstr "رایگان"
+
+#: admin/view/partial/general-content.php:47
+#: admin/view/partial/single-content.php:79
+msgid "Full"
+msgstr "کامل"
+
+#: admin/view/partial/general-content.php:20
+msgid "Gallary Columns"
+msgstr "ستون های گالری"
+
+#: admin/cls-books-gallery-admin.php:31 admin/cls-books-gallery-admin.php:32
+#: admin/view/wbg-general-settings.php:9
+msgid "Gallery Settings"
+msgstr "تنظیمات گالری"
+
+#: admin/view/partial/general-styles.php:100
+msgid "Hover Color"
+msgstr "رنگ هاور"
+
+#: admin/view/partial/general-content.php:52
+msgid "Image Animation"
+msgstr "انیمیشن تصویر"
+
+#: admin/view/partial/general-content.php:40
+msgid "Image Width"
+msgstr "عرض تصویر"
+
+#: front/view/wbg-front-view.php:244
+msgid "img/noimage.jpg"
+msgstr "img/noimage.jpg"
+
+#: admin/view/partial/wbg-book-information.php:204
+msgid "Inactive"
+msgstr "غیرفعال"
+
+#: admin/view/partial/search-content-settings.php:69
+#: admin/view/partial/wbg-book-information.php:54
+msgid "ISBN"
+msgstr "شابک"
+
+#: admin/view/partial/single-content.php:93
+#, fuzzy
+#| msgid "ISBN Label:"
+msgid "ISBN Label"
+msgstr "برچسب شابک:"
+
+#: admin/view/partial/general-content.php:73
+#: admin/view/partial/wbg-book-information.php:78
+msgid "Language"
+msgstr "زبان"
+
+#: admin/view/partial/single-content.php:138
+#, fuzzy
+#| msgid "Language Label:"
+msgid "Language Label"
+msgstr "برچسب زبان:"
+
+#: admin/view/partial/general-content.php:31
+msgid "Mobile"
+msgstr "موبایل"
+
+#: admin/view/partial/general-content.php:68
+msgid "Name"
+msgstr "نام"
+
+#: admin/cls-books-gallery-admin.php:177
+msgid "New Book Category Name"
+msgstr "نام دسته کتاب جدید"
+
+#: admin/cls-books-gallery-admin.php:203
+msgid "New Book Formate"
+msgstr "کتاب جدید فرمات"
+
+#: admin/cls-books-gallery-admin.php:228
+msgid "New Book Series"
+msgstr "کتاب جدید سری"
+
+#: front/view/wbg-front-view.php:365
+msgid "No books found."
+msgstr "هیچ کتابی یافت نشد."
+
+#: front/view/wbg-front-view.php:212 front/view/wbg-front-view.php:219
+#: front/view/wbg-front-view.php:222 front/view/wbg-front-view.php:233
+#: front/view/wbg-front-view.php:240 front/view/wbg-front-view.php:244
+#: front/view/wbg-single-book.php:85
+msgid "No Image Available"
+msgstr "تصویری ندارد"
+
+#: admin/view/partial/general-content.php:56
+msgid "None"
+msgstr "بدون حرکت"
+
+#: admin/cls-books-gallery-admin.php:133
+msgid "Not Found"
+msgstr "یافت نشد"
+
+#: admin/cls-books-gallery-admin.php:134
+msgid "Not found in Trash"
+msgstr "در سطل زباله یافت نشد"
+
+#: admin/view/partial/single-content.php:82
+msgid "Only Year"
+msgstr "فقط سال"
+
+#: admin/view/partial/general-content.php:101
+msgid "Open Book Details in New Tab"
+msgstr "شرح کتاب در برگه جدید باز شود"
+
+#: admin/view/partial/general-content.php:78
+#: admin/view/partial/search-content-settings.php:85
+#: admin/view/partial/search-content-settings.php:114
+#: admin/view/partial/search-content-settings.php:143
+#: admin/view/partial/search-content-settings.php:172
+#: admin/view/partial/search-content-settings.php:201
+#: admin/view/partial/search-content-settings.php:232
+#: admin/view/partial/search-content-settings.php:261
+msgid "Order By"
+msgstr "مرتب کردن بر اساس"
+
+#: admin/view/partial/wbg-book-information.php:62
+msgid "Pages"
+msgstr "تعداد صفحات"
+
+#: admin/view/partial/single-content.php:108
+#, fuzzy
+#| msgid "Pages Label:"
+msgid "Pages Label"
+msgstr "برچسب تعداد صفحات:"
+
+#: admin/cls-books-gallery-admin.php:125
+msgid "Parent Book"
+msgstr "کتاب والد"
+
+#: admin/cls-books-gallery-admin.php:172
+msgid "Parent Book Category"
+msgstr "دسته کتاب های والد"
+
+#: admin/cls-books-gallery-admin.php:173
+msgid "Parent Book Category:"
+msgstr "دسته کتاب های والد:"
+
+#: admin/cls-books-gallery-admin.php:198
+msgid "Parent Book Format"
+msgstr "پدر و مادر کتاب با فرمت"
+
+#: admin/cls-books-gallery-admin.php:199
+msgid "Parent Book Format:"
+msgstr "پدر و مادر قالب کتاب:"
+
+#: admin/cls-books-gallery-admin.php:223
+msgid "Parent Book Series"
+msgstr "پدر و مادر سری کتاب"
+
+#: admin/cls-books-gallery-admin.php:224
+msgid "Parent Book Series:"
+msgstr "پدر و مادر سری کتاب های:"
+
+#: admin/view/partial/search-content-settings.php:47
+#: admin/view/partial/search-content-settings.php:66
+msgid "Placeholder Text"
+msgstr "متن پیش فرض"
+
+#: admin/view/partial/general-content.php:197
+#: admin/view/partial/general-content.php:217
+#: admin/view/partial/general-content.php:238
+#: admin/view/partial/wbg-book-information.php:108
+#: admin/view/partial/wbg-book-information.php:136
+#: admin/view/partial/wbg-book-information.php:160
+#: admin/view/partial/wbg-book-information.php:180
+msgid "Please Upgrade Now!"
+msgstr "لطفا به روز رسانی در حال حاضر!"
+
+#: admin/view/partial/wbg-book-information.php:146
+msgid "Premium"
+msgstr "حق بیمه"
+
+#: admin/view/partial/single-content.php:68
+#, fuzzy
+#| msgid "Publish Date Label:"
+msgid "Publish Date Label"
+msgstr "برچسب تاریخ انتشار:"
+
+#: admin/view/partial/general-content.php:72
+#: admin/view/partial/wbg-book-information.php:46
+msgid "Published On"
+msgstr "تاریخ انتشار"
+
+#: admin/view/partial/general-content.php:71
+#: admin/view/partial/wbg-book-information.php:35
+msgid "Publisher"
+msgstr "ناشر"
+
+#: admin/view/partial/single-content.php:53
+#, fuzzy
+#| msgid "Publisher Label:"
+msgid "Publisher Label"
+msgstr "برچسب ناشر:"
+
+#: admin/view/partial/wbg-book-information.php:154
+msgid "Regular Price"
+msgstr "قیمت به طور منظم"
+
+#: admin/cls-books-gallery-admin.php:432
+msgid "Remove Book Cover Here"
+msgstr "جلد کتاب را از اینجا بردارید"
+
+#: admin/view/partial/general-content.php:57
+msgid "Rotate 360"
+msgstr "چرخش 360 درجه"
+
+#: admin/view/partial/general-content.php:274
+#: admin/view/partial/general-styles.php:144
+#: admin/view/partial/search-content-settings.php:306
+#: admin/view/partial/search-styles-settings.php:52
+#: admin/view/partial/single-content.php:208
+msgid "Save Settings"
+msgstr "ذخیره تنظیمات"
+
+#: admin/cls-books-gallery-admin.php:132
+msgid "Search Book"
+msgstr "جستجوی کتاب"
+
+#: admin/cls-books-gallery-admin.php:170
+msgid "Search Book Categories"
+msgstr "جستجوی دسته کتاب ها"
+
+#: admin/cls-books-gallery-admin.php:196
+msgid "Search Book Formates"
+msgstr "جستجوی کتاب Formates"
+
+#: admin/cls-books-gallery-admin.php:221
+msgid "Search Book Series"
+msgstr "جستجوی کتاب سری"
+
+#: admin/view/partial/search-content-settings.php:300
+msgid "Search Books"
+msgstr "جستجوی کتاب"
+
+#: admin/view/partial/search-content-settings.php:297
+msgid "Search Button Text"
+msgstr "متن دکمه جستجو"
+
+#: admin/view/partial/search-content-settings.php:29
+msgid "Search Items"
+msgstr "جستجو در آیتم ها"
+
+#: admin/cls-books-gallery-admin.php:41 admin/cls-books-gallery-admin.php:42
+#: admin/view/wbg-search-settings.php:9
+msgid "Search Panel Settings"
+msgstr "تنظیمات پانل جستجو"
+
+#: admin/view/partial/general-content.php:67
+msgid "Select One"
+msgstr "یکی را انتخاب کنید"
+
+#: front/view/wbg-single-book.php:122
+msgid "Series"
+msgstr "سری"
+
+#: admin/cls-books-gallery-admin.php:431
+msgid "Set Book Cover Here"
+msgstr "جلد کتاب را اینجا درج کنید"
+
+#: admin/view/partial/general-content.php:266
+msgid "Shortcode:"
+msgstr "شورت کد:"
+
+#: front/view/wbg-front-view.php:191
+msgid "Showing"
+msgstr "نمایش"
+
+#: admin/view/partial/general-content.php:44
+msgid "Small"
+msgstr "کوچک"
+
+#: admin/view/partial/general-content.php:63
+msgid "Sorting By"
+msgstr "مرتب کردن براساس"
+
+#: admin/view/partial/wbg-book-information.php:197
+msgid "Status:"
+msgstr "وضعیت:"
+
+#: admin/view/wbg-details-settings.php:25
+#: admin/view/wbg-general-settings.php:25 admin/view/wbg-search-settings.php:25
+msgid "Styles"
+msgstr "سبک"
+
+#: front/view/wbg-single-book.php:267
+msgid "Tags"
+msgstr "برچسب ها"
+
+#: admin/view/partial/general-styles.php:86
+msgid "Title"
+msgstr "عنوان"
+
+#: admin/view/partial/general-content.php:110
+msgid "Title Word Length"
+msgstr "تعداد کلمات عنوان کتاب"
+
+#: admin/cls-books-gallery-admin.php:131
+msgid "Update Book"
+msgstr "بروزرسانی کتاب"
+
+#: admin/cls-books-gallery-admin.php:175
+msgid "Update Book Category"
+msgstr "بروزرسانی دسته کتاب"
+
+#: admin/cls-books-gallery-admin.php:201
+msgid "Update Book Format"
+msgstr "به روز رسانی قالب کتاب"
+
+#: admin/cls-books-gallery-admin.php:226
+msgid "Update Book Series"
+msgstr "به روز رسانی سری کتاب"
+
+#: admin/cls-books-gallery-admin.php:61 admin/cls-books-gallery-admin.php:62
+msgid "Usage & Tutorial"
+msgstr "استفاده و آموزش"
+
+#: admin/cls-books-gallery-admin.php:127
+msgid "View Book"
+msgstr "رویت کتاب"
+
+#: admin/cls-books-gallery-admin.php:124
+msgid "WBG Books"
+msgstr "گالری کتاب WBG"
