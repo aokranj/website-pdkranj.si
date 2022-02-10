@@ -1,5 +1,9 @@
 RewriteEngine On
 RewriteBase /
+
+# This is here for system status logger
+RewriteRule ^/?sys/     -       [L]
+
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
