@@ -3,8 +3,8 @@ Contributors: mhmrajib, hmplugin, freemius
 Donate link: https://www.paypal.me/mhmrajib
 Tags: book, gallery, store, Books, library, best books showcase plugin, free books showcase plugin, books showcase, Digital Library, Affiliating, Affiliate Marketing, Sell Books Online, Publisher, Author, Writer
 Requires at least: 5.0
-Tested up to: 5.8.2
-Stable tag: 3.4
+Tested up to: 5.9
+Stable tag: 3.5
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -297,6 +297,9 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 
 
 == Changelog ==
+
+= 3.5 =
+* Minor issue fixed
 
 = 3.4 =
 

@@ -3,7 +3,7 @@
  * Plugin Name:	WordPress Books Gallery
  * Plugin URI:	https://wordpress.org/plugins/wp-books-gallery/
  * Description:	Best Books Showcase & Library Plugin for WordPress which will build a beautiful mobile-friendly Book Store, Gallery, Library in a few minutes.
- * Version:		3.4
+ * Version:		3.5
  * Author:		HM Plugin
  * Author URI:	https://hmplugin.com
  * License:		GPL-2.0+
@@ -28,7 +28,7 @@ if ( function_exists('wbg_fs') ) {
         define( 'WBG_PRFX', 'wbg_' );
         define( 'WBG_CLS_PRFX', 'cls-books-gallery-' );
         define( 'WBG_TXT_DOMAIN', 'wp-books-gallery' );
-        define( 'WBG_VERSION', '3.4' );
+        define( 'WBG_VERSION', '3.5' );
 
         require_once WBG_PATH . "/lib/freemius-integrator.php";
 
