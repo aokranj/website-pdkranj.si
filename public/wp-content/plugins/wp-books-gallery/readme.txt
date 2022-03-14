@@ -3,8 +3,8 @@ Contributors: mhmrajib, hmplugin, freemius
 Donate link: https://www.paypal.me/mhmrajib
 Tags: book, gallery, store, Books, library, best books showcase plugin, free books showcase plugin, books showcase, Digital Library, Affiliating, Affiliate Marketing, Sell Books Online, Publisher, Author, Writer
 Requires at least: 5.0
-Tested up to: 5.9
-Stable tag: 3.5
+Tested up to: 5.9.1
+Stable tag: 3.7
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -173,6 +173,9 @@ https://youtu.be/nR_3v1TkaZo
 * Multiple Author Option Available
 * Co-Publisher Option Available
 * Co-Publisher Show-Hide Option Available
+* Allow Only Logged-in Users to Download Books
+* Import Books with CSV Format - Addon Available
+* Import Books from Open Library
 
 
 [Get the pro](https://books-gallery.com/pricing-faq/)
@@ -298,28 +301,30 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 
 == Changelog ==
 
+= 3.7 =
+* Spelling issue fixed
+
+= 3.6 =
+* Security fix
+
 = 3.5 =
 * Minor issue fixed
 
 = 3.4 =
-
 * United Arab Emirates currency added
 
 = 3.3 =
-
 * General Setings Page Added
 * Gallery Page Url Slug Option added
 * Gallery Page Slug Applied to Back Button
 * Search Filter on Author and Category Link in Details Page
 
 = 3.2 =
-
 * Admin Tab Styling Overlap Issue Fixed
 * Admin Sidebar Link Updated
 * Icon Added to Details Page Book Info
 
 = 3.1 =
-
 * Minor bug fixing
 * Code optimized
 * Search button border issue fixed
@@ -332,13 +337,11 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 * Search Refresh Icon Changed
 
 = 2.9 =
-
 * Minor fixing
 * Max width applied to details page
 * Notice error fixed in details page
 
 = 2.8 =
-
 * Usage & Tutorial Page Added
 * Download button Url open in new tab
 * Minor fixing

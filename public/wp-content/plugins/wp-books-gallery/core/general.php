@@ -42,6 +42,11 @@ trait Wbg_Core_Settings
                 'type'      => 'string',
                 'default'   => 'single',
             ],
+            [
+                'name'      => 'wbg_download_when_logged_in',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
         ];
     }
 }

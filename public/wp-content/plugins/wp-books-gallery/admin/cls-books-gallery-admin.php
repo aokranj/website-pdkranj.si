@@ -68,12 +68,21 @@ class WBG_Admin
         );
         add_submenu_page(
             $wbg_cpt_menu,
+            __( 'API Import', WBG_TXT_DOMAIN ),
+            __( 'API Import', WBG_TXT_DOMAIN ),
+            'manage_options',
+            'wbg-api-import',
+            array( $this, WBG_PRFX . 'api_import' ),
+            13
+        );
+        add_submenu_page(
+            $wbg_cpt_menu,
             __( 'Usage & Tutorial', WBG_TXT_DOMAIN ),
             __( 'Usage & Tutorial', WBG_TXT_DOMAIN ),
             'manage_options',
             'wbg-get-help',
             array( $this, WBG_PRFX . 'get_help' ),
-            13
+            14
         );
     }
     
@@ -106,12 +115,13 @@ class WBG_Admin
         }
         // Load the datepicker script (pre-registered in WordPress).
         wp_enqueue_script( 'jquery-ui-datepicker' );
-        
+        /*
         if ( is_admin() ) {
-            wp_enqueue_script( 'jquery-ui-draggable' );
-            wp_enqueue_script( 'jquery-ui-droppable' );
+        	wp_enqueue_script( 'jquery-ui-draggable' );
+        	wp_enqueue_script( 'jquery-ui-droppable' );
         }
-        
+        */
+        wp_enqueue_script( 'jquery-ui-sortable' );
         wp_enqueue_script(
             $this->wbg_assets_prefix . 'admin',
             WBG_ASSETS . 'js/' . $this->wbg_assets_prefix . 'admin.js',
@@ -222,6 +232,11 @@ class WBG_Admin
     {
         wp_nonce_field( basename( __FILE__ ), 'wbg_books_fields' );
         require_once WBG_PATH . 'admin/view/partial/book-information.php';
+    }
+    
+    function wbg_api_import()
+    {
+        require_once WBG_PATH . 'admin/view/wbg-api-import.php';
     }
     
     /**

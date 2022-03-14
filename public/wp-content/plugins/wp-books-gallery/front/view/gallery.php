@@ -342,13 +342,39 @@ if ( $wbgBooks->have_posts() ) {
             if ( $wbgLink !== '' ) {
                 
                 if ( $wbg_buynow_btn_txt !== '' ) {
-                    ?>
-                    <a href="<?php 
-                    echo  esc_url( $wbgLink ) ;
-                    ?>" class="button wbg-btn" target="_blank"><?php 
-                    esc_html_e( $wbg_buynow_btn_txt );
-                    ?></a>
-                  <?php 
+                    
+                    if ( $wbg_download_when_logged_in ) {
+                        
+                        if ( is_user_logged_in() ) {
+                            ?>
+                        <a href="<?php 
+                            echo  esc_url( $wbgLink ) ;
+                            ?>" class="button wbg-btn" target="_blank"><?php 
+                            esc_html_e( $wbg_buynow_btn_txt );
+                            ?></a>
+                        <?php 
+                        }
+                        
+                        /*
+                        else {
+                          ?>
+                          <a href="<?php echo esc_url( '#' ); ?>" class="button wbg-btn"><?php _e('Login to Download', WBG_TXT_DOMAIN); ?></a>
+                          <?php
+                        }
+                        */
+                    }
+                    
+                    
+                    if ( !$wbg_download_when_logged_in ) {
+                        ?>
+                      <a href="<?php 
+                        echo  esc_url( $wbgLink ) ;
+                        ?>" class="button wbg-btn" target="_blank"><?php 
+                        esc_html_e( $wbg_buynow_btn_txt );
+                        ?></a>
+                      <?php 
+                    }
+                
                 }
             
             }

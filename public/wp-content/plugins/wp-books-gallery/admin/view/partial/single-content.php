@@ -109,7 +109,7 @@ if ( wbg_fs()->is_not_paying() ) {
             </td>
             <th scope="row" style="text-align: right;">
                 <label><?php 
-_e( 'Rading Age Label', WBG_TXT_DOMAIN );
+_e( 'Reading Age Label', WBG_TXT_DOMAIN );
 ?>:</label>
             </th>
             <td>

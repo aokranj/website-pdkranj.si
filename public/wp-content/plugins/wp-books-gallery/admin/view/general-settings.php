@@ -9,6 +9,12 @@ foreach ( $wbgCoreSettings as $option_name => $option_value ) {
         ${"" . $option_name} = $option_value;
     }
 }
+/*
+$roles = get_editable_roles();
+foreach ( $roles as $role_id => $role_data ) {
+    echo '<br>' . $role_data['name'];
+}
+*/
 ?>
 <div id="wph-wrap-all" class="wrap wbg-settings-page">
 
@@ -56,6 +62,22 @@ _e( 'Prefered Author', WBG_TXT_DOMAIN );
 ?>
                             <span><?php 
 echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                            <?php 
+?>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="wbg_download_when_logged_in"><?php 
+_e( 'Download When Logged-in', WBG_TXT_DOMAIN );
+?>?</label>
+                    </th>
+                    <td colspan="3">
+                        <?php 
+?>
+                            <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
 ?></span>
                             <?php 
 ?>

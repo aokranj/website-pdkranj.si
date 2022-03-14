@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WordPress Books Gallery\n"
-"POT-Creation-Date: 2021-12-27 04:55+0600\n"
+"POT-Creation-Date: 2022-03-08 02:40+0600\n"
 "PO-Revision-Date: 2021-12-27 03:58+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Poedit-SearchPath-5: admin/view/gallery-settings.php\n"
 
 #: admin/cls-books-gallery-admin.php:31 admin/cls-books-gallery-admin.php:32
-#: admin/view/general-settings.php:16
+#: admin/view/general-settings.php:22
 msgid "General Settings"
 msgstr ""
 
@@ -41,317 +41,321 @@ msgid "Book Detail Settings"
 msgstr ""
 
 #: admin/cls-books-gallery-admin.php:71 admin/cls-books-gallery-admin.php:72
+msgid "API Import"
+msgstr ""
+
+#: admin/cls-books-gallery-admin.php:81 admin/cls-books-gallery-admin.php:82
 msgid "Usage & Tutorial"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:132 front/view/gallery.php:200
+#: admin/cls-books-gallery-admin.php:145 front/view/gallery.php:200
 msgid "Books"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:133
+#: admin/cls-books-gallery-admin.php:146
 msgid "Book"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:134
+#: admin/cls-books-gallery-admin.php:147
 msgid "WBG Books"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:135
+#: admin/cls-books-gallery-admin.php:148
 msgid "Parent Book"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:136
+#: admin/cls-books-gallery-admin.php:149
 msgid "All Books"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:137
+#: admin/cls-books-gallery-admin.php:150
 msgid "View Book"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:138
+#: admin/cls-books-gallery-admin.php:151
 msgid "Add New Book"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:139
+#: admin/cls-books-gallery-admin.php:152
 msgid "Add New"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:140
+#: admin/cls-books-gallery-admin.php:153
 msgid "Edit Book"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:141
+#: admin/cls-books-gallery-admin.php:154
 msgid "Update Book"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:142
+#: admin/cls-books-gallery-admin.php:155
 msgid "Search Book"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:143
+#: admin/cls-books-gallery-admin.php:156
 msgid "Not Found"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:144
+#: admin/cls-books-gallery-admin.php:157
 msgid "Not found in Trash"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:148
+#: admin/cls-books-gallery-admin.php:161
 msgid "books"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:149
+#: admin/cls-books-gallery-admin.php:162
 msgid "Description For Books"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:178 admin/cls-books-gallery-admin.php:188
+#: admin/cls-books-gallery-admin.php:191 admin/cls-books-gallery-admin.php:201
 msgid "Book Categories"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:179
+#: admin/cls-books-gallery-admin.php:192
 msgid "Book Category"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:180
+#: admin/cls-books-gallery-admin.php:193
 msgid "Search Book Categories"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:181
+#: admin/cls-books-gallery-admin.php:194
 msgid "All Book Categories"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:182
+#: admin/cls-books-gallery-admin.php:195
 msgid "Parent Book Category"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:183
+#: admin/cls-books-gallery-admin.php:196
 msgid "Parent Book Category:"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:184
+#: admin/cls-books-gallery-admin.php:197
 msgid "Edit Book Category"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:185
+#: admin/cls-books-gallery-admin.php:198
 msgid "Update Book Category"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:186
+#: admin/cls-books-gallery-admin.php:199
 msgid "Add New Book Category"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:187
+#: admin/cls-books-gallery-admin.php:200
 msgid "New Book Category Name"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:204 admin/cls-books-gallery-admin.php:214
+#: admin/cls-books-gallery-admin.php:217 admin/cls-books-gallery-admin.php:227
 msgid "Book Formates"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:205
+#: admin/cls-books-gallery-admin.php:218
 msgid "Book Format"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:206
+#: admin/cls-books-gallery-admin.php:219
 msgid "Search Book Formates"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:207
+#: admin/cls-books-gallery-admin.php:220
 msgid "All Book Formates"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:208
+#: admin/cls-books-gallery-admin.php:221
 msgid "Parent Book Format"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:209
+#: admin/cls-books-gallery-admin.php:222
 msgid "Parent Book Format:"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:210
+#: admin/cls-books-gallery-admin.php:223
 msgid "Edit Book Format"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:211
+#: admin/cls-books-gallery-admin.php:224
 msgid "Update Book Format"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:212
+#: admin/cls-books-gallery-admin.php:225
 msgid "Add New Book Format"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:213
+#: admin/cls-books-gallery-admin.php:226
 msgid "New Book Formate"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:229 admin/cls-books-gallery-admin.php:230
-#: admin/cls-books-gallery-admin.php:239
+#: admin/cls-books-gallery-admin.php:242 admin/cls-books-gallery-admin.php:243
+#: admin/cls-books-gallery-admin.php:252
 msgid "Book Series"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:231
+#: admin/cls-books-gallery-admin.php:244
 msgid "Search Book Series"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:232
+#: admin/cls-books-gallery-admin.php:245
 msgid "All Book Series"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:233
+#: admin/cls-books-gallery-admin.php:246
 msgid "Parent Book Series"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:234
+#: admin/cls-books-gallery-admin.php:247
 msgid "Parent Book Series:"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:235
+#: admin/cls-books-gallery-admin.php:248
 msgid "Edit Book Series"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:236
+#: admin/cls-books-gallery-admin.php:249
 msgid "Update Book Series"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:237
+#: admin/cls-books-gallery-admin.php:250
 msgid "Add New Book Series"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:238
+#: admin/cls-books-gallery-admin.php:251
 msgid "New Book Series"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:257 admin/cls-books-gallery-admin.php:258
-#: admin/cls-books-gallery-admin.php:267
+#: admin/cls-books-gallery-admin.php:270 admin/cls-books-gallery-admin.php:271
+#: admin/cls-books-gallery-admin.php:280
 msgid "Reading Age"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:259
+#: admin/cls-books-gallery-admin.php:272
 msgid "Search Reading Age"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:260
+#: admin/cls-books-gallery-admin.php:273
 msgid "All Reading Age"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:261
+#: admin/cls-books-gallery-admin.php:274
 msgid "Parent Reading Age"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:262
+#: admin/cls-books-gallery-admin.php:275
 msgid "Parent Reading Age:"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:263
+#: admin/cls-books-gallery-admin.php:276
 msgid "Edit Reading Age"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:264
+#: admin/cls-books-gallery-admin.php:277
 msgid "Update Reading Age"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:265
+#: admin/cls-books-gallery-admin.php:278
 msgid "Add New Reading Age"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:266
+#: admin/cls-books-gallery-admin.php:279
 msgid "New Reading Age"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:282 admin/cls-books-gallery-admin.php:283
-#: admin/cls-books-gallery-admin.php:292
+#: admin/cls-books-gallery-admin.php:295 admin/cls-books-gallery-admin.php:296
+#: admin/cls-books-gallery-admin.php:305
 msgid "Grade Level"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:284
+#: admin/cls-books-gallery-admin.php:297
 msgid "Search Grade Level"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:285
+#: admin/cls-books-gallery-admin.php:298
 msgid "All Grade Level"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:286
+#: admin/cls-books-gallery-admin.php:299
 msgid "Parent Grade Level"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:287
+#: admin/cls-books-gallery-admin.php:300
 msgid "Parent Grade Level:"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:288
+#: admin/cls-books-gallery-admin.php:301
 msgid "Edit Grade Level"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:289
+#: admin/cls-books-gallery-admin.php:302
 msgid "Update Grade Level"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:290
+#: admin/cls-books-gallery-admin.php:303
 msgid "Add New Grade Level"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:291
+#: admin/cls-books-gallery-admin.php:304
 msgid "New Grade Level"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:307 admin/cls-books-gallery-admin.php:308
-#: admin/cls-books-gallery-admin.php:317
+#: admin/cls-books-gallery-admin.php:320 admin/cls-books-gallery-admin.php:321
+#: admin/cls-books-gallery-admin.php:330
 #: admin/view/partial/book-information.php:31
 #: admin/view/partial/gallery-content.php:82
 msgid "Author"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:309
+#: admin/cls-books-gallery-admin.php:322
 msgid "Search Author"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:310
+#: admin/cls-books-gallery-admin.php:323
 #: admin/view/partial/search-content-settings.php:185
 msgid "All Authors"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:311
+#: admin/cls-books-gallery-admin.php:324
 msgid "Parent Author"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:312
+#: admin/cls-books-gallery-admin.php:325
 msgid "Parent Author:"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:313
+#: admin/cls-books-gallery-admin.php:326
 msgid "Edit Author"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:314
+#: admin/cls-books-gallery-admin.php:327
 msgid "Update Author"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:315
+#: admin/cls-books-gallery-admin.php:328
 msgid "Add New Author"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:316
+#: admin/cls-books-gallery-admin.php:329
 msgid "New Author"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:340
+#: admin/cls-books-gallery-admin.php:353
 msgid "Book Information"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:351
+#: admin/cls-books-gallery-admin.php:364
 msgid "Book Cover Image"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:362
+#: admin/cls-books-gallery-admin.php:375
 msgid "Book External Image Url"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:542
+#: admin/cls-books-gallery-admin.php:560
 msgid "Set Book Cover Here"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:543
+#: admin/cls-books-gallery-admin.php:561
 msgid "Remove Book Cover Here"
 msgstr ""
 
@@ -365,32 +369,49 @@ msgstr ""
 msgid "Styles"
 msgstr ""
 
-#: admin/view/general-settings.php:33
+#: admin/view/general-settings.php:39
 msgid "Gallery Page Slug"
 msgstr ""
 
-#: admin/view/general-settings.php:37
+#: admin/view/general-settings.php:43
 msgid "This is your Gallery Page URL slug. Please do not use books as gallery page."
 msgstr ""
 
-#: admin/view/general-settings.php:42
+#: admin/view/general-settings.php:48
 msgid "Prefered Author"
 msgstr ""
 
-#: admin/view/general-settings.php:48
+#: admin/view/general-settings.php:54
 #: admin/view/partial/book-information.php:204
+#: admin/view/wbg-api-import.php:151
 msgid "Upgrade to Professional!"
 msgstr ""
 
-#: admin/view/general-settings.php:55
+#: admin/view/general-settings.php:61
 msgid "Single"
 msgstr ""
 
-#: admin/view/general-settings.php:58
+#: admin/view/general-settings.php:64
 msgid "Multiple"
 msgstr ""
 
-#: admin/view/general-settings.php:66
+#: admin/view/general-settings.php:72
+msgid "Download When Logged-in"
+msgstr ""
+
+#: admin/view/general-settings.php:78
+#: admin/view/partial/book-information.php:53
+#: admin/view/partial/book-information.php:92
+#: admin/view/partial/book-information.php:270
+#: admin/view/partial/gallery-content.php:322
+msgid "Please Upgrade to Professional!"
+msgstr ""
+
+#: admin/view/general-settings.php:86
+msgid "With enabled only logged-in users can download books."
+msgstr ""
+
+#: admin/view/general-settings.php:94
 #: admin/view/partial/gallery-content.php:349
 #: admin/view/partial/gallery-styles.php:144
 #: admin/view/partial/search-content-settings.php:306
@@ -406,13 +427,6 @@ msgstr ""
 
 #: admin/view/partial/book-information.php:47
 msgid "Co-Publisher"
-msgstr ""
-
-#: admin/view/partial/book-information.php:53
-#: admin/view/partial/book-information.php:92
-#: admin/view/partial/book-information.php:270
-#: admin/view/partial/gallery-content.php:322
-msgid "Please Upgrade to Professional!"
 msgstr ""
 
 #: admin/view/partial/book-information.php:70
@@ -886,7 +900,7 @@ msgid "Display Reading Age"
 msgstr ""
 
 #: admin/view/partial/single-content.php:113
-msgid "Rading Age Label"
+msgid "Reading Age Label"
 msgstr ""
 
 #: admin/view/partial/single-content.php:134
@@ -1009,6 +1023,30 @@ msgstr ""
 msgid "Coming Soon"
 msgstr ""
 
+#: admin/view/wbg-api-import.php:119
+msgid "Import Books Successful"
+msgstr ""
+
+#: admin/view/wbg-api-import.php:128
+msgid "Import Books From API"
+msgstr ""
+
+#: admin/view/wbg-api-import.php:145
+msgid "Provide Your ISBN-10"
+msgstr ""
+
+#: admin/view/wbg-api-import.php:157
+msgid "ISBN-10"
+msgstr ""
+
+#: admin/view/wbg-api-import.php:158
+msgid "Use comma between multiple ISBN/s"
+msgstr ""
+
+#: admin/view/wbg-api-import.php:166
+msgid "Import Books"
+msgstr ""
+
 #: core/gallery-content.php:172
 msgid "« "
 msgstr ""
@@ -1038,7 +1076,7 @@ msgstr ""
 msgid "Showing"
 msgstr ""
 
-#: front/view/gallery.php:408
+#: front/view/gallery.php:424
 msgid "No books found."
 msgstr ""
 
@@ -1046,7 +1084,7 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: front/view/single.php:446
+#: front/view/single.php:464
 msgid "Back"
 msgstr ""
 

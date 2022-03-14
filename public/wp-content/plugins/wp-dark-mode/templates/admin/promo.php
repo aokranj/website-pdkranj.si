@@ -1,105 +1,149 @@
 <?php
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-$is_hidden = isset( $is_hidden ) && $is_hidden;
-$is_pro    = isset( $is_pro_promo ) && $is_pro_promo;
+$is_hidden = isset($is_hidden) && $is_hidden;
+$is_pro    = isset($is_pro_promo) && $is_pro_promo;
 
 $data_transient_key = 'wp_dark_mode_promo_data';
 
 $data = [
-	'discount' => '50',
-	'campaign'      => 'no',
+    'discount' => '50',
+    'campaign'      => 'no',
 ];
 
 
-if ( get_transient( $data_transient_key ) ) {
 
-    # get saved data 
-	$data = get_transient( $data_transient_key );
 
-} else {
 
-    # otherwise get remote data 
+/**
+ * Get WPPOOL Remote Offer
+ */
 
-	$url = 'https://wppool.dev/wp-json/wppool/plugin_offers';
+if (!function_exists('get_wppool_offer')) {
+    function get_wppool_offer($plugin_name = 'WP Dark Mode')
+    {
+        # Get transient data if available
+        $data = get_transient('wppool_offer_data');
 
-	$res = wp_remote_get( $url );
+        if (!$data) {
 
-	if ( ! is_wp_error( $res ) ) {
-		$json      = wp_remote_retrieve_body( $res );
-		$formatted = json_decode( $json );
+            # get remote data from wppool
+            $url = "https://docs.google.com/spreadsheets/export?format=csv&id=1D9ULWJj0f1mnXAE2rCwbVsDcKBTBpohPv9CarLOMJbo&gid=0";
 
-		if ( ! empty( $formatted ) && ! empty( $formatted->wp_dark_mode ) ) {
+            $response = wp_remote_get($url);
 
-			$data = [
-                'campaign' => $formatted->campaign,
-                'counter_time' => $formatted->counter_time,
-                'discount' => $formatted->wp_dark_mode->discount,
-                'discount_image' => $formatted->wp_dark_mode->discount_image,
-            ]; 
+            if (!is_wp_error($response)) {
 
-            # updates every hour
-			set_transient( $data_transient_key, $data, HOUR_IN_SECONDS );
-		}
+                $response = wp_remote_retrieve_body($response);
 
-	}
+                if (!empty($response)) {
+
+                    $csv = array_map('str_getcsv', explode("\n", $response));
+                    $data = [];
+                    for ($i = 1; $i < count($csv); $i++) {
+                        if (!empty($csv[$i][0])) {
+                            $data[$i] = array_combine($csv[0], $csv[$i]);
+                        }
+                    }
+
+                    # updates every hour
+                    set_transient('wppool_offer_data', $data, (DAY_IN_SECONDS / 2));
+                }
+            } else {
+                $data = [
+                    'discount' => '20',
+                    'campaign'      => false,
+                    'discount_image' => '',
+                    'campaign_image' => '', 
+                ];
+            }
+        }
+
+        if ($data && $plugin_name) {
+            $data = array_filter($data, function ($item) use ($plugin_name) {
+                return $item['plugin'] == $plugin_name;
+            });
+
+            if (!empty($data)) {
+                $data = array_values($data)[0];
+            } else {
+                $data = false;
+            }
+        }
+
+        return $data;
+    }
 }
+
+// echo '<pre>';
+// print_r(get_wppool_offer('WP Dark Mode'));
+// exit();
+
+
+$data = get_wppool_offer('WP Dark Mode');
  
+$time = !empty($data['counter_time']) ? strtotime($data['counter_time']) : strtotime('+ 14 hours');
 
-$time = ! empty( $data['counter_time'] ) ? strtotime( $data['counter_time'] ) : strtotime( '+ 14 hours' );
-
-if ( $time < time() ) {
-	$time = strtotime( '+ 14 hours' );
+if ($time < time()) {
+    $time = strtotime('+ 14 hours');
 }
 
 $countdown_time = [
-	'year'   => date( 'Y', $time ),
-	'month'  => date( 'm', $time ),
-	'day'    => date( 'd', $time ),
-	'hour'   => date( 'H', $time ),
-	'minute' => date( 'i', $time ),
+    'year'   => date('Y', $time),
+    'month'  => date('m', $time),
+    'day'    => date('d', $time),
+    'hour'   => date('H', $time),
+    'minute' => date('i', $time),
 ];
 
-$pro_title      = __( 'Unlock the PRO features', 'wp-dark-mode' );
-$ultimate_title = __( 'Unlock all the features', 'wp-dark-mode' );
+$pro_title      = __('Unlock the PRO features', 'wp-dark-mode');
+$ultimate_title = __('Unlock all the features', 'wp-dark-mode');
 $title          = $is_pro ? $pro_title : $ultimate_title;
 
 
 ?>
 
-<div class="wp-dark-mode-promo <?php echo ! empty( $class ) ? $class : ''; ?> hidden">
+<div class="wp-dark-mode-promo <?php echo !empty($class) ? $class : ''; ?> hidden">
     <div class="wp-dark-mode-promo-inner">
 
         <span class="close-promo">&times;</span>
 
         <img src="<?php echo WP_DARK_MODE_ASSETS . '/images/gift-box.svg'; ?>" class="promo-img">
 
-		<?php
+        <?php
 
-		if ( ! empty( $title ) ) {
-			printf( '<h3 class="promo-title">%s</h3>', $title );
-		}
-
-		if ( $data['campaign'] == true ) {
-			printf( '<img src="%s" class="offer-img">', $data['discount_image'] );
-		} else {
-			printf( '<div class="discount"> <span class="discount-special">SPECIAL</span> <span class="discount-text">%s\% OFF</span></div>', $data['discount'] );
-		}
+        if (!empty($title)) {
+            echo wp_sprintf('<h3 class="promo-title">%s</h3>', $title);
+        }
 
 
-		if ( ! empty( $countdown_time ) ) {
-			echo '<div class="simple_timer"></div>';
-		}
+        if (!empty($data['discount_image'])) {
+            echo wp_sprintf('<img src="%s" class="offer-img">', $data['discount_image']);
+        } else {
+             echo wp_sprintf('<div class="discount"> <span class="discount-special">SPECIAL</span> <span class="discount-text">%s%s OFF</span></div>', $data['discount'], '%');
+        }
 
-		?>
 
-        <a href="https://go.wppool.dev/jrp"
-           target="_blank"><?php echo $is_pro ? __('GET PRO', 'wp-dark-mode') : __('GET ULTIMATE', 'wp-dark-mode'); ?></a>
+        if (!empty($countdown_time)) {
+            echo '<div class="simple_timer"></div>';
+        }
+
+        ?>
+
+        <a href="https://go.wppool.dev/jrp" target="_blank"><?php echo wp_sprintf( 'Claim %s%s Discount', $data['discount'], '%' ); ?></a>
 
     </div>
 
     <style>
+
+        .wp-dark-mode-promo {
+            opacity: 0.85;
+        }
+
+        .wp-dark-mode-promo-inner a {
+            max-width: 220px;
+        }
         .syotimer {
             text-align: center;
             padding: 0 0 10px;
@@ -110,7 +154,7 @@ $title          = $is_pro ? $pro_title : $ultimate_title;
             margin: 0 14px;
 
             width: 50px;
-            background: url(<?php echo WP_DARK_MODE_ASSETS.'/images/timer.svg'; ?>) no-repeat 0 0;
+            background: url(<?php echo WP_DARK_MODE_ASSETS . '/images/timer.svg'; ?>) no-repeat 0 0;
             background-size: contain;
         }
 
@@ -134,11 +178,11 @@ $title          = $is_pro ? $pro_title : $ultimate_title;
 
 
     <script>
-        (function ($) {
-            $(document).ready(function () {
+        (function($) {
+            $(document).ready(function() {
 
                 //show popup
-                $(document).on('click', '.wp-dark-mode-settings-page .disabled', function (e) {
+                $(document).on('click', '.wp-dark-mode-settings-page .disabled', function(e) {
                     e.preventDefault();
 
                     if ($(this).closest('tr').hasClass('specific_category')) {
@@ -154,12 +198,12 @@ $title          = $is_pro ? $pro_title : $ultimate_title;
                 });
 
                 //close promo
-                $(document).on('click', '.close-promo', function () {
+                $(document).on('click', '.close-promo', function() {
                     $(this).closest('.wp-dark-mode-promo').addClass('hidden');
                 });
 
                 //close promo
-                $(document).on('click', '.wp-dark-mode-promo', function (e) {
+                $(document).on('click', '.wp-dark-mode-promo', function(e) {
 
                     if (e.target !== this) {
                         return;
@@ -168,21 +212,26 @@ $title          = $is_pro ? $pro_title : $ultimate_title;
                     $(this).addClass('hidden');
                 });
 
-				<?php
-				if ( ! empty( $countdown_time ) ) {
+                //close promo
+                $(document).on('click', '.wppool-settings-sidebar > ul', function(e) { 
+                    $('.wp-dark-mode-promo').addClass('hidden');
+                });
 
-				?>
+                <?php
+                if (!empty($countdown_time)) {
 
-                if (typeof window.timer_set === 'undefined') {
-                    window.timer_set = $('.simple_timer').syotimer({
-                        year: <?php echo $countdown_time['year']; ?>,
-                        month: <?php echo $countdown_time['month']; ?>,
-                        day: <?php echo $countdown_time['day']; ?>,
-                        hour: <?php echo $countdown_time['hour']; ?>,
-                        minute: <?php echo $countdown_time['minute']; ?>, 
-                    });
-                }
-				<?php } ?>
+                ?>
+
+                    if (typeof window.timer_set === 'undefined') {
+                        window.timer_set = $('.simple_timer').syotimer({
+                            year: <?php echo $countdown_time['year']; ?>,
+                            month: <?php echo $countdown_time['month']; ?>,
+                            day: <?php echo $countdown_time['day']; ?>,
+                            hour: <?php echo $countdown_time['hour']; ?>,
+                            minute: <?php echo $countdown_time['minute']; ?>,
+                        });
+                    }
+                <?php } ?>
 
             })
         })(jQuery);
