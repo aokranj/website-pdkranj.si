@@ -113,8 +113,14 @@ return [
       ],
     ],
     'date_format' => 'j.n.Y',
-    'db_upgraded' => '',
-    'db_version' => '49752',
+    'db_upgraded' => [
+      'action' => 'ignore',
+      'type' => 'string',
+    ],
+    'db_version' => [
+      'action' => 'ignore',
+      'type' => 'string',
+    ],
     'default_category' => '2',
     'default_comment_status' => 'closed',
     'default_comments_page' => 'newest',
