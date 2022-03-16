@@ -205,9 +205,9 @@ class ConfigMapService
 
             WP_CLI::debug(__CLASS__.'::'.__FUNCTION__ . ": Processing wp_options entry: ". $optionName);
 
-            if (preg_match('/^a:[0-9]+:{/', $rawOptionValue)) {
+            if (preg_match('/^[aO]:[0-9]+:{/', $rawOptionValue)) {
 
-                // Serialized array
+                // Serialized array or object
                 $decodedOptionValue = unserialize($rawOptionValue);
                 $optionSpec = self::generateDefaultOptionSpecFromValue($decodedOptionValue);
                 $optionSpec['encoding'] = 'serialize';
@@ -273,6 +273,21 @@ class ConfigMapService
             }
             ksort($optionSpec['value']);
 
+        } elseif (is_object($optionValue)) {
+            $optionSpec = [
+                'type'                   => 'object',
+                'class'                  => get_class($optionValue),
+                'action-apply'           => 'walk',
+                'action-dump'            => 'walk',
+                'undef-key-action-apply' => 'ignore',
+                'undef-key-action-dump'  => 'add',
+                'value'                  => [],
+            ];
+            foreach ($optionValue as $key => $val) {
+                $optionSpec['value'][$key] = self::generateDefaultOptionSpecFromValue($val);
+            }
+            ksort($optionSpec['value']);
+
         } elseif (is_string($optionValue)) {
             $optionSpec = [
                 'type'         => 'string',
@@ -306,7 +321,7 @@ class ConfigMapService
             ];
 
         } else {
-            throw new Exception("Unsupported data type (2): ". gettype($optionValue) .", value=". $optionValue);
+            throw new Exception("Unsupported data type (2): ". gettype($optionValue) .", value=". var_export($optionValue, true));
         }
 
         return $optionSpec;
@@ -338,6 +353,7 @@ class ConfigMapService
                     break;
 
                 case 'array':
+                case 'object':
                     if ($optionSpec['action-apply'] == $optionSpec['action-dump']) {
                         $optionSpec['action'] = $optionSpec['action-apply'];
                         unset($optionSpec['action-apply']);
@@ -403,6 +419,7 @@ class ConfigMapService
                         break;
 
                     case 'array':
+                    case 'object':
                         if (!isset($optionSpec['action-apply'])) {
                             $optionSpec['action-apply'] = (isset($optionSpec['action']) ? $optionSpec['action'] : 'walk');
                         }
@@ -514,11 +531,15 @@ class ConfigMapService
                     break;
 
                 case 'array':
+                case 'object':
                     if (!isset($mergedMap[$optionName])) {
                         $mergedMap[$optionName] = [
-                            'type'  => 'array',
+                            'type'  => $optionSpec['type'],
                             'value' => [],
                         ];
+                        if (isset($optionSpec['class'])) {
+                            $mergedMap[$optionName]['class'] = $optionSpec['class'];
+                        }
                     }
 
                     // This is only useful at the very top-level
@@ -661,8 +682,8 @@ class ConfigMapService
 
 
             case 'walk':
-                if ($optionSpec['type'] != 'array') {
-                    throw new Exception("The 'action-apply' value 'walk' is only supported for data type 'array' (encoutered at '$optionName')");
+                if (($optionSpec['type'] != 'array') && ($optionSpec['type'] != 'object')) {
+                    throw new Exception("The 'action-apply' value 'walk' is only supported for data types 'array' and 'object' (encoutered at '$optionName')");
                 }
 
                 if (!isset($targetValueMap[$optionName])) {
@@ -725,9 +746,16 @@ class ConfigMapService
      * @param   array   configMap       A config/value map to work on, passed by reference
      * @return  array                   An array of wp_options, as if it came directly from the database (suitable for DB inserts/updates)
      */
-    protected static function generateRawWpOptionsFromMap ($configMap)
+    protected static function generateRawWpOptionsFromMap ($configMap, $parentWpOptionType='array', $parentWpOptionObjectClass=NULL, $parentWpOptionName=NULL)
     {
-        $wpOptions = [];
+        // Determine what kind of a value we're creating
+        if ($parentWpOptionType == 'array') {
+            $wpOptions = [];
+        } elseif ($parentWpOptionType == 'object') {
+            $wpOptions = new $parentWpOptionObjectClass;
+        } else {
+            throw new Exception("Unsupported option type '$parentWpOptionType' requested (encountered at '$parentWpOptionName')");
+        }
 
         // Convert back to usual types
         foreach ($configMap as $optionName => $optionSpec) {
@@ -736,24 +764,42 @@ class ConfigMapService
                 case 'string':
                 case 'int':
                 case 'bool':
-                    $wpOptions[$optionName] = $optionSpec['value'];
+                    if ($parentWpOptionType == 'object') {
+                        $wpOptions->$optionName = $optionSpec['value'];
+                    } else {
+                        $wpOptions[$optionName] = $optionSpec['value'];
+                    }
                     break;
 
                 case 'array':
-                    $value = self::generateRawWpOptionsFromMap($optionSpec['value']);
+                case 'object':
+                    if ($optionSpec['type'] == 'array') {
+                        $value = self::generateRawWpOptionsFromMap($optionSpec['value']);
+                    } elseif ($optionSpec['type'] == 'object') {
+                        $value = self::generateRawWpOptionsFromMap($optionSpec['value'], 'object', $optionSpec['class'], $optionName);
+                    } else {
+                        throw new Exception("Unsupported option type '". $optionSpec['type'] ." requested (encountered at '$optionName')");
+                    }
+
                     if (!isset($optionSpec['encoding'])) {
-                        $wpOptions[$optionName] = $value;
+                        $valueEncoded = $value;
                     } else {
                         switch ($optionSpec['encoding']) {
                             case 'serialize':
-                                $wpOptions[$optionName] = serialize($value);
+                                $valueEncoded = serialize($value);
                                 break;
                             case 'json':
-                                $wpOptions[$optionName] = json_encode($value);
+                                $valueEncoded = json_encode($value);
                                 break;
                             default:
                                 throw new Exception("Unsupported encoding '". $optionSpec['encoding'] ."' requested (encountered at '$optionName')");
                         }
+                    }
+
+                    if ($parentWpOptionType == 'object') {
+                        $wpOptions->$optionName = $valueEncoded;
+                    } else {
+                        $wpOptions[$optionName] = $valueEncoded;
                     }
                     break;
 
@@ -798,6 +844,7 @@ class ConfigMapService
                     break;
 
                 case 'array':
+                case 'object':
                     $updatedConfigMap[$optionName] = $optionSpec;
                     $updatedConfigMap[$optionName]['value'] = self::updateMapValues($optionSpec['value'], $newValueMap[$optionName]['value'], $optionSpec['undef-key-action-dump']);
                     break;
