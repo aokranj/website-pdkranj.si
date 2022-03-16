@@ -566,9 +566,9 @@ return [
       'value' => [
       ],
     ],
-    'stylesheet' => 'dist',
+    'stylesheet' => 'pdkranj',
     'tag_base' => '',
-    'template' => 'dist',
+    'template' => 'pdkranj',
     'theme_mods_dist' => [
       'encoding' => 'serialize',
       'type' => 'array',
