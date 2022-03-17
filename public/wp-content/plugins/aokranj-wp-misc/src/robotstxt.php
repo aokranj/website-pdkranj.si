@@ -1,12 +1,7 @@
 <?php
 /*
-Plugin Name: pdkranj-robotstxt
-Plugin URI: https://github.com/aokranj/website-pdkranj.si
-Description: Per-environment /robots.txt content
-Version: 1.0.0
-Author: Bostjan Skufca Jese
-Author URI: https://github.com/bostjan
-*/
+ * Manage what content gets served at /robots.txt
+ */
 add_filter(
     'robots_txt',
     function($output) {

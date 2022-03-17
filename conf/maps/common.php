@@ -12,8 +12,8 @@ return [
       'encoding' => 'serialize',
       'type' => 'array',
       'value' => [
-        0 => 'imsanity/imsanity.php',
-        1 => 'pdkranj-robotstxt/pdkranj-robotstxt.php',
+        0 => 'aokranj-wp-misc/aokranj-wp-misc.php',
+        1 => 'imsanity/imsanity.php',
         2 => 'post-expirator/post-expirator.php',
         3 => 'simple-page-to-sidebar/simple-page-to-sidebar.php',
       ],
