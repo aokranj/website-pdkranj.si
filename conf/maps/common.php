@@ -44,7 +44,6 @@ return [
     'blog_charset' => 'UTF-8',
     'blog_public' => '1',
     'blogdescription' => 'Planinsko društvo Kranj',
-    'blogname' => 'PD Kranj',
     'can_compress_scripts' => [
       'action' => 'ignore',
       'type' => 'string',

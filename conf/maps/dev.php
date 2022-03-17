@@ -7,6 +7,7 @@ return [
     'version' => 1,
   ],
   'data' => [
+    'blogname' => 'DEV PD Kranj DEV',
     'dashboard_widget_options' => [
       'encoding' => 'serialize',
       'type' => 'array',
