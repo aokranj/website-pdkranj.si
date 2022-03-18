@@ -1,4 +1,4 @@
-name: Deploy to stg.pdkranj.si
+name: "Deploy STG"
 
 
 
@@ -14,10 +14,14 @@ on:
 jobs:
 
     deploy:
-        name: Deploy to stg.pdkranj.si
+        name: "Deploy to stg.pdkranj.si"
+
+        # Only run this job in the main repository, and not in any of the forks.
+        if: "github.repository == 'aokranj/website-pdkranj.si'"
+
         runs-on: ubuntu-latest
         steps:
-            -   name: SSH to stg.pdkranj.si and deploy the latest code there
+            -   name: "SSH to stg.pdkranj.si and deploy the latest code there"
                 uses: appleboy/ssh-action@master
                 with:
                     host: stg.pdkranj.si
