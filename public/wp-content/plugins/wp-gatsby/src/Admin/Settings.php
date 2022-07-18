@@ -4,6 +4,7 @@ namespace WPGatsby\Admin;
 
 class Settings {
 
+
 	private $settings_api;
 
 	function __construct() {
@@ -22,9 +23,10 @@ class Settings {
 	/**
 	 * If the settings haven't been saved yet, save the JWT once to prevent it from re-generating.
 	 */
-	public function set_default_jwt_key() {	
+	public function set_default_jwt_key() {
+
 		// Get the JWT Secret
-		$default_secret = self::get_setting( 'preview_jwt_secret' );
+		$default_secret = Preview::get_setting( 'preview_jwt_secret' );
 
 		if ( empty( $default_secret ) ) {
 
@@ -167,7 +169,7 @@ class Settings {
 	}
 
 	private static function get_default_secret() {
-		$default_secret = self::get_setting( 'preview_jwt_secret' );
+		$default_secret = \WPGatsby\Admin\Preview::get_setting( 'preview_jwt_secret' );
 
 		if ( ! $default_secret ) {
 			$default_secret = self::generate_secret();
@@ -210,10 +212,29 @@ class Settings {
 		$settings_fields = [
 			'wpgatsby_settings' => [
 				[
+					'name'              => 'builds_api_webhook',
+					'label'             => __( 'Builds Webhook URL', 'wpgatsby_settings' ),
+					'desc'              => __( 'Use a comma-separated list to configure multiple webhooks.', 'wpgatsby_settings' ),
+					'placeholder'       => __( 'https://', 'wpgatsby_settings' ),
+					'type'              => 'text',
+					'sanitize_callback' => function ( $input ) {
+						return $this->sanitize_url_field( $input );
+					},
+				],
+				[
 					'name'  => 'enable_gatsby_preview',
 					'label' => __( 'Enable Gatsby Preview?', 'wpgatsby_settings' ),
 					'desc'  => __( 'Yes, allow Gatsby to take over WordPress previews.', 'wpgatsby_settings' ),
 					'type'  => 'checkbox',
+				],
+				[
+					'name'              => 'preview_instance_url',
+					'label'             => __( 'Preview Frontend URL', 'wpgatsby_settings' ),
+					'placeholder'       => __( 'https://', 'wpgatsby_settings' ),
+					'type'              => 'text',
+					'sanitize_callback' => function ( $input ) {
+						return $this->sanitize_url_field( $input );
+					},
 				],
 				[
 					'name'              => 'preview_api_webhook',
@@ -226,14 +247,10 @@ class Settings {
 					},
 				],
 				[
-					'name'              => 'builds_api_webhook',
-					'label'             => __( 'Builds Webhook URL', 'wpgatsby_settings' ),
-					'desc'              => __( 'Use a comma-separated list to configure multiple webhooks.', 'wpgatsby_settings' ),
-					'placeholder'       => __( 'https://', 'wpgatsby_settings' ),
-					'type'              => 'text',
-					'sanitize_callback' => function ( $input ) {
-						return $this->sanitize_url_field( $input );
-					},
+					'name'  => 'use_gatsby_content_sync',
+					'label' => __( 'Use Gatsby Content Sync? (BETA feature)', 'wpgatsby_settings' ),
+					'desc'  => __( 'Yes, I want to use Gatsby Cloud to redirect admins to the right preview page. (BETA but recommended)', 'wpgatsby_settings' ),
+					'type'  => 'checkbox',
 				],
 				[
 					'name'              => 'gatsby_content_sync_url',

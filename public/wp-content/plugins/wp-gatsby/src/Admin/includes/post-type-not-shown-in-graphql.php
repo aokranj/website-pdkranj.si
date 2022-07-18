@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Preview error</title>
 	<style>
-		<?php Preview::print_file_contents( 'includes/style.css' ); ?>
+		<?php Preview::printFileContents( 'assets/dist/styles.css' ); ?>
 	</style>
 </head>
 

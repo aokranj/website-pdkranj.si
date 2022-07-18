@@ -352,6 +352,7 @@ class ActionMonitor {
 			$class = 'WPGatsby\ActionMonitor\Monitors\\' . $class_name;
 			if ( class_exists( $class ) ) {
 				$monitor = new $class( $this );
+				$monitor->init();
 				$action_monitors[ $class_name ] = $monitor;
 			}
 		}
