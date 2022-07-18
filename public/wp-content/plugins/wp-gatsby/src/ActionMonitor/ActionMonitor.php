@@ -79,78 +79,22 @@ class ActionMonitor {
 		// Trigger webhook dispatch
 		add_action( 'shutdown', [ $this, 'trigger_dispatch' ] );
 
-		// allow any role to use Gatsby Preview
-		add_action( 'admin_init', [ $this, 'action_monitor_add_role_caps' ], 999 );
 	}
 
 	/**
-	 * For Action Monitor, all of these roles need to be able to view and edit private action monitor posts so that Preview works for all roles.
-	 */
-	public function action_monitor_add_role_caps() {
-		$doing_graphql_request
-					= defined( 'GRAPHQL_REQUEST' ) && true === GRAPHQL_REQUEST;
-
-		if ( $doing_graphql_request ) {
-			// we only need to add roles one time. checking capabilities repeatedly isn't needed, just when the user is in the admin area is fine.
-			return;
-		}
-
-		$roles = apply_filters(
-			'gatsby_private_action_monitor_roles',
-			[
-				'editor',
-				'administrator',
-				'contributor',
-				'author'
-			]
-		);
-
-		foreach( $roles as $the_role ) {
-			$role = get_role($the_role);
-
-			if ( ! $role->has_cap( 'read_private_action_monitor_posts' ) ) {
-				$role->add_cap( 'read_private_action_monitor_posts' );
-			}
-			
-			if ( ! $role->has_cap( 'edit_others_action_monitor_posts' ) ) {
-				$role->add_cap( 'edit_others_action_monitor_posts' );
-			}
-		}
-	}
-
-	/**
-	 * Get the post types that are tracked by WPGatsby.
+	 * Get the post types that are tracked by WPGatsby
 	 *
 	 * @return array|mixed|void
 	 */
 	public function get_tracked_post_types() {
-		$public_post_types = get_post_types(
-			[
-				'show_in_graphql' => true,
-				'public'          => true,
-			]
-		);
-
-		$publicly_queryable_post_types = get_post_types(
-			[
-				'show_in_graphql'    => true,
-				'public'             => false,
-				'publicly_queryable' => true,
-			]
-		);
-
-		$excludes = [
-			'action_monitor' => 'action_monitor',
-		];
-
-		$tracked_post_types = array_diff(
-			array_merge( $public_post_types, $publicly_queryable_post_types ),
-			$excludes
-		);
-
 		$tracked_post_types = apply_filters(
 			'gatsby_action_monitor_tracked_post_types',
-			$tracked_post_types
+			get_post_types(
+				[
+					'show_in_graphql' => true,
+					'public'          => true,
+				]
+			)
 		);
 
 		return ! empty( $tracked_post_types ) && is_array( $tracked_post_types ) ? $tracked_post_types : [];
@@ -203,7 +147,7 @@ class ActionMonitor {
 				'labels'                => $post_type_labels,
 				'description'           => 'Used to keep a log of actions in WordPress for cache invalidation in gatsby-source-wordpress.',
 				'public'                => false,
-				'publicly_queryable'    => true,
+				'publicly_queryable'    => false,
 				'show_ui'               => $this->wpgraphql_debug_mode,
 				'delete_with_user'      => false,
 				'show_in_rest'          => false,
@@ -213,20 +157,8 @@ class ActionMonitor {
 				'show_in_menu'          => $this->wpgraphql_debug_mode,
 				'show_in_nav_menus'     => false,
 				'exclude_from_search'   => true,
-				'capabilities'          => [
-					// these custom capabilities allow any role to use Preview
-					'read_private_posts' => 'read_private_action_monitor_posts',
-					'edit_others_posts'  => 'edit_others_action_monitor_posts', 
-					// these are regular role capabilities for a CPT
-					'create_post'        => 'create_post', 
-					'edit_post'          => 'edit_post', 
-					'read_post'          => 'read_post', 
-					'delete_post'        => 'delete_post', 
-					'edit_posts'         => 'edit_posts', 
-					'publish_posts'      => 'publish_posts',       
-					'create_posts'       => 'create_posts'
-				],
-				'map_meta_cap'          => false,
+				'capability_type'       => 'post',
+				'map_meta_cap'          => true,
 				'hierarchical'          => false,
 				'rewrite'               => [
 					'slug'       => 'action_monitor',
@@ -432,9 +364,8 @@ class ActionMonitor {
 		 * be necessary. Override with caution.
 		 *
 		 * @param array $action_monitors
-		 * @param \WPGatsby\ActionMonitor\ActionMonitor $monitor The class instance, used to initialize the monitor.
 		 */
-		$this->action_monitors = apply_filters( 'gatsby_action_monitors', $action_monitors, $this );
+		$this->action_monitors = apply_filters( 'gatsby_action_monitors', $action_monitors );
 
 		do_action( 'gatsby_init_action_monitors', $this->action_monitors );
 
@@ -681,11 +612,8 @@ class ActionMonitor {
 				if ( $sinceTimestamp ) {
 					$args['date_query'] = [
 						[
-							'after'  =>  gmdate(
-								'Y-m-d H:i:s',
-								$sinceTimestamp / 1000
-							),
-							'column' => 'post_modified_gmt',
+							'after'  => date( 'c', $sinceTimestamp / 1000 ),
+							'column' => 'post_modified',
 						],
 					];
 				}

@@ -79,6 +79,7 @@ class SettingsMonitor extends Monitor {
 				'timezone_string',
 				'default_post_format',
 				'site_icon',
+				'wp_user_roles',
 				'current_theme',
 			]
 		);
