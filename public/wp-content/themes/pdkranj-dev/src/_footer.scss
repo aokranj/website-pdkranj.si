@@ -1,0 +1,13 @@
+.pd-footer {
+  //border: 2px solid purple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  background: $secondary;
+
+  .pd-copyright {
+    color: $white;
+    margin: 0;
+  }
+}

@@ -1,0 +1,16 @@
+.pd-home-news {
+  .card {
+    flex: 1;
+    .card-body {
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+    }
+    .card-text {
+      flex: 1;
+    }
+    ul {
+      flex: 1;
+    }
+  }
+}

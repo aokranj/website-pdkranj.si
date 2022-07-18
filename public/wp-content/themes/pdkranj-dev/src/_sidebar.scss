@@ -1,0 +1,45 @@
+.pd-sidebar {
+  .widget {
+    margin-bottom: $grid-gutter-width / 2;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .widget_categories {
+    background: $green;
+  }
+
+  .widget_recent_entries {
+    background: $orange;
+  }
+
+  .widget_categories,
+  .widget_recent_entries {
+    color: $white;
+    h2,
+    h3,
+    h4 {
+      margin: 0;
+      padding: $spacer;
+      border-bottom: 1px solid $white;
+    }
+    ul {
+      margin: 0;
+      padding: $spacer / 2;
+      list-style: none;
+      li {
+        display: block;
+        a {
+          color: $white;
+          text-decoration: none;
+          padding: $spacer / 2;
+          display: block;
+          &:hover {
+            background: rgba($white, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
