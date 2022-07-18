@@ -22,7 +22,7 @@ trait Wbg_Search_Styles_Settings
 
     }
 
-    protected function wbg_get_search_styles_settings() {
+    function wbg_get_search_styles_settings() {
 
         $this->fields   = $this->wbg_search_styles_option_fileds();
 		$this->settings = get_option('wbg_search_styles');
@@ -47,6 +47,56 @@ trait Wbg_Search_Styles_Settings
                 'name'      => 'wbg_btn_font_color',
                 'type'      => 'text',
                 'default'   => '#FFFFFF',
+            ],
+            [
+                'name'      => 'wbg_search_reset_bg_color',
+                'type'      => 'text',
+                'default'   => '#EEEEEE',
+            ],
+            [
+                'name'      => 'wbg_search_reset_border_color',
+                'type'      => 'text',
+                'default'   => '#999999',
+            ],
+            [
+                'name'      => 'wbg_search_reset_font_color',
+                'type'      => 'text',
+                'default'   => '#111111',
+            ],
+            [
+                'name'      => 'wbg_search_panel_bg_color',
+                'type'      => 'text',
+                'default'   => '#FFFFFF',
+            ],
+            [
+                'name'      => 'wbg_search_panel_border_color',
+                'type'      => 'text',
+                'default'   => '#CCCCCC',
+            ],
+            [
+                'name'      => 'wbg_search_panel_border_radius',
+                'type'      => 'number',
+                'default'   => '0',
+            ],
+            [
+                'name'      => 'wbg_search_panel_border_width',
+                'type'      => 'number',
+                'default'   => '0',
+            ],
+            [
+                'name'      => 'wbg_search_panel_input_bg_color',
+                'type'      => 'text',
+                'default'   => '#FFFFFF',
+            ],
+            [
+                'name'      => 'wbg_search_btn_bg_color_hover',
+                'type'      => 'text',
+                'default'   => '#EAEAEA',
+            ],
+            [
+                'name'      => 'wbg_search_font_color_hover',
+                'type'      => 'text',
+                'default'   => '#242424',
             ],
         ];
     }

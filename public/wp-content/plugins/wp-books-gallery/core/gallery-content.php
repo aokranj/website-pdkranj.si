@@ -133,6 +133,11 @@ trait Wbg_Gallery_Settings_Content
                 'default'   => false,
             ],
             [
+                'name'      => 'wbg_display_sorting',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
                 'name'      => 'wbg_books_per_page',
                 'type'      => 'number',
                 'default'   => 10,
@@ -152,10 +157,25 @@ trait Wbg_Gallery_Settings_Content
                 'type'      => 'boolean',
                 'default'   => false,
             ],
+            [
+                'name'      => 'wbg_display_pagination_np',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_books_per_page_np',
+                'type'      => 'number',
+                'default'   => 10,
+            ],
+            [
+                'name'      => 'wbg_gallery_button_bottom_align',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
         ];
     }
 
-    protected function loop_fotter_content( $total, $page ) {
+    function loop_fotter_content( $total, $page ) {
         ?>
         <div class="wbg-pagination">
             <?php

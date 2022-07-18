@@ -35,7 +35,7 @@ trait Wbg_Core_Settings
             [
                 'name'      => 'wbg_gallery_page_slug',
                 'type'      => 'text',
-                'default'   => '',
+                'default'   => 'books',
             ],
             [
                 'name'      => 'wbg_prefered_author',
@@ -46,6 +46,21 @@ trait Wbg_Core_Settings
                 'name'      => 'wbg_download_when_logged_in',
                 'type'      => 'boolean',
                 'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_affiliate_code',
+                'type'      => 'text',
+                'default'   => '',
+            ],
+            [
+                'name'      => 'wbg_affiliate_code_apply',
+                'type'      => 'string',
+                'default'   => 'buy',
+            ],
+            [
+                'name'      => 'wbg_book_cover_priority',
+                'type'      => 'string',
+                'default'   => 'f',
             ],
         ];
     }

@@ -14,7 +14,9 @@ Plugin URI: https://wordpress.org/plugins/imsanity/
 Description: Imsanity stops insanely huge image uploads
 Author: Exactly WWW
 Domain Path: /languages
-Version: 2.7.2
+Version: 2.8.1
+Requires at least: 5.5
+Requires PHP: 7.2
 Author URI: https://ewww.io/
 License: GPLv3
 */
@@ -23,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'IMSANITY_VERSION', '2.7.2' );
+define( 'IMSANITY_VERSION', '2.8.1' );
 define( 'IMSANITY_SCHEMA_VERSION', '1.1' );
 
 define( 'IMSANITY_DEFAULT_MAX_WIDTH', 1920 );
@@ -99,19 +101,21 @@ function imsanity_debug( $message ) {
  */
 function imsanity_get_source() {
 	imsanity_debug( __FUNCTION__ );
-	$id     = array_key_exists( 'post_id', $_REQUEST ) ? (int) $_REQUEST['post_id'] : '';
-	$action = array_key_exists( 'action', $_REQUEST ) ? $_REQUEST['action'] : '';
+	$id     = array_key_exists( 'post_id', $_REQUEST ) ? (int) $_REQUEST['post_id'] : ''; // phpcs:ignore WordPress.Security.NonceVerification
+	$action = ! empty( $_REQUEST['action'] ) ? sanitize_key( $_REQUEST['action'] ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
 	imsanity_debug( "getting source for id=$id and action=$action" );
 
-	imsanity_debug( $_SERVER );
-	if ( ! empty( $_REQUEST['_wp_http_referer'] ) ) {
-		imsanity_debug( '_wp_http_referer:' );
-		imsanity_debug( $_REQUEST['_wp_http_referer'] );
-	}
+	// Uncomment this (and remove the trailing .) to temporarily check the full $_SERVER vars.
+	// imsanity_debug( $_SERVER );.
+	$referer = '';
 	if ( ! empty( $_SERVER['HTTP_REFERER'] ) ) {
-		imsanity_debug( 'http_referer:' );
-		imsanity_debug( $_SERVER['HTTP_REFERER'] );
+		$referer = sanitize_text_field( wp_unslash( $_SERVER['HTTP_REFERER'] ) );
+		imsanity_debug( "http_referer: $referer" );
 	}
+
+	$request_uri = wp_referer_field( false );
+	imsanity_debug( "request URI: $request_uri" );
+
 	// A post_id indicates image is attached to a post.
 	if ( $id > 0 ) {
 		imsanity_debug( 'from a post (id)' );
@@ -119,12 +123,12 @@ function imsanity_get_source() {
 	}
 
 	// If the referrer is the post editor, that's a good indication the image is attached to a post.
-	if ( ! empty( $_SERVER['HTTP_REFERER'] ) && strpos( $_SERVER['HTTP_REFERER'], '/post.php' ) ) {
+	if ( false !== strpos( $referer, '/post.php' ) ) {
 		imsanity_debug( 'from a post.php' );
 		return IMSANITY_SOURCE_POST;
 	}
 	// If the referrer is the (new) post editor, that's a good indication the image is attached to a post.
-	if ( ! empty( $_SERVER['HTTP_REFERER'] ) && strpos( $_SERVER['HTTP_REFERER'], '/post-new.php' ) ) {
+	if ( false !== strpos( $referer, '/post-new.php' ) ) {
 		imsanity_debug( 'from a new post' );
 		return IMSANITY_SOURCE_POST;
 	}
@@ -309,7 +313,9 @@ function imsanity_convert_to_jpg( $type, $params ) {
 	$img = null;
 
 	if ( 'bmp' === $type ) {
-		include_once( 'libs/imagecreatefrombmp.php' );
+		if ( ! function_exists( 'imagecreatefrombmp' ) ) {
+			return $params;
+		}
 		$img = imagecreatefrombmp( $params['file'] );
 	} elseif ( 'png' === $type ) {
 		// Prevent converting PNG images with alpha/transparency, unless overridden by the user.
@@ -367,3 +373,5 @@ add_action( 'plugins_loaded', 'imsanity_init' );
 add_filter( 'manage_media_columns', 'imsanity_media_columns' );
 // Outputs the actual column information for each attachment.
 add_action( 'manage_media_custom_column', 'imsanity_custom_column', 10, 2 );
+// Checks for WebP support and adds it to the allowed mime types.
+add_filter( 'imsanity_allowed_mimes', 'imsanity_add_webp_support' );

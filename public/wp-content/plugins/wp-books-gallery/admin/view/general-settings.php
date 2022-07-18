@@ -29,7 +29,7 @@ if ( $wbgShowCoreMessage ) {
     $this->wbg_display_notification( 'success', 'Your information updated successfully.' );
 }
 ?>
-
+    <br>
     <div class="wbg-wrap">
 
         <div class="wbg_personal_wrap wbg_personal_help" style="width: 75%; float: left;">
@@ -40,9 +40,9 @@ if ( $wbgShowCoreMessage ) {
                     <th scope="row">
                         <label><?php 
 _e( 'Gallery Page Slug', WBG_TXT_DOMAIN );
-?>:</label>
+?></label>
                     </th>
-                    <td>
+                    <td colspan="3">
                         <input type="text" name="wbg_gallery_page_slug" class="medium-text" value="<?php 
 esc_attr_e( $wbg_gallery_page_slug );
 ?>">
@@ -55,9 +55,9 @@ _e( 'This is your Gallery Page URL slug. Please do not use books as gallery page
                     <th scope="row">
                         <label><?php 
 _e( 'Prefered Author', WBG_TXT_DOMAIN );
-?>:</label>
+?></label>
                     </th>
-                    <td>
+                    <td colspan="3">
                         <?php 
 ?>
                             <span><?php 
@@ -77,17 +77,67 @@ _e( 'Download When Logged-in', WBG_TXT_DOMAIN );
                         <?php 
 ?>
                             <span><?php 
-echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                            <?php 
+?>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label><?php 
+_e( 'Affiliate Code', WBG_TXT_DOMAIN );
+?></label>
+                    </th>
+                    <td>
+                        <?php 
+?>
+                            <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                            <?php 
+?>
+                    </td>
+                    <th scope="row">
+                        <label><?php 
+_e( 'Code Apply To URL', WBG_TXT_DOMAIN );
+?></label>
+                    </th>
+                    <td>
+                        <?php 
+?>
+                            <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                            <?php 
+?>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label><?php 
+_e( 'Book Cover Priority', WBG_TXT_DOMAIN );
+?></label>
+                    </th>
+                    <td colspan="3">
+                        <?php 
+?>
+                            <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
 ?></span>
                             <?php 
 ?>
                     </td>
                 </tr>
             </table>
-            <p class="submit"><button id="updateCoreSettings" name="updateCoreSettings"
-                    class="button button-primary wbg-button"><?php 
+            <hr>
+            <p class="submit">
+                <button id="updateCoreSettings" name="updateCoreSettings"
+                    class="button button-primary wbg-button"><i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;<?php 
 _e( 'Save Settings', WBG_TXT_DOMAIN );
-?></button></p>
+?>
+                </button>
+            </p>
             </form>
 
         </div>

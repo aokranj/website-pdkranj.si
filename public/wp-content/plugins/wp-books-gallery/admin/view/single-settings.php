@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <?php 
                 switch ( $tab ) {
                     case 'styles':
-                        _e('Coming Soon', WBG_TXT_DOMAIN);
+                        include WBG_PATH . 'admin/view/partial/single-styles.php';
                         break;
                     default:
                         include WBG_PATH . 'admin/view/partial/single-content.php';

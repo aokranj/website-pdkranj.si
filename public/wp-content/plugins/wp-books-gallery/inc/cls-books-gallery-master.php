@@ -6,9 +6,11 @@ if ( !defined( 'ABSPATH' ) ) {
 require_once WBG_PATH . 'core/core.php';
 require_once WBG_PATH . 'core/general.php';
 require_once WBG_PATH . 'core/gallery-content.php';
+require_once WBG_PATH . 'core/gallery-styles.php';
 include_once WBG_PATH . 'core/search-content.php';
 include_once WBG_PATH . 'core/search-styles.php';
 include_once WBG_PATH . 'core/single-content.php';
+include_once WBG_PATH . 'core/single-styles.php';
 /**
  * Class: Main
  */
@@ -30,7 +32,8 @@ class WBG_Master
     
     function wbg_load_plugin_textdomain()
     {
-        load_plugin_textdomain( WBG_TXT_DOMAIN, FALSE, WBG_TXT_DOMAIN . '/languages/' );
+        $wbgLangPath = WBG_TXT_DOMAIN;
+        load_plugin_textdomain( WBG_TXT_DOMAIN, FALSE, $wbgLangPath . '/languages/' );
     }
     
     private function wbg_load_dependencies()
@@ -94,7 +97,21 @@ class WBG_Master
             'wbg_load_single_template',
             10
         );
+        $this->wbg_loader->add_filter(
+            'archive_template',
+            $wbg_front,
+            'wbg_load_archive_template',
+            10
+        );
         $wbg_front->wbg_load_shortcode();
+    }
+    
+    private function wbg_trigger_widget_hooks()
+    {
+        new Wbg_Widget();
+        add_action( 'widgets_init', function () {
+            register_widget( 'Wbg_Widget' );
+        } );
     }
     
     function wbg_run()

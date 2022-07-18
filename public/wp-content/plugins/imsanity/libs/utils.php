@@ -80,9 +80,30 @@ function imsanity_quick_mimetype( $path ) {
 			return 'image/gif';
 		case 'pdf':
 			return 'application/pdf';
+		case 'webp':
+			return 'image/webp';
 		default:
 			return false;
 	}
+}
+
+/**
+ * Check for WebP support in the image editor and add to the list of allowed mimes.
+ *
+ * @param array $mimes A list of allowed mime types.
+ * @return array The updated list of mimes after checking WebP support.
+ */
+function imsanity_add_webp_support( $mimes ) {
+	if ( ! in_array( 'image/webp', $mimes, true ) ) {
+		if ( class_exists( 'Imagick' ) ) {
+			$imagick = new Imagick();
+			$formats = $imagick->queryFormats();
+			if ( in_array( 'WEBP', $formats, true ) ) {
+				$mimes[] = 'image/webp';
+			}
+		}
+	}
+	return $mimes;
 }
 
 /**
@@ -155,23 +176,6 @@ function imsanity_gd_support() {
 		}
 	}
 	return false;
-}
-
-/**
- * Output a fatal error and optionally die.
- *
- * @param string $message The message to output.
- * @param string $title A title/header for the message.
- * @param bool   $die Default false. Whether we should die.
- */
-function imsanity_fatal( $message, $title = '', $die = false ) {
-	echo ( "<div style='margin:5px 0px 5px 0px;padding:10px;border: solid 1px red; background-color: #ff6666; color: black;'>"
-		. ( $title ? "<h4 style='font-weight: bold; margin: 3px 0px 8px 0px;'>" . $title . '</h4>' : '' )
-		. $message
-		. '</div>' );
-	if ( $die ) {
-		die();
-	}
 }
 
 /**
@@ -260,7 +264,12 @@ function imsanity_resize_from_id( $id = 0 ) {
 				list( $neww, $newh ) = wp_constrain_dimensions( $oldw, $oldh, $maxw, $maxh );
 			}
 
-			$resizeresult = imsanity_image_resize( $oldpath, $neww, $newh, apply_filters( 'imsanity_crop_image', false ), null, null, $quality );
+			$source_image = $oldpath;
+			if ( ! empty( $meta['original_image'] ) ) {
+				$source_image = path_join( dirname( $oldpath ), $meta['original_image'] );
+				imsanity_debug( "subbing in $source_image for resizing" );
+			}
+			$resizeresult = imsanity_image_resize( $source_image, $neww, $newh, apply_filters( 'imsanity_crop_image', false ), null, null, $quality );
 
 			if ( $resizeresult && ! is_wp_error( $resizeresult ) ) {
 				$newpath = $resizeresult;
@@ -338,7 +347,12 @@ function imsanity_resize_from_id( $id = 0 ) {
 			$update_meta = true;
 		}
 		if ( ! empty( $update_meta ) ) {
+			clearstatcache();
+			if ( ! empty( $oldpath ) && is_file( $oldpath ) ) {
+				$meta['filesize'] = filesize( $oldpath );
+			}
 			wp_update_attachment_metadata( $id, $meta );
+			do_action( 'imsanity_post_process_attachment', $id, $meta );
 		}
 	} else {
 		$results = array(
@@ -432,13 +446,18 @@ function imsanity_remove_original_image( $id, $meta = null ) {
  */
 function imsanity_image_resize( $file, $max_w, $max_h, $crop = false, $suffix = null, $dest_path = null, $jpeg_quality = 82 ) {
 	if ( function_exists( 'wp_get_image_editor' ) ) {
+		imsanity_debug( "resizing $file" );
 		$editor = wp_get_image_editor( $file );
 		if ( is_wp_error( $editor ) ) {
 			return $editor;
 		}
-		$editor->set_quality( min( 92, $jpeg_quality ) );
 
 		$ftype = imsanity_quick_mimetype( $file );
+		if ( 'image/webp' === $ftype ) {
+			$jpeg_quality = (int) round( $jpeg_quality * .91 );
+		}
+
+		$editor->set_quality( min( 92, $jpeg_quality ) );
 
 		// Return 1 to override auto-rotate.
 		$orientation = (int) apply_filters( 'imsanity_orientation', imsanity_get_orientation( $file, $ftype ) );

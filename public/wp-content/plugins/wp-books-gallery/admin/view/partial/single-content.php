@@ -14,21 +14,40 @@ foreach ( $wbgDetailsContent as $option_name => $option_value ) {
     <table class="wbg-details-settings-table">
         <tr>
             <th scope="row" style="text-align: right;">
+                <label for="wbg_display_subtitle"><?php 
+_e( 'Display Sub-Title', WBG_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                    <?php 
+?>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" colspan="6" style="text-align:left;">
+                <hr><span>&nbsp;<?php 
+_e( 'Book Information', WBG_TXT_DOMAIN );
+?>&nbsp;</span><hr>
+            </th>
+        </tr>
+        <tr>
+            <th scope="row" style="text-align: right;">
                 <label for="wbg_display_format"><?php 
 _e( 'Display Format', WBG_TXT_DOMAIN );
 ?>?</label>
             </th>
             <td>
                 <?php 
-
-if ( wbg_fs()->is_not_paying() ) {
-    ?>
+?>
                     <span><?php 
-    echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
-    ?></span>
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
                     <?php 
-}
-
 ?>
             </td>
             <th scope="row" style="text-align: right;">
@@ -38,15 +57,11 @@ _e( 'Format Label', WBG_TXT_DOMAIN );
             </th>
             <td>
                 <?php 
-
-if ( wbg_fs()->is_not_paying() ) {
-    ?>
+?>
                     <span><?php 
-    echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
-    ?></span>
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
                     <?php 
-}
-
 ?>
             </td>
         </tr>
@@ -58,15 +73,11 @@ _e( 'Display Series', WBG_TXT_DOMAIN );
             </th>
             <td>
                 <?php 
-
-if ( wbg_fs()->is_not_paying() ) {
-    ?>
+?>
                     <span><?php 
-    echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
-    ?></span>
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
                     <?php 
-}
-
 ?>
             </td>
             <th scope="row" style="text-align: right;">
@@ -76,15 +87,11 @@ _e( 'Series Label', WBG_TXT_DOMAIN );
             </th>
             <td>
                 <?php 
-
-if ( wbg_fs()->is_not_paying() ) {
-    ?>
+?>
                     <span><?php 
-    echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
-    ?></span>
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
                     <?php 
-}
-
 ?>
             </td>
         </tr>
@@ -96,15 +103,11 @@ _e( 'Display Reading Age', WBG_TXT_DOMAIN );
             </th>
             <td>
                 <?php 
-
-if ( wbg_fs()->is_not_paying() ) {
-    ?>
+?>
                     <span><?php 
-    echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
-    ?></span>
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
                     <?php 
-}
-
 ?>
             </td>
             <th scope="row" style="text-align: right;">
@@ -114,15 +117,11 @@ _e( 'Reading Age Label', WBG_TXT_DOMAIN );
             </th>
             <td>
                 <?php 
-
-if ( wbg_fs()->is_not_paying() ) {
-    ?>
+?>
                     <span><?php 
-    echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
-    ?></span>
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
                     <?php 
-}
-
 ?>
             </td>
         </tr>
@@ -134,15 +133,11 @@ _e( 'Display Grade Level', WBG_TXT_DOMAIN );
             </th>
             <td>
                 <?php 
-
-if ( wbg_fs()->is_not_paying() ) {
-    ?>
+?>
                     <span><?php 
-    echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
-    ?></span>
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
                     <?php 
-}
-
 ?>
             </td>
             <th scope="row" style="text-align: right;">
@@ -152,15 +147,11 @@ _e( 'Grade Level Label', WBG_TXT_DOMAIN );
             </th>
             <td>
                 <?php 
-
-if ( wbg_fs()->is_not_paying() ) {
-    ?>
+?>
                     <span><?php 
-    echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
-    ?></span>
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
                     <?php 
-}
-
 ?>
             </td>
         </tr>
@@ -441,7 +432,6 @@ esc_attr_e( $wbg_filesize_label );
         
         <?php 
 ?>
-
         <tr>
             <th scope="row" style="text-align: right;">
                 <label for="wbg_display_description"><?php 
@@ -468,6 +458,11 @@ esc_attr_e( $wbg_description_label );
             </td>
         </tr>
         <tr>
+            <th scope="row" colspan="6">
+                <hr>
+            </th>
+        </tr>
+        <tr>
             <th scope="row" style="text-align: right;">
                 <label for="wbg_display_download_button"><?php 
 _e( 'Display Download/BuyNow Button', WBG_TXT_DOMAIN );
@@ -492,8 +487,12 @@ echo  ( $wbg_display_sidebar ? 'checked' : null ) ;
             </td>
         </tr>
     </table>
-    <p class="submit"><button id="updateDetailsContent" name="updateDetailsContent"
-            class="button button-primary wbg-button"><?php 
+    <hr>
+    <p class="submit">
+        <button id="updateDetailsContent" name="updateDetailsContent" class="button button-primary wbg-button">
+            <i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;<?php 
 _e( 'Save Settings', WBG_TXT_DOMAIN );
-?></button></p>
+?>
+        </button>
+    </p>
 </form>

@@ -3,6 +3,9 @@
 if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
+if ( '' === $wbg_gallery_page_slug ) {
+    $wbg_gallery_page_slug = 'books';
+}
 $wbg_book_categories = get_terms( array(
     'taxonomy'   => 'book_category',
     'hide_empty' => true,
@@ -19,14 +22,13 @@ if ( '' !== $wbg_category_s ) {
 
 ?>
 <form method="GET" action="<?php 
-echo  get_permalink( $post->ID ) ;
+echo  esc_url( home_url( '/' . $wbg_gallery_page_slug ) ) ;
 ?>" id="wbg-search-form">
   <?php 
 //if(function_exists('wp_nonce_field')) { wp_nonce_field('wbg_nonce_field'); }
 ?>
   <div class="wrap wbg-search-container">
     <?php 
-$search_dad_list = $this->get_search_items();
 foreach ( $search_dad_list as $search_item ) {
     if ( 'title' === $search_item ) {
         
@@ -65,7 +67,7 @@ foreach ( $search_dad_list as $search_item ) {
         if ( $wbg_display_search_category ) {
             ?>
           <div class="wbg-search-item">
-            <select id="wbg_category_s" name="wbg_category_s">
+            <select id="wbg_category_s" name="wbg_category_s" class="wbg-selectize">
                 <option value=""><?php 
             esc_html_e( $wbg_search_category_default );
             ?></option>
@@ -113,7 +115,7 @@ foreach ( $search_dad_list as $search_item ) {
         if ( $wbg_display_search_year ) {
             ?>
           <div class="wbg-search-item">
-              <select id="wbg_published_on_s" name="wbg_published_on_s">
+              <select id="wbg_published_on_s" name="wbg_published_on_s" class="wbg-selectize">
                   <option value=""><?php 
             esc_html_e( $wbg_search_year_default );
             ?></option>
@@ -147,7 +149,7 @@ foreach ( $search_dad_list as $search_item ) {
         if ( $wbg_display_search_language ) {
             ?>
             <div class="wbg-search-item">
-                <select id="wbg_language_s" name="wbg_language_s">
+                <select id="wbg_language_s" name="wbg_language_s" class="wbg-selectize">
                     <option value=""><?php 
             esc_html_e( $wbg_search_language_default );
             ?></option>
@@ -177,7 +179,7 @@ foreach ( $search_dad_list as $search_item ) {
         if ( $wbg_display_search_author ) {
             ?>
             <div class="wbg-search-item">
-              <select id="wbg_author_s" name="wbg_author_s">
+              <select id="wbg_author_s" name="wbg_author_s" class="wbg-selectize">
                   <option value=""><?php 
             esc_html_e( $wbg_search_author_default );
             ?></option>
@@ -206,7 +208,7 @@ foreach ( $search_dad_list as $search_item ) {
         if ( $wbg_display_search_publisher ) {
             ?>
             <div class="wbg-search-item">
-              <select id="wbg_publisher_s" name="wbg_publisher_s">
+              <select id="wbg_publisher_s" name="wbg_publisher_s" class="wbg-selectize">
                   <option value=""><?php 
             esc_html_e( $wbg_search_publishers_default );
             ?></option>
@@ -242,7 +244,7 @@ esc_attr_e( $wbg_search_btn_txt );
     </div>
     <div class="wbg-search-item">
       <a href="<?php 
-echo  get_permalink( $post->ID ) ;
+echo  esc_url( home_url( '/' . $wbg_gallery_page_slug ) ) ;
 ?>" class="fa fa-refresh" id="wbg-search-refresh"></a>
     </div>
 

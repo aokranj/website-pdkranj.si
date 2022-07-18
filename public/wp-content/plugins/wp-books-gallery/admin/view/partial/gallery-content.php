@@ -11,7 +11,7 @@ foreach ( $wpsdGallerySettingsContent as $option_name => $option_value ) {
 }
 ?>
 <form name="wbg_general_settings_form" role="form" class="form-horizontal" method="post" action="" id="wbg-general-settings-form">
-    <table class="wbg-general-settings-table">
+    <table class="wbg-gallery-conent-settings-table">
         <tr class="wbg_gallary_column">
             <th scope="row">
                 <label for="wbg_gallary_column"><?php 
@@ -24,7 +24,7 @@ _e( 'Desktop', WBG_TXT_DOMAIN );
 ?>:</label>
                 <select name="wbg_gallary_column" class="medium-text">
                     <?php 
-for ( $dc = 1 ;  $dc < 5 ;  $dc++ ) {
+for ( $dc = 1 ;  $dc < 6 ;  $dc++ ) {
     ?>
                         <option value="<?php 
     esc_attr_e( $dc );
@@ -55,9 +55,9 @@ _e( '2', WBG_TXT_DOMAIN );
                 </select>
             </td>
         </tr>
-        <tr class="wbg_book_cover_width">
+        <tr>
             <th scope="row">
-                <label for="wbg_book_cover_width"><?php 
+                <label><?php 
 _e( 'Image Width', WBG_TXT_DOMAIN );
 ?>:</label>
             </th>
@@ -76,10 +76,8 @@ echo  ( 'full' === $wbg_book_cover_width ? 'checked' : '' ) ;
 _e( 'Full', WBG_TXT_DOMAIN );
 ?></label>
             </td>
-        </tr>
-        <tr>
             <th scope="row">
-                <label for="wbg_book_image_animation"><?php 
+                <label><?php 
 _e( 'Image Animation', WBG_TXT_DOMAIN );
 ?>:</label>
             </th>
@@ -96,15 +94,12 @@ _e( 'Rotate 360', WBG_TXT_DOMAIN );
                     <?php 
 ?>
                 </select>
-                <?php 
-_e( 'For more option please upgrade to pro.', WBG_TXT_DOMAIN );
-?>
             </td>
         </tr>
-        <tr class="wbg_gallary_sorting">
+        <tr>
             <th scope="row">
-                <label for="wbg_gallary_sorting"><?php 
-_e( 'Sorting By', WBG_TXT_DOMAIN );
+                <label><?php 
+_e( 'Books Sorting By', WBG_TXT_DOMAIN );
 ?>:</label>
             </th>
             <td>
@@ -154,7 +149,7 @@ _e( 'Country', WBG_TXT_DOMAIN );
 ?></option>
                 </select>
             </td>
-            <th scope="row" style="text-align: right;">
+            <th scope="row">
                 <label for="wbg_books_order"><?php 
 _e( 'Order By', WBG_TXT_DOMAIN );
 ?>:</label>
@@ -175,10 +170,9 @@ _e( 'Descending', WBG_TXT_DOMAIN );
 ?></label>
             </td>
         </tr>
-        <tr class="wbg_display_details_page">
+        <tr>
             <th scope="row">
-                <label
-                    for="wbg_display_details_page"><?php 
+                <label for="wbg_display_details_page"><?php 
 _e( 'Enable Book Details Page', WBG_TXT_DOMAIN );
 ?>?</label>
             </th>
@@ -188,12 +182,9 @@ _e( 'Enable Book Details Page', WBG_TXT_DOMAIN );
 echo  ( $wbg_display_details_page ? 'checked' : '' ) ;
 ?> >
             </td>
-        </tr>
-        <tr class="wbg_details_is_external">
             <th scope="row">
-                <label
-                    for="wbg_details_is_external"><?php 
-_e( 'Open Book Details in New Tab', WBG_TXT_DOMAIN );
+                <label for="wbg_details_is_external"><?php 
+_e( 'Open in New Tab', WBG_TXT_DOMAIN );
 ?>?</label>
             </th>
             <td>
@@ -209,7 +200,7 @@ echo  ( $wbg_details_is_external ? 'checked' : '' ) ;
 _e( 'Title Word Length', WBG_TXT_DOMAIN );
 ?>:</label>
             </th>
-            <td>
+            <td colspan="3">
                 <input type="number" name="wbg_title_length" class="medium-text" min="1" max="50" step="1" value="<?php 
 esc_attr_e( $wbg_title_length );
 ?>">
@@ -324,15 +315,11 @@ _e( 'Display Buy Now Button', WBG_TXT_DOMAIN );
             </th>
             <td>
                 <?php 
-
-if ( wbg_fs()->is_not_paying() ) {
-    ?>
+?>
                     <span><?php 
-    echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
-    ?></span>
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
                     <?php 
-}
-
 ?>
             </td>
             <th scope="row">
@@ -342,15 +329,11 @@ _e( 'Button Text', WBG_TXT_DOMAIN );
             </th>
             <td>
                 <?php 
-
-if ( wbg_fs()->is_not_paying() ) {
-    ?>
+?>
                     <span><?php 
-    echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
-    ?></span>
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
                     <?php 
-}
-
 ?>
             </td>
         </tr>
@@ -366,29 +349,36 @@ _e( 'Display Total Books', WBG_TXT_DOMAIN );
 echo  ( $wbg_display_total_books ? 'checked' : '' ) ;
 ?> >
             </td>
-        </tr>
-        
-        <tr class="wbg_books_per_page">
             <th scope="row">
-                <label for="wbg_books_per_page"><?php 
+                <label for="wbg_display_sorting"><?php 
+_e( 'Display Front Sorting', WBG_TXT_DOMAIN );
+?>?</label>
+            </th>
+            <td colspan="3">
+                <?php 
+?>
+                    <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                    <?php 
+?>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label><?php 
 _e( 'Books Per Page', WBG_TXT_DOMAIN );
 ?>?</label>
             </th>
             <td>
                 <?php 
-
-if ( wbg_fs()->is_not_paying() ) {
-    ?>
+?>
                     <span><?php 
-    echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
-    ?></span>
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
                     <?php 
-}
-
 ?>
             </td>
-        </tr>
-        <tr class="wbg_display_pagination">
             <th scope="row">
                 <label for="wbg_display_pagination"><?php 
 _e( 'Display Pagination', WBG_TXT_DOMAIN );
@@ -396,15 +386,11 @@ _e( 'Display Pagination', WBG_TXT_DOMAIN );
             </th>
             <td>
                 <?php 
-
-if ( wbg_fs()->is_not_paying() ) {
-    ?>
+?>
                     <span><?php 
-    echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
-    ?></span>
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
                     <?php 
-}
-
 ?>
             </td>
         </tr>
@@ -414,17 +400,29 @@ if ( wbg_fs()->is_not_paying() ) {
 _e( 'Currency', WBG_TXT_DOMAIN );
 ?>:</label>
             </th>
-            <td>
+            <td colspan="3">
                 <?php 
-
-if ( wbg_fs()->is_not_paying() ) {
-    ?>
+?>
                     <span><?php 
-    echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
-    ?></span>
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
                     <?php 
-}
-
+?>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label for="wbg_gallery_button_bottom_align"><?php 
+_e( 'Button Bottom Align', WBG_TXT_DOMAIN );
+?>?</label>
+            </th>
+            <td colspan="3">
+                <?php 
+?>
+                    <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                    <?php 
 ?>
             </td>
         </tr>
@@ -438,7 +436,7 @@ _e( 'Display Rating', WBG_TXT_DOMAIN );
                 <?php 
 ?>
                     <span><?php 
-echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
 ?></span>
                     <?php 
 ?>
@@ -451,17 +449,25 @@ do_action( 'wbg_admin_general_settings_after_display_total_books' );
 
         <tr class="wbg_shortcode">
             <th scope="row">
-                    <label for="wbg_shortcode"><?php 
+                <label for="wbg_shortcode"><?php 
 _e( 'Shortcode:', WBG_TXT_DOMAIN );
 ?></label>
             </th>
-            <td colspan="2">
-                    <input type="text" name="wbg_shortcode" id="wbg_shortcode" class="medium-text" value="[wp_books_gallery]" readonly />
+            <td colspan="3">
+                <input type="text" name="wbg_shortcode" id="wbg_shortcode" class="medium-text" value="[wp_books_gallery]" readonly />
+                <br>
+                <code><?php 
+_e( 'Copy this shortcode and apply it to any page to display books gallery.', WBG_TXT_DOMAIN );
+?></code>
             </td>
         </tr>
     </table>
-    <p class="submit"><button id="updateGeneralSettings" name="updateGeneralSettings"
-            class="button button-primary wbg-button"><?php 
+    <hr>
+    <p class="submit">
+        <button id="updateGalleryContentSettings" name="updateGalleryContentSettings" class="button button-primary wbg-button">
+            <i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;<?php 
 _e( 'Save Settings', WBG_TXT_DOMAIN );
-?></button></p>
+?>
+        </button>
+    </p>
 </form>

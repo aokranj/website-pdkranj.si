@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WordPress Books Gallery\n"
 "POT-Creation-Date: 2021-12-27 04:55+0600\n"
-"PO-Revision-Date: 2022-03-07 20:42+0000\n"
+"PO-Revision-Date: 2022-04-06 21:57+0000\n"
 "Last-Translator: Hossni Mubarak\n"
 "Language-Team: Arabic\n"
 "Language: ar\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPath-4: inc/cls-books-gallery-master.php\n"
 "X-Poedit-SearchPath-5: admin/view/gallery-settings.php\n"
 "Report-Msgid-Bugs-To: \n"
-"X-Loco-Version: 2.5.5; wp-5.8.2"
+"X-Loco-Version: 2.6.1; wp-5.9.3"
 
 #: core/gallery-content.php:173
 msgid " »"
@@ -35,7 +35,7 @@ msgstr "1"
 msgid "2"
 msgstr "2"
 
-#: admin/view/partial/book-information.php:291
+#: admin/view/partial/book-information.php:375
 msgid "Active"
 msgstr "نشط"
 
@@ -72,7 +72,7 @@ msgid "Add New Reading Age"
 msgstr "إضافة جديدة سن القراءة"
 
 #: admin/cls-books-gallery-admin.php:323
-#: admin/view/partial/search-content-settings.php:185
+#: admin/view/partial/search-content.php:185
 msgid "All Authors"
 msgstr "كل المؤلفين"
 
@@ -92,7 +92,7 @@ msgstr "كل سلسلة كتاب"
 msgid "All Books"
 msgstr "جميع الكتب"
 
-#: admin/view/partial/search-content-settings.php:98
+#: admin/view/partial/search-content.php:98
 msgid "All Categories"
 msgstr "جميع الفئات"
 
@@ -100,11 +100,11 @@ msgstr "جميع الفئات"
 msgid "All Grade Level"
 msgstr "كل مستوى الصف"
 
-#: admin/view/partial/search-content-settings.php:156
+#: admin/view/partial/search-content.php:156
 msgid "All Languages"
 msgstr "جميع اللغات"
 
-#: admin/view/partial/search-content-settings.php:214
+#: admin/view/partial/search-content.php:214
 msgid "All Publishers"
 msgstr "كل الناشرين"
 
@@ -112,7 +112,7 @@ msgstr "كل الناشرين"
 msgid "All Reading Age"
 msgstr "كل سن القراءة"
 
-#: admin/view/partial/search-content-settings.php:127
+#: admin/view/partial/search-content.php:127
 msgid "All Years"
 msgstr "كل سنة"
 
@@ -121,24 +121,28 @@ msgid "API Import"
 msgstr "API استيراد"
 
 #: admin/view/partial/gallery-content.php:95
-#: admin/view/partial/search-content-settings.php:89
-#: admin/view/partial/search-content-settings.php:118
-#: admin/view/partial/search-content-settings.php:147
-#: admin/view/partial/search-content-settings.php:176
-#: admin/view/partial/search-content-settings.php:205
-#: admin/view/partial/search-content-settings.php:236
-#: admin/view/partial/search-content-settings.php:265
+#: admin/view/partial/search-content.php:89
+#: admin/view/partial/search-content.php:118
+#: admin/view/partial/search-content.php:147
+#: admin/view/partial/search-content.php:176
+#: admin/view/partial/search-content.php:205
+#: admin/view/partial/search-content.php:236
+#: admin/view/partial/search-content.php:265
 msgid "Ascending"
 msgstr "تصاعدي"
 
+#: admin/view/partial/book-information.php:130 front/view/single.php:337
+msgid "ASIN"
+msgstr "ASIN"
+
 #: admin/cls-books-gallery-admin.php:320 admin/cls-books-gallery-admin.php:321
 #: admin/cls-books-gallery-admin.php:330
-#: admin/view/partial/book-information.php:31
+#: admin/view/partial/book-information.php:55
 #: admin/view/partial/gallery-content.php:82
 msgid "Author"
 msgstr "الكاتب"
 
-#: admin/view/partial/single-content.php:179
+#: admin/view/partial/single-content.php:204
 msgid "Author Label"
 msgstr "المؤلف التسمية"
 
@@ -146,12 +150,15 @@ msgstr "المؤلف التسمية"
 msgid "Author Label Text"
 msgstr "المؤلف نص التسمية"
 
-#: front/view/single.php:464
+#: front/view/single.php:522
 msgid "Back"
 msgstr "مرة أخرى"
 
 #: admin/view/partial/gallery-styles.php:54
-#: admin/view/partial/search-styles-settings.php:26
+#: admin/view/partial/search-styles.php:27
+#: admin/view/partial/search-styles.php:117
+#: admin/view/partial/search-styles.php:144
+#: admin/view/partial/search-styles.php:177
 msgid "Background Color"
 msgstr "لون الخلفية"
 
@@ -188,6 +195,7 @@ msgid "Book Formates"
 msgstr "كتاب Formates"
 
 #: admin/cls-books-gallery-admin.php:353
+#: admin/view/partial/single-content.php:37
 msgid "Book Information"
 msgstr "معلومات الكتاب"
 
@@ -195,7 +203,7 @@ msgstr "معلومات الكتاب"
 msgid "Book Item:"
 msgstr "كتاب البند:"
 
-#: admin/view/partial/search-content-settings.php:50
+#: admin/view/partial/search-content.php:50
 msgid "Book Name"
 msgstr "اسم الكتاب"
 
@@ -217,12 +225,21 @@ msgid "Books Per Page"
 msgstr "كتب في الصفحة"
 
 #: admin/view/partial/gallery-styles.php:45
-#: admin/view/partial/search-styles-settings.php:35
+#: admin/view/partial/search-styles.php:48
+#: admin/view/partial/search-styles.php:153
+#: admin/view/partial/search-styles.php:186
 msgid "Border Color"
 msgstr "لون الحدود"
 
-#: admin/view/partial/search-content-settings.php:292
-#: admin/view/partial/search-styles-settings.php:21
+#: admin/view/partial/search-styles.php:69
+msgid "Border Radius"
+msgstr "دائرة نصف قطرها الحدود"
+
+#: admin/view/partial/search-styles.php:90
+msgid "Border Width"
+msgstr "عرض الحدود"
+
+#: admin/view/partial/search-content.php:292
 msgid "Button"
 msgstr "زر"
 
@@ -239,7 +256,7 @@ msgstr "زر لون الخط"
 msgid "Button Text"
 msgstr "نص الزر"
 
-#: admin/view/partial/book-information.php:146
+#: admin/view/partial/book-information.php:190
 msgid "Buy From Link"
 msgstr "شراء من الرابط"
 
@@ -251,7 +268,7 @@ msgstr "بواسطة:"
 msgid "Category"
 msgstr "الفئة"
 
-#: admin/view/partial/single-content.php:194
+#: admin/view/partial/single-content.php:219
 msgid "Category Label"
 msgstr "الفئة التسمية"
 
@@ -259,11 +276,11 @@ msgstr "الفئة التسمية"
 msgid "Category Label Text"
 msgstr "الفئة نص التسمية"
 
-#: admin/view/partial/book-information.php:47
+#: admin/view/partial/book-information.php:71
 msgid "Co-Publisher"
 msgstr "Co-الناشر"
 
-#: admin/view/partial/single-content.php:227
+#: admin/view/partial/single-content.php:252
 msgid "Co-Publisher Label"
 msgstr "Co-الناشر التسمية"
 
@@ -271,21 +288,21 @@ msgstr "Co-الناشر التسمية"
 msgid "Coming Soon"
 msgstr "قريبا"
 
-#: admin/view/gallery-settings.php:22 admin/view/single-settings.php:22
-#: admin/view/wbg-search-settings.php:22
+#: admin/view/gallery-settings.php:22 admin/view/search-settings.php:22
+#: admin/view/single-settings.php:22
 msgid "Content"
 msgstr "المحتوى"
 
-#: admin/view/partial/book-information.php:174
+#: admin/view/partial/book-information.php:218
 msgid "Cost Type"
 msgstr "تكلفة نوع"
 
-#: admin/view/partial/book-information.php:114
+#: admin/view/partial/book-information.php:158
 #: admin/view/partial/gallery-content.php:87
 msgid "Country"
 msgstr "البلد"
 
-#: admin/view/partial/single-content.php:321
+#: admin/view/partial/single-content.php:346
 msgid "Country Label"
 msgstr "البلد التسمية"
 
@@ -297,28 +314,28 @@ msgstr "العملة"
 msgid "Date"
 msgstr "تاريخ"
 
-#: admin/view/partial/single-content.php:252
+#: admin/view/partial/single-content.php:277
 msgid "Date Format"
 msgstr "تنسيق التاريخ"
 
-#: admin/view/partial/search-content-settings.php:95
-#: admin/view/partial/search-content-settings.php:124
-#: admin/view/partial/search-content-settings.php:153
-#: admin/view/partial/search-content-settings.php:182
-#: admin/view/partial/search-content-settings.php:211
-#: admin/view/partial/search-content-settings.php:242
-#: admin/view/partial/search-content-settings.php:271
+#: admin/view/partial/search-content.php:95
+#: admin/view/partial/search-content.php:124
+#: admin/view/partial/search-content.php:153
+#: admin/view/partial/search-content.php:182
+#: admin/view/partial/search-content.php:211
+#: admin/view/partial/search-content.php:242
+#: admin/view/partial/search-content.php:271
 msgid "Default Option"
 msgstr "الخيار الافتراضي"
 
 #: admin/view/partial/gallery-content.php:98
-#: admin/view/partial/search-content-settings.php:92
-#: admin/view/partial/search-content-settings.php:121
-#: admin/view/partial/search-content-settings.php:150
-#: admin/view/partial/search-content-settings.php:179
-#: admin/view/partial/search-content-settings.php:208
-#: admin/view/partial/search-content-settings.php:239
-#: admin/view/partial/search-content-settings.php:268
+#: admin/view/partial/search-content.php:92
+#: admin/view/partial/search-content.php:121
+#: admin/view/partial/search-content.php:150
+#: admin/view/partial/search-content.php:179
+#: admin/view/partial/search-content.php:208
+#: admin/view/partial/search-content.php:239
+#: admin/view/partial/search-content.php:268
 msgid "Descending"
 msgstr "تنازلي"
 
@@ -330,7 +347,7 @@ msgstr "الوصف"
 msgid "Description For Books"
 msgstr "وصف الكتب"
 
-#: admin/view/partial/single-content.php:404
+#: admin/view/partial/single-content.php:458
 msgid "Description Label"
 msgstr "وصف التسمية"
 
@@ -346,29 +363,29 @@ msgstr "سطح المكتب"
 msgid "Details Settings"
 msgstr "تفاصيل الإعدادات"
 
-#: admin/view/partial/book-information.php:130
+#: admin/view/partial/book-information.php:174
 msgid "Dimension"
 msgstr "البعد"
 
-#: admin/view/partial/single-content.php:351
+#: admin/view/partial/single-content.php:376
 msgid "Dimension Label"
 msgstr "البعد التسمية"
 
-#: admin/view/partial/book-information.php:243
+#: admin/view/partial/book-information.php:287
 msgid "Discount Price"
 msgstr "سعر الخصم"
 
 #: admin/view/partial/gallery-content.php:147
-#: admin/view/partial/search-content-settings.php:166
-#: admin/view/partial/single-content.php:173
+#: admin/view/partial/search-content.php:166
+#: admin/view/partial/single-content.php:198
 msgid "Display Author"
 msgstr "عرض المؤلف"
 
-#: admin/view/partial/search-content-settings.php:226
+#: admin/view/partial/search-content.php:226
 msgid "Display Book Format"
 msgstr "عرض شكل كتاب"
 
-#: admin/view/partial/search-content-settings.php:41
+#: admin/view/partial/search-content.php:41
 msgid "Display Book Name"
 msgstr "عرض الكتاب اسم"
 
@@ -377,25 +394,25 @@ msgid "Display Buy Now Button"
 msgstr "عرض زر الشراء الآن"
 
 #: admin/view/partial/gallery-content.php:131
-#: admin/view/partial/search-content-settings.php:79
-#: admin/view/partial/single-content.php:188
+#: admin/view/partial/search-content.php:79
+#: admin/view/partial/single-content.php:213
 msgid "Display Category"
 msgstr "عرض الفئة"
 
-#: admin/view/partial/single-content.php:221
+#: admin/view/partial/single-content.php:246
 msgid "Display Co-Publisher"
 msgstr "عرض Co-الناشر"
 
-#: admin/view/partial/single-content.php:315
+#: admin/view/partial/single-content.php:340
 msgid "Display Country"
 msgstr "عرض البلد"
 
 #: admin/view/partial/gallery-content.php:163
-#: admin/view/partial/single-content.php:398
+#: admin/view/partial/single-content.php:452
 msgid "Display Description"
 msgstr "عرض وصف"
 
-#: admin/view/partial/single-content.php:345
+#: admin/view/partial/single-content.php:370
 msgid "Display Dimension"
 msgstr "عرض البعد"
 
@@ -403,41 +420,49 @@ msgstr "عرض البعد"
 msgid "Display Download Button"
 msgstr "عرض زر التحميل"
 
-#: admin/view/partial/single-content.php:413
+#: admin/view/partial/single-content.php:472
 msgid "Display Download/BuyNow Button"
 msgstr "تحميل عرض/إماراتي زر"
 
-#: admin/view/partial/single-content.php:360
+#: admin/view/partial/single-content.php:419
+msgid "Display Edition"
+msgstr "عرض الإصدار"
+
+#: admin/view/partial/single-content.php:385
 msgid "Display File Size"
 msgstr "عرض حجم الملف"
 
-#: admin/view/partial/single-content.php:17
+#: admin/view/partial/single-content.php:42
 msgid "Display Format"
 msgstr "تنسيق العرض"
 
-#: admin/view/partial/single-content.php:134
+#: admin/view/partial/single-content.php:159
 msgid "Display Grade Level"
 msgstr "عرض مستوى الصف"
 
-#: admin/view/partial/search-content-settings.php:60
-#: admin/view/partial/single-content.php:264
+#: admin/view/partial/single-content.php:434
+msgid "Display Illustrator"
+msgstr "العرض المصور"
+
+#: admin/view/partial/search-content.php:60
+#: admin/view/partial/single-content.php:289
 msgid "Display ISBN"
 msgstr "عرض ISBN"
 
-#: admin/view/partial/single-content.php:282
+#: admin/view/partial/single-content.php:307
 msgid "Display ISBN-13"
 msgstr "عرض ISBN-13"
 
-#: admin/view/partial/single-content.php:379
+#: admin/view/partial/single-content.php:404
 msgid "Display Item Weight"
 msgstr "عرض البند الوزن"
 
-#: admin/view/partial/search-content-settings.php:137
-#: admin/view/partial/single-content.php:330
+#: admin/view/partial/search-content.php:137
+#: admin/view/partial/single-content.php:355
 msgid "Display Language"
 msgstr "لغة العرض"
 
-#: admin/view/partial/single-content.php:300
+#: admin/view/partial/single-content.php:325
 msgid "Display Pages"
 msgstr "عرض الصفحات"
 
@@ -445,12 +470,12 @@ msgstr "عرض الصفحات"
 msgid "Display Pagination"
 msgstr "عرض ترقيم الصفحات"
 
-#: admin/view/partial/single-content.php:239
+#: admin/view/partial/single-content.php:264
 msgid "Display Publish Date"
 msgstr "عرض تاريخ النشر"
 
-#: admin/view/partial/search-content-settings.php:195
-#: admin/view/partial/single-content.php:203
+#: admin/view/partial/search-content.php:195
+#: admin/view/partial/single-content.php:228
 msgid "Display Publisher"
 msgstr "عرض الناشر"
 
@@ -458,28 +483,32 @@ msgstr "عرض الناشر"
 msgid "Display Rating"
 msgstr "عرض تصنيف"
 
-#: admin/view/partial/single-content.php:95
+#: admin/view/partial/single-content.php:120
 msgid "Display Reading Age"
 msgstr "عرض القراءة العمر"
 
-#: admin/view/partial/search-content-settings.php:21
+#: admin/view/partial/search-content.php:21
 msgid "Display Search Panel"
 msgstr "عرض لوحة البحث"
 
-#: admin/view/partial/search-content-settings.php:255
-#: admin/view/partial/single-content.php:56
+#: admin/view/partial/search-content.php:255
+#: admin/view/partial/single-content.php:81
 msgid "Display Series"
 msgstr "عرض سلسلة"
 
-#: admin/view/partial/single-content.php:421
+#: admin/view/partial/single-content.php:480
 msgid "Display Sidebar"
 msgstr "عرض الشريط الجانبي"
+
+#: admin/view/partial/single-content.php:17
+msgid "Display Sub-Title"
+msgstr "عرض العنوان الفرعي"
 
 #: admin/view/partial/gallery-content.php:234
 msgid "Display Total Books"
 msgstr "عرض إجمالي الكتب"
 
-#: admin/view/partial/search-content-settings.php:108
+#: admin/view/partial/search-content.php:108
 msgid "Display Year"
 msgstr "العرض العام"
 
@@ -491,7 +520,7 @@ msgstr "تحميل"
 msgid "Download Button"
 msgstr "زر التحميل"
 
-#: admin/view/partial/book-information.php:138
+#: admin/view/partial/book-information.php:182
 msgid "Download Link"
 msgstr "رابط التحميل"
 
@@ -527,15 +556,23 @@ msgstr "تعديل مستوى الصف"
 msgid "Edit Reading Age"
 msgstr "تحرير سن القراءة"
 
+#: admin/view/partial/book-information.php:328
+msgid "Edition"
+msgstr "الطبعة"
+
+#: admin/view/partial/single-content.php:425
+msgid "Edition Label"
+msgstr "الطبعة التسمية"
+
 #: admin/view/partial/gallery-content.php:104
 msgid "Enable Book Details Page"
 msgstr "تمكين الكتاب صفحة تفاصيل"
 
-#: admin/view/partial/book-information.php:166
+#: admin/view/partial/book-information.php:210
 msgid "File Size"
 msgstr "حجم الملف"
 
-#: admin/view/partial/single-content.php:366
+#: admin/view/partial/single-content.php:391
 msgid "File Size Label"
 msgstr "حجم الملف التسمية"
 
@@ -545,7 +582,8 @@ msgstr "الوجه"
 
 #: admin/view/partial/gallery-styles.php:91
 #: admin/view/partial/gallery-styles.php:123
-#: admin/view/partial/search-styles-settings.php:44
+#: admin/view/partial/search-styles.php:162
+#: admin/view/partial/search-styles.php:195
 msgid "Font Color"
 msgstr "لون الخط"
 
@@ -558,16 +596,16 @@ msgstr "حجم الخط"
 msgid "For more option please upgrade to pro."
 msgstr "لمزيد من خيار الرجاء الترقية إلى الموالية."
 
-#: admin/view/partial/single-content.php:35
+#: admin/view/partial/single-content.php:60
 msgid "Format Label"
 msgstr "صيغة التسمية"
 
-#: admin/view/partial/book-information.php:187
+#: admin/view/partial/book-information.php:231
 msgid "Free"
 msgstr "مجانا"
 
 #: admin/view/partial/gallery-content.php:47
-#: admin/view/partial/single-content.php:256
+#: admin/view/partial/single-content.php:281
 msgid "Full"
 msgstr "كامل"
 
@@ -594,7 +632,7 @@ msgstr "الإعدادات العامة"
 msgid "Grade Level"
 msgstr "مستوى الصف"
 
-#: admin/view/partial/single-content.php:152
+#: admin/view/partial/single-content.php:177
 msgid "Grade Level Label"
 msgstr "مستوى الصف التسمية"
 
@@ -606,6 +644,14 @@ msgstr "أهلا %1$s"
 #: admin/view/partial/gallery-styles.php:100
 msgid "Hover Color"
 msgstr "تحوم اللون"
+
+#: admin/view/partial/book-information.php:348
+msgid "Illustrator"
+msgstr "المصور"
+
+#: admin/view/partial/single-content.php:440
+msgid "Illustrator Label"
+msgstr "المصور التسمية"
 
 #: admin/view/partial/gallery-content.php:52
 msgid "Image Animation"
@@ -627,20 +673,24 @@ msgstr "استيراد الكتب من API"
 msgid "Import Books Successful"
 msgstr "استيراد الكتب الناجحة"
 
-#: admin/view/partial/book-information.php:294
+#: admin/view/partial/book-information.php:378
 msgid "Inactive"
 msgstr "نشط"
 
-#: admin/view/partial/book-information.php:198
+#: admin/view/partial/search-styles.php:112
+msgid "Input Fields"
+msgstr "حقول الإدخال"
+
+#: admin/view/partial/book-information.php:242
 msgid "Is Featured"
 msgstr "هي واردة"
 
-#: admin/view/partial/book-information.php:78
-#: admin/view/partial/search-content-settings.php:69
+#: admin/view/partial/book-information.php:102
+#: admin/view/partial/search-content.php:69
 msgid "ISBN"
 msgstr "ISBN"
 
-#: admin/view/partial/single-content.php:270
+#: admin/view/partial/single-content.php:295
 msgid "ISBN Label"
 msgstr "ISBN التسمية"
 
@@ -648,28 +698,28 @@ msgstr "ISBN التسمية"
 msgid "ISBN-10"
 msgstr "ISBN-10"
 
-#: admin/view/partial/book-information.php:86
+#: admin/view/partial/book-information.php:110
 msgid "ISBN-13"
 msgstr "ISBN-13"
 
-#: admin/view/partial/single-content.php:288
+#: admin/view/partial/single-content.php:313
 msgid "ISBN-13 Label"
 msgstr "ISBN-13 التسمية"
 
-#: admin/view/partial/book-information.php:264
+#: admin/view/partial/book-information.php:308
 msgid "Item Weight"
 msgstr "البند الوزن"
 
-#: admin/view/partial/single-content.php:385
+#: admin/view/partial/single-content.php:410
 msgid "Item Weight Label"
 msgstr "البند الوزن التسمية"
 
-#: admin/view/partial/book-information.php:122
+#: admin/view/partial/book-information.php:166
 #: admin/view/partial/gallery-content.php:86
 msgid "Language"
 msgstr "اللغة"
 
-#: admin/view/partial/single-content.php:336
+#: admin/view/partial/single-content.php:361
 msgid "Language Label"
 msgstr "تسمية اللغة"
 
@@ -709,7 +759,7 @@ msgstr "الجديد على مستوى الصف"
 msgid "New Reading Age"
 msgstr "قراءة جديدة سن"
 
-#: admin/view/partial/book-information.php:214
+#: admin/view/partial/book-information.php:258
 msgid "No"
 msgstr "لا"
 
@@ -725,7 +775,7 @@ msgstr "أي الكتب وجدت."
 #: front/view/featured-content.php:30 front/view/gallery.php:222
 #: front/view/gallery.php:229 front/view/gallery.php:232
 #: front/view/gallery.php:243 front/view/gallery.php:250
-#: front/view/gallery.php:254 front/view/single.php:94 front/view/slide.php:20
+#: front/view/gallery.php:254 front/view/single.php:103 front/view/slide.php:20
 #: front/view/slide.php:27 front/view/slide.php:30
 msgid "No Image Available"
 msgstr "أي صورة متوفرة"
@@ -742,7 +792,7 @@ msgstr "لم يتم العثور على"
 msgid "Not found in Trash"
 msgstr "لم يتم العثور على في القمامة"
 
-#: admin/view/partial/single-content.php:259
+#: admin/view/partial/single-content.php:284
 msgid "Only Year"
 msgstr "السنة فقط"
 
@@ -751,21 +801,21 @@ msgid "Open Book Details in New Tab"
 msgstr "كتاب مفتوح من التفاصيل في علامة تبويب جديدة"
 
 #: admin/view/partial/gallery-content.php:91
-#: admin/view/partial/search-content-settings.php:85
-#: admin/view/partial/search-content-settings.php:114
-#: admin/view/partial/search-content-settings.php:143
-#: admin/view/partial/search-content-settings.php:172
-#: admin/view/partial/search-content-settings.php:201
-#: admin/view/partial/search-content-settings.php:232
-#: admin/view/partial/search-content-settings.php:261
+#: admin/view/partial/search-content.php:85
+#: admin/view/partial/search-content.php:114
+#: admin/view/partial/search-content.php:143
+#: admin/view/partial/search-content.php:172
+#: admin/view/partial/search-content.php:201
+#: admin/view/partial/search-content.php:232
+#: admin/view/partial/search-content.php:261
 msgid "Order By"
 msgstr "النظام"
 
-#: admin/view/partial/book-information.php:106
+#: admin/view/partial/book-information.php:150
 msgid "Pages"
 msgstr "صفحات"
 
-#: admin/view/partial/single-content.php:306
+#: admin/view/partial/single-content.php:331
 msgid "Pages Label"
 msgstr "صفحات التسمية"
 
@@ -821,8 +871,8 @@ msgstr "الأم القراءة العمر"
 msgid "Parent Reading Age:"
 msgstr "الأم القراءة العمر:"
 
-#: admin/view/partial/search-content-settings.php:47
-#: admin/view/partial/search-content-settings.php:66
+#: admin/view/partial/search-content.php:47
+#: admin/view/partial/search-content.php:66
 msgid "Placeholder Text"
 msgstr "نص العنصر النائب"
 
@@ -837,31 +887,27 @@ msgstr ""
 "بك من %2$s سيتم إرسالها إلى %5$s. إذا كنت تخطي هذا, لا بأس! %2$s سوف لا تزال "
 "تعمل على ما يرام."
 
-#: admin/view/partial/book-information.php:152
-#: admin/view/partial/book-information.php:180
-#: admin/view/partial/book-information.php:228
-#: admin/view/partial/book-information.php:249
+#: admin/view/partial/book-information.php:196
+#: admin/view/partial/book-information.php:224
+#: admin/view/partial/book-information.php:272
+#: admin/view/partial/book-information.php:293
 #: admin/view/partial/gallery-content.php:200
 #: admin/view/partial/gallery-content.php:219
 #: admin/view/partial/gallery-content.php:250
 #: admin/view/partial/gallery-content.php:270
 #: admin/view/partial/gallery-content.php:291
-#: admin/view/partial/single-content.php:23
-#: admin/view/partial/single-content.php:41
-#: admin/view/partial/single-content.php:62
-#: admin/view/partial/single-content.php:80
-#: admin/view/partial/single-content.php:101
-#: admin/view/partial/single-content.php:119
-#: admin/view/partial/single-content.php:140
-#: admin/view/partial/single-content.php:158
+#: admin/view/partial/single-content.php:48
+#: admin/view/partial/single-content.php:66
+#: admin/view/partial/single-content.php:87
+#: admin/view/partial/single-content.php:105
+#: admin/view/partial/single-content.php:126
+#: admin/view/partial/single-content.php:144
+#: admin/view/partial/single-content.php:165
+#: admin/view/partial/single-content.php:183
 msgid "Please Upgrade Now!"
 msgstr "الرجاء الترقية الآن!"
 
 #: admin/view/general-settings.php:78
-#: admin/view/partial/book-information.php:53
-#: admin/view/partial/book-information.php:92
-#: admin/view/partial/book-information.php:270
-#: admin/view/partial/gallery-content.php:322
 msgid "Please Upgrade to Professional!"
 msgstr "الرجاء الترقية إلى المهنية!"
 
@@ -869,7 +915,7 @@ msgstr "الرجاء الترقية إلى المهنية!"
 msgid "Prefered Author"
 msgstr "يفضل الكاتب"
 
-#: admin/view/partial/book-information.php:190
+#: admin/view/partial/book-information.php:234
 msgid "Premium"
 msgstr "قسط"
 
@@ -877,21 +923,21 @@ msgstr "قسط"
 msgid "Provide Your ISBN-10"
 msgstr "تقديم ISBN-10"
 
-#: admin/view/partial/single-content.php:245
+#: admin/view/partial/single-content.php:270
 msgid "Publish Date Label"
 msgstr "تاريخ النشر التسمية"
 
-#: admin/view/partial/book-information.php:70
+#: admin/view/partial/book-information.php:94
 #: admin/view/partial/gallery-content.php:85
 msgid "Published On"
 msgstr "نشرت على"
 
-#: admin/view/partial/book-information.php:39
+#: admin/view/partial/book-information.php:63
 #: admin/view/partial/gallery-content.php:84
 msgid "Publisher"
 msgstr "الناشر"
 
-#: admin/view/partial/single-content.php:209
+#: admin/view/partial/single-content.php:234
 msgid "Publisher Label"
 msgstr "الناشر التسمية"
 
@@ -900,19 +946,22 @@ msgstr "الناشر التسمية"
 msgid "Reading Age"
 msgstr "القراءة العمر"
 
-#: admin/view/partial/single-content.php:113
-#, fuzzy
+#: admin/view/partial/single-content.php:138
 #| msgid "Rading Age Label"
 msgid "Reading Age Label"
-msgstr "Rading سن التسمية"
+msgstr "Reading سن التسمية"
 
-#: admin/view/partial/book-information.php:222
+#: admin/view/partial/book-information.php:266
 msgid "Regular Price"
 msgstr "السعر العادي"
 
-#: admin/cls-books-gallery-admin.php:561
+#: admin/cls-books-gallery-admin.php:568
 msgid "Remove Book Cover Here"
 msgstr "إزالة غلاف الكتاب هنا"
+
+#: admin/view/partial/search-styles.php:172
+msgid "Reset Button"
+msgstr "زر إعادة الضبط"
 
 #: admin/view/partial/gallery-content.php:57
 msgid "Rotate 360"
@@ -921,9 +970,9 @@ msgstr "تدوير 360"
 #: admin/view/general-settings.php:94
 #: admin/view/partial/gallery-content.php:349
 #: admin/view/partial/gallery-styles.php:144
-#: admin/view/partial/search-content-settings.php:306
-#: admin/view/partial/search-styles-settings.php:52
-#: admin/view/partial/single-content.php:429
+#: admin/view/partial/search-content.php:306
+#: admin/view/partial/search-styles.php:203
+#: admin/view/partial/single-content.php:488
 msgid "Save Settings"
 msgstr "حفظ الإعدادات"
 
@@ -947,11 +996,15 @@ msgstr "البحث كتاب Formates"
 msgid "Search Book Series"
 msgstr "البحث سلسلة كتاب"
 
-#: admin/view/partial/search-content-settings.php:300
+#: admin/view/partial/search-content.php:300
 msgid "Search Books"
 msgstr "البحث عن الكتب"
 
-#: admin/view/partial/search-content-settings.php:297
+#: admin/view/partial/search-styles.php:139
+msgid "Search Button"
+msgstr "زر البحث"
+
+#: admin/view/partial/search-content.php:297
 msgid "Search Button Text"
 msgstr "زر البحث النص"
 
@@ -959,12 +1012,16 @@ msgstr "زر البحث النص"
 msgid "Search Grade Level"
 msgstr "البحث مستوى الصف"
 
-#: admin/view/partial/search-content-settings.php:29
+#: admin/view/partial/search-content.php:29
 msgid "Search Items"
 msgstr "البنود البحث"
 
+#: admin/view/partial/search-styles.php:22
+msgid "Search Panel"
+msgstr "بحث الفريق"
+
 #: admin/cls-books-gallery-admin.php:51 admin/cls-books-gallery-admin.php:52
-#: admin/view/wbg-search-settings.php:9
+#: admin/view/search-settings.php:9
 msgid "Search Panel Settings"
 msgstr "البحث إعدادات لوحة"
 
@@ -980,11 +1037,11 @@ msgstr "اختيار واحد"
 msgid "selling_point_"
 msgstr "selling_point_"
 
-#: admin/view/partial/single-content.php:74
+#: admin/view/partial/single-content.php:99
 msgid "Series Label"
 msgstr "سلسلة التسمية"
 
-#: admin/cls-books-gallery-admin.php:560
+#: admin/cls-books-gallery-admin.php:567
 msgid "Set Book Cover Here"
 msgstr "تعيين غلاف الكتاب هنا"
 
@@ -1012,16 +1069,21 @@ msgstr "صغيرة"
 msgid "Sorting By"
 msgstr "فرز حسب"
 
-#: admin/view/partial/book-information.php:287
-msgid "Status:"
-msgstr "حالة:"
+#: admin/view/partial/book-information.php:371
+#| msgid "Status:"
+msgid "Status"
+msgstr "حالة"
 
-#: admin/view/gallery-settings.php:25 admin/view/single-settings.php:25
-#: admin/view/wbg-search-settings.php:25
+#: admin/view/gallery-settings.php:25 admin/view/search-settings.php:25
+#: admin/view/single-settings.php:25
 msgid "Styles"
 msgstr "أنماط"
 
-#: front/view/single.php:391
+#: admin/view/partial/book-information.php:35
+msgid "Sub Title"
+msgstr "العنوان الفرعي"
+
+#: front/view/single.php:449
 msgid "Tags"
 msgstr "Tags"
 
@@ -1068,9 +1130,25 @@ msgstr "تحديث مستوى الصف"
 msgid "Update Reading Age"
 msgstr "تحديث سن القراءة"
 
+#: admin/view/partial/book-information.php:314
+#: admin/view/partial/book-information.php:334
+#: admin/view/partial/book-information.php:354
+msgid "Upgrade to Professional"
+msgstr "الترقية المهنية"
+
 #: admin/view/general-settings.php:54
-#: admin/view/partial/book-information.php:204
-#: admin/view/wbg-api-import.php:151
+#: admin/view/partial/book-information.php:41
+#: admin/view/partial/book-information.php:77
+#: admin/view/partial/book-information.php:116
+#: admin/view/partial/book-information.php:136
+#: admin/view/partial/book-information.php:248
+#: admin/view/partial/gallery-content.php:322
+#: admin/view/partial/search-styles.php:33
+#: admin/view/partial/search-styles.php:54
+#: admin/view/partial/search-styles.php:75
+#: admin/view/partial/search-styles.php:96
+#: admin/view/partial/search-styles.php:123
+#: admin/view/partial/single-content.php:23 admin/view/wbg-api-import.php:151
 msgid "Upgrade to Professional!"
 msgstr "الترقية المهنية!"
 
@@ -1078,8 +1156,8 @@ msgstr "الترقية المهنية!"
 msgid "Usage & Tutorial"
 msgstr "استخدام البرنامج التعليمي"
 
-#: admin/view/partial/book-information.php:235
-#: admin/view/partial/book-information.php:256
+#: admin/view/partial/book-information.php:279
+#: admin/view/partial/book-information.php:300
 msgid "Use 999 For 9.99"
 msgstr "استخدام 999 9.99"
 
@@ -1103,7 +1181,7 @@ msgstr "مع تمكين فقط تسجيل الدخول يمكن للمستخدم
 msgid "WP Customer Reviews Plugin Integration Required For This Feature."
 msgstr "WP مراجعات العملاء التكامل المساعد المطلوبة للحصول على هذه الميزة."
 
-#: admin/view/partial/book-information.php:211
+#: admin/view/partial/book-information.php:255
 msgid "Yes"
 msgstr "نعم"
 

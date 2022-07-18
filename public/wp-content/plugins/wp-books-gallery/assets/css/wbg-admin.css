@@ -1,3 +1,17 @@
+table.fixed {
+    table-layout: auto !important;
+}
+
+#cover,
+#title,
+#taxonomy-book_category,
+#author_main,
+#tags,
+#status,
+#date {
+    width: fit-content;
+}
+
 table.wbg-general-settings-table tr th,
 table.wbg-general-settings-table tr td,
 table.wbg-general-style-settings-table tr th,
@@ -7,8 +21,10 @@ table.wbg-details-settings-table tr td,
 table.wbg-search-settings-table tr th,
 table.wbg-search-settings-table tr td,
 table.wbg-search-style-settings-table tr th,
-table.wbg-search-style-settings-table tr td {
-    padding: 10px;
+table.wbg-search-style-settings-table tr td,
+table.wbg-single-style-settings-table tr th,
+table.wbg-single-style-settings-table tr td,
+table.wbg-gallery-conent-settings-table tr td {
     text-align: left;
 }
 
@@ -16,14 +32,25 @@ table.wbg-general-settings-table tr th,
 table.wbg-general-style-settings-table tr th,
 table.wbg-details-settings-table tr th,
 table.wbg-search-settings-table tr th,
-table.wbg-search-style-settings-table tr th {
+table.wbg-search-style-settings-table tr th,
+table.wbg-single-style-settings-table tr th,
+table.wbg-gallery-conent-settings-table tr th {
     font-weight: 600;
+    width: 180px;
+    text-align: right;
+    padding-right: 10px;
 }
 
+table.wbg-general-settings-table tr td,
 table.wbg-search-settings-table tr td,
-table.wbg-details-settings-table tr td {
+table.wbg-details-settings-table tr td,
+table.wbg-single-style-settings-table tr td,
+table.wbg-gallery-conent-settings-table tr td,
+table.wbg-general-style-settings-table tr td,
+table.wbg-search-style-settings-table tr td {
     border: 1px solid #DDD;
-    background: #EAEAEA;
+    background: #F2F2F2;
+    padding: 10px;
 }
 
 
@@ -102,6 +129,7 @@ input#wbg_shortcode {
     font-size: 16px;
     border-bottom: 0;
     margin-left: 0;
+    margin-right: 5px;
 }
 
 .wbg-tab:hover {
@@ -139,6 +167,7 @@ input#wbg_shortcode {
     display: inline-block;
     min-height: 100px;
     clear: both;
+    width: 100%;
 }
 
 .wbg_personal_wrap.wbg_personal_help {

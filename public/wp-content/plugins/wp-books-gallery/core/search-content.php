@@ -22,7 +22,7 @@ trait Wbg_Search_Content_Settings
 
     }
 
-    protected function wbg_get_search_content_settings() {
+    function wbg_get_search_content_settings() {
 
         $this->fields   = $this->wbg_search_content_option_fileds();
 		$this->settings = get_option('wbg_search_settings');
@@ -30,7 +30,7 @@ trait Wbg_Search_Content_Settings
         return $this->wbg_build_get_settings_options( $this->fields, $this->settings );
 	}
 
-    protected function get_search_items() {
+    function get_search_items() {
 
         if ( get_option( 'wbgp_search_dad_list' ) ) {
 

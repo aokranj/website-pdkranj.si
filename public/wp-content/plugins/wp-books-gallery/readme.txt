@@ -1,15 +1,15 @@
-=== Books Gallery - Best Books Showcase & Library Plugin for WordPress ===
+=== Books Gallery - Best Books Showcase & Affiliate Plugin for WordPress ===
 Contributors: mhmrajib, hmplugin, freemius
 Donate link: https://www.paypal.me/mhmrajib
 Tags: book, gallery, store, Books, library, best books showcase plugin, free books showcase plugin, books showcase, Digital Library, Affiliating, Affiliate Marketing, Sell Books Online, Publisher, Author, Writer
-Requires at least: 5.0
-Tested up to: 5.9.1
-Stable tag: 3.7
+Requires at least: 5.2
+Tested up to: 6.0.1
+Stable tag: 4.4.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-WordPress Books Gallery is the Best Books Showcase & Library Plugin for WordPress which will build a beautiful mobile-friendly Book Store, Books Gallery or a Books Library in a few minutes.
+WordPress Books Gallery is the Best Books Showcase & Affiliate Plugin for WordPress which will build a beautiful mobile-friendly Book Store, Books Gallery or a Books Library in a few minutes.
 
 == Description ==
 
@@ -19,7 +19,7 @@ WordPress Books Gallery is the Best Books Showcase & Library Plugin for WordPres
 
 = Overview =
 
-**WordPress Books Gallery** is the **Best Books Showcase & Library Plugin for WordPress** which will build a beautiful mobile-friendly Book Store, Books Gallery or a Books Library in a few minutes.
+**WordPress Books Gallery** is the **Best Books Showcase & Affiliate Plugin for WordPress** which will build a beautiful mobile-friendly Book Store, Books Gallery or a Books Library in a few minutes.
 
 **Here are 3 Simple reasons why you should start using Books Gallery on your site:**
 
@@ -58,6 +58,7 @@ WordPress Books Gallery is a simple, effective and powerful plugin to Self Publi
 * Can be used as an Amazon Affiliate Plugin
 * Can be integrated to WooCommerce and sell Books
 * Book Reviews & Ratings
+* Font Awesome Free 6.1.1 integrated
 
 
 **✅ Options In Gallery Settings**
@@ -176,6 +177,18 @@ https://youtu.be/nR_3v1TkaZo
 * Allow Only Logged-in Users to Download Books
 * Import Books with CSV Format - Addon Available
 * Import Books from Open Library
+* Display Subtitle in Details Page
+* Display ASIN in Book Details
+* Display Edition in Book Details
+* Display Illustrator in Book Details
+* Front end sorting feature
+* Display Book details in popup modal
+* Option for Affiliate Code tag in url
+* Option to align button at bottom
+* Related books slide in single page
+* Author books slide in single page
+* Latest Books Slider Widget
+* Gallery Pagination Styling
 
 
 [Get the pro](https://books-gallery.com/pricing-faq/)
@@ -301,7 +314,63 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 
 == Changelog ==
 
+= 4.4.2 =
+
+* Security fix
+* Details tag space fixed
+
+= 4.4.1 =
+
+* Gallery mobile, tablet width issue fixed
+* All books admin table width issue fixed
+
+= 4.4 =
+
+* Sidebar display issue fixed
+* Without sidebar width issue fixed
+* Refresh button styling improved
+* Font Awesome Free 6.1.1 integrated
+* Gallery container border color option added
+* Gallery container width option added
+* Gallery container margin top/bottom option added
+* Css fixed
+
+= 4.3 =
+
+* Allow post author in admin add/edit books panel
+* Books archive page turned into gallery page
+* Support for post author
+
+= 4.2 =
+
+* Book detail page SEO improved
+* Book detail page code reorganized
+* Book detail page title line height fixed
+* Gallery page column updated to 5
+* Adminajax url issue fixed
+* Display cover in admin all books list
+
+= 4.1 =
+
+* JS issue fixed
+* CSS issue fixed
+
+= 4.0 =
+
+* Selectize sorting and conflicting issue fixed
+* Search button hover bg and font color option added
+
+= 3.9 =
+
+* Action before/after added in front single page
+* Search reset button background, border, font color option added
+
+= 3.8 =
+
+* Searchable dropdown for search panel added
+
 = 3.7 =
+
 * Spelling issue fixed
 
 = 3.6 =
@@ -311,20 +380,24 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 * Minor issue fixed
 
 = 3.4 =
+
 * United Arab Emirates currency added
 
 = 3.3 =
+
 * General Setings Page Added
 * Gallery Page Url Slug Option added
 * Gallery Page Slug Applied to Back Button
 * Search Filter on Author and Category Link in Details Page
 
 = 3.2 =
+
 * Admin Tab Styling Overlap Issue Fixed
 * Admin Sidebar Link Updated
 * Icon Added to Details Page Book Info
 
 = 3.1 =
+
 * Minor bug fixing
 * Code optimized
 * Search button border issue fixed
@@ -337,11 +410,13 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 * Search Refresh Icon Changed
 
 = 2.9 =
+
 * Minor fixing
 * Max width applied to details page
 * Notice error fixed in details page
 
 = 2.8 =
+
 * Usage & Tutorial Page Added
 * Download button Url open in new tab
 * Minor fixing

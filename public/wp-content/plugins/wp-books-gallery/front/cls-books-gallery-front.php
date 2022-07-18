@@ -12,9 +12,11 @@ class WBG_Front
         Wbg_Core,
         Wbg_Core_Settings,
         Wbg_Gallery_Settings_Content,
+        Wbg_Gallery_Settings_Styles,
         Wbg_Search_Content_Settings,
         Wbg_Search_Styles_Settings,
-        Wbg_Single_Content_Settings
+        Wbg_Single_Content_Settings,
+        Wbg_Single_Styles_Settings
     ;
     private  $wbg_version ;
     function __construct( $version )
@@ -25,23 +27,12 @@ class WBG_Front
     
     function wbg_front_assets()
     {
+        // searchable dropdown select Style
+        wp_register_style( 'wbg-selectize', '//cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css' );
+        wp_enqueue_style( 'wbg-selectize' );
         wp_enqueue_style(
             $this->wbg_assets_prefix . 'font-awesome',
-            WBG_ASSETS . 'css/font-awesome/css/font-awesome.min.css',
-            array(),
-            $this->wbg_version,
-            FALSE
-        );
-        wp_enqueue_style(
-            'wbg-slick',
-            WBG_ASSETS . 'css/slick.css',
-            array(),
-            $this->wbg_version,
-            FALSE
-        );
-        wp_enqueue_style(
-            'wbg-slick-theme',
-            WBG_ASSETS . 'css/slick-theme.css',
+            WBG_ASSETS . 'css/fontawesome/css/all.min.css',
             array(),
             $this->wbg_version,
             FALSE
@@ -53,16 +44,10 @@ class WBG_Front
             $this->wbg_version,
             FALSE
         );
+        // Loading Script
         if ( !wp_script_is( 'jquery' ) ) {
             wp_enqueue_script( 'jquery' );
         }
-        wp_enqueue_script(
-            'wbg-slick',
-            WBG_ASSETS . 'js/slick.js',
-            '',
-            '2.4.20',
-            TRUE
-        );
         wp_enqueue_script(
             'wbg-front',
             WBG_ASSETS . 'js/wbg-front.js',
@@ -70,6 +55,14 @@ class WBG_Front
             $this->wbg_version,
             TRUE
         );
+        $wbgSingleStylesSettigns = get_option( 'wbg_single_styles' );
+        $wbgPopupWidth = ( isset( $wbgSingleStylesSettigns['wbg_single_modal_width'] ) ? sanitize_text_field( $wbgSingleStylesSettigns['wbg_single_modal_width'] ) : '700' );
+        wp_localize_script( 'wbg-front', 'wbgAdminScriptObj', [
+            'ajaxurl'    => admin_url( 'admin-ajax.php' ),
+            'modalWidth' => $wbgPopupWidth,
+        ] );
+        // searchable dropdown select js
+        wp_enqueue_script( 'wbg-selectize', '//cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js' );
     }
     
     function wbg_load_shortcode()
@@ -85,6 +78,15 @@ class WBG_Front
         foreach ( $wpsdGallerySettingsContent as $gscKey => $gscValue ) {
             if ( isset( $wpsdGallerySettingsContent[$gscKey] ) ) {
                 ${"" . $gscKey} = $gscValue;
+            }
+        }
+        $wbg_books_per_page = $wbg_books_per_page_np;
+        $wbg_display_pagination = $wbg_display_pagination_np;
+        // Gallery Styles
+        $wpsdGallerySettingsStyles = $this->wbg_get_gallery_styles_settings();
+        foreach ( $wpsdGallerySettingsStyles as $gssKey => $gssValue ) {
+            if ( isset( $wpsdGallerySettingsStyles[$gssKey] ) ) {
+                ${"" . $gssKey} = $gssValue;
             }
         }
         // Search Content
@@ -118,6 +120,20 @@ class WBG_Front
     function wbg_load_featured_view( $attr )
     {
         global  $post ;
+        // Gallery Content
+        $wpsdGallerySettingsContent = $this->wbg_get_gallery_settings_content();
+        foreach ( $wpsdGallerySettingsContent as $gscKey => $gscValue ) {
+            if ( isset( $wpsdGallerySettingsContent[$gscKey] ) ) {
+                ${"" . $gscKey} = $gscValue;
+            }
+        }
+        // General Settings
+        $wbgCoreSettings = $this->wbg_get_core_settings();
+        foreach ( $wbgCoreSettings as $core_name => $core_value ) {
+            if ( isset( $wbgCoreSettings[$core_name] ) ) {
+                ${"" . $core_name} = $core_value;
+            }
+        }
         $output = '';
         ob_start();
         include WBG_PATH . 'front/view/featured-view.php';
@@ -130,6 +146,15 @@ class WBG_Front
         global  $post ;
         if ( 'books' === $post->post_type ) {
             return WBG_PATH . 'front/view/single.php';
+        }
+        return $template;
+    }
+    
+    function wbg_load_archive_template( $template )
+    {
+        global  $post ;
+        if ( 'books' === $post->post_type ) {
+            return WBG_PATH . 'front/view/archive.php';
         }
         return $template;
     }
@@ -174,7 +199,7 @@ class WBG_Front
                 if ( 5 - $hmt_star > 0 ) {
                     for ( $rns = 1 ;  $rns <= 5 - $hmt_star ;  $rns++ ) {
                         ?>
-							<i class="fa fa-star-o"></i>
+							<i class="fa fa-star" style="color: #CCC;"></i>
 							<?php 
                     }
                 }
@@ -186,6 +211,13 @@ class WBG_Front
         
         }
     
+    }
+    
+    function wbg_load_single_modal()
+    {
+        $post_id = sanitize_text_field( $_POST['postId'] );
+        include WBG_PATH . 'front/view/single-modal.php';
+        exit;
     }
 
 }

@@ -224,9 +224,34 @@ trait Wbg_Single_Content_Settings
                 'default'   => false,
             ],
             [
+                'name'      => 'wbg_display_subtitle',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
                 'name'      => 'wbg_display_sidebar',
                 'type'      => 'boolean',
                 'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_display_edition',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_edition_label',
+                'type'      => 'text',
+                'default'   => 'Edition',
+            ],
+            [
+                'name'      => 'wbg_display_illustrator',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_illustrator_label',
+                'type'      => 'text',
+                'default'   => 'Illustrator',
             ],
         ];
     }

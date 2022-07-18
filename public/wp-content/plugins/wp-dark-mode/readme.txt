@@ -2,9 +2,9 @@
 Contributors: wppool, wpdarkmode, azizultex, iamjafran
 Tags: dark, dark mode, night mode, gutenberg blocks, dark theme
 Requires at least: 5.0
-Tested up to: 5.9
+Tested up to: 6.0
 Requires PHP: 5.6
-Stable tag: 2.2.8
+Stable tag: 2.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,6 +169,13 @@ Yes, You can toggle the dark mode/ light mode  by keyboard shortcut `(Ctrl + Alt
 13. Dark mode switch elementor widget
 
 == Changelog ==
+ 
+= 2.3.2 =
+* Checked and fixed compatibility with WordPress 6.0
+ 
+= 2.2.9 =
+* Checked and fixed regular compatibility checking
+* Fixed contact subscription issue
 
 = 2.2.8 =
 * Improved Promotional Popup

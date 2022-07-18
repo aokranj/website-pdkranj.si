@@ -12,9 +12,11 @@ class WBG_Admin
         Wbg_Core,
         Wbg_Core_Settings,
         Wbg_Gallery_Settings_Content,
+        Wbg_Gallery_Settings_Styles,
         Wbg_Search_Content_Settings,
         Wbg_Search_Styles_Settings,
-        Wbg_Single_Content_Settings
+        Wbg_Single_Content_Settings,
+        Wbg_Single_Styles_Settings
     ;
     private  $wbg_version ;
     private  $wbg_assets_prefix ;
@@ -98,7 +100,7 @@ class WBG_Admin
         wp_enqueue_script( 'wp-color-picker' );
         wp_enqueue_style(
             $this->wbg_assets_prefix . 'font-awesome',
-            WBG_ASSETS . 'css/font-awesome/css/font-awesome.min.css',
+            WBG_ASSETS . 'css/fontawesome/css/all.min.css',
             array(),
             $this->wbg_version,
             FALSE
@@ -152,7 +154,13 @@ class WBG_Admin
             'label'               => __( 'books', WBG_TXT_DOMAIN ),
             'description'         => __( 'Description For Books', WBG_TXT_DOMAIN ),
             'labels'              => $labels,
-            'supports'            => array( 'title', 'editor', 'thumbnail' ),
+            'supports'            => array(
+            'title',
+            'editor',
+            'thumbnail',
+            'comments',
+            'author'
+        ),
             'public'              => true,
             'hierarchical'        => true,
             'show_ui'             => true,
@@ -253,6 +261,7 @@ class WBG_Admin
         }
         $wbg_books_meta_posts = $_POST;
         $wbg_books_meta_params = array(
+            'wbg_sub_title'      => ( isset( $_POST['wbg_sub_title'] ) ? sanitize_text_field( $_POST['wbg_sub_title'] ) : '' ),
             'wbg_author'         => ( isset( $_POST['wbg_author'] ) ? sanitize_text_field( $_POST['wbg_author'] ) : '' ),
             'wbg_download_link'  => ( isset( $_POST['wbg_download_link'] ) ? sanitize_text_field( $_POST['wbg_download_link'] ) : '' ),
             'wbgp_buy_link'      => ( isset( $_POST['wbgp_buy_link'] ) ? sanitize_text_field( $_POST['wbgp_buy_link'] ) : '' ),
@@ -261,6 +270,7 @@ class WBG_Admin
             'wbg_published_on'   => ( isset( $_POST['wbg_published_on'] ) ? sanitize_text_field( $_POST['wbg_published_on'] ) : '' ),
             'wbg_isbn'           => ( isset( $_POST['wbg_isbn'] ) ? sanitize_text_field( $_POST['wbg_isbn'] ) : '' ),
             'wbg_isbn_13'        => ( isset( $_POST['wbg_isbn_13'] ) ? sanitize_text_field( $_POST['wbg_isbn_13'] ) : '' ),
+            'wbg_asin'           => ( isset( $_POST['wbg_asin'] ) ? sanitize_text_field( $_POST['wbg_asin'] ) : '' ),
             'wbg_pages'          => ( isset( $_POST['wbg_pages'] ) ? sanitize_text_field( $_POST['wbg_pages'] ) : '' ),
             'wbg_country'        => ( isset( $_POST['wbg_country'] ) ? sanitize_text_field( $_POST['wbg_country'] ) : '' ),
             'wbg_language'       => ( isset( $_POST['wbg_language'] ) ? sanitize_text_field( $_POST['wbg_language'] ) : '' ),
@@ -273,6 +283,8 @@ class WBG_Admin
             'wbg_cost_type'      => ( isset( $_POST['wbg_cost_type'] ) && filter_var( $_POST['wbg_cost_type'], FILTER_SANITIZE_STRING ) ? $_POST['wbg_cost_type'] : '' ),
             'wbg_is_featured'    => ( isset( $_POST['wbg_is_featured'] ) && filter_var( $_POST['wbg_is_featured'], FILTER_SANITIZE_STRING ) ? $_POST['wbg_is_featured'] : '' ),
             'wbg_item_weight'    => ( isset( $_POST['wbg_item_weight'] ) ? sanitize_text_field( $_POST['wbg_item_weight'] ) : '' ),
+            'wbg_edition'        => ( isset( $_POST['wbg_edition'] ) ? sanitize_text_field( $_POST['wbg_edition'] ) : '' ),
+            'wbg_illustrator'    => ( isset( $_POST['wbg_illustrator'] ) ? sanitize_text_field( $_POST['wbg_illustrator'] ) : '' ),
         );
         $wbg_books_meta = apply_filters( 'wbg_books_meta', $wbg_books_meta_params, $wbg_books_meta_posts );
         foreach ( $wbg_books_meta as $key => $value ) {
@@ -305,6 +317,9 @@ class WBG_Admin
         require_once WBG_PATH . 'admin/view/general-settings.php';
     }
     
+    /** 
+     * Gallery Settings
+     */
     function wbg_gallery_settings()
     {
         if ( !current_user_can( 'manage_options' ) ) {
@@ -312,10 +327,14 @@ class WBG_Admin
         }
         $tab = ( isset( $_GET['tab'] ) ? sanitize_text_field( $_GET['tab'] ) : null );
         $wbgShowGeneralMessage = false;
-        if ( isset( $_POST['updateGeneralSettings'] ) ) {
+        if ( isset( $_POST['updateGalleryContentSettings'] ) ) {
             $wbgShowGeneralMessage = $this->wbg_set_gallery_settings_content( $_POST );
         }
         $wpsdGallerySettingsContent = $this->wbg_get_gallery_settings_content();
+        if ( isset( $_POST['updateGalleryStylesSettings'] ) ) {
+            $wbgShowGeneralMessage = $this->wbg_set_gallery_styles_settings( $_POST );
+        }
+        $wpsdGallerySettingsStyles = $this->wbg_get_gallery_styles_settings();
         require_once WBG_PATH . 'admin/view/gallery-settings.php';
     }
     
@@ -336,7 +355,7 @@ class WBG_Admin
             $wbgShowMessage = $this->wbg_set_search_styles_settings( $_POST );
         }
         $wbgSearchStyles = $this->wbg_get_search_styles_settings();
-        require_once WBG_PATH . 'admin/view/wbg-search-settings.php';
+        require_once WBG_PATH . 'admin/view/search-settings.php';
     }
     
     function wbg_details_settings()
@@ -346,10 +365,16 @@ class WBG_Admin
         }
         $tab = ( isset( $_GET['tab'] ) ? sanitize_text_field( $_GET['tab'] ) : null );
         $wbgShowMessage = false;
+        // Content
         if ( isset( $_POST['updateDetailsContent'] ) ) {
             $wbgShowMessage = $this->wbg_set_single_content_settings( $_POST );
         }
         $wbgDetailsContent = $this->wbg_get_single_content_settings();
+        // Style
+        if ( isset( $_POST['updateSingleStyles'] ) ) {
+            $wbgShowMessage = $this->wbg_set_single_styles_settings( $_POST );
+        }
+        $wbgSingleStyles = $this->wbg_get_single_styles_settings();
         require_once WBG_PATH . 'admin/view/single-settings.php';
     }
     

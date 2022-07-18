@@ -173,6 +173,7 @@ if ( ! class_exists( 'WP_Dark_Mode' ) ) {
 		public function load_files() {
 
 			//core includes
+			include_once WP_DARK_MODE_INCLUDES . '/class.wppool.php';
 			include_once WP_DARK_MODE_INCLUDES . '/functions.php';
 			include_once WP_DARK_MODE_INCLUDES . '/class-enqueue.php';
 			include_once WP_DARK_MODE_INCLUDES . '/class-shortcode.php';

@@ -1,13 +1,18 @@
 <?php
 /**
- * Plugin Name:	WordPress Books Gallery
- * Plugin URI:	https://wordpress.org/plugins/wp-books-gallery/
- * Description:	Best Books Showcase & Library Plugin for WordPress which will build a beautiful mobile-friendly Book Store, Gallery, Library in a few minutes.
- * Version:		3.7
- * Author:		HM Plugin
- * Author URI:	https://hmplugin.com
- * License:		GPL-2.0+
- * License URI:	http://www.gnu.org/licenses/gpl-2.0.txt
+ * Plugin Name:	        WordPress Books Gallery
+ * Plugin URI:	        https://wordpress.org/plugins/wp-books-gallery/
+ * Description:	        Best Books Showcase & Library Plugin for WordPress which will build a beautiful mobile-friendly Book Store, Gallery, Library in a few minutes.
+ * Version:		        4.4.2
+ * Author:		        HM Plugin
+ * Author URI:	        https://hmplugin.com
+ * Requires at least:   5.2
+ * Requires PHP:        7.2
+ * Tested up to:        6.0.1
+ * Text Domain:         wp-books-gallery
+ * Domain Path:         /languages/
+ * License:		        GPL-2.0+
+ * License URI:	        http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,7 +33,7 @@ if ( function_exists('wbg_fs') ) {
         define( 'WBG_PRFX', 'wbg_' );
         define( 'WBG_CLS_PRFX', 'cls-books-gallery-' );
         define( 'WBG_TXT_DOMAIN', 'wp-books-gallery' );
-        define( 'WBG_VERSION', '3.7' );
+        define( 'WBG_VERSION', '4.4.2' );
 
         require_once WBG_PATH . "/lib/freemius-integrator.php";
 
@@ -36,6 +41,31 @@ if ( function_exists('wbg_fs') ) {
         $wbg = new WBG_Master();
         $wbg->wbg_run();
 
+        // Creating Default Page
+        /*
+        function wbg_create_default_page() {
+        
+            $wbg_page   = 'Books';
+            $wbg_page_exist = get_page_by_title($wbg_page , 'OBJECT', 'page');
+            $post_content     = '[wp_books_gallery]';
+            if ( empty( $wbg_page_exist ) ) {
+                wp_insert_post( array(
+                    'comment_status' => 'close',
+                    'ping_status'    => 'close',
+                    'post_author'    => 1,
+                    'post_title'     => ucwords( $wbg_page ),
+                    'post_name'      => sanitize_title( $wbg_page ),
+                    'post_status'    => 'publish',
+                    'post_content'   => $post_content,
+                    'post_type'      => 'page',
+                    'post_parent'    => ''
+                    )
+                );
+            }
+        }
+        add_action( 'init', 'wbg_create_default_page' );
+        */
+        
         // Extra link to plugin description
         add_filter( 'plugin_row_meta', 'wbg_plugin_row_meta', 10, 2 );
         function wbg_plugin_row_meta( $links, $file ) {
@@ -93,5 +123,64 @@ if ( function_exists('wbg_fs') ) {
         }
         add_action('pre_get_posts', 'wbg_custom_post_type_cat_filter');
 
+        // Add Columns to logo list table
+        function wbg_add_logo_columns( $columns ) {
+            
+            unset( $columns['author'] );
+			unset( $columns['comments'] );
+            unset( $columns['title'] );
+            unset( $columns['categories'] );
+            unset( $columns['tags'] );
+            unset( $columns['taxonomy-book_category'] );
+            unset( $columns['taxonomy-book_format'] );
+            unset( $columns['taxonomy-book_series'] );
+            unset( $columns['taxonomy-reading_age'] );
+            unset( $columns['taxonomy-grade_level'] );
+            unset( $columns['taxonomy-book_author'] );
+            unset( $columns['date'] );
+        
+            return array_merge ( 
+                $columns, 
+                array ( 
+                    'cover'                     => __('Book Cover', WBG_TXT_DOMAIN),
+                    'title'                     => __('Book Title', WBG_TXT_DOMAIN),
+                    'taxonomy-book_category'    => __('Book Category', WBG_TXT_DOMAIN),
+                    'author_main'                    => __('Author', WBG_TXT_DOMAIN),
+                    'tags'                      => __('Tags', WBG_TXT_DOMAIN),
+                    'status'                    => __('Book Status', WBG_TXT_DOMAIN),
+                    'date'                      => __('Published Date', WBG_TXT_DOMAIN),
+                ) 
+            );
+        
+        }
+        add_filter('manage_books_posts_columns', 'wbg_add_logo_columns');
+
+        // Add Data To Custom Post Type Columns
+        function wbg_logo_column_data( $column, $post_id ) {
+
+            switch ( $column ) {
+                case 'cover':
+                    $wbg_img   = get_post_meta( $post_id, 'wbgp_img_url', true );
+                    if ( $wbg_img ) {
+                        ?>
+                        <img src="<?php echo esc_url( $wbg_img ); ?>" alt="<?php _e('No Image Available', WBG_TXT_DOMAIN); ?>" width="50">
+                        <?php
+                    } else {
+                        echo get_the_post_thumbnail( $post_id, array( 50, 150 ), array( 'class' => 'wbg-admin-book-cover-list' ) );
+                    }
+                    break;
+        
+                case 'author_main':
+                    echo get_post_meta( $post_id, 'wbg_author', true );
+                    break;
+        
+                case 'status':
+                    echo ( 'active' !== get_post_meta( $post_id , 'wbg_status' , true ) ) ? '<b style="color:red;">' . __('Inactive', WBG_TXT_DOMAIN) . '</b>' : '<b style="color:green;">' . __('Active', WBG_TXT_DOMAIN) . '</b>';
+                    break;
+    
+            }
+            
+        }
+        add_action('manage_books_posts_custom_column' , 'wbg_logo_column_data', 10, 2);
     }
 }

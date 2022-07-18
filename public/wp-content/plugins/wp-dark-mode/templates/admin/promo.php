@@ -19,70 +19,10 @@ $data = [
 /**
  * Get WPPOOL Remote Offer
  */
-
-if (!function_exists('get_wppool_offer')) {
-    function get_wppool_offer($plugin_name = 'WP Dark Mode')
-    {
-        # Get transient data if available
-        $data = get_transient('wppool_offer_data');
-
-        if (!$data) {
-
-            # get remote data from wppool
-            $url = "https://docs.google.com/spreadsheets/export?format=csv&id=1D9ULWJj0f1mnXAE2rCwbVsDcKBTBpohPv9CarLOMJbo&gid=0";
-
-            $response = wp_remote_get($url);
-
-            if (!is_wp_error($response)) {
-
-                $response = wp_remote_retrieve_body($response);
-
-                if (!empty($response)) {
-
-                    $csv = array_map('str_getcsv', explode("\n", $response));
-                    $data = [];
-                    for ($i = 1; $i < count($csv); $i++) {
-                        if (!empty($csv[$i][0])) {
-                            $data[$i] = array_combine($csv[0], $csv[$i]);
-                        }
-                    }
-
-                    # updates every hour
-                    set_transient('wppool_offer_data', $data, (DAY_IN_SECONDS / 2));
-                }
-            } else {
-                $data = [
-                    'discount' => '20',
-                    'campaign'      => false,
-                    'discount_image' => '',
-                    'campaign_image' => '', 
-                ];
-            }
-        }
-
-        if ($data && $plugin_name) {
-            $data = array_filter($data, function ($item) use ($plugin_name) {
-                return $item['plugin'] == $plugin_name;
-            });
-
-            if (!empty($data)) {
-                $data = array_values($data)[0];
-            } else {
-                $data = false;
-            }
-        }
-
-        return $data;
-    }
-}
-
-// echo '<pre>';
-// print_r(get_wppool_offer('WP Dark Mode'));
-// exit();
-
-
-$data = get_wppool_offer('WP Dark Mode');
+$wp_dark_mode = new \WPPOOL\Product( 'wp_dark_mode' );
+$data = $wp_dark_mode->offer();
  
+
 $time = !empty($data['counter_time']) ? strtotime($data['counter_time']) : strtotime('+ 14 hours');
 
 if ($time < time()) {
