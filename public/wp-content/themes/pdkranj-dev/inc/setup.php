@@ -140,3 +140,22 @@ add_action('init', function() {
 		}
 	});
 });
+
+/**
+ * Prevent update notification for plugin
+ * http://www.thecreativedev.com/disable-updates-for-specific-plugin-in-wordpress/
+ * Place in theme functions.php or at bottom of wp-config.php
+ */
+add_filter('site_transient_update_plugins', function($value) {
+	$pluginsToDisable = [
+		'wp-gatsby/wp-gatsby.php',
+	];
+	if ( isset($value) && is_object($value) ) {
+		foreach ($pluginsToDisable as $plugin) {
+			if (isset($value->response[$plugin])) {
+				unset($value->response[$plugin]);
+			}
+		}
+	}
+	return $value;
+});

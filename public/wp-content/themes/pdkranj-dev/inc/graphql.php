@@ -1,9 +1,8 @@
 <?php
 
 
-add_action( 'graphql_register_types', function() {
+add_action('graphql_register_types', function() {
 
-  /*
 	register_graphql_connection([
 		'fromType' => 'ContentNode',
 		'toType' => 'MediaItem',
@@ -15,11 +14,9 @@ add_action( 'graphql_register_types', function() {
 			return $resolver->get_connection();
 		}
 	]);
-
-  deregister_graphql_field( 'NodeWithFeaturedImage', 'featuredImage' );
-
+  
   // override featured image
-
+  deregister_graphql_field('NodeWithFeaturedImage', 'featuredImage');
   register_graphql_connection([
     'fromType'      => 'NodeWithFeaturedImage',
     'toType'        => 'MediaItem',
@@ -46,6 +43,5 @@ add_action( 'graphql_register_types', function() {
       return $resolver->one_to_one()->get_connection();
     },
   ]);
-  */
 
-} );
+});
