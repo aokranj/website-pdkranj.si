@@ -5,6 +5,10 @@
   * https://b.dev.pdkranj.si/
   * https://j.dev.pdkranj.si
 
-# Webstore of PD Kranj
+## Webstore of PD Kranj
 * Live site: https://knjiga.pdkranj.si/ (produkcijska domena, SSH dostop s pd-prod userjem)
 * Dev site: https://j.dev.knjiga.pdkranj.si (delovna verzija za @JNastran-a, SSH dostop z lastnim username-om)
+
+## Runbooks
+
+Available [here](doc/runbook/).
