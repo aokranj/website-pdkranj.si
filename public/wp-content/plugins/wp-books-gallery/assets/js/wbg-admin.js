@@ -25,6 +25,7 @@
 
     var wbgColorPicker = [
         '#wbg_container_border_color',
+        '#wbg_container_bg_color',
         '#wbg_btn_color',
         '#wbg_btn_font_color',
         '#wbg_btn_border_color',
@@ -36,6 +37,8 @@
         '#wbg_search_panel_input_bg_color',
         '#wbg_download_btn_color',
         '#wbg_download_btn_font_color',
+        '#wbg_download_btn_color_hvr',
+        '#wbg_download_btn_font_color_hvr',
         '#wbg_title_color',
         '#wbg_title_hover_color',
         '#wbg_description_color',
@@ -55,6 +58,11 @@
         '#wbg_pagination_active_font_color',
         '#wbg_single_modal_bg_color',
         '#wbg_single_modal_border_color',
+        '#wbg_rprice_font_color',
+        '#wbg_dprice_font_color',
+        '#wbg_loop_format_font_color',
+        '#wbg_loop_cat_font_color',
+        '#wbg_loop_author_font_color',
     ];
 
     $.each(wbgColorPicker, function(index, value) {

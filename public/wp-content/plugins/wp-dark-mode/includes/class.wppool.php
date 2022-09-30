@@ -12,10 +12,14 @@ namespace WPPOOL;
 defined('ABSPATH') or die('No script kiddies please!');
 
 # WPPOOL Product Class 
-if (!class_exists('\WPPOOL\Product')) :
-
-    final class Product
-    {
+if ( ! class_exists( '\WPPOOL\Product' ) ) :
+    /**
+     * This class is the WPPOOL offer class. 
+     * its use to manage latest WPPOOL offer and fluentCRM user data sync.
+     *
+     * @version 1.0.0
+     */
+    final class Product {
         # product name 
         protected $product = 'wp_dark_mode';
 
@@ -26,7 +30,7 @@ if (!class_exists('\WPPOOL\Product')) :
         # Promotional offer sheet URL
         protected $offer_sheet_url = 'https://docs.google.com/spreadsheets/export?format=csv&id=1D9ULWJj0f1mnXAE2rCwbVsDcKBTBpohPv9CarLOMJbo&gid=0';
 
-        # products tags and lists 
+        # wppool products tags and lists 
         protected $products =  [
             'wp_dark_mode' => [
                 'name' => 'WP Dark Mode',
@@ -108,7 +112,6 @@ if (!class_exists('\WPPOOL\Product')) :
 
 
         # Forced tags and lists
-
         protected function sanitize_product_name($product = 'WP Dark Mode')
         {
             $product = strtolower($product);
@@ -118,7 +121,7 @@ if (!class_exists('\WPPOOL\Product')) :
         }
 
         # init
-        public function __construct($product = 'wp_dark_mode')
+        public function __construct( $product = 'wp_dark_mode' )
         {
             $product = $this->sanitize_product_name($product);
             $this->product = $product;

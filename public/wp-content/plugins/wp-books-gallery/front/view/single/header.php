@@ -33,6 +33,8 @@ $wbgpCurrencySymbol =  $wbg_front_new->wbg_get_currency_symbol( $wbgp_currency )
 $wbgGeneralStyling              = get_option('wbg_general_styles');
 $wbg_download_btn_color         = isset( $wbgGeneralStyling['wbg_download_btn_color'] ) ? $wbgGeneralStyling['wbg_download_btn_color'] : '#0274be';
 $wbg_download_btn_font_color    = isset( $wbgGeneralStyling['wbg_download_btn_font_color'] ) ? $wbgGeneralStyling['wbg_download_btn_font_color'] : '#FFFFFF';
+$wbg_download_btn_color_hvr         = isset( $wbgGeneralStyling['wbg_download_btn_color_hvr'] ) ? $wbgGeneralStyling['wbg_download_btn_color_hvr'] : '#0274be';
+$wbg_download_btn_font_color_hvr    = isset( $wbgGeneralStyling['wbg_download_btn_font_color_hvr'] ) ? $wbgGeneralStyling['wbg_download_btn_font_color_hvr'] : '#FFFFFF';
 
 // Detail Content Settings
 $wbgDetailsContent = $wbg_front_new->wbg_get_single_content_settings();

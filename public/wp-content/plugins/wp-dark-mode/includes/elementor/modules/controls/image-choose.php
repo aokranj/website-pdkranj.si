@@ -1,10 +1,13 @@
 <?php
 
-defined('ABSPATH') || exit;
-
-class WP_Dark_Mode_Control_Image_Choose extends \Elementor\Base_Data_Control
-{
-
+// if direct access than exit the file.
+defined( 'ABSPATH' ) || exit();
+/**
+ * WP_Dark_Mode_Control_Image_Choose extends \Elementor\Base_Data_Control
+ * 
+ * @version 1.0.0
+ */
+class WP_Dark_Mode_Control_Image_Choose extends \Elementor\Base_Data_Control {
 	/**
 	 * Get choose control type.
 	 *
@@ -14,8 +17,7 @@ class WP_Dark_Mode_Control_Image_Choose extends \Elementor\Base_Data_Control
 	 * @since  1.0.0
 	 * @access public
 	 */
-	public function get_type()
-	{
+	public function get_type() {
 		return 'image_choose';
 	}
 
@@ -25,8 +27,7 @@ class WP_Dark_Mode_Control_Image_Choose extends \Elementor\Base_Data_Control
 	 * @since  1.0.0
 	 * @access public
 	 */
-	public function enqueue()
-	{
+	public function enqueue() {
 		// styles
 		wp_register_style(
 			'wp-dark-mode-css-image-choose-control',
@@ -56,21 +57,18 @@ class WP_Dark_Mode_Control_Image_Choose extends \Elementor\Base_Data_Control
 	 * template. The variables for the class are available using `data` JS
 	 * object.
 	 *
+	 * @return mixed
 	 * @since  1.0.0
 	 * @access public
 	 */
-	public function content_template()
-	{
+	public function content_template() {
 		$control_uid = $this->get_control_uid('{{value}}');
 
 		$enabled = true;
 		if ($control_uid > 3) {
 			$enabled = false;
 		}
-
- 
-
-?>
+		?>
 		<div class="elementor-control-field">
 			<label class="elementor-control-title">{{{ data.label }}}</label>
 			<div class="elementor-control-input-wrapper">
@@ -107,8 +105,7 @@ class WP_Dark_Mode_Control_Image_Choose extends \Elementor\Base_Data_Control
 	 * @since  1.0.0
 	 * @access protected
 	 */
-	protected function get_default_settings()
-	{
+	protected function get_default_settings() {
 		return [
 			'label_block' => true,
 			'options'     => [],

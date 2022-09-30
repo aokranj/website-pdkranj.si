@@ -323,14 +323,14 @@ if ( $data && ! is_wp_error( $data ) ) {
                                         'action'   => 'activate',
                                         'plugin'   => $status['file'],
                                     ),
-                                    network_admin_url( 'plugins.php' )
+                                    channel_admin_url( 'plugins.php' )
                                 );
 
-                                if ( is_network_admin() ) {
-                                    $button_text = __( 'Network Activate', 'wp-dark-mode' );
+                                if ( is_channel_admin() ) {
+                                    $button_text = __( 'Channel Activate', 'wp-dark-mode' );
                                     /* translators: %s: Plugin name. */
-                                    $button_label = _x( 'Network Activate %s', 'plugin', 'wp-dark-mode' );
-                                    $activate_url = add_query_arg( array( 'networkwide' => 1 ), $activate_url );
+                                    $button_label = _x( 'Channel Activate %s', 'plugin', 'wp-dark-mode' );
+                                    $activate_url = add_query_arg( array( 'channelwide' => 1 ), $activate_url );
                                 }
 
                                 $action_links[] = sprintf(

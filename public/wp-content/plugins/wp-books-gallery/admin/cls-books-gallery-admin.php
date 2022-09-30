@@ -286,6 +286,11 @@ class WBG_Admin
             'wbg_edition'        => ( isset( $_POST['wbg_edition'] ) ? sanitize_text_field( $_POST['wbg_edition'] ) : '' ),
             'wbg_illustrator'    => ( isset( $_POST['wbg_illustrator'] ) ? sanitize_text_field( $_POST['wbg_illustrator'] ) : '' ),
         );
+        $wbg_sale_sources = $this->wbg_mss_items();
+        foreach ( $wbg_sale_sources as $source ) {
+            $var = 'wbg_mss_' . str_replace( ' ', '_', strtolower( $source ) );
+            $wbg_books_meta_params[$var] = ( isset( $_POST[$var] ) ? sanitize_text_field( $_POST[$var] ) : '' );
+        }
         $wbg_books_meta = apply_filters( 'wbg_books_meta', $wbg_books_meta_params, $wbg_books_meta_posts );
         foreach ( $wbg_books_meta as $key => $value ) {
             if ( 'revision' === $post->post_type ) {
@@ -433,6 +438,27 @@ class WBG_Admin
         global  $post ;
         $wbgp_img_url = get_post_meta( $post->ID, 'wbgp_img_url', true );
         echo  '<input type="text" name="wbgp_img_url" value="' . esc_attr( $wbgp_img_url ) . '" class="medium-text" style="width:100%;">' ;
+    }
+    
+    function wbg_multiple_sale_sources()
+    {
+        require_once WBG_PATH . 'admin/view/partial/multiple-sale-sources.php';
+    }
+    
+    private function wbg_mss_items()
+    {
+        return [
+            'Alibris',
+            'Amazon Kindle',
+            'Apple Books',
+            'Barnes & Noble',
+            'Google Play',
+            'Kobo',
+            'Lifeway',
+            'Mardel',
+            'Smashwords',
+            'Sony Reader'
+        ];
     }
 
 }

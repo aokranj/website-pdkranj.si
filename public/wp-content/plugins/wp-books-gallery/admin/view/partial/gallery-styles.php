@@ -79,6 +79,43 @@ esc_attr_e( $wbg_container_margin_bottom );
                 <code>px</code>
             </td>
         </tr>
+        <tr>
+            <th scope="row">
+                <label><?php 
+_e( 'Padding', WBG_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <input type="number" class="medium-text" min="0" max="50" name="wbg_loop_container_padding" id="wbg_loop_container_padding" value="<?php 
+esc_attr_e( $wbg_loop_container_padding );
+?>">
+                <code>px</code>
+            </td>
+            <th scope="row">
+                <label><?php 
+_e( 'Border Radius', WBG_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <input type="number" class="medium-text" min="0" max="50" name="wbg_loop_container_radius" id="wbg_loop_container_radius" value="<?php 
+esc_attr_e( $wbg_loop_container_radius );
+?>">
+                <code>px</code>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label><?php 
+_e( 'Background Color', WBG_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <input class="wbg-wp-color" type="text" name="wbg_container_bg_color" id="wbg_container_bg_color" value="<?php 
+esc_attr_e( $wbg_container_bg_color );
+?>">
+                <div id="colorpicker"></div>
+            </td>
+        </tr>
         <!-- Book Item -->
         <tr class="wbg_download_btn">
             <th scope="row" colspan="4" style="text-align: left;">
@@ -111,6 +148,23 @@ esc_attr_e( $wbg_loop_book_bg_color );
                 <div id="colorpicker"></div>
             </td>
         </tr>
+        <tr>
+            <th scope="row">
+                <label for="wbg_hide_hover_shadow"><?php 
+_e( 'Hide Hover Shadow', WBG_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                    <?php 
+?>
+            </td>
+        </tr>
+        <!-- Title -->
         <tr class="wbg_download_btn">
             <th scope="row" colspan="4" style="text-align: left;">
                 <hr><label><?php 
@@ -155,6 +209,7 @@ esc_attr_e( $wbg_title_font_size );
                 <code>px</code>
             </td>
         </tr>
+        <!-- Description -->
         <tr>
             <th scope="row" colspan="4" style="text-align: left;">
                 <hr><label><?php 
@@ -184,6 +239,174 @@ _e( 'Font Size', WBG_TXT_DOMAIN );
 esc_attr_e( $wbg_description_font_size );
 ?>">
                 <code>px</code>
+            </td>
+        </tr>
+        <!-- Format -->
+        <tr>
+            <th scope="row" colspan="4" style="text-align: left;">
+                <hr><label><?php 
+_e( 'Format', WBG_TXT_DOMAIN );
+?></label><hr>
+            </th>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label><?php 
+_e( 'Font Color', WBG_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                    <?php 
+?>
+            </td>
+            <th scope="row">
+                <label><?php 
+_e( 'Font Size', WBG_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                    <?php 
+?>
+            </td>
+        </tr>
+        <!-- Category -->
+        <tr>
+            <th scope="row" colspan="4" style="text-align: left;">
+                <hr><label><?php 
+_e( 'Category', WBG_TXT_DOMAIN );
+?></label><hr>
+            </th>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label><?php 
+_e( 'Font Color', WBG_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                    <?php 
+?>
+            </td>
+            <th scope="row">
+                <label><?php 
+_e( 'Font Size', WBG_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                    <?php 
+?>
+            </td>
+        </tr>
+        <!-- Author -->
+        <tr>
+            <th scope="row" colspan="4" style="text-align: left;">
+                <hr><label><?php 
+_e( 'Author', WBG_TXT_DOMAIN );
+?></label><hr>
+            </th>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label><?php 
+_e( 'Font Color', WBG_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                    <?php 
+?>
+            </td>
+            <th scope="row">
+                <label><?php 
+_e( 'Font Size', WBG_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                    <?php 
+?>
+            </td>
+        </tr>
+        <!-- Price -->
+        <tr>
+            <th scope="row" colspan="4" style="text-align: left;">
+                <hr><label><?php 
+_e( 'Price', WBG_TXT_DOMAIN );
+?></label><hr>
+            </th>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label><?php 
+_e( 'Font Color', WBG_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                    <?php 
+?>
+            </td>
+            <th scope="row">
+                <label><?php 
+_e( 'Before Discount Color', WBG_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                    <?php 
+?>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label><?php 
+_e( 'Font Size', WBG_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <?php 
+?>
+                    <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                    <?php 
+?>
             </td>
         </tr>
         <!-- Download Button -->
@@ -232,6 +455,38 @@ echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Profess
 ?></span>
                     <?php 
 ?>
+            </td>
+        </tr>
+        <!-- Download Button Hover -->
+        <tr class="wbg_download_btn">
+            <th scope="row" colspan="4" style="text-align: left;">
+                <hr><label><?php 
+_e( 'Download Button Hover', WBG_TXT_DOMAIN );
+?></label><hr>
+            </th>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label for="wbg_download_btn_color_hvr"><?php 
+_e( 'Background Color', WBG_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <input class="wbg-wp-color" type="text" name="wbg_download_btn_color_hvr" id="wbg_download_btn_color_hvr" value="<?php 
+esc_attr_e( $wbg_download_btn_color_hvr );
+?>">
+                <div id="colorpicker"></div>
+            </td>
+            <th scope="row">
+                <label for="wbg_download_btn_font_color_hvr"><?php 
+_e( 'Font Color', WBG_TXT_DOMAIN );
+?></label>
+            </th>
+            <td>
+                <input class="wbg-wp-color" type="text" name="wbg_download_btn_font_color_hvr" id="wbg_download_btn_font_color_hvr" value="<?php 
+esc_attr_e( $wbg_download_btn_font_color_hvr );
+?>">
+                <div id="colorpicker"></div>
             </td>
         </tr>
         <!-- Pagination -->

@@ -605,8 +605,8 @@ class Insights
 				$formatted['author'] = strip_tags($v['Author']);
 			}
 
-			if (isset($v['Network'])) {
-				$formatted['network'] = strip_tags($v['Network']);
+			if (isset($v['Channel'])) {
+				$formatted['channel'] = strip_tags($v['Channel']);
 			}
 
 			if (isset($v['PluginURI'])) {

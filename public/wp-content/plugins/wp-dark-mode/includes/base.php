@@ -1,10 +1,12 @@
 <?php
-
+// if direct access than exit the file.
 defined( 'ABSPATH' ) || exit();
-
-/** if class `WP_Dark_Mode` doesn't exists yet. */
+/**
+ * Check class is already exists
+ *
+ * @version 1.0.0
+ */
 if ( ! class_exists( 'WP_Dark_Mode' ) ) {
-
 	/**
 	 * Sets up and initializes the plugin.
 	 * Main initiation class
@@ -21,7 +23,6 @@ if ( ! class_exists( 'WP_Dark_Mode' ) ) {
 		 * @var    object
 		 */
 		private static $instance = null;
-
 
 		/**
 		 * Minimum PHP version required
@@ -111,14 +112,17 @@ if ( ! class_exists( 'WP_Dark_Mode' ) ) {
 
 			add_option( 'wp_dark_mode_do_activation_redirect', true );
 		}
-
+		/**
+		 * do the deactivation stuffs
+		 */
 		public function deactivation() {
 			wp_clear_scheduled_hook( 'wp_dark_mode_send_email_reporting' );
 		}
 
 		/**
-		 *
 		 * redirect to settings page after activation the plugin
+		 *
+		 * @return void
 		 */
 		public function activation_redirect() {
 			if ( get_option( 'wp_dark_mode_do_activation_redirect', false ) ) {
@@ -127,8 +131,7 @@ if ( ! class_exists( 'WP_Dark_Mode' ) ) {
 				wp_redirect( admin_url( 'admin.php?page=wp-dark-mode-settings' ) );
 			}
 		}
-
-
+		
 		/**
 		 * check if the pro plugin is active or not
 		 *
@@ -191,6 +194,13 @@ if ( ! class_exists( 'WP_Dark_Mode' ) ) {
 				require WP_DARK_MODE_INCLUDES . '/admin/class-settings-api.php';
 				require WP_DARK_MODE_INCLUDES . '/admin/class-settings.php';
 			}
+
+
+			/**
+			 * Load modules
+			 */
+			require WP_DARK_MODE_INCLUDES . '/modules/social-share.php';
+
 		}
 
 		/**
@@ -206,7 +216,9 @@ if ( ! class_exists( 'WP_Dark_Mode' ) ) {
 		/**
 		 * Plugin action links
 		 *
-		 * @param array $links
+		 * plugin_action_links method use for show  WP Dark Mode GET PRO button and Setting in plugin.php
+		 *
+		 *  @param array $links
 		 *
 		 * @return array
 		 */
@@ -225,8 +237,6 @@ if ( ! class_exists( 'WP_Dark_Mode' ) ) {
 
 			return $links;
 		}
-
-
 		/**
 		 * Returns path to template file.
 		 *
@@ -240,7 +250,7 @@ if ( ! class_exists( 'WP_Dark_Mode' ) ) {
 			if ( ! empty( $args ) && is_array( $args ) ) {
 				extract( $args );
 			}
-
+		
 			$template = locate_template( 'wp-dark-mode/' . $name . '.php' );
 
 			if ( ! $template ) {

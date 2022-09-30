@@ -1,32 +1,73 @@
 <?php
 
 use Elementor\Controls_Manager;
-
+// if direct access than exit the file.
 defined( 'ABSPATH' ) || exit();
+/**
+ * Check class is already exists
+ *
+ * @version 1.0.0
+ */
 
 if ( ! class_exists( 'WP_Dark_Mode_Elementor_Widget' ) ) {
+	/**
+	 * WP_Dark_Mode_Elementor_Widget class extends \Elementor\Widget_Base
+	 * Register WP Dark Mode elementor switcher widget class.
+	 * 
+	 * @version 1.0.0  
+	 */
 	class WP_Dark_Mode_Elementor_Widget extends \Elementor\Widget_Base {
-
+		/**
+		 * Get dark mode switch name
+		 * 
+		 * @return string
+		 * @version 1.0.0
+		 */
 		public function get_name() {
 			return 'wp_dark_mode_switch';
 		}
-
+		/**
+		 * Get switch title
+		 * 
+		 * @return string
+		 * @version 1.0.0
+		 */
 		public function get_title() {
 			return __( 'Dark Mode Switch', 'wp-dark-mode' );
 		}
-
+		/**
+		 * Get widgets icon
+		 * 
+		 * @return string
+		 * @version 1.0.0
+		 */
 		public function get_icon() {
 			return 'eicon-adjust';
 		}
-
+		/**
+		 * get categories type
+		 * 
+		 * @return array
+		 * @version 1.0.0
+		 */
 		public function get_categories() {
 			return [ 'basic' ];
 		}
-
+		/**
+		 * Get dark mode switcher keywords
+		 *
+		 * @return array
+		 * @version 1.0.0 
+		 */
 		public function get_keywords() {
 			return [ 'wp dark mode', 'switch', 'night mode' ];
 		}
-
+		/**
+		 * Register wp dark moode widgets switcher controls
+		 * 
+		 * @return void
+		 * @version 1.0.0
+		 */
 		public function _register_controls() {
 			$this->start_controls_section(
                 '_section_alignment', [
@@ -148,7 +189,12 @@ if ( ! class_exists( 'WP_Dark_Mode_Elementor_Widget' ) ) {
 
 			$this->end_controls_section();
 		}
-
+		/**
+		 * Render the wp dark mode switcher output using by shortcode
+		 * 
+		 * @return mixed
+		 * @version 1.0.0
+		 */
 		public function render() {
 			if ( ! wp_dark_mode_enabled() ) {
 				return;

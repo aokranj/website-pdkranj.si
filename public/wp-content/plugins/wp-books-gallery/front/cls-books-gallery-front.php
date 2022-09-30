@@ -28,8 +28,13 @@ class WBG_Front
     function wbg_front_assets()
     {
         // searchable dropdown select Style
-        wp_register_style( 'wbg-selectize', '//cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css' );
-        wp_enqueue_style( 'wbg-selectize' );
+        wp_enqueue_style(
+            'wbg-selectize',
+            WBG_ASSETS . 'css/selectize.bootstrap3.min.css',
+            array(),
+            $this->wbg_version,
+            FALSE
+        );
         wp_enqueue_style(
             $this->wbg_assets_prefix . 'font-awesome',
             WBG_ASSETS . 'css/fontawesome/css/all.min.css',
@@ -48,6 +53,14 @@ class WBG_Front
         if ( !wp_script_is( 'jquery' ) ) {
             wp_enqueue_script( 'jquery' );
         }
+        // searchable dropdown select js
+        wp_enqueue_script(
+            'wbg-selectize',
+            WBG_ASSETS . 'js/selectize.min.js',
+            array( 'jquery' ),
+            $this->wbg_version,
+            TRUE
+        );
         wp_enqueue_script(
             'wbg-front',
             WBG_ASSETS . 'js/wbg-front.js',
@@ -61,8 +74,6 @@ class WBG_Front
             'ajaxurl'    => admin_url( 'admin-ajax.php' ),
             'modalWidth' => $wbgPopupWidth,
         ] );
-        // searchable dropdown select js
-        wp_enqueue_script( 'wbg-selectize', '//cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js' );
     }
     
     function wbg_load_shortcode()
@@ -80,7 +91,7 @@ class WBG_Front
                 ${"" . $gscKey} = $gscValue;
             }
         }
-        $wbg_books_per_page = $wbg_books_per_page_np;
+        //$wbg_books_per_page = $wbg_books_per_page_np;
         $wbg_display_pagination = $wbg_display_pagination_np;
         // Gallery Styles
         $wpsdGallerySettingsStyles = $this->wbg_get_gallery_styles_settings();

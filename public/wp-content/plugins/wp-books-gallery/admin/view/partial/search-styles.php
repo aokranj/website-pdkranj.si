@@ -170,7 +170,7 @@ esc_attr_e( $wbg_search_btn_bg_color_hover );
             </td>
             <th scope="row">
                 <label><?php 
-_e( 'Background Color', WBG_TXT_DOMAIN );
+_e( 'Font Color', WBG_TXT_DOMAIN );
 ?>:</label>
             </th>
             <td>

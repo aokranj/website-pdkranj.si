@@ -8,6 +8,9 @@ if ( !defined( 'ABSPATH' ) ) {
   <?php 
 ?>
   .wbg-parent-wrapper {
+    background: <?php 
+esc_html_e( $wbg_container_bg_color );
+?>;
     border: 1px solid <?php 
 esc_html_e( $wbg_container_border_color );
 ?>;
@@ -19,6 +22,12 @@ esc_html_e( $wbg_container_margin_top );
 ?>px;
     margin-bottom: <?php 
 esc_html_e( $wbg_container_margin_bottom );
+?>px;
+    padding: <?php 
+esc_html_e( $wbg_loop_container_padding );
+?>px;
+    border-radius: <?php 
+esc_html_e( $wbg_loop_container_radius );
 ?>px;
   }
   /* Search Panel */
@@ -116,6 +125,14 @@ esc_html_e( $wbg_download_btn_font_color );
     font-size: <?php 
 esc_html_e( $wbg_download_btn_font_size );
 ?>px;
+  }
+  .wbg-main-wrapper .wbg-item a.wbg-btn:hover {
+    background: <?php 
+esc_html_e( $wbg_download_btn_color_hvr );
+?>;
+    color: <?php 
+esc_html_e( $wbg_download_btn_font_color_hvr );
+?>;
   }
   .wbg-main-wrapper .wbg-item .wgb-item-link {
     color: <?php 

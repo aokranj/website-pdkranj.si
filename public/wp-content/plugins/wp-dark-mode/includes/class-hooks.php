@@ -5,15 +5,22 @@ defined( 'ABSPATH' ) || exit();
 
 /** check if class `WP_Dark_Mode_Hooks` not exists yet */
 if ( ! class_exists( 'WP_Dark_Mode_Hooks' ) ) {
+	/**
+	 * Load admin site and user site important hook.
+	 *
+	 * @version 1.0.0
+	 */
 	class WP_Dark_Mode_Hooks {
-
 		/**
 		 * @var null
 		 */
 		private static $instance = null;
-
 		/**
 		 * WP_Dark_Mode_Hooks constructor.
+		 * Load admin site and user site action and filter hook
+		 *
+		 * @return void
+		 * @version 1.0.0
 		 */
 		public function __construct() {
 			add_filter( 'wp_dark_mode/excludes', [ $this, 'excludes' ] );
@@ -35,15 +42,22 @@ if ( ! class_exists( 'WP_Dark_Mode_Hooks' ) ) {
 			add_filter( 'wp_dark_mode/switch_label_class', [ $this, 'switch_label_class' ] );
 
 		}
-
+		/**
+		 * Append :not selecetor scss
+		 *
+		 * @return string
+		 * @version 1.0.0
+		 */
 		public function not_selectors() {
-
 			$selectors = '';
 
 			$excludes = wp_dark_mode_get_settings( 'wp_dark_mode_display', 'excludes', '' );
 
-			$excludes = trim( $excludes, ',' );
+			$excludes = trim( $excludes, ',' ); 
 			$excludes = explode( ',', $excludes );
+
+
+		
 
 			if ( ! empty( $excludes ) ) {
 				foreach ( $excludes as $exclude ) {
@@ -62,9 +76,17 @@ if ( ! class_exists( 'WP_Dark_Mode_Hooks' ) ) {
 				$selectors .= ':not(#item-header-cover-image):not(#item-header-avatar):not(.activity-content):not(.activity-header)';
 			}
 
+
 			return $selectors;
 		}
-
+		/**
+		 * Set animation effect class depend on effect setting option data
+		 *
+		 * @param empty $class 
+		 *
+		 * @return string
+		 * @version  1.0.0
+		 */
 		public function switch_label_class( $class ) {
 
 			$animation = wp_dark_mode_get_settings( 'wp_dark_mode_switch', 'attention_effect', 'none' );
@@ -78,6 +100,9 @@ if ( ! class_exists( 'WP_Dark_Mode_Hooks' ) ) {
 
 		/**
 		 * Declare custom color css variables
+		 *
+		 * @return mixed
+		 * @version 1.0.0
 		 */
 		public function header_scripts() {
 
@@ -176,7 +201,10 @@ if ( ! class_exists( 'WP_Dark_Mode_Hooks' ) ) {
 		}
 
 		/**
-		 * Footer scripts
+		 * load wp dark mode Footer scripts
+		 *
+		 * @return mixed
+		 * @version 1.0.0
 		 */
 		public function footer_scripts() {
 
@@ -201,7 +229,10 @@ if ( ! class_exists( 'WP_Dark_Mode_Hooks' ) ) {
 		}
 
 		/**
-		 * display promo popup
+		 * Display wppool promo popup in gutenberg page
+		 * 
+		 * @return mixed
+		 * @version 1.0.0
 		 */
 		public function display_promo() {
 			if ( $this->is_promo() ) {
@@ -214,15 +245,16 @@ if ( ! class_exists( 'WP_Dark_Mode_Hooks' ) ) {
 		}
 
 		/**
-		 * Exclude elements
+		 * Append Exclude elements class
 		 *
-		 * @param $excludes
+		 * @param string $excludes excludes elements class.
 		 *
 		 * @return string
+		 * @version 1.0.0
 		 */
 		public function excludes( $excludes ) {
 
-			$excludes .= ',rs-fullwidth-wrap,.mejs-container';
+			$excludes .= ',rs-fullwidth-wrap,.mejs-container, ._channels-container';
 
 			if ( $this->is_promo() ) {
 				$selectors = wp_dark_mode_get_settings( 'wp_dark_mode_includes_excludes', 'excludes' );
@@ -234,7 +266,12 @@ if ( ! class_exists( 'WP_Dark_Mode_Hooks' ) ) {
 
 			return $excludes;
 		}
-
+		/**
+		 * Check premium license is active or not
+		 *
+		 * @return boolean
+		 * @version 1.0.0
+		 */
 		public function is_promo() {
 			global $wp_dark_mode_license;
 
@@ -246,7 +283,10 @@ if ( ! class_exists( 'WP_Dark_Mode_Hooks' ) ) {
 		}
 
 		/**
-		 * display the footer widget
+		 * Display the footer widget
+		 *
+		 * @return mixed
+		 * @version 1.0.0
 		 */
 		public function display_widget() {
 
@@ -270,15 +310,20 @@ if ( ! class_exists( 'WP_Dark_Mode_Hooks' ) ) {
 
 		/**
 		 * Display promo popup to upgrade to PRO
+		 * load premium popup template
 		 *
-		 * @param $section - setting section
+		 * @return void
+		 * @version 1.0.0
 		 */
 		public function pro_promo() {
 			wp_dark_mode()->get_template( 'admin/promo' );
 		}
 
 		/**
+		 * Singleton instance WP_Dark_Mode_Hooks class
+		 *
 		 * @return WP_Dark_Mode_Hooks|null
+		 * @version 1.0.0
 		 */
 		public static function instance() {
 			if ( is_null( self::$instance ) ) {
@@ -289,6 +334,8 @@ if ( ! class_exists( 'WP_Dark_Mode_Hooks' ) ) {
 		}
 	}
 }
-
+/**
+ * Kick out the class
+ */
 WP_Dark_Mode_Hooks::instance();
 

@@ -1,0 +1,46 @@
+{
+  "name": "wp-dark-mode-dev",
+  "version": "1.0.0",
+  "description": "=== WP Dark Mode === Contributors: wppool, wpdarkmode, azizultex, princeahmed, iamjafran Tags: dark, dark mode, night mode, gutenberg blocks, dark theme Requires at least: 5.0 Tested up to: 5.8 Requires PHP: 5.6 Stable tag: 2.2.2     License: GPLv2 or later License URI: http://www.gnu.org/licenses/gpl-2.0.html",
+  "main": "proder.config.js",
+  "scripts": {
+    "style:admin": "node-sass --output-style compressed ./src/scss/admin.scss ./assets/css/admin.css",
+    "style:frontend": "node-sass --output-style compressed ./src/scss/frontend.scss ./assets/css/frontend.css",
+    "style:admin:watch": "npm run style:admin && node-sass --output-style compressed ./src/scss/admin.scss -w ./assets/css/admin.css",
+    "style:frontend:watch": "npm run style:frontend && node-sass --output-style compressed ./src/scss/frontend.scss -w ./assets/css/frontend.css",
+    "webpack:admin": "webpack --config ./webpack.admin.js -w",
+    "webpack:frontend": "webpack --config ./webpack.frontend.js -w",
+    "block:sass": "npx sass ./src/block/style.scss ./includes/gutenberg/block/editor.css --style=compressed",
+    "block:build": "npx wp-scripts build --config ./webpack.block.js && npm run block:sass",
+    "proder": "proder -b"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WPPOOL/wp-dark-mode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WPPOOL/wp-dark-mode/issues"
+  },
+  "homepage": "https://github.com/WPPOOL/wp-dark-mode#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.7",
+    "@svgr/webpack": "^6.1.2",
+    "@wordpress/scripts": "^23.6.0",
+    "babel-loader": "^8.2.3",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^6.5.1",
+    "proder": "^1.0.1",
+    "sass": "^1.45.2",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "node": "^17.7.2"
+  }
+}

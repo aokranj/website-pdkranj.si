@@ -1,10 +1,6 @@
 <?php
 namespace WPGraphQL\Data\Connection;
 
-use Exception;
-use GraphQL\Type\Definition\ResolveInfo;
-use WPGraphQL\AppContext;
-
 /**
  * Class PluginConnectionResolver - Connects plugins to other objects
  *
@@ -12,38 +8,17 @@ use WPGraphQL\AppContext;
  * @since 0.0.5
  */
 class PluginConnectionResolver extends AbstractConnectionResolver {
-
 	/**
-	 * PluginConnectionResolver constructor.
+	 * {@inheritDoc}
 	 *
-	 * @param mixed       $source     source passed down from the resolve tree
-	 * @param array       $args       array of arguments input in the field as part of the GraphQL query
-	 * @param AppContext  $context    Object containing app context that gets passed down the resolve tree
-	 * @param ResolveInfo $info       Info about fields passed down the resolve tree
-	 *
-	 * @throws Exception
+	 * @var array
 	 */
-	public function __construct( $source, array $args, AppContext $context, ResolveInfo $info ) {
-		parent::__construct( $source, $args, $context, $info );
-	}
+	protected $query;
 
 	/**
-	 * @return bool|int|mixed|null|string
+	 * {@inheritDoc}
 	 */
-	public function get_offset() {
-		$offset = null;
-		if ( ! empty( $this->args['after'] ) ) {
-			$offset = substr( base64_decode( $this->args['after'] ), strlen( 'arrayconnection:' ) );
-		} elseif ( ! empty( $this->args['before'] ) ) {
-			$offset = substr( base64_decode( $this->args['before'] ), strlen( 'arrayconnection:' ) );
-		}
-		return $offset;
-	}
-
-	/**
-	 * @return array
-	 */
-	public function get_ids() {
+	public function get_ids_from_query() {
 		$ids     = [];
 		$queried = ! empty( $this->query ) ? $this->query : [];
 
@@ -59,7 +34,7 @@ class PluginConnectionResolver extends AbstractConnectionResolver {
 	}
 
 	/**
-	 * @return array|void
+	 * {@inheritDoc}
 	 */
 	public function get_query_args() {
 		if ( ! empty( $this->args['where']['status'] ) ) {
@@ -72,7 +47,9 @@ class PluginConnectionResolver extends AbstractConnectionResolver {
 	}
 
 	/**
-	 * @return array|mixed
+	 * {@inheritDoc}
+	 *
+	 * @return array
 	 */
 	public function get_query() {
 		// File has not loaded.
@@ -221,13 +198,13 @@ class PluginConnectionResolver extends AbstractConnectionResolver {
 					$all_plugins,
 					function ( $plugin ) use ( $s ) {
 						foreach ( $plugin as $value ) {
-							if ( is_string( $value ) && false !== stripos( strip_tags( $value ), $s ) ) {
+							if ( is_string( $value ) && false !== stripos( wp_strip_all_tags( $value ), $s ) ) {
 								return true;
 							}
 						}
 
 						return false;
-					},
+					}
 				)
 			);
 			if ( ! empty( $matches ) ) {
@@ -242,51 +219,24 @@ class PluginConnectionResolver extends AbstractConnectionResolver {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function get_ids_for_nodes() {
-		if ( empty( $this->ids ) ) {
-			return [];
-		}
-
-		$ids = $this->ids;
-
-		// If pagination is going backwards, revers the array of IDs
-		$ids = ! empty( $this->args['last'] ) ? array_reverse( $ids ) : $ids;
-
-		if ( ! empty( $this->get_offset() ) ) {
-			// Determine if the offset is in the array
-			$key = array_search( $this->get_offset(), $ids, true );
-			if ( false !== $key ) {
-				$key = absint( $key );
-				if ( ! empty( $this->args['before'] ) ) {
-					// Slice the array from the back.
-					$ids = array_slice( $ids, 0, $key, true );
-				} else {
-					// Slice the array from the front.
-					$key ++;
-					$ids = array_slice( $ids, $key, null, true );
-				}
-			}
-		}
-
-		$ids = array_slice( $ids, 0, $this->query_amount, true );
-
-		return $ids;
-	}
-
-	/**
-	 * @return string
-	 */
 	public function get_loader_name() {
 		return 'plugin';
 	}
 
 	/**
-	 * @param mixed $offset
-	 *
-	 * @return bool
+	 * {@inheritDoc}
 	 */
 	public function is_valid_offset( $offset ) {
-		return true;
+		// File has not loaded.
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		// This is missing must use and drop in plugins, so we need to fetch and merge them separately.
+		$site_plugins   = apply_filters( 'all_plugins', get_plugins() );
+		$mu_plugins     = apply_filters( 'show_advanced_plugins', true, 'mustuse' ) ? get_mu_plugins() : [];
+		$dropin_plugins = apply_filters( 'show_advanced_plugins', true, 'dropins' ) ? get_dropins() : [];
+
+		$all_plugins = array_merge( $site_plugins, $mu_plugins, $dropin_plugins );
+
+		return array_key_exists( $offset, $all_plugins );
 	}
 
 	/**

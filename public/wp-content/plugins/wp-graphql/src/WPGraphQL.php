@@ -130,7 +130,7 @@ final class WPGraphQL {
 
 		// Plugin version.
 		if ( ! defined( 'WPGRAPHQL_VERSION' ) ) {
-			define( 'WPGRAPHQL_VERSION', '1.8.6' );
+			define( 'WPGRAPHQL_VERSION', '1.11.2' );
 		}
 
 		// Plugin Folder Path.
@@ -197,7 +197,7 @@ final class WPGraphQL {
 							'<div class="notice notice-error">' .
 							'<p>%s</p>' .
 							'</div>',
-							__( 'WPGraphQL appears to have been installed without it\'s dependencies. It will not work properly until dependencies are installed. This likely means you have cloned WPGraphQL from Github and need to run the command `composer install`.', 'wp-graphql' )
+							esc_html__( 'WPGraphQL appears to have been installed without it\'s dependencies. It will not work properly until dependencies are installed. This likely means you have cloned WPGraphQL from Github and need to run the command `composer install`.', 'wp-graphql' )
 						);
 					}
 				);
@@ -245,7 +245,8 @@ final class WPGraphQL {
 			function () {
 
 				new \WPGraphQL\Data\Config();
-				new Router();
+				$router = new Router();
+				$router->init();
 				$instance = self::instance();
 
 				/**
@@ -355,7 +356,7 @@ final class WPGraphQL {
 	public function maybe_flush_permalinks() {
 		$rules = get_option( 'rewrite_rules' );
 		if ( ! isset( $rules[ Router::$route . '/?$' ] ) ) {
-			flush_rewrite_rules();
+			flush_rewrite_rules(); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.flush_rewrite_rules_flush_rewrite_rules
 		}
 	}
 
@@ -478,7 +479,7 @@ final class WPGraphQL {
 	 *
 	 * @return array
 	 * @since  0.0.4
-	 * @since  @todo adds $output as first param, and stores post type objects in class property.
+	 * @since  1.8.1 adds $output as first param, and stores post type objects in class property.
 	 */
 	public static function get_allowed_post_types( $output = 'names', $args = [] ) {
 		// Support deprecated param order.
@@ -511,7 +512,7 @@ final class WPGraphQL {
 					throw new UserError(
 						sprintf(
 						/* translators: %s will replaced with the registered type */
-							__( 'The %s post_type isn\'t configured properly to show in GraphQL. It needs a "graphql_single_name" and a "graphql_plural_name"', 'wp-graphql-plugin-name' ),
+							__( 'The %s post_type isn\'t configured properly to show in GraphQL. It needs a "graphql_single_name" and a "graphql_plural_name"', 'wp-graphql' ),
 							$post_type_object->name
 						)
 					);
@@ -526,7 +527,7 @@ final class WPGraphQL {
 			 * For example if a certain post_type should not be exposed to the GraphQL API.
 			 *
 			 * @since 0.0.2
-			 * @since @todo add $post_type_objects parameter.
+			 * @since 1.8.1 add $post_type_objects parameter.
 			 *
 			 * @param array $post_type_names Array of post type names.
 			 * @param array $post_type_objects Array of post type objects.
@@ -615,7 +616,7 @@ final class WPGraphQL {
 			 * For example if a certain taxonomy should not be exposed to the GraphQL API.
 			 *
 			 * @since 0.0.2
-			 * @since @todo add $tax_names and $tax_objects parameters.
+			 * @since 1.8.1 add $tax_names and $tax_objects parameters.
 			 *
 			 * @param array $tax_names Array of taxonomy names
 			 * @param array $tax_objects Array of taxonomy objects.

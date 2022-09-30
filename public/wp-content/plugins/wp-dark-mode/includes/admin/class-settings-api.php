@@ -1,31 +1,48 @@
 <?php
-
-/** block direct access */
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
+// if direct access than exit the file.
+defined( 'ABSPATH' ) || exit();
+/**
+ * Check class is already exists
+ *
+ * @version 1.0.0
+ */
 if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
+	/**
+	 * The class covers all the general setting page methods, 
+	 * it helps us to create the setting page.
+	 * 
+	 * @version 1.0.0
+	 */
 	class WPPOOL_Settings_API {
 		/**
 		 * settings sections array
+		 * settings sections fields store here
 		 *
 		 * @var array
 		 */
 		protected $settings_sections = array();
 		/**
 		 * Settings fields array
+		 * settings fields store here
 		 *
 		 * @var array
 		 */
 		protected $settings_fields = array();
-
+		/**
+		 * load admin action hook use for admin enqueue scripts
+		 * 
+		 * @return void
+		 * @version 1.0.0
+		 */
 		public function __construct() {
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 		}
 
 		/**
 		 * Enqueue scripts and styles
+		 *
+		 * @return void
+		 * @version 1.0.0
 		 */
 		function admin_enqueue_scripts() {
 			wp_enqueue_style( 'wp-color-picker' );
@@ -82,7 +99,7 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		}
 
 		/**
-		 * Set fields
+		 * add fields
 		 *
 		 * @param $section
 		 * @param $field
@@ -105,12 +122,15 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		}
 
 		/**
-		 * Initialize and registers the settings sections and fileds to WordPress
+		 * Initialize and registers the settings sections and fields to WordPress
 		 *
 		 * Usually this should be called at `admin_init` hook.
 		 *
 		 * This function gets the initiated settings sections and fields. Then
 		 * registers them to WordPress and ready for use.
+		 *
+		 * @return void
+		 * @version 1.0.0
 		 */
 		function admin_init() {
 			//register settings sections
@@ -239,9 +259,12 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		}
 
 		/**
-		 * Displays a number field for a settings field
+		 * Displays a heading field for a settings field
 		 *
 		 * @param array $args settings field args
+		 *
+		 * @return void
+		 * @version 1.0.0
 		 */
 		function callback_heading( $args ) {
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
@@ -254,6 +277,9 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		 * Displays a checkbox for a settings field
 		 *
 		 * @param array $args settings field args
+		 *
+		 * @return void
+		 * @version 1.0.0
 		 */
 		function callback_checkbox( $args ) {
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
@@ -273,6 +299,9 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		 * Displays a switcher for a settings field
 		 *
 		 * @param array $args settings field args
+		 *
+		 * @return void
+		 * @version 1.0.0
 		 */
 		function callback_switcher( $args ) {
 			$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
@@ -298,6 +327,9 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		 * Displays a multicheckbox for a settings field
 		 *
 		 * @param array $args settings field args
+		 *
+		 * @return void
+		 * @version 1.0.0 
 		 */
 		function callback_multicheck( $args ) {
 			$value = $this->get_option( $args['id'], $args['section'], $args['std'] );
@@ -321,6 +353,9 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		 * Displays a radio button for a settings field
 		 *
 		 * @param array $args settings field args
+		 *
+		 * @return void
+		 * @version 1.0.0
 		 */
 		function callback_radio( $args ) {
 			$value = $this->get_option( $args['id'], $args['section'], $args['std'] );
@@ -538,7 +573,14 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 
 			return $options;
 		}
-
+		/**
+		 * Displays a slider field for a settings field
+		 *
+		 * @param array $args settings field args
+		 *
+		 * @return void
+		 * @version 1.0.0 
+		 */
 		function callback_slider( $args ) {
 			$min   = ! empty( $args['min'] ) ? $args['min'] : 0;
 			$max   = ! empty( $args['max'] ) ? $args['max'] : 100;
@@ -606,6 +648,9 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		 * Show navigations as tab
 		 *
 		 * Shows all the settings section labels as tab
+		 *
+		 * @return void
+		 * @version 1.0.0
 		 */
 		function show_navigation() {
 			$html  = '<div class="wppool-settings-sidebar"><ul>';
@@ -626,6 +671,9 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 		 * Show the section settings forms
 		 *
 		 * This function displays every sections in a different form
+		 *
+		 * @return void
+		 * @version 1.0.0
 		 */
 		function show_forms() {
 			$this->_style_fix();
@@ -680,7 +728,12 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
 			<?php
 			$this->script();
 		}
-
+		/**
+		 * Show dark mode settings
+		 *
+		 * @return void
+		 * @version 1.0.0
+		 */
 		function show_settings() {
 			echo '<div class="wppool-settings d-flex">';
 			$this->show_navigation();
@@ -845,7 +898,13 @@ if ( ! class_exists( 'WPPOOL_Settings_API' ) ) {
             </script>
 			<?php
 		}
-
+		/**
+		 * fix style depend on version
+		 * setting page css
+		 * 
+		 * @return void
+		 * @version 1.0.0
+		 */
 		function _style_fix() {
 			global $wp_version;
 			?>

@@ -999,7 +999,8 @@ msgstr ""
 
 #: templates/admin/affiliate-notice.php:1
 msgid ""
-"Hi there, you have been using WP Dark Mode for while now. Do you know that WP Dark Mode has an affiliate program?\n"
+"Hi there, you have been using WP Dark Mode for while now. Do you know that WP Dark Mode has an affiliate program?
+\n"
 "    join now get 25% commission from each sale."
 msgstr ""
 
@@ -1093,8 +1094,10 @@ msgstr ""
 
 #: templates/admin/get-started/shortcodes.php:16
 msgid ""
-"<b>[wp_dark_mode_switch]</b> shortcode, you can place the dark mode switch button anywhere in your website.\n"
-"		This shortcode supports an optional <code>style</code> attribute for the switch style from the 7 switch style.\n"
+"<b>[wp_dark_mode_switch]</b> shortcode, you can place the dark mode switch button anywhere in your website.
+\n"
+"		This shortcode supports an optional <code>style</code> attribute for the switch style from the 7 switch style.
+\n"
 "		<br>This shortcode is available in the PRO version."
 msgstr ""
 
@@ -1140,11 +1143,16 @@ msgstr ""
 
 #: templates/admin/get-started/switch-widget.php:18
 msgid ""
-"You can display the switch button by using the (WP Dark Mode ) wordpress widget, for your users to switch between the dark and normal mode.\n"
-"        <br>\n"
-"        <br>\n"
-"        Dark Mode Switch Widget is available in the PRO version.\n"
-"        <br>\n"
+"You can display the switch button by using the (WP Dark Mode ) wordpress widget, for your users to switch between the dark and normal mode.
+\n"
+"        <br>
+\n"
+"        <br>
+\n"
+"        Dark Mode Switch Widget is available in the PRO version.
+\n"
+"        <br>
+\n"
 "        <br> For displaying the Darkmode Switch button using the WP Dark Mode widget follow the below steps:"
 msgstr ""
 
@@ -1304,12 +1312,12 @@ msgstr ""
 
 #: templates/admin/recommended-plugins.php:317
 msgid "Activate"
-msgstr ""
+msgstr Channel
 
 #: templates/admin/recommended-plugins.php:319
 msgctxt "plugin"
 msgid "Activate %s"
-msgstr ""
+msgstr Channel
 
 #: templates/admin/recommended-plugins.php:330
 msgid "Network Activate"
@@ -1407,7 +1415,8 @@ msgstr ""
 
 #: templates/admin/review-notice.php:1
 msgid ""
-"Hi there, it seems like WP Dark Mode is bringing you some value, and that is pretty awesome!\n"
+"Hi there, it seems like WP Dark Mode is bringing you some value, and that is pretty awesome!
+\n"
 "    Can you please show us some love and rate WP Dark Mode on WordPress? It will take two minutes of your time, and will really help us spread the world."
 msgstr ""
 

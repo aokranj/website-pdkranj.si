@@ -1,25 +1,38 @@
 <?php
-
-/** block direct access */
+// if direct access than exit the file.
 defined( 'ABSPATH' ) || exit();
-
-/** check if class `WP_Dark_Mode_Enqueue` not exists yet */
+/**
+ * Check class is already exists
+ *
+ * @version 1.0.0
+ */
 if ( ! class_exists( 'WP_Dark_Mode_Enqueue' ) ) {
+	/**
+	 * Enqueue all admin or frontend scripts
+	 *
+	 * @version 1.0.0
+	 */
 	class WP_Dark_Mode_Enqueue {
-
 		/**
 		 * @var null
 		 */
 		private static $instance = null;
-
 		/**
 		 * WP_Dark_Mode_Enqueue constructor.
+		 *
+		 * @version 1.0.0
 		 */
 		public function __construct() {
 			add_action( 'wp_enqueue_scripts', [ $this, 'frontend_scripts' ] );
+			add_action( 'wp_enqueue_scripts', [ $this, 'frontend_support_scripts' ], 99999 );
 			add_action( 'admin_enqueue_scripts', [ $this, 'admin_scripts' ], 1 );
 		}
-
+		/**
+		 * Check lincse is valid by license title and general Way
+		 *
+		 * @return boolean
+		 * @version 1.0.0 
+		 */
 		public function palettes_allow() {
 			global $wp_dark_mode_license;
 
@@ -36,14 +49,13 @@ if ( ! class_exists( 'WP_Dark_Mode_Enqueue' ) ) {
 		}
 
 		/**
-		 * Frontend Scripts
-		 *
-		 * @param $hook
+		 * Load user site all scripts
 		 *
 		 * @return boolean|void
+		 * @version 1.0.0
 		 */
-		public function frontend_scripts( $hook ) {
-
+		public function frontend_scripts() {
+			
 			if ( ! wp_dark_mode_enabled() ) {
 				return false;
 			}
@@ -127,10 +139,15 @@ if ( ! class_exists( 'WP_Dark_Mode_Enqueue' ) ) {
 			wp_add_inline_style( 'wp-dark-mode-frontend', $custom_css );
 
 			// RTL support.
-			wp_style_add_data( 'wp-dark-mode-frontend', 'rtl', 'replace' );
+			wp_style_add_data( 'wp-dark-mode-frontend', 'rtl', 'replace' ); 
 
 		}
-
+		/**
+		 * Check license is valid
+		 *
+		 * @return boolen
+		 * @version 1.0.0
+		 */
 		private static function wp_dark_mode_common_mode() {
 			global $wp_dark_mode_license;
 
@@ -140,11 +157,13 @@ if ( ! class_exists( 'WP_Dark_Mode_Enqueue' ) ) {
 
 			return $wp_dark_mode_license->is_valid();
 		}
-
 		/**
-		 * Admin scripts
+		 * Load admin site all scripts
 		 *
-		 * @param $hook
+		 * @param string $hook current admin page.
+		 *
+		 * @return void
+		 * @version 1.0.0
 		 */
 		public function admin_scripts( $hook ) {
 
@@ -220,10 +239,16 @@ if ( ! class_exists( 'WP_Dark_Mode_Enqueue' ) ) {
 			$custom_css = ob_get_clean();
 
 			wp_add_inline_style( 'wp-dark-mode-admin', $custom_css );
+
  
 
 		}
-
+		/**
+		 * Check lincse is valid by license title and general Way
+		 *
+		 * @return boolean 
+		 * @since 1.0.0
+		 */
 		private static function wp_dark_mode_js_ul() {
 			global $wp_dark_mode_license;
 
@@ -241,7 +266,10 @@ if ( ! class_exists( 'WP_Dark_Mode_Enqueue' ) ) {
 		}
 
 		/**
+		 * Singleton instance WP_Dark_Mode_Enqueue class
+		 *
 		 * @return WP_Dark_Mode_Enqueue|null
+		 * @version 1.0.0
 		 */
 		public static function instance() {
 			if ( is_null( self::$instance ) ) {
@@ -251,9 +279,37 @@ if ( ! class_exists( 'WP_Dark_Mode_Enqueue' ) ) {
 			return self::$instance;
 		}
 
+		/**
+		 * Frontend support scripts
+		 */
+		public function frontend_support_scripts() { 
+
+			global $wp_dark_mode_license;
+
+			if ( ! $wp_dark_mode_license ) {
+				return false;
+			}
+
+			// check divi theme
+
+			global $shortname;
+
+			if($shortname === 'divi') : 
+
+				# Divi theme installed and activated 
+				wp_enqueue_script( 'divi-custom-script2', WP_DARK_MODE_ASSETS . '/support/Divi/custom.min.js', ['jquery'], WP_DARK_MODE_VERSION, true );
+
+
+
+			endif;
+ 
+		}
+
 	}
 }
-
+/**
+ * kick out the class
+ */
 WP_Dark_Mode_Enqueue::instance();
 
 

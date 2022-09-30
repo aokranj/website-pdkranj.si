@@ -5,6 +5,7 @@ use Exception;
 use GraphQLRelay\Relay;
 use GraphQL\Type\Definition\ResolveInfo;
 use WPGraphQL\AppContext;
+use WPGraphQL\Utils\Utils;
 
 /**
  * Class MenuItemConnectionResolver
@@ -33,24 +34,25 @@ class MenuItemConnectionResolver extends PostObjectConnectionResolver {
 	 * @return array
 	 */
 	public function get_query_args() {
+		/**
+		 * Prepare for later use
+		 */
+		$last = ! empty( $this->args['last'] ) ? $this->args['last'] : null;
 
 		$menu_locations = get_theme_mod( 'nav_menu_locations' );
 
 		$query_args            = parent::get_query_args();
 		$query_args['orderby'] = 'menu_order';
-		$query_args['order']   = 'ASC';
+		$query_args['order']   = isset( $last ) ? 'DESC' : 'ASC';
 
 		if ( isset( $this->args['where']['parentDatabaseId'] ) ) {
-			$query_args['meta_key']   = '_menu_item_menu_item_parent';
-			$query_args['meta_value'] = (int) $this->args['where']['parentDatabaseId'];
+			$query_args['meta_key']   = '_menu_item_menu_item_parent'; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+			$query_args['meta_value'] = (int) $this->args['where']['parentDatabaseId']; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 		}
 
-		if ( isset( $this->args['where']['parentId'] ) ) {
-			$id_parts = Relay::fromGlobalId( $this->args['where']['parentId'] );
-			if ( isset( $id_parts['id'] ) ) {
-				$query_args['meta_key']   = '_menu_item_menu_item_parent';
-				$query_args['meta_value'] = (int) $id_parts['id'];
-			}
+		if ( ! empty( $this->args['where']['parentId'] ) || ( isset( $this->args['where']['parentId'] ) && 0 === (int) $this->args['where']['parentId'] ) ) {
+			$query_args['meta_key']   = '_menu_item_menu_item_parent'; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+			$query_args['meta_value'] = $this->args['where']['parentId']; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 		}
 
 		// Get unique list of locations as the default limitation of
@@ -77,18 +79,50 @@ class MenuItemConnectionResolver extends PostObjectConnectionResolver {
 			// we don't need this passed as a taxonomy parameter to wp_query
 			unset( $query_args['location'] );
 
-			$query_args['tax_query'] = [
-				[
-					'taxonomy'         => 'nav_menu',
-					'field'            => 'term_id',
-					'terms'            => $locations,
-					'include_children' => false,
-					'operator'         => 'IN',
-				],
+			$query_args['tax_query'][] = [
+				'taxonomy'         => 'nav_menu',
+				'field'            => 'term_id',
+				'terms'            => $locations,
+				'include_children' => false,
+				'operator'         => 'IN',
 			];
 		}
 
 		return $query_args;
+	}
+
+	/**
+	 * Filters the GraphQL args before they are used in get_query_args().
+	 *
+	 * @return array
+	 */
+	public function get_args(): array {
+		$args = $this->args;
+
+		if ( ! empty( $args['where'] ) ) {
+			// Ensure all IDs are converted to database IDs.
+			foreach ( $args['where'] as $input_key => $input_value ) {
+				if ( empty( $input_value ) ) {
+					continue;
+				}
+
+				switch ( $input_key ) {
+					case 'parentId':
+						$args['where'][ $input_key ] = Utils::get_database_id_from_id( $input_value );
+						break;
+				}
+			}
+		}
+
+		/**
+		 *
+		 * Filters the GraphQL args before they are used in get_query_args().
+		 *
+		 * @param array $args The GraphQL args passed to the resolver.
+		 *
+		 * @since 1.11.0
+		 */
+		return apply_filters( 'graphql_menu_item_connection_args', $args );
 	}
 
 }
