@@ -1,8 +1,52 @@
 # Change Log
 
+## 2.3.3
+
+Fixes an issue where publicly_queryable post types that were not public weren't being tracked in action monitor even though those post types were available in Gatsby. Thanks @nickcernis! (via PR #217)
+
+## 2.3.2
+
+Previously Author and Contributor roles couldn't properly use Gatsby Cloud Preview. This release introduces new custom role capabilities which allow all authenticated users that can use WP preview to use Gatsby Preview.
+
+## 2.3.1
+
+Fixes bug in last version where not having the right ACF version installed would throw an error about `Call to undefined function "acf_get_options_pages"`
+
+## 2.3.0
+
+Added action monitor tracking for ACF options pages via PR #206. Thanks @henrikwirth!
+
+## 2.2.1
+
+Bumped the "tested to" version to latest WP version.
+
+## 2.2.0
+
+Added support for Gatsby Cloud Preview's new feature "eager redirects" which reduces the amount of time spent watching the preview loading screen by redirecting to the preview frontend as soon as possible and then letting the user wait for the preview to finish building there.
+
+## 2.1.1
+
+Changing away from the default UTC+0 timezone in WP could cause problems with local development and syncing changed data from WP. This release fixes that via PR #204.
+
+## 2.1.0
+
+Updated how the `gatsby_action_monitors` filter works. Previously this filter didn't properly expose the ActionMonitor class making it impossible or very difficult to add your own action monitors. Thanks @justlevine! via PR #203.
+
+## 2.0.2
+
+WPGraphQL made a breaking change in a minor release v1.6.7 which caused delta updates to stop working. Fixed via https://github.com/gatsbyjs/wp-gatsby/pull/201. Breaking change notice here https://github.com/wp-graphql/wp-graphql/blob/develop/readme.txt#L80-L109
+
+## 2.0.1
+
+- gatsby-source-wordpress v5.14.2 and v6.1.0 both support WPGatsby v2.0.0+. This release re-published v2 as the latest WPGatsby version.
+
+## 1.1.4
+
+- Rolling out a release to overwrite v2.0.0. gatsby-source-wordpress didn't yet have a new release allowing WPGatsby v2.0.0+ support.
+
 ## 2.0.0
 
-We finalized support for Gatsby Cloud Content Sync Previews in this release. Content Sync is a Gatsby Cloud preview loader. Previously preview loading was handled within this plugin but we removed support for the legacy preview loader as the support burden for keeping the old and new preview methods around would be too much. Gatsby Cloud Content Sync is far more reliable than WPGatsby's preview loader as it has more context on the Gatsby build process.
+We finalized support for Gatsby Cloud Content Sync Previews in this release. Content Sync is a Gatsby Cloud preview loader. Previously preview loading was handled within this plugin but we removed support for that legacy preview loader as the support burden for keeping the old and new preview logic around would be too much. Gatsby Cloud Content Sync is far more reliable than WPGatsby's preview loader as it has more context on the Gatsby build process.
 
 For Content Sync to work you will need to upgrade to the latest version of `gatsby-source-wordpress` and either the latest `3.0.0` or `4.0.0` version of Gatsby core.
 
