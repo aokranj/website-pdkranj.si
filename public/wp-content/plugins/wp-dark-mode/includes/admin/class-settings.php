@@ -1,20 +1,43 @@
 <?php
-
+// if direct access than exit the file.
 defined( 'ABSPATH' ) || exit();
-
-/** if class `WP_Dark_Mode_Settings` not exists yet */
+/**
+ * Check class is already exists
+ *
+ * @version 1.0.0
+ */
 if ( ! class_exists( 'WP_Dark_Mode_Settings' ) ) {
-
+	/**
+	 * The class creates the Dark Mode main menu and displays the settings page
+	 * 
+	 * @version 1.0.0
+	 */
 	class WP_Dark_Mode_Settings {
-
+		/**
+		 * @var null
+		 */
 		private static $instance = null;
+		/**
+		 * @var null
+		 */
 		private static $settings_api = null;
-
+		/**
+		 * WP_Dark_Mode_Settings constructor.
+		 * Load admin action hook
+		 *
+		 * @return void
+		 * @version 1.0.0
+		 */
 		public function __construct() {
 			add_action( 'admin_init', array( $this, 'settings_fields' ) );
 			add_action( 'admin_menu', array( $this, 'settings_menu' ) );
 		}
-
+		/**
+		 * Check the license based on the title and appsero is_valid method
+		 * 
+		 * @return boolean
+		 * @version 1.0.0
+		 */
 		private static function if_image_settings() {
 			global $wp_dark_mode_license;
 
@@ -32,6 +55,9 @@ if ( ! class_exists( 'WP_Dark_Mode_Settings' ) ) {
 
 		/**
 		 * Registers settings section and fields
+		 *
+		 * @return boolen|void
+		 * @version 1.0.0
 		 */
 		public function settings_fields() {
 
@@ -907,154 +933,124 @@ if ( ! class_exists( 'WP_Dark_Mode_Settings' ) ) {
 			//initialize them
 			self::$settings_api->admin_init();
 		}
-
+		/**
+		 * dark mode setting switch preview
+		 *
+		 * return string
+		 * @version 1.0.0
+ 		 */
 		public function switch_preview() {
 			$switch_side = wp_dark_mode_get_settings( 'wp_dark_mode_switch', 'switch_style', 1 );
 
 			return sprintf( '<div class="switch-preview">%s</div>', do_shortcode( "[wp_dark_mode floating='yes' style=$switch_side]" ) );
 		}
-
+		/**
+		 * Dark mode switch custom position
+		 * 
+		 * @return void
+		 * @version 1.0.0
+		 */
 		public function custom_position_cb() {
 
 			$switch_side    = wp_dark_mode_get_settings( 'wp_dark_mode_switch', 'switch_side', 'right_bottom' );
 			$bottom_spacing = wp_dark_mode_get_settings( 'wp_dark_mode_switch', 'bottom_spacing', 10 );
 			$side_spacing   = wp_dark_mode_get_settings( 'wp_dark_mode_switch', 'side_spacing', 10 );
-
-
 			?>
-<div class="custom-position-wrap">
-	<div class="custom-position-settings">
+			<div class="custom-position-wrap">
+				<div class="custom-position-settings">
 
-		<div class="side-selection">
-			<span class="custom-position-label"><?php esc_html_e( 'Side Selection', 'wp-dark-mode' ); ?></span>
+					<div class="side-selection">
+						<span class="custom-position-label"><?php esc_html_e( 'Side Selection', 'wp-dark-mode' ); ?></span>
 
-			<div class="side-selection-left">
-				<input type="radio" name="wp_dark_mode_switch[switch_side]" id="switch_side_left" value="left_bottom"
-					<?php checked( 'left_bottom', $switch_side ) ?>>
-				<label for="switch_side_left"><?php _e( 'Left', 'wp-dark-mode' ); ?></label>
+						<div class="side-selection-left">
+							<input type="radio" name="wp_dark_mode_switch[switch_side]" id="switch_side_left" value="left_bottom"
+								<?php checked( 'left_bottom', $switch_side ) ?>>
+							<label for="switch_side_left"><?php _e( 'Left', 'wp-dark-mode' ); ?></label>
+						</div>
+
+						<div class="side-selection-right">
+							<input type="radio" name="wp_dark_mode_switch[switch_side]" id="switch_side_right" value="right_bottom"
+								<?php checked( 'right_bottom', $switch_side ) ?>>
+							<label for="switch_side_right"><?php _e( 'Right', 'wp-dark-mode' ); ?></label>
+						</div>
+					</div>
+
+					<div class="bottom-spacing">
+						<span class="custom-position-label"><?php esc_html_e( 'Bottom Spacing', 'wp-dark-mode' ); ?></span>
+
+						<div>
+							<input type="number" min="0" id="bottom_spacing" name="wp_dark_mode_switch[bottom_spacing]"
+								value="<?php echo $bottom_spacing; ?>" />
+							<span>px</span>
+						</div>
+					</div>
+
+					<div class="side-spacing">
+						<span class="custom-position-label"><?php esc_html_e( 'Side Spacing', 'wp-dark-mode' ); ?></span>
+						<div>
+							<input type="number" min="0" id="side_spacing" name="wp_dark_mode_switch[side_spacing]"
+								value="<?php echo $side_spacing; ?>" />
+							<span>px</span>
+						</div>
+
+					</div>
+				</div>
+
 			</div>
 
-			<div class="side-selection-right">
-				<input type="radio" name="wp_dark_mode_switch[switch_side]" id="switch_side_right" value="right_bottom"
-					<?php checked( 'right_bottom', $switch_side ) ?>>
-				<label for="switch_side_right"><?php _e( 'Right', 'wp-dark-mode' ); ?></label>
-			</div>
-		</div>
-
-		<div class="bottom-spacing">
-			<span class="custom-position-label"><?php esc_html_e( 'Bottom Spacing', 'wp-dark-mode' ); ?></span>
-
-			<div>
-				<input type="number" min="0" id="bottom_spacing" name="wp_dark_mode_switch[bottom_spacing]"
-					value="<?php echo $bottom_spacing; ?>" />
-				<span>px</span>
-			</div>
-		</div>
-
-		<div class="side-spacing">
-			<span class="custom-position-label"><?php esc_html_e( 'Side Spacing', 'wp-dark-mode' ); ?></span>
-			<div>
-				<input type="number" min="0" id="side_spacing" name="wp_dark_mode_switch[side_spacing]"
-					value="<?php echo $side_spacing; ?>" />
-				<span>px</span>
-			</div>
-
-		</div>
-	</div>
-
-</div>
-
-<?php }
-
+		<?php 
+		}
+		/**
+		 * load filter preview template
+		 * 
+		 * @return void
+		 * @version 1.0.0
+		 */
 		public function filter_preview() {
 			wp_dark_mode()->get_template( 'filter-preview' );
 		}
-
+		/**
+		 * Display the darkmode switch in the menu setting. 
+		 * Select the menu(s) in which you want to display the darkmode switch setting.
+		 * 
+		 * @return void
+		 * @version 1.0.0
+		 */
 		public function switch_menus() {
 			$switch_menus = wp_dark_mode_get_settings( 'wp_dark_mode_switch', 'switch_menus', [] );
-
 			?>
-<select name="wp_dark_mode_switch[switch_menus][]" multiple id="wp_dark_mode_switch[switch_menus]">
-	<?php
+			<select name="wp_dark_mode_switch[switch_menus][]" multiple id="wp_dark_mode_switch[switch_menus]">
+				<?php
 
-				$menus = get_terms( 'nav_menu', array( 'hide_empty' => false ) );
+					$menus = get_terms( 'nav_menu', array( 'hide_empty' => false ) );
 
-				if ( ! empty( $menus ) && ! is_wp_error( $menus ) ) {
-					foreach ( $menus as $menu ) {
-						printf( '<option value="%1$s" %2$s>%3$s</option>', $menu->slug, in_array( $menu->slug, $switch_menus ) ? 'selected' : '', $menu->name );
+					if ( ! empty( $menus ) && ! is_wp_error( $menus ) ) {
+						foreach ( $menus as $menu ) {
+							printf( '<option value="%1$s" %2$s>%3$s</option>', $menu->slug, in_array( $menu->slug, $switch_menus ) ? 'selected' : '', $menu->name );
+						}
 					}
-				}
 
 				?>
-</select>
-<p class="description">
-	<?php esc_html_e( 'Select the menu(s) in which you want to display the darkmode switch.', 'wp-dark-mode' ); ?></p>
-<?php
+			</select>
+			<p class="description">
+				<?php esc_html_e( 'Select the menu(s) in which you want to display the darkmode switch.', 'wp-dark-mode' ); ?></p>
+			<?php
 		}
-
+		/**
+		 * Exclude dark mode switch in specific page setting.
+		 * 
+		 * @return void
+		 * @version 1.0.0
+		 */
 		public function exclude_pages() {
 			$exclude_pages        = wp_dark_mode_exclude_pages();
 			$exclude_pages_except = wp_dark_mode_exclude_pages_except();
 			$exclude_all_pages    = 'on' == wp_dark_mode_get_settings( 'wp_dark_mode_triggers', 'exclude_all_pages', 'off' );
-
 			?>
+			<div class="exclude_wrap exclude_pages_wrap <?php echo $exclude_all_pages ? 'disabled' : ''; ?>">
+				<select name="wp_dark_mode_triggers[exclude_pages][]" multiple id="wp_dark_mode_triggers[exclude_pages]">
 
-<div class="exclude_wrap exclude_pages_wrap <?php echo $exclude_all_pages ? 'disabled' : ''; ?>">
-	<select name="wp_dark_mode_triggers[exclude_pages][]" multiple id="wp_dark_mode_triggers[exclude_pages]">
-
-		<?php
-
-					$pages = get_posts( [
-						'numberposts' => - 1,
-						'post_type'   => 'page',
-					] );
-
-					if ( ! empty( $pages ) ) {
-						$page_ids = wp_list_pluck( $pages, 'post_title', 'ID' );
-
-						foreach ( $page_ids as $id => $title ) {
-							printf( '<option value="%1$s" %2$s>%3$s</option>', $id, in_array( $id, $exclude_pages ) ? 'selected' : '',
-								$title );
-						}
-					}
-
-					?>
-
-		<option value="404" <?php echo in_array( '404', $exclude_pages ) ? 'selected' : '' ?>>
-			<?php esc_html_e( '404 Page', 'wp-dark-mode' ); ?></option>
-
-	</select>
-
-	<p class="description">
-		<?php esc_html_e( 'Select the pages by searching to disable dark mode on the selected pages.', 'wp-dark-mode' ); ?>
-	</p>
-</div>
-
-
-<div class="exclude_except_wrap">
-
-
-	<div class="switcher">
-		<label for="wppool-wp_dark_mode_triggers[exclude_all_pages]"><?php esc_html_e( 'Exclude All:',
-							'wp-dark-mode' ); ?></label>
-
-		<div class="wppool-switcher">
-			<input type="hidden" name="wp_dark_mode_triggers[exclude_all_pages]" value="off">
-			<input type="checkbox" <?php echo $exclude_all_pages ? 'checked'
-							: ''; ?> name="wp_dark_mode_triggers[exclude_all_pages]" id="wppool-wp_dark_mode_triggers[exclude_all_pages]"
-				value="on">
-			<div class="wp-dark-mode-ignore">
-				<label for="wppool-wp_dark_mode_triggers[exclude_all_pages]"></label>
-			</div>
-		</div>
-	</div>
-
-	<label for="wp_dark_mode_triggers[exclude_pages_except]"><?php _e( 'Except', 'wp-dark-mode' ); ?></label>
-
-	<div class="exclude_except_select <?php echo ! $exclude_all_pages ? 'disabled' : ''; ?>">
-		<select name="wp_dark_mode_triggers[exclude_pages_except][]" multiple
-			id="wp_dark_mode_triggers[exclude_pages_except]">
-			<?php
+					<?php
 
 						$pages = get_posts( [
 							'numberposts' => - 1,
@@ -1065,94 +1061,148 @@ if ( ! class_exists( 'WP_Dark_Mode_Settings' ) ) {
 							$page_ids = wp_list_pluck( $pages, 'post_title', 'ID' );
 
 							foreach ( $page_ids as $id => $title ) {
-								printf( '<option value="%1$s" %2$s>%3$s</option>', $id,
-									in_array( $id, $exclude_pages_except ) ? 'selected' : '', $title );
+								printf( '<option value="%1$s" %2$s>%3$s</option>', $id, in_array( $id, $exclude_pages ) ? 'selected' : '',
+									$title );
 							}
 						}
 
 						?>
 
-			<option value="404" <?php echo in_array( '404', $exclude_pages_except ) ? 'selected' : '' ?>>
-				<?php esc_html_e( '404 Page', 'wp-dark-mode' ); ?></option>
+					<option value="404" <?php echo in_array( '404', $exclude_pages ) ? 'selected' : '' ?>>
+						<?php esc_html_e( '404 Page', 'wp-dark-mode' ); ?></option>
 
-		</select>
-	</div>
+				</select>
 
-	<p class="description"><?php _e( 'When turned ON, Dark Mode will only work on the selected pages.',
-						'wp-dark-mode' ); ?></p>
+				<p class="description">
+					<?php esc_html_e( 'Select the pages by searching to disable dark mode on the selected pages.', 'wp-dark-mode' ); ?>
+				</p>
+			</div>
+			<div class="exclude_except_wrap">
+				<div class="switcher">
+					<label for="wppool-wp_dark_mode_triggers[exclude_all_pages]"><?php esc_html_e( 'Exclude All:',
+										'wp-dark-mode' ); ?></label>
 
-</div>
-<?php
+					<div class="wppool-switcher">
+						<input type="hidden" name="wp_dark_mode_triggers[exclude_all_pages]" value="off">
+						<input type="checkbox" <?php echo $exclude_all_pages ? 'checked'
+										: ''; ?> name="wp_dark_mode_triggers[exclude_all_pages]" id="wppool-wp_dark_mode_triggers[exclude_all_pages]"
+							value="on">
+						<div class="wp-dark-mode-ignore">
+							<label for="wppool-wp_dark_mode_triggers[exclude_all_pages]"></label>
+						</div>
+					</div>
+				</div>
+
+				<label for="wp_dark_mode_triggers[exclude_pages_except]"><?php _e( 'Except', 'wp-dark-mode' ); ?></label>
+
+				<div class="exclude_except_select <?php echo ! $exclude_all_pages ? 'disabled' : ''; ?>">
+					<select name="wp_dark_mode_triggers[exclude_pages_except][]" multiple
+						id="wp_dark_mode_triggers[exclude_pages_except]">
+						<?php
+
+									$pages = get_posts( [
+										'numberposts' => - 1,
+										'post_type'   => 'page',
+									] );
+
+									if ( ! empty( $pages ) ) {
+										$page_ids = wp_list_pluck( $pages, 'post_title', 'ID' );
+
+										foreach ( $page_ids as $id => $title ) {
+											printf( '<option value="%1$s" %2$s>%3$s</option>', $id,
+												in_array( $id, $exclude_pages_except ) ? 'selected' : '', $title );
+										}
+									}
+
+									?>
+
+						<option value="404" <?php echo in_array( '404', $exclude_pages_except ) ? 'selected' : '' ?>>
+							<?php esc_html_e( '404 Page', 'wp-dark-mode' ); ?></option>
+
+					</select>
+				</div>
+
+				<p class="description"><?php _e( 'When turned ON, Dark Mode will only work on the selected pages.',
+									'wp-dark-mode' ); ?></p>
+
+			</div>
+			<?php
 
 		}
-
+		/**
+		 * Exclude dark mode switch in specific post setting.
+		 * 
+		 * @return void
+		 * @version 1.0.0
+		 */
 		public function exclude_posts() {
 			$exclude_posts        = wp_dark_mode_get_settings( 'wp_dark_mode_triggers', 'exclude_posts', [] );
 			$exclude_posts_except = wp_dark_mode_get_settings( 'wp_dark_mode_triggers', 'exclude_posts_except', [] );
 			$exclude_all_posts    = 'on' == wp_dark_mode_get_settings( 'wp_dark_mode_triggers', 'exclude_all_posts', 'off' );
-
 			?>
+			<div class="exclude_wrap exclude_posts_wrap <?php echo $exclude_all_posts ? 'disabled' : ''; ?>">
+				<select name="wp_dark_mode_triggers[exclude_posts][]" multiple id="wp_dark_mode_triggers[exclude_posts]">
+					<?php
 
-<div class="exclude_wrap exclude_posts_wrap <?php echo $exclude_all_posts ? 'disabled' : ''; ?>">
-	<select name="wp_dark_mode_triggers[exclude_posts][]" multiple id="wp_dark_mode_triggers[exclude_posts]">
-		<?php
+								if ( ! empty( $exclude_posts ) ) {
+									foreach ( $exclude_posts as $post_id ) {
+										printf( '<option value="%1$s" selected>%2$s</option>', $post_id, get_the_title( $post_id ) );
+									}
+								}
 
-					if ( ! empty( $exclude_posts ) ) {
-						foreach ( $exclude_posts as $post_id ) {
-							printf( '<option value="%1$s" selected>%2$s</option>', $post_id, get_the_title( $post_id ) );
-						}
-					}
+								?>
+				</select>
 
-					?>
-	</select>
-
-	<p class="description">
-		<?php _e( 'Select the posts by searching to disable the dark mode on the posts.', 'wp-dark-mode' ); ?></p>
-</div>
-
-
-<div class="exclude_except_wrap">
-
-
-	<div class="switcher">
-		<label
-			for="wppool-wp_dark_mode_triggers[exclude_all_posts]"><?php _e( 'Exclude All:', 'wp-dark-mode' ); ?></label>
-
-		<div class="wppool-switcher">
-			<input type="hidden" name="wp_dark_mode_triggers[exclude_all_posts]" value="off">
-			<input type="checkbox" <?php echo $exclude_all_posts ? 'checked'
-							: ''; ?> name="wp_dark_mode_triggers[exclude_all_posts]" id="wppool-wp_dark_mode_triggers[exclude_all_posts]"
-				value="on">
-			<div class="wp-dark-mode-ignore">
-				<label for="wppool-wp_dark_mode_triggers[exclude_all_posts]"></label>
+				<p class="description">
+					<?php _e( 'Select the posts by searching to disable the dark mode on the posts.', 'wp-dark-mode' ); ?></p>
 			</div>
-		</div>
-	</div>
+			<div class="exclude_except_wrap">
 
-	<label for="wp_dark_mode_triggers[exclude_posts_except]"><?php _e( 'Except', 'wp-dark-mode' ); ?></label>
 
-	<div class="exclude_except_select <?php echo ! $exclude_all_posts ? 'disabled' : ''; ?>">
-		<select name="wp_dark_mode_triggers[exclude_posts_except][]" multiple
-			id="wp_dark_mode_triggers[exclude_posts_except]">
+				<div class="switcher">
+					<label
+						for="wppool-wp_dark_mode_triggers[exclude_all_posts]"><?php _e( 'Exclude All:', 'wp-dark-mode' ); ?></label>
+
+					<div class="wppool-switcher">
+						<input type="hidden" name="wp_dark_mode_triggers[exclude_all_posts]" value="off">
+						<input type="checkbox" <?php echo $exclude_all_posts ? 'checked'
+										: ''; ?> name="wp_dark_mode_triggers[exclude_all_posts]" id="wppool-wp_dark_mode_triggers[exclude_all_posts]"
+							value="on">
+						<div class="wp-dark-mode-ignore">
+							<label for="wppool-wp_dark_mode_triggers[exclude_all_posts]"></label>
+						</div>
+					</div>
+				</div>
+
+				<label for="wp_dark_mode_triggers[exclude_posts_except]"><?php _e( 'Except', 'wp-dark-mode' ); ?></label>
+
+				<div class="exclude_except_select <?php echo ! $exclude_all_posts ? 'disabled' : ''; ?>">
+					<select name="wp_dark_mode_triggers[exclude_posts_except][]" multiple
+						id="wp_dark_mode_triggers[exclude_posts_except]">
+						<?php
+
+									if ( ! empty( $exclude_posts_except ) ) {
+										foreach ( $exclude_posts_except as $post_id ) {
+											printf( '<option value="%1$s" selected>%2$s</option>', $post_id, get_the_title( $post_id ) );
+										}
+									}
+									?>
+					</select>
+				</div>
+
+				<p class="description">
+					<?php _e( 'When turned ON, Dark Mode will only work on the selected pages.', 'wp-dark-mode' ); ?></p>
+
+			</div>
 			<?php
 
-						if ( ! empty( $exclude_posts_except ) ) {
-							foreach ( $exclude_posts_except as $post_id ) {
-								printf( '<option value="%1$s" selected>%2$s</option>', $post_id, get_the_title( $post_id ) );
-							}
-						}
-						?>
-		</select>
-	</div>
-
-	<p class="description">
-		<?php _e( 'When turned ON, Dark Mode will only work on the selected pages.', 'wp-dark-mode' ); ?></p>
-
-</div>
-<?php
-
 		}
-
+		/**
+		 * Exclude dark mode switch in specific WooCommerce product page setting.
+		 * 
+		 * @return void
+		 * @version 1.0.0
+		 */
 		public function exclude_products() {
 			$exclude_products     = wp_dark_mode_get_settings( 'wp_dark_mode_wc', 'exclude_products', [] );
 			$exclude_all_products = 'on' == wp_dark_mode_get_settings( 'wp_dark_mode_wc', 'exclude_all_products', 'off' );
@@ -1160,68 +1210,72 @@ if ( ! class_exists( 'WP_Dark_Mode_Settings' ) ) {
 
 			?>
 
-<div class="exclude_wrap exclude_products_wrap <?php echo $exclude_all_products ? 'disabled' : ''; ?>">
-	<select name="wp_dark_mode_wc[exclude_products][]" multiple id="wp_dark_mode_wc[exclude_products]">
-		<?php
+			<div class="exclude_wrap exclude_products_wrap <?php echo $exclude_all_products ? 'disabled' : ''; ?>">
+				<select name="wp_dark_mode_wc[exclude_products][]" multiple id="wp_dark_mode_wc[exclude_products]">
+					<?php
 
-					if ( ! empty( $exclude_products ) ) {
+								if ( ! empty( $exclude_products ) ) {
 
-						foreach ( $exclude_products as $product_id ) {
-							printf( '<option value="%s" selected>%s</option>', $product_id, get_the_title( $product_id ) );
-						}
-					}
+									foreach ( $exclude_products as $product_id ) {
+										printf( '<option value="%s" selected>%s</option>', $product_id, get_the_title( $product_id ) );
+									}
+								}
 
-					?>
-	</select>
+								?>
+				</select>
 
-	<p class="description">
-		<?php _e( 'Select the products by searching to disable dark mode on the selected products.', 'wp-dark-mode' ); ?>
-	</p>
-</div>
-
-<div class="exclude_except_wrap">
-
-
-	<div class="switcher">
-		<label for="wppool-wp_dark_mode_wc[exclude_all_products]"><?php _e( 'Exclude All:',
-							'wp-dark-mode' ); ?></label>
-
-		<div class="wppool-switcher">
-			<input type="hidden" name="wp_dark_mode_wc[exclude_all_products]" value="off">
-			<input type="checkbox" <?php echo $exclude_all_products ? 'checked'
-							: ''; ?> name="wp_dark_mode_wc[exclude_all_products]" id="wppool-wp_dark_mode_wc[exclude_all_products]"
-				value="on">
-			<div class="wp-dark-mode-ignore">
-				<label for="wppool-wp_dark_mode_wc[exclude_all_products]"></label>
+				<p class="description">
+					<?php _e( 'Select the products by searching to disable dark mode on the selected products.', 'wp-dark-mode' ); ?>
+				</p>
 			</div>
-		</div>
-	</div>
+			<div class="exclude_except_wrap">
 
-	<label for="wp_dark_mode_wc[specific_products]"><?php _e( 'Except', 'wp-dark-mode' ); ?></label>
 
-	<div class="exclude_except_select <?php echo ! $exclude_all_products ? 'disabled' : ''; ?>">
-		<select name="wp_dark_mode_wc[specific_products][]" multiple id="wp_dark_mode_wc[specific_products]">
+				<div class="switcher">
+					<label for="wppool-wp_dark_mode_wc[exclude_all_products]"><?php _e( 'Exclude All:',
+										'wp-dark-mode' ); ?></label>
+
+					<div class="wppool-switcher">
+						<input type="hidden" name="wp_dark_mode_wc[exclude_all_products]" value="off">
+						<input type="checkbox" <?php echo $exclude_all_products ? 'checked'
+										: ''; ?> name="wp_dark_mode_wc[exclude_all_products]" id="wppool-wp_dark_mode_wc[exclude_all_products]"
+							value="on">
+						<div class="wp-dark-mode-ignore">
+							<label for="wppool-wp_dark_mode_wc[exclude_all_products]"></label>
+						</div>
+					</div>
+				</div>
+
+				<label for="wp_dark_mode_wc[specific_products]"><?php _e( 'Except', 'wp-dark-mode' ); ?></label>
+
+				<div class="exclude_except_select <?php echo ! $exclude_all_products ? 'disabled' : ''; ?>">
+					<select name="wp_dark_mode_wc[specific_products][]" multiple id="wp_dark_mode_wc[specific_products]">
+						<?php
+
+									if ( ! empty( $specific_products ) ) {
+
+										foreach ( $specific_products as $product_id ) {
+											printf( '<option value="%s" selected>%s</option>', $product_id, get_the_title( $product_id ) );
+										}
+									}
+
+									?>
+					</select>
+				</div>
+
+				<p class="description"><?php _e( 'When turned ON, Dark Mode will only work on the selected products.',
+									'wp-dark-mode' ); ?></p>
+
+			</div>
 			<?php
 
-						if ( ! empty( $specific_products ) ) {
-
-							foreach ( $specific_products as $product_id ) {
-								printf( '<option value="%s" selected>%s</option>', $product_id, get_the_title( $product_id ) );
-							}
-						}
-
-						?>
-		</select>
-	</div>
-
-	<p class="description"><?php _e( 'When turned ON, Dark Mode will only work on the selected products.',
-						'wp-dark-mode' ); ?></p>
-
-</div>
-<?php
-
 		}
-
+		/**
+		 * Exclude dark mode switch in specific category page setting.
+		 * 
+		 * @return void
+		 * @version 1.0.0
+		 */
 		public function exclude_categories() {
 			$exclude_categories     = wp_dark_mode_get_settings( 'wp_dark_mode_triggers', 'exclude_categories', [] );
 			$exclude_all_categories = 'on' == wp_dark_mode_get_settings( 'wp_dark_mode_triggers', 'exclude_all_categories', 'off' );
@@ -1230,70 +1284,73 @@ if ( ! class_exists( 'WP_Dark_Mode_Settings' ) ) {
 			$cats = wp_dark_mode_is_hello_elementora() ? get_terms( 'category', array( 'hide_empty' => false ) ) : [];
 
 			?>
+			<div class="exclude_wrap <?php echo $exclude_all_categories ? 'disabled' : ''; ?>">
 
-<div class="exclude_wrap <?php echo $exclude_all_categories ? 'disabled' : ''; ?>">
-
-	<select name="wp_dark_mode_triggers[exclude_categories][]" multiple id="wp_dark_mode_triggers[exclude_categories]">
-		<?php
+				<select name="wp_dark_mode_triggers[exclude_categories][]" multiple id="wp_dark_mode_triggers[exclude_categories]">
+					<?php
 
 
-					if ( ! empty( $cats ) && ! is_wp_error( $cats ) ) {
-						foreach ( $cats as $cat ) {
-							printf( '<option value="%1$s" %2$s>%3$s</option>', $cat->term_id,
-								in_array( $cat->term_id, $exclude_categories ) ? 'selected' : '', $cat->name );
-						}
-					}
+								if ( ! empty( $cats ) && ! is_wp_error( $cats ) ) {
+									foreach ( $cats as $cat ) {
+										printf( '<option value="%1$s" %2$s>%3$s</option>', $cat->term_id,
+											in_array( $cat->term_id, $exclude_categories ) ? 'selected' : '', $cat->name );
+									}
+								}
 
-					?>
-	</select>
+								?>
+				</select>
 
-	<p class="description"><?php _e( 'Select the categories to exclude the dark mode from the categories posts.',
-						'wp-dark-mode' ); ?></p>
-</div>
-
-<div class="exclude_except_wrap">
-
-	<div class="switcher">
-		<label for="wppool-wp_dark_mode_triggers[exclude_all_categories]"><?php _e( 'Exclude All:',
-							'wp-dark-mode' ); ?></label>
-
-		<div class="wppool-switcher">
-			<input type="hidden" name="wp_dark_mode_triggers[exclude_all_categories]" value="off">
-			<input type="checkbox" <?php echo $exclude_all_categories ? 'checked'
-							: ''; ?> name="wp_dark_mode_triggers[exclude_all_categories]"
-				id="wppool-wp_dark_mode_triggers[exclude_all_categories]" value="on">
-			<div class="wp-dark-mode-ignore">
-				<label for="wppool-wp_dark_mode_triggers[exclude_all_categories]"></label>
+				<p class="description"><?php _e( 'Select the categories to exclude the dark mode from the categories posts.',
+									'wp-dark-mode' ); ?></p>
 			</div>
-		</div>
-	</div>
 
-	<label for="wp_dark_mode_triggers[specific_categories]"><?php _e( 'Except', 'wp-dark-mode' ); ?></label>
+			<div class="exclude_except_wrap">
 
-	<div class="exclude_except_select <?php echo ! $exclude_all_categories ? 'disabled' : ''; ?>">
-		<select name="wp_dark_mode_triggers[specific_categories][]" multiple
-			id="wp_dark_mode_triggers[specific_categories]">
+				<div class="switcher">
+					<label for="wppool-wp_dark_mode_triggers[exclude_all_categories]"><?php _e( 'Exclude All:',
+										'wp-dark-mode' ); ?></label>
+
+					<div class="wppool-switcher">
+						<input type="hidden" name="wp_dark_mode_triggers[exclude_all_categories]" value="off">
+						<input type="checkbox" <?php echo $exclude_all_categories ? 'checked'
+										: ''; ?> name="wp_dark_mode_triggers[exclude_all_categories]"
+							id="wppool-wp_dark_mode_triggers[exclude_all_categories]" value="on">
+						<div class="wp-dark-mode-ignore">
+							<label for="wppool-wp_dark_mode_triggers[exclude_all_categories]"></label>
+						</div>
+					</div>
+				</div>
+
+				<label for="wp_dark_mode_triggers[specific_categories]"><?php _e( 'Except', 'wp-dark-mode' ); ?></label>
+
+				<div class="exclude_except_select <?php echo ! $exclude_all_categories ? 'disabled' : ''; ?>">
+					<select name="wp_dark_mode_triggers[specific_categories][]" multiple
+						id="wp_dark_mode_triggers[specific_categories]">
+						<?php
+
+									if ( ! empty( $cats ) && ! is_wp_error( $cats ) ) {
+										foreach ( $cats as $cat ) {
+											printf( '<option value="%1$s" %2$s>%3$s</option>', $cat->term_id,
+												in_array( $cat->term_id, $specific_categories ) ? 'selected' : '', $cat->name );
+										}
+									}
+
+									?>
+					</select>
+				</div>
+
+				<p class="description"><?php _e( 'When turned ON, Dark Mode will only work on the selected categories.',
+									'wp-dark-mode' ); ?></p>
+
+			</div>
 			<?php
-
-						if ( ! empty( $cats ) && ! is_wp_error( $cats ) ) {
-							foreach ( $cats as $cat ) {
-								printf( '<option value="%1$s" %2$s>%3$s</option>', $cat->term_id,
-									in_array( $cat->term_id, $specific_categories ) ? 'selected' : '', $cat->name );
-							}
-						}
-
-						?>
-		</select>
-	</div>
-
-	<p class="description"><?php _e( 'When turned ON, Dark Mode will only work on the selected categories.',
-						'wp-dark-mode' ); ?></p>
-
-</div>
-<?php
-
 		}
-
+		/**
+		 * Exclude dark mode switch in specific WooCommerce category page setting.
+		 * 
+		 * @return void
+		 * @version 1.0.0
+		 */
 		public function exclude_wc_categories() {
 			$exclude_wc_categories     = wp_dark_mode_get_settings( 'wp_dark_mode_wc', 'exclude_wc_categories', [] );
 			$exclude_all_wc_categories = 'on' == wp_dark_mode_get_settings( 'wp_dark_mode_wc', 'exclude_all_wc_categories',
@@ -1301,71 +1358,73 @@ if ( ! class_exists( 'WP_Dark_Mode_Settings' ) ) {
 			$specific_wc_categories    = wp_dark_mode_get_settings( 'wp_dark_mode_wc', 'specific_wc_categories', [] );
 
 			$cats = wp_dark_mode_is_hello_elementora() ? get_terms( 'product_cat', array( 'hide_empty' => false ) ) : [];
-
-
 			?>
+			<div class="exclude_wrap exclude_wc_categories_wrap <?php echo $exclude_all_wc_categories ? 'disabled' : ''; ?>">
 
-<div class="exclude_wrap exclude_wc_categories_wrap <?php echo $exclude_all_wc_categories ? 'disabled' : ''; ?>">
+				<select name="wp_dark_mode_wc[exclude_wc_categories][]" multiple id="wp_dark_mode_wc[exclude_wc_categories]">
+					<?php
 
-	<select name="wp_dark_mode_wc[exclude_wc_categories][]" multiple id="wp_dark_mode_wc[exclude_wc_categories]">
-		<?php
+								if ( ! empty( $cats ) && ! is_wp_error( $cats ) ) {
+									foreach ( $cats as $cat ) {
+										printf( '<option value="%1$s" %2$s>%3$s</option>', $cat->term_id,
+											in_array( $cat->term_id, $exclude_wc_categories ) ? 'selected' : '', $cat->name );
+									}
+								}
 
-					if ( ! empty( $cats ) && ! is_wp_error( $cats ) ) {
-						foreach ( $cats as $cat ) {
-							printf( '<option value="%1$s" %2$s>%3$s</option>', $cat->term_id,
-								in_array( $cat->term_id, $exclude_wc_categories ) ? 'selected' : '', $cat->name );
-						}
-					}
+								?>
+				</select>
 
-					?>
-	</select>
-
-	<p class="description"><?php _e( 'Select the categories to exclude the dark mode from the categories products.',
-						'wp-dark-mode' ); ?></p>
-</div>
-
-<div class="exclude_except_wrap">
-
-	<div class="switcher">
-		<label for="wppool-wp_dark_mode_wc[exclude_all_wc_categories]"><?php _e( 'Exclude All:',
-							'wp-dark-mode' ); ?></label>
-
-		<div class="wppool-switcher">
-			<input type="hidden" name="wp_dark_mode_wc[exclude_all_wc_categories]" value="off">
-			<input type="checkbox" <?php echo $exclude_all_wc_categories ? 'checked'
-							: ''; ?> name="wp_dark_mode_wc[exclude_all_wc_categories]"
-				id="wppool-wp_dark_mode_wc[exclude_all_wc_categories]" value="on">
-			<div class="wp-dark-mode-ignore">
-				<label for="wppool-wp_dark_mode_wc[exclude_all_wc_categories]"></label>
+				<p class="description"><?php _e( 'Select the categories to exclude the dark mode from the categories products.',
+									'wp-dark-mode' ); ?></p>
 			</div>
-		</div>
-	</div>
 
-	<label for="wp_dark_mode_wc[specific_wc_categories]"><?php _e( 'Except', 'wp-dark-mode' ); ?></label>
+			<div class="exclude_except_wrap">
 
-	<div class="exclude_except_select <?php echo ! $exclude_all_wc_categories ? 'disabled' : ''; ?>">
-		<select name="wp_dark_mode_wc[specific_wc_categories][]" multiple id="wp_dark_mode_wc[specific_wc_categories]">
+				<div class="switcher">
+					<label for="wppool-wp_dark_mode_wc[exclude_all_wc_categories]"><?php _e( 'Exclude All:',
+										'wp-dark-mode' ); ?></label>
+
+					<div class="wppool-switcher">
+						<input type="hidden" name="wp_dark_mode_wc[exclude_all_wc_categories]" value="off">
+						<input type="checkbox" <?php echo $exclude_all_wc_categories ? 'checked'
+										: ''; ?> name="wp_dark_mode_wc[exclude_all_wc_categories]"
+							id="wppool-wp_dark_mode_wc[exclude_all_wc_categories]" value="on">
+						<div class="wp-dark-mode-ignore">
+							<label for="wppool-wp_dark_mode_wc[exclude_all_wc_categories]"></label>
+						</div>
+					</div>
+				</div>
+
+				<label for="wp_dark_mode_wc[specific_wc_categories]"><?php _e( 'Except', 'wp-dark-mode' ); ?></label>
+
+				<div class="exclude_except_select <?php echo ! $exclude_all_wc_categories ? 'disabled' : ''; ?>">
+					<select name="wp_dark_mode_wc[specific_wc_categories][]" multiple id="wp_dark_mode_wc[specific_wc_categories]">
+						<?php
+
+									if ( ! empty( $cats ) && ! is_wp_error( $cats ) ) {
+										foreach ( $cats as $cat ) {
+											printf( '<option value="%1$s" %2$s>%3$s</option>', $cat->term_id,
+												in_array( $cat->term_id, $specific_wc_categories ) ? 'selected' : '', $cat->name );
+										}
+									}
+
+									?>
+					</select>
+				</div>
+
+				<p class="description"><?php _e( 'When turned ON, Dark Mode will only work on the selected woocommerce categories.',
+									'wp-dark-mode' ); ?></p>
+
+			</div>
 			<?php
 
-						if ( ! empty( $cats ) && ! is_wp_error( $cats ) ) {
-							foreach ( $cats as $cat ) {
-								printf( '<option value="%1$s" %2$s>%3$s</option>', $cat->term_id,
-									in_array( $cat->term_id, $specific_wc_categories ) ? 'selected' : '', $cat->name );
-							}
-						}
-
-						?>
-		</select>
-	</div>
-
-	<p class="description"><?php _e( 'When turned ON, Dark Mode will only work on the selected woocommerce categories.',
-						'wp-dark-mode' ); ?></p>
-
-</div>
-<?php
-
 		}
-
+		/**
+		 * Exclude dark mode switch in specific tags page setting.
+		 * 
+		 * @return void
+		 * @version 1.0.0
+		 */
 		public function exclude_tags() {
 			$exclude_tags     = wp_dark_mode_get_settings( 'wp_dark_mode_triggers', 'exclude_tags', [] );
 			$exclude_all_tags = 'on' == wp_dark_mode_get_settings( 'wp_dark_mode_triggers', 'exclude_all_tags', 'off' );
@@ -1373,98 +1432,108 @@ if ( ! class_exists( 'WP_Dark_Mode_Settings' ) ) {
 
 			?>
 
-<div class="exclude_wrap exclude_tags_wrap <?php echo $exclude_all_tags ? 'disabled' : ''; ?>">
+			<div class="exclude_wrap exclude_tags_wrap <?php echo $exclude_all_tags ? 'disabled' : ''; ?>">
 
-	<select name="wp_dark_mode_triggers[exclude_tags][]" multiple id="wp_dark_mode_triggers[exclude_tags]">
-		<?php
+				<select name="wp_dark_mode_triggers[exclude_tags][]" multiple id="wp_dark_mode_triggers[exclude_tags]">
+					<?php
 
 
-					if ( ! empty( $exclude_tags ) ) {
-						foreach ( $exclude_tags as $tag_id ) {
-							$tag = get_tag( $tag_id );
+								if ( ! empty( $exclude_tags ) ) {
+									foreach ( $exclude_tags as $tag_id ) {
+										$tag = get_tag( $tag_id );
 
-							printf( '<option value="%1$s" selected>%2$s</option>', $tag_id, $tag->name );
-						}
-					}
+										printf( '<option value="%1$s" selected>%2$s</option>', $tag_id, $tag->name );
+									}
+								}
 
-					?>
-	</select>
+								?>
+				</select>
 
-	<p class="description"><?php _e( 'Select the categories to exclude the dark mode from the categories posts.',
-						'wp-dark-mode' ); ?></p>
-</div>
-
-<div class="exclude_except_wrap">
-
-	<div class="switcher">
-		<label for="wppool-wp_dark_mode_triggers[exclude_all_tags]"><?php _e( 'Exclude All:',
-							'wp-dark-mode' ); ?></label>
-
-		<div class="wppool-switcher">
-			<input type="hidden" name="wp_dark_mode_triggers[exclude_all_tags]" value="off">
-			<input type="checkbox" <?php echo $exclude_all_tags ? 'checked'
-							: ''; ?> name="wp_dark_mode_triggers[exclude_all_tags]" id="wppool-wp_dark_mode_triggers[exclude_all_tags]"
-				value="on">
-			<div class="wp-dark-mode-ignore">
-				<label for="wppool-wp_dark_mode_triggers[exclude_all_tags]"></label>
+				<p class="description"><?php _e( 'Select the categories to exclude the dark mode from the categories posts.',
+									'wp-dark-mode' ); ?></p>
 			</div>
-		</div>
-	</div>
 
-	<label for="wp_dark_mode_triggers[specific_tags]"><?php _e( 'Except', 'wp-dark-mode' ); ?></label>
+			<div class="exclude_except_wrap">
 
-	<div class="exclude_except_select <?php echo ! $exclude_all_tags ? 'disabled' : ''; ?>">
-		<select name="wp_dark_mode_triggers[specific_tags][]" multiple id="wp_dark_mode_triggers[specific_tags]">
+				<div class="switcher">
+					<label for="wppool-wp_dark_mode_triggers[exclude_all_tags]"><?php _e( 'Exclude All:',
+										'wp-dark-mode' ); ?></label>
+
+					<div class="wppool-switcher">
+						<input type="hidden" name="wp_dark_mode_triggers[exclude_all_tags]" value="off">
+						<input type="checkbox" <?php echo $exclude_all_tags ? 'checked'
+										: ''; ?> name="wp_dark_mode_triggers[exclude_all_tags]" id="wppool-wp_dark_mode_triggers[exclude_all_tags]"
+							value="on">
+						<div class="wp-dark-mode-ignore">
+							<label for="wppool-wp_dark_mode_triggers[exclude_all_tags]"></label>
+						</div>
+					</div>
+				</div>
+
+				<label for="wp_dark_mode_triggers[specific_tags]"><?php _e( 'Except', 'wp-dark-mode' ); ?></label>
+
+				<div class="exclude_except_select <?php echo ! $exclude_all_tags ? 'disabled' : ''; ?>">
+					<select name="wp_dark_mode_triggers[specific_tags][]" multiple id="wp_dark_mode_triggers[specific_tags]">
+						<?php
+
+
+									if ( ! empty( $specific_tags ) ) {
+										foreach ( $specific_tags as $tag_id ) {
+											$tag = get_tag( $tag_id );
+
+											printf( '<option value="%1$s" selected>%2$s</option>', $tag_id, $tag->name );
+										}
+									}
+
+									?>
+					</select>
+				</div>
+
+				<p class="description"><?php _e( 'When turned ON, Dark Mode will only work on the selected tags.',
+									'wp-dark-mode' ); ?></p>
+
+			</div>
 			<?php
 
-
-						if ( ! empty( $specific_tags ) ) {
-							foreach ( $specific_tags as $tag_id ) {
-								$tag = get_tag( $tag_id );
-
-								printf( '<option value="%1$s" selected>%2$s</option>', $tag_id, $tag->name );
-							}
-						}
-
-						?>
-		</select>
-	</div>
-
-	<p class="description"><?php _e( 'When turned ON, Dark Mode will only work on the selected tags.',
-						'wp-dark-mode' ); ?></p>
-
-</div>
-<?php
-
 		}
-
+		/**
+		 * Exclude dark mode switch in specific post type setting.
+		 * 
+		 * @return void
+		 * @version 1.0.0
+		 */
 		public function exclude_post_types() {
 			$exclude_post_types = wp_dark_mode_get_settings( 'wp_dark_mode_triggers', 'exclude_post_types', [] );
 
 			?>
 
-<div class="exclude_post_types_wrap">
+			<div class="exclude_post_types_wrap">
 
-	<select name="wp_dark_mode_triggers[exclude_post_types][]" multiple id="wp_dark_mode_triggers[exclude_post_types]">
-		<?php
+				<select name="wp_dark_mode_triggers[exclude_post_types][]" multiple id="wp_dark_mode_triggers[exclude_post_types]">
+					<?php
 
-					$post_types = get_post_types( [ 'public' => true, ] );
+								$post_types = get_post_types( [ 'public' => true, ] );
 
-					foreach ( $post_types as $post_type ) {
-						printf( '<option value="%1$s" %2$s>%3$s</option>', $post_type,
-							in_array( $post_type, $exclude_post_types ) ? 'selected' : '', $post_type );
-					}
+								foreach ( $post_types as $post_type ) {
+									printf( '<option value="%1$s" %2$s>%3$s</option>', $post_type,
+										in_array( $post_type, $exclude_post_types ) ? 'selected' : '', $post_type );
+								}
 
-					?>
-	</select>
+								?>
+				</select>
 
-	<p class="description"><?php _e( 'Select the post type to exclude the dark mode.', 'wp-dark-mode' ); ?></p>
-</div>
+				<p class="description"><?php _e( 'Select the post type to exclude the dark mode.', 'wp-dark-mode' ); ?></p>
+			</div>
 
-<?php
+			<?php
 
 		}
-
+		/**
+		 * load image setting template
+		 * 
+		 * @return void
+		 * @version 1.0.0
+		 */
 		public static function image_settings() {
 			$light_images = [];
 			$dark_images  = [];
@@ -1477,106 +1546,111 @@ if ( ! class_exists( 'WP_Dark_Mode_Settings' ) ) {
 
 			?>
 
-<div id="image_compare">
-	<!-- before useing dark mode -->
-	<img src="<?php echo WP_DARK_MODE_ASSETS; ?>/images/light_demo.svg"
-		alt="<?php esc_attr_e( 'Pro Features', 'wp-dark-mode' ); ?>">
-	<!-- after using dark mode -->
-	<img src="<?php echo WP_DARK_MODE_ASSETS; ?>/images/dark_demo.svg"
-		alt="<?php esc_attr_e( 'Pro Features', 'wp-dark-mode' ); ?>">
-</div>
+			<div id="image_compare">
+				<!-- before useing dark mode -->
+				<img src="<?php echo WP_DARK_MODE_ASSETS; ?>/images/light_demo.svg"
+					alt="<?php esc_attr_e( 'Pro Features', 'wp-dark-mode' ); ?>">
+				<!-- after using dark mode -->
+				<img src="<?php echo WP_DARK_MODE_ASSETS; ?>/images/dark_demo.svg"
+					alt="<?php esc_attr_e( 'Pro Features', 'wp-dark-mode' ); ?>">
+			</div>
 
-<p>🔹️
-	<strong><?php esc_html_e( 'Light Mode Image: ', 'wp-dark-mode' ); ?></strong>
-	<?php esc_html_e( 'The image link shown in the light mode.', 'wp-dark-mode' ); ?>
-</p>
-<p>🔹️
-	<strong><?php esc_html_e( 'Dark Mode Image: ', 'wp-dark-mode' ); ?></strong>
-	<?php esc_html_e( 'The image link that will replace the light mode image while in dark mode.', 'wp-dark-mode' ); ?>
-</p>
-<br>
+			<p>🔹️
+				<strong><?php esc_html_e( 'Light Mode Image: ', 'wp-dark-mode' ); ?></strong>
+				<?php esc_html_e( 'The image link shown in the light mode.', 'wp-dark-mode' ); ?>
+			</p>
+			<p>🔹️
+				<strong><?php esc_html_e( 'Dark Mode Image: ', 'wp-dark-mode' ); ?></strong>
+				<?php esc_html_e( 'The image link that will replace the light mode image while in dark mode.', 'wp-dark-mode' ); ?>
+			</p>
+			<br>
 
-<table class="image-settings-table">
-	<tbody>
-		<tr>
-			<td><?php esc_html_e( 'Light Mode Image', 'wp-dark-mode' ); ?></td>
-			<td><?php esc_html_e( 'Dark Mode Image', 'wp-dark-mode' ); ?></td>
-			<td></td>
-		</tr>
+			<table class="image-settings-table">
+				<tbody>
+					<tr>
+						<td><?php esc_html_e( 'Light Mode Image', 'wp-dark-mode' ); ?></td>
+						<td><?php esc_html_e( 'Dark Mode Image', 'wp-dark-mode' ); ?></td>
+						<td></td>
+					</tr>
 
-		<?php
+					<?php
 
-				if ( ! empty( $light_images ) ) {
-					foreach ( $light_images as $key => $light_image ) {
-						?>
-		<tr>
-			<td>
-				<img src="<?php echo $light_image; ?>">
-				<input type="url" value="<?php echo $light_image; ?>"
-					name="wp_dark_mode_image_settings[light_images][]">
-				<button type="button" class="button button-primary wp_dark_mode_select_img"><i
-						class="dashicons dashicons-plus-alt"></i>
-				</button>
-				<button type="button"
-					class="button button-link-delete wp_dark_mode_delete_img <?php echo ! empty( $light_image ) ? '' : 'hidden'; ?>">
-					<i class="dashicons dashicons-trash"></i>
-				</button>
-			</td>
-			<td>
-				<img src="<?php echo $dark_images[ $key ]; ?>">
-				<input type="url" value="<?php echo $dark_images[ $key ]; ?>"
-					name="wp_dark_mode_image_settings[dark_images][]">
-				<button type="button" class="button button-primary wp_dark_mode_select_img"><i
-						class="dashicons dashicons-plus-alt"></i>
-				</button>
-				<button type="button"
-					class="button button-link-delete wp_dark_mode_delete_img <?php echo ! empty( $light_image ) ? '' : 'hidden'; ?>">
-					<i class="dashicons dashicons-trash"></i>
-				</button>
-			</td>
-			<td>
-				<a href="#" class="add_row button button-primary"><?php esc_html_e( 'Add', 'wp-dark-mode' ); ?></a>
-				<a href="#"
-					class="remove_row button button-link-delete"><?php esc_html_e( 'Remove', 'wp-dark-mode' ); ?></a>
-			</td>
-		</tr>
-		<?php
-					}
-				} else { ?>
-		<tr>
-			<td>
-				<img src="">
-				<input type="url" value="" name="wp_dark_mode_image_settings[light_images][]">
-				<button type="button" class="button button-primary wp_dark_mode_select_img"><i
-						class="dashicons dashicons-plus-alt"></i>
-				</button>
-				<button type="button" class="button button-link-delete wp_dark_mode_delete_img hidden">
-					<i class="dashicons dashicons-trash"></i>
-				</button>
-			</td>
-			<td>
-				<img src="">
-				<input type="url" value="" name="wp_dark_mode_image_settings[dark_images][]">
-				<button type="button" class="button button-primary wp_dark_mode_select_img"><i
-						class="dashicons dashicons-plus-alt"></i>
-				</button>
-				<button type="button" class="button button-link-delete wp_dark_mode_delete_img hidden">
-					<i class="dashicons dashicons-trash"></i>
-				</button>
-			</td>
-			<td>
-				<a href="#" class="add_row button button-primary"><?php esc_html_e( 'Add', 'wp-dark-mode' ); ?></a>
-				<a href="#"
-					class="remove_row button button-link-delete"><?php esc_html_e( 'Remove', 'wp-dark-mode' ); ?></a>
-			</td>
-		</tr>
-		<?php } ?>
+							if ( ! empty( $light_images ) ) {
+								foreach ( $light_images as $key => $light_image ) {
+									?>
+					<tr>
+						<td>
+							<img src="<?php echo $light_image; ?>">
+							<input type="url" value="<?php echo $light_image; ?>"
+								name="wp_dark_mode_image_settings[light_images][]">
+							<button type="button" class="button button-primary wp_dark_mode_select_img"><i
+									class="dashicons dashicons-plus-alt"></i>
+							</button>
+							<button type="button"
+								class="button button-link-delete wp_dark_mode_delete_img <?php echo ! empty( $light_image ) ? '' : 'hidden'; ?>">
+								<i class="dashicons dashicons-trash"></i>
+							</button>
+						</td>
+						<td>
+							<img src="<?php echo $dark_images[ $key ]; ?>">
+							<input type="url" value="<?php echo $dark_images[ $key ]; ?>"
+								name="wp_dark_mode_image_settings[dark_images][]">
+							<button type="button" class="button button-primary wp_dark_mode_select_img"><i
+									class="dashicons dashicons-plus-alt"></i>
+							</button>
+							<button type="button"
+								class="button button-link-delete wp_dark_mode_delete_img <?php echo ! empty( $light_image ) ? '' : 'hidden'; ?>">
+								<i class="dashicons dashicons-trash"></i>
+							</button>
+						</td>
+						<td>
+							<a href="#" class="add_row button button-primary"><?php esc_html_e( 'Add', 'wp-dark-mode' ); ?></a>
+							<a href="#"
+								class="remove_row button button-link-delete"><?php esc_html_e( 'Remove', 'wp-dark-mode' ); ?></a>
+						</td>
+					</tr>
+					<?php
+								}
+							} else { ?>
+					<tr>
+						<td>
+							<img src="">
+							<input type="url" value="" name="wp_dark_mode_image_settings[light_images][]">
+							<button type="button" class="button button-primary wp_dark_mode_select_img"><i
+									class="dashicons dashicons-plus-alt"></i>
+							</button>
+							<button type="button" class="button button-link-delete wp_dark_mode_delete_img hidden">
+								<i class="dashicons dashicons-trash"></i>
+							</button>
+						</td>
+						<td>
+							<img src="">
+							<input type="url" value="" name="wp_dark_mode_image_settings[dark_images][]">
+							<button type="button" class="button button-primary wp_dark_mode_select_img"><i
+									class="dashicons dashicons-plus-alt"></i>
+							</button>
+							<button type="button" class="button button-link-delete wp_dark_mode_delete_img hidden">
+								<i class="dashicons dashicons-trash"></i>
+							</button>
+						</td>
+						<td>
+							<a href="#" class="add_row button button-primary"><?php esc_html_e( 'Add', 'wp-dark-mode' ); ?></a>
+							<a href="#"
+								class="remove_row button button-link-delete"><?php esc_html_e( 'Remove', 'wp-dark-mode' ); ?></a>
+						</td>
+					</tr>
+					<?php } ?>
 
-	</tbody>
-</table>
-<?php
+				</tbody>
+			</table>
+			<?php
 		}
-
+		/**
+		 * load video setting template
+		 * 
+		 * @return void
+		 * @version 1.0.0
+		 */
 		public static function video_settings() {
 			$light_videos = [];
 			$dark_videos  = [];
@@ -1589,96 +1663,99 @@ if ( ! class_exists( 'WP_Dark_Mode_Settings' ) ) {
 
 			?>
 
-<p>🔹️
-	<strong><?php esc_html_e( 'Light Mode Videos: ', 'wp-dark-mode' ); ?></strong>
-	<?php esc_html_e( 'The video link shown in the light mode.', 'wp-dark-mode' ); ?>
-</p>
-<p>🔹️
-	<strong><?php esc_html_e( 'Dark Mode Video: ', 'wp-dark-mode' ); ?></strong>
-	<?php esc_html_e( 'The video link that will replace the light mode video while in', 'wp-dark-mode' ); ?>
-	dark mode.</p>
-<p><?php esc_html_e( 'You can use any self hosted video, youtube or vimeo videos here.', 'wp-dark-mode' ); ?></p>
-<br>
+			<p>🔹️
+				<strong><?php esc_html_e( 'Light Mode Videos: ', 'wp-dark-mode' ); ?></strong>
+				<?php esc_html_e( 'The video link shown in the light mode.', 'wp-dark-mode' ); ?>
+			</p>
+			<p>🔹️
+				<strong><?php esc_html_e( 'Dark Mode Video: ', 'wp-dark-mode' ); ?></strong>
+				<?php esc_html_e( 'The video link that will replace the light mode video while in', 'wp-dark-mode' ); ?>
+				dark mode.</p>
+			<p><?php esc_html_e( 'You can use any self hosted video, youtube or vimeo videos here.', 'wp-dark-mode' ); ?></p>
+			<br>
 
-<table class="image-settings-table">
-	<tbody>
-		<tr>
-			<td><?php esc_html_e( 'Light Mode Video', 'wp-dark-mode' ); ?></td>
-			<td><?php esc_html_e( 'Dark Mode Video', 'wp-dark-mode' ); ?></td>
-			<td></td>
-		</tr>
+			<table class="image-settings-table">
+				<tbody>
+					<tr>
+						<td><?php esc_html_e( 'Light Mode Video', 'wp-dark-mode' ); ?></td>
+						<td><?php esc_html_e( 'Dark Mode Video', 'wp-dark-mode' ); ?></td>
+						<td></td>
+					</tr>
 
-		<?php
+					<?php
 
-				if ( ! empty( $light_videos ) ) {
-					foreach ( $light_videos as $key => $light_image ) {
-						?>
-		<tr>
-			<td>
-				<input type="url" value="<?php echo $light_image; ?>"
-					name="wp_dark_mode_video_settings[light_videos][]">
-				<button type="button" class="button button-primary wp_dark_mode_select_img"><i
-						class="dashicons dashicons-plus-alt"></i>
-				</button>
-				<button type="button"
-					class="button button-link-delete wp_dark_mode_delete_img <?php echo ! empty( $light_image ) ? '' : 'hidden'; ?>">
-					<i class="dashicons dashicons-trash"></i>
-				</button>
-			</td>
-			<td>
-				<input type="url" value="<?php echo $dark_videos[ $key ]; ?>"
-					name="wp_dark_mode_video_settings[dark_videos][]">
-				<button type="button" class="button button-primary wp_dark_mode_select_img"><i
-						class="dashicons dashicons-plus-alt"></i>
-				</button>
-				<button type="button"
-					class="button button-link-delete wp_dark_mode_delete_img <?php echo ! empty( $light_image ) ? '' : 'hidden'; ?>">
-					<i class="dashicons dashicons-trash"></i>
-				</button>
-			</td>
-			<td>
-				<a href="#" class="add_row button button-primary"><?php esc_html_e( 'Add', 'wp-dark-mode' ); ?></a>
-				<a href="#"
-					class="remove_row button button-link-delete"><?php esc_html_e( 'Remove', 'wp-dark-mode' ); ?></a>
-			</td>
-		</tr>
-		<?php
-					}
-				} else { ?>
-		<tr>
-			<td>
-				<input type="url" value="" name="wp_dark_mode_video_settings[light_videos][]">
-				<button type="button" class="button button-primary wp_dark_mode_select_img"><i
-						class="dashicons dashicons-plus-alt"></i>
-				</button>
-				<button type="button" class="button button-link-delete wp_dark_mode_delete_img hidden">
-					<i class="dashicons dashicons-trash"></i>
-				</button>
-			</td>
-			<td>
-				<input type="url" value="" name="wp_dark_mode_video_settings[dark_videos][]">
-				<button type="button" class="button button-primary wp_dark_mode_select_img"><i
-						class="dashicons dashicons-plus-alt"></i>
-				</button>
-				<button type="button" class="button button-link-delete wp_dark_mode_delete_img hidden">
-					<i class="dashicons dashicons-trash"></i>
-				</button>
-			</td>
-			<td>
-				<a href="#" class="add_row button button-primary"><?php esc_html_e( 'Add', 'wp-dark-mode' ); ?></a>
-				<a href="#"
-					class="remove_row button button-link-delete"><?php esc_html_e( 'Remove', 'wp-dark-mode' ); ?></a>
-			</td>
-		</tr>
-		<?php } ?>
+							if ( ! empty( $light_videos ) ) {
+								foreach ( $light_videos as $key => $light_image ) {
+									?>
+					<tr>
+						<td>
+							<input type="url" value="<?php echo $light_image; ?>"
+								name="wp_dark_mode_video_settings[light_videos][]">
+							<button type="button" class="button button-primary wp_dark_mode_select_img"><i
+									class="dashicons dashicons-plus-alt"></i>
+							</button>
+							<button type="button"
+								class="button button-link-delete wp_dark_mode_delete_img <?php echo ! empty( $light_image ) ? '' : 'hidden'; ?>">
+								<i class="dashicons dashicons-trash"></i>
+							</button>
+						</td>
+						<td>
+							<input type="url" value="<?php echo $dark_videos[ $key ]; ?>"
+								name="wp_dark_mode_video_settings[dark_videos][]">
+							<button type="button" class="button button-primary wp_dark_mode_select_img"><i
+									class="dashicons dashicons-plus-alt"></i>
+							</button>
+							<button type="button"
+								class="button button-link-delete wp_dark_mode_delete_img <?php echo ! empty( $light_image ) ? '' : 'hidden'; ?>">
+								<i class="dashicons dashicons-trash"></i>
+							</button>
+						</td>
+						<td>
+							<a href="#" class="add_row button button-primary"><?php esc_html_e( 'Add', 'wp-dark-mode' ); ?></a>
+							<a href="#"
+								class="remove_row button button-link-delete"><?php esc_html_e( 'Remove', 'wp-dark-mode' ); ?></a>
+						</td>
+					</tr>
+					<?php
+								}
+							} else { ?>
+					<tr>
+						<td>
+							<input type="url" value="" name="wp_dark_mode_video_settings[light_videos][]">
+							<button type="button" class="button button-primary wp_dark_mode_select_img"><i
+									class="dashicons dashicons-plus-alt"></i>
+							</button>
+							<button type="button" class="button button-link-delete wp_dark_mode_delete_img hidden">
+								<i class="dashicons dashicons-trash"></i>
+							</button>
+						</td>
+						<td>
+							<input type="url" value="" name="wp_dark_mode_video_settings[dark_videos][]">
+							<button type="button" class="button button-primary wp_dark_mode_select_img"><i
+									class="dashicons dashicons-plus-alt"></i>
+							</button>
+							<button type="button" class="button button-link-delete wp_dark_mode_delete_img hidden">
+								<i class="dashicons dashicons-trash"></i>
+							</button>
+						</td>
+						<td>
+							<a href="#" class="add_row button button-primary"><?php esc_html_e( 'Add', 'wp-dark-mode' ); ?></a>
+							<a href="#"
+								class="remove_row button button-link-delete"><?php esc_html_e( 'Remove', 'wp-dark-mode' ); ?></a>
+						</td>
+					</tr>
+					<?php } ?>
 
-	</tbody>
-</table>
-<?php
+				</tbody>
+			</table>
+			<?php
 		}
 
 		/**
-		 * Register the plugin page
+		 * Register the plugin Dark mode main menu
+		 * 
+		 * @return void
+		 * @version 1.0.0
 		 */
 		public function settings_menu() {
 			add_submenu_page( 'wp-dark-mode-settings', __( 'WP Dark Mode Settings', 'wp-dark-mode' ), __( 'Settings', 'wp-dark-mode' ), 'manage_options', 'wp-dark-mode-settings', [
@@ -1694,33 +1771,37 @@ if ( ! class_exists( 'WP_Dark_Mode_Settings' ) ) {
 
 		/**
 		 * Display the plugin settings options page
+		 * 
+		 * @return void
+		 * @version 1.0.0
 		 */
 		public function settings_page() {
 			?>
 
-<div class="wrap wp-dark-mode-settings-page">
-	<h2 style="display: flex;"><?php _e( 'WP Dark Mode Settings', 'wp-dark-mode' ); ?> <span
-			id="changelog_badge"></span></h2>
-	<?php self::$settings_api->show_settings(); ?>
-</div>
+			<div class="wrap wp-dark-mode-settings-page">
+				<h2 style="display: flex;"><?php _e( 'WP Dark Mode Settings', 'wp-dark-mode' ); ?> <span
+						id="changelog_badge"></span></h2>
+				<?php self::$settings_api->show_settings(); ?>
+			</div>
 
-<script>
-	// @see https://docs.headwayapp.co/widget for more configuration options.
-	var HW_config = {
-		selector: "#changelog_badge", // CSS selector where to inject the badge
-		account: "yppW9y"
-	}
+			<script>
+				// @see https://docs.headwayapp.co/widget for more configuration options.
+				var HW_config = {
+					selector: "#changelog_badge", // CSS selector where to inject the badge
+					account: "yppW9y"
+				}
 
-	var wpDarkModeSettings = {
-		switcher_size: '<?php echo wp_dark_mode_get_settings( 'wp_dark_mode_switch', 'switcher_size', 'normal' ); ?>'
-	}
-</script>
-<script async src="https://cdn.headwayapp.co/widget.js"></script>
+				var wpDarkModeSettings = {
+					switcher_size: '<?php echo wp_dark_mode_get_settings( 'wp_dark_mode_switch', 'switcher_size', 'normal' ); ?>'
+				}
+			</script>
+			<script async src="https://cdn.headwayapp.co/widget.js"></script>
 
-<?php
+			<?php
 		}
 
 		/**
+		 * Singleton instance WP_Dark_Mode_Settings class
 		 * @return WP_Dark_Mode_Settings|null
 		 */
 		public static function instance() {
@@ -1733,5 +1814,7 @@ if ( ! class_exists( 'WP_Dark_Mode_Settings' ) ) {
 
 	}
 }
-
+/**
+ * kick out the class
+ */
 WP_Dark_Mode_Settings::instance();

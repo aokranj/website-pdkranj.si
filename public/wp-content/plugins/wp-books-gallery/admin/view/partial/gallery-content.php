@@ -372,12 +372,15 @@ _e( 'Books Per Page', WBG_TXT_DOMAIN );
             </th>
             <td>
                 <?php 
+$wbg_max_book = 500;
+$wbg_max_book = 20;
 ?>
-                    <span><?php 
-echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now!', WBG_TXT_DOMAIN ) . '</a>' ;
-?></span>
-                    <?php 
-?>
+                <input type="number" min="1" max="<?php 
+esc_attr_e( $wbg_max_book );
+?>" step="1" name="wbg_books_per_page" class="wbg_books_per_page" value="<?php 
+esc_attr_e( $wbg_books_per_page );
+?>">
+                    
             </td>
             <th scope="row">
                 <label for="wbg_display_pagination"><?php 

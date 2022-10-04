@@ -1,6 +1,7 @@
 <?php
 
-defined( 'ABSPATH' ) || exit;
+// if direct access than exit the file.
+defined( 'ABSPATH' ) || exit();
 
 /**
  * Elementor controls manager.

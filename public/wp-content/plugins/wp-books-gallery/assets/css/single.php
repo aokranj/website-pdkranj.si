@@ -39,6 +39,14 @@ if ( $wbg_display_sidebar ) {
     a.wbg-btn-back {
         display: inline-block;
     }
+    .wbg-details-summary span a.wbg-btn:hover {
+        background: <?php 
+esc_attr_e( $wbg_download_btn_color_hvr );
+?> !important;
+        color: <?php 
+esc_attr_e( $wbg_download_btn_font_color_hvr );
+?> !important;
+    }
     .wbg-details-wrapper .wbg-details-summary span b .fa,
     .wbg-details-wrapper .wbg-details-summary span b .fa-solid {
         width: 25px;

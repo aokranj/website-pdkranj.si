@@ -1,19 +1,28 @@
 <?php
 
-/** Block direct access */
+// if direct access than exit the file.
 defined( 'ABSPATH' ) || exit();
 
-/** check if class `WP_Dark_Mode_Shortcode` not exists yet */
+/**
+ * Check class is already exists
+ *
+ * @version 1.0.0
+ */
 if ( ! class_exists( 'WP_Dark_Mode_Shortcode' ) ) {
+	/**
+	 * Register WP dark Mode switcher shortcode.
+	 *
+	 * @version 1.0.0
+	 */
 	class WP_Dark_Mode_Shortcode {
-
 		/**
 		 * @var null
 		 */
 		private static $instance = null;
-
 		/**
-		 * WP_Dark_Mode_Shortcode constructor.
+		 * load wp dark mode add_shortcode action hook for create wp dark mode switcher shortcode.
+		 *
+		 * @version 1.0.0
 		 */
 		public function __construct() {
 			add_shortcode( 'wp_dark_mode', [ $this, 'render_dark_mode_btn' ] );
@@ -21,6 +30,9 @@ if ( ! class_exists( 'WP_Dark_Mode_Shortcode' ) ) {
 
 		/**
 		 * render the dark mode switcher button
+		 *
+		 * @return html $html button template
+		 * @version 1.0.0
 		 */
 		public function render_dark_mode_btn( $atts ) {
 
@@ -78,7 +90,12 @@ if ( ! class_exists( 'WP_Dark_Mode_Shortcode' ) ) {
 			$html = ob_get_clean();
 			return $html;
 		}
-
+		/**
+		 * check license is active or not
+		 *
+		 * @return boolean
+		 * @version 1.0.0
+		 */
 		private function wp_dark_mode_common() {
 			global $wp_dark_mode_license;
 
@@ -90,19 +107,21 @@ if ( ! class_exists( 'WP_Dark_Mode_Shortcode' ) ) {
 		}
 
 		/**
+		 * Singleton instance WP_Dark_Mode_Shortcode class
+		 *
 		 * @return WP_Dark_Mode_Shortcode|null
+		 * @version 1.0.0
 		 */
 		public static function instance() {
 			if ( is_null( self::$instance ) ) {
 				self::$instance = new self();
 			}
-
 			return self::$instance;
 		}
-
-
 	}
 }
-
+/**
+ * Kick out the WP_Dark_Mode_Shortcode class 
+ */
 WP_Dark_Mode_Shortcode::instance();
 

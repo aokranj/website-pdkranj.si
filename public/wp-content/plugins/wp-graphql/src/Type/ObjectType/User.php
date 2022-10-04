@@ -25,6 +25,7 @@ class User {
 			'User',
 			[
 				'description' => __( 'A User object', 'wp-graphql' ),
+				'model'       => UserModel::class,
 				'interfaces'  => [ 'Node', 'UniformResourceIdentifiable', 'Commenter', 'DatabaseIdentifier' ],
 				'connections' => [
 					'enqueuedScripts'     => [
@@ -151,7 +152,7 @@ class User {
 							],
 							'forceDefault' => [
 								'type'        => 'Boolean',
-								'description' => __( 'Whether to always show the default image, never the Gravatar. Default false' ),
+								'description' => __( 'Whether to always show the default image, never the Gravatar. Default false', 'wp-graphql' ),
 							],
 							'rating'       => [
 								'type'        => 'AvatarRatingEnum',

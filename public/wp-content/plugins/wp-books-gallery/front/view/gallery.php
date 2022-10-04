@@ -283,7 +283,7 @@ if ( $wbgBooks->have_posts() ) {
             
             if ( !empty($wbgCategory) ) {
                 ?>
-              <span>
+              <span class="loop-category">
                   <?php 
                 echo  esc_html( $wbg_cat_label_txt ) ;
                 ?>
@@ -306,7 +306,7 @@ if ( $wbgBooks->have_posts() ) {
             
             if ( '' !== $wbgAuthor ) {
                 ?>
-              <span>
+              <span class="loop-author">
                   <?php 
                 esc_html_e( $wbg_author_label_txt ) . '&nbsp;' . esc_html_e( $wbgAuthor );
                 ?>

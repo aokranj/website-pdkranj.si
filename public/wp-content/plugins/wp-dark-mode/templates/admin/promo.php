@@ -11,10 +11,7 @@ $data = [
     'discount' => '50',
     'campaign'      => 'no',
 ];
-
-
-
-
+ 
 
 /**
  * Get WPPOOL Remote Offer

@@ -1,41 +1,46 @@
-=== Books Gallery - Best Books Showcase & Affiliate Plugin for WordPress ===
+=== WordPress Books Gallery Plugin ===
 Contributors: mhmrajib, hmplugin, freemius
 Donate link: https://www.paypal.me/mhmrajib
-Tags: book, gallery, store, Books, library, best books showcase plugin, free books showcase plugin, books showcase, Digital Library, Affiliating, Affiliate Marketing, Sell Books Online, Publisher, Author, Writer
+Tags: Books Gallery, Books Store, Books, Online Library, Digital Library, Books Showcase, Affiliate Marketing, Sell Books Online, books showcase plugin, books gallery plugin, Publisher
 Requires at least: 5.2
-Tested up to: 6.0.1
-Stable tag: 4.4.2
+Tested up to: 6.0.2
+Stable tag: 4.4.4
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-WordPress Books Gallery is the Best Books Showcase & Affiliate Plugin for WordPress which will build a beautiful mobile-friendly Book Store, Books Gallery or a Books Library in a few minutes.
+WordPress Books Gallery is the Best Books Showcase & Digital Library Plugin for WordPress which will build a beautiful mobile-friendly Book Store, Books Gallery, Digital Library in a few minutes.
 
 == Description ==
 
-[__Live Demo__](https://books-gallery.com/demo/) | [__Upgrade to Pro!__](https://books-gallery.com/pricing-faq/) | [__Live Chat__](https://books-gallery.com/) | [__Support__](https://books-gallery.com/contact/)
+**WordPress Books Gallery** is the **Best Books Showcase & Library Plugin for WordPress** which will build a beautiful mobile-friendly Books Store, Books Gallery or a Digital Library in a few minutes.
 
-[youtube https://youtu.be/cSZ5cve2Uuw]
+**Here are 3 Simple reasons why you should start using WordPress Books Gallery Plugin on your website:**
 
-= Overview =
+**✅ Online Digital Library**
 
-**WordPress Books Gallery** is the **Best Books Showcase & Affiliate Plugin for WordPress** which will build a beautiful mobile-friendly Book Store, Books Gallery or a Books Library in a few minutes.
+With this WordPress Digital Library Plugin you can create your own online book store to display your books. Visitors can download books for free or buy them from a third party site. 
 
-**Here are 3 Simple reasons why you should start using Books Gallery on your site:**
+**✅ Easy Affiliate Marketing**
 
-= 1. Online Book Library =
-Create your own online book store where you can display your books. Let the visitors download it free or buy it from a third party site. 
-
-= 2. Easy Affiliate Marketing =
 Earn a commission for marketing another person’s or company’s books. Build, manage, and scale the online business you want.
 
-= 3. Sell Books Directly =
+**✅ Sell Books Directly**
+
 You are an author or publisher and you have books to sell. Sell it directly from your site. Easy and Quick setup with WooCommerce. 
+
+**How It Works!**
+
+[youtube https://youtu.be/0L8B1nHQjWg]
 
 When you click on a book, it will open with a detail page, where you will find Book Cover, Author, Published On, Publisher, ISBN, Total Pages, Country, Language, Book Dimensions, File Size, Description etc. 
 Use the shortcode: [wp_books_gallery] to display your books in your web page.
 
-WordPress Books Gallery is a simple, effective and powerful plugin to Self Publish your desired Books.
+WordPress Books Gallery Plugin is a simple, effective and powerful plugin to Self Publish your desired Books.
+
+[__Live Demo__](https://books-gallery.com/demo/)
+
+[Read more about WordPress Books Gallery](https://books-gallery.com/).
 
 
 **🌟 Plugin Features:**
@@ -43,7 +48,6 @@ WordPress Books Gallery is a simple, effective and powerful plugin to Self Publi
 * Easy to install
 * Fully integrated in WordPress
 * Display books in catalog/showcase style
-* Easy to use
 * Lots of customization options
 * Fully Responsive Plugin
 * Search By Various Options
@@ -189,9 +193,10 @@ https://youtu.be/nR_3v1TkaZo
 * Author books slide in single page
 * Latest Books Slider Widget
 * Gallery Pagination Styling
+* Multiple Sale Sources (New)
 
 
-[Get the pro](https://books-gallery.com/pricing-faq/)
+[__Upgrade to Pro!__](https://books-gallery.com/pricing-faq/)
 
 
 **📋 Translation Ready:**
@@ -223,21 +228,18 @@ If you find this plugin helpful, feel free to give us your valuable review. Rate
 
 **🔥 Other Plugins from [HM Plugin](https://hmplugin.com)**
 
-👉 [WP Books Gallery](https://wordpress.org/plugins/wp-books-gallery/) Books Gallery Plugin for WordPress
-👉 [Worldwide Breaking News Headlines](https://wordpress.org/plugins/worldwide-breaking-news-headlines/) Breaking News, Headlines Widget Plugin for WordPress
-👉 [WP Top News](https://wordpress.org/plugins/wp-top-news/) Top News, Breaking News, Headlines Shortcoded Plugin for WordPress
-👉 [WordPress Stripe Donation](https://wordpress.org/plugins/wp-stripe-donation/) Donations Coolection Plugin for WordPress using Stripe Payement
-👉 [Tiny Bar](https://wordpress.org/plugins/tiny-bar/) Message Bar Plugin for WordPress to display Message at Top/Bottom Bar of a web page
-👉 [HM – Cool Author Box](https://wordpress.org/plugins/hm-cool-author-box-widget/) Author Box plugin for WordPress to display author info
-👉 [HM Resume Manager](https://wordpress.org/plugins/hm-resume-manager/) A Resume/CV Manager Plugin for WordPress
-👉 [HM Product Catalog](https://wordpress.org/plugins/hm-product-catalog/) A Product Catalog Plugin for WordPress
-👉 [HM Wc Product Advertiser](https://wordpress.org/plugins/hm-wc-product-advertiser/) Product Advertiser Plugin for Wocommerce
-👉 [WP Scroll To Post](https://wordpress.org/plugins/wp-scroll-to-post/) Display random post(Single) at the bottom right corner
-👉 [HM Recent Posts Widget](https://wordpress.org/plugins/hm-recent-posts-widget/) Ticker Post plugin for WordPress
-👉 [WP Alert Bars](https://wordpress.org/plugins/wp-alert-bars/) Notification/Alert box Plugin for WordPress
-👉 [FaceBook LikeBox](https://wordpress.org/plugins/hm-simple-facebook-page/) A FaceBook LikeBox Plugin for WordPress
-👉 [WP Display FAQ](https://wordpress.org/plugins/wp-display-faq/) FAQs manager plugin for WordPress
-👉 [HM Logo Showcase](https://wordpress.org/plugins/hm-logo-showcase/) Logo manager plugin for WordPress
+👉 [WordPress Books Showcase Plugin](https://wordpress.org/plugins/wp-books-gallery/) Create an online digital library to sell and affiliate books
+👉 [WordPress Donation Plugin](https://wordpress.org/plugins/wp-stripe-donation/) Create a form to collect donation and payment via Stripe payment gateway
+👉 [WordPress News Plugin](https://wordpress.org/plugins/wp-top-news/) Display internal and external news in various layouts
+👉 [WordPress Notification Bar Plugin](https://wordpress.org/plugins/tiny-bar/) Dsiplay message and a button at the top or bottom of your webpage
+👉 [WordPress Author Bio Box Plugin](https://wordpress.org/plugins/hm-cool-author-box-widget/) Displays an author box / author info / auhor bio to your website
+👉 [WordPress Logo Showcase Plugin](https://wordpress.org/plugins/hm-logo-showcase/) Easiest client, brand logo showcase plugin to display logos on your website
+👉 [WordPress Resume Manager Plugin](https://wordpress.org/plugins/hm-resume-manager/) Display and manage personal resume or CV at your WordPress webpage
+👉 [WordPress Restaurant Menu Plugin](https://wordpress.org/plugins/menukaart/) Simplest plugin that displays food items, menus in your webpage
+👉 [WordPress Job Board and Recruitment Plugin](https://wordpress.org/plugins/jobwp/) Easiest Job Board, Career and Recruitment Plugin to display job listing in a career page
+👉 [WordPress Product Showcase Plugin](https://wordpress.org/plugins/hm-product-catalog/) Display products with various informations on your website
+👉 [WordPress Testimonial Plugin](https://wordpress.org/plugins/hm-testimonial/) Displays client’s testimonial, review or quote in multiple ways
+👉 [WordPress FAQ Plugin](https://wordpress.org/plugins/wp-display-faq/) WordPress FAQ Plugin which will display various FAQs in your website
 
 
 == Installation ==
@@ -313,6 +315,19 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 
 
 == Changelog ==
+
+= 4.4.4 =
+
+* Books per page option open
+* Changed selectize assets from CDN to local
+* Slick script minified
+* Gallery button bg color, font color option added
+* Gallery main container padding, border radius option added
+* Gallery container background color
+
+= 4.4.3 =
+
+* Freemius version updated
 
 = 4.4.2 =
 

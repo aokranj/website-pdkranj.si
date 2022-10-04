@@ -1,18 +1,26 @@
 <?php
-
+// if direct access than exit the file.
 defined( 'ABSPATH' ) || exit();
 
+/**
+ * Compare the version and check if the plugin needs an update for compatible version
+ * update some necessary optional fields value depend on version
+ * 
+ * @version 1.0.0
+ */
 class WP_Dark_Mode_Update {
-
-
 	/**
 	 * The upgrades
-	 *
+	 * Store version
 	 * @var array
 	 */
 	private static $upgrades = [ '2.0.0', '2.0.5' ];
-
-
+	/**
+	 * Get current version
+	 * 
+	 * @return string
+	 * @version 1.0.0
+	 */
 	public function installed_version() {
 		return get_option( 'wp_dark_mode_version' );
 	}
@@ -54,7 +62,4 @@ class WP_Dark_Mode_Update {
 		delete_option( 'wp_dark_mode_version' );
 		update_option( 'wp_dark_mode_version', WP_DARK_MODE_VERSION );
 	}
-
-
-
 }

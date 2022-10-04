@@ -47,7 +47,7 @@ _e( 'Gallery Page Slug', WBG_TXT_DOMAIN );
 esc_attr_e( $wbg_gallery_page_slug );
 ?>">
                         <?php 
-_e( 'This is your Gallery Page URL slug. Please do not use books as gallery page.', WBG_TXT_DOMAIN );
+_e( 'This is your Gallery Page URL slug.', WBG_TXT_DOMAIN );
 ?>
                     </td>
                 </tr>

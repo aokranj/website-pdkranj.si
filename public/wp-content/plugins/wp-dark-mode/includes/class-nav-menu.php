@@ -1,25 +1,49 @@
 <?php
-
+/** block direct access */
 defined( 'ABSPATH' ) || exit();
-
-
+/**
+ * Check class is already exists
+ *
+ * @version 1.0.0
+ */
 if ( ! class_exists( 'WP_Dark_Mode_Nav_Menu' ) ) {
+	/**
+	 * Register WP dark mode switcher in add menu item.
+	 *
+	 * @version 1.0.0
+	 */
 	class WP_Dark_Mode_Nav_Menu {
-		/** @var null */
+		/** 
+		 * @var null
+		 */
 		private static $instance = null;
-
 		/**
 		 * WP_Dark_Mode_Nav_Menu constructor.
+		 *
+		 * Calling method
+		 *
+		 * @return void
+		 * @version 1.0.0
 		 */
 		public function __construct() {
 			add_action( 'admin_head-nav-menus.php', array( $this, 'add_nav_menu_meta_boxes' ) );
 		}
-
+		/**
+		 * Register nav menu meta boxes for dark mode switcher in nav bar.
+		 * output path->appearance/menus
+		 *
+		 * @return void
+		 * @version 1.0.0
+		 */
 		public function add_nav_menu_meta_boxes() {
 			add_meta_box( 'wp_dark_mode_nav_link', __( 'Darkmode Switcher', 'wp-dark-mode' ), array( $this, 'nav_menu_links' ), 'nav-menus',
 				'side', 'low' );
 		}
-
+		/**
+		 * set wp dark mode add to menu switcher setting
+		 *
+		 * @version 1.0.0
+		 */
 		public function nav_menu_links() {
 			global $_nav_menu_placeholder, $nav_menu_selected_id; ?>
             <div id="posttype-wp-dark-mode-switcher" class="posttypediv">
@@ -40,7 +64,7 @@ if ( ! class_exists( 'WP_Dark_Mode_Nav_Menu' ) ) {
                             <input type="hidden" class="menu-item-type" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ); ?>][menu-item-type]" value="custom"/>
                             <input type="hidden" class="menu-item-title" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ); ?>][menu-item-title]" value="Darkmode Switcher"/> <!-- // No translate this! -->
                             <input type="hidden" class="menu-item-url" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ); ?>][menu-item-url]" value="#darkmode_switcher"/>
-                            <input type="hidden" class="menu-item-classes" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ); ?>][menu-item-classes]"/>
+                            <input type="hidden" class="menu-item-classes" name="menu-item[<?php echo esc_attr( $_nav_menu_placeholder ); ?>][menu-item-classes]" value="hhhh"/>
                         </li>
                     </ul>
                 </div>
@@ -59,6 +83,8 @@ if ( ! class_exists( 'WP_Dark_Mode_Nav_Menu' ) ) {
 		}
 
 		/**
+		 * Singleton instance WP_Dark_Mode_Nav_Menu class
+		 *
 		 * @return WP_Dark_Mode_Nav_Menu|null
 		 */
 		public static function instance() {
@@ -71,5 +97,7 @@ if ( ! class_exists( 'WP_Dark_Mode_Nav_Menu' ) ) {
 	}
 
 }
-
+/**
+ * Kick out the class
+ */
 WP_Dark_Mode_Nav_Menu::instance();

@@ -7,20 +7,25 @@ if ( ! function_exists( 'wp_dark_mode_get_settings' ) ) {
 	/**
 	 * Get setting database option
 	 *
-	 * @param           $section
-	 * @param           $key
+	 * @param string $section default section name wp_dark_mode_general
+	 * @param string $key
 	 * @param string $default
 	 *
 	 * @return string
 	 */
 	function wp_dark_mode_get_settings( $section = 'wp_dark_mode_general', $key = '', $default = '' ) {
 		$settings = get_option( $section );
-
 		return isset( $settings[ $key ] ) ? $settings[ $key ] : $default;
 	}
 }
 
 if ( ! function_exists( 'wp_dark_mode_color_presets' ) ) {
+	/**
+	 * Get wp dark mode color setting option data
+	 *
+	 * @return string
+	 * @version 1.0.0
+	 */
 	function wp_dark_mode_color_presets() {
 		$preset = wp_dark_mode_get_settings( 'wp_dark_mode_color', 'color_preset', 0 );
 
@@ -50,19 +55,33 @@ if ( ! function_exists( 'wp_dark_mode_color_presets' ) ) {
 
 if ( ! function_exists( 'wp_dark_mode_exclude_pages' ) ) {
 	/**
+	 * Get exclude pages setting option data
+	 * 
 	 * @return string|array
+	 * @version 1.0.0
 	 */
 	function wp_dark_mode_exclude_pages() {
 		return wp_dark_mode_get_settings( 'wp_dark_mode_triggers', 'exclude_pages', [] );
 	}
 }
 
-
+/**
+ * Get exclude pages except setting option data
+ * 
+ * @return string|array
+ * @version 1.0.0
+ */
 function wp_dark_mode_exclude_pages_except() {
 	return wp_dark_mode_get_settings( 'wp_dark_mode_triggers', 'exclude_pages_except', [] );
 }
 
 if ( ! function_exists( 'wp_dark_mode_enabled' ) ) {
+	/**
+	 * Get Enable/disable dark mode in frontend setting options data
+	 * 
+	 * @return boolean
+	 * @version 1.0.0
+	 */
 	function wp_dark_mode_enabled() {
 
 		global $pagenow;
@@ -80,7 +99,12 @@ if ( ! function_exists( 'wp_dark_mode_enabled' ) ) {
 		return apply_filters( 'wp_dark_mode/is_enabled', true );
 	}
 }
-
+/**
+ * Check wp dark mode license is valid or not
+ *
+ * @return boolean
+ * @version 1.0.0
+ */
 function wp_dark_mode_is_hello_elementora() {
 	global $wp_dark_mode_license;
 
@@ -90,7 +114,13 @@ function wp_dark_mode_is_hello_elementora() {
 
 	return $wp_dark_mode_license->is_valid();
 }
-
+/**
+ * Check current page is gutenberg page or block editor
+ * if current page is gutenberg page or block editor return true else false
+ *
+ * @return boolean
+ * @version 1.0.0
+ */
 function wp_dark_mode_is_gutenberg_page() {
 	global $current_screen;
 
@@ -105,7 +135,12 @@ function wp_dark_mode_is_gutenberg_page() {
 
 	return false;
 }
-
+/**
+ * Check wp dark mode ultimate license is valid or not
+ *
+ * @return boolean
+ * @version 1.0.0
+ */
 function wp_dark_mode_frontend_mode() {
 	global $wp_dark_mode_license;
 
@@ -120,7 +155,13 @@ function wp_dark_mode_frontend_mode() {
 
 	return $wp_dark_mode_license->is_valid() && $is_ultimate_plan;
 }
-
+/**
+ * wp dark mode localize array
+ * Send dark mode setting data in js file
+ * 
+ * @return array
+ * @version 1.0.0
+ */ 
 function wp_dark_mode_localize_array() {
 	global $post, $current_screen;
 
@@ -179,12 +220,23 @@ function wp_dark_mode_localize_array() {
 		'pluginUrl' => WP_DARK_MODE_URL,
 	];
 }
-
+/**
+ * Check custom color/preset color ON or not.
+ * if custom color/preset color on return true
+ * 
+ * @return boolean
+ * @version 1.0.0
+ */
 function wp_dark_mode_is_custom_color() {
 	return 'on' == wp_dark_mode_get_settings( 'wp_dark_mode_color', 'enable_preset', 'off' )
 	       || 'on' == wp_dark_mode_get_settings( 'wp_dark_mode_color', 'customize_colors', 'off' );
 }
-
+/**
+ * wp dark mode lighten
+ *
+ * @return string
+ * @version 1.0.0
+ */
 if ( ! function_exists( 'wp_dark_mode_lighten' ) ) {
 	function wp_dark_mode_lighten( $hex, $steps ) {
 		// Steps should be between -255 and 255. Negative = darker, positive = lighter
@@ -211,7 +263,10 @@ if ( ! function_exists( 'wp_dark_mode_lighten' ) ) {
 }
 
 /**
+ * Get excludes setting option data in includes/excludes page
+ *
  * @return string
+ * @version 1.0.0
  */
 function wp_dark_mode_get_excludes() {
 	$excludes = wp_dark_mode_get_settings( 'wp_dark_mode_includes_excludes', 'excludes' );
@@ -220,7 +275,10 @@ function wp_dark_mode_get_excludes() {
 }
 
 /**
+ * Get includes setting option data in includes/excludes page
+ *
  * @return string
+ * @version 1.0.0
  */
 function wp_dark_mode_get_includes() {
 	$includes = wp_dark_mode_get_settings( 'wp_dark_mode_includes_excludes', 'includes' );

@@ -1,22 +1,27 @@
 <?php
-
-/** block direct access */
-defined( 'ABSPATH' ) || exit;
-
-/** check if class `WP_Dark_Mode_Install` not exists yet */
+// if direct access than exit the file.
+defined( 'ABSPATH' ) || exit();
+/**
+ * Check class is already exists
+ *
+ * @version 1.0.0
+ */
 if ( ! class_exists( 'WP_Dark_Mode_Install' ) ) {
 	/**
-	 * Class Install
+	 * Class is loaded when the plugin is activated. 
+	 * The class basically inserts the default data of the plugin.
+	 *
+	 * @version 1.0.0
 	 */
 	class WP_Dark_Mode_Install {
-
 		/**
 		 * @var null
 		 */
 		private static $instance = null;
 
 		/**
-		 * Do the activation stuff
+		 * WP_Dark_Mode_Install constructor.
+		 * require once class-update.php and set some default data when plugin active
 		 *
 		 * @return void
 		 * @since 1.0.0
@@ -32,10 +37,8 @@ if ( ! class_exists( 'WP_Dark_Mode_Install' ) ) {
 				self::create_default_data();
 			}
 		}
-
-
 		/**
-		 * create default data
+		 * update default data
 		 *
 		 * @since 2.0.8
 		 */
@@ -54,7 +57,10 @@ if ( ! class_exists( 'WP_Dark_Mode_Install' ) ) {
 		}
 
 		/**
+		 * Singleton instance WP_Dark_Mode_Install class
+		 *
 		 * @return WP_Dark_Mode_Install|null
+		 * @version 1.0.0
 		 */
 		public static function instance() {
 			if ( is_null( self::$instance ) ) {
@@ -66,5 +72,7 @@ if ( ! class_exists( 'WP_Dark_Mode_Install' ) ) {
 
 	}
 }
-
+/**
+ * Kick out the class
+ */
 WP_Dark_Mode_Install::instance();

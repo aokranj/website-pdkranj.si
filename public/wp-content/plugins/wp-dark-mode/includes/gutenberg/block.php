@@ -16,6 +16,9 @@ add_action( 'init', 'wp_dark_mode_register_block' );
 
 /**
  * Register wp-dark-mode switch block
+ * 
+ * @return mixed
+ * @version 1.0.0
  */
 function wp_dark_mode_register_block() {  
  
