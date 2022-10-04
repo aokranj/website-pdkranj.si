@@ -24,10 +24,22 @@ return [
       'encoding' => 'serialize',
       'type' => 'array',
       'value' => [
-        'email' => 'bojan.hribernik@gmail.com',
-        'timestamp' => 1484684776,
-        'type' => 'manual',
-        'version' => '4.7.1',
+        'email' => [
+          'action' => 'ignore',
+          'type' => 'string',
+        ],
+        'timestamp' => [
+          'action' => 'ignore',
+          'type' => 'string',
+        ],
+        'type' => [
+          'action' => 'ignore',
+          'type' => 'string',
+        ],
+        'version' => [
+          'action' => 'ignore',
+          'type' => 'string',
+        ],
       ],
     ],
     'auto_plugin_theme_update_emails' => [
