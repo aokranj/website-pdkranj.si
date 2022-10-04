@@ -171,7 +171,7 @@ return [
     'imsanity_max_width_other' => '1280',
     'imsanity_png_to_jpg' => '',
     'imsanity_quality' => '90',
-    'imsanity_version' => '2.7.2',
+    'imsanity_version' => '2.8.1',
     'initial_db_version' => '22442',
     'large_size_h' => '1024',
     'large_size_w' => '1024',
