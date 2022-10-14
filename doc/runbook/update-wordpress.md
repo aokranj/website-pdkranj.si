@@ -2,7 +2,7 @@
 
 A short guide how to upgrade and deploy updated WP to all environments.
 
-For this guide, let's assume the following configuration of remotes in your git repository (TL;DR branch `master` is `tracking aokranj/website-pdkranj.si:master`, ditto for `prod`):
+For this guide, let's assume the following configuration of remotes in your git repository (TL;DR branch `master` is `aokranj/website-pdkranj.si:master`):
 ```
 $ git remote -v
 origin  git@github.com:bostjan/website-pdkranj.si.git (fetch)
@@ -12,11 +12,9 @@ upstream        git@github.com:aokranj/website-pdkranj.si (push)
 
 $ git br -vv -a
 * master                  5e2a5a8 [upstream/master: ahead 2] conf: Change default email to janez.nastran[@]gmail.com + disable verification until sometime in 2030
-  prod                    df8b648 [upstream/prod] Revert "Add plugin: the-events-calendar v5.7.0"
   remotes/origin/master   d50dd71 Update README.md
   remotes/upstream/HEAD   -> upstream/master
   remotes/upstream/master 10249de Merge pull request #12 from bostjan/docker-compose-dev-env
-  remotes/upstream/prod   df8b648 Revert "Add plugin: the-events-calendar v5.7.0"
 $
 ```
 
@@ -36,7 +34,7 @@ Here, make sure that you're pulling from the correct remote repository
 ```
 git checkout -b update-YYYY-MM-DD
 ```
-or 
+or something more meaningful, like:
 ```
 git checkout -b update-to-6.0.2
 ```
@@ -51,52 +49,20 @@ git checkout -b update-to-6.0.2
 
 **Step #5** - Create a pull request:
 ```
-git push -u origin update-YYYY-MM-DD
+git push -u origin <YOUR-BRANCH-NAME>
 ```
 
 
 
 ## Deploy to staging
 
-**Step #6** - Push `master` to upstream repository (deploy to STG)
-```
-git push   # or `git push upstream master`, if "upstream" is the name of the aokranj/website-pdkranj.si
-```
-This will automatically deploy the new version to https://stg.pdkranj.si in a few seconds/minutes.
-You can monitor the deployment progress at https://github.com/aokranj/website-pdkranj.si/actions.
-If this step fails, you can manually deploy to STG as follows:
-```
-ssh pd-stg@stg.pdkranj.si -A
-
-# Then as `pd-stg` user on the host system:
-cd www/stg.pdkranj.si
-git pull
-./sbin/deploy-here
-```
-Done.
+Follow the [runbook for deploying to staging](deploy-to-stg.md).
 
 
 
-## Deploy to production - OBSOLETE, NEEDS A REFRESH, TODO
+## Deploy to production
 
-**Step #7** - To deploy to production - Part #1 - Merge branch `master` into `prod`:
-```
-# Back in your own repository clone
-git checkout prod
-git merge --ff master
-git push   # or `git push upstream prod`
-```
-`prod` branch is the branch containing our production code.
-
-**Step #8** - To deploy to production - **Part #2** - Deploy `prod` to production:
-```
-ssh pd-prod@www.pdkranj.si -A
-cd www/www.pdkranj.si
-# At this point, `prod` branch should already be checked out here
-git pull
-./sbin/deploy-here
-```
-Done.
+Follow the [runbook for deploying to production](deploy-to-prod.md).
 
 
 
