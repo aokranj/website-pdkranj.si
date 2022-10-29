@@ -47,7 +47,7 @@ git pull
 
 **Step #5** - Verify configuration - EXPERIMENTAL:
 ```
-./wp configmaps verify
+./wp confmaps verify
 ```
 
 All done.

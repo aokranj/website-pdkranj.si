@@ -20,7 +20,7 @@ Here:
 ./conf
 ./conf/wp-config-local.php   # The actual local configuration (containing instance URLs, DB access credentials and salts, and WP_ENV definition)
 
-./conf/maps                  # Location of our config maps
+./conf/maps                  # Location of our conf maps
 ./conf/maps/common.php
 ./conf/maps/dev.php
 ./conf/maps/stg.php
@@ -47,17 +47,17 @@ require_once ABSPATH . '/../conf/wp-config-local.php';
 if (!defined('DB_HOST')) define('DB_HOST', 'localhost');
 if (!isset($table_prefix)) $table_prefix = 'wp_';
 
-/** Define a config map set */
-$configMaps = [
+/** Define a conf map set */
+$confMaps = [
     'common' => ABSPATH . '../conf/maps/common.php',
     WP_ENV   => ABSPATH . '../conf/maps/' . WP_ENV . '.php',
 ];
-$localConfigMapPath = ABSPATH . '../conf/maps/local.php';
-if (file_exists($localConfigMapPath)) {
-    $configMaps['local'] = $localConfigMapPath;
+$localConfMapPath = ABSPATH . '../conf/maps/local.php';
+if (file_exists($localConfMapPath)) {
+    $confMaps['local'] = $localConfMapPath;
 }
-define('WP_CLI_CONFIGMAPS', $configMaps);
-unset($configMaps);
+define('WP_CLI_CONFMAPS', $confMaps);
+unset($confMaps);
 
 /** Define WP debug for dev and stg environments */
 if ((WP_ENV == 'dev') || (WP_ENV == 'stg')) {
@@ -118,7 +118,7 @@ return [
       'encoding' => 'serialize',
       'type' => 'array',
       'value' => [
-        1 => 'wp-cli-configmaps/wp-cli-configmaps.php',
+        1 => 'wp-cli-confmaps/wp-cli-confmaps.php',
       ],
     ],
     'admin_email' => '',
