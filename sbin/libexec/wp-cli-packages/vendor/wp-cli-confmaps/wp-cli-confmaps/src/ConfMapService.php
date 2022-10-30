@@ -36,10 +36,29 @@ class ConfMapService
     public static $confMapIndex = [];
 
     /**
+     * What class to use to interface with wp_options storage
+     */
+    protected static $wpOptionsIO = "WP\CLI\ConfMaps\WpOptionsIO\Db";
+
+    /**
+     * Configure which wp_options IO interface to use
+     */
+    public static function setWpOptionsIO ($ioClass)
+    {
+        $interfaces = class_implements($ioClass);
+        if (!isset($interfaces["WP\CLI\ConfMaps\WpOptionsIO\WpOptionsIOInterface"])) {
+            throw new Exception("Supplied class '$ioClass' does not implement 'WP\CLI\ConfMaps\WpOptionsIO\WpOptionsIOInterface' interface");
+        }
+        self::$wpOptionsIO = $ioClass;
+    }
+
+    /**
      * Configure which conf maps to use
      */
     public static function setCustomMaps ($confMaps)
     {
+        self::$confMapIndex = [];
+
         foreach ($confMaps as $mapId => $mapFileOrContent) {
             if (is_string($mapFileOrContent)) {
                 self::$confMapIndex[$mapId] = [
@@ -214,16 +233,16 @@ class ConfMapService
      */
     public static function generateMapFromWpOptions ($manualFixups=true)
     {
-        $rawOptions = Db::getAllOptions();
+        $rawOptions = self::$wpOptionsIO::getAllOptions();
 
         $confMap = [];
         foreach ($rawOptions as $optionName => $rawOptionValue) {
 
             WP_CLI::debug(__CLASS__.'::'.__FUNCTION__ . ": Processing wp_options entry: ". $optionName);
 
-            if (preg_match('/^[aO]:[0-9]+:{/', $rawOptionValue)) {
+            if (preg_match('/^[aO]:[0-9]+:/', $rawOptionValue)) {
 
-                // Serialized array or object
+                // Serialized array/object
                 $decodedOptionValue = unserialize($rawOptionValue);
                 $optionSpec = self::generateDefaultOptionSpecFromValue($decodedOptionValue);
                 $optionSpec['encoding'] = 'serialize';
@@ -304,7 +323,6 @@ class ConfMapService
             }
             ksort($optionSpec['value']);
 
-
         } elseif (is_string($optionValue)) {
             $optionSpec = [
                 'type'         => 'string',
@@ -338,7 +356,7 @@ class ConfMapService
             ];
 
         } else {
-            throw new Exception("Unsupported data type (2): ". gettype($optionValue) .", value=". var_export($optionValue));
+            throw new Exception("Unsupported data type (2): ". gettype($optionValue) .", value=". var_export($optionValue, true));
         }
 
         return $optionSpec;
@@ -371,6 +389,13 @@ class ConfMapService
 
                 case 'array':
                 case 'object':
+                    // Object-specific
+                    if ($optionSpec['type'] == 'object') {
+                        if ($optionSpec['class'] == 'stdClass') {
+                            unset($optionSpec['class']);
+                        }
+                    }
+
                     if ($optionSpec['action-apply'] == $optionSpec['action-dump']) {
                         $optionSpec['action'] = $optionSpec['action-apply'];
                         unset($optionSpec['action-apply']);
@@ -455,6 +480,14 @@ class ConfMapService
                         if ($optionSpec['value'] != NULL) {
                             $optionSpec['value'] = self::inflateMap($optionSpec['value'], $undefKeyActionDump);
                         }
+
+                        // Object-specific
+                        if ($optionSpec['type'] == 'object') {
+                            if (!isset($optionSpec['class'])) {
+                                $optionSpec['class'] = 'stdClass';
+                            }
+                        }
+
                         break;
 
                     default:
@@ -548,11 +581,22 @@ class ConfMapService
                     break;
 
                 case 'array':
+                case 'object':
                     if (!isset($mergedMap[$optionName])) {
-                        $mergedMap[$optionName] = [
-                            'type'  => 'array',
-                            'value' => [],
-                        ];
+                        if ($optionSpec['type'] == 'array') {
+                            $mergedMap[$optionName] = [
+                                'type'  => 'array',
+                                'value' => [],
+                            ];
+                        }
+
+                        if ($optionSpec['type'] == 'object') {
+                            $mergedMap[$optionName] = [
+                                'type'  => 'object',
+                                'class' => $optionSpec['class'],
+                                'value' => [],
+                            ];
+                        }
                     }
 
                     // This is only useful at the very top-level
@@ -607,15 +651,15 @@ class ConfMapService
             $newWpOptionsArray = self::generateRawWpOptionsFromMap($newValueMap);
             foreach ($currentWpOptionsArray as $optionName => $optionValue) {
                 if (!isset($newWpOptionsArray[$optionName])) {
-                    Db::deleteOption($optionName);
+                    self::$wpOptionsIO::deleteOption($optionName);
                 }
             }
             foreach ($newWpOptionsArray as $optionName => $optionValue) {
                 if (!isset($currentWpOptionsArray[$optionName])) {
-                    Db::insertOption($optionName, $optionValue);
+                    self::$wpOptionsIO::insertOption($optionName, $optionValue);
                 } else {
                     if ($currentWpOptionsArray[$optionName] != $newWpOptionsArray[$optionName]) {
-                        Db::updateOption($optionName, $optionValue);
+                        self::$wpOptionsIO::updateOption($optionName, $optionValue);
                     }
                 }
             }
@@ -695,8 +739,8 @@ class ConfMapService
 
 
             case 'walk':
-                if ($optionSpec['type'] != 'array') {
-                    throw new Exception("The 'action-apply' value 'walk' is only supported for data type 'array' (encoutered at '$optionName')");
+                if (($optionSpec['type'] != 'array') && ($optionSpec['type'] != 'object')) {
+                    throw new Exception("The 'action-apply' value 'walk' is only supported for data type 'array' or type 'object' (encoutered at '$optionName')");
                 }
 
                 if (!isset($targetValueMap[$optionName])) {
@@ -711,6 +755,9 @@ class ConfMapService
                     ];
                     if (isset($optionSpec['encoding'])) {
                         $targetValueMap[$optionName]['encoding'] = $optionSpec['encoding'];
+                    }
+                    if (isset($optionSpec['class'])) {
+                        $targetValueMap[$optionName]['class'] = $optionSpec['class'];
                     }
 
                     $changes[] = [
@@ -777,7 +824,14 @@ class ConfMapService
                     break;
 
                 case 'array':
+                case 'object':
                     $value = self::generateRawWpOptionsFromMap($optionSpec['value']);
+
+                    if ($optionSpec['type'] == 'object') {
+                        // Non-stdClass support is missing
+                        $value = (object) $value;
+                    }
+
                     if (!isset($optionSpec['encoding'])) {
                         $wpOptions[$optionName] = $value;
                     } else {

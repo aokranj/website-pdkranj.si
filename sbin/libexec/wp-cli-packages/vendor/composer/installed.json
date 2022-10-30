@@ -2,17 +2,17 @@
     "packages": [
         {
             "name": "wp-cli-confmaps/wp-cli-confmaps",
-            "version": "1.0.5",
-            "version_normalized": "1.0.5.0",
+            "version": "1.0.7",
+            "version_normalized": "1.0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli-confmaps/wp-cli-confmaps.git",
-                "reference": "9e6a0398d4057b2fd0211520aa8f4b8f7a03de12"
+                "reference": "77d15f5eb2feed929e0a9248294f8c6f82d3a1c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli-confmaps/wp-cli-confmaps/zipball/9e6a0398d4057b2fd0211520aa8f4b8f7a03de12",
-                "reference": "9e6a0398d4057b2fd0211520aa8f4b8f7a03de12",
+                "url": "https://api.github.com/repos/wp-cli-confmaps/wp-cli-confmaps/zipball/77d15f5eb2feed929e0a9248294f8c6f82d3a1c7",
+                "reference": "77d15f5eb2feed929e0a9248294f8c6f82d3a1c7",
                 "shasum": ""
             },
             "require": {
@@ -22,7 +22,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^9"
             },
-            "time": "2022-10-29T01:54:39+00:00",
+            "time": "2022-10-30T05:34:08+00:00",
             "type": "wp-cli-package",
             "installation-source": "dist",
             "autoload": {
@@ -55,7 +55,7 @@
             ],
             "support": {
                 "issues": "https://github.com/wp-cli-confmaps/wp-cli-confmaps/issues",
-                "source": "https://github.com/wp-cli-confmaps/wp-cli-confmaps/tree/1.0.5"
+                "source": "https://github.com/wp-cli-confmaps/wp-cli-confmaps/tree/1.0.7"
             },
             "install-path": "../wp-cli-confmaps/wp-cli-confmaps"
         }

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7b9b7e740ba4ba50b9c854bf39674e9e",
+    "content-hash": "d367e39dc57fb5279edda2edbc6f190d",
     "packages": [
         {
             "name": "wp-cli-confmaps/wp-cli-confmaps",
-            "version": "1.0.5",
+            "version": "1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli-confmaps/wp-cli-confmaps.git",
-                "reference": "9e6a0398d4057b2fd0211520aa8f4b8f7a03de12"
+                "reference": "77d15f5eb2feed929e0a9248294f8c6f82d3a1c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli-confmaps/wp-cli-confmaps/zipball/9e6a0398d4057b2fd0211520aa8f4b8f7a03de12",
-                "reference": "9e6a0398d4057b2fd0211520aa8f4b8f7a03de12",
+                "url": "https://api.github.com/repos/wp-cli-confmaps/wp-cli-confmaps/zipball/77d15f5eb2feed929e0a9248294f8c6f82d3a1c7",
+                "reference": "77d15f5eb2feed929e0a9248294f8c6f82d3a1c7",
                 "shasum": ""
             },
             "require": {
@@ -29,12 +29,12 @@
             },
             "type": "wp-cli-package",
             "autoload": {
-                "files": [
-                    "wp-cli-confmaps.php"
-                ],
                 "psr-4": {
                     "WP\\CLI\\ConfMaps\\": "src/"
-                }
+                },
+                "files": [
+                    "wp-cli-confmaps.php"
+                ]
             },
             "license": [
                 "GPL-2.0-only"
@@ -58,9 +58,9 @@
             ],
             "support": {
                 "issues": "https://github.com/wp-cli-confmaps/wp-cli-confmaps/issues",
-                "source": "https://github.com/wp-cli-confmaps/wp-cli-confmaps/tree/1.0.5"
+                "source": "https://github.com/wp-cli-confmaps/wp-cli-confmaps/tree/1.0.7"
             },
-            "time": "2022-10-29T01:54:39+00:00"
+            "time": "2022-10-30T05:34:08+00:00"
         }
     ],
     "packages-dev": [],

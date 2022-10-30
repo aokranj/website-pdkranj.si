@@ -11,12 +11,12 @@
     ),
     'versions' => array(
         'wp-cli-confmaps/wp-cli-confmaps' => array(
-            'pretty_version' => '1.0.5',
-            'version' => '1.0.5.0',
+            'pretty_version' => '1.0.7',
+            'version' => '1.0.7.0',
             'type' => 'wp-cli-package',
             'install_path' => __DIR__ . '/../wp-cli-confmaps/wp-cli-confmaps',
             'aliases' => array(),
-            'reference' => '9e6a0398d4057b2fd0211520aa8f4b8f7a03de12',
+            'reference' => '77d15f5eb2feed929e0a9248294f8c6f82d3a1c7',
             'dev_requirement' => false,
         ),
         'wp-cli/wp-cli' => array(

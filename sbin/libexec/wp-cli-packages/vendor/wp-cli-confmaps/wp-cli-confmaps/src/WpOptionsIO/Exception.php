@@ -17,6 +17,10 @@
  * along with this program; if not, see <https://www.gnu.org/licenses/gpl-2.0.html>.
  */
 
-if (defined('WP_CLI')) {
-    WP_CLI::add_command('confmaps', '\\WP\\CLI\\ConfMaps\\Commands');
+namespace WP\CLI\ConfMaps\WpOptionsIO;
+
+use WP\CLI\ConfMaps\Exception as ParentException;
+
+class Exception extends ParentException
+{
 }

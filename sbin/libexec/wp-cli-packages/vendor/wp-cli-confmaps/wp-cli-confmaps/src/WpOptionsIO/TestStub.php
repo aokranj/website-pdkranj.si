@@ -17,47 +17,23 @@
  * along with this program; if not, see <https://www.gnu.org/licenses/gpl-2.0.html>.
  */
 
-namespace WP\CLI\ConfMaps;
+namespace WP\CLI\ConfMaps\WpOptionsIO;
 
-if (!defined('WP_CLI')) {
-    throw new Exception("Cannot run outside WP-CLI context");
-}
-
-class Db
+class TestStub implements WpOptionsIOInterface
 {
+    /**
+     * Defined options
+     *
+     * This is an array of optionName => optionValue pairs, with optionValues serialized.
+     */
+    public static $rawOptions = [];
 
     /**
      * Retrieve all options from the wp_options table
-     *
-     * (no further description)
-     *
-     * @return  array   An array of wp_options, directly from the database
      */
     public static function getAllOptions ()
     {
-        global $wpdb;
-
-        $rawOptions = [];
-
-        $sqlQuery = "
-            SELECT
-                option_name,
-                option_value
-            FROM " . $wpdb->options . "
-            WHERE
-                1
-                AND option_name NOT LIKE 'cron'
-                AND option_name NOT LIKE '_transient%'
-                AND option_name NOT LIKE '_site_transient%'
-            ORDER BY
-                option_name ASC";
-        $results = $wpdb->get_results($sqlQuery);
-
-        foreach ($results as $result) {
-            $rawOptions[$result->option_name] = $result->option_value;
-        }
-
-        return $rawOptions;
+        return self::$rawOptions;
     }
 
     /**
@@ -71,17 +47,7 @@ class Db
      */
     public static function insertOption ($optionName, $value)
     {
-        global $wpdb;
-
-        if ($optionName == 'cron') {
-            throw new Exception("Managing `cron` option is not yet supported");
-        }
-
-        $wpdb->insert($wpdb->options, [
-            'option_name'  => $optionName,
-            'option_value' => $value,
-            'autoload'     => 'yes',
-        ]);
+        self::$rawOptions[$optionName] = $value;
     }
 
     /**
@@ -95,16 +61,7 @@ class Db
      */
     public static function updateOption ($optionName, $newValue)
     {
-        // This one is trying to send email when i.e. admin_email is updated, not something we want.
-        //update_option($optionName, $newValue);
-
-        global $wpdb;
-
-        if ($optionName == 'cron') {
-            throw new Exception("Managing `cron` option is not yet supported");
-        }
-
-        $wpdb->update($wpdb->options, ['option_value' => $newValue], ['option_name' => $optionName]);
+        self::$rawOptions[$optionName] = $value;
     }
 
     /**
@@ -117,12 +74,6 @@ class Db
      */
     public static function deleteOption ($optionName)
     {
-        global $wpdb;
-
-        if ($optionName == 'cron') {
-            throw new Exception("Managing `cron` option is not yet supported");
-        }
-
-        $wpdb->delete($wpdb->options, ['option_name' => $optionName]);
+        unset(self::$rawOptions[$optionName]);
     }
 }
