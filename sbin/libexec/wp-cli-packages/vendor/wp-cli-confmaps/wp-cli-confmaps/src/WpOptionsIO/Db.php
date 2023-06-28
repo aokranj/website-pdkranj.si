@@ -1,6 +1,6 @@
 <?php
 /*
- * ConfigMaps for WordPress WP-CLI - Configuration management for your wp_options table
+ * ConfMaps configuration management for WordPress WP-CLI - Tame your wp_options using WP-CLI and git
  *
  * Copyright (C) 2022 Bostjan Skufca Jese
  *
@@ -17,13 +17,13 @@
  * along with this program; if not, see <https://www.gnu.org/licenses/gpl-2.0.html>.
  */
 
-namespace WP\CLI\ConfigMaps;
+namespace WP\CLI\ConfMaps\WpOptionsIO;
 
 if (!defined('WP_CLI')) {
     throw new Exception("Cannot run outside WP-CLI context");
 }
 
-class Db
+class Db implements WpOptionsIOInterface
 {
 
     /**

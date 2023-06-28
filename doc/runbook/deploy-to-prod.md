@@ -106,7 +106,7 @@ git checkout master
 
 **Step #6** - Verify configuration - EXPERIMENTAL:
 ```
-./wp configmaps verify
+./wp confmaps verify
 ```
 
 All done.
