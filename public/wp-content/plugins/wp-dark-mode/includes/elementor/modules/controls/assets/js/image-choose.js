@@ -67,9 +67,7 @@ jQuery(window).on("elementor:init", function () {
     function (e) {
       e.preventDefault();
       let promo = document.querySelector(".wp-dark-mode-promo");
-      console.log(promo);
-
-      promo.classList.remove("hidden"); 
+      WPPOOL.Plugin('wp_dark_mode').show()
     }
   );
 });

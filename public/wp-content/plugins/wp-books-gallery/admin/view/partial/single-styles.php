@@ -11,6 +11,9 @@ foreach ( $wbgSingleStyles as $option_name => $option_value ) {
 }
 ?>
 <form name="wbg_single_style_form" role="form" class="form-horizontal" method="post" action="" id="wbg-single-style-form">
+<?php 
+wp_nonce_field( 'wbg_detail_style_action', 'wbg_detail_style_nonce_field' );
+?>
     <table class="wbg-single-style-settings-table">
         <!-- Master Container -->
         <tr>

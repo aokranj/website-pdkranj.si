@@ -666,5 +666,9 @@ trait Wbg_Core
       }
     }
   }
+
+  function wbg_mss_items() {
+		return ['Alibris', 'Amazon', 'Amazon Kindle', 'Apple Books', 'Barnes & Noble', 'Bookshop org', 'Google Play', 'Kobo', 'Lifeway', 'Mardel', 'Smashwords', 'Sony Reader', 'Waterstones'];
+	}
   
 }

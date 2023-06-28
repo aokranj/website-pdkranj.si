@@ -1,3 +1,7 @@
+.title h3.wbg-sidebar {
+    margin-bottom: 10px;
+}
+
 .wbg-parent-wrapper {
     display: block;
     max-width: 1100px;
@@ -7,14 +11,15 @@
 
 .wbg-main-wrapper {
     border: 0px solid #000;
-    display: grid;
-    grid-gap: 5px;
     padding: 0px;
 }
 
+.wbg-main-wrapper.grid {
+    display: grid;
+    grid-gap: 5px;
+}
+
 .wbg-main-wrapper .wbg-item {
-    border: 1px solid #DDD;
-    padding: 10px;
     min-height: 300px;
     margin-right: 5px;
     margin-bottom: 5px;
@@ -29,9 +34,7 @@
 
 .wbg-main-wrapper .wbg-item img {
     border: 0px solid #FF0000;
-    height: 150px;
-    width: auto;
-    max-width: 500px;
+    max-width: 100%;
     margin: 0 auto 15px;
     display: block;
 }
@@ -47,7 +50,7 @@
     line-height: 22px;
     color: #242424;
     text-align: center;
-    margin: 0 0 10px;
+    margin: 0 0 15px;
     padding: 0;
     cursor: pointer;
     transition: all 0.3s linear;
@@ -73,7 +76,7 @@
 }
 
 .wbg-main-wrapper .wbg-item span {
-    font-size: 12px;
+    font-size: 14px;
     display: inline-block;
     border: 0px solid #000;
     width: 100%;
@@ -84,6 +87,7 @@
 }
 
 .wbg-main-wrapper .wbg-item a.wbg-btn,
+.wbg-main-wrapper .wbg-item-list-wrapper a.wbg-btn,
 .wbg-details-summary span a.wbg-btn,
 .wbg-details-wrapper .wbg-details-description a.wbg-btn-back {
     display: inline-block;
@@ -92,7 +96,6 @@
     padding: 12px 15px;
     cursor: pointer;
     border-style: solid;
-    -webkit-appearance: none;
     border-radius: 3px;
     white-space: nowrap;
     box-sizing: border-box;
@@ -174,12 +177,19 @@ div.wbg-total-books-title {
     display: inline-block;
     width: 50px;
     height: 50px;
-    line-height: 50px;
+    line-height: 48px;
     margin: 0 2px 0 0;
     border: 1px solid #eee;
     text-decoration: none;
     border-radius: 2px;
-    font-weight: 600;
+}
+
+.wbg-pagination .page-numbers li a.page-numbers {
+    width: 48px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
 }
 
 div.wbg-pagination>ul.page-numbers>li>span.page-numbers.current {
@@ -198,9 +208,9 @@ div.wbg-pagination>ul.page-numbers>li>a.page-numbers:hover {
 .wbg-search-container {
     border: 1px solid #ddd;
     width: 100%;
-    padding: 10px 10px 2px 10px;
+    padding: 10px 10px 5px 10px;
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 0 10px;
     grid-template-columns: repeat( auto-fit, minmax(150px, 1fr));
     margin-bottom: 10px;
     background: #F2F2F2;
@@ -247,10 +257,9 @@ div.wbg-pagination>ul.page-numbers>li>a.page-numbers:hover {
 }
 
 .wbg-search-container .wbg-search-item .submit-btn {
-    width: 150px;
     height: 45px;
-    line-height: 45px;
-    padding: 0;
+    line-height: 23px;
+    padding: 0 15px;
     margin: 0;
     background: #269FC6;
     color: #ffffff;
@@ -258,11 +267,14 @@ div.wbg-pagination>ul.page-numbers>li>a.page-numbers:hover {
     border: none;
     border-radius: 5px;
     font-weight: 700;
-    letter-spacing: 0.5px;
     cursor: pointer;
     transition: all 0.3s linear;
     transform: translateY(0);
     display: inline-block;
+}
+
+.wbg-search-container .wbg-search-item.refresh {
+    text-align: left;
 }
 
 .wbg-search-container .wbg-search-item a#wbg-search-refresh {
@@ -273,17 +285,30 @@ div.wbg-pagination>ul.page-numbers>li>a.page-numbers:hover {
     border-radius: 5px;
     font-weight: 700;
     cursor: pointer;
-    display: block;
+    display: inline-block;
     width: 45px;
-    height: 43px;
-    line-height: 43px;
+    height: 45px;
+    line-height: 40px;
     border: 1px solid #666666;
+    text-decoration: none;
+    text-align: center;
 }
 
 .wbg-search-container .wbg-search-item a#wbg-search-refresh:hover {
     background: #6fa0df;
     border: 1px solid #6fa0df;
     color: #FFF;
+}
+
+p.wbg-no-books-found {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    color: #FF0000;
+    font-weight: 600;
+    margin: 50px auto 50px auto;
+    padding: 20px;
+    display: block;
 }
 
 
@@ -400,6 +425,20 @@ div.wbg-pagination>ul.page-numbers>li>a.page-numbers:hover {
     margin-left: 40px;
 }
 
+.wbg_other_books_by,
+.wbg_other_books_from,
+h3.wbg-slide-title {
+    border: 0px solid #000;
+    margin: 40px 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.wbg_other_books_by {
+    margin-top: 40px;
+}
+
 
 /*********************
 * Details Page Ended 
@@ -413,6 +452,111 @@ div.wbg-pagination>ul.page-numbers>li>a.page-numbers:hover {
 
 
 
+
+
+/* List Layout started */
+
+.wbg-main-wrapper.list .wbg-item-list-wrapper {
+    border-bottom: 1px solid #DDD;
+    width: 100%;
+    min-height: 100px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 10px;
+    padding: 20px 0;
+}
+
+.wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-img {
+    border: 0px solid #009900;
+    min-height: 100px;
+    display: inline-block;
+}
+
+.wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials {
+    border: 0px solid #cc0000;
+    min-height: 100px;
+    display: inline-block;
+}
+
+.wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials .wbg-title {
+    border: 0px solid #cc0000;
+    min-height: 20px;
+    display: block;
+    width: 100%;
+    padding-left: 30px;
+}
+
+.wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials .wbg-title a.wgb-item-link {
+    border: 0px solid #009900;
+    min-height: 20px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 24px;
+    color: #355a7a;
+    font-weight: 600;
+}
+
+.wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials .wbg-title h3.wgb-item-link {
+    margin: 0;
+    padding: 0;
+}
+
+.wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials .wbg-rating {
+    padding-left: 15px;
+}
+
+.wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials .regular-price {
+    padding-left: 30px;
+    margin: 10px 0;
+}
+
+.wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials .regular-price .wbgp-price {
+    font-size: 18px;
+}
+
+.wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials .regular-price .wbgp-price.price-before {
+    color: #999;
+    text-decoration: line-through;
+}
+
+.wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials .regular-price .wbgp-price.price-after {
+    color: #111;
+}
+
+.wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials span.loop-author,
+.wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials span.loop-category {
+    border: 0px solid #000;
+    display: block;
+    font-weight: 600;
+    color: #355a7a;
+    padding-left: 30px;
+}
+
+.wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials .wbg-description-content {
+    border: 1px solid #DDD;
+    margin: 10px 0 10px 0;
+    padding: 15px 30px;
+    border-radius: 3px;
+}
+
+@media only screen and (max-width: 500px) {
+    .wbg-main-wrapper.list .wbg-item-list-wrapper {
+        display: block;
+    }
+    .wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials .wbg-title,
+    .wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials .wbg-rating,
+    .wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials .regular-price,
+    .wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials span.loop-author,
+    .wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials span.loop-category {
+        padding-left: 0px;
+    }
+    .wbg-main-wrapper.list .wbg-item-list-wrapper .wbg-item-list-detials .wbg-description-content {
+        padding: 5px;
+    }
+}
+
+
+/* List layout ended */
 
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
@@ -482,10 +626,10 @@ div.wbg-pagination>ul.page-numbers>li>a.page-numbers:hover {
     }
     .wbg-search-container {
         display: inline-block;
-        padding-bottom: 10px;
+        padding-bottom: 5px;
     }
     .wbg-search-container .wbg-search-item {
-        padding-right: 10px;
+        padding-right: 0px;
         padding-bottom: 0px;
         display: block;
         min-height: 10px;
@@ -494,6 +638,9 @@ div.wbg-pagination>ul.page-numbers>li>a.page-numbers:hover {
     .wbg-search-container .wbg-search-item input[type="text"],
     .wbg-search-container .wbg-search-item .submit-btn {
         margin-bottom: 7px;
+    }
+    .wbg-search-container .wbg-search-item.refresh {
+        text-align: center;
     }
     .wbg-search-container .wbg-search-item a#wbg-search-refresh {
         margin: auto;

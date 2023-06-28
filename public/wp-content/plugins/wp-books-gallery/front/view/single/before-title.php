@@ -26,6 +26,7 @@ $wbgLink            = get_post_meta( $post->ID, 'wbg_download_link', true );
 $wbg_item_weight    = get_post_meta( $post->ID, 'wbg_item_weight', true );
 $wbg_edition        = get_post_meta( $post->ID, 'wbg_edition', true );
 $wbg_illustrator    = get_post_meta( $post->ID, 'wbg_illustrator', true );
+$wbg_translator     = get_post_meta( $post->ID, 'wbg_translator', true );
 
 $wbg_img = WBG_ASSETS . 'img/noimage.jpg';
 

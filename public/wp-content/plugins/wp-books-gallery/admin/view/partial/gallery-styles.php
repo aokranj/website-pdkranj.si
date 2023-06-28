@@ -11,6 +11,9 @@ foreach ( $wpsdGallerySettingsStyles as $option_name => $option_value ) {
 }
 ?>
 <form name="wbg_general_style_form" role="form" class="form-horizontal" method="post" action="" id="wbg-general-style-form">
+    <?php 
+wp_nonce_field( 'wbg_gallery_s_action', 'wbg_gallery_s_nonce_field' );
+?>
     <table class="wbg-general-style-settings-table">
         <!-- Parent Container -->
         <tr class="wbg_download_btn">

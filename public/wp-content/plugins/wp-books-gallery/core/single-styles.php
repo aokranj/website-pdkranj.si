@@ -36,22 +36,22 @@ trait Wbg_Single_Styles_Settings
             [
                 'name'      => 'wbg_single_container_width',
                 'type'      => 'number',
-                'default'   => '100',
+                'default'   => '1100',
             ],
             [
                 'name'      => 'wbg_single_container_width_type',
                 'type'      => 'text',
-                'default'   => '%',
+                'default'   => 'px',
             ],
             [
                 'name'      => 'wbg_single_container_margin_top',
                 'type'      => 'number',
-                'default'   => '0',
+                'default'   => '50',
             ],
             [
                 'name'      => 'wbg_single_container_margin_bottom',
                 'type'      => 'number',
-                'default'   => '0',
+                'default'   => '50',
             ],
             [
                 'name'      => 'wbg_single_title_font_color',

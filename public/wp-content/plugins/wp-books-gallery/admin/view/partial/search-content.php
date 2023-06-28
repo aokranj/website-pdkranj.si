@@ -11,6 +11,9 @@ foreach ( $wbgSearchContent as $option_name => $option_value ) {
 }
 ?>
 <form name="wbg_search_settings_form" role="form" class="form-horizontal" method="post" action="" id="wbg-search-settings-form">
+<?php 
+wp_nonce_field( 'wbg_search_content_action', 'wbg_search_content_nonce_field' );
+?>
     <table class="wbg-search-settings-table">
         <tr class="wbg_display_search_panel">
             <th scope="row" style="text-align: right;">
@@ -360,7 +363,6 @@ foreach ( $search_dad_list as $search_item ) {
 do_action( 'wbg_admin_search_settings_before_search_button_text' );
 ?>
 
-        
         <tr>
             <th scope="row" colspan="6" style="text-align: left;">
                 <hr><span>&nbsp;<?php 
@@ -372,7 +374,7 @@ _e( 'Button', WBG_TXT_DOMAIN );
             <th scope="row" style="text-align: right;">
                 <label for="wbg_search_btn_txt"><?php 
 _e( 'Search Button Text', WBG_TXT_DOMAIN );
-?>:</label>
+?></label>
             </th>
             <td colspan="2">
                 <input type="text" name="wbg_search_btn_txt" placeholder="<?php 

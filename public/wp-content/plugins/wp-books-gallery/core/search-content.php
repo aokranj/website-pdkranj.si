@@ -41,10 +41,16 @@ trait Wbg_Search_Content_Settings
             if ( ! in_array('series', $searchItems) ) {
                 $searchItems[8] = 'series';
             }
+            if ( ! in_array('isbn13', $searchItems) ) {
+                $searchItems[9] = 'isbn13';
+            }
+            if ( ! in_array('tags', $searchItems) ) {
+                $searchItems[10] = 'tags';
+            }
 
         } else {
 
-            $searchItems = array( 'title', 'isbn', 'category', 'year', 'language',  'author', 'publisher', 'format', 'series' );
+            $searchItems = array( 'title', 'isbn', 'category', 'year', 'language',  'author', 'publisher', 'format', 'series', 'isbn13', 'tags' );
         }
 
         return apply_filters( 'wbg_search_items', $searchItems );
@@ -76,7 +82,7 @@ trait Wbg_Search_Content_Settings
             [
                 'name'      => 'wbg_display_search_isbn_placeholder',
                 'type'      => 'text',
-                'default'   => 'ISBN',
+                'default'   => 'ISBN-10',
             ],
             [
                 'name'      => 'wbg_display_search_category',
@@ -166,7 +172,7 @@ trait Wbg_Search_Content_Settings
             [
                 'name'      => 'wbgp_book_format_default_option',
                 'type'      => 'text',
-                'default'   => 'All Formates',
+                'default'   => 'All Formats',
             ],
             [
                 'name'      => 'wbgp_display_book_series',
@@ -187,6 +193,26 @@ trait Wbg_Search_Content_Settings
                 'name'      => 'wbg_search_btn_txt',
                 'type'      => 'text',
                 'default'   => 'Search Books',
+            ],
+            [
+                'name'      => 'wbg_display_search_isbn13',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_display_search_isbn13_placeholder',
+                'type'      => 'text',
+                'default'   => 'ISBN-13',
+            ],
+            [
+                'name'      => 'wbg_display_search_tags',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_display_search_tags_placeholder',
+                'type'      => 'text',
+                'default'   => 'Tags',
             ],
         ];
     }

@@ -43,10 +43,10 @@ if ( have_posts() ) {
         }
         
         ?>
-                <span>
-                <?php 
+                <span class="wbg-single-button-container">
+                    <?php 
         // Download Button
-        if ( $wbg_display_download_button ) {
+        if ( !$wbg_display_download_button ) {
             if ( !empty($wbgLink) ) {
                 
                 if ( $wbg_buynow_btn_txt !== '' ) {
@@ -55,14 +55,16 @@ if ( have_posts() ) {
                         
                         if ( is_user_logged_in() ) {
                             ?>
-                                    <a href="<?php 
+                                        <a href="<?php 
                             echo  esc_url( $wbgLink ) ;
-                            ?>" class="button wbg-btn" target="_blank">
-                                        <i class="fa-solid fa-download"></i>&nbsp;<?php 
+                            ?>" class="button wbg-btn" <?php 
+                            esc_attr_e( $wbg_dwnld_btn_url_same_tab );
+                            ?>>
+                                            <i class="fa-solid fa-download"></i>&nbsp;<?php 
                             esc_html_e( $wbg_buynow_btn_txt );
                             ?>
-                                    </a>
-                                    <?php 
+                                        </a>
+                                        <?php 
                         }
                         
                         /*
@@ -77,14 +79,16 @@ if ( have_posts() ) {
                     
                     if ( !$wbg_download_when_logged_in ) {
                         ?>
-                                <a href="<?php 
+                                    <a href="<?php 
                         echo  esc_url( $wbgLink ) ;
-                        ?>" class="button wbg-btn" target="_blank">
-                                    <i class="fa-solid fa-download"></i>&nbsp;<?php 
+                        ?>" class="button wbg-btn" <?php 
+                        esc_attr_e( $wbg_dwnld_btn_url_same_tab );
+                        ?>>
+                                        <i class="fa-solid fa-download"></i>&nbsp;<?php 
                         esc_html_e( $wbg_buynow_btn_txt );
                         ?>
-                                </a>
-                                <?php 
+                                    </a>
+                                    <?php 
                     }
                 
                 }
@@ -120,16 +124,31 @@ if ( have_posts() ) {
         }
         // Back Button
         
-        if ( null !== $wbg_gallery_page_slug ) {
-            ?>
-                    <a href="<?php 
-            echo  esc_url( home_url( '/' . $wbg_gallery_page_slug ) ) ;
-            ?>" class="button wbg-btn-back">
-                        <i class="fa fa-angle-double-left" aria-hidden="true"></i>&nbsp;<?php 
-            _e( 'Back', WBG_TXT_DOMAIN );
-            ?>
-                    </a>
-                    <?php 
+        if ( !$wbg_hide_back_button ) {
+            
+            if ( '' !== $wbg_gallery_page_slug ) {
+                ?>
+                        <a href="<?php 
+                echo  esc_url( home_url( '/' . $wbg_gallery_page_slug ) ) ;
+                ?>" class="button wbg-btn-back">
+                            <i class="fa fa-angle-double-left" aria-hidden="true"></i>&nbsp;<?php 
+                esc_html_e( $wbg_back_button_label );
+                ?>
+                        </a>
+                        <?php 
+            }
+            
+            
+            if ( '' === $wbg_gallery_page_slug ) {
+                ?>
+                        <a href="#" onclick="javascript:history.back();" class="button wbg-btn-back">
+                            <i class="fa fa-angle-double-left" aria-hidden="true"></i>&nbsp;<?php 
+                esc_html_e( $wbg_back_button_label );
+                ?>
+                        </a>
+                        <?php 
+            }
+        
         }
         
         ?>
@@ -148,8 +167,8 @@ if ( have_posts() ) {
                 <?php 
             
             if ( function_exists( 'register_sidebar' ) ) {
-                $wbg_sidebar = reset( $wp_registered_sidebars );
-                dynamic_sidebar( $wbg_sidebar['name'] );
+                //$wbg_sidebar = reset($wp_registered_sidebars);
+                dynamic_sidebar( 'Books Gallery Sidebar' );
                 //echo '<pre>';
                 //echo key( $wp_registered_sidebars );
             }

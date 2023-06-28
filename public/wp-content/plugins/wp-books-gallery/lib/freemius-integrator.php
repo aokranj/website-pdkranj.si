@@ -21,10 +21,6 @@ if ( !function_exists( 'wbg_fs' ) ) {
                 'is_premium'     => false,
                 'has_addons'     => false,
                 'has_paid_plans' => true,
-                'trial'          => array(
-                'days'               => 7,
-                'is_require_payment' => true,
-            ),
                 'menu'           => array(
                 'slug'       => 'edit.php?post_type=books',
                 'first-path' => 'edit.php?post_type=books&page=wbg-get-help',

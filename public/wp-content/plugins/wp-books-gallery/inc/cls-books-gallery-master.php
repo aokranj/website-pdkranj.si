@@ -69,6 +69,7 @@ class WBG_Master
             12,
             1
         );
+        $this->wbg_loader->add_action( 'widgets_init', $wbg_admin, 'wbg_register_sidebar' );
         // Change the featured image metabox link text
         $this->wbg_loader->add_filter( 'admin_post_thumbnail_html', $wbg_admin, WBG_PRFX . 'change_featured_image_link_text' );
         $this->wbg_loader->add_action(
@@ -101,6 +102,12 @@ class WBG_Master
             'archive_template',
             $wbg_front,
             'wbg_load_archive_template',
+            10
+        );
+        $this->wbg_loader->add_filter(
+            'tag_template',
+            $wbg_front,
+            'wbg_load_tag_template',
             10
         );
         $wbg_front->wbg_load_shortcode();

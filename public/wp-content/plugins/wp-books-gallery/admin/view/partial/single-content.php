@@ -11,6 +11,9 @@ foreach ( $wbgDetailsContent as $option_name => $option_value ) {
 }
 ?>
 <form name="wbg_detail_settings_form" role="form" class="form-horizontal" method="post" action="" id="wbg-detail-settings-form">
+<?php 
+wp_nonce_field( 'wbg_detail_content_action', 'wbg_detail_content_nonce_field' );
+?>
     <table class="wbg-details-settings-table">
         <tr>
             <th scope="row" style="text-align: right;">
@@ -428,8 +431,7 @@ esc_attr_e( $wbg_filesize_label );
 esc_attr_e( $wbg_filesize_label );
 ?>">
             </td>
-        </tr>
-        
+        </tr>      
         <?php 
 ?>
         <tr>
@@ -465,13 +467,44 @@ esc_attr_e( $wbg_description_label );
         <tr>
             <th scope="row" style="text-align: right;">
                 <label for="wbg_display_download_button"><?php 
-_e( 'Display Download/BuyNow Button', WBG_TXT_DOMAIN );
+_e( 'Hide Download Button', WBG_TXT_DOMAIN );
 ?>?</label>
             </th>
             <td>
                 <input type="checkbox" name="wbg_display_download_button" id="wbg_display_download_button" value="1" <?php 
 echo  ( $wbg_display_download_button ? 'checked' : null ) ;
 ?> >
+            </td>
+            <?php 
+?>
+        </tr>
+        <!-- Hide Other Books From -->
+        <?php 
+?>
+        <!-- Hide Back Button -->
+        <tr>
+            <th scope="row" style="text-align: right;">
+                <label for="wbg_hide_back_button"><?php 
+_e( 'Hide Back Button', WBG_TXT_DOMAIN );
+?>?</label>
+            </th>
+            <td>
+                <input type="checkbox" name="wbg_hide_back_button" id="wbg_hide_back_button" value="1" <?php 
+echo  ( $wbg_hide_back_button ? 'checked' : null ) ;
+?> >
+            </td>
+            <th scope="row" style="text-align: right;">
+                <label><?php 
+_e( 'Back Button Label', WBG_TXT_DOMAIN );
+?>:</label>
+            </th>
+            <td>
+                <input type="text" name="wbg_back_button_label" class="medium-text" placeholder="<?php 
+esc_attr_e( $wbg_back_button_label );
+?>"
+                    value="<?php 
+esc_attr_e( $wbg_back_button_label );
+?>">
             </td>
         </tr>
         <tr>

@@ -37,7 +37,7 @@ if ( $wbg_display_category ) {
         <?php 
     $wbgCatArray = array();
     foreach ( $wbgCategory as $cat ) {
-        $wbgCatArray[] = "<a href='" . esc_url( home_url( '/' . $wbg_gallery_page_slug . '/?wbg_category_s=' . urlencode( $cat->name ) ) ) . "' class='wbg-single-link'>" . $cat->name . "</a>";
+        $wbgCatArray[] = "<a href='" . esc_url( home_url( '/book-category/' . urlencode( $cat->slug ) ) ) . "' class='wbg-single-link'>" . $cat->name . "</a>";
     }
     echo  implode( ', ', $wbgCatArray ) ;
     ?>

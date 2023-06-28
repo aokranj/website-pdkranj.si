@@ -81,8 +81,8 @@ msgid "All Book Categories"
 msgstr "كل الكتاب فئات"
 
 #: admin/cls-books-gallery-admin.php:220
-msgid "All Book Formates"
-msgstr "كل كتاب Formates"
+msgid "All Book Formats"
+msgstr "كل كتاب Formats"
 
 #: admin/cls-books-gallery-admin.php:245
 msgid "All Book Series"
@@ -191,8 +191,8 @@ msgid "Book Format"
 msgstr "شكل كتاب"
 
 #: admin/cls-books-gallery-admin.php:217 admin/cls-books-gallery-admin.php:227
-msgid "Book Formates"
-msgstr "كتاب Formates"
+msgid "Book Formats"
+msgstr "كتاب Formats"
 
 #: admin/cls-books-gallery-admin.php:353
 #: admin/view/partial/single-content.php:37
@@ -989,8 +989,8 @@ msgid "Search Book Categories"
 msgstr "البحث الكتاب فئات"
 
 #: admin/cls-books-gallery-admin.php:219
-msgid "Search Book Formates"
-msgstr "البحث كتاب Formates"
+msgid "Search Book Formats"
+msgstr "البحث كتاب Formats"
 
 #: admin/cls-books-gallery-admin.php:244
 msgid "Search Book Series"

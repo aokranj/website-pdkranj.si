@@ -1,22 +1,35 @@
 <?php
+/**
+ * If the customer use the 2.0.0 version call this class
+ * update some Necessary option setting value for compatible this version
+ *
+ * @version 1.0.0
+ * @package WP_DARK_MODE
+ */
+
 // if direct access than exit the file.
 defined( 'ABSPATH' ) || exit();
+
 /**
- * if the customer use the 2.0.0 version call this class
+ * If the customer use the 2.0.0 version call this class
  * update some Necessary option setting value for compatible this version
- * 
+ *
  * @version 1.0.0
  */
 class WP_Dark_Mode_Update_2_0_0 {
-	/** 
+
+	/**
+	 * Contains class instance.
+	 *
 	 * @var null
 	 */
 	private static $instance = null;
+
 	/**
-	 * WP_Dark_Mode_Update_2_0_0 constructor.
+	 * Class constructor.
 	 *
 	 * @return void
-	 * @version 1.0.0 
+	 * @version 1.0.0
 	 */
 	public function __construct() {
 		$this->update_switch_settings();
@@ -25,11 +38,11 @@ class WP_Dark_Mode_Update_2_0_0 {
 		$this->update_color_settings();
 
 		set_transient( 'wp_dark_mode_review_notice_interval', 'off', 7 * DAY_IN_SECONDS );
-
 	}
+
 	/**
-	 * update switch settings option value
-	 * 
+	 * Update switch settings option value
+	 *
 	 * @return void
 	 * @version 1.0.0
 	 */
@@ -41,13 +54,14 @@ class WP_Dark_Mode_Update_2_0_0 {
 
 		update_option( 'wp_dark_mode_switch', $new_settings );
 	}
+
 	/**
-	 * update includes excludes setting value
-	 * under the includes/excluedes sider bar nav
-	 * 
+	 * Update includes excludes setting value
+	 * under the includes/excludes sider bar nav
+	 *
 	 * @return void
 	 * @version 1.0.0
- 	 */
+	 */
 	private function update_includes_excludes() {
 		$advanced_settings = (array) get_option( 'wp_dark_mode_advanced', [] );
 		$display_settings  = (array) get_option( 'wp_dark_mode_display', [] );
@@ -56,12 +70,13 @@ class WP_Dark_Mode_Update_2_0_0 {
 
 		update_option( 'wp_dark_mode_includes_excludes', $new_settings );
 	}
+
 	/**
-	 * update advanced settings option value
-	 * 
-	 * under the advanced settings  sider bar nav
-	 * @version 1.0.0
+	 * Update advanced settings option value
 	 *
+	 * Under the advanced settings sider bar nav
+	 *
+	 * @version 1.0.0
 	 * @return void
 	 */
 	private function update_advanced_settings() {
@@ -72,8 +87,9 @@ class WP_Dark_Mode_Update_2_0_0 {
 
 		update_option( 'wp_dark_mode_advanced', $new_settings );
 	}
+
 	/**
-	 * update color settings option value
+	 * Update color settings option value
 	 *
 	 * @return void
 	 * @version 1.0.0
@@ -84,6 +100,7 @@ class WP_Dark_Mode_Update_2_0_0 {
 
 		update_option( 'wp_dark_mode_color', $color_settings );
 	}
+
 	/**
 	 * Singleton instance WP_Dark_Mode_Update_2_0_0 class
 	 *
@@ -97,9 +114,9 @@ class WP_Dark_Mode_Update_2_0_0 {
 
 		return self::$instance;
 	}
-
 }
+
 /**
- * kick out the class
+ * Kick out the class
  */
 WP_Dark_Mode_Update_2_0_0::instance();

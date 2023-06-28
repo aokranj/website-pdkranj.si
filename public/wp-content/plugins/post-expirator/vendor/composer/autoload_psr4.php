@@ -6,4 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
+    'PPVersionNotices\\' => array($vendorDir . '/publishpress/wordpress-version-notices/src'),
 );
