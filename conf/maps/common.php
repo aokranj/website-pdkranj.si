@@ -594,6 +594,37 @@ return [
             'primary' => 3,
           ],
         ],
+        'sidebars_widgets' => [
+          'type' => 'array',
+          'value' => [
+            'data' => [
+              'type' => 'array',
+              'value' => [
+                'footer' => [
+                  'type' => 'array',
+                  'value' => [
+                  ],
+                ],
+                'sidebar' => [
+                  'type' => 'array',
+                  'value' => [
+                    0 => 'text-5',
+                    1 => 'search-2',
+                    2 => 'text-3',
+                    3 => 'text-4',
+                    4 => 'categories-2',
+                  ],
+                ],
+                'wp_inactive_widgets' => [
+                  'type' => 'array',
+                  'value' => [
+                  ],
+                ],
+              ],
+            ],
+            'time' => 1647467279,
+          ],
+        ],
       ],
     ],
     'theme_mods_twentytwelve' => [

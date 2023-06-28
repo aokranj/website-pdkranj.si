@@ -211,7 +211,7 @@ More information is available at https://github.com/wp-cli-confmaps/wp-cli-confm
             if (!ConfMapService::doesMapIdExist($mapId)) {
                 WP_CLI::error("Conf map with id '$mapId' is not defined (hint: 'wp confmaps list' lists all defined conf maps)");
             }
-            $confMap = ConfMapService::getMap($mapId);
+            $confMap = ConfMapService::getMap($mapId, "add");
         } else {
             $confMap = ConfMapService::mergeDefinedMapSet();
         }
