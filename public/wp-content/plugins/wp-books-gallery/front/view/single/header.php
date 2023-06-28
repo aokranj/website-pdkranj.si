@@ -55,10 +55,18 @@ foreach ( $wbgSingleStyles as $ss_name => $ss_value ) {
 }
 
 // General Settings
-$wbgGeneralSettings     = get_option('wbg_core_settings');
-$wbg_gallery_page_slug  = isset( $wbgGeneralSettings['wbg_gallery_page_slug'] ) ? $wbgGeneralSettings['wbg_gallery_page_slug'] : 'books';
-if ( '' === $wbg_gallery_page_slug ) {
-    $wbg_gallery_page_slug = 'books';
+$wbg_gallery_page_slug  = ( '' != $wbg_gallery_page_slug ) ? $wbg_gallery_page_slug : 'books';
+$wbg_dwnld_btn_url_same_tab = ( ! $wbg_dwnld_btn_url_same_tab ) ? 'target="_blank"' : '';
+
+$wbg_detail_settings = get_option('wbg_detail_settings');
+
+if ( empty( $wbg_detail_settings )) {
+	$wbg_author_info = 1;
+	$wbg_display_category = 1;
+	$wbg_display_publisher = 1;
+	$wbg_display_publish_date = 1;
+	$wbg_display_isbn = 1;
+	$wbg_display_description = 1;
 }
 
 // Load Styling

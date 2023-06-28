@@ -35,6 +35,9 @@ if ( $wbgShowCoreMessage ) {
         <div class="wbg_personal_wrap wbg_personal_help" style="width: 75%; float: left;">
         
             <form name="wbg_general_settings_form" role="form" class="form-horizontal" method="post" action="" id="wbg-general-settings-form">
+            <?php 
+wp_nonce_field( 'wbg_general_action', 'wbg_general_nonce_field' );
+?>
             <table class="wbg-general-settings-table">
                 <tr>
                     <th scope="row">
@@ -127,6 +130,46 @@ echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Profess
 ?></span>
                             <?php 
 ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label><?php 
+_e( 'Default Cover Image Url', WBG_TXT_DOMAIN );
+?></label>
+                    </th>
+                    <td colspan="3">
+                        <input type="text" name="wbg_default_book_cover_url" class="widefat" value="<?php 
+esc_attr_e( $wbg_default_book_cover_url );
+?>"><br>
+                        <?php 
+_e( 'This image will display when there is no book cover image', WBG_TXT_DOMAIN );
+?>.
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label><?php 
+_e( 'No Book Message', WBG_TXT_DOMAIN );
+?></label>
+                    </th>
+                    <td colspan="3">
+                        <input type="text" name="wbg_no_book_message" class="widefat" value="<?php 
+esc_attr_e( $wbg_no_book_message );
+?>">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="wbg_dwnld_btn_url_same_tab"><?php 
+_e( 'Button Url in the Same Window', WBG_TXT_DOMAIN );
+?>?</label>
+                    </th>
+                    <td colspan="3">
+                        <input type="checkbox" name="wbg_dwnld_btn_url_same_tab" class="wbg_dwnld_btn_url_same_tab" id="wbg_dwnld_btn_url_same_tab" value="1"
+                            <?php 
+echo  ( $wbg_dwnld_btn_url_same_tab ? 'checked' : '' ) ;
+?>>
                     </td>
                 </tr>
             </table>

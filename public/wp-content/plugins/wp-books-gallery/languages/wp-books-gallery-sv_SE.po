@@ -74,8 +74,8 @@ msgid "All Book Categories"
 msgstr "Alla bokkategorier"
 
 #: admin/cls-books-gallery-admin.php:220
-msgid "All Book Formates"
-msgstr "Alla Boka Formates"
+msgid "All Book Formats"
+msgstr "Alla Boka Formats"
 
 #: admin/cls-books-gallery-admin.php:245
 msgid "All Book Series"
@@ -186,8 +186,8 @@ msgid "Book Format"
 msgstr "Boka Format"
 
 #: admin/cls-books-gallery-admin.php:217 admin/cls-books-gallery-admin.php:227
-msgid "Book Formates"
-msgstr "Boka Formates"
+msgid "Book Formats"
+msgstr "Boka Formats"
 
 #: admin/cls-books-gallery-admin.php:353
 #: admin/view/partial/single-content.php:37
@@ -1049,8 +1049,8 @@ msgid "Search Book Categories"
 msgstr "Sök bokkategori"
 
 #: admin/cls-books-gallery-admin.php:219
-msgid "Search Book Formates"
-msgstr "Sök Bok Formates"
+msgid "Search Book Formats"
+msgstr "Sök Bok Formats"
 
 #: admin/cls-books-gallery-admin.php:244
 msgid "Search Book Series"

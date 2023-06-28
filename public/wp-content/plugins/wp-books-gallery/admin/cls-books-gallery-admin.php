@@ -263,8 +263,8 @@ class WBG_Admin
         $wbg_books_meta_params = array(
             'wbg_sub_title'      => ( isset( $_POST['wbg_sub_title'] ) ? sanitize_text_field( $_POST['wbg_sub_title'] ) : '' ),
             'wbg_author'         => ( isset( $_POST['wbg_author'] ) ? sanitize_text_field( $_POST['wbg_author'] ) : '' ),
-            'wbg_download_link'  => ( isset( $_POST['wbg_download_link'] ) ? sanitize_text_field( $_POST['wbg_download_link'] ) : '' ),
-            'wbgp_buy_link'      => ( isset( $_POST['wbgp_buy_link'] ) ? sanitize_text_field( $_POST['wbgp_buy_link'] ) : '' ),
+            'wbg_download_link'  => ( isset( $_POST['wbg_download_link'] ) ? sanitize_url( $_POST['wbg_download_link'] ) : '' ),
+            'wbgp_buy_link'      => ( isset( $_POST['wbgp_buy_link'] ) ? sanitize_url( $_POST['wbgp_buy_link'] ) : '' ),
             'wbg_publisher'      => ( isset( $_POST['wbg_publisher'] ) ? sanitize_text_field( $_POST['wbg_publisher'] ) : '' ),
             'wbg_co_publisher'   => ( isset( $_POST['wbg_co_publisher'] ) ? sanitize_text_field( $_POST['wbg_co_publisher'] ) : '' ),
             'wbg_published_on'   => ( isset( $_POST['wbg_published_on'] ) ? sanitize_text_field( $_POST['wbg_published_on'] ) : '' ),
@@ -277,7 +277,7 @@ class WBG_Admin
             'wbg_dimension'      => ( isset( $_POST['wbg_dimension'] ) ? sanitize_text_field( $_POST['wbg_dimension'] ) : '' ),
             'wbg_filesize'       => ( isset( $_POST['wbg_filesize'] ) ? sanitize_text_field( $_POST['wbg_filesize'] ) : '' ),
             'wbg_status'         => ( isset( $_POST['wbg_status'] ) ? sanitize_text_field( $_POST['wbg_status'] ) : '' ),
-            'wbgp_img_url'       => ( isset( $_POST['wbgp_img_url'] ) ? sanitize_text_field( $_POST['wbgp_img_url'] ) : '' ),
+            'wbgp_img_url'       => ( isset( $_POST['wbgp_img_url'] ) ? sanitize_url( $_POST['wbgp_img_url'] ) : '' ),
             'wbgp_regular_price' => ( isset( $_POST['wbgp_regular_price'] ) && filter_var( $_POST['wbgp_regular_price'], FILTER_SANITIZE_NUMBER_INT ) ? $_POST['wbgp_regular_price'] : '' ),
             'wbgp_sale_price'    => ( isset( $_POST['wbgp_sale_price'] ) && filter_var( $_POST['wbgp_sale_price'], FILTER_SANITIZE_NUMBER_INT ) ? $_POST['wbgp_sale_price'] : '' ),
             'wbg_cost_type'      => ( isset( $_POST['wbg_cost_type'] ) && filter_var( $_POST['wbg_cost_type'], FILTER_SANITIZE_STRING ) ? $_POST['wbg_cost_type'] : '' ),
@@ -285,6 +285,7 @@ class WBG_Admin
             'wbg_item_weight'    => ( isset( $_POST['wbg_item_weight'] ) ? sanitize_text_field( $_POST['wbg_item_weight'] ) : '' ),
             'wbg_edition'        => ( isset( $_POST['wbg_edition'] ) ? sanitize_text_field( $_POST['wbg_edition'] ) : '' ),
             'wbg_illustrator'    => ( isset( $_POST['wbg_illustrator'] ) ? sanitize_text_field( $_POST['wbg_illustrator'] ) : '' ),
+            'wbg_translator'     => ( isset( $_POST['wbg_translator'] ) ? sanitize_text_field( $_POST['wbg_translator'] ) : '' ),
         );
         $wbg_sale_sources = $this->wbg_mss_items();
         foreach ( $wbg_sale_sources as $source ) {
@@ -316,7 +317,14 @@ class WBG_Admin
         }
         $wbgShowCoreMessage = false;
         if ( isset( $_POST['updateCoreSettings'] ) ) {
-            $wbgShowCoreMessage = $this->wbg_set_core_settings( $_POST );
+            
+            if ( !isset( $_POST['wbg_general_nonce_field'] ) || !wp_verify_nonce( $_POST['wbg_general_nonce_field'], 'wbg_general_action' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $wbgShowCoreMessage = $this->wbg_set_core_settings( $_POST );
+            }
+        
         }
         $wbgCoreSettings = $this->wbg_get_core_settings();
         require_once WBG_PATH . 'admin/view/general-settings.php';
@@ -333,11 +341,25 @@ class WBG_Admin
         $tab = ( isset( $_GET['tab'] ) ? sanitize_text_field( $_GET['tab'] ) : null );
         $wbgShowGeneralMessage = false;
         if ( isset( $_POST['updateGalleryContentSettings'] ) ) {
-            $wbgShowGeneralMessage = $this->wbg_set_gallery_settings_content( $_POST );
+            
+            if ( !isset( $_POST['wbg_gallery_c_nonce_field'] ) || !wp_verify_nonce( $_POST['wbg_gallery_c_nonce_field'], 'wbg_gallery_c_action' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $wbgShowGeneralMessage = $this->wbg_set_gallery_settings_content( $_POST );
+            }
+        
         }
         $wpsdGallerySettingsContent = $this->wbg_get_gallery_settings_content();
         if ( isset( $_POST['updateGalleryStylesSettings'] ) ) {
-            $wbgShowGeneralMessage = $this->wbg_set_gallery_styles_settings( $_POST );
+            
+            if ( !isset( $_POST['wbg_gallery_s_nonce_field'] ) || !wp_verify_nonce( $_POST['wbg_gallery_s_nonce_field'], 'wbg_gallery_s_action' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $wbgShowGeneralMessage = $this->wbg_set_gallery_styles_settings( $_POST );
+            }
+        
         }
         $wpsdGallerySettingsStyles = $this->wbg_get_gallery_styles_settings();
         require_once WBG_PATH . 'admin/view/gallery-settings.php';
@@ -352,12 +374,26 @@ class WBG_Admin
         $wbgShowMessage = false;
         // Content
         if ( isset( $_POST['updateSearchContent'] ) ) {
-            $wbgShowMessage = $this->wbg_set_search_content_settings( $_POST );
+            
+            if ( !isset( $_POST['wbg_search_content_nonce_field'] ) || !wp_verify_nonce( $_POST['wbg_search_content_nonce_field'], 'wbg_search_content_action' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $wbgShowMessage = $this->wbg_set_search_content_settings( $_POST );
+            }
+        
         }
         $wbgSearchContent = $this->wbg_get_search_content_settings();
         // Style
         if ( isset( $_POST['updateSearchStyles'] ) ) {
-            $wbgShowMessage = $this->wbg_set_search_styles_settings( $_POST );
+            
+            if ( !isset( $_POST['wbg_search_style_nonce_field'] ) || !wp_verify_nonce( $_POST['wbg_search_style_nonce_field'], 'wbg_search_style_action' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $wbgShowMessage = $this->wbg_set_search_styles_settings( $_POST );
+            }
+        
         }
         $wbgSearchStyles = $this->wbg_get_search_styles_settings();
         require_once WBG_PATH . 'admin/view/search-settings.php';
@@ -372,12 +408,26 @@ class WBG_Admin
         $wbgShowMessage = false;
         // Content
         if ( isset( $_POST['updateDetailsContent'] ) ) {
-            $wbgShowMessage = $this->wbg_set_single_content_settings( $_POST );
+            
+            if ( !isset( $_POST['wbg_detail_content_nonce_field'] ) || !wp_verify_nonce( $_POST['wbg_detail_content_nonce_field'], 'wbg_detail_content_action' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $wbgShowMessage = $this->wbg_set_single_content_settings( $_POST );
+            }
+        
         }
         $wbgDetailsContent = $this->wbg_get_single_content_settings();
         // Style
         if ( isset( $_POST['updateSingleStyles'] ) ) {
-            $wbgShowMessage = $this->wbg_set_single_styles_settings( $_POST );
+            
+            if ( !isset( $_POST['wbg_detail_style_nonce_field'] ) || !wp_verify_nonce( $_POST['wbg_detail_style_nonce_field'], 'wbg_detail_style_action' ) ) {
+                print 'Sorry, your nonce did not verify.';
+                exit;
+            } else {
+                $wbgShowMessage = $this->wbg_set_single_styles_settings( $_POST );
+            }
+        
         }
         $wbgSingleStyles = $this->wbg_get_single_styles_settings();
         require_once WBG_PATH . 'admin/view/single-settings.php';
@@ -445,20 +495,18 @@ class WBG_Admin
         require_once WBG_PATH . 'admin/view/partial/multiple-sale-sources.php';
     }
     
-    private function wbg_mss_items()
+    function wbg_register_sidebar()
     {
-        return [
-            'Alibris',
-            'Amazon Kindle',
-            'Apple Books',
-            'Barnes & Noble',
-            'Google Play',
-            'Kobo',
-            'Lifeway',
-            'Mardel',
-            'Smashwords',
-            'Sony Reader'
-        ];
+        register_sidebar( array(
+            'name'          => __( 'Books Gallery Sidebar', WBG_TXT_DOMAIN ),
+            'id'            => 'wbg-gallery-sidebar',
+            'description'   => '',
+            'class'         => 'sidebar',
+            'before_widget' => '<div id="%1$s" class="widget %2$s single-sidebar">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<div class="title"><h3 class="wbg-sidebar">',
+            'after_title'   => '</h3></div>',
+        ) );
     }
 
 }

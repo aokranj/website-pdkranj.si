@@ -33,9 +33,14 @@ trait Wbg_Gallery_Settings_Content
 
         return [
             [
+                'name'      => 'wbg_gallary_template',
+                'type'      => 'string',
+                'default'   => 'grid',
+            ],
+            [
                 'name'      => 'wbg_gallary_column',
                 'type'      => 'number',
-                'default'   => 3,
+                'default'   => 4,
             ],
             [
                 'name'      => 'wbg_gallary_column_mobile',
@@ -46,6 +51,11 @@ trait Wbg_Gallery_Settings_Content
                 'name'      => 'wbg_book_cover_width',
                 'type'      => 'string',
                 'default'   => 'default',
+            ],
+            [
+                'name'      => 'wbg_book_cover_size',
+                'type'      => 'string',
+                'default'   => 'medium-full',
             ],
             [
                 'name'      => 'wbg_book_image_animation',
@@ -75,7 +85,7 @@ trait Wbg_Gallery_Settings_Content
             [
                 'name'      => 'wbg_title_length',
                 'type'      => 'number',
-                'default'   => 4,
+                'default'   => 5,
             ],
             [
                 'name'      => 'wbg_display_category',

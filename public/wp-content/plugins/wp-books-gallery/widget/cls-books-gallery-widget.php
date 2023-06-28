@@ -41,6 +41,7 @@ class Wbg_Widget extends WP_Widget
         $wbg_wl_border_radius = ( !empty($instance['wbg_wl_border_radius']) && filter_var( $instance['wbg_wl_border_radius'], FILTER_SANITIZE_NUMBER_INT ) ? $instance['wbg_wl_border_radius'] : 0 );
         $wbg_wl_border_color = ( isset( $instance['wbg_wl_border_color'] ) ? sanitize_text_field( $instance['wbg_wl_border_color'] ) : '#DDDDDD' );
         $wbg_wl_bg_color = ( isset( $instance['wbg_wl_bg_color'] ) ? sanitize_text_field( $instance['wbg_wl_bg_color'] ) : '#FFFFFF' );
+        $wbg_wl_container_padding = ( isset( $instance['wbg_wl_container_padding'] ) ? $instance['wbg_wl_container_padding'] : 0 );
         $wbg_wl_title_color = ( isset( $instance['wbg_wl_title_color'] ) ? sanitize_text_field( $instance['wbg_wl_title_color'] ) : '#242424' );
         $wbg_wl_title_font_size = ( isset( $instance['wbg_wl_title_font_size'] ) && filter_var( $instance['wbg_wl_title_font_size'], FILTER_SANITIZE_NUMBER_INT ) ? $instance['wbg_wl_title_font_size'] : 16 );
         $wbg_wl_category_color = ( isset( $instance['wbg_wl_category_color'] ) ? sanitize_text_field( $instance['wbg_wl_category_color'] ) : '#555555' );
@@ -64,6 +65,9 @@ class Wbg_Widget extends WP_Widget
 			background: <?php 
         esc_attr_e( $wbg_wl_bg_color );
         ?>;
+			padding: <?php 
+        esc_attr_e( $wbg_wl_container_padding );
+        ?>px;
 		}
 		.wbg-main-wrapper.wbg-view-widget .wbg-item a.wgb-item-link {
 			color: <?php 
@@ -121,10 +125,11 @@ class Wbg_Widget extends WP_Widget
     public function form( $instance )
     {
         $title = ( isset( $instance['title'] ) ? $instance['title'] : __( 'Books Gallery', WBG_TXT_DOMAIN ) );
-        $wbg_wl_border_width = ( filter_var( $instance['wbg_wl_border_width'], FILTER_SANITIZE_NUMBER_INT ) ? $instance['wbg_wl_border_width'] : 0 );
+        $wbg_wl_border_width = ( isset( $instance['wbg_wl_cat_font_size'] ) && filter_var( $instance['wbg_wl_border_width'], FILTER_SANITIZE_NUMBER_INT ) ? $instance['wbg_wl_border_width'] : 0 );
         $wbg_wl_border_color = ( isset( $instance['wbg_wl_border_color'] ) ? sanitize_text_field( $instance['wbg_wl_border_color'] ) : '#DDDDDD' );
         $wbg_wl_border_radius = ( !empty($instance['wbg_wl_border_radius']) && filter_var( $instance['wbg_wl_border_radius'], FILTER_SANITIZE_NUMBER_INT ) ? $instance['wbg_wl_border_radius'] : 0 );
         $wbg_wl_bg_color = ( isset( $instance['wbg_wl_bg_color'] ) ? sanitize_text_field( $instance['wbg_wl_bg_color'] ) : '#FFFFFF' );
+        $wbg_wl_container_padding = ( isset( $instance['wbg_wl_container_padding'] ) && filter_var( $instance['wbg_wl_container_padding'], FILTER_SANITIZE_NUMBER_INT ) ? $instance['wbg_wl_container_padding'] : 0 );
         $wbg_wl_title_color = ( isset( $instance['wbg_wl_title_color'] ) ? sanitize_text_field( $instance['wbg_wl_title_color'] ) : '#242424' );
         $wbg_wl_title_font_size = ( isset( $instance['wbg_wl_title_font_size'] ) && filter_var( $instance['wbg_wl_title_font_size'], FILTER_SANITIZE_NUMBER_INT ) ? $instance['wbg_wl_title_font_size'] : 16 );
         $wbg_wl_category_color = ( isset( $instance['wbg_wl_category_color'] ) ? sanitize_text_field( $instance['wbg_wl_category_color'] ) : '#555555' );
@@ -205,6 +210,19 @@ class Wbg_Widget extends WP_Widget
         esc_attr_e( $wbg_wl_bg_color );
         ?>">
 			<div id="colorpicker"></div>
+		</p>
+		<p>
+			<label><?php 
+        _e( 'Padding', WBG_TXT_DOMAIN );
+        ?>:</label>
+			<input type="number" min="0" max="20" step="1" class="tiny-text" id="<?php 
+        echo  $this->get_field_id( 'wbg_wl_container_padding' ) ;
+        ?>" name="<?php 
+        echo  $this->get_field_name( 'wbg_wl_container_padding' ) ;
+        ?>" value="<?php 
+        esc_attr_e( $wbg_wl_container_padding );
+        ?>">
+			px
 		</p>
 		<hr><label><?php 
         _e( 'Book Title', WBG_TXT_DOMAIN );
@@ -317,7 +335,7 @@ class Wbg_Widget extends WP_Widget
 		</p>
 		<p>
 			<label><?php 
-        _e( 'Background Color', WBG_TXT_DOMAIN );
+        _e( 'Font Color', WBG_TXT_DOMAIN );
         ?>:</label>
 			<input type="text" class="wbg-color-picker" id="<?php 
         echo  $this->get_field_id( 'wbg_wl_dnld_btn_font_clr' ) ;
@@ -366,6 +384,7 @@ class Wbg_Widget extends WP_Widget
         $instance['wbg_wl_border_color'] = ( isset( $new_instance['wbg_wl_border_color'] ) ? sanitize_text_field( $new_instance['wbg_wl_border_color'] ) : '#DDDDDD' );
         $instance['wbg_wl_border_radius'] = ( filter_var( $new_instance['wbg_wl_border_radius'], FILTER_SANITIZE_NUMBER_INT ) ? $new_instance['wbg_wl_border_radius'] : 0 );
         $instance['wbg_wl_bg_color'] = ( isset( $new_instance['wbg_wl_bg_color'] ) ? sanitize_text_field( $new_instance['wbg_wl_bg_color'] ) : '#FFF' );
+        $instance['wbg_wl_container_padding'] = ( filter_var( $new_instance['wbg_wl_container_padding'], FILTER_SANITIZE_NUMBER_INT ) ? $new_instance['wbg_wl_container_padding'] : 0 );
         $instance['wbg_wl_title_color'] = ( isset( $new_instance['wbg_wl_title_color'] ) ? sanitize_text_field( $new_instance['wbg_wl_title_color'] ) : '#242424' );
         $instance['wbg_wl_title_font_size'] = ( filter_var( $new_instance['wbg_wl_title_font_size'], FILTER_SANITIZE_NUMBER_INT ) ? $new_instance['wbg_wl_title_font_size'] : 16 );
         $instance['wbg_wl_category_color'] = ( isset( $new_instance['wbg_wl_category_color'] ) ? sanitize_text_field( $new_instance['wbg_wl_category_color'] ) : '#555555' );

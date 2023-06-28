@@ -81,8 +81,8 @@ msgid "All Book Categories"
 msgstr "همه دسته های کتاب"
 
 #: admin/cls-books-gallery-admin.php:220
-msgid "All Book Formates"
-msgstr "همه کتاب Formates"
+msgid "All Book Formats"
+msgstr "همه کتاب Formats"
 
 #: admin/cls-books-gallery-admin.php:245
 msgid "All Book Series"
@@ -193,8 +193,8 @@ msgid "Book Format"
 msgstr "قالب کتاب"
 
 #: admin/cls-books-gallery-admin.php:217 admin/cls-books-gallery-admin.php:227
-msgid "Book Formates"
-msgstr "کتاب Formates"
+msgid "Book Formats"
+msgstr "کتاب Formats"
 
 #: admin/cls-books-gallery-admin.php:353
 #: admin/view/partial/single-content.php:37
@@ -1036,8 +1036,8 @@ msgid "Search Book Categories"
 msgstr "جستجوی دسته کتاب ها"
 
 #: admin/cls-books-gallery-admin.php:219
-msgid "Search Book Formates"
-msgstr "جستجوی کتاب Formates"
+msgid "Search Book Formats"
+msgstr "جستجوی کتاب Formats"
 
 #: admin/cls-books-gallery-admin.php:244
 msgid "Search Book Series"

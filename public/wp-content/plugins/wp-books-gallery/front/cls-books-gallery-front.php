@@ -170,6 +170,15 @@ class WBG_Front
         return $template;
     }
     
+    function wbg_load_tag_template( $template )
+    {
+        global  $post ;
+        if ( 'books' === $post->post_type ) {
+            return WBG_PATH . 'front/view/tag.php';
+        }
+        return $template;
+    }
+    
     function wbg_load_rating( $post_id )
     {
         global  $wpdb ;

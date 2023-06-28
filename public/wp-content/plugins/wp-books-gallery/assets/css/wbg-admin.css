@@ -248,5 +248,27 @@ input#wbg_shortcode {
     border-bottom: 1px solid #ccd0d4;
 }
 
+.wbg-admin-sidebar .postbox.pro-features {
+    background: #202332;
+}
+
+.wbg-admin-sidebar .postbox.pro-features h3.hndle {
+    font-size: 18px;
+    color: #E6DB55;
+}
+
+.wbg-admin-sidebar .postbox.pro-features ul {
+    width: 90%;
+    margin: auto;
+    text-align: left;
+    list-style: none;
+    color: #FFFFFF;
+}
+
+.wbg-admin-sidebar .postbox.pro-features ul a {
+    color: #35c481;
+    text-decoration: none;
+}
+
 
 /* Common Admin Styles Ended */

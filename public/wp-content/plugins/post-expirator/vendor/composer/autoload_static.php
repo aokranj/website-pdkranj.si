@@ -4,11 +4,42 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita29fda89681b0e16b29b1d03f8491329
+class ComposerStaticInit7fe35e003fe949c9ffcd667da236c71c
 {
     public static $files = array (
+        'f8bfd4c5c7018cdd6b24a61a7f6491de' => __DIR__ . '/..' . '/publishpress/vendor-locator-future/includes.php',
+        '0078757fbd019a5f202f2be6585c3626' => __DIR__ . '/..' . '/publishpress/wordpress-banners/BannersMain.php',
         '41c664bd04a95c2d6a2f2a3e00f06593' => __DIR__ . '/..' . '/publishpress/wordpress-reviews/ReviewsController.php',
-        '44b552ca20ee394f431a64ca58af7ab1' => __DIR__ . '/../..' . '/classes/DummyForAutoloadDetection.php',
+        'a3d26137b9bd0e5c180ba24186046ae6' => __DIR__ . '/../..' . '/define-base-path.php',
+    );
+
+    public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'Psr\\Container\\' => 14,
+            'PPVersionNotices\\' => 17,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'PPVersionNotices\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/publishpress/wordpress-version-notices/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'Pimple' => 
+            array (
+                0 => __DIR__ . '/..' . '/pimple/pimple/src',
+            ),
+        ),
     );
 
     public static $classMap = array (
@@ -18,7 +49,10 @@ class ComposerStaticInita29fda89681b0e16b29b1d03f8491329
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInita29fda89681b0e16b29b1d03f8491329::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7fe35e003fe949c9ffcd667da236c71c::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7fe35e003fe949c9ffcd667da236c71c::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit7fe35e003fe949c9ffcd667da236c71c::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit7fe35e003fe949c9ffcd667da236c71c::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -3,6 +3,11 @@
     // USE STRICT
     "use strict";
 
+    var wbgDetailsDes = $(".wbg-details-wrapper").width();
+    if (wbgDetailsDes > 500) {
+        $(".wbg-details-description").width(wbgDetailsDes);
+    }
+
     // searchable dropdown select
     $('div.wbg-search-item select.wbg-selectize').selectize();
 

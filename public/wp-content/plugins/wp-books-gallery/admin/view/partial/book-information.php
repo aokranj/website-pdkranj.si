@@ -27,6 +27,7 @@ $wbg_is_featured = get_post_meta( $post->ID, 'wbg_is_featured', true );
 $wbg_item_weight = get_post_meta( $post->ID, 'wbg_item_weight', true );
 $wbg_edition = get_post_meta( $post->ID, 'wbg_edition', true );
 $wbg_illustrator = get_post_meta( $post->ID, 'wbg_illustrator', true );
+$wbg_translator = get_post_meta( $post->ID, 'wbg_translator', true );
 ?>
 <table class="form-table">
     <tr>
@@ -266,6 +267,7 @@ echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Profess
 ?>
         </td>
     </tr>
+    <!-- Regular Price -->
     <tr>
         <th scope="row">
             <label><?php 
@@ -282,6 +284,7 @@ echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now
 ?>
         </td>
     </tr>
+    <!-- Discount Price -->
     <tr>
         <th scope="row">
             <label><?php 
@@ -298,6 +301,7 @@ echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Please Upgrade Now
 ?>
         </td>
     </tr>
+    <!-- Item Weight -->
     <tr>
         <th scope="row">
             <label><?php 
@@ -314,6 +318,7 @@ echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Profess
 ?>
         </td>
     </tr>
+    <!-- Edition -->
     <tr>
         <th scope="row">
             <label><?php 
@@ -330,10 +335,28 @@ echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Profess
 ?>
         </td>
     </tr>
+    <!-- Illustrator -->
     <tr>
         <th scope="row">
             <label><?php 
 _e( 'Illustrator', WBG_TXT_DOMAIN );
+?></label>
+        </th>
+        <td>
+            <?php 
+?>
+                <span><?php 
+echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional', WBG_TXT_DOMAIN ) . '</a>' ;
+?></span>
+                <?php 
+?>
+        </td>
+    </tr>
+    <!-- Translator -->
+    <tr>
+        <th scope="row">
+            <label><?php 
+_e( 'Translator', WBG_TXT_DOMAIN );
 ?></label>
         </th>
         <td>
@@ -351,6 +374,7 @@ echo  '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Profess
 do_action( 'wbg_admin_book_meta_after_filesize' );
 ?>
 
+    <!-- Status -->
     <tr>
         <th scope="row">
             <label><?php 

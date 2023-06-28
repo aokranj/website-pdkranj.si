@@ -11,11 +11,40 @@ foreach ( $wpsdGallerySettingsContent as $option_name => $option_value ) {
 }
 ?>
 <form name="wbg_general_settings_form" role="form" class="form-horizontal" method="post" action="" id="wbg-general-settings-form">
+    <?php 
+wp_nonce_field( 'wbg_gallery_c_action', 'wbg_gallery_c_nonce_field' );
+?>
     <table class="wbg-gallery-conent-settings-table">
+        <tr>
+            <th scope="row">
+                <label><?php 
+_e( 'Gallery Template', WBG_TXT_DOMAIN );
+?>:</label>
+            </th>
+            <td colspan="3">
+                <select name="wbg_gallary_template" class="medium-text">
+                    <option value="grid" <?php 
+echo  ( 'grid' == $wbg_gallary_template ? 'selected' : '' ) ;
+?> ><?php 
+_e( 'Grid', WBG_TXT_DOMAIN );
+?></option>
+                    <option value="list" <?php 
+echo  ( 'list' == $wbg_gallary_template ? 'selected' : '' ) ;
+?> ><?php 
+_e( 'List', WBG_TXT_DOMAIN );
+?></option>
+                    <option value="grid-classic" <?php 
+echo  ( 'grid-classic' == $wbg_gallary_template ? 'selected' : '' ) ;
+?> ><?php 
+_e( 'Grid Classic', WBG_TXT_DOMAIN );
+?></option>
+                </select>
+            </td>
+        </tr>
         <tr class="wbg_gallary_column">
             <th scope="row">
                 <label for="wbg_gallary_column"><?php 
-_e( 'Gallary Columns', WBG_TXT_DOMAIN );
+_e( 'Gallery Columns', WBG_TXT_DOMAIN );
 ?>:</label>
             </th>
             <td colspan="3">
@@ -58,23 +87,32 @@ _e( '2', WBG_TXT_DOMAIN );
         <tr>
             <th scope="row">
                 <label><?php 
-_e( 'Image Width', WBG_TXT_DOMAIN );
+_e( 'Image Size', WBG_TXT_DOMAIN );
 ?>:</label>
             </th>
             <td>
-                <input type="radio" name="wbg_book_cover_width" id="wbg_book_cover_width_d" value="default" <?php 
-echo  ( 'full' !== $wbg_book_cover_width ? 'checked' : '' ) ;
-?> >
-                <label for="wbg_book_cover_width_d"><span></span><?php 
-_e( 'Small', WBG_TXT_DOMAIN );
-?></label>
-                &nbsp;&nbsp;
-                <input type="radio" name="wbg_book_cover_width" id="wbg_book_cover_width_f" value="full" <?php 
-echo  ( 'full' === $wbg_book_cover_width ? 'checked' : '' ) ;
-?> >
-                <label for="wbg_book_cover_width_f"><span></span><?php 
-_e( 'Full', WBG_TXT_DOMAIN );
-?></label>
+                <select name="wbg_book_cover_size" class="medium-text">
+                    <option value="default" <?php 
+echo  ( 'default' == $wbg_book_cover_size ? 'selected' : '' ) ;
+?>><?php 
+_e( 'Default - 200 x 0', WBG_TXT_DOMAIN );
+?></option>
+                    <option value="thumbnail" <?php 
+echo  ( 'thumbnail' == $wbg_book_cover_size ? 'selected' : '' ) ;
+?>><?php 
+_e( 'Thumbnail - 150 x 150', WBG_TXT_DOMAIN );
+?></option>
+                    <option value="medium" <?php 
+echo  ( 'medium' == $wbg_book_cover_size ? 'selected' : '' ) ;
+?>><?php 
+_e( 'Medium - 300 x 300', WBG_TXT_DOMAIN );
+?></option>
+                    <option value="full" <?php 
+echo  ( 'full' == $wbg_book_cover_size ? 'selected' : '' ) ;
+?>><?php 
+_e( 'Full - 500 x 0', WBG_TXT_DOMAIN );
+?></option>
+                </select>
             </td>
             <th scope="row">
                 <label><?php 
@@ -125,7 +163,7 @@ _e( 'Author', WBG_TXT_DOMAIN );
                     <option value="date" <?php 
 echo  ( 'date' === $wbg_gallary_sorting ? 'selected' : '' ) ;
 ?> ><?php 
-_e( 'Date', WBG_TXT_DOMAIN );
+_e( 'Post Date', WBG_TXT_DOMAIN );
 ?></option>
                     <option value="wbg_publisher" <?php 
 echo  ( 'wbg_publisher' === $wbg_gallary_sorting ? 'selected' : '' ) ;
@@ -135,7 +173,7 @@ _e( 'Publisher', WBG_TXT_DOMAIN );
                     <option value="wbg_published_on" <?php 
 echo  ( 'wbg_published_on' === $wbg_gallary_sorting ? 'selected' : '' ) ;
 ?> ><?php 
-_e( 'Published On', WBG_TXT_DOMAIN );
+_e( 'Book Published Date', WBG_TXT_DOMAIN );
 ?></option>
                     <option value="wbg_language" <?php 
 echo  ( 'wbg_language' === $wbg_gallary_sorting ? 'selected' : '' ) ;
@@ -146,6 +184,11 @@ _e( 'Language', WBG_TXT_DOMAIN );
 echo  ( 'wbg_country' === $wbg_gallary_sorting ? 'selected' : '' ) ;
 ?> ><?php 
 _e( 'Country', WBG_TXT_DOMAIN );
+?></option>
+                    <option value="rand" <?php 
+echo  ( 'rand' === $wbg_gallary_sorting ? 'selected' : '' ) ;
+?> ><?php 
+_e( 'Rand', WBG_TXT_DOMAIN );
 ?></option>
                 </select>
             </td>
@@ -173,7 +216,7 @@ _e( 'Descending', WBG_TXT_DOMAIN );
         <tr>
             <th scope="row">
                 <label for="wbg_display_details_page"><?php 
-_e( 'Enable Book Details Page', WBG_TXT_DOMAIN );
+_e( 'Disable Book Details Page', WBG_TXT_DOMAIN );
 ?>?</label>
             </th>
             <td>

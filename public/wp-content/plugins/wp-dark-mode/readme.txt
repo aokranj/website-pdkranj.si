@@ -1,88 +1,107 @@
-=== WP Dark Mode ===
+=== WP Dark Mode - Best Dark Mode Plugin for WordPress with Social Sharing ===
 Contributors: wppool, wpdarkmode, azizultex, iamjafran
-Tags: dark, dark mode, night mode, dark mode plugin, gutenberg blocks, dark theme, Gutenberg block, toggle, share icons, social share
+Tags: dark, dark mode, night mode, dark theme, dark mode plugin, social share, Gutenberg block, toggle, social sharing, dark mode toggle
 Requires at least: 5.0
-Tested up to: 6.0
+Tested up to: 6.2
 Requires PHP: 5.6
-Stable tag: 3.0.0
+Stable tag: 4.1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-WP Dark Mode automatically enables a stunning dark mode on your website based on the user's operating system. Supports macOS, Windows, Android & iOS.
+The best WordPress dark mode plugin with every feature you need: floating switches, backend dark mode, scheduling, and more. Requires zero coding.
 
 == Description ==
 
-Use WP Dark Mode plugin to create a stunning dark version for your WordPress website. WP Dark Mode works automatically without going into any complicated settings.
+= CREATE A STUNNING DARK MODE VERSION OF YOUR WORDPRESS WEBSITE - WITH JUST A FEW CLICKS =
 
-Just activate the plugin and your users will experience a dark mode version of your website as per their preferred operating system preference. This is the easiest and most convenient dark mode plugin for WordPress on the market.
+WP Dark Mode works automatically without going into any complicated settings. Activate the plugin and your site visitors will experience a dark mode version of your website as per their preferred operating system preference. This is the easiest and most convenient dark mode plugin for WordPress on the market.
 
-[youtube https://www.youtube.com/watch?v=L6EmXREa6OA&rel=0]
+Check what popular WordPress expert Matt (WPress Doctor) thinks about WP Dark Mode.
 
-👁️ [View Demo](https://go.wppool.dev/fuUK) | 🚀  [Get The PRO Version](https://go.wppool.dev/TtP) | 👩🏼‍💻 [Get Support](https://go.wppool.dev/TtP)
+[youtube https://www.youtube.com/watch?v=hz-2C5fzD0Q?rel=0]
 
-Works across all operating systems including Windows, Android, iOS, and macOS. No additional setups are required. This dark mode plugin intelligently detects device preferences and dynamically delivers a handcrafted, expert-designed dark mode experience for your readers.
+👁️ [View Demo](https://go.wppool.dev/fuUK) | 🚀  [Get the Premium Version](https://go.wppool.dev/TtP)
 
-Just activate dark mode on your device, and browse the website to experience a magically transformed dark mode of your website.
-WP Dark Mode supports all major operating systems including iOS, Android, macOS, or Windows 10. WordPress dark mode is now super easy!
+WP Dark Mode works flawlessly across all operating systems including Windows, Android, iOS, and macOS. No additional setups are required. This dark mode plugin intelligently detects device preferences and dynamically delivers a handcrafted, expert-designed dark theme experience for your readers. A quick and easy step to add a dark mode toggle to your website to toggle between dark and light mode anytime you want.
 
-=== Honest Review of WP Dark Mode - You're missing out ===
+<blockquote>
+
+Just activate dark mode on your device, and browse the website to experience a magically transformed dark mode of your website. WP Dark Mode supports all major operating systems including iOS, Android, macOS, or Windows 10. WordPress dark mode is now super easy!
+
+</blockquote>
+
+=== WHY CHOOSE WP DARK MODE? ===
+
+We developed WP Dark Mode to ensure a strain-free website experience for both you and your website visitors. We are very proud that thousands of users are finding great value in using our plugin.
+
+**Hear it from your users**
+
+> kmdenterprises (@kmdenterprises) ⭐⭐⭐⭐⭐
+> Dark mode is just a requirement for everything these days. Thank you so much for this great plugin… I can write posts at night now without making my eyes bleed. 😁
+
+> eibhlin (@eibhlin) ⭐⭐⭐⭐⭐
+> I added this plugin to my websites and my traffic (and how long people stay at my site) instantly went up. So, this plugin gets a five-star review. Thanks!
+
+> cantonjester (@cantonjester) ⭐⭐⭐⭐⭐
+> The Light/Dark toggle works like you want it to. If all things WP-related were this simple and effective, there’d be world peace!
+
+
+**More Reviews of WP Dark Mode - You're Missing Out!**
 
 [youtube https://www.youtube.com/watch?v=6OB34ikfhh8&rel=0]
 [youtube https://www.youtube.com/watch?v=4POJcRAxggk&rel=0]
 
-=== WP Dark Mode Features ===
+=== SOCIAL SHARE FOR DARK MODE WEBSITES ===
+
+With plenty of social media icons, WP Dark Mode makes it easier to share your website content across popular social media platforms. Social icons used with WP Dark Mode are optimized for dark theme and allows you to display cool-looking share icons including the Facebook share button, Twitter share button, and many popular free social icons. With Inline button customization, share count display, and live editor - display your preferred share button in style with WP Dark Mode.
+
+=== WP DARK MODE FREE FEATURES ===
 
 1. **Floating Switch Button** – You can display a dark mode floating switch button in the footer of the website. Get WordPress dark mode with a single click.
-1. **Default Mode** - Make dark mode the default mode of the website. Users will see the dark mode first.
-1. **Dark mode Elementor Widget** – You can place the Dark Mode switch button on any page/post by using the (Dark Mode Switch) Elementor widget.
-1. **Dark mode Gutenberg Widget** – You can place the switch button into any page/post by using the (Dark Mode Switch) Gutenberg block.
-1. **Auto Match OS Theme** – Automatically shows Darkmode if the OS preferred theme is dark
-1. **Available in Backend** – You can enable dark mode in the back end admin page.
-1. **Presets Color Schema** – 2 exclusive preset color schema available to quickly change the dark mode color from the predefined presets.
-1. **Dark Mode Switch** – Dark mode switch button to toggle the dark mode.
-1. **Remember Dark Mode** – The dark mode remains saved once you activated the dark mode.
-1. **Themes Compatible** – The plugin is compatible with most popular WordPress themes without any issues. Compatibility includes Avada, Betheme, The7, Flatsome, Astra, BuddyBoss, Divi, OceanWP, and many more. [Check the full list of compatible themes](https://wppool.dev/dark-mode-compatibility/).
-1. **Popular Page builder Compatibility** - This plugin is compatible with Divi Builder, WP Bakery, Visual Composer, Beaver Builder, Oxygen Builder, and Elementor.
-1. **Revolution Slider Compatible** - This plugin is compatible with the revolution slider.
-1. **Low Image Brightness** - Decrease the brightness and contrast of images in the dark mode.
-1. **Keyboard Accessibility** - Toggle dark mode by keyboard shortcut `(Ctrl + Alt + D)`.
-1. **Social Share** - With plenty of social media icons, WP Dark Mode makes it easier to share your website content across popular social media platforms. Social icons used with WP Dark Mode are optimized for dark theme and allows you to display cool-looking Facebook share button, Twitter share button, and many popular free social icons. With Inline button customization, share count display, and live editor - display your preferred share button in style with WP Dark Mode.
+2. **Default Dark Mode** - Make dark mode the default mode of the website. Users will see the dark mode first after entering your website.
+3. **Dark Mode / Night Mode Toggle Switch** – Dark mode switch lets your users easily toggle dark mode.
+4. **Dark mode Elementor Widget** – You can place the dark mode switch button on any page/post by using the Elementor widget.
+5. **Dark mode Gutenberg Widget** – You can place the dark mode toggle on any page/post by using the Gutenberg block.
+6. **Automatic Dark Mode Switch Based on OS Theme** – Automatically shows Darkmode if the OS preferred theme is dark
+7. **Admin Panel Dark Mode** – Enable dark mode on the WordPress admin panel/dashboard. Give your eyes a much-needed rest while working long hours.
+8. **Presets Color Scheme** – 2 exclusive preset color schemes are available to quickly change the dark mode color from the predefined presets.
+9. **Remember Dark Mode** – The dark mode remains saved once you activated the dark mode.
+10. **Shortcode Support** - Take advantage of the [wp_dark_mode_switch] shortcode to display the dark mode switch anywhere on your website.
+11. **Themes Compatible** – The plugin is compatible with the most popular WordPress themes without any issues. Compatibility includes Avada, Betheme, The7, Flatsome, Astra, BuddyBoss, Divi, OceanWP, and many more. [Check the full list of compatible themes](https://wppool.dev/dark-mode-compatibility/).
+12. **Popular Page builder Compatibility** - This plugin is compatible with Divi Builder, WP Bakery, Visual Composer, Beaver Builder, Oxygen Builder, and Elementor.
+13. **Revolution Slider Compatible** - This plugin is compatible with the revolution slider.
+14. **Low Image Brightness** - Decrease the brightness and contrast of images in the dark mode.
+15. **Accessibility Features** - Toggle dark mode by using a keyboard shortcut (Ctrl + Alt + D) or using a URL/domain parameter.
+16. **Dark Mode Toggle Animation** - Choose the animation effect between dark/white mode among numerous options including Fade In, Pulse, Flip and many more.
+17. **Social Share** - Social share icons allow your website visitors to share your content with ease. With plenty of cool social media icon templates and share count displays, this is the best dark mode plugin that supports dedicated social share buttons
 
+👁️ [View Demo](https://go.wppool.dev/fuUK) | 🚀  [Get the Premium Version](https://go.wppool.dev/TtP)
 
-👁️ [View Demo](https://go.wppool.dev/fuUK) | 🚀  [Get The PRO Version](https://go.wppool.dev/TtP) | 👩🏼‍💻 [Get Support](https://go.wppool.dev/TtP)
-
-=== 💰 WP Dark Mode Pro Features ===
+=== 💰 WP DARK MODE ULTIMATE FEATURES ===
 1. **All Free Features**
-1. **Time-Based Dark Mode** – Your website will turn into dark mode based on the local time of the user
-1. **Multiple Dark Mode Switch Style** – You can display multiple dark mode switch button styles for the users to turn on-off the dark mode.
-1. **Shortcode Supported** – You can use [wp_dark_mode_switch]shortcode to display the dark mode switch button on any page/post
-1. **Above Post/Page Content** – You can display the dark mode switch button before any page/post.
-1. **Dark mode Switch Widget** – You can place the dark mode switch button using the WP Dark Mode Widget.
-1. **Presets Color Schema** – 5 exclusive presets color schema available to quickly change the dark mode color from the predefined presets.
-1. **Custom Switch Text** – You can change the light/dark text of the switch.
-1. **Excludes Elements** – You can exclude specific elements being affected by the dark mode by using the CSS selectors.
-1. **Include Elements** - Only the elements within the selectors are applied by dark mode.
-1. **Exclude Pages** – You can exclude specific pages from dark mode.
-1. **Exclude posts & pages** - You can exclude all the pages and posts on your website from dark mode except the specific ones (where you want dark mode).
-1. **Exclude post tags & categories** - You can also exclude all the post tags from dark mode. Keep only the specific tags whitelisted for dark mode.
-1. **Exclude custom post type** - You can also enable dark mode only for specific post types, excluding all.
-1. **Exclude WooCommerce products & categories** - Exclude all the products and categories on your WooCommerce site from dark mode except the specific ones.
-1. **Dark mode usage analytics** -  You can now learn how many users are loving the dark mode of your website from the admin dashboard.
+2. **Time-Based Dark Mode** – Your website will turn into dark mode based on the local time of the user
+3. **Stylish Multiple Dark Mode Switch Styles** – Get instant access to 19 stunning dark mode switch styles. Choose your preferred dark mode switch button for the users to toggle the dark mode.
+4. **Custom Dark Mode Floating Switch Placement** – You can display the dark mode switch button before any page/post.
+5. **Preset Color Scheme** – 13 exclusive ready-made dark mode color schemes are available to quickly change the dark mode color from the predefined presets.
+6. **Custom Switch Support with Call-to-Action Customization** – Upload a custom switch of your own choice and customize call-to-action text on your dark mode switch.
+7. **Dark Mode-based Image Support** – You can replace light mode images with the different images you want in the dark mode.
+8. **Custom CSS Support** – With custom CSS you unleash the perfect dark mode version of your website. Customize specific sections/elements exactly how you want in dark mode.
+9. **Native WordPress widget** – Place the dark mode widget using the native WordPress widget.
+10. **Exclude Elements** – You can exclude specific elements being affected by the dark mode by using the CSS selectors.
+11. **Include Elements** - Only the elements within the selectors are applied by dark mode.
+12. **Exclude Dark Mode on Certain Pages/Elements** – You can exclude specific pages/elements from changing into dark mode.
+13. **Exclude Posts & Pages** - You can exclude all the pages and posts on your website from dark mode except the specific ones (where you want dark mode).
+14. **Exclude Post Tags & Categories** - You can also exclude all the post tags from dark mode. Keep only the specific tags whitelisted for dark mode.
+15. **Exclude Custom Post Type** - You can also enable dark mode only for specific post types, excluding all.
+16. **Exclude WooCommerce Products & Categories** - Exclude all the products and categories on your WooCommerce site from dark mode except the specific ones.
+17. **Dark Mode Usage Analytics** -  You can now learn how many users are loving the dark mode of your website from the admin dashboard.
+18. **Custom Colors** – You can customize the dark mode background. text and links color as you want.
+19. **Dark Mode Switch in Menu** – You can display the dark mode switch as a menu item in any menu on your website.
+20. **Font Size Toggle** - Make your WordPress website more accessible by resizing your font size (increase/decrease).
+21. **Dark Mode Video Replacement** - If your website has videos, you can replace them with something more fitting for dark mode with this setting enabled.
+22. **Usage Analytics Email Reporting** - Get daily/ weekly reports via email on the dark mode usage analytics of your website.
 
-
-👁️ [View Demo](https://go.wppool.dev/fuUK) | 🚀  [Get The PRO Version](https://go.wppool.dev/TtP) | 👩🏼‍💻 [Get Support](https://go.wppool.dev/TtP)
-
-=== 💰 WP Dark Mode Ultimate Features ===
-1. **All Pro Features**
-1. **Custom Colors** – You can customize the dark mode background. text and links color as you want/
-1. **Presets Color Schema** – 11 exclusive presets color schema available to quickly change the dark mode color from the predefined presets.
-1. **Dark Mode Based Image Supports** – You can replace light mode images with the different images you want in the dark mode.
-1. **Custom CSS** – You can use custom CSS only for dark mode.
-1. **Custom Switch Icon** – You can customize the dark mode switch icon in the light/ dark mode.
-1. **Dark mode Switch in Menu** – You can display the dark mode switch as a menu item in any menu on your website.
-1. **Usage analytics email reporting** - Get daily/ weekly reports via email on the dark mode usage analytics of your website.
-
-👁️ [View Demo](https://go.wppool.dev/fuUK) | 🚀  [Get The PRO Version](https://go.wppool.dev/TtP) | 👩🏼‍💻 [Get Support](https://go.wppool.dev/TtP)
+👁️ [View Demo](https://go.wppool.dev/fuUK) | 🚀  [Get the Premium Version](https://go.wppool.dev/TtP)
 
 === LEARN MORE ===
 * [How To Enable Dark Mode In WordPress Fast?](https://youtu.be/T-MgMYkC-sg)
@@ -90,18 +109,25 @@ WP Dark Mode supports all major operating systems including iOS, Android, macOS,
 * [How to display Dark Mode Switch Button using Elementor Widget](https://www.youtube.com/watch?v=5Y8XawJg4pw)
 * [Dark mode | Night Mode WordPress Plugin](https://youtu.be/Pmso8MJRpBM)
 
-=== How to Use ===
-After activating the plugin by default your website will turn into dark mode for your users if the Operating System of the users sets into a dark theme.
-You can use the show/hide dark mode switch in many different ways like Gutenberg block, Elementor widget, or Shortcode. Please refer to the FAQ section to learn more about how to use it.
-If you want to disable the OS-aware dark mode functionality, navigate to your Admin Dashboard > Settings > WP Dark Mode and turn off the “Enable OS-aware Dark Mode” switch button.
+=== Installation ===
+1. After activating the plugin by default your website will turn into a dark theme for your users if the Operating System of the users sets into a dark theme.
+2. You can use the show/hide dark mode switch in many different ways like Gutenberg block, Elementor widget, or Shortcode. Please refer to the FAQ section to learn more about how to use it.
+3. If you want to disable the OS-aware dark mode functionality, navigate to your Admin Dashboard > Settings > WP Dark Mode and turn off the “Enable OS-aware Dark Mode” switch button.
+
+You can also follow our video tutorial:
+
+[youtube https://www.youtube.com/watch?v=L6EmXREa6OA&rel=0]
 
 === 🔥 WHAT'S NEXT ===
 If you like this WP Dark Mode plugin, then consider checking out our other projects:
 
-
 🔄 [Sheets To WP Table Live Sync](https://wordpress.org/plugins/sheets-to-wp-table-live-sync/) - Google Sheets allows you to input data on your Google sheet and show the same data on WordPress as a table effortlessly.
 
-🎥 [Easy Video Reviews](https://wordpress.org/plugins/easy-video-reviews/) - Easy Video Reviews is the best and easiest video review plugin for WordPress. Your customers can record and send video testimonials right from their browser, and you can manage and showcase anywhere on your WordPress website.
+📽️ [Webinar & Video Conference with Jitsi Meet](https://wordpress.org/plugins/webinar-and-video-conference-with-jitsi-meet/)  - Experience the best WordPress video conference plugin and live video chat solution. Get shortcode support with WooCommerce and BuddyPress integration.
+
+🎥 [Easy Video Reviews](https://wordpress.org/plugins/easy-video-reviews/) - Easy Video Reviews is the best and easiest video review plugin for WordPress. Your customers can record and send video testimonials right from their browser, and you can manage and showcase them anywhere on your WordPress website.
+
+🔄️ [Stock Sync with Google Sheet for WooCommerce](https://wordpress.org/plugins/stock-sync-with-google-sheet-for-woocommerce/) - Auto-sync WooCommerce products from Google Sheets. An easy and powerful solution for WooCommerce inventory management, stock management, and bulk editing.
 
 
 ## Privacy Policy
@@ -114,6 +140,9 @@ Integrating Appsero SDK **DOES NOT IMMEDIATELY** start gathering data, **without
 Learn more about how [Appsero collects and uses this data](https://appsero.com/privacy-policy/).
 
 Additionally read the WPPOOL [privacy policy](https://wppool.dev/privacy-policy/).
+
+== Special Thanks ==
+This plugin includes a modified version of a script from Dark Reader, an open-source browser extension licensed under the MIT license. We thank the Dark Reader team for their contribution to the open-source community. For more information about Dark Reader and their licensing terms, please visit https://github.com/darkreader/darkreader.
 
 == Frequently Asked Questions ==
 
@@ -157,21 +186,101 @@ No. WP Dark Mode is a very user-friendly and simple plugin. Just download and us
 Yes, You can toggle the dark mode/ light mode by keyboard shortcut `(Ctrl + Alt + D)`.
 
 == Screenshots ==
-1. Default Dark Mode Color
-2. General Settings
-3. Advanced Settings
-4. Includes/ Excludes Settings
-5. Switch Settings
-6. Color Filter Settings
-7. Color Schema
-8. Image Settings
-9. Ready made color presets & customizing options
-10. Custom CSS only for darkmode
-11. Dark mode switch widget
-12. Dark mode switch gutenberg block
-13. Dark mode switch elementor widget
+1. WP Dark Mode
+2. Floating switch styles
+3. Inline Social Share buttons
+4. Dark Mode widgets
+5. OS aware Dark Mode
+6. Backend Dark Mode
+7. Dark Mode color presets
 
 == Changelog ==
+
+= 4.1.8 - June 19 2023 =
+* [Fixed] Fixed license integration for Ultimate Single Site
+* [Fixed] Restored front-end css map
+
+= 4.1.6 - June 06 2023 =
+* [Fixed] Minor issues & bugs
+
+= 4.1.5 - May 02 2023 =
+* [Fixed] Dark mode images not saving on Ultimate Single Site
+* [Improvement] Added special thanks to core script contributor
+* [Improvement] Enhanced readme assets for better visualization
+
+= 4.1.4 - April 12 2023 =
+* [Improvement] Enhanced readme assets for better visualization
+
+= 4.1.3 - April 05 2023 =
+* [Fixed] Admin notices for reviews will not be appear again once it's closed
+* [Fixed] Minor issues & bugs
+
+= 4.1.2 - April 03 2023 =
+* [Fixed] Minor issues & bugs
+* [Improved] Dark mode image performance
+* [Improved] Reverted old promotional popup mechanism
+
+= 4.1.1 - MAR 28 2023 =
+* [Improve] Checked compatibility with WordPress 6.2
+* [Fixed] Minor issues and improved performance
+
+= 4.1.0 - MAR 20 2023 =
+* [Fixed] dismissable notice for Affiliate program 
+
+= 4.0.9 - MAR 14 2023 =
+* [Fixed] Alert modal position fixed. Now alert will be shown top with highest zindex.
+* [Fixed] Checked and fixed some of the old files compatibility with php 5.6
+
+= 4.0.8 - FEB 28 2023 =
+* Fix: Fixed blinking/lightening on frontend.
+* Fix: Fixed RTL support for both frontend and backend.
+* Fix: Fixed import/export functionalities. Now custom CSS can be imported and exported.
+* Improve: Improved shortcode section, checked and fixed backward compatibility.
+
+= 4.0.7 - FEB 22 2023 =
+* Removed Sweetalert2 and added custom alert functionality
+* Reverted RTL support
+* Fixed minor issues and improved performance
+
+= 4.0.5 - FEB 12 2023 =
+* Fixed minor issues and improved performance
+
+= 4.0.4 - JAN 26 2023 =
+* FIXED: Updated promotional popup template
+
+= 4.0.3 - JAN 24 2023 =
+* FIXED: Removed fetching offer data from Google Sheet
+
+= 4.0.2 - JAN 12 2023 =
+* FIXED: Conflicting with other WPPOOL plugins
+* FIXED: Updated all third-party assets
+
+= 4.0.1 - 04 JAN 2023 =
+* Fixed minor issues and improved performance
+
+= 4.0.0 – 03 JAN 2023 = 
+* FIXED: All security issues has been resolved
+* IMPROVE: Strickly followed PHPCS and WPCS as coding standard
+* FIXED: Three shortcode can be used now on free version
+* FIXED: Dark mode can be used on Elementor and Gutenberg block editor
+
+= 3.0.6 – 28 DEC 2022 = 
+* Fixed wppool sdk missing fatal error.
+
+= 3.0.5 – 27 DEC 2022 = 
+* Fixed minor issues and improved performance
+
+= 3.0.4 – 15 DEC 2022 = 
+* Fixed minor issues and improved performance
+
+= 3.0.3 – 29 NOV 2022 = 
+* Fixed minor issues and improved performance
+
+= 3.0.2 – 03 NOV 2022 = 
+* Fixed minor issues and improved performance
+
+= 3.0.1 – 04 OCT 2022 = 
+* Fixed minor issues and improved performance
 
 = 3.0.0 – 15 SEP 2022 = 
 * New: Added Social Share feature

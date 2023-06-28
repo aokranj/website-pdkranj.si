@@ -1,10 +1,10 @@
-=== WordPress Books Gallery Plugin ===
+=== WordPress Books Gallery ===
 Contributors: mhmrajib, hmplugin, freemius
 Donate link: https://www.paypal.me/mhmrajib
 Tags: Books Gallery, Books Store, Books, Online Library, Digital Library, Books Showcase, Affiliate Marketing, Sell Books Online, books showcase plugin, books gallery plugin, Publisher
 Requires at least: 5.2
-Tested up to: 6.0.2
-Stable tag: 4.4.4
+Tested up to: 6.2.2
+Stable tag: 4.5.3
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -305,16 +305,79 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 
 == Screenshots ==
 
-1. Showing Books Gallery Main View
-2. Books Gallery Single Page View
-3. Books Gallery Featured Books View (Pro)
-4. Main Gallery Content Settings Page 
-5. Main Gallery Styling Settings Page
-6. Gallery Search Panel Settings Page
-7. Gallery Single Page Settings Page
+1. Showing Books Gallery Grid View
+2. Showing Books Gallery List View
+3. Books Gallery Single Page View
+4. Books Gallery Featured Books View (Pro)
+5. Main Gallery Content Settings Page 
+6. Main Gallery Styling Settings Page
+7. Gallery Search Panel Settings Page
+8. Gallery Single Page Settings Page
 
 
 == Changelog ==
+
+= 4.5.3  =
+
+* Book category and tag archive page fixed
+* Code optimized
+* Url bug fixed
+* Freemius sdk version upgraded
+
+= 4.5.2  =
+
+* Book category template fixed
+* Category link added to Gallery books category
+* Open button Url in the same window option added
+* Orderby rand issue fixed
+* Orderby Rand option added to Gallery Page settings
+* Freemius sdk upgraded
+
+= 4.5.1  =
+* Freemius version upgraded
+* Css fixed
+
+= 4.5.0  =
+
+* Search design issue improved
+* Freemius version upgraded
+* Hide other books slider from details page if there is no book
+* Show-hide back button option added
+* Back button label text option added
+* Detail page layout issue fixed
+* Book details page made enabled by default
+
+= 4.4.9 =
+* Price amount range increased
+* Resolution warning fixed
+* Grid classic template added
+* Search and Reset button alignment issue fixed
+* Security fixing in admin settings page
+* Search panel issue fixed when there is no books
+* Default message option added when there is no book
+
+= 4.4.8 =
+
+* Gallery list view template added
+* Gallery template selection option added
+* Gallery container black bg color issue fixed
+* Pagination anchor styling issue fixed
+* Default cover image url option added
+
+= 4.4.7 =
+
+* Images different sizes option added
+* Formates changed to Formats
+* Books Gallery Sidebar Introduced
+* Css fixed
+
+4.4.6
+* Freemius sdk updated
+* Donation admin link removed
+
+= 4.4.5 =
+* Bug fixed
+* Css fixed
 
 = 4.4.4 =
 

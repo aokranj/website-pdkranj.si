@@ -1,6 +1,15 @@
 <?php
+/**
+ * Class is loaded when the plugin is activated.
+ * The class basically inserts the default data of the plugin.
+ *
+ * @version 1.0.0
+ * @package WP_DARK_MODE
+ */
+
 // if direct access than exit the file.
 defined( 'ABSPATH' ) || exit();
+
 /**
  * Check class is already exists
  *
@@ -8,13 +17,16 @@ defined( 'ABSPATH' ) || exit();
  */
 if ( ! class_exists( 'WP_Dark_Mode_Install' ) ) {
 	/**
-	 * Class is loaded when the plugin is activated. 
+	 * Class is loaded when the plugin is activated.
 	 * The class basically inserts the default data of the plugin.
 	 *
 	 * @version 1.0.0
 	 */
 	class WP_Dark_Mode_Install {
+
 		/**
+		 * Contains class instance.
+		 *
 		 * @var null
 		 */
 		private static $instance = null;
@@ -37,8 +49,9 @@ if ( ! class_exists( 'WP_Dark_Mode_Install' ) ) {
 				self::create_default_data();
 			}
 		}
+
 		/**
-		 * update default data
+		 * Update default data.
 		 *
 		 * @since 2.0.8
 		 */
@@ -53,7 +66,6 @@ if ( ! class_exists( 'WP_Dark_Mode_Install' ) ) {
 
 			set_transient( 'wp_dark_mode_review_notice_interval', 'off', 7 * DAY_IN_SECONDS );
 			set_transient( 'wp_dark_mode_affiliate_notice_interval', 'off', 10 * DAY_IN_SECONDS );
-
 		}
 
 		/**
@@ -69,10 +81,10 @@ if ( ! class_exists( 'WP_Dark_Mode_Install' ) ) {
 
 			return self::$instance;
 		}
-
 	}
 }
+
 /**
- * Kick out the class
+ * Kick out the class.
  */
 WP_Dark_Mode_Install::instance();

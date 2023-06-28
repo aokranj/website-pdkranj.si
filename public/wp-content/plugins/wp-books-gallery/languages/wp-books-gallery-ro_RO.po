@@ -81,8 +81,8 @@ msgid "All Book Categories"
 msgstr "Carte Categorii"
 
 #: admin/cls-books-gallery-admin.php:220
-msgid "All Book Formates"
-msgstr "Carte Formates"
+msgid "All Book Formats"
+msgstr "Carte Formats"
 
 #: admin/cls-books-gallery-admin.php:245
 msgid "All Book Series"
@@ -191,8 +191,8 @@ msgid "Book Format"
 msgstr "Format De Carte"
 
 #: admin/cls-books-gallery-admin.php:217 admin/cls-books-gallery-admin.php:227
-msgid "Book Formates"
-msgstr "Rezervați Formates"
+msgid "Book Formats"
+msgstr "Rezervați Formats"
 
 #: admin/cls-books-gallery-admin.php:353
 #: admin/view/partial/single-content.php:37
@@ -990,8 +990,8 @@ msgid "Search Book Categories"
 msgstr "Căutare Carte Categorii"
 
 #: admin/cls-books-gallery-admin.php:219
-msgid "Search Book Formates"
-msgstr "Căutare Carte Formates"
+msgid "Search Book Formats"
+msgstr "Căutare Carte Formats"
 
 #: admin/cls-books-gallery-admin.php:244
 msgid "Search Book Series"

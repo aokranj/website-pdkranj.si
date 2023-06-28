@@ -80,7 +80,7 @@ msgid "All Book Categories"
 msgstr "Toutes Les Catégories Livre"
 
 #: admin/cls-books-gallery-admin.php:220
-msgid "All Book Formates"
+msgid "All Book Formats"
 msgstr "Tous Les Standards (Livre"
 
 #: admin/cls-books-gallery-admin.php:245
@@ -190,7 +190,7 @@ msgid "Book Format"
 msgstr "Format De Livre"
 
 #: admin/cls-books-gallery-admin.php:217 admin/cls-books-gallery-admin.php:227
-msgid "Book Formates"
+msgid "Book Formats"
 msgstr "Livre Standards ("
 
 #: admin/cls-books-gallery-admin.php:353
@@ -989,7 +989,7 @@ msgid "Search Book Categories"
 msgstr "Recherche Livre De Catégories"
 
 #: admin/cls-books-gallery-admin.php:219
-msgid "Search Book Formates"
+msgid "Search Book Formats"
 msgstr "Recherche Livre Standards ("
 
 #: admin/cls-books-gallery-admin.php:244

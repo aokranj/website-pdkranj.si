@@ -11,6 +11,9 @@ foreach ( $wbgSearchStyles as $option_name => $option_value ) {
 }
 ?>
 <form name="wbg_search_style_form" role="form" class="form-horizontal" method="post" action="" id="wbg-search-style-form">
+<?php 
+wp_nonce_field( 'wbg_search_style_action', 'wbg_search_style_nonce_field' );
+?>
     <table class="wbg-search-style-settings-table">
         <!-- Search Panel -->
         <tr>

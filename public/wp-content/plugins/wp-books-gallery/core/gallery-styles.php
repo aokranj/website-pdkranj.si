@@ -41,7 +41,7 @@ trait Wbg_Gallery_Settings_Styles
             [
                 'name'      => 'wbg_container_bg_color',
                 'type'      => 'text',
-                'default'   => '#FFFFFF',
+                'default'   => '#FFF',
             ],
             [
                 'name'      => 'wbg_container_width',
@@ -76,12 +76,12 @@ trait Wbg_Gallery_Settings_Styles
             [
                 'name'      => 'wbg_loop_book_border_color',
                 'type'      => 'text',
-                'default'   => '#DDDDDD',
+                'default'   => '#FFFFFF',
             ],
             [
                 'name'      => 'wbg_loop_book_bg_color',
                 'type'      => 'text',
-                'default'   => '#FFFFFF',
+                'default'   => '#F4F4F4',
             ],
             [
                 'name'      => 'wbg_hide_hover_shadow',
@@ -121,12 +121,12 @@ trait Wbg_Gallery_Settings_Styles
             [
                 'name'      => 'wbg_title_hover_color',
                 'type'      => 'text',
-                'default'   => '#999999',
+                'default'   => '#FF0000',
             ],
             [
                 'name'      => 'wbg_title_font_size',
                 'type'      => 'number',
-                'default'   => '12',
+                'default'   => '18',
             ],
             [
                 'name'      => 'wbg_description_color',

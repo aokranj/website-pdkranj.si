@@ -62,6 +62,21 @@ trait Wbg_Core_Settings
                 'type'      => 'string',
                 'default'   => 'f',
             ],
+            [
+                'name'      => 'wbg_default_book_cover_url',
+                'type'      => 'text',
+                'default'   => '',
+            ],
+            [
+                'name'      => 'wbg_no_book_message',
+                'type'      => 'text',
+                'default'   => 'No books found. Please add one.',
+            ],
+            [
+                'name'      => 'wbg_dwnld_btn_url_same_tab',
+                'type'      => 'boolean',
+                'default'   => false,
+            ]
         ];
     }
 }

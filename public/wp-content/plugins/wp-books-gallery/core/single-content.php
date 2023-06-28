@@ -253,6 +253,31 @@ trait Wbg_Single_Content_Settings
                 'type'      => 'text',
                 'default'   => 'Illustrator',
             ],
+            [
+                'name'      => 'wbg_hide_other_books_from',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_hide_other_books_by',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_hide_back_button',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_back_button_label',
+                'type'      => 'text',
+                'default'   => 'Back',
+            ],
+            [
+                'name'      => 'wbg_details_hide_buynow_btn',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
         ];
     }
 }
