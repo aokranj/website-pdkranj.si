@@ -7,6 +7,7 @@
  */
 
 // Exit if accessed directly.
+// phpcs:ignore
 defined( 'ABSPATH' ) || exit();
 ?>
 
@@ -101,7 +102,13 @@ $recommended_plugins_slug = [
 	'social-contact-form',
 ];
 
-$recommended_plugins = array_map(function ( $slug ) {
+/**
+ * Get plugin information from WordPress.org.
+ *
+ * @param string $slug Plugin slug.
+ * @return object|bool
+ */
+function callback_recommended_plugin( $slug ) {
 	$args = [
 		'slug'   => $slug,
 		'fields' => [
@@ -118,7 +125,8 @@ $recommended_plugins = array_map(function ( $slug ) {
 	}
 
 	return false;
-}, $recommended_plugins_slug);
+}
+$recommended_plugins = array_map('callback_recommended_plugin', $recommended_plugins_slug);
 ?>
 
 <div class="wrap mystickyelement-wrap recommended-plugins">
@@ -138,7 +146,7 @@ $recommended_plugins = array_map(function ( $slug ) {
 				}
 
 				// Display the group heading if there is one.
-				if ( isset( $single_plugin['group'] ) && $single_plugin['group'] != $group ) {
+				if ( isset( $single_plugin['group'] ) && $single_plugin['group'] !== $group ) {
 					if ( isset( $this->groups[ $single_plugin['group'] ] ) ) {
 						$group_name = $this->groups[ $single_plugin['group'] ];
 						if ( isset( $single_plugins_group_titles[ $group_name ] ) ) {
@@ -268,10 +276,7 @@ $recommended_plugins = array_map(function ( $slug ) {
 					}
 				}
 
-				$details_link = self_admin_url(
-					'plugin-install.php?tab=plugin-information&amp;plugin=' . $single_plugin['slug'] .
-					'&amp;TB_iframe=true&amp;width=600&amp;height=550'
-				);
+				$details_link = self_admin_url( 'plugin-install.php?tab=plugin-information&amp;plugin=' . $single_plugin['slug'] . '&amp;TB_iframe=true&amp;width=600&amp;height=550' );
 
 				$action_links[] = wp_sprintf(
 					'<a href="%s" class="thickbox open-plugin-details-modal" aria-label="%s" data-title="%s">%s</a>',
@@ -458,7 +463,7 @@ $recommended_plugins = array_map(function ( $slug ) {
 					buttons: {
 						"Hide it": {
 							click: function () {
-								window.location = "<?php echo esc_url( admin_url( 'admin.php?page=wp-dark-mode&hide_wp_dark_mode_recommended_plugin=1&nonce=' . wp_create_nonce( 'wp_dark_mode_recommended_plugin' ) ) ); ?>";
+								window.location = "<?php echo esc_url( admin_url( wp_sprintf( 'index.php?wp_dark_mode_hide_recommended_plugin=1&nonce=%s' ), wp_create_nonce( 'wp_dark_mode_hide_recommended_plugin' ) ) ); ?>";
 							},
 							text: 'Hide it',
 							class: 'btn red-btn'

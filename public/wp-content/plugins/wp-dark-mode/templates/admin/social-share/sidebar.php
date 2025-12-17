@@ -8,6 +8,7 @@
  */
 
 // Exit if accessed directly.
+// phpcs:ignore
 defined( 'ABSPATH' ) || exit();
 ?>
 <div class="flex items-center sidebar-width bg-slate-100 border-b border-slate-100">

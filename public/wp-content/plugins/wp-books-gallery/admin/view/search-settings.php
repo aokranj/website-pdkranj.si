@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div id="wph-wrap-all" class="wrap wbg-search-panel-settings">
     
     <div class="settings-banner">
-        <h2><i class="fa fa-search" aria-hidden="true"></i>&nbsp;<?php _e('Search Panel Settings', WBG_TXT_DOMAIN); ?></h2>
+        <h2><i class="fa fa-search" aria-hidden="true"></i>&nbsp;<?php _e('Search Panel Settings', 'wp-books-gallery'); ?></h2>
     </div>
 
     <?php 
@@ -19,10 +19,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <nav class="nav-tab-wrapper">
             <a href="?post_type=books&page=wbg-search-panel-settings&tab=content" class="nav-tab wbg-tab <?php if ( $tab != 'styles' ) { ?>wbg-tab-active<?php } ?>">
-                <i class="fa fa-cog" aria-hidden="true"></i>&nbsp;<?php _e('Content', WBG_TXT_DOMAIN); ?>
+                <i class="fa fa-cog" aria-hidden="true"></i>&nbsp;<?php _e('Content', 'wp-books-gallery'); ?>
             </a>
             <a href="?post_type=books&page=wbg-search-panel-settings&tab=styles" class="nav-tab wbg-tab <?php if ( $tab === 'styles' ) { ?>wbg-tab-active<?php } ?>">
-                <i class="fa fa-paint-brush" aria-hidden="true"></i>&nbsp;<?php _e('Styles', WBG_TXT_DOMAIN); ?>
+                <i class="fa fa-paint-brush" aria-hidden="true"></i>&nbsp;<?php _e('Styles', 'wp-books-gallery'); ?>
             </a>
         </nav>
 

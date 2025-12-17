@@ -108,6 +108,26 @@ trait Wbg_Gallery_Settings_Content
                 'default'   => '',
             ],
             [
+                'name'      => 'wbg_display_edition_gallery',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_edition_label_txt',
+                'type'      => 'text',
+                'default'   => 'Edition',
+            ],
+            [
+                'name'      => 'wbg_display_publish_date_gallery',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_publish_date_label_txt',
+                'type'      => 'text',
+                'default'   => 'Published On',
+            ],
+            [
                 'name'      => 'wbg_display_description',
                 'type'      => 'boolean',
                 'default'   => false,
@@ -181,6 +201,36 @@ trait Wbg_Gallery_Settings_Content
                 'name'      => 'wbg_gallery_button_bottom_align',
                 'type'      => 'boolean',
                 'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_gallery_hide_price',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_publish_date_format',
+                'type'      => 'string',
+                'default'   => 'full',
+            ],
+            [
+                'name'      => 'wbg_display_publisher_gallery',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_publisher_label_txt_gallery',
+                'type'      => 'text',
+                'default'   => 'Publisher',
+            ],
+            [
+                'name'      => 'wbg_gallery_hide_format',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_gallery_sorting_options',
+                'type'      => 'textarea',
+                'default'   => 'latest, priceLH, priceHL',
             ],
         ];
     }

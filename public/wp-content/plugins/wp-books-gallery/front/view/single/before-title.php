@@ -28,10 +28,11 @@ $wbg_edition        = get_post_meta( $post->ID, 'wbg_edition', true );
 $wbg_illustrator    = get_post_meta( $post->ID, 'wbg_illustrator', true );
 $wbg_translator     = get_post_meta( $post->ID, 'wbg_translator', true );
 
-$wbg_img = WBG_ASSETS . 'img/noimage.jpg';
+$wbg_img = ( '' !== $wbg_default_book_cover_url ) ? $wbg_default_book_cover_url : WBG_ASSETS . 'img/noimage.jpg';
 
+// If book cover priority: default
 if ( 'f' === $wbg_book_cover_priority ) {
-    if ( has_post_thumbnail() ) {
+    if ( has_post_thumbnail( $post->ID ) ) {
         $wbg_img = get_the_post_thumbnail_url($post->ID,'full');
     } else {
         if ( $wbgImgUrl ) {
@@ -42,15 +43,12 @@ if ( 'f' === $wbg_book_cover_priority ) {
     if ( $wbgImgUrl ) {
         $wbg_img = $wbgImgUrl;
     } else {
-        if ( has_post_thumbnail() ) {
+        if ( get_the_post_thumbnail( get_the_ID() ) ) {
             $wbg_img = get_the_post_thumbnail_url($post->ID, 'full');
         }
     }
 }
 ?>
 <div class="wbg-details-image">
-    <img src="<?php echo esc_url( $wbg_img ); ?>" alt="<?php _e( 'No Image Available', WBG_TXT_DOMAIN ); ?>">
+    <img src="<?php echo esc_url( $wbg_img ); ?>" alt="<?php _e( 'No Image Available', 'wp-books-gallery' ); ?>">
 </div>
-
-<!-- Details Section Started -->
-<div class="wbg-details-summary">

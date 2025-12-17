@@ -6,8 +6,7 @@ if ( !defined( 'ABSPATH' ) ) {
 /**
 *	Master Class: Front
 */
-class WBG_Front
-{
+class WBG_Front {
     use 
         Wbg_Core,
         Wbg_Core_Settings,
@@ -18,15 +17,14 @@ class WBG_Front
         Wbg_Single_Content_Settings,
         Wbg_Single_Styles_Settings
     ;
-    private  $wbg_version ;
-    function __construct( $version )
-    {
+    private $wbg_version, $wbg_assets_prefix;
+
+    function __construct( $version ) {
         $this->wbg_version = $version;
-        $this->wbg_assets_prefix = substr( WBG_PRFX, 0, -1 ) . '-';
+        $this->wbg_assets_prefix = 'wbg-';
     }
-    
-    function wbg_front_assets()
-    {
+
+    function wbg_front_assets() {
         // searchable dropdown select Style
         wp_enqueue_style(
             'wbg-selectize',
@@ -36,7 +34,7 @@ class WBG_Front
             FALSE
         );
         wp_enqueue_style(
-            $this->wbg_assets_prefix . 'font-awesome',
+            'wbg-font-awesome',
             WBG_ASSETS . 'css/fontawesome/css/all.min.css',
             array(),
             $this->wbg_version,
@@ -44,7 +42,7 @@ class WBG_Front
         );
         wp_enqueue_style(
             'wbg-front',
-            WBG_ASSETS . 'css/' . $this->wbg_assets_prefix . 'front.css',
+            WBG_ASSETS . 'css/wbg-front.css',
             array(),
             $this->wbg_version,
             FALSE
@@ -57,14 +55,14 @@ class WBG_Front
         wp_enqueue_script(
             'wbg-selectize',
             WBG_ASSETS . 'js/selectize.min.js',
-            array( 'jquery' ),
+            array('jquery'),
             $this->wbg_version,
             TRUE
         );
         wp_enqueue_script(
             'wbg-front',
             WBG_ASSETS . 'js/wbg-front.js',
-            array( 'jquery' ),
+            array('jquery'),
             $this->wbg_version,
             TRUE
         );
@@ -75,15 +73,13 @@ class WBG_Front
             'modalWidth' => $wbgPopupWidth,
         ] );
     }
-    
-    function wbg_load_shortcode()
-    {
-        add_shortcode( 'wp_books_gallery', array( $this, 'wbg_load_shortcode_view' ) );
+
+    function wbg_load_shortcode() {
+        add_shortcode( 'wp_books_gallery', array($this, 'wbg_load_shortcode_view') );
     }
-    
-    function wbg_load_shortcode_view( $attr )
-    {
-        global  $wpdb, $post ;
+
+    function wbg_load_shortcode_view( $attr ) {
+        global $wpdb, $post;
         // Gallery Content
         $wpsdGallerySettingsContent = $this->wbg_get_gallery_settings_content();
         foreach ( $wpsdGallerySettingsContent as $gscKey => $gscValue ) {
@@ -127,10 +123,9 @@ class WBG_Front
         $output .= ob_get_clean();
         return $output;
     }
-    
-    function wbg_load_featured_view( $attr )
-    {
-        global  $post ;
+
+    function wbg_load_featured_view( $attr ) {
+        global $post;
         // Gallery Content
         $wpsdGallerySettingsContent = $this->wbg_get_gallery_settings_content();
         foreach ( $wpsdGallerySettingsContent as $gscKey => $gscValue ) {
@@ -151,65 +146,67 @@ class WBG_Front
         $output .= ob_get_clean();
         return $output;
     }
-    
-    function wbg_load_single_template( $template )
-    {
-        global  $post ;
+
+    function wbg_load_wbg_book_category( $attr ) {
+        $output = '';
+        ob_start();
+        include WBG_PATH . 'front/view/book-category.php';
+        $output .= ob_get_clean();
+        return $output;
+    }
+
+    function wbg_load_single_template( $template ) {
+        global $post;
         if ( 'books' === $post->post_type ) {
             return WBG_PATH . 'front/view/single.php';
         }
         return $template;
     }
-    
-    function wbg_load_archive_template( $template )
-    {
-        global  $post ;
-        if ( 'books' === $post->post_type ) {
+
+    function wbg_load_archive_template( $template ) {
+        global $post;
+        if ( is_object( $post ) && 'books' === $post->post_type ) {
             return WBG_PATH . 'front/view/archive.php';
         }
         return $template;
     }
-    
-    function wbg_load_tag_template( $template )
-    {
-        global  $post ;
+
+    function wbg_load_tag_template( $template ) {
+        global $post;
         if ( 'books' === $post->post_type ) {
             return WBG_PATH . 'front/view/tag.php';
         }
         return $template;
     }
-    
-    function wbg_load_rating( $post_id )
-    {
-        global  $wpdb ;
+
+    function wbg_load_rating( $post_id ) {
+        global $wpdb;
         $posts = get_posts( array(
             'post_type'      => 'wpcr3_review',
             'post_status'    => 'publish',
             'posts_per_page' => -1,
             'fields'         => 'ids',
-            'meta_query'     => array( array(
-            'key'     => 'wpcr3_review_post',
-            'value'   => $post_id,
-            'compare' => '=',
-        ) ),
+            'meta_query'     => array(array(
+                'key'     => 'wpcr3_review_post',
+                'value'   => $post_id,
+                'compare' => '=',
+            )),
         ) );
         //echo '<pre>';
         //print_r($posts);
-        
-        if ( !empty($posts) ) {
+        if ( !empty( $posts ) ) {
             $star_sum = 0;
             $star_count = 0;
             foreach ( $posts as $p ) {
                 $star_sum = $star_sum + get_post_meta( $p, "wpcr3_review_rating", true );
                 $star_count++;
             }
-            
             if ( $star_sum > 0 ) {
                 $hmt_star = round( $star_sum / $star_count );
                 ?>
 				<div class="wbg-rating">
 					<?php 
-                for ( $rs = 1 ;  $rs <= $hmt_star ;  $rs++ ) {
+                for ($rs = 1; $rs <= $hmt_star; $rs++) {
                     ?>
 						<i class="fa fa-star"></i>
 					<?php 
@@ -217,27 +214,68 @@ class WBG_Front
                 ?>
 					<?php 
                 if ( 5 - $hmt_star > 0 ) {
-                    for ( $rns = 1 ;  $rns <= 5 - $hmt_star ;  $rns++ ) {
+                    for ($rns = 1; $rns <= 5 - $hmt_star; $rns++) {
                         ?>
 							<i class="fa fa-star" style="color: #CCC;"></i>
 							<?php 
                     }
                 }
-                echo  '&nbsp;' . $star_count ;
+                echo '&nbsp;' . $star_count;
                 ?>
 				</div>
 				<?php 
             }
-        
         }
-    
     }
-    
-    function wbg_load_single_modal()
-    {
+
+    function wbg_load_single_modal() {
         $post_id = sanitize_text_field( $_POST['postId'] );
         include WBG_PATH . 'front/view/single-modal.php';
         exit;
+    }
+
+    function wbg_load_single_book( $attr ) {
+        // General Settings
+        $wbgCoreSettings = $this->wbg_get_core_settings();
+        foreach ( $wbgCoreSettings as $core_name => $core_value ) {
+            if ( isset( $wbgCoreSettings[$core_name] ) ) {
+                ${"" . $core_name} = $core_value;
+            }
+        }
+        $output = '';
+        ob_start();
+        include WBG_PATH . 'front/view/single-book.php';
+        $output .= ob_get_clean();
+        return $output;
+    }
+
+    function wbg_load_single_search( $attr ) {
+        // General Settings
+        $wbgCoreSettings = $this->wbg_get_core_settings();
+        foreach ( $wbgCoreSettings as $core_name => $core_value ) {
+            if ( isset( $wbgCoreSettings[$core_name] ) ) {
+                ${"" . $core_name} = $core_value;
+            }
+        }
+        // Search Content
+        $wbgSearchContent = $this->wbg_get_search_content_settings();
+        foreach ( $wbgSearchContent as $sc_name => $sc_value ) {
+            if ( isset( $wbgSearchContent[$sc_name] ) ) {
+                ${"" . $sc_name} = $sc_value;
+            }
+        }
+        // Search Styling
+        $wbgSearchStyles = $this->wbg_get_search_styles_settings();
+        foreach ( $wbgSearchStyles as $ss_name => $ss_value ) {
+            if ( isset( $wbgSearchStyles[$ss_name] ) ) {
+                ${"" . $ss_name} = $ss_value;
+            }
+        }
+        $output = '';
+        ob_start();
+        include WBG_PATH . 'front/view/single-search.php';
+        $output .= ob_get_clean();
+        return $output;
     }
 
 }

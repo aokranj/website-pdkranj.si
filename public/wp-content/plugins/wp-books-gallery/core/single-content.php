@@ -278,6 +278,101 @@ trait Wbg_Single_Content_Settings
                 'type'      => 'boolean',
                 'default'   => false,
             ],
+            [
+                'name'      => 'wbg_details_hide_author_panel',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_details_hide_author_panel_title',
+                'type'      => 'text',
+                'default'   => 'About the author',
+            ],
+            [
+                'name'      => 'wbg_details_hide_editorial_reviews',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_details_hide_editorial_reviews_title',
+                'type'      => 'text',
+                'default'   => 'Editorial Reviews',
+            ],
+            [
+                'name'      => 'wbg_details_hide_tag',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_details_tag_label',
+                'type'      => 'text',
+                'default'   => 'Tags',
+            ],
+            [
+                'name'      => 'wbg_display_format_price_url',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_display_format_price_url_title',
+                'type'      => 'text',
+                'default'   => 'All Formats',
+            ],
+            [
+                'name'      => 'wbg_hide_translator',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_translator_label',
+                'type'      => 'text',
+                'default'   => 'Translator',
+            ],
+            [
+                'name'      => 'wbg_single_display_searchbar',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_single_display_search_mobile',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_details_hide_price',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_other_books_from_title',
+                'type'      => 'text',
+                'default'   => 'Other Books From',
+            ],
+            [
+                'name'      => 'wbg_other_books_by_title',
+                'type'      => 'text',
+                'default'   => 'Other Books By',
+            ],
+            [
+                'name'      => 'wbg_details_hide_load_more',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_back_button_icon',
+                'type'      => 'text',
+                'default'   => 'fa fa-angle-double-left',
+            ],
+            [
+                'name'      => 'wbg_hide_share_option',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_share_option_label',
+                'type'      => 'text',
+                'default'   => 'Share',
+            ],
         ];
     }
 }

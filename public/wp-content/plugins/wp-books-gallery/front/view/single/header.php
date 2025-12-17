@@ -3,6 +3,13 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+/*
+Template Name: Wbg Books Single
+Template Post Type: books
+*/
+
+get_header();
+
 // Action Before Main Wrapper
 do_action( 'wbg_front_single_parent_section_before' );
 

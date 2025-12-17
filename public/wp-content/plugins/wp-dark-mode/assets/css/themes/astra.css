@@ -1,2 +1,1 @@
-/* Astra Support */
-.wp-dark-mode-active .widget.widget_search .search-submit{opacity:0}
+html[data-wp-dark-mode-active] :root{--ast-global-color-2: var(--wpdm-text-color, #f0f0f0);--ast-global-color-3: var(--wpdm-border-color, #dcdcdc);--e-global-color-astglobalcolor4: var(--wpdm-background-color, #1f1f1f) !important}/*# sourceMappingURL=astra.css.map */

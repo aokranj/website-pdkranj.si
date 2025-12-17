@@ -12,6 +12,14 @@ table.fixed {
     width: fit-content;
 }
 
+table.wbg-search-settings-table,
+table.wbg-search-style-settings-table,
+table.wbg-details-settings-table,
+table.wbg-single-style-settings-table,
+table.wbg-general-style-settings-table {
+    width: 100%;
+}
+
 table.wbg-general-settings-table tr th,
 table.wbg-general-settings-table tr td,
 table.wbg-general-style-settings-table tr th,
@@ -272,3 +280,31 @@ input#wbg_shortcode {
 
 
 /* Common Admin Styles Ended */
+
+
+/* Fontawesome Iconpicker Started */
+
+.iconpicker-popover.popover {
+    width: 264px;
+    border: 1px solid #DDD;
+}
+
+.iconpicker .iconpicker-item {
+    width: 22px;
+    height: 22px;
+    font-size: 22px;
+    box-shadow: 0 0 0 3px #DDD;
+    color: #444;
+}
+
+.iconpicker .iconpicker-item:hover {
+    color: #47A8F5;
+    box-shadow: 0 0 0 3px #47A8F5;
+}
+
+.iconpicker .iconpicker-item.iconpicker-selected {
+    background: #47A8F5;
+}
+
+
+/* Fontawesome Iconpicker Ended */
