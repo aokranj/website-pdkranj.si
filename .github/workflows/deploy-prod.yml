@@ -43,8 +43,8 @@ jobs:
                     host: www.pdkranj.si
                     username: pd-prod
                     key: ${{ secrets.SSH_PRIVKEY_GITHUB_TO_PD_PROD }}
-                    script_stop: true
                     script: |
+                        set -e
                         cd www/www.pdkranj.si
                         git fetch
                         git checkout "${{github.ref_name}}"

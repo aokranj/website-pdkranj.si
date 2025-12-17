@@ -27,8 +27,8 @@ jobs:
                     host: stg.pdkranj.si
                     username: pd-stg
                     key: ${{ secrets.SSH_PRIVKEY_GITHUB_TO_PD_STG }}
-                    script_stop: true
                     script: |
+                        set -e
                         cd www/stg.pdkranj.si
                         git pull
                         ./sbin/deploy-here
