@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WBG Bangla\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-12 21:52+0600\n"
-"PO-Revision-Date: 2023-03-16 15:48+0000\n"
+"PO-Revision-Date: 2025-04-25 22:26+0000\n"
 "Last-Translator: Hossni Mubarak\n"
 "Language-Team: বাংলা\n"
 "Language: bn_BD\n"
@@ -13,130 +13,159 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Poedit-Basepath: .\n"
-"X-Loco-Version: 2.6.4; wp-6.1.1"
+"X-Loco-Version: 2.7.2; wp-6.8"
 
-#: core/gallery-content.php:203
+#: core/gallery-content.php:233
 msgid " »"
 msgstr " »"
 
-#: admin/view/partial/gallery-content.php:46
+#: admin/view/partial/gallery-content.php:45
 msgid "1"
 msgstr "১"
 
-#: admin/view/partial/gallery-content.php:47
+#: admin/view/general-settings.php:273
+msgid "11 222.00"
+msgstr ""
+
+#: admin/view/general-settings.php:270
+msgid "11,222.00"
+msgstr ""
+
+#: admin/view/general-settings.php:267
+msgid "11.00"
+msgstr ""
+
+#: admin/view/partial/gallery-content.php:46
 msgid "2"
 msgstr "২"
 
-#: admin/view/partial/book-information.php:375 wp-books-gallery.php:178
+#: admin/view/partial/book-information.php:496 wp-books-gallery.php:156
 msgid "Active"
 msgstr "সচল"
 
-#: admin/cls-books-gallery-admin.php:154
+#: admin/view/partial/book-information.php:196
+msgid "Add File"
+msgstr ""
+
+#: admin/cls-books-gallery-admin.php:169
 msgid "Add New"
 msgstr "নতুন যুক্ত করুন"
 
-#: admin/cls-books-gallery-admin.php:330
+#: admin/cls-books-gallery-admin.php:345
 msgid "Add New Author"
 msgstr "যোগ নতুন লেখক"
 
-#: admin/cls-books-gallery-admin.php:153
+#: admin/cls-books-gallery-admin.php:168
 msgid "Add New Book"
 msgstr "যোগ নতুন বই"
 
-#: admin/cls-books-gallery-admin.php:201
+#: admin/cls-books-gallery-admin.php:216
 msgid "Add New Book Category"
 msgstr "যোগ নতুন বই বিভাগ"
 
-#: admin/cls-books-gallery-admin.php:227
+#: admin/cls-books-gallery-admin.php:242
 msgid "Add New Book Format"
 msgstr "যোগ নতুন বই ফরম্যাট"
 
-#: admin/cls-books-gallery-admin.php:252
+#: admin/cls-books-gallery-admin.php:267
 msgid "Add New Book Series"
 msgstr "যোগ নতুন বই সিরিজ"
 
-#: admin/cls-books-gallery-admin.php:305
+#: admin/cls-books-gallery-admin.php:320
 msgid "Add New Grade Level"
 msgstr "যোগ করুন, নতুন গ্রেড স্তর"
 
-#: admin/cls-books-gallery-admin.php:280
+#: admin/cls-books-gallery-admin.php:295
 msgid "Add New Reading Age"
 msgstr "নতুন যোগ পড়ার বয়স"
 
-#: admin/view/general-settings.php:95
+#: admin/view/general-settings.php:99
 msgid "Affiliate Code"
 msgstr "অ্যাফিলিয়েট কোড"
 
-#: admin/cls-books-gallery-admin.php:325
-#: admin/view/partial/search-content.php:186
+#: admin/cls-books-gallery-admin.php:340
+#: admin/view/partial/search-content.php:184
 msgid "All Authors"
 msgstr "সকল লেখক"
 
-#: admin/cls-books-gallery-admin.php:196
+#: admin/cls-books-gallery-admin.php:211
 msgid "All Book Categories"
 msgstr "সব বই বিভাগ"
 
-#: admin/cls-books-gallery-admin.php:222
+#: admin/cls-books-gallery-admin.php:237
 msgid "All Book Formats"
 msgstr "সব বই Formats"
 
-#: admin/cls-books-gallery-admin.php:247
+#: admin/cls-books-gallery-admin.php:262
 msgid "All Book Series"
 msgstr "সব বই সিরিজ"
 
-#: admin/cls-books-gallery-admin.php:151
+#: admin/cls-books-gallery-admin.php:166
 msgid "All Books"
 msgstr "সব বই"
 
-#: admin/view/partial/search-content.php:99
+#: admin/view/partial/search-content.php:97
 msgid "All Categories"
 msgstr "সকল ক্যাটাগরি"
 
-#: admin/cls-books-gallery-admin.php:300
+#: admin/view/partial/search-content.php:342
+msgid "All Co-Authors"
+msgstr ""
+
+#: admin/cls-books-gallery-admin.php:315
 msgid "All Grade Level"
 msgstr "সব গ্রেড স্তরের"
 
-#: admin/view/partial/search-content.php:157
+#: admin/view/partial/search-content.php:155
 msgid "All Languages"
 msgstr "সকল ভাষা"
 
-#: admin/view/partial/search-content.php:215
+#: admin/view/partial/search-content.php:213
 msgid "All Publishers"
 msgstr "সকল প্রকাশক"
 
-#: admin/cls-books-gallery-admin.php:275
+#: admin/cls-books-gallery-admin.php:290
+#: admin/view/partial/search-content.php:371
 msgid "All Reading Age"
 msgstr "সব পড়ার বয়স"
 
-#: admin/view/partial/search-content.php:128
+#: admin/view/partial/search-content.php:126
 msgid "All Years"
 msgstr "সকল সাল"
+
+#: admin/view/general-settings.php:286
+msgid "Alter Text"
+msgstr ""
+
+#: admin/view/partial/single-styles.php:255
+msgid "Anchor Hover Color"
+msgstr ""
 
 #: admin/cls-books-gallery-admin.php:74 admin/cls-books-gallery-admin.php:75
 msgid "API Import"
 msgstr "API-আমদানি"
 
-#: admin/view/partial/gallery-content.php:102
-#: admin/view/partial/search-content.php:90
-#: admin/view/partial/search-content.php:119
-#: admin/view/partial/search-content.php:148
-#: admin/view/partial/search-content.php:177
-#: admin/view/partial/search-content.php:206
-#: admin/view/partial/search-content.php:237
-#: admin/view/partial/search-content.php:266
+#: admin/view/partial/gallery-content.php:104
+#: admin/view/partial/search-content.php:88
+#: admin/view/partial/search-content.php:117
+#: admin/view/partial/search-content.php:146
+#: admin/view/partial/search-content.php:175
+#: admin/view/partial/search-content.php:204
+#: admin/view/partial/search-content.php:235
+#: admin/view/partial/search-content.php:264
+#: admin/view/partial/search-content.php:333
+#: admin/view/partial/search-content.php:362
 msgid "Ascending"
 msgstr "ছোট থেকে বড়"
 
-#: admin/view/partial/book-information.php:130
-#: front/view/single/before-tags.php:233
+#: admin/view/partial/book-information.php:138
+#: front/view/single/before-tags.php:268
 msgid "ASIN"
 msgstr "ASIN"
 
-#: admin/cls-books-gallery-admin.php:322 admin/cls-books-gallery-admin.php:323
-#: admin/cls-books-gallery-admin.php:332
-#: admin/view/partial/book-information.php:55
-#: admin/view/partial/gallery-content.php:89
-#: admin/view/partial/gallery-styles.php:273 wp-books-gallery.php:148
+#: admin/cls-books-gallery-admin.php:338
+#: admin/view/partial/gallery-content.php:90
+#: admin/view/partial/gallery-styles.php:273 wp-books-gallery.php:122
 msgid "Author"
 msgstr "লেখক"
 
@@ -145,14 +174,22 @@ msgstr "লেখক"
 msgid "Author Label"
 msgstr "লেখক লেবেল"
 
-#: admin/view/partial/gallery-content.php:157
+#: admin/view/partial/gallery-content.php:161
 #| msgid "Author Label Text:"
 msgid "Author Label Text"
 msgstr "লেখক লেবেল"
 
-#: front/view/single.php:161 front/view/single.php:168
-msgid "Back"
-msgstr "ফিরে যান"
+#: admin/view/partial/single-content.php:562
+msgid "Author Panel Title"
+msgstr ""
+
+#: admin/cls-books-gallery-admin.php:347
+msgid "Authors"
+msgstr ""
+
+#: admin/view/partial/single-content.php:610
+msgid "Back Button Label"
+msgstr ""
 
 #: admin/view/partial/gallery-styles.php:75
 #: admin/view/partial/gallery-styles.php:97
@@ -163,10 +200,12 @@ msgstr "ফিরে যান"
 #: admin/view/partial/gallery-styles.php:548
 #: admin/view/partial/search-styles.php:24
 #: admin/view/partial/search-styles.php:110
-#: admin/view/partial/search-styles.php:137
-#: admin/view/partial/search-styles.php:167
-#: admin/view/partial/search-styles.php:189
-#: admin/view/partial/single-styles.php:293
+#: admin/view/partial/search-styles.php:175
+#: admin/view/partial/search-styles.php:204
+#: admin/view/partial/search-styles.php:233
+#: admin/view/partial/search-styles.php:271
+#: admin/view/partial/single-styles.php:46
+#: admin/view/partial/single-styles.php:322
 #: widget/cls-books-gallery-widget.php:142
 #: widget/cls-books-gallery-widget.php:184
 msgid "Background Color"
@@ -176,27 +215,31 @@ msgstr "পটভূমি রঙ"
 msgid "Before Discount Color"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:148
+#: admin/cls-books-gallery-admin.php:428 front/view/single.php:68
+msgid "Best Sellers Rank"
+msgstr ""
+
+#: admin/cls-books-gallery-admin.php:163
 msgid "Book"
 msgstr "বই"
 
-#: admin/cls-books-gallery-admin.php:193 admin/cls-books-gallery-admin.php:203
+#: admin/cls-books-gallery-admin.php:208 admin/cls-books-gallery-admin.php:218
 msgid "Book Categories"
 msgstr "বই বিভাগ"
 
-#: admin/cls-books-gallery-admin.php:194 wp-books-gallery.php:147
+#: admin/cls-books-gallery-admin.php:209 wp-books-gallery.php:121
 msgid "Book Category"
 msgstr "বই বিভাগ"
 
-#: wp-books-gallery.php:145
+#: wp-books-gallery.php:119
 msgid "Book Cover"
 msgstr "বুক কভার"
 
-#: admin/cls-books-gallery-admin.php:366
+#: admin/cls-books-gallery-admin.php:381
 msgid "Book Cover Image"
 msgstr "বই কভার ইমেজ"
 
-#: admin/view/general-settings.php:137
+#: admin/view/general-settings.php:142
 msgid "Book Cover Priority"
 msgstr ""
 
@@ -204,19 +247,19 @@ msgstr ""
 msgid "Book Detail Settings"
 msgstr "বই বিস্তারিত সেটিংস"
 
-#: admin/cls-books-gallery-admin.php:377
+#: admin/cls-books-gallery-admin.php:392
 msgid "Book External Image Url"
 msgstr "বইয়ের বাহ্যিক ইমেজ Url টি"
 
-#: admin/cls-books-gallery-admin.php:220
+#: admin/cls-books-gallery-admin.php:235
 msgid "Book Format"
 msgstr "বই ফরম্যাট"
 
-#: admin/cls-books-gallery-admin.php:219 admin/cls-books-gallery-admin.php:229
+#: admin/cls-books-gallery-admin.php:234 admin/cls-books-gallery-admin.php:244
 msgid "Book Formats"
 msgstr "বই Formats"
 
-#: admin/cls-books-gallery-admin.php:355
+#: admin/cls-books-gallery-admin.php:370
 #: admin/view/partial/single-content.php:38
 msgid "Book Information"
 msgstr "বই তথ্য"
@@ -227,122 +270,152 @@ msgstr "বই তথ্য"
 msgid "Book Item"
 msgstr "বই আইটেম:"
 
-#: admin/view/partial/search-content.php:51
+#: admin/view/partial/search-content.php:49
 msgid "Book Name"
 msgstr "বইয়ের নাম"
 
-#: admin/cls-books-gallery-admin.php:244 admin/cls-books-gallery-admin.php:245
-#: admin/cls-books-gallery-admin.php:254
+#: admin/view/partial/gallery-content.php:93
+msgid "Book Published Date"
+msgstr ""
+
+#: admin/cls-books-gallery-admin.php:259 admin/cls-books-gallery-admin.php:260
+#: admin/cls-books-gallery-admin.php:269
 msgid "Book Series"
 msgstr "বই সিরিজ"
 
-#: wp-books-gallery.php:150
+#: wp-books-gallery.php:124
 msgid "Book Status"
 msgstr "বইয়ের অবস্থা"
 
-#: widget/cls-books-gallery-widget.php:151 wp-books-gallery.php:146
+#: widget/cls-books-gallery-widget.php:151 wp-books-gallery.php:120
 msgid "Book Title"
 msgstr "বইয়ের শিরোনাম"
 
-#: admin/cls-books-gallery-admin.php:147 front/view/gallery.php:296
-#: front/view/gallery.php:305
+#: admin/cls-books-gallery-admin.php:162
+#: front/view/gallery/sorting-view-mode.php:16
+#: front/view/gallery/sorting-view-mode.php:26
 msgid "Books"
 msgstr "বইসমূহ"
 
-#: admin/cls-books-gallery-admin.php:163
+#: admin/cls-books-gallery-admin.php:178
 msgid "books"
 msgstr "বই"
+
+#: admin/view/wbg-api-import.php:144
+msgid "Books Already Imported!"
+msgstr ""
 
 #: widget/cls-books-gallery-widget.php:14
 #: widget/cls-books-gallery-widget.php:105
 #: widget/cls-books-gallery-widget.php:213
 msgid "Books Gallery"
-msgstr ""
+msgstr "বইয়ের গ্যালারি"
 
-#: admin/cls-books-gallery-admin.php:682
+#: admin/cls-books-gallery-admin.php:750
 msgid "Books Gallery Sidebar"
-msgstr ""
+msgstr "বইয়ের গ্যালারি সাইডবার"
 
 #: widget/cls-books-gallery-widget.php:14
 msgid "Books Gallery Widget"
+msgstr "বইয়ের গ্যালারি উইজেট"
+
+#: admin/view/wbg-api-import.php:135
+msgid "Books Imported Successfully"
 msgstr ""
 
-#: admin/view/partial/gallery-content.php:265
+#: admin/view/partial/gallery-content.php:348
 msgid "Books Per Page"
 msgstr "প্রতি পৃষ্ঠায় বই সংখ্যা"
 
-#: admin/view/partial/gallery-content.php:82
+#: admin/view/partial/gallery-content.php:83
 msgid "Books Sorting By"
 msgstr "বই শ্রেণীবিভাজন দ্বারা"
 
 #: admin/view/partial/gallery-styles.php:24
 #: admin/view/partial/gallery-styles.php:90
 #: admin/view/partial/search-styles.php:43
-#: admin/view/partial/search-styles.php:144
-#: admin/view/partial/search-styles.php:196
-#: admin/view/partial/single-styles.php:312
+#: admin/view/partial/search-styles.php:182
+#: admin/view/partial/search-styles.php:240
+#: admin/view/partial/search-styles.php:285
+#: admin/view/partial/single-styles.php:341
 #: widget/cls-books-gallery-widget.php:132
 msgid "Border Color"
 msgstr "বর্ডার রঙ"
 
 #: admin/view/partial/gallery-styles.php:66
-#: admin/view/partial/search-styles.php:64
+#: admin/view/partial/search-styles.php:62
 #: widget/cls-books-gallery-widget.php:137
 msgid "Border Radius"
 msgstr "সীমানা ব্যাসার্ধ"
 
 #: admin/view/partial/search-styles.php:83
-#: admin/view/partial/single-styles.php:333
+#: admin/view/partial/single-styles.php:360
 #: widget/cls-books-gallery-widget.php:127
 msgid "Border Width"
 msgstr "সীমানা প্রস্থ"
 
-#: admin/view/partial/search-content.php:292
-#| msgid "Button:"
-msgid "Button"
-msgstr "বোতাম"
-
-#: admin/view/partial/gallery-content.php:330
+#: admin/view/partial/gallery-content.php:424
 msgid "Button Bottom Align"
 msgstr "বোতাম নীচে সারিবদ্ধ"
 
-#: admin/view/partial/gallery-content.php:188
-#: admin/view/partial/gallery-content.php:216
+#: admin/view/partial/search-content.php:412
+msgid "Button Icon"
+msgstr ""
+
+#: admin/view/partial/gallery-content.php:271
+#: admin/view/partial/gallery-content.php:299
+#: admin/view/partial/search-content.php:392
 #| msgid "Button Text:"
 msgid "Button Text"
 msgstr "বাটন শব্দ"
 
-#: admin/view/general-settings.php:129
+#: admin/view/general-settings.php:208
+msgid "Button Url in the Same Window"
+msgstr ""
+
+#: admin/view/partial/search-styles.php:226
+msgid "Button Width"
+msgstr ""
+
+#: admin/view/general-settings.php:133
 msgid "Buy"
 msgstr "কিনতে"
 
 #: widget/cls-books-gallery-widget.php:193
 msgid "Buy Button"
+msgstr "কেনার বাটন"
+
+#: admin/view/general-settings.php:225
+msgid "Buy Button Icon"
 msgstr ""
 
-#: admin/view/partial/book-information.php:190
-msgid "Buy From Link"
-msgstr "কিনতে লিঙ্ক থেকে"
+#: admin/view/partial/book-information.php:225
+msgid "Buy From URL"
+msgstr ""
 
-#: admin/view/partial/gallery-content.php:160
+#: front/view/single-book.php:37
+msgid "By"
+msgstr ""
+
+#: admin/view/partial/gallery-content.php:164
 msgid "By:"
 msgstr "দ্বারা:"
 
-#: admin/view/partial/gallery-content.php:144
+#: admin/view/partial/gallery-content.php:147
 #: admin/view/partial/gallery-styles.php:227
 msgid "Category"
 msgstr "শ্রেণী"
 
 #: widget/cls-books-gallery-widget.php:162
 msgid "Category / Author"
-msgstr ""
+msgstr "ক্যাটাগরি / লেখক"
 
 #: admin/view/partial/single-content.php:220
 #| msgid "Category Label:"
 msgid "Category Label"
 msgstr "শ্রেনীর লেবেল"
 
-#: admin/view/partial/gallery-content.php:141
+#: admin/view/partial/gallery-content.php:144
 #| msgid "Category Label Text:"
 msgid "Category Label Text"
 msgstr "শ্রেনীর লেবেলের লেখা"
@@ -350,9 +423,17 @@ msgstr "শ্রেনীর লেবেলের লেখা"
 #: widget/cls-books-gallery-widget.php:180
 #: widget/cls-books-gallery-widget.php:195
 msgid "Check to show"
+msgstr "দেখানোর জন্য চেক দিন"
+
+#: admin/view/general-settings.php:287
+msgid "Choose Icon"
 msgstr ""
 
-#: admin/view/partial/book-information.php:71
+#: admin/cls-books-gallery-admin.php:337
+msgid "Co-Authors"
+msgstr ""
+
+#: admin/view/partial/book-information.php:79
 msgid "Co-Publisher"
 msgstr "সহ-প্রকাশক"
 
@@ -360,32 +441,32 @@ msgstr "সহ-প্রকাশক"
 msgid "Co-Publisher Label"
 msgstr "সহ-প্রকাশক লেবেল"
 
-#: admin/view/general-settings.php:113
+#: admin/view/general-settings.php:117
 msgid "Code Apply To URL"
 msgstr "কোড প্রয়োগ করার জন্য URL টি"
 
 #: admin/view/partial/gallery-styles.php:19
 #: widget/cls-books-gallery-widget.php:125
 msgid "Container"
-msgstr ""
+msgstr "কনটেইনার"
 
 #: admin/view/gallery-settings.php:22 admin/view/search-settings.php:22
 #: admin/view/single-settings.php:22
 msgid "Content"
 msgstr "কন্টেন্ট"
 
-#: admin/view/partial/gallery-content.php:381
+#: admin/view/partial/gallery-content.php:489
 msgid "Copy this shortcode and apply it to any page to display books gallery."
 msgstr ""
 "এই কপি সর্টকোড এবং এটি প্রয়োগ করার কোনো পৃষ্ঠা প্রদর্শন করার জন্য বই "
 "গ্যালারি."
 
-#: admin/view/partial/book-information.php:218
+#: admin/view/partial/book-information.php:297
 msgid "Cost Type"
 msgstr "খরচ টাইপ"
 
-#: admin/view/partial/book-information.php:158
-#: admin/view/partial/gallery-content.php:94
+#: admin/view/partial/book-information.php:166
+#: admin/view/partial/gallery-content.php:95
 msgid "Country"
 msgstr "দেশ"
 
@@ -394,20 +475,16 @@ msgstr "দেশ"
 msgid "Country Label"
 msgstr "দেশের লেবেল"
 
-#: admin/view/partial/gallery-content.php:299
+#: admin/view/partial/gallery-content.php:392
 msgid "Currency"
 msgstr "মুদ্রা"
-
-#: admin/view/partial/gallery-content.php:90
-msgid "Date"
-msgstr "তারিখ"
 
 #: admin/view/partial/single-content.php:278
 #| msgid "Date Format:"
 msgid "Date Format"
 msgstr "তারিখ বিন্যাস"
 
-#: admin/view/general-settings.php:150
+#: admin/view/general-settings.php:155
 msgid "Default"
 msgstr ""
 
@@ -415,33 +492,37 @@ msgstr ""
 msgid "Default - 200 x 0"
 msgstr ""
 
-#: admin/view/general-settings.php:161
+#: admin/view/general-settings.php:189
 msgid "Default Cover Image Url"
 msgstr ""
 
-#: admin/view/partial/search-content.php:96
-#: admin/view/partial/search-content.php:125
-#: admin/view/partial/search-content.php:154
-#: admin/view/partial/search-content.php:183
-#: admin/view/partial/search-content.php:212
-#: admin/view/partial/search-content.php:243
-#: admin/view/partial/search-content.php:272
+#: admin/view/partial/search-content.php:94
+#: admin/view/partial/search-content.php:123
+#: admin/view/partial/search-content.php:152
+#: admin/view/partial/search-content.php:181
+#: admin/view/partial/search-content.php:210
+#: admin/view/partial/search-content.php:241
+#: admin/view/partial/search-content.php:270
+#: admin/view/partial/search-content.php:339
+#: admin/view/partial/search-content.php:368
 #| msgid "Default Option :"
 msgid "Default Option"
 msgstr "ডিফল্ট অপশন"
 
-#: front/view/gallery.php:313
+#: front/view/gallery/sorting-view-mode.php:34
 msgid "Default Sorting"
 msgstr "ডিফল্ট শ্রেণীবিভাজন"
 
-#: admin/view/partial/gallery-content.php:105
-#: admin/view/partial/search-content.php:93
-#: admin/view/partial/search-content.php:122
-#: admin/view/partial/search-content.php:151
-#: admin/view/partial/search-content.php:180
-#: admin/view/partial/search-content.php:209
-#: admin/view/partial/search-content.php:240
-#: admin/view/partial/search-content.php:269
+#: admin/view/partial/gallery-content.php:107
+#: admin/view/partial/search-content.php:91
+#: admin/view/partial/search-content.php:120
+#: admin/view/partial/search-content.php:149
+#: admin/view/partial/search-content.php:178
+#: admin/view/partial/search-content.php:207
+#: admin/view/partial/search-content.php:238
+#: admin/view/partial/search-content.php:267
+#: admin/view/partial/search-content.php:336
+#: admin/view/partial/search-content.php:365
 msgid "Descending"
 msgstr "বড় থেকে ছোট"
 
@@ -449,31 +530,35 @@ msgstr "বড় থেকে ছোট"
 msgid "Description"
 msgstr "বর্ণনা"
 
-#: admin/cls-books-gallery-admin.php:164
+#: admin/cls-books-gallery-admin.php:179
 msgid "Description For Books"
 msgstr "বিবরণ: বই জন্য"
 
-#: admin/view/partial/single-content.php:459
+#: admin/view/partial/single-content.php:488
 #| msgid "Description Label:"
 msgid "Description Label"
 msgstr "বর্ণনার লেবেল"
 
-#: admin/view/partial/gallery-content.php:173
+#: admin/view/partial/gallery-content.php:256
 #| msgid "Description Word Length:"
 msgid "Description Word Length"
 msgstr "বর্ণনার শব্দের সংখ্যা"
 
-#: admin/view/partial/gallery-content.php:33
+#: admin/view/partial/gallery-content.php:32
 #| msgid "Desktop:"
 msgid "Desktop"
 msgstr "ডেস্কটপ"
+
+#: admin/view/partial/gallery-content.php:120
+msgid "Detail Page in New Tab"
+msgstr ""
 
 #: admin/view/single-settings.php:9
 #| msgid "Book Details Settings"
 msgid "Details Settings"
 msgstr "বিশদ বিন্যাস"
 
-#: admin/view/partial/book-information.php:174
+#: admin/view/partial/book-information.php:182
 msgid "Dimension"
 msgstr "মাত্রা"
 
@@ -482,35 +567,47 @@ msgstr "মাত্রা"
 msgid "Dimension Label"
 msgstr "মাত্রার লেবেল"
 
-#: admin/view/partial/book-information.php:287
+#: admin/view/partial/gallery-content.php:113
+msgid "Disable Book Details Page / Enable Popup"
+msgstr ""
+
+#: admin/view/partial/book-information.php:366
 msgid "Discount Price"
 msgstr "ডিসকাউন্ট মূল্য"
 
-#: admin/view/partial/gallery-content.php:150
-#: admin/view/partial/search-content.php:167
+#: admin/view/partial/search-content.php:418
+msgid "Display as Text"
+msgstr ""
+
+#: admin/view/partial/gallery-content.php:154
+#: admin/view/partial/search-content.php:165
 #: admin/view/partial/single-content.php:199
 #| msgid "Display Author?"
 msgid "Display Author"
 msgstr "লেখকের নাম দেখাবেন"
 
-#: admin/view/partial/search-content.php:227
+#: admin/view/partial/search-content.php:225
 msgid "Display Book Format"
 msgstr "ডিসপ্লে বই ফরম্যাট"
 
-#: admin/view/partial/search-content.php:42
+#: admin/view/partial/search-content.php:40
 msgid "Display Book Name"
 msgstr "প্রদর্শন বইয়ের নাম"
 
-#: admin/view/partial/gallery-content.php:197
+#: admin/view/partial/gallery-content.php:280
 msgid "Display Buy Now Button"
 msgstr "এখন কিনুন বোতাম প্রদর্শন করুন"
 
-#: admin/view/partial/gallery-content.php:134
-#: admin/view/partial/search-content.php:80
+#: admin/view/partial/gallery-content.php:137
+#: admin/view/partial/search-content.php:78
 #: admin/view/partial/single-content.php:214
 #| msgid "Display Category?"
 msgid "Display Category"
 msgstr "বইয়ের শ্রেণী দেখাবেন"
+
+#: admin/view/partial/search-content.php:323
+msgid "Display Co-Author"
+msgstr ""
 
 #: admin/view/partial/single-content.php:247
 msgid "Display Co-Publisher"
@@ -521,8 +618,8 @@ msgstr "সহ-প্রকাশক প্রদর্শন করুন"
 msgid "Display Country"
 msgstr "দেশ দেখান"
 
-#: admin/view/partial/gallery-content.php:166
-#: admin/view/partial/single-content.php:453
+#: admin/view/partial/gallery-content.php:249
+#: admin/view/partial/single-content.php:482
 #| msgid "Display Description?"
 msgid "Display Description"
 msgstr "বর্ণনা দেখাবেন"
@@ -532,16 +629,12 @@ msgstr "বর্ণনা দেখাবেন"
 msgid "Display Dimension"
 msgstr "মাত্রা দেখান"
 
-#: admin/view/partial/gallery-content.php:181
+#: admin/view/partial/gallery-content.php:264
 msgid "Display Download Button"
 msgstr "কেনা/ডাউনলোড বোতাম দেখান"
 
-#: admin/view/partial/single-content.php:473
-#| msgid "Display Download/BuyNow Button:"
-msgid "Display Download/BuyNow Button"
-msgstr "কেনা/ডাউনলোড বোতাম দেখান"
-
-#: admin/view/partial/single-content.php:420
+#: admin/view/partial/gallery-content.php:171
+#: admin/view/partial/single-content.php:419
 msgid "Display Edition"
 msgstr "প্রদর্শন সংস্করণ"
 
@@ -554,7 +647,11 @@ msgstr "ফাইল সাইজ দেখান"
 msgid "Display Format"
 msgstr "প্রদর্শন বিন্যাস"
 
-#: admin/view/partial/gallery-content.php:244
+#: admin/view/partial/single-content.php:586
+msgid "Display Format Price & Buy Url"
+msgstr ""
+
+#: admin/view/partial/gallery-content.php:327
 msgid "Display Front Sorting"
 msgstr "প্রদর্শন ফ্রন্ট বাছাই"
 
@@ -562,25 +659,26 @@ msgstr "প্রদর্শন ফ্রন্ট বাছাই"
 msgid "Display Grade Level"
 msgstr "গ্রেড স্তর প্রদর্শন করুন"
 
-#: admin/view/partial/single-content.php:435
+#: admin/view/partial/single-content.php:434
 msgid "Display Illustrator"
 msgstr "প্রদর্শন অঙ্কনশিল্পী"
 
-#: admin/view/partial/search-content.php:61
+#: admin/view/partial/search-content.php:59
 #: admin/view/partial/single-content.php:290
 #| msgid "Display ISBN:"
 msgid "Display ISBN"
 msgstr "আইএসবিএন দেখান"
 
+#: admin/view/partial/search-content.php:285
 #: admin/view/partial/single-content.php:308
 msgid "Display ISBN-13"
 msgstr "আইএসবিএন-১৩ প্রদর্শন করুন"
 
-#: admin/view/partial/single-content.php:405
+#: admin/view/partial/single-content.php:404
 msgid "Display Item Weight"
 msgstr "আইটেম ওজন প্রদর্শন করুন"
 
-#: admin/view/partial/search-content.php:138
+#: admin/view/partial/search-content.php:136
 #: admin/view/partial/single-content.php:356
 #| msgid "Display Language:"
 msgid "Display Language"
@@ -591,41 +689,44 @@ msgstr "ভাষা দেখান"
 msgid "Display Pages"
 msgstr "পৃষ্ঠা দেখান"
 
-#: admin/view/partial/gallery-content.php:278
+#: admin/view/partial/gallery-content.php:361
 msgid "Display Pagination"
 msgstr "পেজিনেশন দেখান"
 
+#: admin/view/partial/gallery-content.php:210
 #: admin/view/partial/single-content.php:265
 #| msgid "Display Publish Date:"
 msgid "Display Publish Date"
 msgstr "প্রকাশের তারিখ দেখান"
 
-#: admin/view/partial/search-content.php:196
+#: admin/view/partial/search-content.php:194
 #: admin/view/partial/single-content.php:229
 #| msgid "Display Publisher:"
 msgid "Display Publisher"
 msgstr "প্রকাশক দেখান"
 
-#: admin/view/partial/gallery-content.php:351
+#: admin/view/partial/gallery-content.php:447
 #: widget/cls-books-gallery-widget.php:175
 msgid "Display Rating"
 msgstr "মাত্রা দেখান"
 
+#: admin/view/partial/search-content.php:352
 #: admin/view/partial/single-content.php:121
 msgid "Display Reading Age"
 msgstr "প্রদর্শন পড়ার বয়স"
 
-#: admin/view/partial/search-content.php:22
+#: admin/view/partial/search-content.php:20
+#: admin/view/partial/single-content.php:625
 #| msgid "Display Search Panel?"
 msgid "Display Search Panel"
 msgstr "খোঁজার প্যানেল দেখাবেন"
 
-#: admin/view/partial/search-content.php:256
+#: admin/view/partial/search-content.php:254
 #: admin/view/partial/single-content.php:82
 msgid "Display Series"
 msgstr "প্রদর্শন সিরিজ"
 
-#: admin/view/partial/single-content.php:481
+#: admin/view/partial/single-content.php:619
 #| msgid "Display Sidebar:"
 msgid "Display Sidebar"
 msgstr "সাইডবার দেখান"
@@ -634,15 +735,19 @@ msgstr "সাইডবার দেখান"
 msgid "Display Sub-Title"
 msgstr "প্রদর্শন উপ-শিরোনাম"
 
-#: admin/view/partial/gallery-content.php:237
+#: admin/view/partial/search-content.php:304
+msgid "Display Tags"
+msgstr ""
+
+#: admin/view/partial/gallery-content.php:320
 msgid "Display Total Books"
 msgstr "মোট বই সংখ্যা দেখাবেন"
 
-#: admin/view/partial/search-content.php:109
+#: admin/view/partial/search-content.php:107
 msgid "Display Year"
 msgstr "ডিসপ্লে বছর"
 
-#: admin/view/partial/gallery-content.php:191
+#: admin/view/partial/gallery-content.php:274
 msgid "Download"
 msgstr "ডাউনলোড"
 
@@ -656,60 +761,80 @@ msgstr "ডাউনলোড বোতামন"
 msgid "Download Button Hover"
 msgstr ""
 
-#: admin/view/partial/book-information.php:182
-msgid "Download Link"
-msgstr "ডাউনলোড লিঙ্ক"
+#: admin/view/general-settings.php:217
+msgid "Download Button Icon"
+msgstr ""
 
-#: admin/view/general-settings.php:73
+#: admin/view/partial/book-information.php:190
+msgid "Download URL"
+msgstr ""
+
+#: admin/view/general-settings.php:76
 msgid "Download When Logged-in"
 msgstr "ডাউনলোড যখন লগ-ইন"
 
-#: admin/view/general-settings.php:126
+#: admin/view/general-settings.php:130
 msgid "Downloand"
 msgstr "Downloand"
 
-#: admin/cls-books-gallery-admin.php:328
+#: admin/cls-books-gallery-admin.php:343
 msgid "Edit Author"
 msgstr "লেখক সম্পাদনা"
 
-#: admin/cls-books-gallery-admin.php:155
+#: admin/cls-books-gallery-admin.php:170
 msgid "Edit Book"
 msgstr "সম্পাদনা বই"
 
-#: admin/cls-books-gallery-admin.php:199
+#: admin/cls-books-gallery-admin.php:214
 msgid "Edit Book Category"
 msgstr "সম্পাদনা বই বিভাগ"
 
-#: admin/cls-books-gallery-admin.php:225
+#: admin/cls-books-gallery-admin.php:240
 msgid "Edit Book Format"
 msgstr "সম্পাদনা বই ফরম্যাট"
 
-#: admin/cls-books-gallery-admin.php:250
+#: admin/cls-books-gallery-admin.php:265
 msgid "Edit Book Series"
 msgstr "সম্পাদনা বই সিরিজ"
 
-#: admin/cls-books-gallery-admin.php:303
+#: admin/cls-books-gallery-admin.php:318
 msgid "Edit Grade Level"
 msgstr "সম্পাদনা গ্রেড স্তর"
 
-#: admin/cls-books-gallery-admin.php:278
+#: admin/cls-books-gallery-admin.php:293
 msgid "Edit Reading Age"
 msgstr "সম্পাদনা পড়ার বয়স"
 
-#: admin/view/partial/book-information.php:328
+#: admin/view/partial/book-information.php:407
 msgid "Edition"
 msgstr "সংস্করণ"
 
-#: admin/view/partial/single-content.php:426
+#: admin/view/partial/single-content.php:425
 msgid "Edition Label"
 msgstr "সংস্করণ লেবেল"
 
-#: admin/view/partial/gallery-content.php:110
-#| msgid "Enable Book Details Page?"
-msgid "Enable Book Details Page"
-msgstr "বিশদ পৃষ্ঠা দেখাবেন"
+#: admin/view/partial/gallery-content.php:189
+msgid "Edition Label Text"
+msgstr ""
 
-#: admin/view/partial/book-information.php:210
+#: admin/cls-books-gallery-admin.php:409
+msgid "Editorial Reviews"
+msgstr ""
+
+#: admin/view/partial/single-content.php:577
+#: admin/view/partial/single-content.php:592
+msgid "Editorial Reviews Title"
+msgstr ""
+
+#: admin/view/general-settings.php:245
+msgid "Enable RTL"
+msgstr ""
+
+#: admin/view/partial/book-information.php:215
+msgid "External/Affiliate Product"
+msgstr ""
+
+#: admin/view/partial/book-information.php:289
 msgid "File Size"
 msgstr "ফাইল সাইজ"
 
@@ -733,13 +858,15 @@ msgstr "উল্টানো"
 #: admin/view/partial/gallery-styles.php:475
 #: admin/view/partial/gallery-styles.php:521
 #: admin/view/partial/gallery-styles.php:567
-#: admin/view/partial/search-styles.php:153
-#: admin/view/partial/search-styles.php:174
-#: admin/view/partial/search-styles.php:205
-#: admin/view/partial/single-styles.php:69
-#: admin/view/partial/single-styles.php:115
-#: admin/view/partial/single-styles.php:161
-#: admin/view/partial/single-styles.php:207
+#: admin/view/partial/search-styles.php:129
+#: admin/view/partial/search-styles.php:189
+#: admin/view/partial/search-styles.php:211
+#: admin/view/partial/search-styles.php:249
+#: admin/view/partial/search-styles.php:278
+#: admin/view/partial/single-styles.php:77
+#: admin/view/partial/single-styles.php:123
+#: admin/view/partial/single-styles.php:169
+#: admin/view/partial/single-styles.php:215
 #: widget/cls-books-gallery-widget.php:153
 #: widget/cls-books-gallery-widget.php:164
 #: widget/cls-books-gallery-widget.php:189
@@ -754,10 +881,12 @@ msgstr "ফন্টের রঙ"
 #: admin/view/partial/gallery-styles.php:297
 #: admin/view/partial/gallery-styles.php:364
 #: admin/view/partial/gallery-styles.php:407
-#: admin/view/partial/single-styles.php:88
-#: admin/view/partial/single-styles.php:134
-#: admin/view/partial/single-styles.php:180
-#: admin/view/partial/single-styles.php:226
+#: admin/view/partial/search-styles.php:148
+#: admin/view/partial/search-styles.php:256
+#: admin/view/partial/single-styles.php:96
+#: admin/view/partial/single-styles.php:142
+#: admin/view/partial/single-styles.php:188
+#: admin/view/partial/single-styles.php:234
 #: widget/cls-books-gallery-widget.php:158
 #: widget/cls-books-gallery-widget.php:169
 #| msgid "Font Size:"
@@ -772,10 +901,15 @@ msgstr ""
 msgid "Format Label"
 msgstr "ফরম্যাট লেবেল"
 
-#: admin/view/partial/book-information.php:231
+#: admin/cls-books-gallery-admin.php:417
+msgid "Format Wise Price & Url"
+msgstr ""
+
+#: admin/view/partial/book-information.php:310
 msgid "Free"
 msgstr "ফ্রি"
 
+#: admin/view/partial/gallery-content.php:473
 #: admin/view/partial/single-content.php:282
 msgid "Full"
 msgstr "পুরো"
@@ -784,13 +918,13 @@ msgstr "পুরো"
 msgid "Full - 500 x 0"
 msgstr ""
 
-#: admin/view/partial/gallery-content.php:30
+#: admin/view/partial/gallery-content.php:29
 #, fuzzy
 #| msgid "Gallary Columns"
 msgid "Gallery Columns"
 msgstr "গ্যালারী কলাম"
 
-#: admin/view/general-settings.php:40
+#: admin/view/general-settings.php:41
 msgid "Gallery Page Slug"
 msgstr "গ্যালারি পাতা স্লাগ্"
 
@@ -799,7 +933,7 @@ msgstr "গ্যালারি পাতা স্লাগ্"
 msgid "Gallery Settings"
 msgstr "গ্যালারী বিন্যাস"
 
-#: admin/view/partial/gallery-content.php:18
+#: admin/view/partial/gallery-content.php:19
 msgid "Gallery Template"
 msgstr ""
 
@@ -808,8 +942,12 @@ msgstr ""
 msgid "General Settings"
 msgstr "সাধারণ সেটিংস"
 
-#: admin/cls-books-gallery-admin.php:297 admin/cls-books-gallery-admin.php:298
-#: admin/cls-books-gallery-admin.php:307
+#: admin/view/wbg-api-import.php:189
+msgid "Google Books"
+msgstr ""
+
+#: admin/cls-books-gallery-admin.php:312 admin/cls-books-gallery-admin.php:313
+#: admin/cls-books-gallery-admin.php:322
 msgid "Grade Level"
 msgstr "গ্রেড স্তরের"
 
@@ -817,15 +955,15 @@ msgstr "গ্রেড স্তরের"
 msgid "Grade Level Label"
 msgstr "গ্রেড স্তর, লেবেল"
 
-#: admin/view/partial/gallery-content.php:22
+#: admin/view/partial/gallery-content.php:23
 msgid "Grid"
 msgstr ""
 
-#: admin/view/partial/gallery-content.php:24
+#: admin/view/partial/gallery-content.php:25
 msgid "Grid Classic"
 msgstr ""
 
-#: admin/view/partial/single-styles.php:253
+#: admin/view/partial/single-styles.php:282
 msgid "Height"
 msgstr ""
 
@@ -834,16 +972,65 @@ msgstr ""
 msgid "Hey %1$s"
 msgstr "আরে %1$s"
 
+#: admin/view/partial/single-content.php:556
+msgid "Hide Author Panel"
+msgstr ""
+
+#: admin/view/partial/single-content.php:604
+msgid "Hide Back Button"
+msgstr ""
+
+#: admin/view/general-settings.php:167
+msgid "Hide Book Cover"
+msgstr ""
+
+#: admin/view/partial/search-content.php:406
+msgid "Hide Button"
+msgstr ""
+
+#: admin/view/partial/single-content.php:511
+msgid "Hide Buy Now Button"
+msgstr ""
+
+#: admin/view/partial/single-content.php:502
+msgid "Hide Download Button"
+msgstr ""
+
+#: admin/view/partial/single-content.php:571
+msgid "Hide Editorial Reviews"
+msgstr ""
+
 #: admin/view/partial/gallery-styles.php:106
 msgid "Hide Hover Shadow"
 msgstr ""
 
-#: admin/view/partial/single-content.php:500
+#: admin/view/partial/single-content.php:670
+msgid "Hide Load More Button"
+msgstr ""
+
+#: admin/view/partial/single-content.php:541
 msgid "Hide Other Books By"
 msgstr ""
 
-#: admin/view/partial/single-content.php:492
+#: admin/view/partial/single-content.php:526
 msgid "Hide Other Books From"
+msgstr ""
+
+#: admin/view/partial/gallery-content.php:382
+#: admin/view/partial/single-content.php:663
+msgid "Hide Price"
+msgstr ""
+
+#: admin/view/partial/single-content.php:643
+msgid "Hide Search Panel in Mobile"
+msgstr ""
+
+#: admin/view/partial/single-content.php:467
+msgid "Hide Tags"
+msgstr ""
+
+#: admin/view/partial/single-content.php:449
+msgid "Hide Translator"
 msgstr ""
 
 #: admin/view/partial/gallery-styles.php:140
@@ -851,11 +1038,12 @@ msgstr ""
 msgid "Hover Color"
 msgstr "হোবার রঙ"
 
-#: admin/view/partial/book-information.php:348
+#: admin/view/partial/book-information.php:427
 msgid "Illustrator"
 msgstr "অঙ্কনশিল্পী"
 
-#: admin/view/partial/single-content.php:441
+#: admin/view/partial/single-content.php:440
+#: admin/view/partial/single-content.php:455
 msgid "Illustrator Label"
 msgstr "অঙ্কনশিল্পী লেবেল"
 
@@ -867,31 +1055,31 @@ msgstr "ছবির এনিমেশন"
 msgid "Image Size"
 msgstr ""
 
-#: admin/view/wbg-api-import.php:168
+#: admin/view/wbg-api-import.php:215
 msgid "Import Books"
 msgstr "আমদানি বই"
 
-#: admin/view/wbg-api-import.php:129
+#: admin/view/wbg-api-import.php:164
 msgid "Import Books From API"
 msgstr "আমদানি থেকে বই API-টি"
 
-#: admin/view/wbg-api-import.php:119
-msgid "Import Books Successful"
-msgstr "আমদানি বই, সফল"
+#: admin/view/wbg-api-import.php:182
+msgid "Import From"
+msgstr ""
 
-#: admin/view/general-settings.php:153
+#: admin/view/general-settings.php:158
 msgid "Imported"
 msgstr ""
 
-#: admin/view/partial/book-information.php:378 wp-books-gallery.php:178
+#: admin/view/partial/book-information.php:499 wp-books-gallery.php:156
 msgid "Inactive"
 msgstr "অচল"
 
-#: admin/view/partial/single-styles.php:156
+#: admin/view/partial/single-styles.php:164
 msgid "Information Label"
 msgstr "তথ্য লেবেল"
 
-#: admin/view/partial/single-styles.php:202
+#: admin/view/partial/single-styles.php:210
 msgid "Information Text"
 msgstr "তথ্য টেক্সট"
 
@@ -899,12 +1087,18 @@ msgstr "তথ্য টেক্সট"
 msgid "Input Fields"
 msgstr "ইনপুট ক্ষেত্র"
 
-#: admin/view/partial/book-information.php:242
+#: admin/view/partial/book-information.php:216
+msgid "Internal Product"
+msgstr ""
+
+#: admin/view/partial/book-information.php:321
 msgid "Is Featured"
 msgstr "বৈশিষ্ট্যযুক্ত হয়"
 
-#: admin/view/partial/book-information.php:102
-#: admin/view/partial/search-content.php:70
+#: admin/view/partial/book-information.php:110
+#: admin/view/partial/search-content.php:68
+#: admin/view/partial/search-content.php:294
+#: admin/view/partial/search-content.php:313
 msgid "ISBN"
 msgstr "আইএসবিএন"
 
@@ -913,11 +1107,11 @@ msgstr "আইএসবিএন"
 msgid "ISBN Label"
 msgstr "আইএসবিএন লেবেল"
 
-#: admin/view/wbg-api-import.php:159
-msgid "ISBN-10"
-msgstr "আইএসবিএন-10"
+#: admin/view/wbg-api-import.php:206
+msgid "ISBN-10, ISBN-13"
+msgstr ""
 
-#: admin/view/partial/book-information.php:110
+#: admin/view/partial/book-information.php:118
 msgid "ISBN-13"
 msgstr "আইএসবিএন-13"
 
@@ -925,16 +1119,16 @@ msgstr "আইএসবিএন-13"
 msgid "ISBN-13 Label"
 msgstr "আইএসবিএন-13 লেবেল"
 
-#: admin/view/partial/book-information.php:308
+#: admin/view/partial/book-information.php:387
 msgid "Item Weight"
 msgstr "আইটেম ওজন"
 
-#: admin/view/partial/single-content.php:411
+#: admin/view/partial/single-content.php:410
 msgid "Item Weight Label"
 msgstr "আইটেম ওজন লেবেল"
 
-#: admin/view/partial/book-information.php:166
-#: admin/view/partial/gallery-content.php:93
+#: admin/view/partial/book-information.php:174
+#: admin/view/partial/gallery-content.php:94
 msgid "Language"
 msgstr "ভাষা"
 
@@ -943,17 +1137,22 @@ msgstr "ভাষা"
 msgid "Language Label"
 msgstr "ভাষার লেবেল"
 
-#: admin/view/partial/gallery-content.php:23
+#: admin/view/partial/gallery-content.php:24
 msgid "List"
 msgstr ""
 
+#: admin/view/partial/book-information.php:478
+#: front/view/single/before-tags.php:376
+msgid "Listening Length"
+msgstr ""
+
 #: admin/view/partial/gallery-styles.php:50
-#: admin/view/partial/single-styles.php:55
+#: admin/view/partial/single-styles.php:62
 msgid "Margin Bottom"
 msgstr ""
 
 #: admin/view/partial/gallery-styles.php:43
-#: admin/view/partial/single-styles.php:48
+#: admin/view/partial/single-styles.php:55
 msgid "Margin Top"
 msgstr ""
 
@@ -965,116 +1164,121 @@ msgstr ""
 msgid "Medium - 300 x 300"
 msgstr ""
 
-#: admin/view/partial/gallery-content.php:44
+#: admin/view/partial/gallery-content.php:43
 #| msgid "Mobile:"
 msgid "Mobile"
 msgstr "মোবাইল"
 
-#: admin/view/partial/single-styles.php:248
+#: admin/view/partial/single-styles.php:277
 msgid "Modal Popup"
 msgstr ""
 
-#: admin/view/general-settings.php:65
+#: front/view/single.php:77
+msgid "More Details"
+msgstr ""
+
+#: admin/view/general-settings.php:67
 msgid "Multiple"
 msgstr "একাধিক"
 
-#: admin/cls-books-gallery-admin.php:386
+#: admin/cls-books-gallery-admin.php:401 admin/view/general-settings.php:281
 msgid "Multiple Sale Sources"
 msgstr ""
 
-#: admin/view/partial/gallery-content.php:87
+#: admin/view/partial/gallery-content.php:88
 msgid "Name"
 msgstr "নাম"
 
-#: admin/cls-books-gallery-admin.php:331
+#: admin/view/partial/book-information.php:470
+#: front/view/single/before-tags.php:364
+msgid "Narrator"
+msgstr ""
+
+#: admin/cls-books-gallery-admin.php:346
 msgid "New Author"
 msgstr "নতুন লেখক"
 
-#: admin/cls-books-gallery-admin.php:202
+#: admin/cls-books-gallery-admin.php:217
 msgid "New Book Category Name"
 msgstr "নতুন বই বিষয়শ্রেণীতে নাম"
 
-#: admin/cls-books-gallery-admin.php:228
+#: admin/cls-books-gallery-admin.php:243
 msgid "New Book Formate"
 msgstr "নতুন বই Formate"
 
-#: admin/cls-books-gallery-admin.php:253
+#: admin/cls-books-gallery-admin.php:268
 msgid "New Book Series"
 msgstr "নতুন বই সিরিজ"
 
-#: admin/cls-books-gallery-admin.php:306
+#: admin/cls-books-gallery-admin.php:321
 msgid "New Grade Level"
 msgstr "নতুন গ্রেড স্তর"
 
-#: admin/cls-books-gallery-admin.php:281
+#: admin/cls-books-gallery-admin.php:296
 msgid "New Reading Age"
 msgstr "নতুন পড়ার বয়স"
 
-#: admin/view/partial/book-information.php:258
+#: admin/view/partial/book-information.php:337
 msgid "No"
 msgstr "কোন"
 
-#: admin/view/general-settings.php:170
+#: admin/view/general-settings.php:199
 msgid "No Book Message"
 msgstr ""
 
-#: front/view/featured-view.php:135
-msgid "No Books Available!"
-msgstr "কোন বই পাওয়া যায়!"
-
-#: front/view/featured-content.php:21 front/view/featured-content.php:28
-#: front/view/featured-content.php:31 front/view/single/before-title.php:51
-#: front/view/slide.php:20 front/view/slide.php:27 front/view/slide.php:30
-#: wp-books-gallery.php:166
+#: front/view/featured-content.php:21 front/view/featured-content.php:27
+#: front/view/featured-content.php:30 front/view/single-book.php:33
+#: front/view/single/before-title.php:53 front/view/slide.php:20
+#: front/view/slide.php:27 front/view/slide.php:30 wp-books-gallery.php:140
+#: wp-books-gallery.php:146
 msgid "No Image Available"
 msgstr "কোন ছবি পাওয়া যায়নি"
+
+#: admin/view/wbg-api-import.php:156
+msgid "No ISBN Provided!"
+msgstr ""
 
 #: admin/view/partial/gallery-content.php:68
 msgid "None"
 msgstr "কিছুই না"
 
-#: admin/cls-books-gallery-admin.php:158
+#: admin/cls-books-gallery-admin.php:173
 msgid "Not Found"
 msgstr "না পাওয়া"
 
-#: admin/cls-books-gallery-admin.php:159
+#: admin/cls-books-gallery-admin.php:174
 msgid "Not found in Trash"
 msgstr "না পাওয়া যায়, ট্র্যাশ"
 
+#: admin/view/partial/gallery-content.php:476
 #: admin/view/partial/single-content.php:285
 msgid "Only Year"
 msgstr "শুধু সাল"
 
-#: admin/view/partial/gallery-content.php:117
-msgid "Open in New Tab"
-msgstr "নতুন ট্যাবে খুলুন"
+#: admin/view/wbg-api-import.php:186
+msgid "Open Library"
+msgstr ""
 
-#: admin/view/partial/gallery-content.php:98
-#: admin/view/partial/search-content.php:86
-#: admin/view/partial/search-content.php:115
-#: admin/view/partial/search-content.php:144
-#: admin/view/partial/search-content.php:173
-#: admin/view/partial/search-content.php:202
-#: admin/view/partial/search-content.php:233
-#: admin/view/partial/search-content.php:262
+#: admin/view/partial/gallery-content.php:100
+#: admin/view/partial/search-content.php:84
+#: admin/view/partial/search-content.php:113
+#: admin/view/partial/search-content.php:142
+#: admin/view/partial/search-content.php:171
+#: admin/view/partial/search-content.php:200
+#: admin/view/partial/search-content.php:231
+#: admin/view/partial/search-content.php:260
+#: admin/view/partial/search-content.php:329
+#: admin/view/partial/search-content.php:358
 #| msgid "Order By:"
 msgid "Order By"
 msgstr "ক্রমানুসার"
 
-#: front/view/single.php:151
-msgid "Other Books By"
-msgstr ""
-
-#: front/view/single.php:144
-msgid "Other Books From"
-msgstr ""
-
 #: admin/view/partial/gallery-styles.php:59
 #: widget/cls-books-gallery-widget.php:147
 msgid "Padding"
-msgstr ""
+msgstr "প্যাডিং"
 
-#: admin/view/partial/book-information.php:150
+#: admin/view/partial/book-information.php:158
 msgid "Pages"
 msgstr "পৃষ্ঠাসমুহ"
 
@@ -1095,60 +1299,62 @@ msgstr ""
 msgid "Pagination Hover"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:326
+#: admin/cls-books-gallery-admin.php:341
 msgid "Parent Author"
 msgstr "মূল লেখক"
 
-#: admin/cls-books-gallery-admin.php:327
+#: admin/cls-books-gallery-admin.php:342
 msgid "Parent Author:"
 msgstr "মূল লেখক:"
 
-#: admin/cls-books-gallery-admin.php:150
+#: admin/cls-books-gallery-admin.php:165
 msgid "Parent Book"
 msgstr "মূল বই"
 
-#: admin/cls-books-gallery-admin.php:197
+#: admin/cls-books-gallery-admin.php:212
 msgid "Parent Book Category"
 msgstr "মূল বই বিভাগ"
 
-#: admin/cls-books-gallery-admin.php:198
+#: admin/cls-books-gallery-admin.php:213
 msgid "Parent Book Category:"
 msgstr "মূল বই বিভাগ:"
 
-#: admin/cls-books-gallery-admin.php:223
+#: admin/cls-books-gallery-admin.php:238
 msgid "Parent Book Format"
 msgstr "মূল বই ফরম্যাট"
 
-#: admin/cls-books-gallery-admin.php:224
+#: admin/cls-books-gallery-admin.php:239
 msgid "Parent Book Format:"
 msgstr "মূল বই বিন্যাস:"
 
-#: admin/cls-books-gallery-admin.php:248
+#: admin/cls-books-gallery-admin.php:263
 msgid "Parent Book Series"
 msgstr "মূল বই সিরিজ"
 
-#: admin/cls-books-gallery-admin.php:249
+#: admin/cls-books-gallery-admin.php:264
 msgid "Parent Book Series:"
 msgstr "মূল বই সিরিজ:"
 
-#: admin/cls-books-gallery-admin.php:301
+#: admin/cls-books-gallery-admin.php:316
 msgid "Parent Grade Level"
 msgstr "মূল গ্রেড স্তর"
 
-#: admin/cls-books-gallery-admin.php:302
+#: admin/cls-books-gallery-admin.php:317
 msgid "Parent Grade Level:"
 msgstr "মূল গ্রেড স্তর:"
 
-#: admin/cls-books-gallery-admin.php:276
+#: admin/cls-books-gallery-admin.php:291
 msgid "Parent Reading Age"
 msgstr "ঊর্ধ্বতন পড়ার বয়স"
 
-#: admin/cls-books-gallery-admin.php:277
+#: admin/cls-books-gallery-admin.php:292
 msgid "Parent Reading Age:"
 msgstr "ঊর্ধ্বতন পড়ার বয়স:"
 
-#: admin/view/partial/search-content.php:48
-#: admin/view/partial/search-content.php:67
+#: admin/view/partial/search-content.php:46
+#: admin/view/partial/search-content.php:65
+#: admin/view/partial/search-content.php:291
+#: admin/view/partial/search-content.php:310
 #| msgid "Placeholder Text :"
 msgid "Placeholder Text"
 msgstr "স্থানধারক"
@@ -1164,14 +1370,15 @@ msgstr ""
 "আপনার usage of %2$s will be sent to %5$s. যদি আপনি এই লাফালাফি, এটা ঠিক আছে! "
 "%2$s এখনও ঠিক সূক্ষ্ম কাজ করবে."
 
-#: admin/view/partial/book-information.php:196
-#: admin/view/partial/book-information.php:224
-#: admin/view/partial/book-information.php:272
-#: admin/view/partial/book-information.php:293
-#: admin/view/partial/gallery-content.php:203
-#: admin/view/partial/gallery-content.php:222
-#: admin/view/partial/gallery-content.php:284
+#: admin/view/partial/book-information.php:208
+#: admin/view/partial/book-information.php:231
+#: admin/view/partial/book-information.php:303
+#: admin/view/partial/book-information.php:351
+#: admin/view/partial/book-information.php:372
+#: admin/view/partial/gallery-content.php:286
 #: admin/view/partial/gallery-content.php:305
+#: admin/view/partial/gallery-content.php:367
+#: admin/view/partial/gallery-content.php:398
 #: admin/view/partial/single-content.php:49
 #: admin/view/partial/single-content.php:67
 #: admin/view/partial/single-content.php:88
@@ -1180,14 +1387,20 @@ msgstr ""
 #: admin/view/partial/single-content.php:145
 #: admin/view/partial/single-content.php:166
 #: admin/view/partial/single-content.php:184
+#: admin/view/partial/single-content.php:631
+#: admin/view/partial/single-content.php:649
 msgid "Please Upgrade Now!"
 msgstr "আপগ্রেড করুন এখন!"
 
-#: admin/view/general-settings.php:49
+#: admin/view/partial/gallery-content.php:91
+msgid "Post Date"
+msgstr ""
+
+#: admin/view/general-settings.php:51
 msgid "Prefered Author"
 msgstr "পছন্দের লেখক"
 
-#: admin/view/partial/book-information.php:234
+#: admin/view/partial/book-information.php:313
 msgid "Premium"
 msgstr "প্রিমিয়াম"
 
@@ -1195,26 +1408,43 @@ msgstr "প্রিমিয়াম"
 msgid "Price"
 msgstr ""
 
-#: admin/view/wbg-api-import.php:147
-msgid "Provide Your ISBN-10"
+#: admin/view/general-settings.php:254
+msgid "Price Format"
+msgstr ""
+
+#: admin/view/partial/book-information.php:63
+msgid "Primary Author"
+msgstr ""
+
+#: admin/view/wbg-api-import.php:194
+#, fuzzy
+#| msgid "Provide Your ISBN-10"
+msgid "Provide Your ISBN"
 msgstr "প্রদান, আপনার আইএসবিএন-10"
+
+#: admin/view/partial/gallery-content.php:469
+msgid "Publish Date Format"
+msgstr ""
 
 #: admin/view/partial/single-content.php:271
 #| msgid "Publish Date Label:"
 msgid "Publish Date Label"
 msgstr "প্রকাশিত তারিখের লেবেল"
 
-#: wp-books-gallery.php:151
+#: admin/view/partial/gallery-content.php:228
+msgid "Publish Date Label Text"
+msgstr ""
+
+#: wp-books-gallery.php:125
 msgid "Published Date"
 msgstr "প্রকাশিত তারিখ"
 
-#: admin/view/partial/book-information.php:94
-#: admin/view/partial/gallery-content.php:92
+#: admin/view/partial/book-information.php:102
 msgid "Published On"
 msgstr "প্রকাশিত হয়েছে"
 
-#: admin/view/partial/book-information.php:63
-#: admin/view/partial/gallery-content.php:91
+#: admin/view/partial/book-information.php:71
+#: admin/view/partial/gallery-content.php:92
 msgid "Publisher"
 msgstr "প্রকাশক"
 
@@ -1230,12 +1460,16 @@ msgstr "প্রকাশকের লেবেল"
 msgid "px"
 msgstr ""
 
-#: widget/cls-books-gallery-widget.php:173
-msgid "Rating"
+#: admin/view/partial/gallery-content.php:96
+msgid "Rand"
 msgstr ""
 
-#: admin/cls-books-gallery-admin.php:272 admin/cls-books-gallery-admin.php:273
-#: admin/cls-books-gallery-admin.php:282
+#: widget/cls-books-gallery-widget.php:173
+msgid "Rating"
+msgstr "রেটিং"
+
+#: admin/cls-books-gallery-admin.php:287 admin/cls-books-gallery-admin.php:288
+#: admin/cls-books-gallery-admin.php:297
 msgid "Reading Age"
 msgstr "পড়ার বয়স"
 
@@ -1244,74 +1478,87 @@ msgstr "পড়ার বয়স"
 msgid "Reading Age Label"
 msgstr "পড়ার বয়স লেবেল"
 
-#: admin/view/partial/book-information.php:266
+#: admin/view/partial/search-content.php:401
+msgid "Refresh Button"
+msgstr ""
+
+#: admin/view/partial/book-information.php:345
 msgid "Regular Price"
 msgstr "নিয়মিত মূল্য"
 
-#: admin/cls-books-gallery-admin.php:637
+#: admin/cls-books-gallery-admin.php:705
 msgid "Remove Book Cover Here"
 msgstr "অপসারণ বইয়ের কভার এখানে"
 
-#: admin/view/partial/search-styles.php:184
+#: admin/view/partial/book-information.php:197
+msgid "Remove File"
+msgstr ""
+
+#: admin/view/partial/search-styles.php:221
 msgid "Reset Button"
 msgstr "রিসেট বাটন"
+
+#: admin/view/partial/search-styles.php:266
+msgid "Reset Button - Hover"
+msgstr ""
 
 #: admin/view/partial/gallery-content.php:69
 msgid "Rotate 360"
 msgstr "৩৬০ ডিগ্রী ঘুরবে"
 
-#: admin/view/general-settings.php:180
-#: admin/view/partial/gallery-content.php:388
+#: admin/view/partial/book-information.php:202
+msgid "Sale Product Type"
+msgstr ""
+
+#: admin/view/general-settings.php:343
+#: admin/view/partial/gallery-content.php:496
 #: admin/view/partial/gallery-styles.php:592
-#: admin/view/partial/search-content.php:308
-#: admin/view/partial/search-styles.php:216
-#: admin/view/partial/single-content.php:513
-#: admin/view/partial/single-styles.php:356
+#: admin/view/partial/search-content.php:428
+#: admin/view/partial/search-styles.php:296
+#: admin/view/partial/single-content.php:681
+#: admin/view/partial/single-styles.php:383
 msgid "Save Settings"
 msgstr "সেটিংস সেভ করুন"
 
-#: admin/cls-books-gallery-admin.php:324
+#: admin/cls-books-gallery-admin.php:339
 msgid "Search Author"
 msgstr "অনুসন্ধান লেখক"
 
-#: admin/cls-books-gallery-admin.php:157
+#: admin/cls-books-gallery-admin.php:172
 msgid "Search Book"
 msgstr "অনুসন্ধান বই"
 
-#: admin/cls-books-gallery-admin.php:195
+#: admin/cls-books-gallery-admin.php:210
 msgid "Search Book Categories"
 msgstr "অনুসন্ধান বই বিভাগ"
 
-#: admin/cls-books-gallery-admin.php:221
+#: admin/cls-books-gallery-admin.php:236
 msgid "Search Book Formats"
 msgstr "অনুসন্ধান বই Formats"
 
-#: admin/cls-books-gallery-admin.php:246
+#: admin/cls-books-gallery-admin.php:261
 msgid "Search Book Series"
 msgstr "অনুসন্ধান বই সিরিজ"
 
-#: admin/view/partial/search-content.php:300
+#: admin/view/partial/search-content.php:395
+#: admin/view/partial/search-content.php:415
 msgid "Search Books"
 msgstr "বইসমূহ খুঁজুন"
 
-#: admin/view/partial/search-styles.php:132
+#: admin/view/partial/search-content.php:387
+#: admin/view/partial/search-styles.php:170
 msgid "Search Button"
 msgstr "অনুসন্ধান বাটন"
 
-#: admin/view/partial/search-styles.php:162
+#: admin/view/partial/search-styles.php:199
 msgid "Search Button - Hover"
 msgstr "অনুসন্ধান বাটন - উপর কার্সার রেখে দেখুন"
 
-#: admin/view/partial/search-content.php:297
-#| msgid "Search Button Text:"
-msgid "Search Button Text"
-msgstr "খোঁজার বোতামের লেখা"
-
-#: admin/cls-books-gallery-admin.php:299
+#: admin/cls-books-gallery-admin.php:314
 msgid "Search Grade Level"
 msgstr "অনুসন্ধান গ্রেড স্তর"
 
-#: admin/view/partial/search-content.php:30
+#: admin/view/partial/search-content.php:28
 msgid "Search Items"
 msgstr "অনুসন্ধান আইটেম"
 
@@ -1324,11 +1571,19 @@ msgstr "অনুসন্ধান প্যানেল"
 msgid "Search Panel Settings"
 msgstr "খোঁজার প্যানেলের বিন্যাস"
 
-#: admin/cls-books-gallery-admin.php:274
+#: admin/cls-books-gallery-admin.php:289
 msgid "Search Reading Age"
 msgstr "অনুসন্ধান পড়ার বয়স"
 
-#: admin/view/partial/gallery-content.php:86
+#: admin/view/partial/book-information.php:269
+msgid "Select a Product"
+msgstr ""
+
+#: admin/view/partial/book-information.php:225
+msgid "Select Internal Product"
+msgstr ""
+
+#: admin/view/partial/gallery-content.php:87
 msgid "Select One"
 msgstr "একটি বাছাই করুন"
 
@@ -1340,39 +1595,44 @@ msgstr "selling_point_"
 msgid "Series Label"
 msgstr "সিরিজ লেবেল"
 
-#: admin/cls-books-gallery-admin.php:636
+#: admin/cls-books-gallery-admin.php:704
 msgid "Set Book Cover Here"
 msgstr "সেট বইয়ের কভার এখানে"
 
-#: admin/view/partial/gallery-content.php:376
+#: admin/view/partial/gallery-content.php:484
 msgid "Shortcode:"
 msgstr "শর্টকোড:"
 
-#: front/view/gallery.php:296 front/view/gallery.php:305
+#: front/view/gallery/sorting-view-mode.php:16
+#: front/view/gallery/sorting-view-mode.php:26
 msgid "Showing"
 msgstr "দেখানো হচ্ছে"
 
-#: admin/view/general-settings.php:62
+#: admin/view/general-settings.php:64
 msgid "Single"
 msgstr "একক"
 
-#: admin/view/partial/gallery-content.php:88
+#: admin/view/partial/gallery-content.php:89
 msgid "Slug/Url"
 msgstr "স্লাগ্/Url"
 
-#: front/view/gallery.php:314
+#: front/view/gallery/sorting-view-mode.php:35
 msgid "Sort by latest"
 msgstr "সাজান নতুন করে"
 
-#: front/view/gallery.php:316
+#: front/view/gallery/sorting-view-mode.php:37
 msgid "Sort by price: high to low"
 msgstr "মূল্য অনুযায়ী সাজাও: উচ্চ কম"
 
-#: front/view/gallery.php:315
+#: front/view/gallery/sorting-view-mode.php:36
 msgid "Sort by price: low to high"
 msgstr "মূল্য অনুযায়ী সাজাও: উচ্চ কম"
 
-#: admin/view/partial/book-information.php:371
+#: admin/view/general-settings.php:285
+msgid "Source"
+msgstr ""
+
+#: admin/view/partial/book-information.php:492
 #| msgid "Status:"
 msgid "Status"
 msgstr "স্থিতি"
@@ -1382,22 +1642,29 @@ msgstr "স্থিতি"
 msgid "Styles"
 msgstr "শৈলী"
 
-#: admin/view/partial/book-information.php:35
-#: admin/view/partial/single-styles.php:110
+#: admin/view/partial/book-information.php:43
+#: admin/view/partial/single-styles.php:118
 msgid "Sub Title"
 msgstr "সাব শিরোনাম"
 
-#: front/view/single-modal.php:39 front/view/single.php:31
-#: wp-books-gallery.php:149
+#: front/view/single-modal.php:31 wp-books-gallery.php:123
 msgid "Tags"
 msgstr "বিভাগ"
 
-#: admin/view/general-settings.php:165
+#: admin/view/partial/single-content.php:473
+msgid "Tags Label"
+msgstr ""
+
+#: admin/view/general-settings.php:193
 msgid "This image will display when there is no book cover image"
 msgstr ""
 
-#: admin/view/general-settings.php:44
+#: admin/view/general-settings.php:45
 msgid "This is your Gallery Page URL slug."
+msgstr ""
+
+#: admin/view/partial/gallery-content.php:438
+msgid "This will display button in a stright line."
 msgstr ""
 
 #: admin/view/partial/gallery-content.php:58
@@ -1405,48 +1672,55 @@ msgid "Thumbnail - 150 x 150"
 msgstr ""
 
 #: admin/view/partial/gallery-styles.php:128
-#: admin/view/partial/single-styles.php:64
+#: admin/view/partial/single-content.php:532
+#: admin/view/partial/single-content.php:547
+#: admin/view/partial/single-styles.php:72
 #: widget/cls-books-gallery-widget.php:122
 #| msgid "Title:"
 msgid "Title"
 msgstr "টাইটেল"
 
-#: admin/view/partial/gallery-content.php:126
+#: admin/view/partial/gallery-content.php:129
 #| msgid "Title Word Length:"
 msgid "Title Word Length"
 msgstr "নামের শব্দের দৈর্ঘ্য"
 
-#: admin/cls-books-gallery-admin.php:329
+#: admin/view/partial/book-information.php:447
+msgid "Translator"
+msgstr ""
+
+#: admin/cls-books-gallery-admin.php:344
 msgid "Update Author"
 msgstr "আপডেট লেখক"
 
-#: admin/cls-books-gallery-admin.php:156
+#: admin/cls-books-gallery-admin.php:171
 msgid "Update Book"
 msgstr "আপডেট বই"
 
-#: admin/cls-books-gallery-admin.php:200
+#: admin/cls-books-gallery-admin.php:215
 msgid "Update Book Category"
 msgstr "আপডেট বই বিভাগ"
 
-#: admin/cls-books-gallery-admin.php:226
+#: admin/cls-books-gallery-admin.php:241
 msgid "Update Book Format"
 msgstr "আপডেট বই ফরম্যাট"
 
-#: admin/cls-books-gallery-admin.php:251
+#: admin/cls-books-gallery-admin.php:266
 msgid "Update Book Series"
 msgstr "আপডেট বই সিরিজ"
 
-#: admin/cls-books-gallery-admin.php:304
+#: admin/cls-books-gallery-admin.php:319
 msgid "Update Grade Level"
 msgstr "আপডেট গ্রেড স্তর"
 
-#: admin/cls-books-gallery-admin.php:279
+#: admin/cls-books-gallery-admin.php:294
 msgid "Update Reading Age"
 msgstr "আপডেট পড়ার বয়স"
 
-#: admin/view/partial/book-information.php:314
-#: admin/view/partial/book-information.php:334
-#: admin/view/partial/book-information.php:354
+#: admin/view/partial/book-information.php:393
+#: admin/view/partial/book-information.php:413
+#: admin/view/partial/book-information.php:433
+#: admin/view/partial/book-information.php:453
 msgid "Upgrade to Professional"
 msgstr "আপগ্রেড করার জন্য পেশাদার"
 
@@ -1454,17 +1728,23 @@ msgstr "আপগ্রেড করার জন্য পেশাদার"
 msgid "Upgrade to professional"
 msgstr ""
 
-#: admin/view/general-settings.php:55 admin/view/general-settings.php:79
-#: admin/view/general-settings.php:101 admin/view/general-settings.php:119
-#: admin/view/general-settings.php:143
-#: admin/view/partial/book-information.php:41
-#: admin/view/partial/book-information.php:77
-#: admin/view/partial/book-information.php:116
-#: admin/view/partial/book-information.php:136
-#: admin/view/partial/book-information.php:248
-#: admin/view/partial/gallery-content.php:250
-#: admin/view/partial/gallery-content.php:336
-#: admin/view/partial/gallery-content.php:357
+#: admin/view/general-settings.php:57 admin/view/general-settings.php:82
+#: admin/view/general-settings.php:105 admin/view/general-settings.php:123
+#: admin/view/general-settings.php:148 admin/view/general-settings.php:173
+#: admin/view/general-settings.php:231 admin/view/general-settings.php:260
+#: admin/view/general-settings.php:307 admin/view/general-settings.php:322
+#: admin/view/partial/book-information.php:49
+#: admin/view/partial/book-information.php:85
+#: admin/view/partial/book-information.php:124
+#: admin/view/partial/book-information.php:144
+#: admin/view/partial/book-information.php:327
+#: admin/view/partial/gallery-content.php:177
+#: admin/view/partial/gallery-content.php:195
+#: admin/view/partial/gallery-content.php:216
+#: admin/view/partial/gallery-content.php:234
+#: admin/view/partial/gallery-content.php:333
+#: admin/view/partial/gallery-content.php:430
+#: admin/view/partial/gallery-content.php:453
 #: admin/view/partial/gallery-styles.php:112
 #: admin/view/partial/gallery-styles.php:192
 #: admin/view/partial/gallery-styles.php:211
@@ -1484,24 +1764,27 @@ msgstr ""
 #: admin/view/partial/gallery-styles.php:573
 #: admin/view/partial/search-styles.php:30
 #: admin/view/partial/search-styles.php:49
-#: admin/view/partial/search-styles.php:70
+#: admin/view/partial/search-styles.php:68
 #: admin/view/partial/search-styles.php:89
 #: admin/view/partial/search-styles.php:116
+#: admin/view/partial/search-styles.php:135
+#: admin/view/partial/search-styles.php:154
 #: admin/view/partial/single-content.php:24
 #: admin/view/partial/single-styles.php:30
-#: admin/view/partial/single-styles.php:75
-#: admin/view/partial/single-styles.php:94
-#: admin/view/partial/single-styles.php:121
-#: admin/view/partial/single-styles.php:140
-#: admin/view/partial/single-styles.php:167
-#: admin/view/partial/single-styles.php:186
-#: admin/view/partial/single-styles.php:213
-#: admin/view/partial/single-styles.php:232
-#: admin/view/partial/single-styles.php:259
-#: admin/view/partial/single-styles.php:278
-#: admin/view/partial/single-styles.php:299
-#: admin/view/partial/single-styles.php:318
-#: admin/view/partial/single-styles.php:339 admin/view/wbg-api-import.php:153
+#: admin/view/partial/single-styles.php:83
+#: admin/view/partial/single-styles.php:102
+#: admin/view/partial/single-styles.php:129
+#: admin/view/partial/single-styles.php:148
+#: admin/view/partial/single-styles.php:175
+#: admin/view/partial/single-styles.php:194
+#: admin/view/partial/single-styles.php:221
+#: admin/view/partial/single-styles.php:240
+#: admin/view/partial/single-styles.php:261
+#: admin/view/partial/single-styles.php:288
+#: admin/view/partial/single-styles.php:307
+#: admin/view/partial/single-styles.php:328
+#: admin/view/partial/single-styles.php:347
+#: admin/view/partial/single-styles.php:366 admin/view/wbg-api-import.php:200
 msgid "Upgrade to Professional!"
 msgstr "আপগ্রেড করার জন্য পেশাদার!"
 
@@ -1509,43 +1792,47 @@ msgstr "আপগ্রেড করার জন্য পেশাদার!"
 msgid "Usage & Tutorial"
 msgstr "ব্যবহার ও টিউটোরিয়াল"
 
-#: admin/view/partial/book-information.php:279
-#: admin/view/partial/book-information.php:300
+#: admin/view/partial/book-information.php:358
+#: admin/view/partial/book-information.php:379
 msgid "Use 999 For 9.99"
 msgstr "ব্যবহার 999 জন্য 9.99"
 
-#: admin/view/wbg-api-import.php:160
+#: admin/view/wbg-api-import.php:207
 msgid "Use comma between multiple ISBN/s"
 msgstr "ব্যবহার কমা মধ্যে একাধিক আইএসবিএন/এস"
 
-#: admin/cls-books-gallery-admin.php:152
+#: front/view/gallery/sorting-view-mode.php:40
+msgid "View"
+msgstr ""
+
+#: admin/cls-books-gallery-admin.php:167
 msgid "View Book"
 msgstr "দেখুন বই"
 
-#: admin/cls-books-gallery-admin.php:149
+#: admin/cls-books-gallery-admin.php:164
 msgid "WBG Books"
 msgstr "WBG বই"
 
 #: admin/view/partial/gallery-styles.php:31
 #: admin/view/partial/single-styles.php:24
-#: admin/view/partial/single-styles.php:272
+#: admin/view/partial/single-styles.php:301
 msgid "Width"
 msgstr ""
 
-#: admin/view/general-settings.php:87
+#: admin/view/general-settings.php:90
 #, fuzzy
 #| msgid "With enabled only logged-in users can download books."
 msgid "With enabled, only logged-in users can download books."
 msgstr "সঙ্গে সক্রিয় শুধুমাত্র লগ ইন ব্যবহারকারীদের ডাউনলোড করতে পারেন বই."
 
-#: admin/view/partial/gallery-content.php:365
+#: admin/view/partial/gallery-content.php:461
 msgid "WP Customer Reviews Plugin Integration Required For This Feature."
 msgstr "ডাব্লু পর্যালোচনা প্লাগ ইন্টিগ্রেশন জন্য প্রয়োজন, এই বৈশিষ্ট্য."
 
-#: admin/view/partial/book-information.php:255
+#: admin/view/partial/book-information.php:334
 msgid "Yes"
 msgstr "হ্যাঁ"
 
-#: core/gallery-content.php:202
+#: core/gallery-content.php:232
 msgid "« "
 msgstr "« "

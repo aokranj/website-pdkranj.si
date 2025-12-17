@@ -8,6 +8,7 @@
  */
 
 // Exit if accessed directly.
+// phpcs:ignore
 defined( 'ABSPATH' ) || exit();
 ?> <section class="w-full max-md p-3  max-w-md" x-show="isTab('customization')" x-transition:enter.opacity.40>
 	<div class="transition duration-150" :class="{'opacity-40 pointer-events-none' : !options.enable}">
@@ -181,8 +182,8 @@ defined( 'ABSPATH' ) || exit();
 		<div class="mb-8">
 			<label class="font-semibold text-sm text-slate-700 cursor-pointer mb-2  flex gap-1">
 				<?php esc_html_e( 'Hide Buttons on', 'wp-dark-mode' ); ?> <span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Select where you want to hide your inline button.', 'wp-dark-mode' ); ?>"></span>
-				<span x-show="!isPro" class="badge-pro">
-					<?php esc_html_e( 'Pro', 'wp-dark-mode' ); ?>
+				<span x-show="!isPro" class="badge-ultimate">
+					<?php esc_html_e( 'Ultimate', 'wp-dark-mode' ); ?>
 				</span>
 			</label>
 			<div class=" group relative">
@@ -201,8 +202,8 @@ defined( 'ABSPATH' ) || exit();
 		<div class="mb-8">
 			<label class="font-semibold text-sm text-slate-700 cursor-pointer mb-2  flex gap-1">
 				<?php esc_html_e( 'Display Buttons on', 'wp-dark-mode' ); ?> <span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Choose where the inline button will appear on your website.', 'wp-dark-mode' ); ?>"></span>
-				<span x-show="!isPro" class="badge-pro">
-					<?php esc_html_e( 'Pro', 'wp-dark-mode' ); ?>
+				<span x-show="!isPro" class="badge-ultimate">
+					<?php esc_html_e( 'Ultimate', 'wp-dark-mode' ); ?>
 				</span>
 			</label>
 			<div class="wpdm-button-group gap-1 flex-wrap"">
@@ -232,8 +233,8 @@ defined( 'ABSPATH' ) || exit();
 		<div class="mb-6 flex items-center gap-2 justify-between" @click="isFree ? showPromo : ''">
 			<label for="button_spacing" class="font-semibold text-sm text-slate-700 cursor-pointer flex gap-1">
 				<?php esc_html_e( 'Button Spacing', 'wp-dark-mode' ); ?> <span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Select default spacing between each channel.', 'wp-dark-mode' ); ?>"></span>
-				<span x-show="!isPro" class="badge-pro">
-					<?php esc_html_e( 'Pro', 'wp-dark-mode' ); ?>
+				<span x-show="!isPro" class="badge-ultimate">
+					<?php esc_html_e( 'Ultimate', 'wp-dark-mode' ); ?>
 				</span>
 			</label>
 			<label for="button_spacing" class="_switcher group relative">
@@ -249,8 +250,8 @@ defined( 'ABSPATH' ) || exit();
 			<label for="total_share" class="font-semibold text-sm text-slate-700 cursor-pointer w-48 flex gap-1">
 				<?php esc_html_e( 'Total Shares', 'wp-dark-mode' ); ?> 
 				<span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Enable total share counter. It will show how many times your content is shared via enabled channels.', 'wp-dark-mode' ); ?>"></span>
-				<span x-show="!isPro" class="badge-pro">
-					<?php esc_html_e( 'Pro', 'wp-dark-mode' ); ?>
+				<span x-show="!isPro" class="badge-ultimate">
+					<?php esc_html_e( 'Ultimate', 'wp-dark-mode' ); ?>
 				</span>
 			</label>
 			<label for="total_share" class="_switcher group relative">

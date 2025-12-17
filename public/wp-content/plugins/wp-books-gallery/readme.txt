@@ -1,15 +1,15 @@
-=== WordPress Books Gallery ===
+=== HM Books Gallery ===
 Contributors: mhmrajib, hmplugin, freemius
 Donate link: https://www.paypal.me/mhmrajib
-Tags: Books Gallery, Books Store, Books, Online Library, Digital Library, Books Showcase, Affiliate Marketing, Sell Books Online, books showcase plugin, books gallery plugin, Publisher
-Requires at least: 5.2
-Tested up to: 6.2.2
-Stable tag: 4.5.3
+Tags: Books Gallery, Books, Digital Library, Books Showcase, Affiliate Marketing
+Requires at least: 5.4
+Tested up to: 6.9
+Stable tag: 4.7.7
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-WordPress Books Gallery is the Best Books Showcase & Digital Library Plugin for WordPress which will build a beautiful mobile-friendly Book Store, Books Gallery, Digital Library in a few minutes.
+WordPress Books Gallery is the Best Books Showcase Plugin which will build a beautiful mobile-friendly Book Store in a few minutes.
 
 == Description ==
 
@@ -194,6 +194,11 @@ https://youtu.be/nR_3v1TkaZo
 * Latest Books Slider Widget
 * Gallery Pagination Styling
 * Multiple Sale Sources (New)
+* Display a single book by book-id
+* Books by Category Panel
+* Author List Panel
+* Display Books of an Author Panel
+* Display Author Bio at Book Details Page
 
 
 [__Upgrade to Pro!__](https://books-gallery.com/pricing-faq/)
@@ -309,7 +314,7 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 2. Showing Books Gallery List View
 3. Books Gallery Single Page View
 4. Books Gallery Featured Books View (Pro)
-5. Main Gallery Content Settings Page 
+5. Main Gallery Content Settings Page
 6. Main Gallery Styling Settings Page
 7. Gallery Search Panel Settings Page
 8. Gallery Single Page Settings Page
@@ -317,15 +322,146 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 
 == Changelog ==
 
-= 4.5.3  =
+= 4.7.7 =
+* Freemius SDK updated to 2.13.0
+* Slick css min applied
 
+= 4.7.6 =
+* Author display issue in the details page fixed
+* Book details open in the same tab issue fixed
+* Search dropdown option font size issue fixed
+
+= 4.7.5 =
+* Freemius SDK updated to 2.12.2
+* CSS fixed
+* Refresh button center issue fixed
+* Code optimized
+
+= 4.7.4 =
+* Gallery image thumbnail issue fixed
+* Freemius SDK updated to 2.12.1
+
+= 4.7.3 =
+* Search button font size option added
+* Search button font weight option added
+* Search container margin top option added
+* Search container margin bottom option added
+
+= 4.7.2 =
+* Freemius SDK updated to 2.12.0
+* Gallery style admin page layout improved
+
+= 4.7.1 =
+* Textdomain changed from define to real textdomain
+* Translation notification fixed
+
+= 4.7.0 =
+* Hide load more button option added
+
+= 4.6.9 =
+* More details button added to book details page
+* Shortcode option to filter by multiple category
+* Format count bug fixed in core
+* Combined search issue fixed
+* Css fixed
+* Code optimized
+* Updated Freemius SDK to the latest version
+
+= 4.6.8 =
+* Price hide option added to gallery page
+* Price hide option added to details page
+* Publish date format option added to gallery page
+* Code optimized
+* Max number increased for regular and sale price
+* Price format option added
+
+= 4.6.7 =
+* Freemius SDK updated to 2.9.0
+* Paragraph applied to the gallery description
+* Book details container background color option added
+* Css fixed
+* Code optimized
+
+= 4.6.6 =
+* Freemius SDK updated to 2.8.1
+* Reset button font size option added
+* Reset button hover bg color option added
+* Reset button hover font color option added
+* Reset button hover border color option added
+* Small bug fixed
+
+= 4.6.5 =
+* Refresh button icon option added
+* Show-hide refresh button option added
+* Refresh button use text instead of icon option added
+* Refresh button width option added
+* Freemius SDK updated to 2.7.4
+
+= 4.6.4 =
+* Freemius SDK update to 2.7.2
+* Minor CSS fixed
+
+= 4.6.3 =
+* Book saving conflict with formats issue fixed
+* Minor code optimized
+
+= 4.6.2 =
+* Author url issue fixed
+* RTL support for book single page
+
+= 4.6.1 =
+* Freemius SDK update to 2.6.2
+* Add download file media button added
+* Go to direct checkout page for WooCommerce
+* Return to shop url changed to home page
+
+= 4.5.9 =
+* Download button icon option added
+* Freemius SDK update to 2.6.1
+* Admin book informations file code optimized 
+
+= 4.5.8 =
+* Book details mobile layout issue fixed
+* Css fixed 
+
+= 4.5.7 =
+* Gallery page default image issue fixed
+* Hide book cover applied to list layout
+* Author and category link applied in list layout
+* Freemius sdk upgraded
+* Small bug fixed
+* Button added to single modal
+* Detail page layout improved
+* Link applied to details page slider category and author
+
+= 4.5.6 =
+* Details page publisher link to search page added
+* Author label changed to Primary Author
+* Reading age icon fixed
+* Details page show hide tag option added
+* Details page tag label option added
+* Download button redirects to login if login permission enabled
+* Order by meta key issue fixed
+
+= 4.5.5 =
+* Small bug fixed
+* CSS fixed
+* Gallery author link added
+
+= 4.5.4 =
+* Code optimized
+* Freemius SDK update to 2.5.10
+* Default image bug fixed in details page
+* WordPress general date format applied to details publish date
+* Backslash appearing before apostrophes issue fixed in search title
+
+= 4.5.3 =
 * Book category and tag archive page fixed
 * Code optimized
 * Url bug fixed
 * Freemius sdk version upgraded
 
 = 4.5.2  =
-
 * Book category template fixed
 * Category link added to Gallery books category
 * Open button Url in the same window option added
@@ -338,7 +474,6 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 * Css fixed
 
 = 4.5.0  =
-
 * Search design issue improved
 * Freemius version upgraded
 * Hide other books slider from details page if there is no book
@@ -357,7 +492,6 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 * Default message option added when there is no book
 
 = 4.4.8 =
-
 * Gallery list view template added
 * Gallery template selection option added
 * Gallery container black bg color issue fixed
@@ -365,7 +499,6 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 * Default cover image url option added
 
 = 4.4.7 =
-
 * Images different sizes option added
 * Formates changed to Formats
 * Books Gallery Sidebar Introduced
@@ -380,7 +513,6 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 * Css fixed
 
 = 4.4.4 =
-
 * Books per page option open
 * Changed selectize assets from CDN to local
 * Slick script minified
@@ -389,21 +521,17 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 * Gallery container background color
 
 = 4.4.3 =
-
 * Freemius version updated
 
 = 4.4.2 =
-
 * Security fix
 * Details tag space fixed
 
 = 4.4.1 =
-
 * Gallery mobile, tablet width issue fixed
 * All books admin table width issue fixed
 
 = 4.4 =
-
 * Sidebar display issue fixed
 * Without sidebar width issue fixed
 * Refresh button styling improved
@@ -414,13 +542,11 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 * Css fixed
 
 = 4.3 =
-
 * Allow post author in admin add/edit books panel
 * Books archive page turned into gallery page
 * Support for post author
 
 = 4.2 =
-
 * Book detail page SEO improved
 * Book detail page code reorganized
 * Book detail page title line height fixed
@@ -429,26 +555,21 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 * Display cover in admin all books list
 
 = 4.1 =
-
 * JS issue fixed
 * CSS issue fixed
 
 = 4.0 =
-
 * Selectize sorting and conflicting issue fixed
 * Search button hover bg and font color option added
 
 = 3.9 =
-
 * Action before/after added in front single page
 * Search reset button background, border, font color option added
 
 = 3.8 =
-
 * Searchable dropdown for search panel added
 
 = 3.7 =
-
 * Spelling issue fixed
 
 = 3.6 =
@@ -458,24 +579,20 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 * Minor issue fixed
 
 = 3.4 =
-
 * United Arab Emirates currency added
 
 = 3.3 =
-
 * General Setings Page Added
 * Gallery Page Url Slug Option added
 * Gallery Page Slug Applied to Back Button
 * Search Filter on Author and Category Link in Details Page
 
 = 3.2 =
-
 * Admin Tab Styling Overlap Issue Fixed
 * Admin Sidebar Link Updated
 * Icon Added to Details Page Book Info
 
 = 3.1 =
-
 * Minor bug fixing
 * Code optimized
 * Search button border issue fixed
@@ -488,13 +605,11 @@ Yes, this plugin is fully Translation ready, supporting .pot language files! You
 * Search Refresh Icon Changed
 
 = 2.9 =
-
 * Minor fixing
 * Max width applied to details page
 * Notice error fixed in details page
 
 = 2.8 =
-
 * Usage & Tutorial Page Added
 * Download button Url open in new tab
 * Minor fixing

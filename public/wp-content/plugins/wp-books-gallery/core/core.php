@@ -670,5 +670,71 @@ trait Wbg_Core
   function wbg_mss_items() {
 		return ['Alibris', 'Amazon', 'Amazon Kindle', 'Apple Books', 'Barnes & Noble', 'Bookshop org', 'Google Play', 'Kobo', 'Lifeway', 'Mardel', 'Smashwords', 'Sony Reader', 'Waterstones'];
 	}
-  
+
+  function wbg_book_formats() {
+
+    $formats = [];
+    
+    if ( taxonomy_exists( 'book_format' ) ) {
+
+      $get_formats = get_terms( array( 'taxonomy' => 'book_format', 'hide_empty' => false, 'orderby' => 'name', 'order' => 'ASC',  'parent' => 0 ) );
+
+      if ( count( $get_formats ) > 0 ) {
+        foreach ( $get_formats as $bf ) {
+          $formats[] = $bf->name;
+        }
+      }  
+    } else {
+      $formats = ['Kindle', 'Audiobook', 'Hardcover', 'Paperback'];
+    }
+      
+    return $formats;
+  }
+
+  function wbg_load_pricing( $currency, $id, $format, $free_price = null, $free_lbl = null ) {
+    
+    $wbgp_regular_price  = get_post_meta( $id, 'wbgp_regular_price', true );
+    $wbgp_sale_price     = get_post_meta( $id, 'wbgp_sale_price', true );
+
+    $wbgp_regular_price = intval( $wbgp_regular_price );
+    $wbgp_sale_price    = intval( $wbgp_sale_price );
+
+    if ( ! $wbgp_regular_price ) {
+      $regualr_price = ( ! $free_price ) ? esc_html( $currency ) . '0' : esc_html( $free_lbl );
+    } else {
+      $regualr_price = esc_html( $currency ) . $this->load_price_format( $wbgp_regular_price, $format );
+    }
+    
+    //if ( ( '' != $wbgp_sale_price ) || ( '' != $wbgp_regular_price ) ) {
+      ?>
+      <div class="regular-price">
+          <?php
+          if ( empty( $wbgp_sale_price ) ) {
+              echo '<span class="wbgp-price price-after">' . $regualr_price . '</span>'; 
+          } else {
+              echo '<span class="wbgp-price price-before">' . esc_html( $currency ) . $this->load_price_format( $wbgp_regular_price, $format ) . '</span>&nbsp;&nbsp;<span class="wbgp-price price-after">' . esc_html( $currency ) . $this->load_price_format( $wbgp_sale_price, $format ) . '</span>';
+          }
+          ?>
+      </div>
+      <?php
+    //}
+  }
+
+  function load_price_format( $price, $format ) {
+    
+    if ( 'default' === $format ) {
+      $price_format = number_format( ( esc_html( $price ) / 100 ), 2, ".", "" );
+    }
+
+    if ( 'comma' === $format ) {
+      $price_format = number_format( ( esc_html( $price ) / 100 ), 2 );
+    }
+
+    if ( 'space' === $format ) {
+      $price_format = number_format( ( esc_html( $price ) / 100 ), 2, "."," " );
+    }
+
+    return $price_format;
+  }
 }
+?>

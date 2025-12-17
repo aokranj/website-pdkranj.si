@@ -98,6 +98,61 @@ trait Wbg_Search_Styles_Settings
                 'type'      => 'text',
                 'default'   => '#242424',
             ],
+            [
+                'name'      => 'wbg_reset_btn_width',
+                'type'      => 'number',
+                'default'   => '45',
+            ],
+            [
+                'name'      => 'wbg_search_input_font_color',
+                'type'      => 'text',
+                'default'   => '#242424',
+            ],
+            [
+                'name'      => 'wbg_search_input_font_size',
+                'type'      => 'number',
+                'default'   => '14',
+            ],
+            [
+                'name'      => 'wbg_reset_btn_font_size',
+                'type'      => 'number',
+                'default'   => '18',
+            ],
+            [
+                'name'      => 'wbg_search_reset_bg_color_hvr',
+                'type'      => 'text',
+                'default'   => '#6fa0df',
+            ],
+            [
+                'name'      => 'wbg_search_reset_font_color_hvr',
+                'type'      => 'text',
+                'default'   => '#FFFFFF',
+            ],
+            [
+                'name'      => 'wbg_search_reset_border_color_hvr',
+                'type'      => 'text',
+                'default'   => '#6fa0df',
+            ],
+            [
+                'name'      => 'wbg_search_btn_font_size',
+                'type'      => 'number',
+                'default'   => '14',
+            ],
+            [
+                'name'      => 'wbg_search_btn_font_weight',
+                'type'      => 'text',
+                'default'   => '700',
+            ],
+            [
+                'name'      => 'wbg_search_panel_margin_top',
+                'type'      => 'number',
+                'default'   => '0',
+            ],
+            [
+                'name'      => 'wbg_search_panel_margin_btm',
+                'type'      => 'number',
+                'default'   => '10',
+            ],
         ];
     }
 }

@@ -5,9 +5,13 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 ?>
 <style type="text/css">
+    .wbg-book-single-section {
+        background: <?php 
+esc_attr_e( $wbg_single_container_bg_color );
+?> !important;
+    }
     .wbg-details-wrapper {
         <?php 
-
 if ( $wbg_display_sidebar ) {
     ?>
             width: -webkit-calc(100% - 340px);
@@ -19,7 +23,6 @@ if ( $wbg_display_sidebar ) {
             width: 100%;
             <?php 
 }
-
 ?>
         min-height: 100px;
     }
@@ -32,14 +35,16 @@ if ( $wbg_display_sidebar ) {
         color: #242424;
         text-decoration: none;
     }
-    a.wbg-single-link:hover {
-        color: #CC0000;
+    .wbg-details-wrapper .wbg-details-summary .wbg-single-book-info a.wbg-single-link:hover {
+        color: <?php 
+esc_attr_e( $wbg_single_anchor_hv_color );
+?>;
     }
-    .wbg-details-summary span a.wbg-btn,
-    a.wbg-btn-back {
+    .wbg-details-summary .wbg-single-button-container a.button.wbg-btn,
+    .wbg-details-wrapper a.button.wbg-btn-back {
         display: inline-block;
     }
-    .wbg-details-summary span a.wbg-btn:hover {
+    .wbg-details-summary .wbg-single-button-container a.button.wbg-btn:hover {
         background: <?php 
 esc_attr_e( $wbg_download_btn_color_hvr );
 ?> !important;
@@ -47,12 +52,31 @@ esc_attr_e( $wbg_download_btn_color_hvr );
 esc_attr_e( $wbg_download_btn_font_color_hvr );
 ?> !important;
     }
-    .wbg-details-wrapper .wbg-details-summary span b .fa,
-    .wbg-details-wrapper .wbg-details-summary span b .fa-solid {
+    .wbg-details-wrapper a.button.wbg-btn-back:hover {
+        background: <?php 
+esc_attr_e( $wbg_back_btn_bg_color_hvr );
+?> !important;
+        color: <?php 
+esc_attr_e( $wbg_back_btn_font_color_hvr );
+?> !important;
+    }
+    .wbg-details-wrapper .wbg-details-summary .wbg-single-book-info b .fa,
+    .wbg-details-wrapper .wbg-details-summary .wbg-single-book-info b .fa-solid {
         width: 25px;
         text-align: center;
     }
     <?php 
+if ( $wbg_enable_rtl ) {
+    ?>
+        .wbg-details-wrapper .wbg-details-summary {
+            padding-right: 70px;
+        }
+
+        .wbg-details-wrapper .wbg-details-image {
+            margin-right: 0!important;
+        }
+        <?php 
+}
 ?>
 
     @media only screen and (max-width: 1024px) and (min-width: 768px) {
@@ -74,6 +98,22 @@ esc_attr_e( $wbg_download_btn_font_color_hvr );
             width: 300px;
             margin: 0 auto;
         }
+        <?php 
+if ( $wbg_enable_rtl ) {
+    ?>
+            .wbg-details-wrapper .wbg-details-book-info .wbg-details-image {
+                text-align: right;
+            }
+            <?php 
+}
+if ( $wbg_single_display_search_mobile ) {
+    ?>
+            .wbg-book-single-section form#wbg-search-form {
+                display: none;
+            }
+            <?php 
+}
+?>
     }
 
 </style>

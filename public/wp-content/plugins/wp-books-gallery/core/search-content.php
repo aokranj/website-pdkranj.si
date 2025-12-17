@@ -47,10 +47,16 @@ trait Wbg_Search_Content_Settings
             if ( ! in_array('tags', $searchItems) ) {
                 $searchItems[10] = 'tags';
             }
+            if ( ! in_array('coauthor', $searchItems) ) {
+				$searchItems[] = 'coauthor';
+			}
+            if ( ! in_array('readingage', $searchItems) ) {
+				$searchItems[] = 'readingage';
+			}
 
         } else {
 
-            $searchItems = array( 'title', 'isbn', 'category', 'year', 'language',  'author', 'publisher', 'format', 'series', 'isbn13', 'tags' );
+            $searchItems = array( 'title', 'isbn', 'category', 'year', 'language',  'author', 'publisher', 'format', 'series', 'isbn13', 'tags', 'coauthor', 'readingage' );
         }
 
         return apply_filters( 'wbg_search_items', $searchItems );
@@ -213,6 +219,51 @@ trait Wbg_Search_Content_Settings
                 'name'      => 'wbg_display_search_tags_placeholder',
                 'type'      => 'text',
                 'default'   => 'Tags',
+            ],
+            [
+                'name'      => 'wbg_refresh_btn_txt',
+                'type'      => 'text',
+                'default'   => 'fa fa-refresh',
+            ],
+            [
+                'name'      => 'wbg_hide_refresh_btn',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_refresh_display_txt',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_display_search_co_author',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_search_co_author_default',
+                'type'      => 'text',
+                'default'   => 'All Co-Authors',
+            ],
+            [
+                'name'      => 'wbg_display_co_author_order',
+                'type'      => 'string',
+                'default'   => 'asc',
+            ],
+            [
+                'name'      => 'wbg_display_search_reading_age',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'wbg_display_reading_age_order',
+                'type'      => 'string',
+                'default'   => 'asc',
+            ],
+            [
+                'name'      => 'wbg_search_reading_age_default',
+                'type'      => 'text',
+                'default'   => 'All Reading Age',
             ],
         ];
     }

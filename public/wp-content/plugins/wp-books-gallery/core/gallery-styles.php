@@ -213,6 +213,16 @@ trait Wbg_Gallery_Settings_Styles
                 'type'      => 'number',
                 'default'   => '11',
             ],
+            [
+                'name'      => 'wbg_pagination_font_size',
+                'type'      => 'number',
+                'default'   => '14',
+            ],
+            [
+                'name'      => 'wbg_pagination_border_radius',
+                'type'      => 'number',
+                'default'   => '0',
+            ],
         ];
     }
 }

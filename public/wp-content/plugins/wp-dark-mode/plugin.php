@@ -1,30 +1,37 @@
 <?php
 /**
- * Plugin Name: WP Dark Mode
- * Plugin URI:  https://wppool.dev/wp-dark-mode
+ * Plugin name: WP Dark Mode
+ * Plugin URI: https://wppool.dev/wp-dark-mode
  * Description: WP Dark Mode automatically enables a stunning dark mode of your website based on user's operating system. Supports macOS, Windows, Android & iOS.
- * Version:     4.1.8
- * Author:      WPPOOL
- * Author URI:  http://wppool.dev
+ * Version: 5.2.20
+ * Author: WPPOOL
+ * Author URI: https://wppool.dev
+ * License: GPL3
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain: wp-dark-mode
- * Domain Path: /languages/
- * License:     GPL-2.0+
- * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ * Domain Path: /languages
  *
- * @package WP_DARK_MODE
+ * @package WP Dark Mode
+ * @since 5.0.0
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined( 'ABSPATH' ) || exit( 1 );
 
+// Bail if WP_Dark_Mode defined.
+if ( defined( 'WP_DARK_MODE_VERSION' ) ) {
+	return;
+}
+
+// Check if WP_Dark_Mode defined.
 if ( ! defined( 'WP_DARK_MODE_VERSION' ) ) {
-	define( 'WP_DARK_MODE_VERSION', '4.1.8' );
 	define( 'WP_DARK_MODE_FILE', __FILE__ );
-	define( 'WP_DARK_MODE_PATH', dirname( WP_DARK_MODE_FILE ) );
-	define( 'WP_DARK_MODE_INCLUDES', WP_DARK_MODE_PATH . '/includes' );
-	define( 'WP_DARK_MODE_TEMPLATES', WP_DARK_MODE_PATH . '/templates' );
-	define( 'WP_DARK_MODE_URL', plugin_dir_URL( WP_DARK_MODE_FILE ) );
-	define( 'WP_DARK_MODE_ASSETS', WP_DARK_MODE_URL . 'assets' );
+	define( 'WP_DARK_MODE_VERSION', '5.2.20' );
 
-	require_once WP_DARK_MODE_INCLUDES . '/class-base.php';
+	/**
+	 * Loads the boot file.
+	 *
+	 * @since 5.0.0
+	 */
+	require_once __DIR__ . '/includes/class-boot.php';
 }

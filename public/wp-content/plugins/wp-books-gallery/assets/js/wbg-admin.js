@@ -63,6 +63,31 @@
         '#wbg_loop_format_font_color',
         '#wbg_loop_cat_font_color',
         '#wbg_loop_author_font_color',
+        '#wbg_search_input_font_color',
+        '#wbg_search_reset_bg_color_hvr',
+        '#wbg_search_reset_font_color_hvr',
+        '#wbg_search_reset_border_color_hvr',
+        '#wbg_single_container_bg_color',
+        '#wbg_single_anchor_hv_color',
+        '#wbg_single_rprice_font_color',
+        '#wbg_single_dprice_font_color',
+        '#wbg_mss_alibris_color',
+        '#wbg_mss_amazon_color',
+        '#wbg_mss_amazon_kindle_color',
+        '#wbg_mss_apple_books_color',
+        '#wbg_mss_bookshop_org_color',
+        '#wbg_mss_google_play_color',
+        '#wbg_mss_kobo_color',
+        '#wbg_mss_lifeway_color',
+        '#wbg_mss_mardel_color',
+        '#wbg_mss_smashwords_color',
+        '#wbg_mss_sony_reader_color',
+        '#wbg_mss_waterstones_color',
+        '#wbg_mss_barnes_and_noble_color',
+        '#wbg_back_btn_bg_color',
+        '#wbg_back_btn_font_color',
+        '#wbg_back_btn_bg_color_hvr',
+        '#wbg_back_btn_font_color_hvr'
     ];
 
     $.each(wbgColorPicker, function(index, value) {
@@ -88,8 +113,63 @@
         }
     });
 
+    $('.icp').iconpicker();
+
     $('.wbg-closebtn').on('click', function() {
         this.parentElement.style.display = 'none';
+    });
+
+    // Download button operation
+    var aw_uploader = '';
+    $("#books_download_media_button_remove").hide();
+
+    $('body').on('click', '#books_download_media_button_add', function(e) {
+        //alert($('#wbg_download_link').val());
+        e.preventDefault();
+        aw_uploader = wp.media({
+                title: 'Books Gallery Download File',
+                button: {
+                    text: 'Use this file'
+                },
+                multiple: false
+            }).on('select', function() {
+                var attachment = aw_uploader.state().get('selection').first().toJSON();
+                $('#wbg_download_link').val(attachment.url);
+                $("#books_download_media_button_add").hide();
+                $("#books_download_media_button_remove").show();
+            })
+            .open();
+    });
+
+    $("#books_download_media_button_remove").click(function() {
+        $('#wbg_download_link').val('');
+        $(this).hide();
+        $("#books_download_media_button_add").show();
+    });
+
+    // Buynow button operation
+    //$("#wbg-wc-product-list").hide();
+
+    $(document).ready(function() {
+        $("#wbg-wc-product-type").change(function(event) {
+            if ($(this).val() == 'int') {
+                $('#buy-from-url-lbl').html('');
+                $('#buy-from-url-lbl').html('Select Internal Product');
+                $('#wbgp_buy_link_id').attr('type', 'hidden');
+                $("#wbg-wc-product-list").show();
+            }
+
+            if ($(this).val() == 'ext') {
+                $('#buy-from-url-lbl').html('');
+                $('#buy-from-url-lbl').html('Buy From URL');
+                $("#wbg-wc-product-list").hide();
+                $('#wbgp_buy_link_id').attr('type', 'text');
+            }
+        });
+
+        $("#wbg-wc-product-list").change(function(event) {
+            $('#wbgp_buy_link_id').val('?add-to-cart=' + $(this).val());
+        });
     });
 
 })(jQuery);
