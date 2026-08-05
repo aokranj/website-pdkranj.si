@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         </div>
 
-        <?php include_once('partial/admin-sidebar.php'); ?> 
+        <?php include_once('sidebar.php'); ?> 
 
     </div>
 

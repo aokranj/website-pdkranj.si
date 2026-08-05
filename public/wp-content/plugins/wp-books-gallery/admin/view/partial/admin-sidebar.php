@@ -11,30 +11,35 @@ if ( !defined( 'ABSPATH' ) ) {
             <ul>
                 <li>&#10003; Display Unlimited Books</li>
                 <li>
-                    <a href="https://books-gallery.com/docs/import-books-from-open-library/" target="_blank">&#10003; Import Books From Open Library & Google Books &#128279;</a>
+                    <a href="https://books-gallery.com/docs/import-books-from-google-books-api/" target="_blank">&#10003; Import Books From Google Books & Open Library &#128279;</a>
                 </li>
                 <li>
                     <a href="https://books-gallery.com/docs/import-books-from-csv/" target="_blank">&#10003; Import Books via Csv &#128279;</a>
                 </li>
-                <li>&#10003; Books Review & Rating</li>
-                <li>&#10003; 13 Additional Sources to Sell Your Books</li>
-                <li>&#10003; Display Featured Books With Slider</li>
-                <li>&#10003; Display Latest Books With Slider</li>
-                <li>&#10003; Display Categorized Books With Slider</li>
+                <li>
+                    <a href="https://books-gallery.com/docs//display-review-and-ratings/" target="_blank">&#10003; Books Review & Rating</a>    
+                </li>
+                <li>&#10003; Up to 15 Sale Sources Per Book</li>
+                <li>&#10003; Automatic Amazon Affiliate Tag - appends to every buy link sitewide.</li>
+                <li>&#10003; Display Featured, Latest & Categorized Books With Slider</li>
                 <li>&#10003; Display A Particualar Author Books With Slider</li>
-                <li>&#10003; Widget to Display Latest Books in Slide</li>
-                <li>&#10003; Display Book Details in PopUp</li>
+                <li>&#10003; Google Structured Data for Books</li>
+                <li>&#10003; Widget to Display Latest Books With Slider</li>
                 <li>&#10003; Allow Only Loggedin Users to Download Books</li>
+                <li>&#10003; Display Book Details in PopUp</li>
                 <li>&#10003; Book Author Bio in Details Page</li>
                 <li>&#10003; Separate Author Panel</li>
                 <li>&#10003; Individual Author Page with Book List</li>
                 <li>&#10003; Category wise Book List Page</li>
-                <li>&#10003; Lots of Book Details Meta Data</li>
-                <li>&#10003; Include Co-Author with Main Author</li>
+                <li>&#10003; Lots of Book Meta Data</li>
+                <li>&#10003; Display Co-Authors with Main Author</li>
                 <li>&#10003; Display Free or Premium Books With Shortcode</li>
                 <li>&#10003; Display Search Panel in the Details Page</li>
                 <li>&#10003; Display Only Search Panel in any Page</li>
                 <li>&#10003; Display a Single Book by book-id</li>
+                <li>&#10003; Book Sharing Option</li>
+                <li>&#10003; Display Editorial Reviews in Details Page</li>
+                <li>&#10003; Automatic Book Schema - every book gets structured data automatically.</li>
                 <li>
                     <a href="https://books-gallery.com/docs/available-shortcodes/" target="_blank">&#10003; Lots of Shortcoded Options &#128279;</a>
                 </li>

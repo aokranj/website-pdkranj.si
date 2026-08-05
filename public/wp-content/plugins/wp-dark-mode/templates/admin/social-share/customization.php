@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit();
 		<div class="mb-8">
 			<!-- title  -->
 			<label for="inline_button_templates" class="font-semibold text-sm text-slate-700 cursor-pointer mb-2  flex gap-1">
-				<?php esc_html_e( 'Inline Button Template', 'wp-dark-mode' ); ?> <span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Choose any inline button template that suits your style', 'wp-dark-mode' ); ?>"></span>
+				<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'inline_button_template' ) ); ?> <span class="wpdarkmode-tooltip" title="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'inline_button_template_tooltip' ) ); ?>"></span>
 			</label>
 
 			<!-- customization fields  -->
@@ -74,7 +74,7 @@ defined( 'ABSPATH' ) || exit();
 										</span>
 										<div class="channel-label pr-3" :class="{'pl-2' : templateIndex == 1}">
 											<span class="_channel-name">
-												<span class="capitalize"><?php esc_html_e( 'More', 'wp-dark-mode' ); ?></span>
+												<span class="capitalize"><?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'more' ) ); ?></span>
 											</span>
 											<!-- extra space  -->
 											<span></span>
@@ -94,12 +94,12 @@ defined( 'ABSPATH' ) || exit();
 		<!-- Share label  -->
 		<div class="mb-8">
 			<label for="share_label" class="font-semibold text-sm text-slate-700 cursor-pointer mb-2  flex gap-1">
-				<?php esc_html_e( 'Share Label', 'wp-dark-mode' ); ?> 
-				<span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Share label appears before the inline button. Provide engaging texts to make sure your visitors are sharing the content!', 'wp-dark-mode' ); ?>">
+				<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'share_label' ) ); ?> 
+				<span class="wpdarkmode-tooltip" title="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'share_label_tooltip' ) ); ?>">
 				</span>
 			</label>
 			<div>
-				<input type="text" x-model="options.share_via_label" class="input-text" id="share_label" placeholder="<?php esc_html_e( 'Sharing is Caring: ', 'wp-dark-mode' ); ?>">
+				<input type="text" x-model="options.share_via_label" class="input-text" id="share_label" placeholder="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'share_label_placeholder' ) ); ?>">
 			</div>
 		</div>
 
@@ -107,7 +107,7 @@ defined( 'ABSPATH' ) || exit();
 		<!-- Button position -->
 		<div class="mb-8">
 			<label class="font-semibold text-sm text-slate-700 cursor-pointer mb-2  flex gap-1">
-				<?php esc_html_e( 'Button Position', 'wp-dark-mode' ); ?> <span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Choose the position where you want show your inline button.', 'wp-dark-mode' ); ?>"></span>
+				<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'button_position' ) ); ?> <span class="wpdarkmode-tooltip" title="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'button_position_tooltip' ) ); ?>"></span>
 			</label>
 			<div class="wpdm-button-group">
 				<template x-for="(label, key) in constant.button_positions">
@@ -120,7 +120,7 @@ defined( 'ABSPATH' ) || exit();
 		<!-- Button alignment -->
 		<div class="mb-8">
 			<label class="font-semibold text-sm text-slate-700 cursor-pointer mb-2  flex gap-1">
-				<?php esc_html_e( 'Button Alignment', 'wp-dark-mode' ); ?> <span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Choose the alignment of the button.', 'wp-dark-mode' ); ?>"></span>
+				<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'button_alignment' ) ); ?> <span class="wpdarkmode-tooltip" title="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'button_alignment_tooltip' ) ); ?>"></span>
 			</label>
 			<div class="wpdm-button-group">
 				<template x-for="(label, key) in constant.button_alignments">
@@ -142,7 +142,7 @@ defined( 'ABSPATH' ) || exit();
 		<!-- Button shape -->
 		<div class="mb-8">
 			<label class="font-semibold text-sm text-slate-700 cursor-pointer mb-2  flex gap-1">
-				<?php esc_html_e( 'Button Shape', 'wp-dark-mode' ); ?> <span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Choose the button shape that matches your site content.', 'wp-dark-mode' ); ?>"></span>
+				<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'button_shape' ) ); ?> <span class="wpdarkmode-tooltip" title="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'button_shape_tooltip' ) ); ?>"></span>
 			</label>
 			<div class="wpdm-button-group">
 				<template x-for="(label, key) in constant.button_shapes">
@@ -155,7 +155,7 @@ defined( 'ABSPATH' ) || exit();
 		<!-- Button size -->
 		<div class="mb-8">
 			<label class="font-semibold text-sm text-slate-700 cursor-pointer mb-2  flex gap-1">
-				<?php esc_html_e( 'Button Size', 'wp-dark-mode' ); ?> <span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Choose the default size for your inline button.', 'wp-dark-mode' ); ?>"></span>
+				<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'button_size' ) ); ?> <span class="wpdarkmode-tooltip" title="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'button_size_tooltip' ) ); ?>"></span>
 			</label>
 			<div class="wpdm-button-group">
 				<template x-for="(label, key) in constant.button_sizes">
@@ -168,7 +168,7 @@ defined( 'ABSPATH' ) || exit();
 		<!-- Button labels -->
 		<div class="mb-8">
 			<label class="font-semibold text-sm text-slate-700 cursor-pointer mb-2  flex gap-1">
-				<?php esc_html_e( 'Button Label', 'wp-dark-mode' ); ?> <span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Button labels can display your channel’s name and share count.', 'wp-dark-mode' ); ?>"></span>
+				<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'button_label' ) ); ?> <span class="wpdarkmode-tooltip" title="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'button_label_tooltip' ) ); ?>"></span>
 			</label>
 			<div class="wpdm-button-group">
 				<template x-for="(label, key) in constant.button_labels">
@@ -181,9 +181,9 @@ defined( 'ABSPATH' ) || exit();
 		<!-- Button responsiveness  -->
 		<div class="mb-8">
 			<label class="font-semibold text-sm text-slate-700 cursor-pointer mb-2  flex gap-1">
-				<?php esc_html_e( 'Hide Buttons on', 'wp-dark-mode' ); ?> <span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Select where you want to hide your inline button.', 'wp-dark-mode' ); ?>"></span>
+				<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'hide_buttons_on' ) ); ?> <span class="wpdarkmode-tooltip" title="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'hide_buttons_on_tooltip' ) ); ?>"></span>
 				<span x-show="!isPro" class="badge-ultimate">
-					<?php esc_html_e( 'Ultimate', 'wp-dark-mode' ); ?>
+					<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'ultimate' ) ); ?>
 				</span>
 			</label>
 			<div class=" group relative">
@@ -201,9 +201,9 @@ defined( 'ABSPATH' ) || exit();
 		<!-- Display button in post types  -->
 		<div class="mb-8">
 			<label class="font-semibold text-sm text-slate-700 cursor-pointer mb-2  flex gap-1">
-				<?php esc_html_e( 'Display Buttons on', 'wp-dark-mode' ); ?> <span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Choose where the inline button will appear on your website.', 'wp-dark-mode' ); ?>"></span>
+				<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'display_buttons_on' ) ); ?> <span class="wpdarkmode-tooltip" title="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'display_buttons_on_tooltip' ) ); ?>"></span>
 				<span x-show="!isPro" class="badge-ultimate">
-					<?php esc_html_e( 'Ultimate', 'wp-dark-mode' ); ?>
+					<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'ultimate' ) ); ?>
 				</span>
 			</label>
 			<div class="wpdm-button-group gap-1 flex-wrap"">
@@ -222,7 +222,7 @@ defined( 'ABSPATH' ) || exit();
 						<?php //phpcs:ignore ?>
 						<path d="M 32 9 C 24.832 9 19 14.832 19 22 L 19 27.347656 C 16.670659 28.171862 15 30.388126 15 33 L 15 49 C 15 52.314 17.686 55 21 55 L 43 55 C 46.314 55 49 52.314 49 49 L 49 33 C 49 30.388126 47.329341 28.171862 45 27.347656 L 45 22 C 45 14.832 39.168 9 32 9 z M 32 13 C 36.963 13 41 17.038 41 22 L 41 27 L 23 27 L 23 22 C 23 17.038 27.037 13 32 13 z"></path>
 					</svg>
-					<span x-html="post_type.name"></span>
+					<span x-html="t(post_type.id) || post_type.name"></span>
 				</label>
 				</template>
 			</div>
@@ -232,9 +232,9 @@ defined( 'ABSPATH' ) || exit();
 		<!-- Button spacing  -->
 		<div class="mb-6 flex items-center gap-2 justify-between" @click="isFree ? showPromo : ''">
 			<label for="button_spacing" class="font-semibold text-sm text-slate-700 cursor-pointer flex gap-1">
-				<?php esc_html_e( 'Button Spacing', 'wp-dark-mode' ); ?> <span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Select default spacing between each channel.', 'wp-dark-mode' ); ?>"></span>
+				<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'button_spacing' ) ); ?> <span class="wpdarkmode-tooltip" title="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'button_spacing_tooltip' ) ); ?>"></span>
 				<span x-show="!isPro" class="badge-ultimate">
-					<?php esc_html_e( 'Ultimate', 'wp-dark-mode' ); ?>
+					<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'ultimate' ) ); ?>
 				</span>
 			</label>
 			<label for="button_spacing" class="_switcher group relative">
@@ -248,10 +248,10 @@ defined( 'ABSPATH' ) || exit();
 		<!-- Total Share  -->
 		<div class="flex items-center justify-between mb-6" @click="isFree ? showPromo : ''">
 			<label for="total_share" class="font-semibold text-sm text-slate-700 cursor-pointer w-48 flex gap-1">
-				<?php esc_html_e( 'Total Shares', 'wp-dark-mode' ); ?> 
-				<span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Enable total share counter. It will show how many times your content is shared via enabled channels.', 'wp-dark-mode' ); ?>"></span>
+				<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'total_shares' ) ); ?> 
+				<span class="wpdarkmode-tooltip" title="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'total_shares_tooltip' ) ); ?>"></span>
 				<span x-show="!isPro" class="badge-ultimate">
-					<?php esc_html_e( 'Ultimate', 'wp-dark-mode' ); ?>
+					<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'ultimate' ) ); ?>
 				</span>
 			</label>
 			<label for="total_share" class="_switcher group relative">
@@ -262,10 +262,10 @@ defined( 'ABSPATH' ) || exit();
 		</div>
 		<div class="mb-6">
 			<label for="minimum_share" class="font-semibold text-sm text-slate-700 cursor-pointer mb-2  flex gap-1">
-				<?php esc_html_e( 'Minimum Share Count', 'wp-dark-mode' ); ?> 
-				<span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'This is the minimum number of shares a page needs to have before the share counter is shown.', 'wp-dark-mode' ); ?>"></span>
+				<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'minimum_share_count' ) ); ?> 
+				<span class="wpdarkmode-tooltip" title="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'minimum_share_count_tooltip' ) ); ?>"></span>
 				<span x-show="!isUltimate" class="badge-ultimate">
-					<?php esc_html_e( 'Ultimate', 'wp-dark-mode' ); ?>
+					<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'ultimate' ) ); ?>
 				</span>
 			</label>
 			<div class="w-full group relative">
@@ -278,10 +278,10 @@ defined( 'ABSPATH' ) || exit();
 		<!-- Maximum share count per visitor -->
 		<div class="mb-6">
 			<label class="font-semibold text-sm text-slate-700 cursor-pointer mb-2  flex gap-1">
-				<?php esc_html_e( 'Maximum Share Click', 'wp-dark-mode' ); ?> 
-				<span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'This is the maximum number of click count on a social channel you want to show your visitors', 'wp-dark-mode' ); ?>"></span>
+				<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'maximum_share_click' ) ); ?> 
+				<span class="wpdarkmode-tooltip" title="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'maximum_share_click_tooltip' ) ); ?>"></span>
 				<span x-show="!isUltimate" class="badge-ultimate">
-					<?php esc_html_e( 'Ultimate', 'wp-dark-mode' ); ?>
+					<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'ultimate' ) ); ?>
 				</span>
 			</label>
 			<div class="w-full group relative">
@@ -292,10 +292,10 @@ defined( 'ABSPATH' ) || exit();
 		<!-- Show first N buttons -->
 		<div class="mb-6">
 			<label class="font-semibold text-sm text-slate-700 cursor-pointer mb-2  flex gap-1">
-				<?php esc_html_e( 'Channel Visibility Count', 'wp-dark-mode' ); ?> 
-				<span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Set the number of channels that you want to show on your website. The rest will be shown after clicking on the \'More\' button.', 'wp-dark-mode' ); ?>"></span>
+				<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'channel_visibility_count' ) ); ?> 
+				<span class="wpdarkmode-tooltip" title="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'channel_visibility_count_tooltip' ) ); ?>"></span>
 				<span x-show="!isUltimate" class="badge-ultimate">
-					<?php esc_html_e( 'Ultimate', 'wp-dark-mode' ); ?>
+					<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'ultimate' ) ); ?>
 				</span>
 			</label>
 			<div class="w-full group relative">

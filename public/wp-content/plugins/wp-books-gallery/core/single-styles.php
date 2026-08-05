@@ -168,6 +168,26 @@ trait Wbg_Single_Styles_Settings
                 'type'      => 'text',
                 'default'   => '#FFFFFF',
             ],
+            [
+                'name'      => 'wbg_single_author_name_font_size',
+                'type'      => 'number',
+                'default'   => '24',
+            ],
+            [
+                'name'      => 'wbg_single_author_name_font_color',
+                'type'      => 'text',
+                'default'   => '#242424',
+            ],
+            [
+                'name'      => 'wbg_single_author_bio_font_size',
+                'type'      => 'number',
+                'default'   => '14',
+            ],
+            [
+                'name'      => 'wbg_single_author_bio_font_color',
+                'type'      => 'text',
+                'default'   => '#808285',
+            ],
         ];
     }
 }

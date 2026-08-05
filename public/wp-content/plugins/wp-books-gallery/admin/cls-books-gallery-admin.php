@@ -143,6 +143,7 @@ class WBG_Admin {
     }
 
     function wbg_custom_post_type() {
+        $bg_slug = ( !empty( get_option( 'wbg_cpt_slug' ) ) ? get_option( 'wbg_cpt_slug' ) : 'books' );
         $labels = array(
             'name'               => __( 'Books', 'wp-books-gallery' ),
             'singular_name'      => __( 'Book', 'wp-books-gallery' ),
@@ -186,7 +187,7 @@ class WBG_Admin {
             'query_var'           => true,
             'taxonomies'          => array('category', 'post_tag'),
             'rewrite'             => array(
-                'slug' => 'books',
+                'slug' => esc_html( $bg_slug ),
             ),
         );
         register_post_type( 'books', $args );
@@ -508,6 +509,64 @@ class WBG_Admin {
         $content = wp_kses_post( $wbg_best_sellers_rank );
         $editor_id = 'wbg_best_sellers_rank';
         wp_editor( $content, $editor_id, $settings );
+    }
+
+    /**
+     * Upgrade to pro section in the settings page
+     */
+    function wbg_upgrade_to_premium_section( $up_array ) {
+        $plan = ( !empty( $up_array['plan'] ) ? sanitize_text_field( $up_array['plan'] ) : 'pro' );
+        $colspan = ( !empty( $up_array['colspan'] ) ? sanitize_text_field( $up_array['colspan'] ) : 1 );
+        ?>
+			<tr class="upgrade-promotion">
+				<th scope="row">
+					<label><i class="fa fa-lock" aria-hidden="true"></i><?php 
+        _e( $up_array['label'], 'jobwp' );
+        ?></label>
+				</th>
+				<td colspan="<?php 
+        echo esc_attr( $colspan );
+        ?>">
+					<div class="pro-unlock">
+						<i class="<?php 
+        echo esc_attr( $up_array['icon'] );
+        ?>" style="font-size:18px;flex-shrink:0" aria-hidden="true"></i>
+						<div class="pro-unlock-text">
+							<?php 
+        _e( $up_array['message'], 'jobwp' );
+        ?>
+						</div>
+						<?php 
+        echo '<a href="' . wbg_fs()->get_upgrade_url() . '" class="pro-unlock-btn">' . __( 'Unlock', 'jobwp' ) . '</a>';
+        ?>
+					</div>
+				</td>
+			</tr>
+			<?php 
+        return null;
+    }
+
+    /**
+     * Common: Load checkbox field in the settings page
+     */
+    function wbg_load_checkbox_settings_field( $settings_name, $settings_val ) {
+        ?>
+		<input type="checkbox" name="<?php 
+        echo esc_attr( $settings_name );
+        ?>" class="<?php 
+        echo esc_attr( $settings_name );
+        ?>" 
+			id="<?php 
+        echo esc_attr( $settings_name );
+        ?>" value="1" <?php 
+        checked( $settings_val, 1 );
+        ?>>
+		<label for="<?php 
+        echo esc_attr( $settings_name );
+        ?>"><?php 
+        esc_html_e( 'Enable', 'wp-books-gallery' );
+        ?></label>
+		<?php 
     }
 
 }

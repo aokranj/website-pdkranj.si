@@ -1,55 +1,27 @@
-# Copyright (C) 2025 WPPOOL
-# This file is distributed under the GPL3.
+# Translation file for wp-dark-mode
+# Copyright (C) 2026 wp-dark-mode
+# This file is distributed under the same license as the wp-dark-mode package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Dark Mode 5.2.12\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-dark-mode\n"
+"Project-Id-Version: wp-dark-mode\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-01 05:56+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-07-17T05:46:48+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: wp-auto-i18n\n"
 "X-Domain: wp-dark-mode\n"
-
-#. Plugin Name of the plugin
-#: plugin.php
-#: includes/admin/class-admin-menus.php:46
-#: includes/admin/class-admin-notices.php:86
-msgid "WP Dark Mode"
-msgstr ""
-
-#. Plugin URI of the plugin
-#: plugin.php
-msgid "https://wppool.dev/wp-dark-mode"
-msgstr ""
-
-#. Description of the plugin
-#: plugin.php
-msgid "WP Dark Mode automatically enables a stunning dark mode of your website based on user's operating system. Supports macOS, Windows, Android & iOS."
-msgstr ""
-
-#. Author of the plugin
-#: plugin.php
-msgid "WPPOOL"
-msgstr ""
-
-#. Author URI of the plugin
-#: plugin.php
-msgid "https://wppool.dev"
-msgstr ""
 
 #: includes/admin/class-admin-install.php:221
 msgid "Upgrade now"
 msgstr ""
 
-#: includes/admin/class-admin-install.php:232
-#: includes/admin/class-admin-menus.php:59
-#: includes/admin/class-admin-menus.php:60
-#: includes/admin/class-admin-menus.php:71
-#: includes/admin/class-admin-menus.php:72
+#: includes/admin/class-admin-install.php:232, includes/admin/class-admin-menus.php:59, includes/admin/class-admin-menus.php:60, includes/admin/class-admin-menus.php:71, includes/admin/class-admin-menus.php:72, includes/admin/class-strings.php:561
 msgid "Settings"
 msgstr ""
 
@@ -57,12 +29,19 @@ msgstr ""
 msgid "WP Dark Mode Settings"
 msgstr ""
 
-#: includes/admin/class-admin-menus.php:82
-#: includes/admin/class-admin-menus.php:83
+#: includes/admin/class-admin-menus.php:46, includes/admin/class-admin-notices.php:86, includes/admin/class-strings.php:675, includes/admin/class-strings.php:681
+msgid "WP Dark Mode"
+msgstr ""
+
+#: includes/admin/class-admin-menus.php:82, includes/admin/class-admin-menus.php:83, includes/admin/class-strings.php:684
 msgid "Get Started"
 msgstr ""
 
-#: includes/admin/class-admin-menus.php:107
+#: includes/admin/class-admin-menus.php:93, includes/admin/class-admin-menus.php:94, includes/modules/social-share/class-social-share.php:463
+msgid "Social Share"
+msgstr ""
+
+#: includes/admin/class-admin-menus.php:107, includes/admin/class-strings.php:512
 msgid "Recommended Plugins"
 msgstr ""
 
@@ -70,175 +49,3112 @@ msgstr ""
 msgid "Recommended <br /> Plugins"
 msgstr ""
 
-#: includes/admin/class-admin-menus.php:120
-#: includes/admin/class-admin-menus.php:129
+#: includes/admin/class-admin-menus.php:120, includes/admin/class-admin-menus.php:129, includes/admin/class-strings.php:769
 msgid "Upgrade Now"
 msgstr ""
 
-#: includes/admin/class-admin-rest.php:145
-#: includes/admin/class-admin-rest.php:185
+#: includes/admin/class-admin-rest.php:145, includes/admin/class-admin-rest.php:187
 msgid "No settings found."
 msgstr ""
 
-#: includes/admin/class-admin-rest.php:193
+#: includes/admin/class-admin-rest.php:195
 msgid "Settings saved successfully."
 msgstr ""
 
-#: includes/admin/class-admin-rest.php:208
+#: includes/admin/class-admin-rest.php:210
 msgid "Reset not confirmed."
 msgstr ""
 
-#: includes/admin/class-admin-rest.php:218
+#: includes/admin/class-admin-rest.php:220, includes/admin/class-strings.php:538
 msgid "Settings reset successfully."
 msgstr ""
 
-#: includes/admin/class-admin-rest.php:236
+#: includes/admin/class-admin-rest.php:238
 msgid "No notice found."
 msgstr ""
 
-#: includes/admin/class-recommended-plugins.php:201
-#: templates/admin/recommended-plugins.php:133
+#: includes/admin/class-recommended-plugins.php:201, templates/admin/recommended-plugins.php:134
 msgid "Try out our recommended plugins"
 msgstr ""
 
-#: includes/admin/class-recommended-plugins.php:202
-#: templates/admin/recommended-plugins.php:134
+#: includes/admin/class-recommended-plugins.php:202, templates/admin/recommended-plugins.php:135
 msgid "Hide From Menu"
 msgstr ""
 
-#. translators: %s: Plugin author.
-#: includes/admin/class-recommended-plugins.php:252
-#: templates/admin/recommended-plugins.php:183
+#: includes/admin/class-recommended-plugins.php:252, templates/admin/recommended-plugins.php:184
 msgid "By %s"
 msgstr ""
 
-#. translators: %s: Plugin name and version.
-#: includes/admin/class-recommended-plugins.php:277
-#: templates/admin/recommended-plugins.php:208
-msgctxt "plugin"
-msgid "Install %s now"
-msgstr ""
-
-#: includes/admin/class-recommended-plugins.php:279
-#: templates/admin/recommended-plugins.php:210
+#: includes/admin/class-recommended-plugins.php:279, templates/admin/recommended-plugins.php:211
 msgid "Install Now"
 msgstr ""
 
-#: includes/admin/class-recommended-plugins.php:284
-#: templates/admin/recommended-plugins.php:215
-msgctxt "plugin"
-msgid "Cannot Install"
-msgstr ""
-
-#. translators: %s: Plugin name and version.
-#: includes/admin/class-recommended-plugins.php:299
-#: templates/admin/recommended-plugins.php:230
-msgctxt "plugin"
-msgid "Update %s now"
-msgstr ""
-
-#: includes/admin/class-recommended-plugins.php:301
-#: templates/admin/recommended-plugins.php:232
+#: includes/admin/class-recommended-plugins.php:301, templates/admin/recommended-plugins.php:233
 msgid "Update Now"
 msgstr ""
 
-#: includes/admin/class-recommended-plugins.php:306
-#: templates/admin/recommended-plugins.php:237
-msgctxt "plugin"
-msgid "Cannot Update"
-msgstr ""
-
-#: includes/admin/class-recommended-plugins.php:317
-#: templates/admin/recommended-plugins.php:248
-msgctxt "plugin"
-msgid "Active"
-msgstr ""
-
-#: includes/admin/class-recommended-plugins.php:320
-#: templates/admin/recommended-plugins.php:251
+#: includes/admin/class-recommended-plugins.php:320, templates/admin/recommended-plugins.php:252
 msgid "Activate"
 msgstr ""
 
-#. translators: %s: Plugin name.
-#: includes/admin/class-recommended-plugins.php:322
-#: templates/admin/recommended-plugins.php:253
-msgctxt "plugin"
-msgid "Activate %s"
-msgstr ""
-
-#: includes/admin/class-recommended-plugins.php:340
-#: templates/admin/recommended-plugins.php:271
-msgctxt "plugin"
-msgid "Installed"
-msgstr ""
-
-#. translators: %s: Plugin name and version.
-#: includes/admin/class-recommended-plugins.php:353
-#: templates/admin/recommended-plugins.php:284
+#: includes/admin/class-recommended-plugins.php:353, templates/admin/recommended-plugins.php:285
 msgid "More information about %s"
 msgstr ""
 
-#: includes/admin/class-recommended-plugins.php:355
-#: templates/admin/recommended-plugins.php:286
+#: includes/admin/class-recommended-plugins.php:355, templates/admin/recommended-plugins.php:287
 msgid "More Details"
 msgstr ""
 
-#: includes/admin/class-recommended-plugins.php:385
-#: templates/admin/recommended-plugins.php:316
+#: includes/admin/class-recommended-plugins.php:385, templates/admin/recommended-plugins.php:317
 msgid "This plugin doesn&#8217;t work with your versions of WordPress and PHP."
 msgstr ""
 
-#: includes/admin/class-recommended-plugins.php:409
-#: templates/admin/recommended-plugins.php:340
+#: includes/admin/class-recommended-plugins.php:409, templates/admin/recommended-plugins.php:341
 msgid "This plugin doesn&#8217;t work with your version of WordPress."
 msgstr ""
 
-#: includes/admin/class-recommended-plugins.php:418
-#: templates/admin/recommended-plugins.php:349
+#: includes/admin/class-recommended-plugins.php:418, templates/admin/recommended-plugins.php:350
 msgid "This plugin doesn&#8217;t work with your version of PHP."
 msgstr ""
 
-#: includes/admin/class-recommended-plugins.php:466
-#: templates/admin/recommended-plugins.php:397
+#: includes/admin/class-recommended-plugins.php:466, templates/admin/recommended-plugins.php:398
 msgid "Last Updated:"
 msgstr ""
 
-#. translators: %s: Human-readable time difference.
-#: includes/admin/class-recommended-plugins.php:469
-#: templates/admin/recommended-plugins.php:400
+#: includes/admin/class-recommended-plugins.php:469, templates/admin/recommended-plugins.php:401
 msgid "%s ago"
 msgstr ""
 
-#. translators: %s: Number of millions.
-#: includes/admin/class-recommended-plugins.php:478
-#: templates/admin/recommended-plugins.php:409
-msgctxt "Active plugin installations"
-msgid "%s+ Million"
-msgid_plural "%s+ Million"
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/admin/class-recommended-plugins.php:482
-#: templates/admin/recommended-plugins.php:413
-msgctxt "Active plugin installations"
-msgid "Less Than 10"
-msgstr ""
-
-#. translators: %s: Number of installations.
-#: includes/admin/class-recommended-plugins.php:487
-#: templates/admin/recommended-plugins.php:418
+#: includes/admin/class-recommended-plugins.php:487, templates/admin/recommended-plugins.php:419
 msgid "%s Active Installations"
 msgstr ""
 
-#: includes/admin/class-recommended-plugins.php:508
-#: languages/wp-dark-mode.php:177
-#: templates/admin/recommended-plugins.php:439
+#: includes/admin/class-recommended-plugins.php:508, includes/admin/class-strings.php:89, templates/admin/recommended-plugins.php:440
 msgid "Are you sure?"
 msgstr ""
 
-#: includes/admin/class-recommended-plugins.php:509
-#: templates/admin/recommended-plugins.php:440
+#: includes/admin/class-recommended-plugins.php:509, templates/admin/recommended-plugins.php:441
 msgid "If you hide the recommended plugins page from your menu, it won't appear there again. Are you sure you'd like to do it?"
+msgstr ""
+
+#: includes/admin/class-strings.php:15
+msgid "Enabling dark mode on your website is easy and simple. <a href=\"\">Learn how to get started with WP Dark Mode within minutes.</a>"
+msgstr ""
+
+#: includes/admin/class-strings.php:16
+msgid "To purchase and activate WP Dark Mode Ultimate, please visit our <a href=\"http://wppool.dev/wp-dark-mode-pricing/\" target=\"_blank\">pricing page</a>."
+msgstr ""
+
+#: includes/admin/class-strings.php:17
+msgid "Yes, WP Dark Mode is compatible with major page builders, including Gutenberg and Elementor. You can place the dark mode switch button on any page or post using these builders."
+msgstr ""
+
+#: includes/admin/class-strings.php:18
+msgid "Yes, WP Dark Mode has been tested and works seamlessly across modern browsers such as Safari, Chrome, Firefox, Edge, Opera, Brave, and more."
+msgstr ""
+
+#: includes/admin/class-strings.php:19
+msgid "Go to WP Dark Mode > Settings > Customization > Image Settings and upload/select the image you want to use for dark mode."
+msgstr ""
+
+#: includes/admin/class-strings.php:20
+msgid "WP Dark Mode allows you to exclude specific elements or pages from being affected by dark mode using CSS selectors. Go to WP Dark Mode > Settings > Advanced > Exclude Settings > HTML Elements and add the CSS selectors for the elements you want to exclude."
+msgstr ""
+
+#: includes/admin/class-strings.php:21
+msgid "For refunds on the premium plan, please contact our <a href=\"http://wppool.dev/contact\" rel=\"nofollow\" target=\"_blank\">customer support team</a> directly. The procedure will be based on the terms of service in effect at the time of purchase."
+msgstr ""
+
+#: includes/admin/class-strings.php:22, src/admin/routes/settings-routes.js:87
+msgid "Accessibility"
+msgstr ""
+
+#: includes/admin/class-strings.php:23, src/admin/routes/settings-routes.js:88
+msgid "Make your website more accessible for people with disabilities."
+msgstr ""
+
+#: includes/admin/class-strings.php:24
+msgid "Accessibility Switches"
+msgstr ""
+
+#: includes/admin/class-strings.php:25, includes/admin/class-strings.php:662
+msgid "Please active WooCommerce to use this feature."
+msgstr ""
+
+#: includes/admin/class-strings.php:26
+msgid "+ Add Custom Color Preset"
+msgstr ""
+
+#: includes/admin/class-strings.php:27, includes/classes/class-config.php:603
+msgid "Sweet Dark"
+msgstr ""
+
+#: includes/admin/class-strings.php:28, includes/classes/class-config.php:621
+msgid "Gold"
+msgstr ""
+
+#: includes/admin/class-strings.php:29, includes/classes/class-config.php:639
+msgid "Sapphire"
+msgstr ""
+
+#: includes/admin/class-strings.php:30, includes/classes/class-config.php:657
+msgid "Tailwind"
+msgstr ""
+
+#: includes/admin/class-strings.php:31, includes/classes/class-config.php:675
+msgid "Midnight Bloom"
+msgstr ""
+
+#: includes/admin/class-strings.php:32, includes/classes/class-config.php:693
+msgid "Fuchsia"
+msgstr ""
+
+#: includes/admin/class-strings.php:33, includes/classes/class-config.php:711
+msgid "Rose"
+msgstr ""
+
+#: includes/admin/class-strings.php:34, includes/classes/class-config.php:729
+msgid "Violet"
+msgstr ""
+
+#: includes/admin/class-strings.php:35, includes/classes/class-config.php:747
+msgid "Pink"
+msgstr ""
+
+#: includes/admin/class-strings.php:36, includes/classes/class-config.php:765
+msgid "Kelly"
+msgstr ""
+
+#: includes/admin/class-strings.php:37, includes/classes/class-config.php:783
+msgid "Magenta"
+msgstr ""
+
+#: includes/admin/class-strings.php:38
+msgid "Green"
+msgstr ""
+
+#: includes/admin/class-strings.php:39
+msgid "Orange"
+msgstr ""
+
+#: includes/admin/class-strings.php:40
+msgid "Yellow"
+msgstr ""
+
+#: includes/admin/class-strings.php:41
+msgid "Facebook"
+msgstr ""
+
+#: includes/admin/class-strings.php:42
+msgid "Twitter"
+msgstr ""
+
+#: includes/admin/class-strings.php:43, includes/admin/class-strings.php:422, includes/classes/class-config.php:283
+msgid "Light"
+msgstr ""
+
+#: includes/admin/class-strings.php:44, includes/admin/class-strings.php:185, includes/classes/class-config.php:287
+msgid "Dark"
+msgstr ""
+
+#: includes/admin/class-strings.php:45, includes/admin/class-strings.php:449
+msgid "New"
+msgstr ""
+
+#: includes/admin/class-strings.php:46
+msgid "Add images to replace them in dark mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:47
+msgid "Add New"
+msgstr ""
+
+#: includes/admin/class-strings.php:48, includes/admin/class-strings.php:671
+msgid "Drag & drop the Darkmode Switcher to any of your menus from the Menu option under Appearance settings in WordPress dashboard"
+msgstr ""
+
+#: includes/admin/class-strings.php:49, includes/admin/class-strings.php:54
+msgid "Add Dark Mode switch to Menus from WordPress dashboard"
+msgstr ""
+
+#: includes/admin/class-strings.php:50
+msgid "Add custom triggers to toggle dark mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:51
+msgid "Add videos to replace them in dark mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:52
+msgid "Navigate to the Widget option in the WordPress dashboard under Appearance menu. Select the menu where you want to display dark mode switch and click on the ‘+’ button and type <span class=\"text-[#374151]\"> Dark Mode Switch</span> in the widget searchbox"
+msgstr ""
+
+#: includes/admin/class-strings.php:53
+msgid "Add the WP Dark Mode widget to the menu"
+msgstr ""
+
+#: includes/admin/class-strings.php:55, includes/admin/class-strings.php:56
+msgid "Adjust Typography for Dark Mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:57, includes/admin/class-strings.php:613
+msgid "Enable to get seamless readability by font adaptation during dark-light mode toggling."
+msgstr ""
+
+#: includes/admin/class-strings.php:58, includes/admin/class-strings.php:247
+msgid "Turn it ON to enable dark mode on the WordPress dashboard"
+msgstr ""
+
+#: includes/admin/class-strings.php:59, includes/admin/class-strings.php:246
+msgid "Enable Admin Dashboard Dark Mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:60, src/admin/routes/settings-routes.js:22
+msgid "Settings to Control Dark Mode on your WordPress Admin Panel"
+msgstr ""
+
+#: includes/admin/class-strings.php:61, src/admin/routes/settings-routes.js:21
+msgid "Admin Panel Dark Mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:62, src/admin/routes/settings-routes.js:63
+msgid "Advanced"
+msgstr ""
+
+#: includes/admin/class-strings.php:63
+msgid "Affiliate Program"
+msgstr ""
+
+#: includes/admin/class-strings.php:64
+msgid "Hey! Enjoying the WP Dark Mode plugin? 😍 Join our <a href=\"https://go.wppool.dev/zfrO\" target=\"_blank\" class=\"text-[#7C3AED] font-semibold\">Influencer Program</a> to make money from your social media content. You can also check our <a href=\"https://go.wppool.dev/Tfej\" target=\"_blank\" class=\"text-[#7C3AED] font-semibold no-underline\">Affiliate Program</a> to get a <strong>25% commission</strong> on every sale!"
+msgstr ""
+
+#: includes/admin/class-strings.php:65
+msgid "AI Custom Preset"
+msgstr ""
+
+#: includes/admin/class-strings.php:66
+msgid "Let AI generate your stunning dark mode themes in seconds. Preview, compare, and apply the one you love."
+msgstr ""
+
+#: includes/admin/class-strings.php:67
+msgid "Create Your Dark Mode with AI"
+msgstr ""
+
+#: includes/admin/class-strings.php:68, src/admin/routes/settings-routes.js:125, src/admin/routes/settings-routes.js:131
+msgid "AI Model"
+msgstr ""
+
+#: includes/admin/class-strings.php:69, src/admin/routes/settings-routes.js:132
+msgid "Configure AI model settings for theme generation"
+msgstr ""
+
+#: includes/admin/class-strings.php:70
+msgid "⚡ AI Preset Generator"
+msgstr ""
+
+#: includes/admin/class-strings.php:71
+msgid "Let AI instantly generate a smart dark mode theme preset for you."
+msgstr ""
+
+#: includes/admin/class-strings.php:72
+msgid "AI Preset Generator"
+msgstr ""
+
+#: includes/admin/class-strings.php:73, includes/admin/class-strings.php:74
+msgid "AI Preset saved successfully!"
+msgstr ""
+
+#: includes/admin/class-strings.php:75
+msgid "I already did it"
+msgstr ""
+
+#: includes/admin/class-strings.php:76
+msgid "You already have a preset named"
+msgstr ""
+
+#: includes/admin/class-strings.php:77
+msgid "AM"
+msgstr ""
+
+#: includes/admin/class-strings.php:78, src/admin/routes/settings-routes.js:104, src/admin/routes/settings-routes.js:118
+msgid "Analytics"
+msgstr ""
+
+#: includes/admin/class-strings.php:79
+msgid "If you enable this then the chart above will be shown in your admin panel dashboard"
+msgstr ""
+
+#: includes/admin/class-strings.php:80
+msgid "Display this dark mode usage chart on the WordPress Dashboard"
+msgstr ""
+
+#: includes/admin/class-strings.php:81, src/admin/routes/settings-routes.js:119
+msgid "Configure analytics settings."
+msgstr ""
+
+#: includes/admin/class-strings.php:82
+msgid "Enable dark mode analytics to track how many times site visitors have used dark mode in a certain period."
+msgstr ""
+
+#: includes/admin/class-strings.php:83, includes/admin/class-strings.php:186
+msgid "Dark Mode Analytics"
+msgstr ""
+
+#: includes/admin/class-strings.php:84, includes/admin/class-strings.php:85
+msgid "Analyze my website"
+msgstr ""
+
+#: includes/admin/class-strings.php:86, src/admin/routes/settings-routes.js:57
+msgid "Choose your page transition animation"
+msgstr ""
+
+#: includes/admin/class-strings.php:87
+msgid "Enable this option to choose the transition animation when switching between light and dark modes on your website."
+msgstr ""
+
+#: includes/admin/class-strings.php:88, includes/admin/class-strings.php:254
+msgid "Enable Page Transition Animation"
+msgstr ""
+
+#: includes/admin/class-strings.php:90
+msgid "Enable to choose an animation effect for the selected switch"
+msgstr ""
+
+#: includes/admin/class-strings.php:91
+msgid "Switch Attention Effect"
+msgstr ""
+
+#: includes/admin/class-strings.php:92
+msgid "Auto-hide Switch on Idle"
+msgstr ""
+
+#: includes/admin/class-strings.php:93
+msgid "Enable to automatically hide the floating switch when the user is idle."
+msgstr ""
+
+#: includes/admin/class-strings.php:94
+msgid "Automatic Color"
+msgstr ""
+
+#: includes/admin/class-strings.php:95, includes/admin/class-strings.php:97
+msgid "Adjust the your automatic color for dark mode color scheme"
+msgstr ""
+
+#: includes/admin/class-strings.php:96, includes/admin/class-strings.php:98
+msgid "Adjust your automatic color filter"
+msgstr ""
+
+#: includes/admin/class-strings.php:99
+msgid "Back"
+msgstr ""
+
+#: includes/admin/class-strings.php:100
+msgid "Background"
+msgstr ""
+
+#: includes/admin/class-strings.php:101, includes/admin/class-strings.php:104
+msgid "Block Editor Dark Mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:102, includes/admin/class-strings.php:103
+msgid "Turn it ON to show dark mode switch in the block editor for toggling between dark and light mode."
+msgstr ""
+
+#: includes/admin/class-strings.php:105
+msgid "Body Background Color"
+msgstr ""
+
+#: includes/admin/class-strings.php:106
+msgid "Body Colors"
+msgstr ""
+
+#: includes/admin/class-strings.php:107
+msgid "Border"
+msgstr ""
+
+#: includes/admin/class-strings.php:108
+msgid "Brightness"
+msgstr ""
+
+#: includes/admin/class-strings.php:109
+msgid "Adjust your preferred dark mode brightness"
+msgstr ""
+
+#: includes/admin/class-strings.php:110
+msgid "Brightness level"
+msgstr ""
+
+#: includes/admin/class-strings.php:111
+msgid "Browse"
+msgstr ""
+
+#: includes/admin/class-strings.php:112
+msgid "Button Hover Background Color"
+msgstr ""
+
+#: includes/admin/class-strings.php:113
+msgid "Button Hover Text Color"
+msgstr ""
+
+#: includes/admin/class-strings.php:114
+msgid "Button Border"
+msgstr ""
+
+#: includes/admin/class-strings.php:115
+msgid "Button Colors"
+msgstr ""
+
+#: includes/admin/class-strings.php:116
+msgid "Cancel"
+msgstr ""
+
+#: includes/admin/class-strings.php:117
+msgid "Choose Color Mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:118, includes/admin/class-strings.php:119
+msgid "Choose Your Preferred Color Palettes"
+msgstr ""
+
+#: includes/admin/class-strings.php:120
+msgid "Choose any button, menu link, or icon and make it toggle dark mode."
+msgstr ""
+
+#: includes/admin/class-strings.php:121, includes/admin/class-strings.php:124
+msgid "Classic Editor Dark Mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:122, includes/admin/class-strings.php:123
+msgid "Turn it ON to show dark mode switch in the classic editor for toggling between dark and light mode."
+msgstr ""
+
+#: includes/admin/class-strings.php:125, includes/admin/class-strings.php:659
+msgid "Wait! Clear palette previews?"
+msgstr ""
+
+#: includes/admin/class-strings.php:126
+msgid "Click on the button below to create your first custom color."
+msgstr ""
+
+#: includes/admin/class-strings.php:127, src/admin/routes/settings-routes.js:42
+msgid "Explore your options to get the best dark mode visual experience."
+msgstr ""
+
+#: includes/admin/class-strings.php:128
+msgid "Color Presets"
+msgstr ""
+
+#: includes/admin/class-strings.php:129, includes/admin/class-strings.php:130
+msgid "Choose a color preset for the dark mode color scheme."
+msgstr ""
+
+#: includes/admin/class-strings.php:131, includes/admin/class-strings.php:187
+msgid "Dark Mode Color Presets"
+msgstr ""
+
+#: includes/admin/class-strings.php:132, src/admin/routes/settings-routes.js:41
+msgid "Color Settings"
+msgstr ""
+
+#: includes/admin/class-strings.php:133
+msgid "How WP Dark Mode Ultimate compares to the free version?"
+msgstr ""
+
+#: includes/admin/class-strings.php:134
+msgid "Compose new email with"
+msgstr ""
+
+#: includes/admin/class-strings.php:135
+msgid "Confirm"
+msgstr ""
+
+#: includes/admin/class-strings.php:136
+msgid "Are you sure want to import?"
+msgstr ""
+
+#: includes/admin/class-strings.php:137
+msgid "Contact"
+msgstr ""
+
+#: includes/admin/class-strings.php:138
+msgid "Contact Support"
+msgstr ""
+
+#: includes/admin/class-strings.php:139, includes/admin/class-strings.php:140
+msgid "Content Switch"
+msgstr ""
+
+#: includes/admin/class-strings.php:141
+msgid "Display dark mode switch at top of all pages"
+msgstr ""
+
+#: includes/admin/class-strings.php:142
+msgid "Display dark mode switch at top of all posts"
+msgstr ""
+
+#: includes/admin/class-strings.php:143, includes/admin/class-strings.php:144
+msgid "Continue to Edit"
+msgstr ""
+
+#: includes/admin/class-strings.php:145
+msgid "Contrast"
+msgstr ""
+
+#: includes/admin/class-strings.php:146
+msgid "Adjust your desired dark mode contrast"
+msgstr ""
+
+#: includes/admin/class-strings.php:147, src/admin/routes/settings-routes.js:5
+msgid "Controls"
+msgstr ""
+
+#: includes/admin/class-strings.php:148
+msgid "Copied"
+msgstr ""
+
+#: includes/admin/class-strings.php:149
+msgid "Copied to Clipboard!"
+msgstr ""
+
+#: includes/admin/class-strings.php:150
+msgid "Copy Email"
+msgstr ""
+
+#: includes/admin/class-strings.php:151
+msgid "Copy email address to your clipboard"
+msgstr ""
+
+#: includes/admin/class-strings.php:152
+msgid "Copy Shortcode"
+msgstr ""
+
+#: includes/admin/class-strings.php:153
+msgid "Create a custom color palette first!"
+msgstr ""
+
+#: includes/admin/class-strings.php:154
+msgid "Create New Preset"
+msgstr ""
+
+#: includes/admin/class-strings.php:155
+msgid "Create Your Own Toggle Element"
+msgstr ""
+
+#: includes/admin/class-strings.php:156
+msgid "Background of the switch button"
+msgstr ""
+
+#: includes/admin/class-strings.php:157
+msgid "CTA Background Color"
+msgstr ""
+
+#: includes/admin/class-strings.php:158
+msgid "Color of the call to action text"
+msgstr ""
+
+#: includes/admin/class-strings.php:159
+msgid "CTA Text Color"
+msgstr ""
+
+#: includes/admin/class-strings.php:160
+msgid "Enable to add a call-to-action text for the dark mode switch."
+msgstr ""
+
+#: includes/admin/class-strings.php:161
+msgid "Add call to action text beside the dark mode button"
+msgstr ""
+
+#: includes/admin/class-strings.php:162
+msgid "Call-to-action Text"
+msgstr ""
+
+#: includes/admin/class-strings.php:163, includes/admin/class-strings.php:767
+msgid "Your Current Plan"
+msgstr ""
+
+#: includes/admin/class-strings.php:164, includes/classes/class-config.php:182, includes/classes/class-config.php:210
+msgid "Custom"
+msgstr ""
+
+#: includes/admin/class-strings.php:165
+msgid "Custom Color Preset Name"
+msgstr ""
+
+#: includes/admin/class-strings.php:166, src/admin/routes/settings-routes.js:82
+msgid "Custom CSS"
+msgstr ""
+
+#: includes/admin/class-strings.php:167, src/admin/routes/settings-routes.js:83
+msgid "Custom CSS code to apply on dark mode or on both mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:168
+msgid "Add custom CSS for dark mode only. This CSS will only apply when the dark mode is on. use <code>!important</code> flag on each property"
+msgstr ""
+
+#: includes/admin/class-strings.php:169
+msgid "Enter custom CSS here"
+msgstr ""
+
+#: includes/admin/class-strings.php:170
+msgid "Before saving this mode, please ensure you have created a custom color palette. Alternatively, you can switch your mode to either \"Color Presets\" or \"Automatic Color\" if that better suits your needs."
+msgstr ""
+
+#: includes/admin/class-strings.php:171
+msgid "Choose or create your custom color presets with the power of AI."
+msgstr ""
+
+#: includes/admin/class-strings.php:172
+msgid "Your Custom Color Presets"
+msgstr ""
+
+#: includes/admin/class-strings.php:173
+msgid "Custom size"
+msgstr ""
+
+#: includes/admin/class-strings.php:174
+msgid "Custom Switch Icon"
+msgstr ""
+
+#: includes/admin/class-strings.php:175
+msgid "Enable to use your custom switch icon."
+msgstr ""
+
+#: includes/admin/class-strings.php:176
+msgid "Custom Switch Text"
+msgstr ""
+
+#: includes/admin/class-strings.php:177
+msgid "Customize the dark mode switch text."
+msgstr ""
+
+#: includes/admin/class-strings.php:178, includes/admin/class-strings.php:179
+msgid "Custom Trigger"
+msgstr ""
+
+#: includes/admin/class-strings.php:180
+msgid "Custom Triggers"
+msgstr ""
+
+#: includes/admin/class-strings.php:181
+msgid "Allow any element on your site to toggle Dark Mode using CSS selectors."
+msgstr ""
+
+#: includes/admin/class-strings.php:182
+msgid "Customer Support"
+msgstr ""
+
+#: includes/admin/class-strings.php:183, includes/admin/class-strings.php:698, src/admin/routes/settings-routes.js:28
+msgid "Customization"
+msgstr ""
+
+#: includes/admin/class-strings.php:184
+msgid "Customize the selected dark mode preset color in your way"
+msgstr ""
+
+#: includes/admin/class-strings.php:188
+msgid "Dark Mode CSS"
+msgstr ""
+
+#: includes/admin/class-strings.php:189
+msgid "Dark Mode Switch Icon"
+msgstr ""
+
+#: includes/admin/class-strings.php:190
+msgid "Dark Mode Image"
+msgstr ""
+
+#: includes/admin/class-strings.php:191
+msgid "Dark Mode Switch Text"
+msgstr ""
+
+#: includes/admin/class-strings.php:192
+msgid "Add custom text for the dark mode switch"
+msgstr ""
+
+#: includes/admin/class-strings.php:193
+msgid "Dark Mode Video :"
+msgstr ""
+
+#: includes/admin/class-strings.php:194, includes/admin/class-strings.php:677
+msgid "WP Dark Mode Usage"
+msgstr ""
+
+#: includes/admin/class-strings.php:195
+msgid "Default app or browser"
+msgstr ""
+
+#: includes/admin/class-strings.php:196
+msgid "Default Email App"
+msgstr ""
+
+#: includes/admin/class-strings.php:197
+msgid "Enable to show the switch after a delay when page loads."
+msgstr ""
+
+#: includes/admin/class-strings.php:198
+msgid "Enabling this feature may delay WP Dark Mode to be applied on the frontend. Enable this feature only if you are facing issues with server-side caching."
+msgstr ""
+
+#: includes/admin/class-strings.php:199
+msgid "Delay Time"
+msgstr ""
+
+#: includes/admin/class-strings.php:200
+msgid "The floating switch will appear after this delay when page loads."
+msgstr ""
+
+#: includes/admin/class-strings.php:201
+msgid "Delete"
+msgstr ""
+
+#: includes/admin/class-strings.php:202
+msgid "Delete this image group?"
+msgstr ""
+
+#: includes/admin/class-strings.php:203
+msgid "This preset will be permanently deleted. Are you sure you want to confirm this deletion?"
+msgstr ""
+
+#: includes/admin/class-strings.php:204
+msgid "Do you want to delete this preset?"
+msgstr ""
+
+#: includes/admin/class-strings.php:205
+msgid "Delete this trigger?"
+msgstr ""
+
+#: includes/admin/class-strings.php:206
+msgid "Are you sure you want to delete this trigger?"
+msgstr ""
+
+#: includes/admin/class-strings.php:207
+msgid "Delete this video group?"
+msgstr ""
+
+#: includes/admin/class-strings.php:208, includes/admin/class-strings.php:720
+msgid "Desktop"
+msgstr ""
+
+#: includes/admin/class-strings.php:209
+msgid "Disable"
+msgstr ""
+
+#: includes/admin/class-strings.php:210, includes/admin/class-strings.php:616
+msgid "Disabling typography settings will not make the text size increase automatically when text toggle is pressed on accessibility switches"
+msgstr ""
+
+#: includes/admin/class-strings.php:211, includes/admin/class-strings.php:617
+msgid "Do you want to disable Typography settings?"
+msgstr ""
+
+#: includes/admin/class-strings.php:212
+msgid "Discard Changes"
+msgstr ""
+
+#: includes/admin/class-strings.php:213
+msgid "You are about to discard all unsaved changes. All of your settings will be reset to the point where you last saved. Are you sure you want to discard all changes?"
+msgstr ""
+
+#: includes/admin/class-strings.php:214
+msgid "Discard all changes?"
+msgstr ""
+
+#: includes/admin/class-strings.php:215
+msgid "Display Chart on Dashboard"
+msgstr ""
+
+#: includes/admin/class-strings.php:216
+msgid "Display dark mode usage chart on the WordPress dashboard"
+msgstr ""
+
+#: includes/admin/class-strings.php:217
+msgid "Display Floating Switch"
+msgstr ""
+
+#: includes/admin/class-strings.php:218
+msgid "Enable Floating dark mode switch in frontend for toggling between dark and light mode."
+msgstr ""
+
+#: includes/admin/class-strings.php:219
+msgid "Display switch on Login/ Register pages"
+msgstr ""
+
+#: includes/admin/class-strings.php:220
+msgid "Enable to show the floating dark-mode switch on WordPress and WooCommerce login/register screens. Hidden by default to keep the form clean."
+msgstr ""
+
+#: includes/admin/class-strings.php:221
+msgid "Display On"
+msgstr ""
+
+#: includes/admin/class-strings.php:222
+msgid "Display Switch in Menu"
+msgstr ""
+
+#: includes/admin/class-strings.php:223
+msgid "Display the darkmode switch in your website menu."
+msgstr ""
+
+#: includes/admin/class-strings.php:224
+msgid "The switch will be displayed in the selected menus."
+msgstr ""
+
+#: includes/admin/class-strings.php:225
+msgid "Display Switch at Top of Pages"
+msgstr ""
+
+#: includes/admin/class-strings.php:226
+msgid "Display Switch at Top of Posts"
+msgstr ""
+
+#: includes/admin/class-strings.php:227
+msgid "Display Dark Mode switch using WordPress widget"
+msgstr ""
+
+#: includes/admin/class-strings.php:228
+msgid "If you get stuck while exploring a feature, feel free to check our docs for a step-by-step guide."
+msgstr ""
+
+#: includes/admin/class-strings.php:229
+msgid "Documentations"
+msgstr ""
+
+#: includes/admin/class-strings.php:230
+msgid "Doing it all."
+msgstr ""
+
+#: includes/admin/class-strings.php:231
+msgid "Edit"
+msgstr ""
+
+#: includes/admin/class-strings.php:232
+msgid "Edit Preset"
+msgstr ""
+
+#: includes/admin/class-strings.php:233
+msgid "Edit Prompt"
+msgstr ""
+
+#: includes/admin/class-strings.php:234
+msgid "Element selector"
+msgstr ""
+
+#: includes/admin/class-strings.php:235, includes/admin/class-strings.php:687
+msgid "Elementor"
+msgstr ""
+
+#: includes/admin/class-strings.php:236
+msgid "Get step-by-step instructions on using WP Dark Mode with Elementor page builder."
+msgstr ""
+
+#: includes/admin/class-strings.php:237
+msgid "Add Dark Mode Switch widget from Basic category"
+msgstr ""
+
+#: includes/admin/class-strings.php:238
+msgid "Navigate to the editing mode of a Post and Page using Elementor and look for Dark Mode Switch in the widget panel under Basic widgets"
+msgstr ""
+
+#: includes/admin/class-strings.php:239
+msgid "Choose button style from widget settings and you are done"
+msgstr ""
+
+#: includes/admin/class-strings.php:240
+msgid "Select your preferred switch from the list of switches in the widget panel and you are done!"
+msgstr ""
+
+#: includes/admin/class-strings.php:241
+msgid "Use WP Dark Mode with Elementor"
+msgstr ""
+
+#: includes/admin/class-strings.php:242, includes/admin/class-strings.php:244
+msgid "Email Reporting"
+msgstr ""
+
+#: includes/admin/class-strings.php:243
+msgid "Enable this feature to get the dark mode usage summary through email."
+msgstr ""
+
+#: includes/admin/class-strings.php:245
+msgid "Enable"
+msgstr ""
+
+#: includes/admin/class-strings.php:248, includes/classes/class-config.php:314
+msgid "Enable Custom Triggers"
+msgstr ""
+
+#: includes/admin/class-strings.php:249, includes/admin/class-strings.php:250, includes/admin/class-strings.php:256, includes/admin/class-strings.php:780
+msgid "Enable Dark Mode on Scrollbar"
+msgstr ""
+
+#: includes/admin/class-strings.php:251, includes/admin/class-strings.php:252
+msgid "Enable Frontend Dark Mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:253
+msgid "Turn it ON to enable dark mode on the frontend"
+msgstr ""
+
+#: includes/admin/class-strings.php:255, includes/admin/class-strings.php:257, includes/admin/class-strings.php:545, includes/admin/class-strings.php:546
+msgid "Enable this option to customize your scrollbar while toggling to dark mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:258
+msgid "End Time"
+msgstr ""
+
+#: includes/admin/class-strings.php:259, includes/admin/class-strings.php:588
+msgid "Enter your selected categories and tags"
+msgstr ""
+
+#: includes/admin/class-strings.php:260, includes/admin/class-strings.php:266
+msgid "Enter HTML element selectors"
+msgstr ""
+
+#: includes/admin/class-strings.php:261, includes/admin/class-strings.php:270
+msgid "Enter your email"
+msgstr ""
+
+#: includes/admin/class-strings.php:262
+msgid "Enter image URL"
+msgstr ""
+
+#: includes/admin/class-strings.php:263, includes/admin/class-strings.php:448
+msgid "Enter your selected pages, posts and custom post types"
+msgstr ""
+
+#: includes/admin/class-strings.php:264, includes/admin/class-strings.php:271
+msgid "Enter Your Prompt"
+msgstr ""
+
+#: includes/admin/class-strings.php:265
+msgid "Enter your selected posts"
+msgstr ""
+
+#: includes/admin/class-strings.php:267
+msgid "Enter video URL"
+msgstr ""
+
+#: includes/admin/class-strings.php:268, includes/admin/class-strings.php:664
+msgid "Enter your selected WooCommerce categories"
+msgstr ""
+
+#: includes/admin/class-strings.php:269, includes/admin/class-strings.php:669
+msgid "Enter your selected WooCommerce products"
+msgstr ""
+
+#: includes/admin/class-strings.php:272
+msgid "Except:"
+msgstr ""
+
+#: includes/admin/class-strings.php:273
+msgid "Exclude All"
+msgstr ""
+
+#: includes/admin/class-strings.php:274, includes/admin/class-strings.php:279
+msgid "Exclude WP Dark Mode from Caching"
+msgstr ""
+
+#: includes/admin/class-strings.php:275, includes/admin/class-strings.php:280
+msgid "Enable this feature to exclude WP Dark Mode from server-side caching technology like Lightspeed Cache, WPRocket etc."
+msgstr ""
+
+#: includes/admin/class-strings.php:276
+msgid "Exclude Elements"
+msgstr ""
+
+#: includes/admin/class-strings.php:277, includes/admin/class-strings.php:387
+msgid "Exclude dark mode on HTML tags, CSS class, CSS ids and more"
+msgstr ""
+
+#: includes/admin/class-strings.php:278
+msgid "Add HTML element selectors (tags, classes, or IDs) to exclude them from being affected by dark mode."
+msgstr ""
+
+#: includes/admin/class-strings.php:281
+msgid "Exclude Low Brightness on specific images"
+msgstr ""
+
+#: includes/admin/class-strings.php:282
+msgid "Exclude Low Brightness on specific videos"
+msgstr ""
+
+#: includes/admin/class-strings.php:283
+msgid "Exclude Low Grayscale Images "
+msgstr ""
+
+#: includes/admin/class-strings.php:284
+msgid "Exclude Low Grayscale Videos"
+msgstr ""
+
+#: includes/admin/class-strings.php:285
+msgid "Exclude Pages/ Posts"
+msgstr ""
+
+#: includes/admin/class-strings.php:286
+msgid "Exclude dark mode on specific WordPress post type and taxonomy"
+msgstr ""
+
+#: includes/admin/class-strings.php:287, includes/admin/class-strings.php:290
+msgid "Add pages, posts and custom post types that you want to exclude from the dark mode."
+msgstr ""
+
+#: includes/admin/class-strings.php:288, includes/admin/class-strings.php:466
+msgid "Dark Mode will only work on the selected posts and pages."
+msgstr ""
+
+#: includes/admin/class-strings.php:289
+msgid "Exclude Post Type:"
+msgstr ""
+
+#: includes/admin/class-strings.php:291, src/admin/routes/settings-routes.js:77
+msgid "Exclude Settings"
+msgstr ""
+
+#: includes/admin/class-strings.php:292
+msgid "Configure exclusion settings for pages, posts, and elements."
+msgstr ""
+
+#: includes/admin/class-strings.php:293
+msgid "Exclude Taxonomies"
+msgstr ""
+
+#: includes/admin/class-strings.php:294, includes/admin/class-strings.php:587
+msgid "Include the categories and tags that you want to exclude from the dark mode."
+msgstr ""
+
+#: includes/admin/class-strings.php:295, includes/admin/class-strings.php:296
+msgid "Exclude Taxonomy Type:"
+msgstr ""
+
+#: includes/admin/class-strings.php:297
+msgid "Exclude WC Categories"
+msgstr ""
+
+#: includes/admin/class-strings.php:298, includes/admin/class-strings.php:663
+msgid "Add categories to exclude the dark mode from the WooCommerce categories."
+msgstr ""
+
+#: includes/admin/class-strings.php:299, includes/admin/class-strings.php:467
+msgid "Dark Mode will only work on the selected WooCommerce categories."
+msgstr ""
+
+#: includes/admin/class-strings.php:300
+msgid "Exclude WC Products"
+msgstr ""
+
+#: includes/admin/class-strings.php:301, includes/admin/class-strings.php:668
+msgid "Add products to exclude the dark mode from the WooCommerce categories."
+msgstr ""
+
+#: includes/admin/class-strings.php:302, includes/admin/class-strings.php:468
+msgid "Dark Mode will only work on the selected WooCommerce products."
+msgstr ""
+
+#: includes/admin/class-strings.php:303
+msgid "Exclude WooCommerce"
+msgstr ""
+
+#: includes/admin/class-strings.php:304
+msgid "Exclude dark mode on WooCommerce products and categories"
+msgstr ""
+
+#: includes/admin/class-strings.php:305, includes/admin/class-strings.php:306
+msgid "Explore Accessibility Switches"
+msgstr ""
+
+#: includes/admin/class-strings.php:307
+msgid "Explore now"
+msgstr ""
+
+#: includes/admin/class-strings.php:308
+msgid "Export"
+msgstr ""
+
+#: includes/admin/class-strings.php:309
+msgid "Export current settings as JSON file."
+msgstr ""
+
+#: includes/admin/class-strings.php:310
+msgid "Export Settings"
+msgstr ""
+
+#: includes/admin/class-strings.php:311
+msgid "Default dark mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:312
+msgid "Dark mode-based image/video"
+msgstr ""
+
+#: includes/admin/class-strings.php:313
+msgid "Dark mode usage analytics"
+msgstr ""
+
+#: includes/admin/class-strings.php:314
+msgid "24/7 live chat & VIP support"
+msgstr ""
+
+#: includes/admin/class-strings.php:315
+msgid "Gutenberg block"
+msgstr ""
+
+#: includes/admin/class-strings.php:316
+msgid "Elementor widget"
+msgstr ""
+
+#: includes/admin/class-strings.php:317
+msgid "Dark mode for WordPress dashboard"
+msgstr ""
+
+#: includes/admin/class-strings.php:318
+msgid "Time-based dark mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:319
+msgid "Access to 19 premium dark mode switches"
+msgstr ""
+
+#: includes/admin/class-strings.php:320
+msgid "Access to 13 dark mode color scheme"
+msgstr ""
+
+#: includes/admin/class-strings.php:321
+msgid "Manual customization with custom CSS"
+msgstr ""
+
+#: includes/admin/class-strings.php:322
+msgid "Customizable dark mode switch and CTA"
+msgstr ""
+
+#: includes/admin/class-strings.php:323, includes/admin/class-strings.php:688
+msgid "FAQ"
+msgstr ""
+
+#: includes/admin/class-strings.php:324
+msgid "Here are some of the most frequently asked questions about WP Dark Mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:325
+msgid "Frequently asked questions"
+msgstr ""
+
+#: includes/admin/class-strings.php:326
+msgid "Facebook Community"
+msgstr ""
+
+#: includes/admin/class-strings.php:327
+msgid "Did you know that there is a Facebook community for dark mode users like you? Feel free to join to be involved in the discussion."
+msgstr ""
+
+#: includes/admin/class-strings.php:328
+msgid "Custom CSS for advanced customization"
+msgstr ""
+
+#: includes/admin/class-strings.php:329
+msgid "24/7 dedicated support"
+msgstr ""
+
+#: includes/admin/class-strings.php:330
+msgid "Exclude pages/posts from dark mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:331
+msgid "FEATURE LIST"
+msgstr ""
+
+#: includes/admin/class-strings.php:332
+msgid "No Ads! Distraction free usage"
+msgstr ""
+
+#: includes/admin/class-strings.php:333
+msgid "13+ dark mode color presets"
+msgstr ""
+
+#: includes/admin/class-strings.php:334
+msgid "19+ stunning dark mode switches"
+msgstr ""
+
+#: includes/admin/class-strings.php:335
+msgid "Features"
+msgstr ""
+
+#: includes/admin/class-strings.php:336, includes/admin/class-strings.php:342
+msgid "Floating Switch"
+msgstr ""
+
+#: includes/admin/class-strings.php:337
+msgid "Floating Switch Size"
+msgstr ""
+
+#: includes/admin/class-strings.php:338, includes/admin/class-strings.php:339
+msgid "Choose the size of the floating toggle switch"
+msgstr ""
+
+#: includes/admin/class-strings.php:340
+msgid "Floating Switch Styles"
+msgstr ""
+
+#: includes/admin/class-strings.php:341
+msgid "Choose the style of the floating toggle switch"
+msgstr ""
+
+#: includes/admin/class-strings.php:343
+msgid "Please follow the steps below"
+msgstr ""
+
+#: includes/admin/class-strings.php:344
+msgid "Font Size"
+msgstr ""
+
+#: includes/admin/class-strings.php:345
+msgid "Choose the size of the floating toggle switch."
+msgstr ""
+
+#: includes/admin/class-strings.php:346
+msgid "Set the font size in percentage."
+msgstr ""
+
+#: includes/admin/class-strings.php:347
+msgid "FREE"
+msgstr ""
+
+#: includes/admin/class-strings.php:348
+msgid "FREE PLAN"
+msgstr ""
+
+#: includes/admin/class-strings.php:349, includes/admin/class-strings.php:689
+msgid "Free vs Ultimate"
+msgstr ""
+
+#: includes/admin/class-strings.php:350, src/admin/routes/settings-routes.js:16
+msgid "Frontend Dark Mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:351, src/admin/routes/settings-routes.js:17
+msgid "Settings to Control Dark Mode on your Frontend Website"
+msgstr ""
+
+#: includes/admin/class-strings.php:352
+msgid "Turn it ON to enable dark mode on the Frontend"
+msgstr ""
+
+#: includes/admin/class-strings.php:353
+msgid "Choose how you want to use Dark Mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:354
+msgid "Generate My Theme"
+msgstr ""
+
+#: includes/admin/class-strings.php:355
+msgid "Generate Colors"
+msgstr ""
+
+#: includes/admin/class-strings.php:356
+msgid "Generating colors..."
+msgstr ""
+
+#: includes/admin/class-strings.php:357, includes/admin/class-strings.php:685
+msgid "Get in touch"
+msgstr ""
+
+#: includes/admin/class-strings.php:358
+msgid "Get all popular dark mode resources in one place."
+msgstr ""
+
+#: includes/admin/class-strings.php:359
+msgid "Tutorial, Docs, Support & Community"
+msgstr ""
+
+#: includes/admin/class-strings.php:360
+msgid "Get Started page"
+msgstr ""
+
+#: includes/admin/class-strings.php:361
+msgid "Gmail"
+msgstr ""
+
+#: includes/admin/class-strings.php:362
+msgid "Gmail in browser"
+msgstr ""
+
+#: includes/admin/class-strings.php:363
+msgid "Go to Accessibility settings"
+msgstr ""
+
+#: includes/admin/class-strings.php:364
+msgid "Go to Menu Settings"
+msgstr ""
+
+#: includes/admin/class-strings.php:365
+msgid "Got it"
+msgstr ""
+
+#: includes/admin/class-strings.php:366
+msgid "Grayscale"
+msgstr ""
+
+#: includes/admin/class-strings.php:367
+msgid "Adjust your preferred dark mode Grayscale"
+msgstr ""
+
+#: includes/admin/class-strings.php:368
+msgid "Grayscale Image"
+msgstr ""
+
+#: includes/admin/class-strings.php:369
+msgid "Grayscale level"
+msgstr ""
+
+#: includes/admin/class-strings.php:370
+msgid "Grayscale Video"
+msgstr ""
+
+#: includes/admin/class-strings.php:371, includes/admin/class-strings.php:686
+msgid "Gutenberg"
+msgstr ""
+
+#: includes/admin/class-strings.php:372
+msgid "Get step-by-step instructions on using WP Dark Mode with the default block editor."
+msgstr ""
+
+#: includes/admin/class-strings.php:373
+msgid "Go to Post/Page edit screen and and click on the ‘+’ icon to add new block"
+msgstr ""
+
+#: includes/admin/class-strings.php:374
+msgid "Navigate to a Post and Page edit screen and click on the + icon to add a new gutenberg block"
+msgstr ""
+
+#: includes/admin/class-strings.php:375
+msgid "Search for Dark Mode Switch block in the Gutenberg block list"
+msgstr ""
+
+#: includes/admin/class-strings.php:376
+msgid "Type “dark mode switch” in the block list search box and the Dark Mode Switch block will appear. Click on the block to select it"
+msgstr ""
+
+#: includes/admin/class-strings.php:377
+msgid "Choose button style from block settings"
+msgstr ""
+
+#: includes/admin/class-strings.php:378
+msgid "Choose the button style you would like to use from the Switch Style menu on the right side and you are done!"
+msgstr ""
+
+#: includes/admin/class-strings.php:379
+msgid "Use WP Dark Mode with Gutenberg"
+msgstr ""
+
+#: includes/admin/class-strings.php:380
+msgid "Help"
+msgstr ""
+
+#: includes/admin/class-strings.php:381
+msgid "Hi, I need help with WP Dark Mode."
+msgstr ""
+
+#: includes/admin/class-strings.php:382
+msgid "Home"
+msgstr ""
+
+#: includes/admin/class-strings.php:383
+msgid "Hover Background"
+msgstr ""
+
+#: includes/admin/class-strings.php:384
+msgid "Hover BG"
+msgstr ""
+
+#: includes/admin/class-strings.php:385
+msgid "Hover Text"
+msgstr ""
+
+#: includes/admin/class-strings.php:386, includes/admin/class-strings.php:388
+msgid "HTML Element"
+msgstr ""
+
+#: includes/admin/class-strings.php:389
+msgid "HTML Elements"
+msgstr ""
+
+#: includes/admin/class-strings.php:390
+msgid "Idle Timeout"
+msgstr ""
+
+#: includes/admin/class-strings.php:391
+msgid "The floating switch will hide after this period of user inactivity."
+msgstr ""
+
+#: includes/admin/class-strings.php:392
+msgid "Image Behavior"
+msgstr ""
+
+#: includes/admin/class-strings.php:393
+msgid "Settings to change image appearance on dark mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:394
+msgid "Image Behavior When Dark Mode Is On"
+msgstr ""
+
+#: includes/admin/class-strings.php:395
+msgid "Enable to set the brightness level of the images on dark mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:396, src/admin/routes/settings-routes.js:78
+msgid "Customize image appearance in Dark Mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:397
+msgid "Enable to set the grayscale level of the images on dark mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:398
+msgid "Image Replacement"
+msgstr ""
+
+#: includes/admin/class-strings.php:399
+msgid "Replace specific images when dark mode is enabled"
+msgstr ""
+
+#: includes/admin/class-strings.php:400, src/admin/routes/settings-routes.js:46
+msgid "Image Settings"
+msgstr ""
+
+#: includes/admin/class-strings.php:401
+msgid "Image URL"
+msgstr ""
+
+#: includes/admin/class-strings.php:402
+msgid "Import"
+msgstr ""
+
+#: includes/admin/class-strings.php:403
+msgid "Import Anyway"
+msgstr ""
+
+#: includes/admin/class-strings.php:404
+msgid "Import settings from JSON file which is exported through WP Dark Mode."
+msgstr ""
+
+#: includes/admin/class-strings.php:405
+msgid "Import Settings"
+msgstr ""
+
+#: includes/admin/class-strings.php:406
+msgid "Settings imported successfully."
+msgstr ""
+
+#: includes/admin/class-strings.php:407
+msgid "In all new ways"
+msgstr ""
+
+#: includes/admin/class-strings.php:408
+msgid "Include Elements"
+msgstr ""
+
+#: includes/admin/class-strings.php:409
+msgid "Add HTML element selectors (tags, classes, or IDs) to explicitly include them in dark mode."
+msgstr ""
+
+#: includes/admin/class-strings.php:410
+msgid "Influencer Program"
+msgstr ""
+
+#: includes/admin/class-strings.php:411
+msgid "Input Field Colors"
+msgstr ""
+
+#: includes/admin/class-strings.php:412
+msgid "Input Text"
+msgstr ""
+
+#: includes/admin/class-strings.php:413, includes/admin/class-strings.php:665
+msgid "Please install WooCommerce to use this feature"
+msgstr ""
+
+#: includes/admin/class-strings.php:414
+msgid "Invalid File"
+msgstr ""
+
+#: includes/admin/class-strings.php:415
+msgid "Join Community"
+msgstr ""
+
+#: includes/admin/class-strings.php:416
+msgid "Keyboard Shortcut"
+msgstr ""
+
+#: includes/admin/class-strings.php:417
+msgid "Enable keyboard shortcut to toggle dark mode Ctrl + Alt + D"
+msgstr ""
+
+#: includes/admin/class-strings.php:418
+msgid "Toggle Dark Mode using keyboard shortcut."
+msgstr ""
+
+#: includes/admin/class-strings.php:419
+msgid "Large"
+msgstr ""
+
+#: includes/admin/class-strings.php:420
+msgid "Learn more"
+msgstr ""
+
+#: includes/admin/class-strings.php:421, includes/admin/class-strings.php:703, includes/classes/class-config.php:195, includes/modules/elementor/widgets/class-elementor-widget.php:154
+msgid "Left"
+msgstr ""
+
+#: includes/admin/class-strings.php:423
+msgid "Light Mode Switch Icon"
+msgstr ""
+
+#: includes/admin/class-strings.php:424
+msgid "Light Mode Image : "
+msgstr ""
+
+#: includes/admin/class-strings.php:425
+msgid "Light Mode Switch Text"
+msgstr ""
+
+#: includes/admin/class-strings.php:426
+msgid "Add custom text for the light mode switch"
+msgstr ""
+
+#: includes/admin/class-strings.php:427
+msgid "Light Mode Video :"
+msgstr ""
+
+#: includes/admin/class-strings.php:428
+msgid "Link"
+msgstr ""
+
+#: includes/admin/class-strings.php:429
+msgid "Link Hover"
+msgstr ""
+
+#: includes/admin/class-strings.php:430, includes/admin/class-strings.php:432
+msgid "Load Scripts in Footer"
+msgstr ""
+
+#: includes/admin/class-strings.php:431, includes/admin/class-strings.php:433
+msgid "Enable this feature to improve page load performance and reduce render-blocking"
+msgstr ""
+
+#: includes/admin/class-strings.php:434
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies ex at odio porttitor, vitae commodo erat pulvinar."
+msgstr ""
+
+#: includes/admin/class-strings.php:435
+msgid "Low Brightness Image"
+msgstr ""
+
+#: includes/admin/class-strings.php:436
+msgid "Low Brightness Video"
+msgstr ""
+
+#: includes/admin/class-strings.php:437
+msgid "Choose how you want to connect to us. Select the option convenient for you"
+msgstr ""
+
+#: includes/admin/class-strings.php:438
+msgid "Medium"
+msgstr ""
+
+#: includes/admin/class-strings.php:439, includes/admin/class-strings.php:440
+msgid "Menu Switch"
+msgstr ""
+
+#: includes/admin/class-strings.php:441
+msgid "The Menu Switch is <strong>currently unavailable</strong>. To access this feature, first you have to enable the “Frontend Dark Mode” feature from the Control settings"
+msgstr ""
+
+#: includes/admin/class-strings.php:442
+msgid "Menu switches won’t be visible anymore"
+msgstr ""
+
+#: includes/admin/class-strings.php:443
+msgid "min"
+msgstr ""
+
+#: includes/admin/class-strings.php:444, includes/admin/class-strings.php:719
+msgid "Mobile"
+msgstr ""
+
+#: includes/admin/class-strings.php:445
+msgid "Mode Image"
+msgstr ""
+
+#: includes/admin/class-strings.php:446
+msgid "Mode Video"
+msgstr ""
+
+#: includes/admin/class-strings.php:447
+msgid "More accessibility features"
+msgstr ""
+
+#: includes/admin/class-strings.php:450
+msgid "New Preset "
+msgstr ""
+
+#: includes/admin/class-strings.php:451
+msgid "No, continue editing"
+msgstr ""
+
+#: includes/admin/class-strings.php:452
+msgid "No custom color presets is created"
+msgstr ""
+
+#: includes/admin/class-strings.php:453
+msgid "No Image"
+msgstr ""
+
+#: includes/admin/class-strings.php:454
+msgid "No Images Added"
+msgstr ""
+
+#: includes/admin/class-strings.php:455
+msgid "No Result found for %s"
+msgstr ""
+
+#: includes/admin/class-strings.php:456
+msgid "No Result found"
+msgstr ""
+
+#: includes/admin/class-strings.php:457
+msgid "No Triggers Added"
+msgstr ""
+
+#: includes/admin/class-strings.php:458
+msgid "No Video"
+msgstr ""
+
+#: includes/admin/class-strings.php:459
+msgid "No Videos Added"
+msgstr ""
+
+#: includes/admin/class-strings.php:460
+msgid "Normal"
+msgstr ""
+
+#: includes/admin/class-strings.php:461
+msgid "Normal Mode Image"
+msgstr ""
+
+#: includes/admin/class-strings.php:462
+msgid "Normal Mode Video"
+msgstr ""
+
+#: includes/admin/class-strings.php:463
+msgid "Normal Switches"
+msgstr ""
+
+#: includes/admin/class-strings.php:464
+msgid "Not Found"
+msgstr ""
+
+#: includes/admin/class-strings.php:465
+msgid "Ok"
+msgstr ""
+
+#: includes/admin/class-strings.php:469
+msgid "Open Docs"
+msgstr ""
+
+#: includes/admin/class-strings.php:470, includes/admin/class-strings.php:471
+msgid "Other Accessibility Settings"
+msgstr ""
+
+#: includes/admin/class-strings.php:472, includes/admin/class-strings.php:473
+msgid "Other Performance Settings"
+msgstr ""
+
+#: includes/admin/class-strings.php:474
+msgid "Outlook"
+msgstr ""
+
+#: includes/admin/class-strings.php:475
+msgid "Outlook in browser"
+msgstr ""
+
+#: includes/admin/class-strings.php:476
+msgid "This will override all your current settings."
+msgstr ""
+
+#: includes/admin/class-strings.php:477
+msgid "Pages/Posts"
+msgstr ""
+
+#: includes/admin/class-strings.php:478
+msgid "Palette %s"
+msgstr ""
+
+#: includes/admin/class-strings.php:479, includes/admin/class-strings.php:543
+msgid "Scale in percentage relative to normal size"
+msgstr ""
+
+#: includes/admin/class-strings.php:480, src/admin/routes/settings-routes.js:72
+msgid "Performance"
+msgstr ""
+
+#: includes/admin/class-strings.php:481, includes/admin/class-strings.php:482
+msgid "Choose Dark Mode behavior to enhance the performance"
+msgstr ""
+
+#: includes/admin/class-strings.php:483, src/admin/routes/settings-routes.js:73
+msgid "Configure performance settings."
+msgstr ""
+
+#: includes/admin/class-strings.php:484
+msgid "Placeholder"
+msgstr ""
+
+#: includes/admin/class-strings.php:485
+msgid "PM"
+msgstr ""
+
+#: includes/admin/class-strings.php:486
+msgid "Preset Color Customization"
+msgstr ""
+
+#: includes/admin/class-strings.php:487
+msgid "You cannot delete this preset as it is currently in use. Please select another preset or change the \"Color Mode\" before deleting this preset."
+msgstr ""
+
+#: includes/admin/class-strings.php:488
+msgid "Preset is already in use!"
+msgstr ""
+
+#: includes/admin/class-strings.php:489
+msgid "Preset name"
+msgstr ""
+
+#: includes/admin/class-strings.php:490, includes/admin/class-strings.php:493
+msgid "Preset name is required. Please enter a name for your preset."
+msgstr ""
+
+#: includes/admin/class-strings.php:491
+msgid "Preset Name"
+msgstr ""
+
+#: includes/admin/class-strings.php:492
+msgid "e.g., Blue Night Theme"
+msgstr ""
+
+#: includes/admin/class-strings.php:494, includes/admin/class-strings.php:699
+msgid "Preview"
+msgstr ""
+
+#: includes/admin/class-strings.php:495
+msgid "Pricing"
+msgstr ""
+
+#: includes/admin/class-strings.php:496
+msgid "Pro"
+msgstr ""
+
+#: includes/admin/class-strings.php:497
+msgid "e.g., Modern dark theme with blue accents and high contrast..."
+msgstr ""
+
+#: includes/admin/class-strings.php:498
+msgid "px"
+msgstr ""
+
+#: includes/admin/class-strings.php:499
+msgid "How to enable dark mode on my website?"
+msgstr ""
+
+#: includes/admin/class-strings.php:500
+msgid "How do I activate PRO plan?"
+msgstr ""
+
+#: includes/admin/class-strings.php:501
+msgid "How do I activate the Ultimate plan?"
+msgstr ""
+
+#: includes/admin/class-strings.php:502
+msgid "Can I use it with popular page builders like Gutenberg or Elementor?"
+msgstr ""
+
+#: includes/admin/class-strings.php:503
+msgid "Is WP Dark Mode compatible with my theme?"
+msgstr ""
+
+#: includes/admin/class-strings.php:504
+msgid "Is this plugin compatible with all modern browsers?"
+msgstr ""
+
+#: includes/admin/class-strings.php:505
+msgid "Does the WP Dark Mode plugin have any impact on page loading?"
+msgstr ""
+
+#: includes/admin/class-strings.php:506
+msgid "Can I change the image for dark mode using this plugin?"
+msgstr ""
+
+#: includes/admin/class-strings.php:507
+msgid "How can I prevent any specific elements, sections, or from turning into dark?"
+msgstr ""
+
+#: includes/admin/class-strings.php:508
+msgid "Where can I find the tutorials about using the plugin?"
+msgstr ""
+
+#: includes/admin/class-strings.php:509
+msgid "I want a refund for my purchase of the plugin. What’s the procedure?"
+msgstr ""
+
+#: includes/admin/class-strings.php:510
+msgid "Please Rate Us:"
+msgstr ""
+
+#: includes/admin/class-strings.php:511
+msgid "Recommended"
+msgstr ""
+
+#: includes/admin/class-strings.php:513
+msgid "Recommended Plugins page"
+msgstr ""
+
+#: includes/admin/class-strings.php:514
+msgid "14 days"
+msgstr ""
+
+#: includes/admin/class-strings.php:515
+msgid "7 days"
+msgstr ""
+
+#: includes/admin/class-strings.php:516
+msgid "Remind me After:"
+msgstr ""
+
+#: includes/admin/class-strings.php:517
+msgid "Would you like to be remind in the future?"
+msgstr ""
+
+#: includes/admin/class-strings.php:518
+msgid "Remind me never"
+msgstr ""
+
+#: includes/admin/class-strings.php:519
+msgid "Replaced Images"
+msgstr ""
+
+#: includes/admin/class-strings.php:520
+msgid "The following added images will be replaced when dark mode is enabled"
+msgstr ""
+
+#: includes/admin/class-strings.php:521
+msgid "Replaced Videos"
+msgstr ""
+
+#: includes/admin/class-strings.php:522
+msgid "These videos will be replaced in the dark mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:523, includes/admin/class-strings.php:527
+msgid "Reporting Email"
+msgstr ""
+
+#: includes/admin/class-strings.php:524
+msgid "Enter the email where the analytics report will be sent."
+msgstr ""
+
+#: includes/admin/class-strings.php:525, includes/admin/class-strings.php:533
+msgid "Reporting Email Subject"
+msgstr ""
+
+#: includes/admin/class-strings.php:526
+msgid "Subject of the analytics report email."
+msgstr ""
+
+#: includes/admin/class-strings.php:528
+msgid "Select the reporting frequency when the email will be send."
+msgstr ""
+
+#: includes/admin/class-strings.php:529, includes/admin/class-strings.php:530
+msgid "Reporting Frequency"
+msgstr ""
+
+#: includes/admin/class-strings.php:531
+msgid "Select the reporting frequency for the email."
+msgstr ""
+
+#: includes/admin/class-strings.php:532
+msgid "Subject of the analytics report mail"
+msgstr ""
+
+#: includes/admin/class-strings.php:534
+msgid "Reset"
+msgstr ""
+
+#: includes/admin/class-strings.php:535
+msgid "Are you sure you want to reset all settings to default? We suggest you to export current settings before you reset the settings."
+msgstr ""
+
+#: includes/admin/class-strings.php:536
+msgid "Reset all settings to default. We recommend to export current settings before you reset the settings."
+msgstr ""
+
+#: includes/admin/class-strings.php:537
+msgid "Reset Settings"
+msgstr ""
+
+#: includes/admin/class-strings.php:539
+msgid "Reset to original"
+msgstr ""
+
+#: includes/admin/class-strings.php:540, includes/admin/class-strings.php:705, includes/classes/class-config.php:202, includes/modules/elementor/widgets/class-elementor-widget.php:162
+msgid "Right"
+msgstr ""
+
+#: includes/admin/class-strings.php:541
+msgid "Save Changes"
+msgstr ""
+
+#: includes/admin/class-strings.php:542, includes/admin/class-strings.php:724
+msgid "Saved Successfully"
+msgstr ""
+
+#: includes/admin/class-strings.php:544
+msgid "Scrollbar Customization"
+msgstr ""
+
+#: includes/admin/class-strings.php:547, includes/admin/class-strings.php:592
+msgid "Thumb BG"
+msgstr ""
+
+#: includes/admin/class-strings.php:548
+msgid "Secondary Background Color"
+msgstr ""
+
+#: includes/admin/class-strings.php:549
+msgid "seconds"
+msgstr ""
+
+#: includes/admin/class-strings.php:550
+msgid "Select"
+msgstr ""
+
+#: includes/admin/class-strings.php:551
+msgid "Select Animation"
+msgstr ""
+
+#: includes/admin/class-strings.php:552, includes/admin/class-strings.php:585
+msgid "Click on the WP Darkmode Widget and you will see the available switches on the right side of the screen. Select the one that you like"
+msgstr ""
+
+#: includes/admin/class-strings.php:553, includes/admin/class-strings.php:555
+msgid "Select a switch style for the menu"
+msgstr ""
+
+#: includes/admin/class-strings.php:554
+msgid "Select Switch Style"
+msgstr ""
+
+#: includes/admin/class-strings.php:556
+msgid "Select Switches"
+msgstr ""
+
+#: includes/admin/class-strings.php:557
+msgid "Select time"
+msgstr ""
+
+#: includes/admin/class-strings.php:558
+msgid "Enter CSS Selector (e.g., .my-class, #my-id)"
+msgstr ""
+
+#: includes/admin/class-strings.php:559
+msgid "Sepia"
+msgstr ""
+
+#: includes/admin/class-strings.php:560
+msgid "Adjust your preferred dark mode Sepia"
+msgstr ""
+
+#: includes/admin/class-strings.php:562, src/admin/routes/settings-routes.js:92
+msgid "Shortcode"
+msgstr ""
+
+#: includes/admin/class-strings.php:563
+msgid "Select a switch from below and a shortcode will be generated"
+msgstr ""
+
+#: includes/admin/class-strings.php:564, src/admin/routes/settings-routes.js:93
+msgid "Generate shortcodes for dark mode switches"
+msgstr ""
+
+#: includes/admin/class-strings.php:565
+msgid "Show Switch after delay"
+msgstr ""
+
+#: includes/admin/class-strings.php:566
+msgid "Side Selection"
+msgstr ""
+
+#: includes/admin/class-strings.php:567, src/admin/routes/settings-routes.js:56
+msgid "Site Animation"
+msgstr ""
+
+#: includes/admin/class-strings.php:568
+msgid "Small"
+msgstr ""
+
+#: includes/admin/class-strings.php:569
+msgid "Social Share page"
+msgstr ""
+
+#: includes/admin/class-strings.php:570
+msgid "Spacing from bottom"
+msgstr ""
+
+#: includes/admin/class-strings.php:571
+msgid "Spacing from %s"
+msgstr ""
+
+#: includes/admin/class-strings.php:572
+msgid "Start Time"
+msgstr ""
+
+#: includes/admin/class-strings.php:573, includes/admin/class-strings.php:683
+msgid "Support"
+msgstr ""
+
+#: includes/admin/class-strings.php:574
+msgid "Switch Customization"
+msgstr ""
+
+#: includes/admin/class-strings.php:575, src/admin/routes/settings-routes.js:37
+msgid "Configure the dark mode switch for your website"
+msgstr ""
+
+#: includes/admin/class-strings.php:576
+msgid "Switch Position"
+msgstr ""
+
+#: includes/admin/class-strings.php:577
+msgid "Choose the alignment of the floating toggle switch"
+msgstr ""
+
+#: includes/admin/class-strings.php:578, src/admin/routes/settings-routes.js:36
+msgid "Switch Settings"
+msgstr ""
+
+#: includes/admin/class-strings.php:579, includes/admin/class-strings.php:580
+msgid "Switch to Dark Mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:581, includes/admin/class-strings.php:582
+msgid "Switch to Light Mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:583, src/admin/routes/settings-routes.js:97
+msgid "Switch Widget"
+msgstr ""
+
+#: includes/admin/class-strings.php:584, src/admin/routes/settings-routes.js:98
+msgid "Display dark mode switch using WordPress widget"
+msgstr ""
+
+#: includes/admin/class-strings.php:586
+msgid "Tablet"
+msgstr ""
+
+#: includes/admin/class-strings.php:589
+msgid "Text"
+msgstr ""
+
+#: includes/admin/class-strings.php:590
+msgid "Text & Link Colors"
+msgstr ""
+
+#: includes/admin/class-strings.php:591
+msgid "Thumb Background"
+msgstr ""
+
+#: includes/admin/class-strings.php:593, includes/admin/class-strings.php:594
+msgid "Start time and end time cannot be same."
+msgstr ""
+
+#: includes/admin/class-strings.php:595
+msgid "To"
+msgstr ""
+
+#: includes/admin/class-strings.php:596
+msgid "to enable dark mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:597
+msgid "to enable light mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:598
+msgid "Toggle Dark Mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:599, src/admin/routes/settings-routes.js:138, src/admin/routes/settings-routes.js:146
+msgid "Tools"
+msgstr ""
+
+#: includes/admin/class-strings.php:600
+msgid "WP Dark Mode Tools"
+msgstr ""
+
+#: includes/admin/class-strings.php:601
+msgid "Track Background"
+msgstr ""
+
+#: includes/admin/class-strings.php:602
+msgid "Track BG"
+msgstr ""
+
+#: includes/admin/class-strings.php:603, includes/admin/class-strings.php:604
+msgid "Track Dynamic Content"
+msgstr ""
+
+#: includes/admin/class-strings.php:605, includes/admin/class-strings.php:606
+msgid "Please turn on this feature only if you have any Ajax Loaded dynamic content like ajax product filters, ajax page loader, ajax image loaders/sliders, lazy loaded images etc."
+msgstr ""
+
+#: includes/admin/class-strings.php:607
+msgid "The following triggers will toggle dark mode when clicked"
+msgstr ""
+
+#: includes/admin/class-strings.php:608
+msgid "Try Live Demo"
+msgstr ""
+
+#: includes/admin/class-strings.php:609
+msgid "Tutorial"
+msgstr ""
+
+#: includes/admin/class-strings.php:610
+msgid "Here is a small full video tutorial for you incase you don’t like to go through all the textual instruction"
+msgstr ""
+
+#: includes/admin/class-strings.php:611
+msgid "Check the WP Dark Mode playlist to become an expert dark mode user."
+msgstr ""
+
+#: includes/admin/class-strings.php:612
+msgid "Typography features are only available for <strong>Accessibility Switches</strong>"
+msgstr ""
+
+#: includes/admin/class-strings.php:614, includes/admin/class-strings.php:619
+msgid "Typography Settings"
+msgstr ""
+
+#: includes/admin/class-strings.php:615
+msgid "Typography features are only available for"
+msgstr ""
+
+#: includes/admin/class-strings.php:618
+msgid "Typography option is disabled in Accessibility Settings. Text scaling feature won’t work."
+msgstr ""
+
+#: includes/admin/class-strings.php:620
+msgid "ULTIMATE"
+msgstr ""
+
+#: includes/admin/class-strings.php:621
+msgid "Advanced dark mode customizations are available in <span class=\"font-semibold\">WP Dark Mode Ultimate</span> 😍"
+msgstr ""
+
+#: includes/admin/class-strings.php:622
+msgid "ULTIMATE PLAN"
+msgstr ""
+
+#: includes/admin/class-strings.php:623
+msgid "The Floating Switch is <strong>currently unavailable</strong>. To access this feature, first you have to enable the “Frontend Dark Mode” feature from the Control settings"
+msgstr ""
+
+#: includes/admin/class-strings.php:624
+msgid "This action cannot be undone."
+msgstr ""
+
+#: includes/admin/class-strings.php:625
+msgid "Not sure about upgrading to Ultimate yet?"
+msgstr ""
+
+#: includes/admin/class-strings.php:626
+msgid "If you are having a second thought about upgrading, you can explore all the premium features on our demo website. Feel free to try every feature before making the decision."
+msgstr ""
+
+#: includes/admin/class-strings.php:627
+msgid "Untitled"
+msgstr ""
+
+#: includes/admin/class-strings.php:628
+msgid "Upcoming"
+msgstr ""
+
+#: includes/admin/class-strings.php:629, includes/admin/class-strings.php:630
+msgid "Click update and you are done! The switch will now be visible in the menu where you placed."
+msgstr ""
+
+#: includes/admin/class-strings.php:631, includes/admin/class-strings.php:632
+msgid "Click update and you are done!"
+msgstr ""
+
+#: includes/admin/class-strings.php:633
+msgid "Upgrade"
+msgstr ""
+
+#: includes/admin/class-strings.php:634
+msgid "Upgrade All Features"
+msgstr ""
+
+#: includes/admin/class-strings.php:635
+msgid "Upgrade to ultimate to get access to reports"
+msgstr ""
+
+#: includes/admin/class-strings.php:636, includes/wppool/class-plugin.php:371
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: includes/admin/class-strings.php:637, includes/admin/class-strings.php:781
+msgid "Upgrade to WP Dark Mode Ultimate"
+msgstr ""
+
+#: includes/admin/class-strings.php:638
+msgid "URL Parameter"
+msgstr ""
+
+#: includes/admin/class-strings.php:639
+msgid "Enable/Disable the dark mode using URL/domain parameter"
+msgstr ""
+
+#: includes/admin/class-strings.php:640
+msgid "Toggle Dark Mode using URL parameter."
+msgstr ""
+
+#: includes/admin/class-strings.php:641
+msgid "Use"
+msgstr ""
+
+#: includes/admin/class-strings.php:642
+msgid "Use %s?darkmode to enable dark mode and %s?lightmode to enable light mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:643
+msgid "Please upload a valid file."
+msgstr ""
+
+#: includes/admin/class-strings.php:644
+msgid "Seems like <strong>WP Dark Mode</strong> is bringing you value 🥳"
+msgstr ""
+
+#: includes/admin/class-strings.php:645
+msgid "The version of the file you are trying to import is not compatible with the current version of WP Dark Mode."
+msgstr ""
+
+#: includes/admin/class-strings.php:646
+msgid "Version Mismatch"
+msgstr ""
+
+#: includes/admin/class-strings.php:647
+msgid "Video Behavior"
+msgstr ""
+
+#: includes/admin/class-strings.php:648
+msgid "Settings to change video appearance on dark mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:649
+msgid "Video Behavior When Dark Mode Is On"
+msgstr ""
+
+#: includes/admin/class-strings.php:650
+msgid "Enable to set the brightness level of the videos on dark mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:651, src/admin/routes/settings-routes.js:52
+msgid "Customize video appearance in Dark Mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:652
+msgid "Enable to set the grayscale level of the videos on dark mode"
+msgstr ""
+
+#: includes/admin/class-strings.php:653
+msgid "Video Replacement"
+msgstr ""
+
+#: includes/admin/class-strings.php:654
+msgid "Replace specific videos when dark mode is enabled"
+msgstr ""
+
+#: includes/admin/class-strings.php:655, src/admin/routes/settings-routes.js:51
+msgid "Video Settings"
+msgstr ""
+
+#: includes/admin/class-strings.php:656
+msgid "Video Tutorial"
+msgstr ""
+
+#: includes/admin/class-strings.php:657
+msgid "Video URL"
+msgstr ""
+
+#: includes/admin/class-strings.php:658
+msgid "View Dark Mode Usages inside WordPress Dashboard"
+msgstr ""
+
+#: includes/admin/class-strings.php:660
+msgid "Watch Video Tutorial"
+msgstr ""
+
+#: includes/admin/class-strings.php:661
+msgid "Watch Videos"
+msgstr ""
+
+#: includes/admin/class-strings.php:666, includes/admin/class-strings.php:673
+msgid "WooCommerce is not active"
+msgstr ""
+
+#: includes/admin/class-strings.php:667, includes/admin/class-strings.php:674
+msgid "WooCommerce is not installed"
+msgstr ""
+
+#: includes/admin/class-strings.php:670
+msgid "What is WP Dark Mode?"
+msgstr ""
+
+#: includes/admin/class-strings.php:672
+msgid "WooCommerce"
+msgstr ""
+
+#: includes/admin/class-strings.php:676
+msgid "WP Dark Mode Support"
+msgstr ""
+
+#: includes/admin/class-strings.php:678
+msgid "Yahoo"
+msgstr ""
+
+#: includes/admin/class-strings.php:679
+msgid "Yahoo in browser"
+msgstr ""
+
+#: includes/admin/class-strings.php:680
+msgid "Yes, discard changes"
+msgstr ""
+
+#: includes/admin/class-strings.php:682
+msgid "Welcome to the #1 dark mode plugin for WordPress. Let's get started!"
+msgstr ""
+
+#: includes/admin/class-strings.php:690
+msgid "You might be looking for"
+msgstr ""
+
+#: includes/admin/class-strings.php:691
+msgid "Our support team is here 24/7 to answer your queries and resolve your issues. Don't hesitate to reach out to us!"
+msgstr ""
+
+#: includes/admin/class-strings.php:692
+msgid "If you don't have the time to go through the docs, check our tutorial to start using WP Dark Mode on Gutenberg."
+msgstr ""
+
+#: includes/admin/class-strings.php:693
+msgid "If you don't have the time to go through the docs, check our tutorial to start using WP Dark Mode on Elementor."
+msgstr ""
+
+#: includes/admin/class-strings.php:696
+msgid "Social Share (Inline Button)"
+msgstr ""
+
+#: includes/admin/class-strings.php:697
+msgid "Social Channels"
+msgstr ""
+
+#: includes/admin/class-strings.php:700
+msgid "Above"
+msgstr ""
+
+#: includes/admin/class-strings.php:701
+msgid "Below"
+msgstr ""
+
+#: includes/admin/class-strings.php:702
+msgid "Above & Below"
+msgstr ""
+
+#: includes/admin/class-strings.php:704, includes/modules/elementor/widgets/class-elementor-widget.php:158
+msgid "Center"
+msgstr ""
+
+#: includes/admin/class-strings.php:706
+msgid "Stretch"
+msgstr ""
+
+#: includes/admin/class-strings.php:707
+msgid "Rounded"
+msgstr ""
+
+#: includes/admin/class-strings.php:708
+msgid "Circle"
+msgstr ""
+
+#: includes/admin/class-strings.php:709
+msgid "Rectangular"
+msgstr ""
+
+#: includes/admin/class-strings.php:710
+msgid "Slanted"
+msgstr ""
+
+#: includes/admin/class-strings.php:711
+msgid "Channel Label"
+msgstr ""
+
+#: includes/admin/class-strings.php:712
+msgid "Share Count"
+msgstr ""
+
+#: includes/admin/class-strings.php:713
+msgid "Both"
+msgstr ""
+
+#: includes/admin/class-strings.php:714
+msgid "None"
+msgstr ""
+
+#: includes/admin/class-strings.php:715
+msgid "More"
+msgstr ""
+
+#: includes/admin/class-strings.php:716
+msgid "Share"
+msgstr ""
+
+#: includes/admin/class-strings.php:717
+msgid "Shares"
+msgstr ""
+
+#: includes/admin/class-strings.php:718
+msgid "Ultimate"
+msgstr ""
+
+#: includes/admin/class-strings.php:721
+msgid "Saved"
+msgstr ""
+
+#: includes/admin/class-strings.php:722
+msgid "Published"
+msgstr ""
+
+#: includes/admin/class-strings.php:723
+msgid "Save & Publish"
+msgstr ""
+
+#: includes/admin/class-strings.php:725
+msgid "Enable Social Share (Inline Button)"
+msgstr ""
+
+#: includes/admin/class-strings.php:726
+msgid "Inline Button Template"
+msgstr ""
+
+#: includes/admin/class-strings.php:727
+msgid "Choose any inline button template that suits your style"
+msgstr ""
+
+#: includes/admin/class-strings.php:728
+msgid "Share Label"
+msgstr ""
+
+#: includes/admin/class-strings.php:729
+msgid "Share label appears before the inline button. Provide engaging texts to make sure your visitors are sharing the content!"
+msgstr ""
+
+#: includes/admin/class-strings.php:730
+msgid "Sharing is Caring: "
+msgstr ""
+
+#: includes/admin/class-strings.php:731
+msgid "Button Position"
+msgstr ""
+
+#: includes/admin/class-strings.php:732
+msgid "Choose the position where you want show your inline button."
+msgstr ""
+
+#: includes/admin/class-strings.php:733
+msgid "Button Alignment"
+msgstr ""
+
+#: includes/admin/class-strings.php:734
+msgid "Choose the alignment of the button."
+msgstr ""
+
+#: includes/admin/class-strings.php:735
+msgid "Button Shape"
+msgstr ""
+
+#: includes/admin/class-strings.php:736
+msgid "Choose the button shape that matches your site content."
+msgstr ""
+
+#: includes/admin/class-strings.php:737
+msgid "Button Size"
+msgstr ""
+
+#: includes/admin/class-strings.php:738
+msgid "Choose the default size for your inline button."
+msgstr ""
+
+#: includes/admin/class-strings.php:739
+msgid "Button Label"
+msgstr ""
+
+#: includes/admin/class-strings.php:740
+msgid "Button labels can display your channel’s name and share count."
+msgstr ""
+
+#: includes/admin/class-strings.php:741
+msgid "Hide Buttons on"
+msgstr ""
+
+#: includes/admin/class-strings.php:742
+msgid "Select where you want to hide your inline button."
+msgstr ""
+
+#: includes/admin/class-strings.php:743
+msgid "Display Buttons on"
+msgstr ""
+
+#: includes/admin/class-strings.php:744
+msgid "Choose where the inline button will appear on your website."
+msgstr ""
+
+#: includes/admin/class-strings.php:745
+msgid "Button Spacing"
+msgstr ""
+
+#: includes/admin/class-strings.php:746
+msgid "Select default spacing between each channel."
+msgstr ""
+
+#: includes/admin/class-strings.php:747
+msgid "Total Shares"
+msgstr ""
+
+#: includes/admin/class-strings.php:748
+msgid "Enable total share counter. It will show how many times your content is shared via enabled channels."
+msgstr ""
+
+#: includes/admin/class-strings.php:749
+msgid "Minimum Share Count"
+msgstr ""
+
+#: includes/admin/class-strings.php:750
+msgid "This is the minimum number of shares a page needs to have before the share counter is shown."
+msgstr ""
+
+#: includes/admin/class-strings.php:751
+msgid "Maximum Share Click"
+msgstr ""
+
+#: includes/admin/class-strings.php:752
+msgid "This is the maximum number of click count on a social channel you want to show your visitors"
+msgstr ""
+
+#: includes/admin/class-strings.php:753
+msgid "Channel Visibility Count"
+msgstr ""
+
+#: includes/admin/class-strings.php:754
+msgid "Set the number of channels that you want to show on your website. The rest will be shown after clicking on the 'More' button."
+msgstr ""
+
+#: includes/admin/class-strings.php:755
+msgid "Search Channel"
+msgstr ""
+
+#: includes/admin/class-strings.php:756
+msgid "See less channels"
+msgstr ""
+
+#: includes/admin/class-strings.php:757
+msgid "See more channels"
+msgstr ""
+
+#: includes/admin/class-strings.php:758
+msgid "Unlock all channels"
+msgstr ""
+
+#: includes/admin/class-strings.php:759
+msgid "Manage channels"
+msgstr ""
+
+#: includes/admin/class-strings.php:760
+msgid "Reorder your social channels. You can edit the channel label and device visibility for each. Drag channels to change their order."
+msgstr ""
+
+#: includes/admin/class-strings.php:761
+msgid "Visit this URL: {page_url} and summarize the content for me."
+msgstr ""
+
+#: includes/admin/class-strings.php:762
+msgid "Available variables:"
+msgstr ""
+
+#: includes/admin/class-strings.php:763
+msgid "Reset to default"
+msgstr ""
+
+#: includes/admin/class-strings.php:764
+msgid "Enable Preferred Channels"
+msgstr ""
+
+#: includes/admin/class-strings.php:765
+msgid "Not found"
+msgstr ""
+
+#: includes/admin/class-strings.php:766
+msgid "Done"
+msgstr ""
+
+#: includes/admin/class-strings.php:768
+msgid "Plan"
+msgstr ""
+
+#: includes/admin/class-strings.php:770
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: includes/admin/class-strings.php:771
+msgid "official documentation"
+msgstr ""
+
+#: includes/admin/class-strings.php:772
+msgid "and"
+msgstr ""
+
+#: includes/admin/class-strings.php:773
+msgid "YouTube Playlist"
+msgstr ""
+
+#: includes/admin/class-strings.php:774
+msgid "customer support team"
+msgstr ""
+
+#: includes/admin/class-strings.php:775
+msgid "pricing page"
+msgstr ""
+
+#: includes/admin/class-strings.php:776
+msgid "For refunds on the premium plan, please contact our"
+msgstr ""
+
+#: includes/admin/class-strings.php:777
+msgid "directly. The procedure will be based on the terms of service in effect at the time of purchase."
+msgstr ""
+
+#: includes/admin/class-strings.php:778
+msgid "Enabling dark mode on your website is easy and simple."
+msgstr ""
+
+#: includes/admin/class-strings.php:779
+msgid "Learn how to get started with WP Dark Mode within minutes."
+msgstr ""
+
+#: includes/admin/class-strings.php:782
+msgid "What's New"
+msgstr ""
+
+#: includes/admin/class-strings.php:783
+msgid "Last 24 Hours"
+msgstr ""
+
+#: includes/admin/class-strings.php:784
+msgid "Last 7 Days"
+msgstr ""
+
+#: includes/admin/class-strings.php:785
+msgid "Last 30 Days"
+msgstr ""
+
+#: includes/admin/class-strings.php:786
+msgid "Last 1 Year"
+msgstr ""
+
+#: includes/admin/class-strings.php:787
+msgid "Dark Mode Users"
+msgstr ""
+
+#: includes/admin/class-strings.php:788
+msgid "Total Visitors"
+msgstr ""
+
+#: includes/admin/class-strings.php:789
+msgid "12 AM"
+msgstr ""
+
+#: includes/admin/class-strings.php:790
+msgid "1 AM"
+msgstr ""
+
+#: includes/admin/class-strings.php:791
+msgid "2 AM"
+msgstr ""
+
+#: includes/admin/class-strings.php:792
+msgid "3 AM"
+msgstr ""
+
+#: includes/admin/class-strings.php:793
+msgid "4 AM"
+msgstr ""
+
+#: includes/admin/class-strings.php:794
+msgid "5 AM"
+msgstr ""
+
+#: includes/admin/class-strings.php:795
+msgid "6 AM"
+msgstr ""
+
+#: includes/admin/class-strings.php:796
+msgid "7 AM"
+msgstr ""
+
+#: includes/admin/class-strings.php:797
+msgid "8 AM"
+msgstr ""
+
+#: includes/admin/class-strings.php:798
+msgid "9 AM"
+msgstr ""
+
+#: includes/admin/class-strings.php:799
+msgid "10 AM"
+msgstr ""
+
+#: includes/admin/class-strings.php:800
+msgid "11 AM"
+msgstr ""
+
+#: includes/admin/class-strings.php:801
+msgid "12 PM"
+msgstr ""
+
+#: includes/admin/class-strings.php:802
+msgid "1 PM"
+msgstr ""
+
+#: includes/admin/class-strings.php:803
+msgid "2 PM"
+msgstr ""
+
+#: includes/admin/class-strings.php:804
+msgid "3 PM"
+msgstr ""
+
+#: includes/admin/class-strings.php:805
+msgid "4 PM"
+msgstr ""
+
+#: includes/admin/class-strings.php:806
+msgid "5 PM"
+msgstr ""
+
+#: includes/admin/class-strings.php:807
+msgid "6 PM"
+msgstr ""
+
+#: includes/admin/class-strings.php:808
+msgid "7 PM"
+msgstr ""
+
+#: includes/admin/class-strings.php:809
+msgid "8 PM"
+msgstr ""
+
+#: includes/admin/class-strings.php:810
+msgid "9 PM"
+msgstr ""
+
+#: includes/admin/class-strings.php:811
+msgid "10 PM"
+msgstr ""
+
+#: includes/admin/class-strings.php:812
+msgid "11 PM"
+msgstr ""
+
+#: includes/admin/class-strings.php:813
+msgid "Sun"
+msgstr ""
+
+#: includes/admin/class-strings.php:814
+msgid "Mon"
+msgstr ""
+
+#: includes/admin/class-strings.php:815
+msgid "Tue"
+msgstr ""
+
+#: includes/admin/class-strings.php:816
+msgid "Wed"
+msgstr ""
+
+#: includes/admin/class-strings.php:817
+msgid "Thu"
+msgstr ""
+
+#: includes/admin/class-strings.php:818
+msgid "Fri"
+msgstr ""
+
+#: includes/admin/class-strings.php:819
+msgid "Sat"
+msgstr ""
+
+#: includes/admin/class-strings.php:820
+msgid "Jan"
+msgstr ""
+
+#: includes/admin/class-strings.php:821
+msgid "Feb"
+msgstr ""
+
+#: includes/admin/class-strings.php:822
+msgid "Mar"
+msgstr ""
+
+#: includes/admin/class-strings.php:823
+msgid "Apr"
+msgstr ""
+
+#: includes/admin/class-strings.php:824
+msgid "May"
+msgstr ""
+
+#: includes/admin/class-strings.php:825
+msgid "Jun"
+msgstr ""
+
+#: includes/admin/class-strings.php:826
+msgid "Jul"
+msgstr ""
+
+#: includes/admin/class-strings.php:827
+msgid "Aug"
+msgstr ""
+
+#: includes/admin/class-strings.php:828
+msgid "Sep"
+msgstr ""
+
+#: includes/admin/class-strings.php:829
+msgid "Oct"
+msgstr ""
+
+#: includes/admin/class-strings.php:830
+msgid "Nov"
+msgstr ""
+
+#: includes/admin/class-strings.php:831
+msgid "Dec"
+msgstr ""
+
+#: includes/classes/class-config.php:68
+msgid "Default Light Mode"
+msgstr ""
+
+#: includes/classes/class-config.php:69
+msgid "Enable this setting if you want light mode as the default mode of your site. Visitors will find the website in light mode first."
+msgstr ""
+
+#: includes/classes/class-config.php:72
+msgid "Default Dark Mode"
+msgstr ""
+
+#: includes/classes/class-config.php:73
+msgid "Enable this setting if you want dark mode as the default mode of your site. Visitors will find the website in dark mode first."
+msgstr ""
+
+#: includes/classes/class-config.php:76
+msgid "Use system settings"
+msgstr ""
+
+#: includes/classes/class-config.php:77
+msgid "Dark mode will be enabled/disabled depending on the user's device settings."
+msgstr ""
+
+#: includes/classes/class-config.php:80
+msgid "Time based dark mode"
+msgstr ""
+
+#: includes/classes/class-config.php:81
+msgid "Automatically enable dark mode based on user's given time."
+msgstr ""
+
+#: includes/classes/class-config.php:84
+msgid "Sunset Mode"
+msgstr ""
+
+#: includes/classes/class-config.php:85
+msgid "Automatically enable dark mode at sunset based on the user's location."
+msgstr ""
+
+#: includes/classes/class-config.php:162
+msgid "S"
+msgstr ""
+
+#: includes/classes/class-config.php:166
+msgid "M"
+msgstr ""
+
+#: includes/classes/class-config.php:170
+msgid "L"
+msgstr ""
+
+#: includes/classes/class-config.php:174, includes/modules/elementor/widgets/class-elementor-widget.php:139
+msgid "XL"
+msgstr ""
+
+#: includes/classes/class-config.php:178
+msgid "XXL"
+msgstr ""
+
+#: includes/classes/class-config.php:238
+msgid "Wobble"
+msgstr ""
+
+#: includes/classes/class-config.php:239
+msgid "Vibrate"
+msgstr ""
+
+#: includes/classes/class-config.php:240
+msgid "Flicker"
+msgstr ""
+
+#: includes/classes/class-config.php:241
+msgid "Shake"
+msgstr ""
+
+#: includes/classes/class-config.php:242
+msgid "Jello"
+msgstr ""
+
+#: includes/classes/class-config.php:243
+msgid "Bounce"
+msgstr ""
+
+#: includes/classes/class-config.php:244
+msgid "Heartbeat"
+msgstr ""
+
+#: includes/classes/class-config.php:245
+msgid "Blink"
+msgstr ""
+
+#: includes/classes/class-config.php:255
+msgid "Enable Dark Mode"
+msgstr ""
+
+#: includes/classes/class-config.php:315
+msgid "Allow custom elements to toggle dark mode"
+msgstr ""
+
+#: includes/classes/class-config.php:320
+msgid "Custom Triggers List"
+msgstr ""
+
+#: includes/classes/class-config.php:321
+msgid "List of custom trigger configurations"
+msgstr ""
+
+#: includes/classes/class-config.php:425
+msgid "Fade In"
+msgstr ""
+
+#: includes/classes/class-config.php:426
+msgid "Pulse"
+msgstr ""
+
+#: includes/classes/class-config.php:427
+msgid "Flip"
+msgstr ""
+
+#: includes/classes/class-config.php:428
+msgid "Roll"
+msgstr ""
+
+#: includes/classes/class-config.php:429
+msgid "Slide Left"
+msgstr ""
+
+#: includes/classes/class-config.php:430
+msgid "Slide Up"
+msgstr ""
+
+#: includes/classes/class-config.php:431
+msgid "Slide Right"
+msgstr ""
+
+#: includes/classes/class-config.php:432
+msgid "Slide Down"
+msgstr ""
+
+#: includes/classes/class-config.php:450
+msgid "Best Dark Mode Performance"
+msgstr ""
+
+#: includes/classes/class-config.php:451
+msgid "The dark mode scripts will load before the parsing and rendering of your page. Choose this option when executing dark mode is the first priority for you."
+msgstr ""
+
+#: includes/classes/class-config.php:454
+msgid "Balanced Performance for My Website and Dark Mode"
+msgstr ""
+
+#: includes/classes/class-config.php:455
+msgid "The dark mode scripts will be executed at the same time as your page. Choose this option to get a moderate dark mode loading time without compromising website loading speed."
+msgstr ""
+
+#: includes/classes/class-config.php:458
+msgid "Prioritize My Website Loading"
+msgstr ""
+
+#: includes/classes/class-config.php:459
+msgid "The dark mode script will be fetched asynchronously and executed after page parsing, just before the \"DOMContentLoaded\" event. Choose this option if your focus is on optimizing your website's performance over the WP Dark Mode."
+msgstr ""
+
+#: includes/classes/class-config.php:571
+msgid "Daily"
+msgstr ""
+
+#: includes/classes/class-config.php:572
+msgid "Weekly"
+msgstr ""
+
+#: includes/classes/class-config.php:573
+msgid "Bi-Weekly"
+msgstr ""
+
+#: includes/classes/class-config.php:574
+msgid "Monthly"
+msgstr ""
+
+#: includes/classes/class-config.php:575
+msgid "Quarterly"
+msgstr ""
+
+#: includes/classes/class-config.php:576
+msgid "Yearly"
+msgstr ""
+
+#: includes/classes/class-config.php:586
+msgid "WP Dark Mode Analytics Report"
 msgstr ""
 
 #: includes/models/class-visitor.php:97
@@ -249,1294 +3165,165 @@ msgstr ""
 msgid "Failed to update visitor data."
 msgstr ""
 
-#: includes/modules/elementor/widgets/class-elementor-widget.php:49
-#: includes/modules/elementor/widgets/class-elementor-widget.php:103
-#: languages/wp-dark-mode.php:244
-#: src/gutenberg/block/index.js:9
-#: includes/modules/gutenberg/main.js:176
+#: includes/modules/class-shortcode.php:82
+msgid "Dark Mode Settings"
+msgstr ""
+
+#: includes/modules/class-shortcode.php:82, src/gutenberg/block/index.js:36
+msgid "Dark Mode Toggle"
+msgstr ""
+
+#: includes/modules/elementor/widgets/class-elementor-widget.php:50, includes/modules/elementor/widgets/class-elementor-widget.php:104, src/gutenberg/block/index.js:9
 msgid "Dark Mode Switch"
 msgstr ""
 
-#: includes/modules/elementor/widgets/class-elementor-widget.php:112
-#: languages/wp-dark-mode.php:242
-#: src/gutenberg/block/DarkModeSwitchEditor.js:29
-#: includes/modules/gutenberg/main.js:73
+#: includes/modules/elementor/widgets/class-elementor-widget.php:113, src/gutenberg/block/DarkModeSwitchEditor.js:29
 msgid "Switch Style"
 msgstr ""
 
-#: includes/modules/elementor/widgets/class-elementor-widget.php:132
-#: languages/wp-dark-mode.php:243
-#: src/gutenberg/block/DarkModeSwitchEditor.js:37
-#: includes/modules/gutenberg/main.js:85
+#: includes/modules/elementor/widgets/class-elementor-widget.php:133, src/gutenberg/block/DarkModeSwitchEditor.js:37
 msgid "Switch Size"
 msgstr ""
 
-#: includes/modules/elementor/widgets/class-elementor-widget.php:135
+#: includes/modules/elementor/widgets/class-elementor-widget.php:136
 msgid "XS"
 msgstr ""
 
-#: includes/modules/elementor/widgets/class-elementor-widget.php:136
+#: includes/modules/elementor/widgets/class-elementor-widget.php:137
 msgid "SM"
 msgstr ""
 
-#: includes/modules/elementor/widgets/class-elementor-widget.php:137
+#: includes/modules/elementor/widgets/class-elementor-widget.php:138
 msgid "MD"
 msgstr ""
 
-#: includes/modules/elementor/widgets/class-elementor-widget.php:138
-msgid "XL"
-msgstr ""
-
-#: includes/modules/elementor/widgets/class-elementor-widget.php:139
+#: includes/modules/elementor/widgets/class-elementor-widget.php:140
 msgid "2XL"
 msgstr ""
 
-#: includes/modules/elementor/widgets/class-elementor-widget.php:140
+#: includes/modules/elementor/widgets/class-elementor-widget.php:141
 msgid "3XL"
 msgstr ""
 
-#: includes/modules/elementor/widgets/class-elementor-widget.php:149
+#: includes/modules/elementor/widgets/class-elementor-widget.php:150
 msgid "Alignment"
 msgstr ""
 
-#: includes/modules/elementor/widgets/class-elementor-widget.php:153
-msgid "Left"
-msgstr ""
-
-#: includes/modules/elementor/widgets/class-elementor-widget.php:157
-msgid "Center"
-msgstr ""
-
-#: includes/modules/elementor/widgets/class-elementor-widget.php:161
-msgid "Right"
-msgstr ""
-
-#: includes/modules/social-share/class-social-share.php:424
+#: includes/modules/social-share/class-social-share.php:462
 msgid "Social Share - WP Dark Mode"
 msgstr ""
 
-#: includes/modules/social-share/class-social-share.php:425
-msgid "Social Share"
-msgstr ""
-
-#: includes/modules/social-share/class-social-share.php:598
+#: includes/modules/social-share/class-social-share.php:641
 msgid "Invalid security key"
 msgstr ""
 
-#: includes/modules/social-share/class-social-share.php:603
+#: includes/modules/social-share/class-social-share.php:646
 msgid "Permission denied"
 msgstr ""
 
-#: includes/modules/social-share/class-social-share.php:784
+#: includes/modules/social-share/class-social-share.php:827
 msgid "Invalid permission"
 msgstr ""
 
-#: includes/modules/social-share/class-social-share.php:791
+#: includes/modules/social-share/class-social-share.php:834
 msgid "Invalid channel"
 msgstr ""
 
-#: includes/modules/social-share/class-social-share.php:825
+#: includes/modules/social-share/class-social-share.php:868
 msgid "Something went wrong"
 msgstr ""
 
-#: includes/wppool/class-plugin.php:328
+#: includes/wppool/class-plugin.php:329
 msgid "Deal Ends In"
 msgstr ""
 
-#: includes/wppool/class-plugin.php:333
-#: includes/wppool/class-plugin.php:342
-#: includes/wppool/class-plugin.php:351
-#: includes/wppool/class-plugin.php:360
+#: includes/wppool/class-plugin.php:334, includes/wppool/class-plugin.php:343, includes/wppool/class-plugin.php:352, includes/wppool/class-plugin.php:361
 msgid "00"
 msgstr ""
 
-#: includes/wppool/class-plugin.php:336
+#: includes/wppool/class-plugin.php:337
 msgid "Days"
 msgstr ""
 
-#: includes/wppool/class-plugin.php:345
+#: includes/wppool/class-plugin.php:346
 msgid "Hours"
 msgstr ""
 
-#: includes/wppool/class-plugin.php:354
+#: includes/wppool/class-plugin.php:355
 msgid "Minutes"
 msgstr ""
 
-#: includes/wppool/class-plugin.php:363
+#: includes/wppool/class-plugin.php:364
 msgid "Seconds"
 msgstr ""
 
-#: includes/wppool/class-plugin.php:370
-msgid "Upgrade to Pro"
-msgstr ""
-
-#: includes/wppool/class-plugin.php:374
+#: includes/wppool/class-plugin.php:375
 msgid "Try a free demo"
 msgstr ""
 
-#: languages/wp-dark-mode.php:3
-#: src/admin/routes/settings-routes.js:5
-msgid "Controls"
-msgstr ""
-
-#: languages/wp-dark-mode.php:4
-#: src/admin/routes/settings-routes.js:16
-msgid "Frontend Dark Mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:6
-#: src/admin/routes/settings-routes.js:21
-msgid "Admin Panel Dark Mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:8
-#: src/admin/routes/settings-routes.js:28
-msgid "Customization"
-msgstr ""
-
-#: languages/wp-dark-mode.php:9
-#: src/admin/routes/settings-routes.js:36
-msgid "Switch Settings"
-msgstr ""
-
-#: languages/wp-dark-mode.php:11
-#: src/admin/routes/settings-routes.js:41
-msgid "Color Settings"
-msgstr ""
-
-#: languages/wp-dark-mode.php:13
-#: src/admin/routes/settings-routes.js:46
-msgid "Image Settings"
-msgstr ""
-
-#: languages/wp-dark-mode.php:14
-#: src/admin/routes/settings-routes.js:51
-msgid "Video Settings"
-msgstr ""
-
-#: languages/wp-dark-mode.php:16
-#: src/admin/routes/settings-routes.js:56
-msgid "Site Animation"
-msgstr ""
-
-#: languages/wp-dark-mode.php:18
-#: src/admin/routes/settings-routes.js:63
-msgid "Advanced"
-msgstr ""
-
-#: languages/wp-dark-mode.php:19
-#: src/admin/routes/settings-routes.js:72
-msgid "Performance"
-msgstr ""
-
-#: languages/wp-dark-mode.php:20
-#: src/admin/routes/settings-routes.js:73
-msgid "Configure performance settings."
-msgstr ""
-
-#: languages/wp-dark-mode.php:21
-#: src/admin/routes/settings-routes.js:77
-msgid "Exclude Settings"
-msgstr ""
-
-#: languages/wp-dark-mode.php:22
-#: src/admin/routes/settings-routes.js:78
-msgid "Customize image appearance in Dark Mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:23
-#: src/admin/routes/settings-routes.js:82
-msgid "Custom CSS"
-msgstr ""
-
-#: languages/wp-dark-mode.php:24
-#: src/admin/routes/settings-routes.js:83
-msgid "Custom CSS code to apply on dark mode or on both mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:25
-#: src/admin/routes/settings-routes.js:87
-msgid "Accessibility"
-msgstr ""
-
-#: languages/wp-dark-mode.php:26
-#: src/admin/routes/settings-routes.js:88
-msgid "Make your website more accessible for people with disabilities."
-msgstr ""
-
-#: languages/wp-dark-mode.php:27
-#: src/admin/routes/settings-routes.js:92
-msgid "Shortcode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:28
-#: src/admin/routes/settings-routes.js:93
-msgid "Generate shortcodes for dark mode switches"
-msgstr ""
-
-#: languages/wp-dark-mode.php:29
-#: src/admin/routes/settings-routes.js:97
-msgid "Switch Widget"
-msgstr ""
-
-#: languages/wp-dark-mode.php:30
-#: src/admin/routes/settings-routes.js:98
-msgid "Display dark mode switch using WordPress widget"
-msgstr ""
-
-#: languages/wp-dark-mode.php:31
-#: src/admin/routes/settings-routes.js:104
-#: src/admin/routes/settings-routes.js:118
-msgid "Analytics"
-msgstr ""
-
-#: languages/wp-dark-mode.php:32
-#: src/admin/routes/settings-routes.js:119
-msgid "Configure analytics settings."
-msgstr ""
-
-#: languages/wp-dark-mode.php:34
-msgid "Do you want to disable Typography settings?"
-msgstr ""
-
-#: languages/wp-dark-mode.php:35
-msgid "Disabling typography settings will not make the text size increase automatically when text toggle is pressed on accessibility switches"
-msgstr ""
-
-#: languages/wp-dark-mode.php:36
-msgid "Disable"
-msgstr ""
-
-#: languages/wp-dark-mode.php:37
-msgid "Cancel"
-msgstr ""
-
-#: languages/wp-dark-mode.php:38
-msgid "Small"
-msgstr ""
-
-#: languages/wp-dark-mode.php:39
-msgid "Medium"
-msgstr ""
-
-#: languages/wp-dark-mode.php:40
-msgid "Large"
-msgstr ""
-
-#: languages/wp-dark-mode.php:41
-msgid "Custom"
-msgstr ""
-
-#: languages/wp-dark-mode.php:42
-msgid "Typography Settings"
-msgstr ""
-
-#: languages/wp-dark-mode.php:43
-msgid "Enable Admin Dashboard Dark Mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:44
-msgid "Turn it ON to enable dark mode on the WordPress dashboard"
-msgstr ""
-
-#: languages/wp-dark-mode.php:45
-msgid "Block Editor Dark Mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:46
-msgid "Turn it ON to show dark mode switch in the block editor for toggling between dark and light mode."
-msgstr ""
-
-#: languages/wp-dark-mode.php:47
-msgid "Dark Mode Analytics"
-msgstr ""
-
-#: languages/wp-dark-mode.php:48
-msgid "Enable dark mode analytics to track how many times site visitors have used dark mode in a certain period."
-msgstr ""
-
-#: languages/wp-dark-mode.php:49
-msgid "Display this dark mode usage chart on the WordPress Dashboard"
-msgstr ""
-
-#: languages/wp-dark-mode.php:50
-msgid "If you enable this then the chart above will be shown in your admin panel dashboard"
-msgstr ""
-
-#: languages/wp-dark-mode.php:51
-msgid "Email Reporting"
-msgstr ""
-
-#: languages/wp-dark-mode.php:52
-msgid "Enable this feature to get the dark mode usage summery through email."
-msgstr ""
-
-#: languages/wp-dark-mode.php:53
-msgid "Reporting Frequency"
-msgstr ""
-
-#: languages/wp-dark-mode.php:54
-msgid "Select the reporting frequency when the email will be send."
-msgstr ""
-
-#: languages/wp-dark-mode.php:55
-msgid "Reporting Email"
-msgstr ""
-
-#: languages/wp-dark-mode.php:56
-msgid "Enter the email where analytics report will be sent"
-msgstr ""
-
-#: languages/wp-dark-mode.php:57
-msgid "Reporting Email Subject"
-msgstr ""
-
-#: languages/wp-dark-mode.php:58
-msgid "Subject of the analytics report mail"
-msgstr ""
-
-#: languages/wp-dark-mode.php:59
-msgid "WP Dark Mode Usage"
-msgstr ""
-
-#: languages/wp-dark-mode.php:60
-msgid "Enable Page Transition Animation"
-msgstr ""
-
-#: languages/wp-dark-mode.php:61
-msgid "Enable this option to choose the transition animation when switching between light and dark modes on your website."
-msgstr ""
-
-#: languages/wp-dark-mode.php:62
-msgid "Select Animation"
-msgstr ""
-
-#: languages/wp-dark-mode.php:63
-msgid "Adjust your automatic color filter"
-msgstr ""
-
-#: languages/wp-dark-mode.php:64
-msgid "Adjust the your automatic color for dark mode color scheme"
-msgstr ""
-
-#: languages/wp-dark-mode.php:65
-msgid "Automatic Color"
-msgstr ""
-
-#: languages/wp-dark-mode.php:66
-msgid "Color Presets"
-msgstr ""
-
-#: languages/wp-dark-mode.php:67
-msgid "Custom Preset"
-msgstr ""
-
-#: languages/wp-dark-mode.php:68
-msgid "Choose Color Mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:69
-msgid "Adjust your preferred dark mode brightness"
-msgstr ""
-
-#: languages/wp-dark-mode.php:70
-msgid "Adjust your desired dark mode contrast"
-msgstr ""
-
-#: languages/wp-dark-mode.php:71
-msgid "Adjust your preferred dark mode Sepia"
-msgstr ""
-
-#: languages/wp-dark-mode.php:72
-msgid "Adjust your preferred dark mode Grayscale"
-msgstr ""
-
-#: languages/wp-dark-mode.php:73
-msgid "Dark Mode Color Presets"
-msgstr ""
-
-#: languages/wp-dark-mode.php:74
-msgid "Choose a color preset for the dark mode color scheme."
-msgstr ""
-
-#: languages/wp-dark-mode.php:75
-msgid "The Content Switch is <strong>currently unavailable</strong>. To access this feature, first you have to enable the “Frontend Dark Mode” feature from the Control settings"
-msgstr ""
-
-#: languages/wp-dark-mode.php:76
-msgid "Enable Frontend Dark Mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:77
-msgid "Display dark mode switch at top of all posts"
-msgstr ""
-
-#: languages/wp-dark-mode.php:78
-msgid "Enable to display the dark mode switch button in menus."
-msgstr ""
-
-#: languages/wp-dark-mode.php:79
-msgid "Display dark mode switch at top of all pages"
-msgstr ""
-
-#: languages/wp-dark-mode.php:80
-msgid "Select Switches"
-msgstr ""
-
-#: languages/wp-dark-mode.php:81
-msgid "Dark Mode CSS"
-msgstr ""
-
-#: languages/wp-dark-mode.php:82
-msgid "Add custom CSS for dark mode only. This CSS will only apply when the dark mode is on. use <code>!important</code> flag on each property"
-msgstr ""
-
-#: languages/wp-dark-mode.php:83
-msgid "Preset is already in use!"
-msgstr ""
-
-#: languages/wp-dark-mode.php:84
-msgid "You cannot delete this preset as it is currently in use. Please select another preset or change the \"Color Mode\" before deleting this preset."
-msgstr ""
-
-#: languages/wp-dark-mode.php:85
-msgid "Got it"
-msgstr ""
-
-#: languages/wp-dark-mode.php:86
-msgid "Do you want to delete this preset?"
-msgstr ""
-
-#: languages/wp-dark-mode.php:87
-msgid "This preset will be permanently deleted. Are you sure you want to confirm this deletion?"
-msgstr ""
-
-#: languages/wp-dark-mode.php:88
-msgid "Confirm"
-msgstr ""
-
-#: languages/wp-dark-mode.php:89
-msgid "Create a custom color palette first!"
-msgstr ""
-
-#: languages/wp-dark-mode.php:90
-msgid "Before saving this mode, please ensure you have created a custom color palette. Alternatively, you can switch your mode to either \"Color Presets\" or \"Automatic Color\" if that better suits your needs."
-msgstr ""
-
-#: languages/wp-dark-mode.php:91
-msgid "No custom color presets is created"
-msgstr ""
-
-#: languages/wp-dark-mode.php:92
-msgid "Click on the button below to create your first custom color."
-msgstr ""
-
-#: languages/wp-dark-mode.php:93
-msgid "Add Custom Color Preset"
-msgstr ""
-
-#: languages/wp-dark-mode.php:94
-msgid "Custom Color Presets"
-msgstr ""
-
-#: languages/wp-dark-mode.php:95
-msgid "Custom color preset for the dark mode color scheme."
-msgstr ""
-
-#: languages/wp-dark-mode.php:96
-msgid "Delete"
-msgstr ""
-
-#: languages/wp-dark-mode.php:97
-msgid "Untitled"
-msgstr ""
-
-#: languages/wp-dark-mode.php:98
-msgid "Create New Preset"
-msgstr ""
-
-#: languages/wp-dark-mode.php:99
-msgid "HTML Element"
-msgstr ""
-
-#: languages/wp-dark-mode.php:100
-msgid "Exclude dark mode on HTML tags, CSS class, CSS ids and more"
-msgstr ""
-
-#: languages/wp-dark-mode.php:101
-msgid "Exclude Elements"
-msgstr ""
-
-#: languages/wp-dark-mode.php:102
-msgid "Enter HTML element selectors"
-msgstr ""
-
-#: languages/wp-dark-mode.php:103
-msgid "Include Elements"
-msgstr ""
-
-#: languages/wp-dark-mode.php:104
-msgid "Exclude Pages/ Posts"
-msgstr ""
-
-#: languages/wp-dark-mode.php:105
-msgid "Exclude dark mode on specific WordPress post type and taxonomy"
-msgstr ""
-
-#: languages/wp-dark-mode.php:106
-msgid "Exclude Post Type:"
-msgstr ""
-
-#: languages/wp-dark-mode.php:107
-msgid "Exclude Pages/Posts"
-msgstr ""
-
-#: languages/wp-dark-mode.php:108
-msgid "Add pages, posts and custom post types that you want to exclude from the dark mode."
-msgstr ""
-
-#: languages/wp-dark-mode.php:109
-msgid "Exclude All"
-msgstr ""
-
-#: languages/wp-dark-mode.php:110
-msgid "Except:"
-msgstr ""
-
-#: languages/wp-dark-mode.php:111
-msgid "Dark Mode will only work on the selected posts and pages."
-msgstr ""
-
-#: languages/wp-dark-mode.php:112
-msgid "Exclude Taxonomy Type:"
-msgstr ""
-
-#: languages/wp-dark-mode.php:113
-msgid "Exclude Taxonomies"
-msgstr ""
-
-#: languages/wp-dark-mode.php:114
-msgid "Include the categories and tags that you want to exclude from the dark mode."
-msgstr ""
-
-#: languages/wp-dark-mode.php:115
-msgid "Exclude WooCommerce"
-msgstr ""
-
-#: languages/wp-dark-mode.php:116
-msgid "Exclude dark mode on WooCommerce products and categories"
-msgstr ""
-
-#: languages/wp-dark-mode.php:117
-msgid "WooCommerce is not active"
-msgstr ""
-
-#: languages/wp-dark-mode.php:118
-msgid "WooCommerce is not installed"
-msgstr ""
-
-#: languages/wp-dark-mode.php:119
-msgid "Please active WooCommerce to use this feature."
-msgstr ""
-
-#: languages/wp-dark-mode.php:120
-msgid "Please install WooCommerce to use this feature"
-msgstr ""
-
-#: languages/wp-dark-mode.php:121
-msgid "Exclude WC Products"
-msgstr ""
-
-#: languages/wp-dark-mode.php:122
-msgid "Add products to exclude the dark mode from the WooCommerce categories."
-msgstr ""
-
-#: languages/wp-dark-mode.php:123
-msgid "Dark Mode will only work on the selected WooCommerce products."
-msgstr ""
-
-#: languages/wp-dark-mode.php:124
-msgid "Exclude WC Categories"
-msgstr ""
-
-#: languages/wp-dark-mode.php:125
-msgid "Add categories to exclude the dark mode from the WooCommerce categories."
-msgstr ""
-
-#: languages/wp-dark-mode.php:126
-msgid "Dark Mode will only work on the selected WooCommerce categories."
-msgstr ""
-
-#: languages/wp-dark-mode.php:127
-msgid "HTML Elements"
-msgstr ""
-
-#: languages/wp-dark-mode.php:128
-msgid "Pages/Posts"
-msgstr ""
-
-#: languages/wp-dark-mode.php:129
-msgid "WooCommerce"
-msgstr ""
-
-#: languages/wp-dark-mode.php:130
-msgid "Turn it ON to enable dark mode on the Frontend"
-msgstr ""
-
-#: languages/wp-dark-mode.php:131
-msgid "Choose how you want to use Dark Mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:132
-msgid "Start Time"
-msgstr ""
-
-#: languages/wp-dark-mode.php:133
-msgid "To"
-msgstr ""
-
-#: languages/wp-dark-mode.php:134
-msgid "End Time"
-msgstr ""
-
-#: languages/wp-dark-mode.php:135
-msgid "Start time and end time cannot be same."
-msgstr ""
-
-#: languages/wp-dark-mode.php:136
-msgid "Image Replacement"
-msgstr ""
-
-#: languages/wp-dark-mode.php:137
-msgid "Image Behavior"
-msgstr ""
-
-#: languages/wp-dark-mode.php:138
-msgid "Image Behavior When Dark Mode Is On"
-msgstr ""
-
-#: languages/wp-dark-mode.php:139
-msgid "Settings to change image appearance on dark mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:140
-msgid "Low Brightness Image"
-msgstr ""
-
-#: languages/wp-dark-mode.php:141
-msgid "Enable to set the brightness level of the images on dark mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:142
-msgid "Brightness level"
-msgstr ""
-
-#: languages/wp-dark-mode.php:143
-msgid "Exclude Low Brightness on specific images"
-msgstr ""
-
-#: languages/wp-dark-mode.php:144
-msgid "Enter image URL"
-msgstr ""
-
-#: languages/wp-dark-mode.php:145
-msgid "No Image"
-msgstr ""
-
-#: languages/wp-dark-mode.php:146
-msgid "Grayscale Image"
-msgstr ""
-
-#: languages/wp-dark-mode.php:147
-msgid "Enable to set the grayscale level of the images on dark mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:148
-msgid "Grayscale level"
-msgstr ""
-
-#: languages/wp-dark-mode.php:149
-msgid "Exclude Low Grayscale Images "
-msgstr ""
-
-#: languages/wp-dark-mode.php:150
-msgid "Delete this image group?"
-msgstr ""
-
-#: languages/wp-dark-mode.php:151
-msgid "Are you sure you want to delete this image group? This action is permanent, and you can't undo it"
-msgstr ""
-
-#: languages/wp-dark-mode.php:152
-msgid "Replace specific images when dark mode is enabled"
-msgstr ""
-
-#: languages/wp-dark-mode.php:153
-msgid "No Images Added"
-msgstr ""
-
-#: languages/wp-dark-mode.php:154
-msgid "Add images to replace them in dark mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:155
-msgid "Replaced Images"
-msgstr ""
-
-#: languages/wp-dark-mode.php:156
-msgid "The following added images will be replaced when dark mode is enabled"
-msgstr ""
-
-#: languages/wp-dark-mode.php:157
-msgid "Light Mode Image : "
-msgstr ""
-
-#: languages/wp-dark-mode.php:158
-msgid "Dark Mode Image"
-msgstr ""
-
-#: languages/wp-dark-mode.php:159
-msgid "Mode Image"
-msgstr ""
-
-#: languages/wp-dark-mode.php:160
-msgid "Browse"
-msgstr ""
-
-#: languages/wp-dark-mode.php:161
-msgid "What's New"
-msgstr ""
-
-#: languages/wp-dark-mode.php:162
-msgid "Help"
-msgstr ""
-
-#: languages/wp-dark-mode.php:163
-msgid "Upgrade"
-msgstr ""
-
-#: languages/wp-dark-mode.php:164
-msgid "Compose new email with"
-msgstr ""
-
-#: languages/wp-dark-mode.php:165
-msgid "Gmail in browser"
-msgstr ""
-
-#: languages/wp-dark-mode.php:166
-msgid "Outlook in browser"
-msgstr ""
-
-#: languages/wp-dark-mode.php:167
-msgid "Yahoo in browser"
-msgstr ""
-
-#: languages/wp-dark-mode.php:168
-msgid "Default app or browser"
-msgstr ""
-
-#: languages/wp-dark-mode.php:169
-msgid "Menu switches won’t be visible anymore"
-msgstr ""
-
-#: languages/wp-dark-mode.php:170
-msgid "If you disable this feature, the darkmode switch will not be visible in your website's menu or navigation bar. Are you confirm to disable?"
-msgstr ""
-
-#: languages/wp-dark-mode.php:171
-msgid "To access this feature, first you have to enable the “Frontend Dark Mode” feature from the Control settings"
-msgstr ""
-
-#: languages/wp-dark-mode.php:172
-msgid "Display Switch in Menu"
-msgstr ""
-
-#: languages/wp-dark-mode.php:173
-msgid "Display the darkmode switch in your website menu."
-msgstr ""
-
-#: languages/wp-dark-mode.php:174
-msgid "Add Dark Mode switch to Menus from WordPress dashboard"
-msgstr ""
-
-#: languages/wp-dark-mode.php:175
-msgid "Drag & drop the Darkmode Switcher to any of your menus from the Menu option under Appearance settings in WordPress dashboard"
-msgstr ""
-
-#: languages/wp-dark-mode.php:176
-msgid "Go to Menu Settings"
-msgstr ""
-
-#: languages/wp-dark-mode.php:178
-msgid "Enabling this feature may delay WP Dark Mode to be applied on the frontend. Enable this feature only if you are facing issues with server-side caching."
-msgstr ""
-
-#: languages/wp-dark-mode.php:179
-msgid "Enable"
-msgstr ""
-
-#: languages/wp-dark-mode.php:180
-msgid "Choose Dark Mode behavior to enhance the performance"
-msgstr ""
-
-#: languages/wp-dark-mode.php:181
-msgid "Other Performance Settings"
-msgstr ""
-
-#: languages/wp-dark-mode.php:182
-msgid "Track Dynamic Content"
-msgstr ""
-
-#: languages/wp-dark-mode.php:183
-msgid "Please turn on this feature only if you have any Ajax Loaded dynamic content like ajax product filters, ajax page loader, ajax image loaders/sliders, lazy loaded images etc."
-msgstr ""
-
-#: languages/wp-dark-mode.php:184
-msgid "Load Scripts in Footer"
-msgstr ""
-
-#: languages/wp-dark-mode.php:185
-msgid "Enable this feature to improve page load performance and reduce render-blocking"
-msgstr ""
-
-#: languages/wp-dark-mode.php:186
-msgid "Exclude WP Dark Mode from Caching"
-msgstr ""
-
-#: languages/wp-dark-mode.php:187
-msgid "Enable this feature to exclude WP Dark Mode from server-side caching technology like Lightspeed Cache, WPRocket etc."
-msgstr ""
-
-#: languages/wp-dark-mode.php:188
-msgid "Preset Color Customization"
-msgstr ""
-
-#: languages/wp-dark-mode.php:189
-msgid "Customize the selected dark mode preset color in your way"
-msgstr ""
-
-#: languages/wp-dark-mode.php:190
-msgid "You already have a preset named"
-msgstr ""
-
-#: languages/wp-dark-mode.php:191
-msgid "Body Background Color"
-msgstr ""
-
-#: languages/wp-dark-mode.php:192
-msgid "Secondary Background Color"
-msgstr ""
-
-#: languages/wp-dark-mode.php:193
-msgid "Text Color"
-msgstr ""
-
-#: languages/wp-dark-mode.php:194
-msgid "Link Color"
-msgstr ""
-
-#: languages/wp-dark-mode.php:195
-msgid "Link Hover Color"
-msgstr ""
-
-#: languages/wp-dark-mode.php:196
-msgid "Background Color"
-msgstr ""
-
-#: languages/wp-dark-mode.php:197
-msgid "Input Text Color"
-msgstr ""
-
-#: languages/wp-dark-mode.php:198
-msgid "Placeholder Color"
-msgstr ""
-
-#: languages/wp-dark-mode.php:199
-msgid "Button Text Color"
-msgstr ""
-
-#: languages/wp-dark-mode.php:200
-msgid "Button Hover Text Color"
-msgstr ""
-
-#: languages/wp-dark-mode.php:201
-msgid "Button Background Color"
-msgstr ""
-
-#: languages/wp-dark-mode.php:202
-msgid "Button Hover Background Color"
-msgstr ""
-
-#: languages/wp-dark-mode.php:203
-msgid "Button Border Color"
-msgstr ""
-
-#: languages/wp-dark-mode.php:204
-msgid "Scrollbar Customization"
-msgstr ""
-
-#: languages/wp-dark-mode.php:205
-msgid "Customize the scrollbar of your website in dark mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:206
-msgid "Enable Dark Mode on Scrollbar"
-msgstr ""
-
-#: languages/wp-dark-mode.php:207
-msgid "Enable this option to customize your scrollbar while toggling to dark mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:208
-msgid "Track Background Color"
-msgstr ""
-
-#: languages/wp-dark-mode.php:209
-msgid "Thumb Background Color"
-msgstr ""
-
-#: languages/wp-dark-mode.php:210
-msgid "Select a switch from below and a shortcode will be generated"
-msgstr ""
-
-#: languages/wp-dark-mode.php:211
-msgid "Select Switch Style"
-msgstr ""
-
-#: languages/wp-dark-mode.php:212
-msgid "Floating Switch"
-msgstr ""
-
-#: languages/wp-dark-mode.php:213
-msgid "Menu Switch"
-msgstr ""
-
-#: languages/wp-dark-mode.php:214
-msgid "Content Switch"
-msgstr ""
-
-#: languages/wp-dark-mode.php:215
-msgid "Video Replacement"
-msgstr ""
-
-#: languages/wp-dark-mode.php:216
-msgid "Video Behavior"
-msgstr ""
-
-#: languages/wp-dark-mode.php:217
-msgid "Video Behavior When Dark Mode Is On"
-msgstr ""
-
-#: languages/wp-dark-mode.php:218
-msgid "Settings to change video appearance on dark mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:219
-msgid "Low Brightness Video"
-msgstr ""
-
-#: languages/wp-dark-mode.php:220
-msgid "Enable to set the brightness level of the videos on dark mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:221
-msgid "Exclude Low Brightness on specific videos"
-msgstr ""
-
-#: languages/wp-dark-mode.php:222
-msgid "Enter video URL"
-msgstr ""
-
-#: languages/wp-dark-mode.php:223
-msgid "No Video"
-msgstr ""
-
-#: languages/wp-dark-mode.php:224
-msgid "Grayscale Video"
-msgstr ""
-
-#: languages/wp-dark-mode.php:225
-msgid "Enable to set the grayscale level of the videos on dark mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:226
-msgid "New"
-msgstr ""
-
-#: languages/wp-dark-mode.php:227
-msgid "Pro"
-msgstr ""
-
-#: languages/wp-dark-mode.php:228
-msgid "Exclude Low Grayscale Videos"
-msgstr ""
-
-#: languages/wp-dark-mode.php:229
-msgid "Replace specific videos when dark mode is enabled"
-msgstr ""
-
-#: languages/wp-dark-mode.php:230
-msgid "No Videos Added"
-msgstr ""
-
-#: languages/wp-dark-mode.php:231
-msgid "Add videos to replace them in dark mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:232
-msgid "Replaced Videos"
-msgstr ""
-
-#: languages/wp-dark-mode.php:233
-msgid "These videos will be replaced in the dark mode"
-msgstr ""
-
-#: languages/wp-dark-mode.php:234
-msgid "Light Mode Video :"
-msgstr ""
-
-#: languages/wp-dark-mode.php:235
-msgid "Dark Mode Video :"
-msgstr ""
-
-#: languages/wp-dark-mode.php:236
-msgid "Mode Video"
-msgstr ""
-
-#: languages/wp-dark-mode.php:237
-msgid "Video URL"
-msgstr ""
-
-#: languages/wp-dark-mode.php:238
-msgid "Display Dark Mode switch using WordPress widget"
-msgstr ""
-
-#: languages/wp-dark-mode.php:239
-msgid "Please follow the steps below"
-msgstr ""
-
-#: languages/wp-dark-mode.php:240
-msgid "Click on the WP Darkmode Widget and you will see the available switches on the right side of the screen. Select the one that you like"
-msgstr ""
-
-#: languages/wp-dark-mode.php:241
-msgid "Click update and you are done! The switch will now be visible in the menu where you placed."
-msgstr ""
-
-#: templates/admin/social-share/base.php:16
-msgid "Social Share (Inline Button)"
-msgstr ""
-
-#: templates/admin/social-share/base.php:28
-msgid "Saved Successfully"
-msgstr ""
-
-#: templates/admin/social-share/channels.php:18
-msgid "Enable Social Share (Inline Button)"
-msgstr ""
-
-#: templates/admin/social-share/channels.php:28
-msgid "Enable your preferred social channels"
-msgstr ""
-
-#: templates/admin/social-share/channels.php:30
-msgid "Search Channel"
-msgstr ""
-
-#: templates/admin/social-share/channels.php:77
-msgid "Not found <span class=\"italic text-blue-500\" x-text=\"state.search_channels\"></span>"
-msgstr ""
-
-#: templates/admin/social-share/channels.php:90
-msgid "See less channels"
-msgstr ""
-
-#: templates/admin/social-share/channels.php:90
-msgid "See more channels"
-msgstr ""
-
-#: templates/admin/social-share/channels.php:98
-msgid "Unlock all channels"
-msgstr ""
-
-#: templates/admin/social-share/channels.php:106
-msgid "Manage channels"
-msgstr ""
-
-#: templates/admin/social-share/channels.php:107
-msgid "Reorder your social channels. You can edit the channel label and device visibility for each. Drag channels to change their order."
-msgstr ""
-
-#: templates/admin/social-share/customization.php:18
-msgid "Inline Button Template"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:18
-msgid "Choose any inline button template that suits your style"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:76
-msgid "More"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:96
-msgid "Share Label"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:97
-msgid "Share label appears before the inline button. Provide engaging texts to make sure your visitors are sharing the content!"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:101
-msgid "Sharing is Caring: "
-msgstr ""
-
-#: templates/admin/social-share/customization.php:109
-msgid "Button Position"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:109
-msgid "Choose the position where you want show your inline button."
-msgstr ""
-
-#: templates/admin/social-share/customization.php:122
-msgid "Button Alignment"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:122
-msgid "Choose the alignment of the button."
-msgstr ""
-
-#: templates/admin/social-share/customization.php:144
-msgid "Button Shape"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:144
-msgid "Choose the button shape that matches your site content."
-msgstr ""
-
-#: templates/admin/social-share/customization.php:157
-msgid "Button Size"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:157
-msgid "Choose the default size for your inline button."
-msgstr ""
-
-#: templates/admin/social-share/customization.php:170
-msgid "Button Label"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:170
-msgid "Button labels can display your channel’s name and share count."
-msgstr ""
-
-#: templates/admin/social-share/customization.php:183
-msgid "Hide Buttons on"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:183
-msgid "Select where you want to hide your inline button."
-msgstr ""
-
-#: templates/admin/social-share/customization.php:185
-#: templates/admin/social-share/customization.php:205
-#: templates/admin/social-share/customization.php:236
-#: templates/admin/social-share/customization.php:253
-#: templates/admin/social-share/customization.php:267
-#: templates/admin/social-share/customization.php:283
-#: templates/admin/social-share/customization.php:297
-msgid "Ultimate"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:203
-msgid "Display Buttons on"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:203
-msgid "Choose where the inline button will appear on your website."
-msgstr ""
-
-#: templates/admin/social-share/customization.php:234
-msgid "Button Spacing"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:234
-msgid "Select default spacing between each channel."
-msgstr ""
-
-#: templates/admin/social-share/customization.php:250
-msgid "Total Shares"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:251
-msgid "Enable total share counter. It will show how many times your content is shared via enabled channels."
-msgstr ""
-
-#: templates/admin/social-share/customization.php:264
-msgid "Minimum Share Count"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:265
-msgid "This is the minimum number of shares a page needs to have before the share counter is shown."
-msgstr ""
-
-#: templates/admin/social-share/customization.php:280
-msgid "Maximum Share Click"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:281
-msgid "This is the maximum number of click count on a social channel you want to show your visitors"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:294
-msgid "Channel Visibility Count"
-msgstr ""
-
-#: templates/admin/social-share/customization.php:295
-msgid "Set the number of channels that you want to show on your website. The rest will be shown after clicking on the 'More' button."
-msgstr ""
-
-#: templates/admin/social-share/preview.php:22
-msgid "Preview"
-msgstr ""
-
-#: templates/admin/upgrade-popup.php:53
+#: templates/admin/upgrade-popup.php:46
 msgid "Black Friday & Cyber Monday"
 msgstr ""
 
-#: templates/admin/upgrade-popup.php:53
+#: templates/admin/upgrade-popup.php:46
 msgid "Unlock all the features"
 msgstr ""
 
-#: templates/admin/upgrade-popup.php:56
+#: templates/admin/upgrade-popup.php:49
 msgid "Flash Sale"
 msgstr ""
 
-#: templates/admin/upgrade-popup.php:56
+#: templates/admin/upgrade-popup.php:49
 msgid "SPECIAL"
 msgstr ""
 
-#: templates/admin/upgrade-popup.php:63
+#: templates/admin/upgrade-popup.php:50
+msgid "%1$s%2$s OFF"
+msgstr ""
+
+#: templates/admin/upgrade-popup.php:57
 msgid "DAYS"
 msgstr ""
 
-#: templates/admin/upgrade-popup.php:67
+#: templates/admin/upgrade-popup.php:61
 msgid "HOURS"
 msgstr ""
 
-#: templates/admin/upgrade-popup.php:71
+#: templates/admin/upgrade-popup.php:65
 msgid "MINUTES"
 msgstr ""
 
-#: templates/admin/upgrade-popup.php:75
+#: templates/admin/upgrade-popup.php:69
 msgid "SECONDS"
 msgstr ""
 
-#: templates/admin/upgrade-popup.php:79
+#: templates/admin/upgrade-popup.php:73
 msgid "Claim 50% Discount"
 msgstr ""
 
-#: templates/frontend/social-share.php:206
+#: templates/admin/upgrade-popup.php:73
+msgid "Claim %1$s%2$s Discount"
+msgstr ""
+
+#: templates/admin/upgrade-popup.php:75
+msgid "Try a FREE demo"
+msgstr ""
+
+#: templates/frontend/social-share.php:209
 msgid "Share via:"
 msgstr ""
+
+#: includes/admin/class-strings.php:836
+msgid "No results found"
+msgstr ""
+
+#: includes/admin/class-strings.php:837
+msgid "No results found for \"{search}\""
+msgstr ""
+
+#: includes/admin/class-strings.php:838
+msgid "Enter your selected posts"
+msgstr ""
+
+
+

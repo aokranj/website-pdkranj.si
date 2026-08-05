@@ -235,7 +235,11 @@ if ( ! class_exists( __NAMESPACE__ . 'Assets' ) ) {
 			}
 
 			// Reset preset id if not premium.
-			if ( ! $this->is_ultimate() && $color_preset_id > 2 ) {
+			// Allow first 2 predefined presets (indices 0, 1) and first AI custom preset for free users.
+			$predefined_count    = count( \WP_Dark_Mode\Config::predefined_presets() );
+			$first_ai_preset_idx = $predefined_count; // Index 13 for ID 14.
+
+			if ( ! $this->is_ultimate() && $color_preset_id > 1 && $color_preset_id !== $first_ai_preset_idx ) {
 				$color_preset_id = 0;
 			}
 
@@ -260,8 +264,9 @@ if ( ! class_exists( __NAMESPACE__ . 'Assets' ) ) {
 
 			$enable_scrollbar = isset( $preset['enable_scrollbar'] ) && wp_validate_boolean( $preset['enable_scrollbar'] ) ? true : false;
 
-			$track_color = $enable_scrollbar ? ( isset( $preset['scrollbar_track'] ) && ! empty( $preset['scrollbar_track'] ) ? $preset['scrollbar_track'] : '' ) : '';
-			$thumb_color = $enable_scrollbar ? ( isset( $preset['scrollbar_thumb'] ) && ! empty( $preset['scrollbar_thumb'] ) ? $preset['scrollbar_thumb'] : '' ) : '';
+			// Get scrollbar colors with fallbacks to input colors
+			$track_color = $enable_scrollbar ? ( isset( $preset['scrollbar_track'] ) && ! empty( $preset['scrollbar_track'] ) ? $preset['scrollbar_track'] : $input_background_color ) : '';
+			$thumb_color = $enable_scrollbar ? ( isset( $preset['scrollbar_thumb'] ) && ! empty( $preset['scrollbar_thumb'] ) ? $preset['scrollbar_thumb'] : $input_text_color ) : '';
 
 			$elements = array( 'div', 'aside', 'header', 'footer', 'main', 'section', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'article', 'nav', 'ul', 'ol', 'li', 'nav', 'span', 'i', 'b', 'strong', 'em', 'small', 'big', 'pre', 'code', 'blockquote', 'q', 'cite' );
 			$not = array( 'a', 'button', '.button', 'template', 'iframe', 'video', 'media', 'svg', 'img', 'audio', 'input', 'textarea', 'form', 'select', '.elementor-button' );
@@ -298,38 +303,99 @@ if ( ! class_exists( __NAMESPACE__ . 'Assets' ) ) {
 				$background_color, $text_color, $link_color, $link_hover_color, $input_background_color, $input_text_color, $input_placeholder_color, $button_text_color, $button_hover_text_color, $button_background_color, $button_hover_background_color, $button_border_color, $track_color, $thumb_color
 			);
 
-			// Has scrollbar.
+			// Has scrollbar - inject via JS to override dark mode engine
 			if ( $enable_scrollbar ) {
-				$styles .= wp_sprintf(
-					'[data-wp-dark-mode-active] {
-						scrollbar-color: var(--wpdm-scrollbar-thumb-color) var(--wpdm-scrollbar-track-color) !important;
-					}
+				$thumb = ! empty( $thumb_color ) ? $thumb_color : '#888888';
+				$track = ! empty( $track_color ) ? $track_color : '#2d2d2d';
 
-					[data-wp-dark-mode-active] body::-webkit-scrollbar-track {
-						background-color: var(--wpdm-scrollbar-track-color) !important;
-					}
-			
-					[data-wp-dark-mode-active] body::-webkit-scrollbar-thumb {
-						background-color: var(--wpdm-scrollbar-thumb-color) !important;
-					}
-		
-					html[data-wp-dark-mode-active] body::-webkit-scrollbar {
-						width: .5rem;
-					}
-						
-					[data-wp-dark-mode-active] body::-webkit-scrollbar-track {
-						box-shadow: inset 0 0 3px var(--wpdm-scrollbar-track-color);
-					}
-					
-					[data-wp-dark-mode-active] body::-webkit-scrollbar-thumb {
-						background-color: var(--wpdm-scrollbar-thumb-color);
-						outline: 1px solid var(--wpdm-scrollbar-thumb-color);
-					}'
+				add_action(
+					'wp_footer',
+					function () use ( $thumb, $track ) {
+						$this->render_scrollbar_script( $thumb, $track );
+					},
+					9999
 				);
 			}
 
 			// Return the styles.
 			return apply_filters( 'wp_dark_mode_preset_styles', $styles );
+		}
+
+		/**
+		 * Renders scrollbar script for dark mode.
+		 *
+		 * @since 5.0.0
+		 *
+		 * @param string $thumb Scrollbar thumb color.
+		 * @param string $track Scrollbar track color.
+		 */
+		public function render_scrollbar_script( $thumb, $track ) {
+			?>
+			<script>
+			(function() {
+				function applyScrollbarStyles() {
+					if (!document.documentElement.hasAttribute('data-wp-dark-mode-active')) {
+						document.documentElement.style.removeProperty('scrollbar-color');
+						return;
+					}
+					document.documentElement.style.setProperty('scrollbar-color', '<?php echo esc_js( $thumb ); ?> <?php echo esc_js( $track ); ?>', 'important');
+
+					// Find and remove dark mode engine scrollbar styles.
+					var styles = document.querySelectorAll('style');
+					styles.forEach(function(style) {
+						if (style.id === 'wp-dark-mode-scrollbar-custom') return;
+						if (style.textContent && style.textContent.indexOf('::-webkit-scrollbar') !== -1 && style.textContent.indexOf('<?php echo esc_js( $track ); ?>') === -1) {
+							style.textContent = style.textContent.replace(/::-webkit-scrollbar[^}]*\{[^}]*\}/g, '');
+							style.textContent = style.textContent.replace(/::-webkit-scrollbar-track[^}]*\{[^}]*\}/g, '');
+							style.textContent = style.textContent.replace(/::-webkit-scrollbar-thumb[^{]*\{[^}]*\}/g, '');
+							style.textContent = style.textContent.replace(/::-webkit-scrollbar-corner[^}]*\{[^}]*\}/g, '');
+						}
+					});
+
+					// Inject our styles.
+					var existing = document.getElementById('wp-dark-mode-scrollbar-custom');
+					if (!existing) {
+						var customStyle = document.createElement('style');
+						customStyle.id = 'wp-dark-mode-scrollbar-custom';
+						customStyle.textContent =
+							'::-webkit-scrollbar { width: 12px !important; height: 12px !important; background: <?php echo esc_js( $track ); ?> !important; }' +
+							'::-webkit-scrollbar-track { background: <?php echo esc_js( $track ); ?> !important; }' +
+							'::-webkit-scrollbar-thumb { background: <?php echo esc_js( $thumb ); ?> !important; border-radius: 6px; }' +
+							'::-webkit-scrollbar-thumb:hover { filter: brightness(1.2); }' +
+							'::-webkit-scrollbar-corner { background: <?php echo esc_js( $track ); ?> !important; }';
+						document.body.appendChild(customStyle);
+					}
+				}
+
+				// Listen for dark mode changes.
+				document.addEventListener('wp_dark_mode', function(e) {
+					setTimeout(applyScrollbarStyles, 100);
+					setTimeout(applyScrollbarStyles, 500);
+					setTimeout(applyScrollbarStyles, 1000);
+				});
+
+				// Observe attribute changes.
+				var observer = new MutationObserver(function(mutations) {
+					mutations.forEach(function(mutation) {
+						if (mutation.attributeName === 'data-wp-dark-mode-active') {
+							var existing = document.getElementById('wp-dark-mode-scrollbar-custom');
+							if (existing && !document.documentElement.hasAttribute('data-wp-dark-mode-active')) {
+								existing.remove();
+							}
+							setTimeout(applyScrollbarStyles, 100);
+							setTimeout(applyScrollbarStyles, 500);
+						}
+					});
+				});
+				observer.observe(document.documentElement, { attributes: true });
+
+				// Initial apply.
+				setTimeout(applyScrollbarStyles, 100);
+				setTimeout(applyScrollbarStyles, 500);
+				setTimeout(applyScrollbarStyles, 1000);
+			})();
+			</script>
+			<?php
 		}
 
 		/**

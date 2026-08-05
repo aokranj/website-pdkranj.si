@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit();
 <section class="w-full max-md p-3 max-w-md" x-show="isTab('channels')" x-transition:enter.opacity.40>
 	<!-- enable social share	-->
 	<div class="flex items-center justify-between mb-8">
-		<label for="enable" class="font-semibold text-sm text-slate-700 cursor-pointer w-3/4"><?php esc_html_e( 'Enable Social Share (Inline Button)', 'wp-dark-mode' ); ?></label>
+		<label for="enable" class="font-semibold text-sm text-slate-700 cursor-pointer w-3/4"><?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'social_share_inline' ) ); ?></label>
 		<label for="enable" class="_switcher">
 			<input type="checkbox" id="enable" x-model="options.enable" @change="toggleSocialShare">
 			<span></span>
@@ -26,9 +26,9 @@ defined( 'ABSPATH' ) || exit();
 	<!-- content	-->
 	<div class="w-full transition duration-150 relative" x-show="options.enable">
 	<!-- :class=" {'opacity-20 pointer-events-none' : !options.enable}" -->
-		<label class="font-semibold text-sm text-slate-700 cursor-pointer block mb-2"><?php esc_html_e( 'Enable your preferred social channels', 'wp-dark-mode' ); ?></label>
+		<label class="font-semibold text-sm text-slate-700 cursor-pointer block mb-2"><?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'enable_preferred_channels' ) ); ?></label>
 		<div class="relative">
-			<input type="text" x-model="state.search_channels" class="input-text text-xs" placeholder="<?php esc_html_e( 'Search Channel', 'wp-dark-mode' ); ?>">
+			<input type="text" x-model="state.search_channels" class="input-text text-xs" placeholder="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'search_channel' ) ); ?>">
 
 			<svg xmlns="http://www.w3.org/2000/svg" @click.prevent="state.search_channels = ''" class="w-3 fill-current cursor-pointer absolute right-2 top-1/2 -translate-y-1/2 opacity-30 hover:opacity-100 transition duration-150" 
 				viewBox="0 0 16 16">
@@ -75,7 +75,7 @@ defined( 'ABSPATH' ) || exit();
 
 
 		<div x-show="!filteredChannels.length" class="text-slate-400 text-center mt-4">
-			<?php esc_html_e( 'Not found <span class="italic text-blue-500" x-text="state.search_channels"></span>', 'wp-dark-mode' ); ?>
+			<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'not_found' ) ); ?> <span class="italic text-blue-500" x-text="state.search_channels"></span>
 		</div>
 
 		<!-- channel footer buttons	-->
@@ -88,7 +88,7 @@ defined( 'ABSPATH' ) || exit();
 				<svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-3 transition duration-300" :class="{'rotate-180' : state.showAllChannels}" viewBox="0 0 16 16">
 					<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
 				</svg>
-				<span x-text="state.showAllChannels ? ' <?php esc_html_e( 'See less channels', 'wp-dark-mode' ); ?>' : ' <?php esc_html_e( 'See more channels', 'wp-dark-mode' ); ?>'"></span>
+				<span x-text="state.showAllChannels ? ' <?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'see_less_channels' ) ); ?>' : ' <?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'see_more_channels' ) ); ?>'"></span>
 			</a>
 
 			<!-- Unlock button -->
@@ -96,7 +96,7 @@ defined( 'ABSPATH' ) || exit();
 				x-show="isFree" 
 				class="bg-red-50 px-2 py-1 rounded-sm font-medium focus:outline-none focus:ring-red-400 text-red-600 ring-1 ring-red-200 hover:text-red-400 hover:opacity-75 transition duration-150" 
 				@click.prevent="showPromo">
-				<?php esc_html_e( 'Unlock all channels', 'wp-dark-mode' ); ?>
+				<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'unlock_all_channels' ) ); ?>
 			</a>
 		</div>
 
@@ -104,8 +104,8 @@ defined( 'ABSPATH' ) || exit();
 		<div class="mt-8">
 			<!-- title  -->
 			<label class="font-semibold text-sm text-slate-700 cursor-pointer mb-2 flex gap-2">
-				<?php esc_html_e( 'Manage channels', 'wp-dark-mode' ); ?> 
-				<span class="wpdarkmode-tooltip" title="<?php esc_html_e( 'Reorder your social channels. You can edit the channel label and device visibility for each. Drag channels to change their order.', 'wp-dark-mode' ); ?>"></span>
+				<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'manage_channels' ) ); ?> 
+				<span class="wpdarkmode-tooltip" title="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'manage_channels_tooltip' ) ); ?>"></span>
 			</label>
 
 			<!-- manage channels; sortable, editable  -->
@@ -231,9 +231,9 @@ defined( 'ABSPATH' ) || exit();
 
 			<!-- Modal Header -->
 			<div class="mb-4">
-				<h3 class="text-xl font-semibold text-gray-900"><?php esc_html_e( 'Edit Prompt', 'wp-dark-mode' ); ?></h3>
+				<h3 class="text-xl font-semibold text-gray-900"><?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'edit_prompt' ) ); ?></h3>
 				<p class="text-sm text-gray-600 mt-2">
-					<?php esc_html_e( 'Customize the prompt that will be sent to', 'wp-dark-mode' ); ?> <span x-text="state.promptModal.channel?.name" class="font-medium"></span> <?php esc_html_e( 'when someone clicks this share button. Visitors will be redirected with this prompt pre-filled.', 'wp-dark-mode' ); ?>
+					<?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'customize_prompt_desc_1' ) ); ?> <span x-text="state.promptModal.channel?.name" class="font-medium"></span> <?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'customize_prompt_desc_2' ) ); ?>
 				</p>
 			</div>
 			
@@ -249,7 +249,7 @@ defined( 'ABSPATH' ) || exit();
 						}"
 						:disabled="isFree"
 						class="w-full h-32 px-3 py-2 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-						placeholder="<?php esc_attr_e( 'Visit this URL: {page_url} and summarize the content for me.', 'wp-dark-mode' ); ?>"></textarea>
+						placeholder="<?php echo esc_attr( \WP_Dark_Mode\Admin\Strings::get( 'default_ai_prompt' ) ); ?>"></textarea>
 					
 					<!-- Upgrade Button on Textarea Hover Only (Free Version Only) -->
 					<div x-show="isFree" 
@@ -266,7 +266,7 @@ defined( 'ABSPATH' ) || exit();
 									<!-- Small indicator dot -->
 									<div class="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-yellow-400 rounded-full"></div>
 								</div>
-								<span class="text-sm font-bold"><?php esc_html_e( 'Upgrade Now', 'wp-dark-mode' ); ?></span>
+								<span class="text-sm font-bold"><?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'upgrade_now' ) ); ?></span>
 								<!-- Chevron with hover animation (smaller) -->
 								<svg class="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -278,7 +278,7 @@ defined( 'ABSPATH' ) || exit();
 				
 				<!-- Available Variables (separate from textarea hover) -->
 				<div class="mt-3 text-xs" :class="isFree ? 'text-gray-400' : 'text-gray-500'">
-					<span class="font-medium"><?php esc_html_e( 'Available variables:', 'wp-dark-mode' ); ?></span>
+					<span class="font-medium"><?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'available_variables' ) ); ?></span>
 					<span class="ml-1">{page_title}, {page_url}, {site_name}, {site_url}, {language}</span>
 				</div>
 			</div>
@@ -307,7 +307,7 @@ defined( 'ABSPATH' ) || exit();
 						viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
 					</svg>
-					<span style="margin-left: 5px;"><?php esc_html_e( 'Reset to default', 'wp-dark-mode' ); ?></span>
+					<span style="margin-left: 5px;"><?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'reset_to_default' ) ); ?></span>
 				</button>
 				
 				<!-- Done Button - Same Height as Reset Button -->
@@ -322,7 +322,7 @@ defined( 'ABSPATH' ) || exit();
 					style="transition: all 0.2s;"
 					@mouseenter="!isFree && ($el.style.backgroundColor = 'rgb(59 130 246)', $el.style.color = 'white', $el.style.borderColor = 'rgb(59 130 246)')"
 					@mouseleave="!isFree && ($el.style.backgroundColor = 'rgb(249 250 251)', $el.style.color = 'rgb(75 85 99)', $el.style.borderColor = 'rgb(229 231 235)')">
-					<span><?php esc_html_e( 'Done', 'wp-dark-mode' ); ?></span>
+					<span><?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'done' ) ); ?></span>
 				</button>
 			</div>
 		</div>

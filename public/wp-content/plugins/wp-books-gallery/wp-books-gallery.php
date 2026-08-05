@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Plugin Name:	        HM Books Gallery
+ * Plugin Name:	        WP Books Gallery
  * Plugin URI:	        https://wordpress.org/plugins/wp-books-gallery/
- * Description:	        Best Books Showcase & Library Plugin for WordPress which will build a beautiful mobile-friendly Book Store, Gallery, Library in a few minutes.
- * Version:		        4.7.7
- * Requires at least:   5.4
- * Requires PHP:        7.2
+ * Description:	        WordPress Book Gallery will build a mobile-friendly book gallery, book showcase, or book library in a few minutes.
+ * Version:		        4.8.3
+ * Requires at least:   5.8
+ * Requires PHP:        7.4
  * Author:		        HM Plugin
  * Author URI:	        https://hmplugin.com
- * Tested up to:        6.9
+ * Tested up to:        7.0.2
  * Text Domain:         wp-books-gallery
  * Domain Path:         /languages
  * License:		        GPL-2.0+
@@ -28,12 +28,12 @@ if ( function_exists( 'wbg_fs' ) ) {
         define( 'WBG_PRFX', 'wbg_' );
         define( 'WBG_CLS_PRFX', 'cls-books-gallery-' );
         define( 'WBG_TXT_DOMAIN', 'wp-books-gallery' );
-        define( 'WBG_VERSION', '4.7.7' );
+        define( 'WBG_VERSION', '4.8.3' );
         require_once WBG_PATH . "/lib/freemius-integrator.php";
         require_once WBG_PATH . 'inc/' . WBG_CLS_PRFX . 'master.php';
         $wbg = new WBG_Master();
         $wbg->wbg_run();
-        // Extra link to plugin description
+        // Donate us link to plugin description
         add_filter(
             'plugin_row_meta',
             'wbg_plugin_row_meta',
@@ -69,12 +69,19 @@ if ( function_exists( 'wbg_fs' ) ) {
         // include your custom post type on category and tags pages
         function wbg_custom_post_type_cat_filter(  $query  ) {
             global $pagenow;
+            $wbgIncBookPostCatEnabled = false;
+            $wbgCoreSettings = get_option( 'wbg_core_settings' );
+            if ( !empty( $wbgCoreSettings ) ) {
+                $wbgIncBookPostCatEnabled = ( isset( $wbgCoreSettings['wbg_inc_book_post_cat'] ) ? $wbgCoreSettings['wbg_inc_book_post_cat'] : false );
+            }
             $type = 'post';
             if ( isset( $_GET['post_type'] ) ) {
                 $type = $_GET['post_type'];
             }
             if ( is_category() && (!isset( $query->query_vars['suppress_filters'] ) || false == $query->query_vars['suppress_filters']) ) {
-                $query->set( 'post_type', array('post', 'books') );
+                if ( $wbgIncBookPostCatEnabled ) {
+                    $query->set( 'post_type', array('post', 'books') );
+                }
             }
             if ( $query->is_tag() && $query->is_main_query() ) {
                 $query->set( 'post_type', array('post', 'books') );
@@ -173,5 +180,40 @@ if ( function_exists( 'wbg_fs' ) ) {
             return site_url();
         }
 
+        // Add a books gallery slug option in permalink setting
+        add_action( 'admin_init', function () {
+            add_settings_field(
+                'wbg_cpt_slug',
+                __( 'Books Gallery Slug', 'wp-books-gallery' ),
+                'wbg_cpt_slug_output',
+                'permalink',
+                'optional'
+            );
+        } );
+        // Setting output
+        function wbg_cpt_slug_output() {
+            wp_nonce_field( 'wbg_cpt_slug_permalink_action', 'wbg_cpt_slug_permalink_nonce' );
+            ?>
+            <input type="text" name="wbg_cpt_slug" value="<?php 
+            esc_attr_e( get_option( 'wbg_cpt_slug' ) );
+            ?>" placeholder="<?php 
+            echo 'books';
+            ?>" class="regular-text code" />
+            <?php 
+        }
+
+        // Save setting
+        add_action( 'admin_init', function () {
+            if ( isset( $_POST['permalink_structure'] ) && current_user_can( 'manage_options' ) ) {
+                if ( isset( $_POST['_wp_http_referer'] ) && strpos( $_POST['_wp_http_referer'], 'options-permalink.php' ) !== false ) {
+                    // Checking the nonce exists and is valid
+                    if ( !isset( $_POST['wbg_cpt_slug_permalink_nonce'] ) || !wp_verify_nonce( $_POST['wbg_cpt_slug_permalink_nonce'], 'wbg_cpt_slug_permalink_action' ) ) {
+                        wp_die( 'Security check failed' );
+                    } else {
+                        update_option( 'wbg_cpt_slug', trim( sanitize_text_field( $_POST['wbg_cpt_slug'] ) ) );
+                    }
+                }
+            }
+        } );
     }
 }

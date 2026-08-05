@@ -1,3 +1,32 @@
+= 2.9.3 =
+*Release Date - July 28, 2026*
+
+* fixed: incomplete fix for default constants not defined
+* fixed: PHP notice when checking memory limit
+* fixed: string missing i18n
+
+= 2.9.2 =
+*Relase Date - June 9, 2026*
+
+* fixed: make sure options are not autoloaded by WordPress
+* fixed: fatal error when default constants not defined, usually due to early init by other plugins
+
+= 2.9.1 =
+*Release Date - June 4, 2026*
+
+* changed: make the default settings filterable by other plugins/themes
+* fixed: undefined properties for AVIF/WebP quality on multi-site installations
+
+= 2.9.0 =
+*Release Date - February 10, 2026*
+
+* added: support for resizing AVIF image uploads
+* added: settings for WebP and AVIF quality
+* added: support for Modern Image Formats plugin
+* added: PHP 8.5 compatibility
+* fixed: quality settings not applied
+* fixed: PNG alpha detection may throw errors if PHP GD cannot obtain information from a PNG image
+
 = 2.8.7 =
 *Release Date = August 6, 2024*
 

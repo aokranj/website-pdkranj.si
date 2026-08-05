@@ -13,14 +13,11 @@ if ( is_front_page() ) {
 $wbg_front_search_query_array = array(
     'post_type'   => 'books',
     'post_status' => 'publish',
-    'meta_query'  => array(
-        'relation' => 'AND',
-        array(
-            'key'     => 'wbg_status',
-            'value'   => 'active',
-            'compare' => '=',
-        ),
-    ),
+    'meta_query'  => array(array(
+        'key'     => 'wbg_status',
+        'value'   => 'active',
+        'compare' => '=',
+    )),
     'tax_query'   => array(
         'relation' => 'AND',
     ),
@@ -28,8 +25,6 @@ $wbg_front_search_query_array = array(
 $wbgBooksArr = apply_filters( 'wbg_front_search_query_array', $wbg_front_search_query_array );
 include 'gallery/main-query.php';
 include 'gallery/sorting.php';
-//echo '<pre>';
-//print_r($wbgBooksArr);
 ?>
 <div class="wbg-parent-wrapper">
   <?php 
@@ -74,7 +69,10 @@ if ( $wbgBooks->have_posts() ) {
         if ( 'f' === $wbg_book_cover_priority ) {
             if ( get_the_post_thumbnail( get_the_ID() ) ) {
                 //$feat_image = get_the_post_thumbnail(  $post->ID, $wbg_book_cover_resulution );
-                $feat_image = '<img src="' . esc_url( get_the_post_thumbnail_url( $post->ID, $wbg_book_cover_resulution ) ) . '" alt="' . get_the_title() . '" style="height:' . $wbg_book_cover_size_imp . 'px; object-fit: fill;">';
+                $thumbnail_id = get_post_thumbnail_id( get_the_ID() );
+                $wbg_img_alt = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );
+                $wbg_img_alt = ( !empty( $wbg_img_alt ) ? $wbg_img_alt : get_the_title() );
+                $feat_image = '<img src="' . esc_url( get_the_post_thumbnail_url( $post->ID, $wbg_book_cover_resulution ) ) . '" alt="' . esc_attr( $wbg_img_alt ) . '" style="height:' . $wbg_book_cover_size_imp . 'px; object-fit: fill;">';
             } else {
                 if ( $wbgImgUrl ) {
                     $feat_image = '<img src="' . esc_url( $wbgImgUrl ) . '" alt="' . get_the_title() . '" style="height:' . $wbg_book_cover_size_imp . 'px; object-fit: fill;">';
@@ -97,6 +95,9 @@ if ( $wbgBooks->have_posts() ) {
         }
         if ( 'grid-classic' === $wbg_gallary_template ) {
             include 'gallery/layout/grid-classic.php';
+        }
+        if ( 'grid-only-img' === $wbg_gallary_template ) {
+            include 'gallery/layout/grid-only-img.php';
         }
     }
     ?>

@@ -34,7 +34,9 @@ class Imsanity_CLI extends WP_CLI_Command {
 	public function resize( $args, $assoc_args ) {
 
 		// let's get started, shall we?
-		// imsanity_init();.
+		if ( ! defined( 'IMSANITY_DEFAULT_MAX_WIDTH' ) ) {
+			imsanity_init();
+		}
 		$maxw = imsanity_get_option( 'imsanity_max_width', IMSANITY_DEFAULT_MAX_WIDTH );
 		$maxh = imsanity_get_option( 'imsanity_max_height', IMSANITY_DEFAULT_MAX_HEIGHT );
 
@@ -75,7 +77,11 @@ class Imsanity_CLI extends WP_CLI_Command {
 
 			$path = get_attached_file( $id );
 			if ( $path ) {
-				list( $imagew, $imageh ) = getimagesize( $path );
+				$dimensions = getimagesize( $path );
+				if ( is_array( $dimensions ) && count( $dimensions ) >= 2 ) {
+					$imagew = $dimensions[0];
+					$imageh = $dimensions[1];
+				}
 			}
 			if ( empty( $imagew ) || empty( $imageh ) ) {
 				continue;

@@ -32,6 +32,5 @@ foreach( $booksCategories as $bc ) {
     <h3 class="wbg-book-category"><?php esc_html_e( $bc->name ); ?> ::</h3>
     <?php
     echo do_shortcode('[wp_books_gallery category="' . $bc->name . '" search=0 display-total=0 no-book-message="Hide" isdisplay=100 layout="grid"]');
-
 }
 ?>

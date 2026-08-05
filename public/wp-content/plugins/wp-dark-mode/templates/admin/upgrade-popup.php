@@ -19,23 +19,15 @@ if ( empty( $countdown_timer ) || $countdown_timer < time() ) {
 	set_transient( 'wp_dark_mode_promo_countdown_timer', $countdown_timer, 14 * HOUR_IN_SECONDS );
 }
 
-$campaign_starts = strtotime( '2025-11-17 00:00:00' );
-$campaign_ends = strtotime( '2025-12-04 23:59:59' );
+$campaign_starts = strtotime( '2026-06-24 17:00:00' );
+$campaign_ends = strtotime( '2026-07-14 23:59:59' );
 
 $is_campaign = $campaign_ends > time() && $campaign_starts < time();
 
 // Formatted data.
 $data = [
 	'counter_time' => $is_campaign ? $campaign_ends : $countdown_timer,
-	'discount'     => $is_campaign ? 50 : 35,
-];
-
-$countdown_time = [
-	'year'   => gmdate( 'Y', $data['counter_time'] ),
-	'month'  => gmdate( 'm', $data['counter_time'] ),
-	'day'    => gmdate( 'd', $data['counter_time'] ),
-	'hour'   => gmdate( 'H', $data['counter_time'] ),
-	'minute' => gmdate( 'i', $data['counter_time'] ),
+	'discount'     => $is_campaign ? 50 : 16,
 ];
 
 $class = 'wp-dark-mode-promo-campaign';
@@ -51,11 +43,13 @@ $class = 'wp-dark-mode-promo-campaign';
 
 		<?php
 		echo wp_sprintf( '<h3 class="promo-title">%s</h3>',
-		$is_campaign ? esc_html__('Black Friday & Cyber Monday', 'wp-dark-mode') : esc_html__( 'Unlock all the features', 'wp-dark-mode' ) );
+		$is_campaign ? esc_html__('SUMMER SALE ☀️', 'wp-dark-mode') : esc_html__( 'Unlock all the features', 'wp-dark-mode' ) );
 
-		echo wp_sprintf( '<div class="discount"> <span class="discount-special">%s</span> <span class="discount-text">%s%s OFF</span></div>',
-			$is_campaign ? esc_html__( 'Flash Sale', 'wp-dark-mode' ) : esc_html__( 'SPECIAL', 'wp-dark-mode' ),
-			esc_html( $data['discount'] ), '%' );
+		echo wp_sprintf( '<div class="discount"> <span class="discount-special">%s</span> <span class="discount-text">%s</span></div>',
+			$is_campaign ? esc_html__( 'UP TO', 'wp-dark-mode' ) : esc_html__( 'SPECIAL', 'wp-dark-mode' ),
+			/* translators: 1: discount amount, 2: percent sign */
+			wp_sprintf( esc_html__( '%1$s%2$s OFF', 'wp-dark-mode' ), esc_html( $data['discount'] ), '%' )
+		);
 		?>
 
 		<div class="wp-dark-mode-timer">
@@ -77,9 +71,9 @@ $class = 'wp-dark-mode-promo-campaign';
 			</div>
 		</div>
 
-		<a class="wpdm-popup-button" href="<?php echo esc_url( $is_campaign ? 'https://lnk.wppool.dev/9nBcs15' : 'https://go.wppool.dev/LaSV' ); ?>" target="_blank"><?php echo $is_campaign ? esc_html__('Claim 50% Discount', 'wp-dark-mode') : wp_sprintf( 'Claim %s%s Discount', esc_html( $data['discount'] ), '%' ); ?></a>
+		<a class="wpdm-popup-button" href="<?php echo esc_url( $is_campaign ? 'https://lnk.wppool.dev/AAGukuk' : 'https://go.wppool.dev/LaSV' ); ?>" target="_blank"><?php echo $is_campaign ? esc_html__( 'Save Now 💰', 'wp-dark-mode' ) : /* translators: 1: discount amount, 2: percent sign */ wp_sprintf( esc_html__( 'Claim %1$s%2$s Discount', 'wp-dark-mode' ), esc_html( $data['discount'] ), '%' ); ?></a>
 
-		<a class="wpdm-popup-demo-link" href="https://go.wppool.dev/bjxy" target="_blank">Try a FREE demo</a>
+		<a class="wpdm-popup-demo-link" href="https://go.wppool.dev/bjxy" target="_blank"><?php esc_html_e( 'Try a FREE demo', 'wp-dark-mode' ); ?></a>
 	</div>
 
 	<style>
@@ -113,22 +107,24 @@ $class = 'wp-dark-mode-promo-campaign';
 
 		.wp-dark-mode-timer > div {
 			display: inline-block;
-			margin: 0 14px;
+			margin: 0 10px;
 
-			width: 47px;
-			background: url(<?php echo esc_url( WP_DARK_MODE_ASSETS ) . '/images/timer.svg'; ?>) no-repeat 0 0;
-			background-size: contain;
+			width: 60px;
+			background: url(<?php echo esc_url( WP_DARK_MODE_ASSETS ) . '/images/timer.svg'; ?>) no-repeat center 0;
+			background-size: 60px 60px;
 			line-height: 40px;
 		}
 
 		.wp-dark-mode-timer > div > span:first-child {
 			font-size: 28px;
 			color: #fff;
-			height: 47px;
+			height: 60px;
 			margin: 0 0 2px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			display: block;
+			text-align: center;
+			line-height: 60px;
+			white-space: nowrap;
+			overflow: hidden;
 		}
 
 		.wp-dark-mode-timer > div > span:last-child {
@@ -141,6 +137,11 @@ $class = 'wp-dark-mode-promo-campaign';
 		.wp-dark-mode-promo-inner .discount {
 			position: relative;
 			margin: 45px 0 15px;
+		}
+
+		.wp-dark-mode-promo-inner .wpdm-popup-button {
+			font-size: 18px;
+			padding: 10px 20px;
 		}
 	</style>
 
@@ -159,40 +160,53 @@ $class = 'wp-dark-mode-promo-campaign';
 				return document.querySelector('.wp-dark-mode-promo .close-promo') || null;
 			},
 			startCountdown () {
-				const THIS = this;
-				const countDownDate = new Date('<?php echo esc_html( $countdown_time['year'] ); ?>-<?php echo esc_html( $countdown_time['month'] ); ?>-<?php echo esc_html( $countdown_time['day'] ); ?> <?php echo esc_html( $countdown_time['hour'] ); ?>:<?php echo esc_html( $countdown_time['minute'] ); ?>:00').getTime();
-				
-				const el = s => document.querySelector(s);
+				// Use PHP Unix timestamp directly (× 1000 for JS ms).
+				// This avoids timezone parsing bugs from date strings without timezone info.
+				const countDownDate = <?php echo (int) $data['counter_time']; ?> * 1000;
+
+				const pad = n => String( Math.max( 0, n ) ).padStart( 2, '0' );
+
+				const calc = distance => ( {
+					days:    Math.floor( distance / ( 1000 * 60 * 60 * 24 ) ),
+					hours:   Math.floor( ( distance % ( 1000 * 60 * 60 * 24 ) ) / ( 1000 * 60 * 60 ) ),
+					minutes: Math.floor( ( distance % ( 1000 * 60 * 60 ) ) / ( 1000 * 60 ) ),
+					seconds: Math.floor( ( distance % ( 1000 * 60 ) ) / 1000 ),
+				} );
+
+				const render = values => {
+					['days', 'hours', 'minutes', 'seconds'].forEach( unit => {
+						const el = document.querySelector( `[data-${unit}]` );
+						if ( el ) el.textContent = pad( values[ unit ] );
+					} );
+				};
+
+				const zero = () => {
+					['days', 'hours', 'minutes', 'seconds'].forEach( unit => {
+						const el = document.querySelector( `[data-${unit}]` );
+						if ( el ) el.textContent = '00';
+					} );
+				};
+
+				// Render immediately (no 1-second blank on open).
+				const dist0 = countDownDate - Date.now();
+				if ( dist0 > 0 ) {
+					render( calc( dist0 ) );
+				} else {
+					zero();
+					return;
+				}
 
 				const x = setInterval( function () {
-					const now = new Date().getTime();
-					const distance = countDownDate - now;
+					const distance = countDownDate - Date.now();
 
-					const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-					const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-					const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-					const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+					if ( distance <= 0 ) {
+						clearInterval( x );
+						zero();
+						return;
+					}
 
-					['days', 'hours', 'minutes', 'seconds'].forEach( unit => {
-						const el = document.querySelector(`[data-${unit}]`);
-						const value = eval(unit);
-
-						if( el === null ) {
-							return;
-						}
-
-						if (value < 10) {
-							el.innerHTML = `0${value}`;
-						} else {
-							el.innerHTML = value;
-						}
-					});
-
-					if (distance < 0) {
-						clearInterval(x);
-						document.querySelector('.wp-dark-mode-timer')?.innerHTML('<span class="expired">EXPIRED</span>');							}
-				}, 1000);
-
+					render( calc( distance ) );
+				}, 1000 );
 			},
 			show() {
 				this.container?.classList.remove('hidden');

@@ -9,20 +9,21 @@ if ( !function_exists( 'wbg_fs' ) ) {
         global $wbg_fs;
         if ( !isset( $wbg_fs ) ) {
             // Include Freemius SDK.
-            require_once WBG_PATH . '/freemius/start.php';
+            require_once WBG_PATH . 'vendor/freemius/start.php';
             $wbg_fs = fs_dynamic_init( array(
-                'id'             => '8841',
-                'slug'           => 'wp-books-gallery',
-                'type'           => 'plugin',
-                'public_key'     => 'pk_0a8ec2eb28cd4919f2bed771a51da',
-                'is_premium'     => false,
-                'has_addons'     => false,
-                'has_paid_plans' => true,
-                'menu'           => array(
+                'id'               => '8841',
+                'slug'             => 'wp-books-gallery',
+                'type'             => 'plugin',
+                'public_key'       => 'pk_0a8ec2eb28cd4919f2bed771a51da',
+                'is_premium'       => false,
+                'has_addons'       => false,
+                'has_paid_plans'   => true,
+                'menu'             => array(
                     'slug'       => 'edit.php?post_type=books',
                     'first-path' => 'edit.php?post_type=books&page=wbg-get-help',
                 ),
-                'is_live'        => true,
+                'is_live'          => true,
+                'is_org_compliant' => true,
             ) );
         }
         return $wbg_fs;

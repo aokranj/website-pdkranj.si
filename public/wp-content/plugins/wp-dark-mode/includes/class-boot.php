@@ -138,6 +138,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Boot' ) ) {
 
 			require_once WP_DARK_MODE_INCLUDES . '/admin/class-admin-install.php';
 			require_once WP_DARK_MODE_INCLUDES . '/admin/class-admin-menus.php';
+			require_once WP_DARK_MODE_INCLUDES . '/admin/class-strings.php';
 			require_once WP_DARK_MODE_INCLUDES . '/admin/class-admin-assets.php';
 
 			require_once WP_DARK_MODE_INCLUDES . '/admin/class-admin-switches.php';
@@ -162,6 +163,7 @@ if ( ! class_exists( __NAMESPACE__ . '\Boot' ) ) {
 			require_once WP_DARK_MODE_INCLUDES . '/modules/social-share/class-social-share.php';
 			require_once WP_DARK_MODE_INCLUDES . '/modules/gutenberg/class-block.php';
 			require_once WP_DARK_MODE_INCLUDES . '/modules/elementor/class-element.php';
+			require_once WP_DARK_MODE_INCLUDES . '/modules/wpbakery/class-element.php';
 		}
 
 		/**
@@ -176,8 +178,21 @@ if ( ! class_exists( __NAMESPACE__ . '\Boot' ) ) {
 			$boot->define_constants();
 			$boot->load_files();
 
+			// Load textdomain early enough for both frontend and admin.
+			add_action( 'init', array( $boot, 'load_textdomain' ), 1 );
+
 			// Fires after the plugin is loaded.
 			do_action( 'wp_dark_mode_loaded' );
+		}
+
+		/**
+		 * Loads the plugin textdomain.
+		 *
+		 * @since 5.0.0
+		 * @return void
+		 */
+		public function load_textdomain() {
+			load_plugin_textdomain( 'wp-dark-mode', false, dirname( plugin_basename( WP_DARK_MODE_FILE ) ) . '/languages/' );
 		}
 
 		/**

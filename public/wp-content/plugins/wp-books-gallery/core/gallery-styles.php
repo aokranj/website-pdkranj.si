@@ -76,12 +76,12 @@ trait Wbg_Gallery_Settings_Styles
             [
                 'name'      => 'wbg_loop_book_border_color',
                 'type'      => 'text',
-                'default'   => '#FFFFFF',
+                'default'   => '#EAEAEA',
             ],
             [
                 'name'      => 'wbg_loop_book_bg_color',
                 'type'      => 'text',
-                'default'   => '#F4F4F4',
+                'default'   => '#F7F7F7',
             ],
             [
                 'name'      => 'wbg_hide_hover_shadow',

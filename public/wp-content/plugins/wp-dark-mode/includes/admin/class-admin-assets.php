@@ -39,9 +39,6 @@ if ( ! class_exists( __NAMESPACE__ . 'Assets' ) ) {
 			// Enqueue scripts for Elementor.
 			add_action( 'elementor/editor/before_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 
-			// Text-domain.
-			add_action( 'init', array( $this, 'load_textdomain' ) );
-
 			add_action( 'admin_init', array( $this, 'load_classic_editor_scripts' ) );
 		}
 
@@ -56,16 +53,6 @@ if ( ! class_exists( __NAMESPACE__ . 'Assets' ) ) {
 			add_filter( 'script_loader_tag', array( $this, 'script_loader_tag' ), 10, 2 );
 			add_filter( 'wp_dark_mode_admin_activated', array( $this, 'wp_dark_mode_admin_activated' ) );
 		}
-
-		/**
-		 * Load text-domain.
-		 *
-		 * @since 5.0.0
-		 */
-		public function load_textdomain() {
-			load_plugin_textdomain( 'wp-dark-mode', false, dirname ( plugin_basename( WP_DARK_MODE_FILE ) ) . '/languages/' );
-		}
-
 
 		/**
 		 * Get default presets.
@@ -92,10 +79,17 @@ if ( ! class_exists( __NAMESPACE__ . 'Assets' ) ) {
 			wp_add_inline_style( 'wp-dark-mode-admin-common', $this->get_inline_css() );
 
 			// Enqueue scripts.
-			$editor_type = get_option( 'classic-editor-replace', 'block' );
-			// If the current page is not edit post page.
-			if ( 'classic' === $editor_type || ! in_array( $hook, [ 'post.php', 'post-new.php' ], true ) ) {
-				wp_enqueue_script( 'wp-dark-mode-dark-mode', WP_DARK_MODE_ASSETS . 'js/admin-dark-mode.min.js', [], WP_DARK_MODE_VERSION, false );
+			// Load admin-dark-mode.min.js everywhere except Gutenberg post editor pages.
+			// Detect classic editor mode via class existence (Classic Editor plugin) or option (TinyMCE Advanced).
+			$is_classic_editor_active = class_exists( 'Classic_Editor' );
+			if ( ! $is_classic_editor_active ) {
+				$tadv_admin_settings      = get_option( 'tadv_admin_settings', array() );
+				$tadv_admin_options       = ! empty( $tadv_admin_settings['options'] ) ? explode( ',', $tadv_admin_settings['options'] ) : array();
+				$is_classic_editor_active = in_array( 'replace_block_editor', $tadv_admin_options, true );
+			}
+			$is_gutenberg_post_page = in_array( $hook, array( 'post.php', 'post-new.php' ), true ) && ! $is_classic_editor_active;
+			if ( ! $is_gutenberg_post_page ) {
+				wp_enqueue_script( 'wp-dark-mode-dark-mode', WP_DARK_MODE_ASSETS . 'js/admin-dark-mode.min.js', array(), WP_DARK_MODE_VERSION, false );
 			}
 
 			wp_enqueue_script( 'wp-dark-mode-common', WP_DARK_MODE_ASSETS . 'js/admin-common.min.js', [ 'wp-i18n' ], WP_DARK_MODE_VERSION, true );
@@ -110,7 +104,17 @@ if ( ! class_exists( __NAMESPACE__ . 'Assets' ) ) {
 			wp_localize_script( 'wp-dark-mode-common', 'wp_dark_mode_icons', $svg_icons );
 
 			// Load settings style when on settings page.
-			if ( in_array( $hook, [ 'toplevel_page_wp-dark-mode', 'toplevel_page_wp-dark-mode-settings', 'wp-dark-mode_page_wp-dark-mode-get-started' ], true ) ) {
+			$pages = [
+				'toplevel_page_wp-dark-mode',
+				'toplevel_page_wp-dark-mode-settings',
+				'wp-dark-mode_page_wp-dark-mode-get-started',
+			];
+
+			// phpcs:ignore
+			$current_page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '';
+			$is_wpdm_page = in_array( $current_page, [ 'wp-dark-mode', 'wp-dark-mode-settings', 'wp-dark-mode-get-started' ], true );
+
+			if ( in_array( $hook, $pages, true ) || $is_wpdm_page ) {
 
 				// Enqueue WP Media.
 				wp_enqueue_media();
@@ -119,7 +123,8 @@ if ( ! class_exists( __NAMESPACE__ . 'Assets' ) ) {
 				wp_enqueue_style( 'wp-dark-mode-admin-settings', WP_DARK_MODE_ASSETS . 'css/admin-settings.css', array(), WP_DARK_MODE_VERSION );
 
 				echo '<style> #wpcontent { padding: 0 !important; }</style>';
-				wp_enqueue_script( 'wp-dark-mode-settings', WP_DARK_MODE_ASSETS . 'js/admin-settings.min.js', [ 'wp-i18n' ], WP_DARK_MODE_VERSION, true );
+				wp_enqueue_script( 'wp-dark-mode-settings', WP_DARK_MODE_ASSETS . 'js/admin-settings.min.js', [ 'wp-i18n', 'wp-dark-mode-common' ], WP_DARK_MODE_VERSION, true );
+				wp_set_script_translations( 'wp-dark-mode-settings', 'wp-dark-mode' );
 			}
 		}
 
@@ -175,6 +180,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Assets' ) ) {
 
 				// Debug.
 				'debug' => defined( 'WP_DEBUG' ) && WP_DEBUG,
+				'strings' => \WP_Dark_Mode\Admin\Strings::get(),
 			);
 
 			return apply_filters( 'wp_dark_mode_admin_json', $scripts, $hook );
@@ -204,6 +210,115 @@ if ( ! class_exists( __NAMESPACE__ . 'Assets' ) ) {
 				color: #F0F0F0 !important;
 				border-color: #666 !important;
 			}
+			';
+
+			// Media modal dark mode (modal renders outside #wpcontent, needs explicit targeting).
+			$css .= '
+				html[data-wp-dark-mode-active] .media-modal,
+				html.wp-dark-mode-theme-darkmode .media-modal,
+				html[data-wp-dark-mode-active] .media-modal-content,
+				html.wp-dark-mode-theme-darkmode .media-modal-content,
+				html[data-wp-dark-mode-active] .media-frame,
+				html.wp-dark-mode-theme-darkmode .media-frame,
+				html[data-wp-dark-mode-active] .media-frame-content,
+				html.wp-dark-mode-theme-darkmode .media-frame-content,
+				html[data-wp-dark-mode-active] .media-frame-router,
+				html.wp-dark-mode-theme-darkmode .media-frame-router,
+				html[data-wp-dark-mode-active] .media-frame-menu,
+				html.wp-dark-mode-theme-darkmode .media-frame-menu,
+				html[data-wp-dark-mode-active] .media-frame-toolbar,
+				html.wp-dark-mode-theme-darkmode .media-frame-toolbar,
+				html[data-wp-dark-mode-active] .media-frame-uploader,
+				html.wp-dark-mode-theme-darkmode .media-frame-uploader,
+				html[data-wp-dark-mode-active] .media-sidebar,
+				html.wp-dark-mode-theme-darkmode .media-sidebar,
+				html[data-wp-dark-mode-active] .attachments-browser,
+				html.wp-dark-mode-theme-darkmode .attachments-browser,
+				html[data-wp-dark-mode-active] .attachment-details,
+				html.wp-dark-mode-theme-darkmode .attachment-details,
+				html[data-wp-dark-mode-active] .upload-ui,
+				html.wp-dark-mode-theme-darkmode .upload-ui,
+				html[data-wp-dark-mode-active] .upload-details,
+				html.wp-dark-mode-theme-darkmode .upload-details,
+				html[data-wp-dark-mode-active] .uploader-inline,
+				html.wp-dark-mode-theme-darkmode .uploader-inline,
+				html[data-wp-dark-mode-active] .uploader-window,
+				html.wp-dark-mode-theme-darkmode .uploader-window {
+					background-color: var(--wpdm-background-color, #222) !important;
+					color: var(--wpdm-text-color, #f0f0f0) !important;
+					border-color: var(--wpdm-border-color, #444) !important;
+				}
+				html[data-wp-dark-mode-active] .media-menu,
+				html.wp-dark-mode-theme-darkmode .media-menu {
+					background-color: var(--wpdm-secondary-background-color, #333) !important;
+					color: var(--wpdm-text-color, #f0f0f0) !important;
+					border-color: var(--wpdm-border-color, #444) !important;
+				}
+				html[data-wp-dark-mode-active] .media-router,
+				html.wp-dark-mode-theme-darkmode .media-router {
+					background-color: var(--wpdm-secondary-background-color, #333) !important;
+					color: var(--wpdm-text-color, #f0f0f0) !important;
+					border-color: var(--wpdm-border-color, #444) !important;
+				}
+				html[data-wp-dark-mode-active] .media-frame-title,
+				html.wp-dark-mode-theme-darkmode .media-frame-title,
+				html[data-wp-dark-mode-active] .media-frame-title h1,
+				html.wp-dark-mode-theme-darkmode .media-frame-title h1,
+				html[data-wp-dark-mode-active] .upload-instructions,
+				html.wp-dark-mode-theme-darkmode .upload-instructions,
+				html[data-wp-dark-mode-active] .upload-instructions.drop-instructions,
+				html.wp-dark-mode-theme-darkmode .upload-instructions.drop-instructions {
+					background-color: var(--wpdm-background-color, #222) !important;
+					color: var(--wpdm-text-color, #f0f0f0) !important;
+				}
+				html[data-wp-dark-mode-active] .media-frame-menu-heading,
+				html.wp-dark-mode-theme-darkmode .media-frame-menu-heading {
+					color: var(--wpdm-text-color, #f0f0f0) !important;
+				}
+				html[data-wp-dark-mode-active] .media-menu-item,
+				html.wp-dark-mode-theme-darkmode .media-menu-item {
+					background-color: transparent !important;
+					color: var(--wpdm-text-color, #f0f0f0) !important;
+					opacity: 0.75;
+				}
+				html[data-wp-dark-mode-active] .media-menu-item.active,
+				html.wp-dark-mode-theme-darkmode .media-menu-item.active,
+				html[data-wp-dark-mode-active] .media-menu-item:focus,
+				html.wp-dark-mode-theme-darkmode .media-menu-item:focus {
+					background-color: var(--wpdm-background-color, #222) !important;
+					color: var(--wpdm-text-color, #f0f0f0) !important;
+					opacity: 1;
+				}
+				html[data-wp-dark-mode-active] .media-modal input[type="text"],
+				html.wp-dark-mode-theme-darkmode .media-modal input[type="text"],
+				html[data-wp-dark-mode-active] .media-modal input[type="url"],
+				html.wp-dark-mode-theme-darkmode .media-modal input[type="url"],
+				html[data-wp-dark-mode-active] .media-modal textarea,
+				html.wp-dark-mode-theme-darkmode .media-modal textarea,
+				html[data-wp-dark-mode-active] .media-modal select,
+				html.wp-dark-mode-theme-darkmode .media-modal select {
+					background-color: var(--wpdm-secondary-background-color, #333) !important;
+					color: var(--wpdm-text-color, #f0f0f0) !important;
+					border-color: var(--wpdm-border-color, #444) !important;
+				}
+				html[data-wp-dark-mode-active] .media-modal .button,
+				html.wp-dark-mode-theme-darkmode .media-modal .button,
+				html[data-wp-dark-mode-active] .media-modal .button-primary,
+				html.wp-dark-mode-theme-darkmode .media-modal .button-primary,
+				html[data-wp-dark-mode-active] .media-modal .media-button,
+				html.wp-dark-mode-theme-darkmode .media-modal .media-button {
+					background-color: var(--wpdm-secondary-background-color, #333) !important;
+					color: var(--wpdm-text-color, #f0f0f0) !important;
+					border-color: var(--wpdm-border-color, #444) !important;
+				}
+				html[data-wp-dark-mode-active] .media-modal-backdrop,
+				html.wp-dark-mode-theme-darkmode .media-modal-backdrop {
+					background: rgba(0, 0, 0, 0.7) !important;
+				}
+				html[data-wp-dark-mode-active] .components-input-control__container,
+				html.wp-dark-mode-theme-darkmode .components-input-control__container {
+					background-color: #2c4158 !important;
+				}
 			';
 
 			// variables.

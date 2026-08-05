@@ -5,6 +5,19 @@
 This file contains older changelog entries, so we can keep the size of the standard WordPress readme.txt file reasonable.
 For the latest changes, please see the "Changelog" section of the [Plugin](https://wordpress.org/plugins/wp-dark-mode/#developers).
 
+= 5.2.17 – 19 NOV 2025 =
+* **New:** Added AI-powered social share buttons including ChatGPT, Grok, Perplexity, Gemini, and Claude.
+* **Fix:** In the "Manage Channels" section, when editing any social channel, the cursor automatically jumps to the beginning after typing a single letter.
+* **Fix:** The "Hide/Show on PC/Laptop" and "Hide/Show on Mobile" features are not functioning correctly.
+
+= 5.2.16 – 10 NOV 2025 =
+* **New:** Introduced dark mode support for WordPress login, registration, and password reset pages, with the ability to inherit the site's front-end dark mode settings (Default, OS-based, Time-based, Sunset).
+* **New:** Added an option to exclude the login and registration pages from dark mode using the Exclude feature.
+* **New:** Implemented a setting to control the visibility of the floating dark mode switch on the login and registration pages.
+* **Improvement:** Enhanced compatibility with login customizer plugins (LoginPress, Theme My Login) and security plugins that modify the login URL.
+
+= 5.2.15 – 30 OCT 2025 =
+* **Improvement:** Improved the custom CSS flow for FREE users.
 
 = 5.2.14 – 8 SEP 2025 =
 * **New:** Introduced New ‘Sky’ Switch for nature lovers.

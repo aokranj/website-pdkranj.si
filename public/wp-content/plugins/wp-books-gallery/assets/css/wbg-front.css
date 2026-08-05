@@ -17,20 +17,23 @@
 
 .wbg-main-wrapper.grid {
     display: grid;
-    grid-gap: 5px;
+    grid-gap: 10px;
 }
 
 .wbg-main-wrapper .wbg-item {
     min-height: 300px;
     margin-right: 5px;
     margin-bottom: 5px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .04);
     text-align: center;
+    padding-bottom: 10px;
+    transition: .25s;
 }
 
 .wbg-main-wrapper .wbg-item:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    border-color: #DDD;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
 }
 
 .wbg-main-wrapper .wbg-item img {
@@ -87,9 +90,20 @@
     border: 0px solid #000;
     width: 100%;
     margin: 0px !important;
-    padding: 0px !important;
+    padding: 0px;
     line-height: 20px;
     text-align: center;
+    transition: .2s;
+}
+
+.wbg-main-wrapper .wbg-item span:hover {
+    padding-left: 8px;
+}
+
+.wbg-main-wrapper .wbg-item span a {
+    text-decoration: none;
+    color: #212121;
+    font-size: 12px;
 }
 
 .wbg-main-wrapper .wbg-item a.wbg-btn,
@@ -196,40 +210,51 @@ div.wbg-total-books-title {
 
 /* Pagination */
 
-.wbg-pagination {
+div.wbg-pagination {
     width: 100%;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
-.wbg-pagination .page-numbers li {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 48px;
-    margin: 0 2px 0 0;
-    border: 1px solid #eee;
+div.wbg-pagination ul.page-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+div.wbg-pagination ul.page-numbers li {
+    margin: 0;
+}
+
+div.wbg-pagination ul.page-numbers li a,
+div.wbg-pagination ul.page-numbers li span {
+    min-width: 45px;
+    height: 45px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 6px;
     text-decoration: none;
-    border-radius: 2px;
+    color: #333;
+    font-weight: 600;
+    transition: all 0.5s ease;
+    box-sizing: border-box;
 }
 
-.wbg-pagination .page-numbers li a.page-numbers {
-    width: 48px;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 14px;
+div.wbg-pagination ul.page-numbers li a:hover {
+    background: #f5f5f5;
+    border-color: #bbb;
 }
 
-div.wbg-pagination>ul.page-numbers>li>span.page-numbers.current {
-    display: block;
-    background: #DDD;
-}
-
-div.wbg-pagination>ul.page-numbers>li:hover,
-div.wbg-pagination>ul.page-numbers>li>a.page-numbers:hover {
-    background: #DDD;
+div.wbg-pagination ul.page-numbers li a.active,
+div.wbg-pagination ul.page-numbers li span.current {
+    background: #0073aa;
+    color: #fff;
+    border-color: #0073aa;
 }
 
 
@@ -281,7 +306,7 @@ div.wbg-pagination>ul.page-numbers>li>a.page-numbers:hover {
 }
 
 .wbg-search-container .wbg-search-item input[type='text'] {
-    width: 93%;
+    width: 99.5%;
     margin: 0;
     padding: 0 0 0 10px;
     background: #FFF;
@@ -559,7 +584,7 @@ a#wbgSingleLoadMoreDetails:hover {
 .wbg_other_books_from,
 h3.wbg-slide-title {
     border: 0px solid #000;
-    margin: 40px 0;
+    margin: 30px 0 20px 0;
     padding: 0;
     font-size: 18px;
     font-weight: 700;
@@ -818,6 +843,21 @@ a.button.wbg-btn.single-book {
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 
 @media only screen and (min-width: 1025px) {
+    .wbg-main-wrapper.wbg-product-column-10 {
+        grid-template-columns: repeat(10, 1fr);
+    }
+    .wbg-main-wrapper.wbg-product-column-9 {
+        grid-template-columns: repeat(9, 1fr);
+    }
+    .wbg-main-wrapper.wbg-product-column-8 {
+        grid-template-columns: repeat(8, 1fr);
+    }
+    .wbg-main-wrapper.wbg-product-column-7 {
+        grid-template-columns: repeat(7, 1fr);
+    }
+    .wbg-main-wrapper.wbg-product-column-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
     .wbg-main-wrapper.wbg-product-column-5 {
         grid-template-columns: repeat(5, 1fr);
     }
@@ -829,6 +869,9 @@ a.button.wbg-btn.single-book {
     }
     .wbg-main-wrapper.wbg-product-column-2 {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .wbg-main-wrapper.wbg-product-column-1 {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
@@ -898,6 +941,7 @@ a.button.wbg-btn.single-book {
         text-align: center;
     }
     .wbg-search-container .wbg-search-item input[type="text"],
+    .selectize-control.single .selectize-input,
     .wbg-search-container .wbg-search-item .submit-btn {
         margin-bottom: 7px;
     }

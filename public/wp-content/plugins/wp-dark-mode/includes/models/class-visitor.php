@@ -88,7 +88,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Visitor' ) ) {
 
 			$data = wp_parse_args( $data, $default_data );
 
-			// Update visitor mode
+			// Update visitor mode.
 			global $wpdb;
 			$table_name = $wpdb->prefix . 'wpdm_visitors';
 			$inserted = $wpdb->insert( $table_name, $data ); // db call ok; no-cache ok.
@@ -144,19 +144,57 @@ if ( ! class_exists( __NAMESPACE__ . 'Visitor' ) ) {
 					$meta = json_decode($visitor->meta, true);
 				} else {
 					$meta = array();
-                }
+				}
 
 				$data[] = array(
-					'ID' => intval( $visitor->ID ),
-					'user_id' => intval( $visitor->user_id ),
-					'mode' => $visitor->mode,
-					'meta' => $meta,
-					'ip' => $visitor->ip,
+					'ID'         => intval( $visitor->ID ),
+					'user_id'    => intval( $visitor->user_id ),
+					'mode'       => $visitor->mode,
+					'meta'       => $meta,
+					'ip'         => $visitor->ip,
 					'created_at' => $visitor->created_at,
 				);
 			}
 
 			return $data;
+		}
+
+		/**
+		 * Get visitor by ID
+		 *
+		 * @param int $id Visitor ID.
+		 * @return object|null
+		 */
+		public function get_by_id( $id ) {
+			global $wpdb;
+
+			$visitor = $wpdb->get_row(
+				$wpdb->prepare(
+					"SELECT * FROM {$wpdb->prefix}wpdm_visitors WHERE ID = %d",
+					intval( $id )
+				)
+			);
+
+			return $visitor;
+		}
+
+		/**
+		 * Get visitors by IP address
+		 *
+		 * @param string $ip IP address.
+		 * @return array
+		 */
+		public function get_by_ip( $ip ) {
+			global $wpdb;
+
+			$visitors = $wpdb->get_results(
+				$wpdb->prepare(
+					"SELECT * FROM {$wpdb->prefix}wpdm_visitors WHERE ip = %s ORDER BY created_at DESC",
+					sanitize_text_field( $ip )
+				)
+			);
+
+			return $visitors;
 		}
 	}
 

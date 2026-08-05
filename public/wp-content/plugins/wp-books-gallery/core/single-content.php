@@ -373,6 +373,11 @@ trait Wbg_Single_Content_Settings
                 'type'      => 'text',
                 'default'   => 'Share',
             ],
+            [
+                'name'      => 'wbg_other_books_from_items_per_slide',
+                'type'      => 'number',
+                'default'   => '4',
+            ],
         ];
     }
 }
