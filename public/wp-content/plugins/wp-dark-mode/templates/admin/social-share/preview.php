@@ -20,7 +20,7 @@ defined('ABSPATH') || exit();
 			<div x-show="!isTab('social-meta')" class="bg-slate-100 p-3 rounded-md shadow w-full border border-slate-200">
 
 				<!-- title  -->
-				<div class="font-semibold text-slate-600 text-sm mb-4"><?php esc_html_e('Preview', 'wp-dark-mode'); ?></div>
+				<span class="text-sm font-semibold uppercase text-slate-700"><?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'preview' ) ); ?></span>
 
 				<!-- skeleton -->
 				<div class="flex items-center justify-between gap-2 mb-2">
@@ -79,8 +79,8 @@ defined('ABSPATH') || exit();
 										<div class="_total-share-count">
 											<span x-text="randomNumber(100, 200)"></span>
 											<span
-												class="focus:outline-none focus:border-0 focus:ring focus:ring-blue-500 transition duration-75"
-												x-text="options.shares_label || 'Share'"
+												class="_wpdm-social-shares-text focus:outline-none focus:border-0 focus:ring focus:ring-blue-500 transition duration-75"
+												x-text="options.shares_label || t('share')"
 												contenteditable="true"
 												@input="options.shares_label = $event.target.innerText"></span>
 										</div>
@@ -165,7 +165,7 @@ defined('ABSPATH') || exit();
                 <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-5" viewBox="0 0 16 16">
                     <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                 </svg> 
-                Save & Publish
+                <?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'save_publish' ) ); ?>
             </span>
         </template>
         
@@ -174,12 +174,12 @@ defined('ABSPATH') || exit();
                 <svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-5" viewBox="0 96 960 960" width="48">
                     <path d="M294 814 70 590l43-43 181 181 43 43-43 43Zm170 0L240 590l43-43 181 181 384-384 43 43-427 427Zm0-170-43-43 257-257 43 43-257 257Z" />
                 </svg>
-                Published
+                <?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'published' ) ); ?>
             </span>
         </template>
         
         <template x-if="!state.isChanged && !options.enable">
-            <span>Saved</span>
+            <span><?php echo esc_html( \WP_Dark_Mode\Admin\Strings::get( 'saved' ) ); ?></span>
         </template>
     </button>
 </div>

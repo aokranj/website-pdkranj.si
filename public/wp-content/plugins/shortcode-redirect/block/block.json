@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "shortcode-redirect/redirect",
+  "title": "Redirect",
+  "category": "widgets",
+  "icon": "external",
+  "description": "Redirect visitors to another URL after an optional delay.",
+  "keywords": ["redirect", "url", "shortcode"],
+  "textdomain": "shortcode-redirect",
+  "attributes": {
+    "url": { "type": "string", "default": "" },
+    "sec": { "type": "number", "default": 0 },
+    "showMessage": { "type": "boolean", "default": true }
+  },
+  "supports": {
+    "html": false,
+    "align": false,
+    "customClassName": false,
+    "reusable": true
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./editor.css"
+}

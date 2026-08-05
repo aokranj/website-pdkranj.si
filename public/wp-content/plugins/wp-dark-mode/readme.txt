@@ -2,9 +2,9 @@
 Contributors: wppool, wpdarkmode, azizultex, iamjafran, shahreyar46  
 Tags: dark mode, dark, night mode, dark theme, accessibility  
 Requires at least: 5.0  
-Tested up to: 6.9  
+Tested up to: 7.0  
 Requires PHP: 5.6  
-Stable tag: 5.2.20 
+Stable tag: 5.3.10
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -241,6 +241,52 @@ Yes, You can toggle modes by keyboard shortcut `(Ctrl + Alt + D)`.
 
 == Changelog ==
 
+= 5.3.10 – 19 JUL 2026 =
+* **New:** Introduced a dedicated WPBakery Page Builder element for the Dark Mode Switch, providing a native drag-and-drop experience similar to the existing Elementor widget and Gutenberg block.
+
+= 5.3.9 – 24 JUN 2026 =
+* **Fix:** Improved compatibility with Hostinger AI admin pages.
+
+= 5.3.8 – 09 JUN 2026 =
+* **Fix:** Resolved a dark mode issue in TinyMCE Classic Editor when Hestia's Local Fonts Hosting option is enabled.
+
+= 5.3.7 – 02 JUN 2026 =
+* **Fix:** Admin bar Light/Dark Mode switcher compatibility with Classic Editor and TinyMCE Advanced.
+* **Fix:** TinyMCE editor background now responds correctly to admin bar Light/Dark Mode switching when the Classic Editor Dark Mode button is disabled.
+* **Improvement:** Improved compatibility with Classic Editor and TinyMCE Advanced's "Replace Block Editor" setting.
+
+= 5.3.6 – 25 MAY 2026 =
+* **Improvement:** Improved compatibility with Gutenberg block editor
+* **Improvement:** Compatible with WordPress 7.0
+
+= 5.3.5 – 09 APR 2026 =
+* **Fix:** “Exclude” feature broken in the previous version has been fixed
+* **Fix:** Minor bug fixes and enhancements
+* **Improvement:** Minor bug fixes and enhancements
+
+
+= 5.3.4 – 01 APR 2026 =
+* **Improvement:** Added multilingual support with native translations
+* **Fix:** Dark mode support added for media library and preview loading screen in admin
+
+= 5.3.3 – 16 FEB 2026 =
+* **Fix:** Compatible with screen readers (Verified ARIA support).
+* **Fix:** Resolved keyboard navigation issues for accessibility switches.
+
+= 5.3.2 – 10 FEB 2026 =
+* **Fix:** Fixed minor issues and maintenance update.
+
+= 5.3.1 – 26 JAN 2026 =
+* **Improvement:** Fixed a compatibility issue with the Site Reviews plugin where star ratings and text colors were not displaying correctly in Dark Mode without a page refresh.
+* **Fix:** Resolved a 404 error occurring in the WordPress admin panel when Dark Mode was enabled.
+* **Fix:** Fixed an issue where the WP Dark Mode usage counter was not updating immediately when Dark Mode was enabled or disabled by visitors.
+* **Fix:** Resolved an analytics chart rendering issue where the chart would not reappear after switching tabs, causing a blank canvas until the page was reloaded.
+
+= 5.3.0 – 22 DEC 2025 =
+* **New: AI-Powered Color Preset Generator:**
+You can now generate custom dark mode color presets using AI prompts in WP Dark Mode. Simply describe the color style you want, and AI will instantly create a unique preset for your website that would be perfect for branding, accessibility, and creative themes.
+This feature extends our existing Custom Color Presets to give you more control and flexibility. Enjoy!
+
 = 5.2.20 – 08 DEC 2025 =
 * **New:** Introduced the new color preset Tailwind & Midnight Bloom.
 
@@ -251,19 +297,5 @@ Yes, You can toggle modes by keyboard shortcut `(Ctrl + Alt + D)`.
 = 5.2.18 – 25 NOV 2025 =
 * **New:** “Custom Triggers” added to Switch Settings, allowing users to assign their own elements or buttons.
 * **Improvement:** Changed the Save button position from right to left.
-
-= 5.2.17 – 19 NOV 2025 =
-* **New:** Added AI-powered social share buttons including ChatGPT, Grok, Perplexity, Gemini, and Claude.
-* **Fix:** In the "Manage Channels" section, when editing any social channel, the cursor automatically jumps to the beginning after typing a single letter.
-* **Fix:** The "Hide/Show on PC/Laptop" and "Hide/Show on Mobile" features are not functioning correctly.
-
-= 5.2.16 – 10 NOV 2025 =
-* **New:** Introduced dark mode support for WordPress login, registration, and password reset pages, with the ability to inherit the site's front-end dark mode settings (Default, OS-based, Time-based, Sunset).
-* **New:** Added an option to exclude the login and registration pages from dark mode using the Exclude feature.
-* **New:** Implemented a setting to control the visibility of the floating dark mode switch on the login and registration pages.
-* **Improvement:** Enhanced compatibility with login customizer plugins (LoginPress, Theme My Login) and security plugins that modify the login URL.
-
-= 5.2.15 – 30 OCT 2025 =
-* **Improvement:** Improved the custom CSS flow for FREE users.
 
 **For older changelog entries, please see the [additional changelog.txt file](https://plugins.svn.wordpress.org/wp-dark-mode/trunk/changelog.txt) delivered with the plugin.**

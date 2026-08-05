@@ -39,7 +39,7 @@ if ( ! class_exists( __NAMESPACE__ . 'SocialShare' ) ) {
 			// Admin menu page.
 			add_action( 'admin_menu', [ $this, 'social_share_admin_menu' ], 40 );
 			// Scripts.
-			add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ], 10 );
+			add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ], 20 );
 			// Ajax.
 			add_action( 'wp_ajax_wpdm_social_share_save_options', [ $this, 'wpdm_social_share_save_options' ], 99 );
 			add_action( 'wp_ajax_wpdm_social_share_counter', [ $this, 'wpdm_social_share_counter' ], 99 );
@@ -545,13 +545,14 @@ if ( ! class_exists( __NAMESPACE__ . 'SocialShare' ) ) {
 		 * @since 2.3.5
 		 */
 		public function admin_enqueue_scripts( $hook = null ) {
-			if ( 'wp-dark-mode_page_wp-dark-mode-social-share' !== $hook ) {
+			if ( ! isset( $_GET['page'] ) || 'wp-dark-mode-social-share' !== $_GET['page'] ) {
 				return;
 			}
 
 			wp_enqueue_media();
 			wp_enqueue_style( 'wp-dark-mode-social-share', WP_DARK_MODE_ASSETS . '/css/admin-social-share.min.css', [], WP_DARK_MODE_VERSION );
-			wp_enqueue_script( 'wp-dark-mode-social-share', WP_DARK_MODE_ASSETS . '/js/admin-social-share.min.js', [ 'jquery' ], WP_DARK_MODE_VERSION, true );
+			wp_enqueue_script( 'wp-dark-mode-social-share', WP_DARK_MODE_ASSETS . '/js/admin-social-share.min.js', [ 'jquery', 'wp-i18n', 'wp-dark-mode-common' ], WP_DARK_MODE_VERSION, true );
+			wp_set_script_translations( 'wp-dark-mode-social-share', 'wp-dark-mode' );
 
 			// Localize script.
 			wp_localize_script(

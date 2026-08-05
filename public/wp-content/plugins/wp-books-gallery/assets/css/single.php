@@ -9,6 +9,11 @@ if ( !defined( 'ABSPATH' ) ) {
         background: <?php 
 esc_attr_e( $wbg_single_container_bg_color );
 ?> !important;
+        margin: <?php 
+esc_attr_e( $wbg_single_container_margin_top );
+?>px auto <?php 
+esc_attr_e( $wbg_single_container_margin_bottom );
+?>px auto!important;
     }
     .wbg-details-wrapper {
         <?php 
@@ -25,6 +30,9 @@ if ( $wbg_display_sidebar ) {
 }
 ?>
         min-height: 100px;
+    }
+    .wbg-book-single-section.modal .wbg-details-wrapper {
+        width: 100%;
     }
     .wbg-single-subtitle {
         margin-bottom: 10px;
@@ -66,6 +74,7 @@ esc_attr_e( $wbg_back_btn_font_color_hvr );
         text-align: center;
     }
     <?php 
+// if ( wbg_fs()->is_plan__premium_only('pro') ) ended
 if ( $wbg_enable_rtl ) {
     ?>
         .wbg-details-wrapper .wbg-details-summary {

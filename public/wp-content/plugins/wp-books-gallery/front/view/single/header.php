@@ -8,8 +8,6 @@ Template Name: Wbg Books Single
 Template Post Type: books
 */
 
-get_header();
-
 // Action Before Main Wrapper
 do_action( 'wbg_front_single_parent_section_before' );
 
@@ -74,6 +72,7 @@ if ( empty( $wbg_detail_settings )) {
 	$wbg_display_publish_date = 1;
 	$wbg_display_isbn = 1;
 	$wbg_display_description = 1;
+    $wbg_display_page = 1;
 }
 
 // Load Styling

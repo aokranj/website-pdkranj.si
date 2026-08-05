@@ -265,7 +265,7 @@ if ( ! class_exists( __NAMESPACE__ . 'REST' ) ) {
 		 */
 		public function get_visitors( $request ) {
 			// Check if premium and analytics are enabled.
-			if ( ! \wp_validate_boolean( get_option( 'wp_dark_mode_analytics_enabled' ) ) ) {
+			if ( ! \wp_validate_boolean( $this->get_option( 'analytics_enabled' ) ) ) {
 				return rest_ensure_response( [] );
 			}
 

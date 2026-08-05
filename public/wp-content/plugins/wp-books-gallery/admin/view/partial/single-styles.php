@@ -14,14 +14,12 @@ foreach ( $wbgSingleStyles as $option_name => $option_value ) {
 <?php 
 wp_nonce_field( 'wbg_detail_style_action', 'wbg_detail_style_nonce_field' );
 ?>
-    <table class="wbg-single-style-settings-table">
-        <!-- Master Container -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align:left;">
-                <hr><span><?php 
-_e( 'Master Container', 'wp-books-gallery' );
-?></span><hr>
-            </th>
+    <table class="hm-settings-table" cellpadding=0 cellspacing=0>
+        <!-- Parent Container -->
+        <tr class="wbg-settings-section">
+            <td colspan="6" class="wbg-settings-block-title"><i class="fa-solid fa-expand"></i>&nbsp;<?php 
+_e( 'Parent Container', 'wp-books-gallery' );
+?></td>
         </tr>
         <tr>
             <th scope="row">
@@ -33,7 +31,7 @@ _e( 'Width', 'wp-books-gallery' );
                 <?php 
 ?>
                     <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
+echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Available in Professional', 'wp-books-gallery' ) . '</a>';
 ?></span>
                     <?php 
 ?>
@@ -75,399 +73,96 @@ esc_attr_e( $wbg_single_container_margin_bottom );
             </td>
         </tr>
         <!-- Title -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align:left;">
-                <hr><span><?php 
-_e( 'Title', 'wp-books-gallery' );
-?></span><hr>
-            </th>
+        <tr class="wbg-settings-section">
+            <td colspan="6" class="wbg-settings-block-title"><i class="fa-solid fa-t"></i>&nbsp;<?php 
+_e( 'Book Title', 'wp-books-gallery' );
+?></td>
         </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Color', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td>
-                <?php 
+        <?php 
+$jobwp_upgrade_arr = [
+    'label'   => 'Available in Professional',
+    'icon'    => 'fa-regular fa-hand-point-right',
+    'message' => "Available options - Book title font color, font size, Book subtitle font color & font size.",
+    'colspan' => 6,
+];
+$this->wbg_upgrade_to_premium_section( $jobwp_upgrade_arr );
 ?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Size', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td colspan="3">
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-        </tr>
-        <!-- Sub Title -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align:left;">
-                <hr><span><?php 
-_e( 'Sub Title', 'wp-books-gallery' );
-?></span><hr>
-            </th>
-        </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Color', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td>
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Size', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td colspan="3">
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-        </tr>
         <!-- Price -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align: left;">
-                <hr><label><?php 
-_e( 'Price', 'wp-books-gallery' );
-?></label><hr>
-            </th>
+        <tr class="wbg-settings-section">
+            <td colspan="6" class="wbg-settings-block-title"><i class="fa-solid fa-sack-xmark"></i>&nbsp;<?php 
+_e( 'Book Price', 'wp-books-gallery' );
+?></td>
         </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Color', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td>
-                <?php 
+        <?php 
+$jobwp_upgrade_arr = [
+    'label'   => 'Available in Professional',
+    'icon'    => 'fa-regular fa-hand-point-right',
+    'message' => "Available options - Book price font color, before discount price font color & font size.",
+    'colspan' => 6,
+];
+$this->wbg_upgrade_to_premium_section( $jobwp_upgrade_arr );
 ?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Before Discount Color', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td>
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Size', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td>
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-        </tr>
         <!-- Information Label -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align:left;">
-                <hr><span><?php 
+        <tr class="wbg-settings-section">
+            <td colspan="6" class="wbg-settings-block-title"><i class="fa-solid fa-book"></i>&nbsp;<?php 
 _e( 'Information Label', 'wp-books-gallery' );
-?></span><hr>
-            </th>
+?></td>
         </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Color', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td>
-                <?php 
+        <?php 
+$jobwp_upgrade_arr = [
+    'label'   => 'Available in Professional',
+    'icon'    => 'fa-regular fa-hand-point-right',
+    'message' => "Available options - Information label font color and size, Information text font color, size and anchor hover color.",
+    'colspan' => 6,
+];
+$this->wbg_upgrade_to_premium_section( $jobwp_upgrade_arr );
 ?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Size', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td colspan="3">
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
+        <!-- Author Panel -->
+        <tr class="wbg-settings-section">
+            <td colspan="6" class="wbg-settings-block-title"><i class="fa-solid fa-user-pen"></i>&nbsp;<?php 
+_e( 'Author Panel', 'wp-books-gallery' );
+?></td>
         </tr>
-        <!-- Information Text -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align:left;">
-                <hr><span><?php 
-_e( 'Information Text', 'wp-books-gallery' );
-?></span><hr>
-            </th>
-        </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Color', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td>
-                <?php 
+        <?php 
+$jobwp_upgrade_arr = [
+    'label'   => 'Available in Professional',
+    'icon'    => 'fa-regular fa-hand-point-right',
+    'message' => "Available options - Author name font color and font size, Author bio font color and font size.",
+    'colspan' => 6,
+];
+$this->wbg_upgrade_to_premium_section( $jobwp_upgrade_arr );
 ?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Size', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td colspan="3">
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Anchor Hover Color', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td>
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-        </tr>
         <!-- Modal Popup -->
-        <tr>
-            <th scope="row" colspan="6" style="text-align:left;">
-                <hr><span><?php 
-_e( 'Modal Popup', 'wp-books-gallery' );
-?></span><hr>
-            </th>
+        <tr class="wbg-settings-section">
+            <td colspan="6" class="wbg-settings-block-title"><i class="fa-regular fa-square-plus"></i>&nbsp;<?php 
+_e( 'Modal - Popup', 'wp-books-gallery' );
+?></td>
         </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Height', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td>
-                <?php 
+        <?php 
+$jobwp_upgrade_arr = [
+    'label'   => 'Available in Professional',
+    'icon'    => 'fa-regular fa-hand-point-right',
+    'message' => "Available options - Popup height and width, background color, border color and border width.",
+    'colspan' => 6,
+];
+$this->wbg_upgrade_to_premium_section( $jobwp_upgrade_arr );
 ?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Width', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td colspan="3">
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Background Color', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td>
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Border Color', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td>
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Border Width', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td>
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-        </tr>
         <!-- Back Button -->
-         <tr>
-            <th scope="row" colspan="6" style="text-align:left;">
-                <hr><span><?php 
+        <tr class="wbg-settings-section">
+            <td colspan="6" class="wbg-settings-block-title"><i class="fa-solid fa-circle-arrow-left"></i>&nbsp;<?php 
 _e( 'Back Button', 'wp-books-gallery' );
-?></span><hr>
-            </th>
+?></td>
         </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Background Color', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td>
-                <?php 
+        <?php 
+$jobwp_upgrade_arr = [
+    'label'   => 'Available in Professional',
+    'icon'    => 'fa-regular fa-hand-point-right',
+    'message' => "Available options - Background color, font color, font size, hover background color and font color.",
+    'colspan' => 6,
+];
+$this->wbg_upgrade_to_premium_section( $jobwp_upgrade_arr );
 ?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Color', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td>
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Size', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td colspan="3">
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-        </tr>
-        <!-- Back Button: Hover -->
-         <tr>
-            <th scope="row" colspan="6" style="text-align:left;">
-                <hr><span><?php 
-_e( 'Back Button: Hover', 'wp-books-gallery' );
-?></span><hr>
-            </th>
-        </tr>
-        <tr>
-            <th scope="row">
-                <label><?php 
-_e( 'Background Color', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td>
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-            <th scope="row">
-                <label><?php 
-_e( 'Font Color', 'wp-books-gallery' );
-?></label>
-            </th>
-            <td>
-                <?php 
-?>
-                    <span><?php 
-echo '<a href="' . wbg_fs()->get_upgrade_url() . '">' . __( 'Upgrade to Professional!', 'wp-books-gallery' ) . '</a>';
-?></span>
-                    <?php 
-?>
-            </td>
-        </tr>
     </table>
-    <hr>
     <p class="submit">
         <button id="updateSingleStyles" name="updateSingleStyles" class="button button-primary wbg-button">
             <i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;<?php 

@@ -66,7 +66,7 @@ trait Wbg_Search_Styles_Settings
             [
                 'name'      => 'wbg_search_panel_bg_color',
                 'type'      => 'text',
-                'default'   => '#FFFFFF',
+                'default'   => '#F7F7F7',
             ],
             [
                 'name'      => 'wbg_search_panel_border_color',

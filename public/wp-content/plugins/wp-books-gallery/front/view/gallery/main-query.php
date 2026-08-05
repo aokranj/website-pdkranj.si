@@ -23,21 +23,21 @@ if ( !in_array( $wbg_gallary_sorting, $wbg_orderby_arr ) ) {
 }
 // If Category params found in shortcode
 if ( !empty( $wbgCategory ) ) {
-    $wbgBooksArr['tax_query'] = array(array(
+    $wbgBooksArr['tax_query'][] = array(
         'taxonomy' => 'book_category',
         'field'    => 'name',
         'terms'    => $wbgCategory,
-    ));
+    );
 }
 // For Template Category
 if ( is_tax( 'book_category' ) ) {
     $wbg_archive_cat_slug = ( isset( get_queried_object()->slug ) ? get_queried_object()->slug : '' );
     if ( $wbg_archive_cat_slug != '' ) {
-        $wbgBooksArr['tax_query'] = array(array(
+        $wbgBooksArr['tax_query'][] = array(
             'taxonomy' => 'book_category',
             'field'    => 'slug',
             'terms'    => $wbg_archive_cat_slug,
-        ));
+        );
     }
 }
 // For Template Tag

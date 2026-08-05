@@ -47,6 +47,27 @@ if ( ! class_exists( __NAMESPACE__ . 'Ajax' ) ) {
 			// Check nonce.
 			check_ajax_referer( 'wp_dark_mode_security', 'security_key' );
 
+			// Check for honeypot.
+			if ( isset( $_POST['website'] ) && ! empty( $_POST['website'] ) ) {
+				wp_send_json_error( array( 'message' => 'Invalid request' ) );
+			}
+
+			// Check for rate limiting.
+			$ip = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
+			$rate_limit_key = 'wpdm_visitor_rate_' . md5( $ip );
+			$request_count = get_transient( $rate_limit_key );
+			$max_requests = apply_filters( 'wp_dark_mode_visitor_rate_limit', 10 );
+
+			if ( $request_count && $request_count >= $max_requests ) {
+				wp_send_json_error( array(
+					'message'     => 'Rate limit exceeded. Please try again later.',
+					'retry_after' => 3600,
+				) );
+			}
+
+			// Increment rate limit counter.
+			set_transient( $rate_limit_key, ( $request_count ? $request_count + 1 : 1 ), HOUR_IN_SECONDS );
+
 			$visitor_id = isset( $_POST['visitor_id'] ) ? intval( wp_unslash( $_POST['visitor_id'] ) ) : false;
 
 			if ( $visitor_id && $visitor_id > 0 ) {
@@ -111,6 +132,33 @@ if ( ! class_exists( __NAMESPACE__ . 'Ajax' ) ) {
 
 			// Check nonce.
 			check_ajax_referer( 'wp_dark_mode_security', 'security_key' );
+
+			// Validate visitor ownership.
+			$visitor_model    = new \WP_Dark_Mode\Model\Visitor();
+			$existing_visitor = $visitor_model->get_by_id( $visitor_id );
+
+			if ( ! $existing_visitor ) {
+				wp_send_json_error( array( 'message' => 'Visitor not found' ) );
+			}
+
+			// Check ownership.
+			$current_ip      = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
+			$current_user_id = get_current_user_id();
+
+			$is_owner = false;
+
+			// Check if IP matches OR user_id matches.
+			if ( $existing_visitor->ip === $current_ip ) {
+				$is_owner = true;
+			} elseif ( $current_user_id > 0 && $existing_visitor->user_id == $current_user_id ) {
+				$is_owner = true;
+			}
+
+			if ( ! $is_owner ) {
+				wp_send_json_error( array(
+					'message' => 'You do not have permission to update this visitor record',
+				) );
+			}
 
 			$mode = isset( $_POST['mode'] ) ? sanitize_text_field( wp_unslash( $_POST['mode'] ) ) : 'dark';
 

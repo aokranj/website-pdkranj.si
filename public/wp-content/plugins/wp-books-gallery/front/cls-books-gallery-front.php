@@ -163,6 +163,17 @@ class WBG_Front {
         return $template;
     }
 
+    function wbg_single_template_only_content( $content ) {
+        // Check if we are viewing a single 'my_item' post and inside the main loop
+        if ( is_singular( 'books' ) && is_main_query() ) {
+            echo 'dsds';
+            ob_start();
+            include WBG_PATH . 'front/view/single.php';
+            return ob_get_clean();
+        }
+        return $content;
+    }
+
     function wbg_load_archive_template( $template ) {
         global $post;
         if ( is_object( $post ) && 'books' === $post->post_type ) {
@@ -174,7 +185,7 @@ class WBG_Front {
     function wbg_load_tag_template( $template ) {
         global $post;
         if ( 'books' === $post->post_type ) {
-            return WBG_PATH . 'front/view/tag.php';
+            return WBG_PATH . 'front/view/archive.php';
         }
         return $template;
     }
@@ -229,7 +240,6 @@ class WBG_Front {
     }
 
     function wbg_load_single_modal() {
-        $post_id = sanitize_text_field( $_POST['postId'] );
         include WBG_PATH . 'front/view/single-modal.php';
         exit;
     }
@@ -276,6 +286,13 @@ class WBG_Front {
         include WBG_PATH . 'front/view/single-search.php';
         $output .= ob_get_clean();
         return $output;
+    }
+
+    function wbg_load_book_structure_data() {
+        global $post;
+        if ( 'books' === get_post_type() ) {
+            include_once WBG_PATH . 'front/view/structure-data.php';
+        }
     }
 
 }

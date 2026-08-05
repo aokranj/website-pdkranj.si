@@ -65,24 +65,24 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 						'default' => 'device',
 						'options' => array(
 							'default_light' => [
-								'name' => 'Default Light Mode',
-								'description' => 'Enable this setting if you want light mode as the default mode of your site. Visitors will find the website in light mode first.',
+								'name' => __( 'Default Light Mode', 'wp-dark-mode' ),
+								'description' => __( 'Enable this setting if you want light mode as the default mode of your site. Visitors will find the website in light mode first.', 'wp-dark-mode' ),
 							],
 							'default' => [
-								'name' => 'Default Dark Mode',
-								'description' => 'Enable this setting if you want dark mode as the default mode of your site. Visitors will find the website in dark mode first.',
+								'name' => __( 'Default Dark Mode', 'wp-dark-mode' ),
+								'description' => __( 'Enable this setting if you want dark mode as the default mode of your site. Visitors will find the website in dark mode first.', 'wp-dark-mode' ),
 							],
 							'device' => [
-								'name' => 'Use system settings',
-								'description' => 'Dark mode will be enabled/disabled depending on the user\'s device settings.',
+								'name' => __( 'Use system settings', 'wp-dark-mode' ),
+								'description' => __( 'Dark mode will be enabled/disabled depending on the user\'s device settings.', 'wp-dark-mode' ),
 							],
 							'time' => [
-								'name' => 'Time based dark mode',
-								'description' => 'Automatically enable dark mode based on user\'s given time.',
+								'name' => __( 'Time based dark mode', 'wp-dark-mode' ),
+								'description' => __( 'Automatically enable dark mode based on user\'s given time.', 'wp-dark-mode' ),
 							],
 							'sunset' => [
-								'name' => 'Sunset Mode',
-								'description' => 'Automatically enable dark mode at sunset based on the user\'s location.',
+								'name' => __( 'Sunset Mode', 'wp-dark-mode' ),
+								'description' => __( 'Automatically enable dark mode at sunset based on the user\'s location.', 'wp-dark-mode' ),
 							],
 						),
 					),
@@ -159,27 +159,27 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 						'default' => 1,
 						'options' => array(
 							[
-								'name' => 'S',
+								'name' => __( 'S', 'wp-dark-mode' ),
 								'value' => 0.8,
 							],
 							[
-								'name' => 'M',
+								'name' => __( 'M', 'wp-dark-mode' ),
 								'value' => 1,
 							],
 							[
-								'name' => 'L',
+								'name' => __( 'L', 'wp-dark-mode' ),
 								'value' => 1.2,
 							],
 							[
-								'name' => 'XL',
+								'name' => __( 'XL', 'wp-dark-mode' ),
 								'value' => 1.4,
 							],
 							[
-								'name' => 'XXL',
+								'name' => __( 'XXL', 'wp-dark-mode' ),
 								'value' => 1.6,
 							],
 							[
-								'name' => 'Custom',
+								'name' => __( 'Custom', 'wp-dark-mode' ),
 								'value' => 'custom',
 							],
 						),
@@ -192,14 +192,14 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 						'type' => 'string',
 						'options' => array(
 							[
-								'name' => 'Left',
+								'name' => __( 'Left', 'wp-dark-mode' ),
 								'value' => 'left',
 								'icon' => '<svg class="w-4 stroke-current" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M3.125 5.625H16.875M3.125 10H16.875M3.125 14.375H10" stroke="stroke-current" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>',
 							],
 							[
-								'name' => 'Right',
+								'name' => __( 'Right', 'wp-dark-mode' ),
 								'value' => 'right',
 								'icon' => '<svg class="w-4 fill-current" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M2 4.75C2 4.33579 2.33579 4 2.75 4H17.25C17.6642 4 18 4.33579 18 4.75C18 5.16421 17.6642 5.5 17.25 5.5H2.75C2.33579 5.5 2 5.16421 2 4.75ZM9 15.25C9 14.8358 9.33579 14.5 9.75 14.5H17.25C17.6642 14.5 18 14.8358 18 15.25C18 15.6642 17.6642 16 17.25 16H9.75C9.33579 16 9 15.6642 9 15.25Z" fill="fill-current"/>
@@ -207,7 +207,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 							</svg>',
 							],
 							[
-								'name' => 'Custom',
+								'name' => __( 'Custom', 'wp-dark-mode' ),
 								'value' => 'custom',
 								'icon' => '<svg class="w-4 stroke-current" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M14.0514 3.73889L15.4576 2.33265C16.0678 1.72245 17.0572 1.72245 17.6674 2.33265C18.2775 2.94284 18.2775 3.93216 17.6674 4.54235L8.81849 13.3912C8.37792 13.8318 7.83453 14.1556 7.23741 14.3335L5 15L5.66648 12.7626C5.84435 12.1655 6.1682 11.6221 6.60877 11.1815L14.0514 3.73889ZM14.0514 3.73889L16.25 5.93749M15 11.6667V15.625C15 16.6605 14.1605 17.5 13.125 17.5H4.375C3.33947 17.5 2.5 16.6605 2.5 15.625V6.87499C2.5 5.83946 3.33947 4.99999 4.375 4.99999H8.33333" stroke="stroke-current" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -235,14 +235,14 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'attention_effect' => array(
 						'type' => 'string',
 						'options' => array(
-							'wobble' => 'Wobble',
-							'vibrate' => 'Vibrate',
-							'flicker' => 'Flicker',
-							'shake' => 'Shake',
-							'jello' => 'Jello',
-							'bounce' => 'Bounce',
-							'heartbeat' => 'Heartbeat',
-							'blink' => 'Blink',
+							'wobble' => __( 'Wobble', 'wp-dark-mode' ),
+							'vibrate' => __( 'Vibrate', 'wp-dark-mode' ),
+							'flicker' => __( 'Flicker', 'wp-dark-mode' ),
+							'shake' => __( 'Shake', 'wp-dark-mode' ),
+							'jello' => __( 'Jello', 'wp-dark-mode' ),
+							'bounce' => __( 'Bounce', 'wp-dark-mode' ),
+							'heartbeat' => __( 'Heartbeat', 'wp-dark-mode' ),
+							'blink' => __( 'Blink', 'wp-dark-mode' ),
 						),
 						'default' => 'wobble',
 					),
@@ -252,7 +252,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					),
 					'cta_text' => array(
 						'type' => 'string',
-						'default' => 'Enable Dark Mode',
+						'default' => __( 'Enable Dark Mode', 'wp-dark-mode' ),
 					),
 					'cta_color' => array(
 						'type' => 'string',
@@ -280,11 +280,11 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					),
 					'text_light' => array(
 						'type' => 'string',
-						'default' => 'Light',
+						'default' => __( 'Light', 'wp-dark-mode' ),
 					),
 					'text_dark' => array(
 						'type' => 'string',
-						'default' => 'Dark',
+						'default' => __( 'Dark', 'wp-dark-mode' ),
 					),
 				),
 				'menu_switch' => array(
@@ -311,14 +311,14 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'enabled' => [
 						'type' => 'boolean',
 						'default' => false,
-						'label' => 'Enable Custom Triggers',
-						'description' => 'Allow custom elements to toggle dark mode',
+						'label' => __( 'Enable Custom Triggers', 'wp-dark-mode' ),
+						'description' => __( 'Allow custom elements to toggle dark mode', 'wp-dark-mode' ),
 					],
 					'triggers' => [
 						'type' => 'array',
 						'default' => [],
-						'label' => 'Custom Triggers List',
-						'description' => 'List of custom trigger configurations',
+						'label' => __( 'Custom Triggers List', 'wp-dark-mode' ),
+						'description' => __( 'List of custom trigger configurations', 'wp-dark-mode' ),
 					],
 				],
 				'color' => array(
@@ -422,14 +422,14 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'name' => array(
 						'type' => 'string',
 						'options' => array(
-							'fade-in' => 'Fade In',
-							'pulse' => 'Pulse',
-							'flip' => 'Flip',
-							'roll' => 'Roll',
-							'slide-left' => 'Slide Left',
-							'slide-up' => 'Slide Up',
-							'slide-right' => 'Slide Right',
-							'slide-down' => 'Slide Down',
+							'fade-in' => __( 'Fade In', 'wp-dark-mode' ),
+							'pulse' => __( 'Pulse', 'wp-dark-mode' ),
+							'flip' => __( 'Flip', 'wp-dark-mode' ),
+							'roll' => __( 'Roll', 'wp-dark-mode' ),
+							'slide-left' => __( 'Slide Left', 'wp-dark-mode' ),
+							'slide-up' => __( 'Slide Up', 'wp-dark-mode' ),
+							'slide-right' => __( 'Slide Right', 'wp-dark-mode' ),
+							'slide-down' => __( 'Slide Down', 'wp-dark-mode' ),
 						),
 						'default' => 'fade-in',
 					),
@@ -447,16 +447,16 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 						'type' => 'string',
 						'options' => array(
 							'sync' => [
-								'name' => 'Best Dark Mode Performance',
-								'description' => 'The dark mode scripts will load before the parsing and rendering of your page. Choose this option when executing dark mode is the first priority for you.',
+								'name' => __( 'Best Dark Mode Performance', 'wp-dark-mode' ),
+								'description' => __( 'The dark mode scripts will load before the parsing and rendering of your page. Choose this option when executing dark mode is the first priority for you.', 'wp-dark-mode' ),
 							],
 							'async' => [
-								'name' => 'Balanced Performance for My Website and Dark Mode',
-								'description' => 'The dark mode scripts will be executed at the same time as your page. Choose this option to get a moderate dark mode loading time without compromising website loading speed.',
+								'name' => __( 'Balanced Performance for My Website and Dark Mode', 'wp-dark-mode' ),
+								'description' => __( 'The dark mode scripts will be executed at the same time as your page. Choose this option to get a moderate dark mode loading time without compromising website loading speed.', 'wp-dark-mode' ),
 							],
 							'defer' => [
-								'name' => 'Prioritize My Website Loading',
-								'description' => 'The dark mode script will be fetched asynchronously and executed after page parsing, just before the "DOMContentLoaded" event. Choose this option if your focus is on optimizing your website\'s performance over the WP Dark Mode.',
+								'name' => __( 'Prioritize My Website Loading', 'wp-dark-mode' ),
+								'description' => __( 'The dark mode script will be fetched asynchronously and executed after page parsing, just before the "DOMContentLoaded" event. Choose this option if your focus is on optimizing your website\'s performance over the WP Dark Mode.', 'wp-dark-mode' ),
 							],
 						),
 						'default' => 'sync',
@@ -568,12 +568,12 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'email_reporting_frequency' => array(
 						'type' => 'string',
 						'options' => array(
-							'daily' => 'Daily',
-							'weekly' => 'Weekly',
-							'biweekly' => 'Bi-Weekly',
-							'monthly' => 'Monthly',
-							'quarterly' => 'Quarterly',
-							'yearly' => 'Yearly',
+							'daily' => __( 'Daily', 'wp-dark-mode' ),
+							'weekly' => __( 'Weekly', 'wp-dark-mode' ),
+							'biweekly' => __( 'Bi-Weekly', 'wp-dark-mode' ),
+							'monthly' => __( 'Monthly', 'wp-dark-mode' ),
+							'quarterly' => __( 'Quarterly', 'wp-dark-mode' ),
+							'yearly' => __( 'Yearly', 'wp-dark-mode' ),
 						),
 						'default' => 'daily',
 					),
@@ -583,7 +583,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					),
 					'email_reporting_subject' => array(
 						'type' => 'string',
-						'default' => 'WP Dark Mode Analytics Report',
+						'default' => __( 'WP Dark Mode Analytics Report', 'wp-dark-mode' ),
 					),
 				),
 			];
@@ -600,6 +600,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 		public static function predefined_presets() {
 			$presets = [
 				[
+					'slug' => 'sweet_dark',
 					'name' => 'Sweet Dark',
 					'bg' => '#11131F',
 					'text' => '#F8FAFC',
@@ -618,6 +619,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'scrollbar_thumb' => '#2E334D',
 				],
 				[
+					'slug' => 'gold',
 					'name' => 'Gold',
 					'bg' => '#000',
 					'text' => '#dfdedb',
@@ -636,6 +638,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'scrollbar_thumb' => '#dfdedb',
 				],
 				[
+					'slug' => 'sapphire',
 					'name' => 'Sapphire',
 					'bg' => '#1B2836',
 					'text' => '#fff',
@@ -654,6 +657,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'scrollbar_thumb' => '#fff',
 				],
 				[
+					'slug' => 'tailwind',
 					'name' => 'Tailwind',
 					'bg' => '#111827',
 					'text' => '#F8FAFC',
@@ -672,6 +676,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'scrollbar_thumb' => '#374151',
 				],
 				[
+					'slug' => 'midnight_bloom',
 					'name' => 'Midnight Bloom',
 					'bg' => '#141438',
 					'text' => '#F8FAFC',
@@ -690,6 +695,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'scrollbar_thumb' => '#16173A',
 				],
 				[
+					'slug' => 'fuchsia',
 					'name' => 'Fuchsia',
 					'bg' => '#1E0024',
 					'text' => '#fff',
@@ -708,6 +714,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'scrollbar_thumb' => '#fff',
 				],
 				[
+					'slug' => 'rose',
 					'name' => 'Rose',
 					'bg' => '#270000',
 					'text' => '#fff',
@@ -726,6 +733,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'scrollbar_thumb' => '#fff',
 				],
 				[
+					'slug' => 'violet',
 					'name' => 'Violet',
 					'bg' => '#160037',
 					'text' => '#EBEBEB',
@@ -744,6 +752,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'scrollbar_thumb' => '#EBEBEB',
 				],
 				[
+					'slug' => 'pink',
 					'name' => 'Pink',
 					'bg' => '#121212',
 					'text' => '#E6E6E6',
@@ -762,6 +771,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'scrollbar_thumb' => '#E6E6E6',
 				],
 				[
+					'slug' => 'kelly',
 					'name' => 'Kelly',
 					'bg' => '#000A3B',
 					'text' => '#FFFFFF',
@@ -780,6 +790,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'scrollbar_thumb' => '#FFFFFF',
 				],
 				[
+					'slug' => 'magenta',
 					'name' => 'Magenta',
 					'bg' => '#171717',
 					'text' => '#BFB7C0',
@@ -798,6 +809,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'scrollbar_thumb' => '#BFB7C0',
 				],
 				[
+					'slug' => 'green',
 					'name' => 'Green',
 					'bg' => '#003711',
 					'text' => '#FFFFFF',
@@ -816,6 +828,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'scrollbar_thumb' => '#FFFFFF',
 				],
 				[
+					'slug' => 'orange',
 					'name' => 'Orange',
 					'bg' => '#23243A',
 					'text' => '#D6CB99',
@@ -833,8 +846,8 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'scrollbar_track' => '#23243A',
 					'scrollbar_thumb' => '#D6CB99',
 				],
-
 				[
+					'slug' => 'yellow',
 					'name' => 'Yellow',
 					'bg' => '#151819',
 					'text' => '#D5D6D7',
@@ -853,6 +866,7 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'scrollbar_thumb' => '#D5D6D7',
 				],
 				[
+					'slug' => 'facebook',
 					'name' => 'Facebook',
 					'bg' => '#18191A',
 					'text' => '#DCDEE3',
@@ -870,8 +884,8 @@ if ( ! class_exists( __NAMESPACE__ . 'Config' ) ) {
 					'scrollbar_track' => '#18191A',
 					'scrollbar_thumb' => '#DCDEE3',
 				],
-
 				[
+					'slug' => 'twitter',
 					'name' => 'Twitter',
 					'bg' => '#141d26',
 					'text' => '#fff',

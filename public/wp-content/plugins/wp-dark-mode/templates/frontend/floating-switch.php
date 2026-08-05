@@ -118,6 +118,11 @@ if ( $args['enabled_custom_icons'] ) {
 				'data-text-dark' => [],
 				'data-icon-light' => [],
 				'data-icon-dark' => [],
+				'role' => [],
+				'aria-label' => [],
+				'aria-pressed' => [],
+				'aria-checked' => [],
+				'title' => [],
 			],
 		]
 	);

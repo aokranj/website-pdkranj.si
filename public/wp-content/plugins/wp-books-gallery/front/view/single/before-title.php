@@ -29,10 +29,14 @@ $wbg_illustrator    = get_post_meta( $post->ID, 'wbg_illustrator', true );
 $wbg_translator     = get_post_meta( $post->ID, 'wbg_translator', true );
 
 $wbg_img = ( '' !== $wbg_default_book_cover_url ) ? $wbg_default_book_cover_url : WBG_ASSETS . 'img/noimage.jpg';
+$wbg_img_alt = '';
 
 // If book cover priority: default
 if ( 'f' === $wbg_book_cover_priority ) {
     if ( has_post_thumbnail( $post->ID ) ) {
+        $thumbnail_id = get_post_thumbnail_id( get_the_ID() );
+        $wbg_img_alt = get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true );
+        $wbg_img_alt = ! empty( $wbg_img_alt ) ? $wbg_img_alt : get_the_title();
         $wbg_img = get_the_post_thumbnail_url($post->ID,'full');
     } else {
         if ( $wbgImgUrl ) {
@@ -44,11 +48,11 @@ if ( 'f' === $wbg_book_cover_priority ) {
         $wbg_img = $wbgImgUrl;
     } else {
         if ( get_the_post_thumbnail( get_the_ID() ) ) {
-            $wbg_img = get_the_post_thumbnail_url($post->ID, 'full');
+            $wbg_img = get_the_post_thumbnail_url( $post->ID, 'full' );
         }
     }
 }
 ?>
 <div class="wbg-details-image">
-    <img src="<?php echo esc_url( $wbg_img ); ?>" alt="<?php _e( 'No Image Available', 'wp-books-gallery' ); ?>">
+    <img src="<?php echo esc_url( $wbg_img ); ?>" alt="<?php echo esc_attr( $wbg_img_alt ); ?>">
 </div>

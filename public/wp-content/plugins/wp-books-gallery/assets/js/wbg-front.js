@@ -8,6 +8,7 @@
     var wbgSlide = document.getElementById('wbg-view-slide-id');
     var wbgWidget = document.getElementById('wbg-view-widget-id');
     var wbgSingleLoadMoreDetails = document.getElementById('wbgSingleLoadMoreDetails');
+    var ebgSelectized = document.getElementsByClassName("selectized")[0];
     var wbgurl = new URL(window.location.href);
 
     // Display book info in modal
@@ -131,6 +132,8 @@
     });
 
     // searchable dropdown select
+    //if (ebgSelectized != null) {
     $('div.wbg-search-item select.wbg-selectize').selectize();
+    //}
 
 })(window, jQuery);

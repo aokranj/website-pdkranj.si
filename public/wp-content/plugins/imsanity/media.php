@@ -84,18 +84,26 @@ function imsanity_custom_column( $column_name, $id, $meta = null ) {
 			return;
 		}
 
-		list( $imagew, $imageh ) = getimagesize( $file_path );
+		$dimensions = getimagesize( $file_path );
+		if ( is_array( $dimensions ) && count( $dimensions ) >= 2 ) {
+			$imagew = $dimensions[0];
+			$imageh = $dimensions[1];
+		}
+
 		if ( empty( $imagew ) || empty( $imageh ) ) {
 			$imagew = $meta['width'];
 			$imageh = $meta['height'];
 		}
 
 		if ( empty( $imagew ) || empty( $imageh ) ) {
-			echo esc_html( 'Unknown dimensions', 'imsanity' );
+			echo esc_html__( 'Unknown dimensions', 'imsanity' );
 			return;
 		}
 		echo '<div>' . (int) $imagew . 'w x ' . (int) $imageh . 'h</div>';
 
+		if ( ! defined( 'IMSANITY_DEFAULT_MAX_WIDTH' ) ) {
+			imsanity_init();
+		}
 		$maxw        = imsanity_get_option( 'imsanity_max_width', IMSANITY_DEFAULT_MAX_WIDTH );
 		$maxh        = imsanity_get_option( 'imsanity_max_height', IMSANITY_DEFAULT_MAX_HEIGHT );
 		$permissions = apply_filters( 'imsanity_editor_permissions', 'edit_others_posts' );

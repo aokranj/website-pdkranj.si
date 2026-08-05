@@ -33,3 +33,5 @@ $wbgDisplay = ( isset( $attr['isdisplay'] ) ? $attr['isdisplay'] : $wbg_books_pe
 $wbgPagination = ( isset( $attr['ispagination'] ) ? $attr['ispagination'] : $wbg_display_pagination );
 // true/0
 $wbgLayout = ( isset( $attr['layout'] ) ? $attr['layout'] : 'grid' );
+$wbg_gallary_column = ( isset( $attr['gallery_columns'] ) ? $attr['gallery_columns'] : $wbg_gallary_column );
+$wbg_book_cover_size = ( isset( $attr['cover_size'] ) ? $attr['cover_size'] : $wbg_book_cover_size );

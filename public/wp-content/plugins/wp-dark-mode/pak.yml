@@ -1,0 +1,14 @@
+excludes:
+    - .git/**
+    - .gitignore
+    - .gitattributes
+    - node_modules/**
+    - package.json
+    - package-lock.json
+    - .DS_Store
+    - src
+    - .claude
+    - .wordpress-org
+    - public
+compression: 9
+max_file_size: 10MB

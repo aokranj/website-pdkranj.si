@@ -36,7 +36,7 @@ function imsanity_create_menu() {
 		esc_html__( 'Imsanity Plugin Settings', 'imsanity' ), // Page Title.
 		esc_html__( 'Imsanity', 'imsanity' ),                 // Menu Title.
 		$permissions,                                         // Required permissions.
-		IMSANITY_PLUGIN_FILE_REL,                             // Slug.
+		'imsanity-options',                                   // Slug.
 		'imsanity_settings_page'                              // Function to call.
 	);
 }
@@ -56,10 +56,22 @@ function imsanity_register_network() {
 			esc_html__( 'Imsanity Network Settings', 'imsanity' ),
 			esc_html__( 'Imsanity', 'imsanity' ),
 			$permissions,
-			IMSANITY_PLUGIN_FILE_REL,
+			'imsanity-options',
 			'imsanity_network_settings'
 		);
 	}
+}
+
+/**
+ * Get the settings link, based on whether we are in a multi-site network admin or not.
+ *
+ * @return string The URL for the settings page.
+ */
+function imsanity_get_settings_link() {
+	if ( is_multisite() && is_network_admin() ) {
+		return network_admin_url( 'settings.php?page=imsanity-options' );
+	}
+	return admin_url( 'options-general.php?page=imsanity-options' );
 }
 
 /**
@@ -73,9 +85,9 @@ function imsanity_settings_link( $links ) {
 		$links = array();
 	}
 	if ( is_multisite() && is_network_admin() ) {
-		$settings_link = '<a href="' . network_admin_url( 'settings.php?page=' . IMSANITY_PLUGIN_FILE_REL ) . '">' . esc_html__( 'Settings', 'imsanity' ) . '</a>';
+		$settings_link = '<a href="' . imsanity_get_settings_link() . '">' . esc_html__( 'Settings', 'imsanity' ) . '</a>';
 	} else {
-		$settings_link = '<a href="' . admin_url( 'options-general.php?page=' . IMSANITY_PLUGIN_FILE_REL ) . '">' . esc_html__( 'Settings', 'imsanity' ) . '</a>';
+		$settings_link = '<a href="' . imsanity_get_settings_link() . '">' . esc_html__( 'Settings', 'imsanity' ) . '</a>';
 	}
 	array_unshift( $links, $settings_link );
 	return $links;
@@ -161,6 +173,9 @@ function imsanity_multisite_table_schema_version() {
 function imsanity_get_default_multisite_settings() {
 	$data = new stdClass();
 
+	if ( ! defined( 'IMSANITY_DEFAULT_MAX_WIDTH' ) ) {
+		imsanity_init();
+	}
 	$data->imsanity_override_site      = false;
 	$data->imsanity_max_height         = IMSANITY_DEFAULT_MAX_HEIGHT;
 	$data->imsanity_max_width          = IMSANITY_DEFAULT_MAX_WIDTH;
@@ -171,6 +186,8 @@ function imsanity_get_default_multisite_settings() {
 	$data->imsanity_bmp_to_jpg         = IMSANITY_DEFAULT_BMP_TO_JPG;
 	$data->imsanity_png_to_jpg         = IMSANITY_DEFAULT_PNG_TO_JPG;
 	$data->imsanity_quality            = IMSANITY_DEFAULT_QUALITY;
+	$data->imsanity_avif_quality       = IMSANITY_DEFAULT_AVIF_QUALITY;
+	$data->imsanity_webp_quality       = IMSANITY_DEFAULT_WEBP_QUALITY;
 	$data->imsanity_delete_originals   = false;
 	return $data;
 }
@@ -317,11 +334,37 @@ function imsanity_network_settings() {
 		</tr>
 		<tr>
 			<th scope="row">
+				<label for='imsanity_avif_quality'><?php esc_html_e( 'AVIF image quality', 'imsanity' ); ?>
+			</th>
+			<td>
+				<input type='text' id='imsanity_avif_quality' name='imsanity_avif_quality' class='small-text' value='<?php echo (int) $settings->imsanity_avif_quality; ?>' />
+				<?php esc_html_e( 'Usable values are 1-92.', 'imsanity' ); ?>
+				<p class='description'><?php esc_html_e( 'Only used when resizing images, does not affect thumbnails.', 'imsanity' ); ?></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">
+				<label for='imsanity_webp_quality'><?php esc_html_e( 'WebP image quality', 'imsanity' ); ?>
+			</th>
+			<td>
+				<input type='text' id='imsanity_webp_quality' name='imsanity_webp_quality' class='small-text' value='<?php echo (int) $settings->imsanity_webp_quality; ?>' />
+				<?php esc_html_e( 'Usable values are 1-92.', 'imsanity' ); ?>
+				<p class='description'><?php esc_html_e( 'Only used when resizing images, does not affect thumbnails.', 'imsanity' ); ?></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">
 				<label for"imsanity_bmp_to_jpg"><?php esc_html_e( 'Convert BMP to JPG', 'imsanity' ); ?></label>
 			</th>
 			<td>
 				<input type="checkbox" id="imsanity_bmp_to_jpg" name="imsanity_bmp_to_jpg" value="true" <?php checked( $settings->imsanity_bmp_to_jpg ); ?> />
-				<?php esc_html_e( 'Only applies to new image uploads, existing BMP images cannot be converted or resized.', 'imsanity' ); ?>
+				<?php
+				printf(
+					/* translators: %s: link to install EWWW Image Optimizer plugin */
+					esc_html__( 'Only applies to new image uploads, existing images may be converted with %s.', 'imsanity' ),
+					'<a href="' . esc_url( admin_url( 'plugin-install.php?s=ewww+image+optimizer&tab=search&type=term' ) ) . '">EWWW Image Optimizer</a>'
+				);
+				?>
 			</td>
 		</tr>
 		<tr>
@@ -348,6 +391,17 @@ function imsanity_network_settings() {
 				<?php esc_html_e( 'Remove the large pre-scaled originals that WordPress retains for thumbnail generation.', 'imsanity' ); ?>
 			</td>
 		</tr>
+	<?php if ( is_file( imsanity_debug_log_path() ) ) : ?>
+		<tr>
+			<th><?php esc_html_e( 'Debug Log', 'imsanity' ); ?></th>
+			<td>
+				<p>
+					<a target='_blank' href='<?php echo esc_url( wp_nonce_url( admin_url( 'admin.php?action=imsanity_view_debug_log' ), 'imsanity-options' ) ); ?>'><?php esc_html_e( 'View Log', 'imsanity' ); ?></a> -
+					<a href='<?php echo esc_url( wp_nonce_url( admin_url( 'admin.php?action=imsanity_delete_debug_log' ), 'imsanity-options' ) ); ?>'><?php esc_html_e( 'Clear Log', 'imsanity' ); ?></a>
+				</p>
+			</td>
+		</tr>
+	<?php endif; ?>
 	</table>
 
 	<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Update Settings', 'imsanity' ); ?>" /></p>
@@ -386,9 +440,11 @@ function imsanity_network_settings_update() {
 	$data->imsanity_bmp_to_jpg         = ! empty( $_POST['imsanity_bmp_to_jpg'] );
 	$data->imsanity_png_to_jpg         = ! empty( $_POST['imsanity_png_to_jpg'] );
 	$data->imsanity_quality            = isset( $_POST['imsanity_quality'] ) ? imsanity_jpg_quality( intval( $_POST['imsanity_quality'] ) ) : 82;
+	$data->imsanity_avif_quality       = isset( $_POST['imsanity_avif_quality'] ) ? imsanity_avif_quality( intval( $_POST['imsanity_avif_quality'] ) ) : 86;
+	$data->imsanity_webp_quality       = isset( $_POST['imsanity_webp_quality'] ) ? imsanity_webp_quality( intval( $_POST['imsanity_webp_quality'] ) ) : 86;
 	$data->imsanity_delete_originals   = ! empty( $_POST['imsanity_delete_originals'] );
 
-	$success = $wpdb->update(
+	$wpdb->update(
 		$wpdb->imsanity_ms,
 		array( 'data' => maybe_serialize( $data ) ),
 		array( 'setting' => 'multisite' )
@@ -419,6 +475,9 @@ function imsanity_get_multisite_settings() {
 	$result = null;
 
 	if ( ! $_imsanity_multisite_settings ) {
+		if ( ! defined( 'IMSANITY_DEFAULT_MAX_WIDTH' ) ) {
+			imsanity_init();
+		}
 		if ( function_exists( 'is_multisite' ) && is_multisite() ) {
 			global $wpdb;
 			$result = $wpdb->get_var( "SELECT data FROM $wpdb->imsanity_ms WHERE setting = 'multisite'" );
@@ -441,6 +500,12 @@ function imsanity_get_multisite_settings() {
 		$_imsanity_multisite_settings->imsanity_png_to_jpg    = ! empty( $_imsanity_multisite_settings->imsanity_png_to_jpg ) ? true : false;
 		if ( ! property_exists( $_imsanity_multisite_settings, 'imsanity_delete_originals' ) ) {
 			$_imsanity_multisite_settings->imsanity_delete_originals = false;
+		}
+		if ( ! property_exists( $_imsanity_multisite_settings, 'imsanity_avif_quality' ) ) {
+			$_imsanity_multisite_settings->imsanity_avif_quality = IMSANITY_DEFAULT_AVIF_QUALITY;
+		}
+		if ( ! property_exists( $_imsanity_multisite_settings, 'imsanity_webp_quality' ) ) {
+			$_imsanity_multisite_settings->imsanity_webp_quality = IMSANITY_DEFAULT_WEBP_QUALITY;
 		}
 	}
 	return $_imsanity_multisite_settings;
@@ -500,11 +565,26 @@ function imsanity_set_defaults() {
 	add_option( 'imsanity_bmp_to_jpg', $settings->imsanity_bmp_to_jpg, '', false );
 	add_option( 'imsanity_png_to_jpg', $settings->imsanity_png_to_jpg, '', false );
 	add_option( 'imsanity_quality', $settings->imsanity_quality, '', false );
+	add_option( 'imsanity_avif_quality', $settings->imsanity_avif_quality, '', false );
+	add_option( 'imsanity_webp_quality', $settings->imsanity_webp_quality, '', false );
 	add_option( 'imsanity_delete_originals', $settings->imsanity_delete_originals, '', false );
-	if ( ! get_option( 'imsanity_version' ) ) {
-		global $wpdb;
-		$wpdb->query( "UPDATE $wpdb->options SET autoload='no' WHERE option_name LIKE 'imsanity_%'" );
-	}
+
+	$autoload_options = array(
+		'imsanity_version'            => true,
+		'imsanity_max_width'          => false,
+		'imsanity_max_height'         => false,
+		'imsanity_max_width_library'  => false,
+		'imsanity_max_height_library' => false,
+		'imsanity_max_width_other'    => false,
+		'imsanity_max_height_other'   => false,
+		'imsanity_bmp_to_jpg'         => false,
+		'imsanity_png_to_jpg'         => false,
+		'imsanity_quality'            => false,
+		'imsanity_avif_quality'       => false,
+		'imsanity_webp_quality'       => false,
+		'imsanity_delete_originals'   => false,
+	);
+	wp_set_option_autoload_values( $autoload_options );
 }
 
 /**
@@ -527,7 +607,30 @@ function imsanity_register_settings() {
 	register_setting( 'imsanity-settings-group', 'imsanity_bmp_to_jpg', 'boolval' );
 	register_setting( 'imsanity-settings-group', 'imsanity_png_to_jpg', 'boolval' );
 	register_setting( 'imsanity-settings-group', 'imsanity_quality', 'imsanity_jpg_quality' );
+	register_setting( 'imsanity-settings-group', 'imsanity_avif_quality', 'imsanity_avif_quality' );
+	register_setting( 'imsanity-settings-group', 'imsanity_webp_quality', 'imsanity_webp_quality' );
 	register_setting( 'imsanity-settings-group', 'imsanity_delete_originals', 'boolval' );
+}
+
+/**
+ * Set the quality based on the mime type of the image being resized.
+ *
+ * @param int    $quality The quality currently set.
+ * @param string $mime_type The mime type of the image being resized.
+ * @return int The (potentially) adjusted quality level.
+ */
+function imsanity_editor_quality( $quality, $mime_type = '' ) {
+	if ( 'image/avif' === $mime_type ) {
+		$new_quality = imsanity_avif_quality();
+	} elseif ( 'image/webp' === $mime_type ) {
+		$new_quality = imsanity_webp_quality();
+	} elseif ( 'image/jpeg' === $mime_type ) {
+		$new_quality = imsanity_jpg_quality();
+	}
+	if ( ! empty( $new_quality ) && $new_quality > 0 && $new_quality <= 92 ) {
+		return $new_quality;
+	}
+	return $quality;
 }
 
 /**
@@ -543,7 +646,50 @@ function imsanity_jpg_quality( $quality = null ) {
 	if ( preg_match( '/^(100|[1-9][0-9]?)$/', $quality ) ) {
 		return (int) $quality;
 	} else {
+		if ( ! defined( 'IMSANITY_DEFAULT_QUALITY' ) ) {
+			imsanity_init();
+		}
 		return IMSANITY_DEFAULT_QUALITY;
+	}
+}
+
+/**
+ * Validate and return the AVIF quality setting.
+ *
+ * @param int $quality The AVIF quality currently set.
+ * @return int The (potentially) adjusted quality level.
+ */
+function imsanity_avif_quality( $quality = null ) {
+	if ( is_null( $quality ) ) {
+		$quality = get_option( 'imsanity_avif_quality' );
+	}
+	if ( preg_match( '/^(100|[1-9][0-9]?)$/', $quality ) ) {
+		return (int) $quality;
+	} else {
+		if ( ! defined( 'IMSANITY_DEFAULT_AVIF_QUALITY' ) ) {
+			imsanity_init();
+		}
+		return IMSANITY_DEFAULT_AVIF_QUALITY;
+	}
+}
+
+/**
+ * Validate and return the WebP quality setting.
+ *
+ * @param int $quality The WebP quality currently set.
+ * @return int The (potentially) adjusted quality level.
+ */
+function imsanity_webp_quality( $quality = null ) {
+	if ( is_null( $quality ) ) {
+		$quality = get_option( 'imsanity_webp_quality' );
+	}
+	if ( preg_match( '/^(100|[1-9][0-9]?)$/', $quality ) ) {
+		return (int) $quality;
+	} else {
+		if ( ! defined( 'IMSANITY_DEFAULT_WEBP_QUALITY' ) ) {
+			imsanity_init();
+		}
+		return IMSANITY_DEFAULT_WEBP_QUALITY;
 	}
 }
 
@@ -563,6 +709,9 @@ function imsanity_jpg_quality( $quality = null ) {
 function imsanity_adjust_default_threshold( $size, $imagesize = array(), $file = '' ) {
 	if ( false !== strpos( $file, 'noresize' ) ) {
 		return false;
+	}
+	if ( ! defined( 'IMSANITY_DEFAULT_MAX_WIDTH' ) ) {
+		imsanity_init();
 	}
 	$max_size = max(
 		imsanity_get_option( 'imsanity_max_width', IMSANITY_DEFAULT_MAX_WIDTH ),
@@ -741,7 +890,7 @@ function imsanity_settings_page_notice() {
 }
 
 /**
- * Check to see if GD is missing, and alert the user.
+ * Check to see if GD is missing and alert the user.
  */
 function imsanity_missing_gd_admin_notice() {
 	if ( imsanity_gd_support() ) {
@@ -751,10 +900,12 @@ function imsanity_missing_gd_admin_notice() {
 }
 
 /**
- * Render the site settings form.  This is processed by
- * WordPress built-in options persistance mechanism
+ * Render the site settings form.
  */
 function imsanity_settings_page_form() {
+	if ( ! defined( 'IMSANITY_DEFAULT_MAX_WIDTH' ) ) {
+		imsanity_init();
+	}
 	?>
 	<form method="post" action="options.php">
 	<?php settings_fields( 'imsanity-settings-group' ); ?>
@@ -778,13 +929,12 @@ function imsanity_settings_page_form() {
 		</tr>
 
 		<tr>
-		<th scope="row"><?php esc_html_e( 'Images uploaded elsewhere (Theme headers, backgrounds, logos, etc)', 'imsanity' ); ?></th>
-		<td>
-			<label for="imsanity_max_width_other"><?php esc_html_e( 'Max Width', 'imsanity' ); ?></label> <input type="number" step="1" min="0" class="small-text" name="imsanity_max_width_other" value="<?php echo (int) get_option( 'imsanity_max_width_other', IMSANITY_DEFAULT_MAX_WIDTH ); ?>" />
-			<label for="imsanity_max_height_other"><?php esc_html_e( 'Max Height', 'imsanity' ); ?></label> <input type="number" step="1" min="0" class="small-text" name="imsanity_max_height_other" value="<?php echo (int) get_option( 'imsanity_max_height_other', IMSANITY_DEFAULT_MAX_HEIGHT ); ?>" /> <?php esc_html_e( 'in pixels, enter 0 to disable', 'imsanity' ); ?>
-		</td>
+			<th scope="row"><?php esc_html_e( 'Images uploaded elsewhere (Theme headers, backgrounds, logos, etc)', 'imsanity' ); ?></th>
+			<td>
+				<label for="imsanity_max_width_other"><?php esc_html_e( 'Max Width', 'imsanity' ); ?></label> <input type="number" step="1" min="0" class="small-text" name="imsanity_max_width_other" value="<?php echo (int) get_option( 'imsanity_max_width_other', IMSANITY_DEFAULT_MAX_WIDTH ); ?>" />
+				<label for="imsanity_max_height_other"><?php esc_html_e( 'Max Height', 'imsanity' ); ?></label> <input type="number" step="1" min="0" class="small-text" name="imsanity_max_height_other" value="<?php echo (int) get_option( 'imsanity_max_height_other', IMSANITY_DEFAULT_MAX_HEIGHT ); ?>" /> <?php esc_html_e( 'in pixels, enter 0 to disable', 'imsanity' ); ?>
+			</td>
 		</tr>
-
 
 		<tr>
 			<th scope="row">
@@ -799,11 +949,39 @@ function imsanity_settings_page_form() {
 
 		<tr>
 			<th scope="row">
+				<label for='imsanity_avif_quality' ><?php esc_html_e( 'AVIF image quality', 'imsanity' ); ?>
+			</th>
+			<td>
+				<input type='text' id='imsanity_avif_quality' name='imsanity_avif_quality' class='small-text' value='<?php echo (int) imsanity_avif_quality(); ?>' />
+				<?php esc_html_e( 'Usable values are 1-92.', 'imsanity' ); ?>
+				<p class='description'><?php esc_html_e( 'Only used when resizing images, does not affect thumbnails.', 'imsanity' ); ?></p>
+			</td>
+		</tr>
+
+		<tr>
+			<th scope="row">
+				<label for='imsanity_webp_quality' ><?php esc_html_e( 'WebP image quality', 'imsanity' ); ?>
+			</th>
+			<td>
+				<input type='text' id='imsanity_webp_quality' name='imsanity_webp_quality' class='small-text' value='<?php echo (int) imsanity_webp_quality(); ?>' />
+				<?php esc_html_e( 'Usable values are 1-92.', 'imsanity' ); ?>
+				<p class='description'><?php esc_html_e( 'Only used when resizing images, does not affect thumbnails.', 'imsanity' ); ?></p>
+			</td>
+		</tr>
+
+		<tr>
+			<th scope="row">
 				<label for="imsanity_bmp_to_jpg"><?php esc_html_e( 'Convert BMP To JPG', 'imsanity' ); ?></label>
 			</th>
 			<td>
 				<input type="checkbox" id="imsanity_bmp_to_jpg" name="imsanity_bmp_to_jpg" value="true" <?php checked( (bool) get_option( 'imsanity_bmp_to_jpg', IMSANITY_DEFAULT_BMP_TO_JPG ) ); ?> />
-				<?php esc_html_e( 'Only applies to new image uploads, existing BMP images cannot be converted or resized.', 'imsanity' ); ?>
+				<?php
+				printf(
+					/* translators: %s: link to install EWWW Image Optimizer plugin */
+					esc_html__( 'Only applies to new image uploads, existing images may be converted with %s.', 'imsanity' ),
+					'<a href="' . esc_url( admin_url( 'plugin-install.php?s=ewww+image+optimizer&tab=search&type=term' ) ) . '">EWWW Image Optimizer</a>'
+				);
+				?>
 			</td>
 		</tr>
 		<tr>
@@ -830,6 +1008,17 @@ function imsanity_settings_page_form() {
 				<?php esc_html_e( 'Remove the large pre-scaled originals that WordPress retains for thumbnail generation.', 'imsanity' ); ?>
 			</td>
 		</tr>
+	<?php if ( is_file( imsanity_debug_log_path() ) ) : ?>
+		<tr>
+			<th><?php esc_html_e( 'Debug Log', 'imsanity' ); ?></th>
+			<td>
+				<p>
+					<a target='_blank' href='<?php echo esc_url( wp_nonce_url( admin_url( 'admin.php?action=imsanity_view_debug_log' ), 'imsanity-options' ) ); ?>'><?php esc_html_e( 'View Log', 'imsanity' ); ?></a> -
+					<a href='<?php echo esc_url( wp_nonce_url( admin_url( 'admin.php?action=imsanity_delete_debug_log' ), 'imsanity-options' ) ); ?>'><?php esc_html_e( 'Clear Log', 'imsanity' ); ?></a>
+				</p>
+			</td>
+		</tr>
+	<?php endif; ?>
 	</table>
 
 	<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'imsanity' ); ?>" /></p>

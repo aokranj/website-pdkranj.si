@@ -12,53 +12,140 @@ table.fixed {
     width: fit-content;
 }
 
-table.wbg-search-settings-table,
-table.wbg-search-style-settings-table,
-table.wbg-details-settings-table,
-table.wbg-single-style-settings-table,
-table.wbg-general-style-settings-table {
+
+/* new admin styles - claude new design */
+
+table.hm-settings-table {
+    border-left: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
     width: 100%;
 }
 
-table.wbg-general-settings-table tr th,
-table.wbg-general-settings-table tr td,
-table.wbg-general-style-settings-table tr th,
-table.wbg-general-style-settings-table tr td,
-table.wbg-details-settings-table tr th,
-table.wbg-details-settings-table tr td,
-table.wbg-search-settings-table tr th,
-table.wbg-search-settings-table tr td,
-table.wbg-search-style-settings-table tr th,
-table.wbg-search-style-settings-table tr td,
-table.wbg-single-style-settings-table tr th,
-table.wbg-single-style-settings-table tr td,
-table.wbg-gallery-conent-settings-table tr td {
-    text-align: left;
-}
-
-table.wbg-general-settings-table tr th,
-table.wbg-general-style-settings-table tr th,
-table.wbg-details-settings-table tr th,
-table.wbg-search-settings-table tr th,
-table.wbg-search-style-settings-table tr th,
-table.wbg-single-style-settings-table tr th,
-table.wbg-gallery-conent-settings-table tr th {
-    font-weight: 600;
-    width: 180px;
-    text-align: right;
-    padding-right: 10px;
-}
-
-table.wbg-general-settings-table tr td,
-table.wbg-search-settings-table tr td,
-table.wbg-details-settings-table tr td,
-table.wbg-single-style-settings-table tr td,
-table.wbg-gallery-conent-settings-table tr td,
-table.wbg-general-style-settings-table tr td,
-table.wbg-search-style-settings-table tr td {
-    border: 1px solid #DDD;
+table.hm-settings-table tr.wbg-settings-section td.wbg-settings-block-title {
     background: #F2F2F2;
-    padding: 10px;
+    background-image: linear-gradient(to right, #FAFAFA, #fff);
+    color: #135e9b;
+    border-left: 2px solid #135e9b;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 20px !important;
+}
+
+table.hm-settings-table tr td,
+table.hm-settings-table tr td label {
+    color: #135e9b;
+}
+
+table.hm-settings-table tr.upgrade-promotion th,
+table.hm-settings-table tr.upgrade-promotion td {
+    background: #F6EEDF;
+    border-bottom: 0.5px solid #fcd34d;
+    max-width: 250px;
+    background-image: linear-gradient(to right, #F6EEDF, #fff);
+    vertical-align: top;
+}
+
+table.hm-settings-table tr.upgrade-promotion th {
+    color: #805C1F;
+    width: 200px;
+    vertical-align: top;
+}
+
+table.hm-settings-table tr.upgrade-promotion th i {
+    margin-right: 5px;
+}
+
+table.hm-settings-table span.wbg-sub-msg {
+    font-size: 12px;
+    display: block;
+    margin-top: 10px;
+    color: #444;
+}
+
+table.hm-settings-table span.wp-color-result-text {
+    margin-top: 0;
+}
+
+table.hm-settings-table tr td input[type='checkbox'] {
+    border-color: #777 !important;
+    border-radius: 4px;
+}
+
+table.hm-settings-table tr td input[type='text'],
+table.hm-settings-table tr td input[type='number'],
+table.hm-settings-table tr td input[type='password'],
+table.hm-settings-table tr td select,
+table.hm-settings-table tr td textarea {
+    border-radius: 5px;
+    border-color: #CCC;
+}
+
+
+/* Claude new desing ended */
+
+table.hm-settings-table tr th,
+table.hm-settings-table tr td {
+    border-top: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    border-left: 0px solid #DDD;
+    border-bottom: 0px solid #DDD;
+    padding: 15px;
+    text-align: left;
+    vertical-align: top;
+    background-image: linear-gradient(to right, #f0fdf4, #fff);
+}
+
+table.hm-settings-table tr th {
+    font-weight: 600;
+    vertical-align: top;
+    background-color: #f0fdf4;
+    background-image: linear-gradient(to right, #f0fdf4, #fff);
+    color: #15803d;
+    width: 200px;
+    text-align: right;
+}
+
+.wp-picker-container .wp-color-result.button {
+    border-color: #bbb;
+    border-radius: 4px;
+}
+
+table.hm-settings-table tr.upgrade-promotion td .pro-unlock {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #FFF;
+    border: 0.5px solid #805C1F;
+    border-radius: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.pro-unlock-text {
+    font-size: 14px;
+    flex: 1;
+    line-height: 1.4;
+}
+
+.pro-unlock-btn {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 8px;
+    background: #F6EEDF;
+    color: #805C1F;
+    border: 0.5px solid #805C1F;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.pro-unlock-btn:hover {
+    background: #805C1F;
+    color: #F6EEDF;
 }
 
 
@@ -155,11 +242,13 @@ input#wbg_shortcode {
 .button.wbg-button:active {
     background: #5E24DD;
     color: #FFF;
-    border: 0px solid #5E24DD;
+    border: 1px solid #5E24DD;
     border-radius: 5px;
-    padding: 6px 20px;
+    padding: 16px 20px;
     font-size: 16px;
+    line-height: 16px;
     font-weight: 600;
+    transition: 0.3s;
 }
 
 .button.wbg-button:hover {
@@ -274,8 +363,12 @@ input#wbg_shortcode {
 }
 
 .wbg-admin-sidebar .postbox.pro-features ul a {
-    color: #35c481;
+    color: #f7c788;
     text-decoration: none;
+}
+
+.wbg-admin-sidebar .postbox.pro-features ul a:hover {
+    color: #88ddf7;
 }
 
 

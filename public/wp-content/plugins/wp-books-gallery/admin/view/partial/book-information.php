@@ -61,7 +61,7 @@ _e( 'Primary Author', 'wp-books-gallery' );
         <td>
             <input type="text" name="wbg_author" value="<?php 
 esc_attr_e( $wbg_author );
-?>" class="regular-text">
+?>" class="regular-text" required>
         </td>
     </tr>
     <tr class="publisher">
@@ -106,7 +106,7 @@ _e( 'Published On', 'wp-books-gallery' );
         <td>
             <input type="text" name="wbg_published_on" id="wbg_published_on" value="<?php 
 esc_attr_e( $wbg_published_on );
-?>" class="medium-text">
+?>" class="medium-text" required>
         </td>
     </tr>
     <tr class="isbn">

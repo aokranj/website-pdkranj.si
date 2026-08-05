@@ -1,0 +1,3722 @@
+# Translation file for wp-dark-mode
+# Copyright (C) 2026 wp-dark-mode
+# This file is distributed under the same license as the wp-dark-mode package.
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-dark-mode\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-23 07:15+0000\n"
+"PO-Revision-Date: 2026-03-31 20:03+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: bn_BD\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"X-Generator: Poedit 3.8\n"
+"X-Domain: wp-dark-mode\n"
+
+#: includes/admin/class-admin-install.php:221
+msgid "Upgrade now"
+msgstr "এখনই আপগ্রেড করুন"
+
+#: includes/admin/class-admin-install.php:232, includes/admin/class-admin-menus.php:59,
+#: includes/admin/class-admin-menus.php:60, includes/admin/class-admin-menus.php:71,
+#: includes/admin/class-admin-menus.php:72, includes/admin/class-strings.php:542
+msgid "Settings"
+msgstr "সেটিংস"
+
+#: includes/admin/class-admin-menus.php:45
+msgid "WP Dark Mode Settings"
+msgstr "ডব্লিউপি ডার্ক মোড সেটিংস"
+
+#: includes/admin/class-admin-menus.php:46, includes/admin/class-admin-notices.php:86,
+#: includes/admin/class-strings.php:656, includes/admin/class-strings.php:662
+msgid "WP Dark Mode"
+msgstr "ডব্লিউপি ডার্ক মোড"
+
+#: includes/admin/class-admin-menus.php:82, includes/admin/class-admin-menus.php:83,
+#: includes/admin/class-strings.php:665
+msgid "Get Started"
+msgstr "শুরু করুন"
+
+#: includes/admin/class-admin-menus.php:93, includes/admin/class-admin-menus.php:94,
+#: includes/modules/social-share/class-social-share.php:463
+msgid "Social Share"
+msgstr "সোশ্যাল শেয়ার"
+
+#: includes/admin/class-admin-menus.php:107, includes/admin/class-strings.php:493
+msgid "Recommended Plugins"
+msgstr "প্রস্তাবিত প্লাগইন"
+
+#: includes/admin/class-admin-menus.php:108
+msgid "Recommended <br /> Plugins"
+msgstr "প্রস্তাবিত <br /> প্লাগইন"
+
+#: includes/admin/class-admin-menus.php:120, includes/admin/class-admin-menus.php:129,
+#: includes/admin/class-strings.php:749
+msgid "Upgrade Now"
+msgstr "এখনই আপগ্রেড করুন"
+
+#: includes/admin/class-admin-rest.php:145, includes/admin/class-admin-rest.php:187
+msgid "No settings found."
+msgstr "কোন সেটিংস পাওয়া যায়নি।"
+
+#: includes/admin/class-admin-rest.php:195
+msgid "Settings saved successfully."
+msgstr "সেটিংস সফলভাবে সংরক্ষিত হয়েছে।"
+
+#: includes/admin/class-admin-rest.php:210
+msgid "Reset not confirmed."
+msgstr "রিসেট নিশ্চিত করা হয়নি।"
+
+#: includes/admin/class-admin-rest.php:220, includes/admin/class-strings.php:519
+msgid "Settings reset successfully."
+msgstr "সেটিংস সফলভাবে রিসেট করা হয়েছে।"
+
+#: includes/admin/class-admin-rest.php:238
+msgid "No notice found."
+msgstr "কোনো নোটিশ পাওয়া যায়নি।"
+
+#: includes/admin/class-recommended-plugins.php:201,
+#: templates/admin/recommended-plugins.php:134
+msgid "Try out our recommended plugins"
+msgstr "আমাদের সুপারিশকৃত প্লাগইনগুলো ট্রাই করুন"
+
+#: includes/admin/class-recommended-plugins.php:202,
+#: templates/admin/recommended-plugins.php:135
+msgid "Hide From Menu"
+msgstr "মেনু থেকে লুকান"
+
+#: includes/admin/class-recommended-plugins.php:252,
+#: templates/admin/recommended-plugins.php:184
+msgid "By %s"
+msgstr "%s দ্বারা"
+
+#: includes/admin/class-recommended-plugins.php:279,
+#: templates/admin/recommended-plugins.php:211
+msgid "Install Now"
+msgstr "এখনই ইনস্টল করুন"
+
+#: includes/admin/class-recommended-plugins.php:301,
+#: templates/admin/recommended-plugins.php:233
+msgid "Update Now"
+msgstr "এখনই আপডেট করুন"
+
+#: includes/admin/class-recommended-plugins.php:320,
+#: templates/admin/recommended-plugins.php:252
+msgid "Activate"
+msgstr "সক্রিয় করুন"
+
+#: includes/admin/class-recommended-plugins.php:353,
+#: templates/admin/recommended-plugins.php:285
+msgid "More information about %s"
+msgstr "%s সম্পর্কে আরও তথ্য"
+
+#: includes/admin/class-recommended-plugins.php:355,
+#: templates/admin/recommended-plugins.php:287
+msgid "More Details"
+msgstr "আরও বিস্তারিত"
+
+#: includes/admin/class-recommended-plugins.php:385,
+#: templates/admin/recommended-plugins.php:317
+msgid "This plugin doesn&#8217;t work with your versions of WordPress and PHP."
+msgstr "এই প্লাগইনটি আপনার ওয়ার্ডপ্রেস এবং পিএইচপি ভার্সনের সাথে কাজ করবে না।"
+
+#: includes/admin/class-recommended-plugins.php:409,
+#: templates/admin/recommended-plugins.php:341
+msgid "This plugin doesn&#8217;t work with your version of WordPress."
+msgstr "এই প্লাগইনটি আপনার ওয়ার্ডপ্রেস ভার্সনের সাথে কাজ করবে না।"
+
+#: includes/admin/class-recommended-plugins.php:418,
+#: templates/admin/recommended-plugins.php:350
+msgid "This plugin doesn&#8217;t work with your version of PHP."
+msgstr "এই প্লাগইনটি আপনার পিএইচপি ভার্সনের সাথে কাজ করবে না।"
+
+#: includes/admin/class-recommended-plugins.php:466,
+#: templates/admin/recommended-plugins.php:398
+msgid "Last Updated:"
+msgstr "শেষ আপডেট:"
+
+#: includes/admin/class-recommended-plugins.php:469,
+#: templates/admin/recommended-plugins.php:401
+msgid "%s ago"
+msgstr "%s আগে"
+
+#: includes/admin/class-recommended-plugins.php:487,
+#: templates/admin/recommended-plugins.php:419
+msgid "%s Active Installations"
+msgstr "%s সক্রিয় ইনস্টলেশন"
+
+#: includes/admin/class-recommended-plugins.php:508, includes/admin/class-strings.php:70,
+#: templates/admin/recommended-plugins.php:440
+msgid "Are you sure?"
+msgstr "আপনি কি নিশ্চিত?"
+
+#: includes/admin/class-recommended-plugins.php:509,
+#: templates/admin/recommended-plugins.php:441
+msgid ""
+"If you hide the recommended plugins page from your menu, it won't appear "
+"there again. Are you sure you'd like to do it?"
+msgstr ""
+"আপনি যদি আপনার মেনু থেকে সুপারিশকৃত প্লাগইন পেজটি লুকিয়ে ফেলেন, তবে এটি আর "
+"সেখানে প্রদর্শিত হবে না। আপনি কি নিশ্চিত যে এটি করতে চান?"
+
+#: includes/admin/class-strings.php:15
+msgid ""
+"Enabling dark mode on your website is easy and simple. <a href=\"\">Learn "
+"how to get started with WP Dark Mode within minutes.</a>"
+msgstr ""
+"আপনার ওয়েবসাইটে ডার্ক মোড সক্রিয় করা সহজ এবং সরণ। <a href=\"\">কয়েক "
+"মিনিটের মধ্যে ডব্লিউপি ডার্ক মোড কীভাবে শুরু করবেন তা শিখুন।</a>"
+
+#: includes/admin/class-strings.php:16
+msgid ""
+"To purchase and activate WP Dark Mode Ultimate, please visit our <a "
+"href=\"http://wppool.dev/wp-dark-mode-pricing/\" target=\"_blank\">pricing "
+"page</a>."
+msgstr ""
+"ডব্লিউপি ডার্ক মোড আল্টিমেট কিনতে এবং সক্রিয় করতে, দয়া করে আমাদের <a "
+"href=\"http://wppool.dev/wp-dark-mode-pricing/\" target=\"_blank\">প্রাইসিং "
+"পেজ</a> দেখুন।"
+
+#: includes/admin/class-strings.php:17
+msgid ""
+"Yes, WP Dark Mode is compatible with major page builders, including "
+"Gutenberg and Elementor. You can place the dark mode switch button on any "
+"page or post using these builders."
+msgstr ""
+"হ্যাঁ, ডব্লিউপি ডার্ক মোড গুটেনবার্গ এবং এলিমেন্টর সহ প্রধান পেজ বিল্ডারের "
+"সাথে সামঞ্জস্যপূর্ণ। আপনি এই বিল্ডারগুলো ব্যবহার করে যেকোনো পেজ বা পোস্টে "
+"ডার্ক মোড সুইচ বাটন রাখতে পারেন।"
+
+#: includes/admin/class-strings.php:18
+msgid ""
+"Yes, WP Dark Mode has been tested and works seamlessly across modern "
+"browsers such as Safari, Chrome, Firefox, Edge, Opera, Brave, and more."
+msgstr ""
+"হ্যাঁ, ডব্লিউপি ডার্ক মোড পরীক্ষা করা হয়েছে এবং সাফারি, ক্রোম, ফায়ারফক্স, "
+"এজ, অপেরা, ব্রেভ এবং আরও অনেক আধুনিক ব্রাউজারে নিরবচ্ছিন্নভাবে কাজ করে।"
+
+#: includes/admin/class-strings.php:19
+msgid ""
+"Go to WP Dark Mode > Settings > Customization > Image Settings and "
+"upload/select the image you want to use for dark mode."
+msgstr ""
+"ডব্লিউপি ডার্ক মোড > সেটিংস > কাস্টমাইজেশন > ইমেজ সেটিংস-এ যান এবং ডার্ক "
+"মোডের জন্য আপনি যে ছবি ব্যবহার করতে চান তা আপলোড/নির্বাচন করুন।"
+
+#: includes/admin/class-strings.php:20
+msgid ""
+"WP Dark Mode allows you to exclude specific elements or pages from being "
+"affected by dark mode using CSS selectors. Go to WP Dark Mode > Settings > "
+"Advanced > Exclude Settings > HTML Elements and add the CSS selectors for "
+"the elements you want to exclude."
+msgstr ""
+"ডব্লিউপি ডার্ক মোড আপনাকে সিএসএস সিলেক্টর ব্যবহার করে ডার্ক মোড দ্বারা "
+"প্রভাবিত হওয়া থেকে নির্দিষ্ট উপাদান বা পেজগুলোকে বাদ দেওয়ার অনুমতি দেয়। "
+"ডব্লিউপি ডার্ক মোড > সেটিংস > অ্যাডভান্সড > এক্সক্লুড সেটিংস > এইচটিএমএল "
+"এলিমেন্টস-এ যান এবং আপনি যে উপাদানগুলো বাদ দিতে চান সেগুলোর সিএসএস সিলেক্টর "
+"যোগ করুন।"
+
+#: includes/admin/class-strings.php:21
+msgid ""
+"For refunds on the premium plan, please contact our <a "
+"href=\"http://wppool.dev/contact\" rel=\"nofollow\" "
+"target=\"_blank\">customer support team</a> directly. The procedure will be "
+"based on the terms of service in effect at the time of purchase."
+msgstr ""
+"প্রিভিয়াম প্ল্যানে রিফান্ডের জন্য, দয়া করে সরাসরি আমাদের <a "
+"href=\"http://wppool.dev/contact\" rel=\"nofollow\" "
+"target=\"_blank\">কাস্টমার সাপোর্ট টিমের</a> সাথে যোগাযোগ করুন। রিফান্ড "
+"পদ্ধতি কেনাকাটার সময় কার্যকর পরিষেবার শর্তাবলীর উপর ভিত্তি করে হবে।"
+
+#: includes/admin/class-strings.php:22, src/admin/routes/settings-routes.js:87
+msgid "Accessibility"
+msgstr "অ্যাক্সেসিবিলিটি"
+
+#: includes/admin/class-strings.php:23, src/admin/routes/settings-routes.js:88
+msgid "Make your website more accessible for people with disabilities."
+msgstr "প্রতিবন্ধী ব্যক্তিদের কাছে আপনার ওয়েবসাইট আরও সহজলভ্য করুন।"
+
+#: includes/admin/class-strings.php:24
+msgid "Accessibility Switches"
+msgstr "অ্যাক্সেসিবিলিটি সুইচ"
+
+#: includes/admin/class-strings.php:25, includes/admin/class-strings.php:643
+msgid "Please active WooCommerce to use this feature."
+msgstr "এই ফিচারটি ব্যবহার করতে দয়া করে উকমার্স সক্রিয় করুন।"
+
+#: includes/admin/class-strings.php:26
+msgid "+ Add Custom Color Preset"
+msgstr "+ কাস্টম কালার প্রিসেট যোগ করুন"
+
+#: includes/admin/class-strings.php:27
+msgid "Add images to replace them in dark mode"
+msgstr "ডার্ক মোডে পরিবর্তন করার জন্য ছবি যোগ করুন"
+
+#: includes/admin/class-strings.php:28
+msgid "Add New"
+msgstr "নতুন যোগ করুন"
+
+#: includes/admin/class-strings.php:29, includes/admin/class-strings.php:652
+msgid ""
+"Drag & drop the Darkmode Switcher to any of your menus from the Menu option "
+"under Appearance settings in WordPress dashboard"
+msgstr ""
+"ওয়ার্ডপ্রেস ড্যাশবোর্ডের অ্যাপিয়ারেন্স সেটিংসের অধীনে মেনু অপশন থেকে "
+"যেকোনো মেনুতে ডার্কমোড সুইচার ড্র্যাগ এবং ড্রপ করুন"
+
+#: includes/admin/class-strings.php:30, includes/admin/class-strings.php:35
+msgid "Add Dark Mode switch to Menus from WordPress dashboard"
+msgstr "ওয়ার্ডপ্রেস ড্যাশবোর্ড থেকে মেনুতে ডার্ক মোড সুইচ যোগ করুন"
+
+#: includes/admin/class-strings.php:31
+msgid "Add custom triggers to toggle dark mode"
+msgstr "ডার্ক মোড টগল করতে কাস্টম ট্রিগার যোগ করুন"
+
+#: includes/admin/class-strings.php:32
+msgid "Add videos to replace them in dark mode"
+msgstr "ডার্ক মোডে পরিবর্তন করার জন্য ভিডিও যোগ করুন"
+
+#: includes/admin/class-strings.php:33
+msgid ""
+"Navigate to the Widget option in the WordPress dashboard under Appearance "
+"menu. Select the menu where you want to display dark mode switch and click "
+"on the ‘+’ button and type <span class=\"text-[#374151]\"> Dark Mode "
+"Switch</span> in the widget searchbox"
+msgstr ""
+"ওয়ার্ডপ্রেস ড্যাশবোর্ডের অ্যাপিয়ারেন্স মেনুর অধীনে উইজেট অপশনে নেভিগেট "
+"করুন। আপনি যেখানে ডার্ক মোড সুইচ প্রদর্শন করতে চান সেই মেনুটি নির্বাচন করুন "
+"এবং ‘+’ বাটনে ক্লিক করুন এবং উইজেট সার্চবক্সে <span "
+"class=\"text-[#374151]\"> Dark Mode Switch</span> টাইপ করুন"
+
+#: includes/admin/class-strings.php:34
+msgid "Add the WP Dark Mode widget to the menu"
+msgstr "মেনুতে ডব্লিউপি ডার্ক মোড উইজেট যোগ করুন"
+
+#: includes/admin/class-strings.php:36, includes/admin/class-strings.php:37
+msgid "Adjust Typography for Dark Mode"
+msgstr "ডার্ক মোডের জন্য টাইপোগ্রাফি সামঞ্জস্য করুন"
+
+#: includes/admin/class-strings.php:38, includes/admin/class-strings.php:594
+msgid ""
+"Enable to get seamless readability by font adaptation during dark-light "
+"mode toggling."
+msgstr ""
+"ডার্ক-লাইট মোড টগল করার সময় ফন্ট অ্যাডাপ্টেশনের মাধ্যমে নিরবচ্ছিন্ন "
+"পঠনযোগ্যতা পেতে সক্ষম করুন।"
+
+#: includes/admin/class-strings.php:39, includes/admin/class-strings.php:228
+msgid "Turn it ON to enable dark mode on the WordPress dashboard"
+msgstr "ওয়ার্ডপ্রেস ড্যাশবোর্ডে ডার্ক মোড সক্ষম করতে এটি চালু করুন"
+
+#: includes/admin/class-strings.php:40, includes/admin/class-strings.php:227
+msgid "Enable Admin Dashboard Dark Mode"
+msgstr "অ্যাডমিন ড্যাশবোর্ড ডার্ক মোড সক্ষম করুন"
+
+#: includes/admin/class-strings.php:41, src/admin/routes/settings-routes.js:22
+msgid "Settings to Control Dark Mode on your WordPress Admin Panel"
+msgstr "আপনার ওয়ার্ডপ্রেস অ্যাডমিন প্যানেলে ডার্ক মোড নিয়ন্ত্রণের সেটিংস"
+
+#: includes/admin/class-strings.php:42, src/admin/routes/settings-routes.js:21
+msgid "Admin Panel Dark Mode"
+msgstr "অ্যাডমিন প্যানেল ডার্ক মোড"
+
+#: includes/admin/class-strings.php:43, src/admin/routes/settings-routes.js:63
+msgid "Advanced"
+msgstr "অ্যাডভান্সড"
+
+#: includes/admin/class-strings.php:44
+msgid "Affiliate Program"
+msgstr "অ্যাফিলিয়েট প্রোগ্রাম"
+
+#: includes/admin/class-strings.php:45
+msgid ""
+"Hey! Enjoying the WP Dark Mode plugin? 😍 Join our <a "
+"href=\"https://go.wppool.dev/zfrO\" target=\"_blank\" "
+"class=\"text-[#7C3AED] font-semibold\">Influencer Program</a> to make money "
+"from your social media content. You can also check our <a "
+"href=\"https://go.wppool.dev/Tfej\" target=\"_blank\" "
+"class=\"text-[#7C3AED] font-semibold no-underline\">Affiliate Program</a> "
+"to get a <strong>25% commission</strong> on every sale!"
+msgstr ""
+"আরে! ডব্লিউপি ডার্ক মোড প্লাগইনটি উপভোগ করছেন? 😍 আপনার সোশ্যাল মিডিয়া "
+"কন্টেন্ট থেকে অর্থ উপার্জন করতে আমাদের <a "
+"href=\"https://go.wppool.dev/zfrO\" target=\"_blank\" "
+"class=\"text-[#7C3AED] font-semibold\">ইনফ্লুয়েন্সার প্রোগ্রামে</a> যোগ "
+"দিন। আপনি প্রতিটি বিক্রয়ে <strong>২৫% কমিশন</strong> পেতে আমাদের <a "
+"href=\"https://go.wppool.dev/Tfej\" target=\"_blank\" "
+"class=\"text-[#7C3AED] font-semibold no-underline\">অ্যাফিলিয়েট "
+"প্রোগ্রামটিও</a> দেখতে পারেন!"
+
+#: includes/admin/class-strings.php:46
+msgid "AI Custom Preset"
+msgstr "এআই কাস্টম প্রিসেট"
+
+#: includes/admin/class-strings.php:47
+msgid ""
+"Let AI generate your stunning dark mode themes in seconds. Preview, "
+"compare, and apply the one you love."
+msgstr ""
+"এআই-কে কয়েক সেকেন্ডের মধ্যে আপনার চমৎকার ডার্ক মোড থিম তৈরি করতে দিন। "
+"প্রিভিউ দেখুন, তুলনা করুন এবং আপনার পছন্দটি অ্যাপ্লাই করুন।"
+
+#: includes/admin/class-strings.php:48
+msgid "Create Your Dark Mode with AI"
+msgstr "এআই দিয়ে আপনার ডার্ক মোড তৈরি করুন"
+
+#: includes/admin/class-strings.php:49, src/admin/routes/settings-routes.js:125,
+#: src/admin/routes/settings-routes.js:131
+msgid "AI Model"
+msgstr "এআই মডেল"
+
+#: includes/admin/class-strings.php:50, src/admin/routes/settings-routes.js:132
+msgid "Configure AI model settings for theme generation"
+msgstr "থিম তৈরির জন্য এআই মডেল সেটিংস কনফিগার করুন"
+
+#: includes/admin/class-strings.php:51
+msgid "⚡ AI Preset Generator"
+msgstr "⚡ এআই প্রিসেট জেনারেটর"
+
+#: includes/admin/class-strings.php:52
+msgid "Let AI instantly generate a smart dark mode theme preset for you."
+msgstr ""
+"এআই-কে আপনার জন্য তাৎক্ষণিকভাবে একটি স্মার্ট ডার্ক মোড থিম প্রিসেট তৈরি "
+"করতে দিন।"
+
+#: includes/admin/class-strings.php:53
+msgid "AI Preset Generator"
+msgstr "এআই প্রিসেট জেনারেটর"
+
+#: includes/admin/class-strings.php:54, includes/admin/class-strings.php:55
+msgid "AI Preset saved successfully!"
+msgstr "এআই প্রিসেট সফলভাবে সেভ করা হয়েছে!"
+
+#: includes/admin/class-strings.php:56
+msgid "I already did it"
+msgstr "আমি ইতিমধ্যে এটি করেছি"
+
+#: includes/admin/class-strings.php:57
+msgid "You already have a preset named"
+msgstr "আপনার এই নামে ইতিমধ্যে একটি প্রিসেট আছে"
+
+#: includes/admin/class-strings.php:58
+msgid "AM"
+msgstr "পূর্বাহ্ণ"
+
+#: includes/admin/class-strings.php:59, src/admin/routes/settings-routes.js:104,
+#: src/admin/routes/settings-routes.js:118
+msgid "Analytics"
+msgstr "অ্যানালিটিক্স"
+
+#: includes/admin/class-strings.php:60
+msgid ""
+"If you enable this then the chart above will be shown in your admin panel "
+"dashboard"
+msgstr ""
+"আপনি যদি এটি সক্ষম করেন তবে উপরের চার্টটি আপনার অ্যাডমিন প্যানেল "
+"ড্যাশবোর্ডে দেখানো হবে"
+
+#: includes/admin/class-strings.php:61
+msgid "Display this dark mode usage chart on the WordPress Dashboard"
+msgstr "ওয়ার্ডপ্রেস ড্যাশবোর্ডে এই ডার্ক মোড ব্যবহারের চার্টটি প্রদর্শন করুন"
+
+#: includes/admin/class-strings.php:62, src/admin/routes/settings-routes.js:119
+msgid "Configure analytics settings."
+msgstr "অ্যানালিটিক্স সেটিংস কনফিগার করুন।"
+
+#: includes/admin/class-strings.php:63
+msgid ""
+"Enable dark mode analytics to track how many times site visitors have used "
+"dark mode in a certain period."
+msgstr ""
+"সাইট ভিজিটররা একটি নির্দিষ্ট সময়ের মধ্যে কতবার ডার্ক মোড ব্যবহার করেছেন তা "
+"ট্র্যাক করতে ডার্ক মোড অ্যানালিটিক্স সক্ষম করুন।"
+
+#: includes/admin/class-strings.php:64, includes/admin/class-strings.php:167
+msgid "Dark Mode Analytics"
+msgstr "ডার্ক মোড অ্যানালিটিক্স"
+
+#: includes/admin/class-strings.php:65, includes/admin/class-strings.php:66
+msgid "Analyze my website"
+msgstr "আমার ওয়েবসাইট বিশ্লেষণ করুন"
+
+#: includes/admin/class-strings.php:67, src/admin/routes/settings-routes.js:57
+msgid "Choose your page transition animation"
+msgstr "আপনার পেজ ট্রানজিশন অ্যানিমেশন চয়ন করুন"
+
+#: includes/admin/class-strings.php:68
+msgid ""
+"Enable this option to choose the transition animation when switching "
+"between light and dark modes on your website."
+msgstr ""
+"আপনার ওয়েবসাইটে লাইট এবং ডার্ক মোডের মধ্যে সুইচ করার সময় ট্রানজিশন "
+"অ্যানিমেশন চয়ন করতে এই অপশনটি সক্ষম করুন।"
+
+#: includes/admin/class-strings.php:69, includes/admin/class-strings.php:235
+msgid "Enable Page Transition Animation"
+msgstr "পেজ ট্রানজিশন অ্যানিমেশন সক্ষম করুন"
+
+#: includes/admin/class-strings.php:71
+msgid "Enable to choose an animation effect for the selected switch"
+msgstr "নির্বাচিত সুইচের জন্য একটি অ্যানিমেশন ইফেক্ট চয়ন করতে সক্ষম করুন"
+
+#: includes/admin/class-strings.php:72
+msgid "Switch Attention Effect"
+msgstr "সুইচ অ্যাটেনশন ইফেক্ট"
+
+#: includes/admin/class-strings.php:73
+msgid "Auto-hide Switch on Idle"
+msgstr "অলস অবস্থায় সুইচ অটো-হাইড করুন"
+
+#: includes/admin/class-strings.php:74
+msgid "Enable to automatically hide the floating switch when the user is idle."
+msgstr "ইউজার অলস থাকলে স্বয়ংক্রিয়ভাবে ফ্লোটিং সুইচ লুকানোর জন্য সক্ষম করুন।"
+
+#: includes/admin/class-strings.php:75
+msgid "Automatic Color"
+msgstr "স্বয়ংক্রিয় কালার"
+
+#: includes/admin/class-strings.php:76, includes/admin/class-strings.php:78
+msgid "Adjust the your automatic color for dark mode color scheme"
+msgstr "ডার্ক মোড কালার স্কিমের জন্য আপনার স্বয়ংক্রিয় কালার সামঞ্জস্য করুন"
+
+#: includes/admin/class-strings.php:77, includes/admin/class-strings.php:79
+msgid "Adjust your automatic color filter"
+msgstr "আপনার স্বয়ংক্রিয় কালার ফিল্টার সামঞ্জস্য করুন"
+
+#: includes/admin/class-strings.php:80
+msgid "Back"
+msgstr "পেছনে"
+
+#: includes/admin/class-strings.php:81
+msgid "Background"
+msgstr "ব্যাকগ্রাউন্ড"
+
+#: includes/admin/class-strings.php:82, includes/admin/class-strings.php:85
+msgid "Block Editor Dark Mode"
+msgstr "ব্লক এডিটর ডার্ক মোড"
+
+#: includes/admin/class-strings.php:83, includes/admin/class-strings.php:84
+msgid ""
+"Turn it ON to show dark mode switch in the block editor for toggling "
+"between dark and light mode."
+msgstr ""
+"ডার্ক এবং লাইট মোডের মধ্যে টগল করার জন্য ব্লক এডিটরে ডার্ক মোড সুইচ দেখাতে "
+"এটি চালু করুন।"
+
+#: includes/admin/class-strings.php:86
+msgid "Body Background Color"
+msgstr "বডি ব্যাকগ্রাউন্ড কালার"
+
+#: includes/admin/class-strings.php:87
+msgid "Body Colors"
+msgstr "বডি কালারস"
+
+#: includes/admin/class-strings.php:88
+msgid "Border"
+msgstr "বর্ডার"
+
+#: includes/admin/class-strings.php:89
+msgid "Brightness"
+msgstr "উজ্জ্বলতা"
+
+#: includes/admin/class-strings.php:90
+msgid "Adjust your preferred dark mode brightness"
+msgstr "আপনার পছন্দের ডার্ক মোড উজ্জ্বলতা সামঞ্জস্য করুন"
+
+#: includes/admin/class-strings.php:91
+msgid "Brightness level"
+msgstr "উজ্জ্বলতার মাত্রা"
+
+#: includes/admin/class-strings.php:92
+msgid "Browse"
+msgstr "ব্রাউজ করুন"
+
+#: includes/admin/class-strings.php:93
+msgid "Button Hover Background Color"
+msgstr "বাটন হোভার ব্যাকগ্রাউন্ড কালার"
+
+#: includes/admin/class-strings.php:94
+msgid "Button Hover Text Color"
+msgstr "বাটন হোভার টেক্সট কালার"
+
+#: includes/admin/class-strings.php:95
+msgid "Button Border"
+msgstr "বাটন বর্ডার"
+
+#: includes/admin/class-strings.php:96
+msgid "Button Colors"
+msgstr "বাটন কালার"
+
+#: includes/admin/class-strings.php:97
+msgid "Cancel"
+msgstr "বাতিল করুন"
+
+#: includes/admin/class-strings.php:98
+msgid "Choose Color Mode"
+msgstr "কালার মোড নির্বাচন করুন"
+
+#: includes/admin/class-strings.php:99, includes/admin/class-strings.php:100
+msgid "Choose Your Preferred Color Palettes"
+msgstr "আপনার পছন্দের কালার প্যালেট চয়ন করুন"
+
+#: includes/admin/class-strings.php:101
+msgid "Choose any button, menu link, or icon and make it toggle dark mode."
+msgstr ""
+"যেকোনো বাটন, মেনু লিঙ্ক বা আইকন চয়ন করুন এবং এটি ডার্ক মোড টগল করার জন্য "
+"ব্যবহার করুন।"
+
+#: includes/admin/class-strings.php:102, includes/admin/class-strings.php:105
+msgid "Classic Editor Dark Mode"
+msgstr "ক্লাসিক এডিটর ডার্ক মোড"
+
+#: includes/admin/class-strings.php:103, includes/admin/class-strings.php:104
+msgid ""
+"Turn it ON to show dark mode switch in the classic editor for toggling "
+"between dark and light mode."
+msgstr ""
+"ডার্ক এবং লাইট মোডের মধ্যে টগল করার জন্য ক্লাসিক এডিটরে ডার্ক মোড সুইচ "
+"দেখাতে এটি চালু করুন।"
+
+#: includes/admin/class-strings.php:106, includes/admin/class-strings.php:640
+msgid "Wait! Clear palette previews?"
+msgstr "অপেক্ষা করুন! প্যালেট প্রিভিউ ক্লিয়ার করবেন?"
+
+#: includes/admin/class-strings.php:107
+msgid "Click on the button below to create your first custom color."
+msgstr "আপনার প্রথম কাস্টম কালার তৈরি করতে নিচের বাটনে ক্লিক করুন।"
+
+#: includes/admin/class-strings.php:108, src/admin/routes/settings-routes.js:42
+msgid "Explore your options to get the best dark mode visual experience."
+msgstr "সেরা ডার্ক মোড ভিজ্যুয়াল অভিজ্ঞতা পেতে আপনার অপশনগুলো এক্সপ্লোর করুন।"
+
+#: includes/admin/class-strings.php:109
+msgid "Color Presets"
+msgstr "কালার প্রিসেট"
+
+#: includes/admin/class-strings.php:110, includes/admin/class-strings.php:111
+msgid "Choose a color preset for the dark mode color scheme."
+msgstr "ডার্ক মোড কালার স্কিমের জন্য একটি কালার প্রিসেট চয়ন করুন।"
+
+#: includes/admin/class-strings.php:112, includes/admin/class-strings.php:168
+msgid "Dark Mode Color Presets"
+msgstr "ডার্ক মোড কালার প্রিসেট"
+
+#: includes/admin/class-strings.php:113, src/admin/routes/settings-routes.js:41
+msgid "Color Settings"
+msgstr "কালার সেটিংস"
+
+#: includes/admin/class-strings.php:114
+msgid "How WP Dark Mode Ultimate compares to the free version?"
+msgstr "ডব্লিউপি ডার্ক মোড আল্টিমেট ফ্রি ভার্সনের সাথে কীভাবে তুলনীয়?"
+
+#: includes/admin/class-strings.php:115
+msgid "Compose new email with"
+msgstr "দিয়ে নতুন ইমেল লিখুন"
+
+#: includes/admin/class-strings.php:116
+msgid "Confirm"
+msgstr "নিশ্চিত করুন"
+
+#: includes/admin/class-strings.php:117
+msgid "Are you sure want to import?"
+msgstr "আপনি কি নিশ্চিত যে ইমপোর্ট করতে চান?"
+
+#: includes/admin/class-strings.php:118
+msgid "Contact"
+msgstr "যোগাযোগ"
+
+#: includes/admin/class-strings.php:119
+msgid "Contact Support"
+msgstr "সাপোর্ট টিমের সাথে যোগাযোগ করুন"
+
+#: includes/admin/class-strings.php:120, includes/admin/class-strings.php:121
+msgid "Content Switch"
+msgstr "কন্টেন্ট সুইচ"
+
+#: includes/admin/class-strings.php:122
+msgid "Display dark mode switch at top of all pages"
+msgstr "সব পেজের উপরে ডার্ক মোড সুইচ প্রদর্শন করুন"
+
+#: includes/admin/class-strings.php:123
+msgid "Display dark mode switch at top of all posts"
+msgstr "সব পোস্টের উপরে ডার্ক মোড সুইচ প্রদর্শন করুন"
+
+#: includes/admin/class-strings.php:124, includes/admin/class-strings.php:125
+msgid "Continue to Edit"
+msgstr "এডিট চালিয়ে যান"
+
+#: includes/admin/class-strings.php:126
+msgid "Contrast"
+msgstr "কন্ট্রাস্ট"
+
+#: includes/admin/class-strings.php:127
+msgid "Adjust your desired dark mode contrast"
+msgstr "আপনার পছন্দসই ডার্ক মোড কন্ট্রাস্ট সামঞ্জস্য করুন"
+
+#: includes/admin/class-strings.php:128, src/admin/routes/settings-routes.js:5
+msgid "Controls"
+msgstr "কন্ট্রোলস"
+
+#: includes/admin/class-strings.php:129
+msgid "Copied"
+msgstr "কপি করা হয়েছে"
+
+#: includes/admin/class-strings.php:130
+msgid "Copied to Clipboard!"
+msgstr "ক্লিপবোর্ডে কপি করা হয়েছে!"
+
+#: includes/admin/class-strings.php:131
+msgid "Copy Email"
+msgstr "ইমেল কপি করুন"
+
+#: includes/admin/class-strings.php:132
+msgid "Copy email address to your clipboard"
+msgstr "আপনার ক্লিপবোর্ডে ইমেল অ্যাড্রেস কপি করুন"
+
+#: includes/admin/class-strings.php:133
+msgid "Copy Shortcode"
+msgstr "শর্টকোড কপি করুন"
+
+#: includes/admin/class-strings.php:134
+msgid "Create a custom color palette first!"
+msgstr "প্রথমে একটি কাস্টম কালার প্যালেট তৈরি করুন!"
+
+#: includes/admin/class-strings.php:135
+msgid "Create New Preset"
+msgstr "নতুন প্রিসেট তৈরি করুন"
+
+#: includes/admin/class-strings.php:136
+msgid "Create Your Own Toggle Element"
+msgstr "আপনার নিজস্ব টগল উপাদান তৈরি করুন"
+
+#: includes/admin/class-strings.php:137
+msgid "Background of the switch button"
+msgstr "সুইচ বাটনের ব্যাকগ্রাউন্ড"
+
+#: includes/admin/class-strings.php:138
+msgid "CTA Background Color"
+msgstr "সিটিএ ব্যাকগ্রাউন্ড কালার"
+
+#: includes/admin/class-strings.php:139
+msgid "Color of the call to action text"
+msgstr "কল টু অ্যাকশন টেক্সটের কালার"
+
+#: includes/admin/class-strings.php:140
+msgid "CTA Text Color"
+msgstr "সিটিএ টেক্সট কালার"
+
+#: includes/admin/class-strings.php:141
+msgid "Enable to add a call-to-action text for the dark mode switch."
+msgstr "ডার্ক মোড সুইচের জন্য একটি কল-টু-অ্যাকশন টেক্সট যোগ করতে সক্ষম করুন।"
+
+#: includes/admin/class-strings.php:142
+msgid "Add call to action text beside the dark mode button"
+msgstr "ডার্ক মোড বাটনের পাশে কল টু অ্যাকশন টেক্সট যোগ করুন"
+
+#: includes/admin/class-strings.php:143
+msgid "Call-to-action Text"
+msgstr "কল-টু-অ্যাকশন টেক্সট"
+
+#: includes/admin/class-strings.php:144
+msgid "Your Current Plan"
+msgstr "আপনার বর্তমান প্ল্যান"
+
+#: includes/admin/class-strings.php:145, includes/classes/class-config.php:182,
+#: includes/classes/class-config.php:210
+msgid "Custom"
+msgstr "কাস্টম"
+
+#: includes/admin/class-strings.php:146
+msgid "Custom Color Preset Name"
+msgstr "কাস্টম কালার প্রিসেটের নাম"
+
+#: includes/admin/class-strings.php:147, src/admin/routes/settings-routes.js:82
+msgid "Custom CSS"
+msgstr "কাস্টম সিএসএস"
+
+#: includes/admin/class-strings.php:148, src/admin/routes/settings-routes.js:83
+msgid "Custom CSS code to apply on dark mode or on both mode"
+msgstr "ডার্ক মোড বা উভয় মোডে প্রয়োগ করার জন্য কাস্টম সিএসএস কোড"
+
+#: includes/admin/class-strings.php:149
+msgid ""
+"Add custom CSS for dark mode only. This CSS will only apply when the dark "
+"mode is on. use <code>!important</code> flag on each property"
+msgstr ""
+"শুধুমাত্র ডার্ক মোডের জন্য কাস্টম সিএসএস যোগ করুন। এই সিএসএস শুধুমাত্র "
+"ডার্ক মোড চালু থাকলে প্রয়োগ হবে। প্রতিটি প্রোপার্টিতে "
+"<code>!important</code> ফ্ল্যাগ ব্যবহার করুন"
+
+#: includes/admin/class-strings.php:150
+msgid "Enter custom CSS here"
+msgstr "এখানে কাস্টম সিএসএস লিখুন"
+
+#: includes/admin/class-strings.php:151
+msgid ""
+"Before saving this mode, please ensure you have created a custom color "
+"palette. Alternatively, you can switch your mode to either \"Color "
+"Presets\" or \"Automatic Color\" if that better suits your needs."
+msgstr ""
+"এই মোডটি সেভ করার আগে, দয়া করে নিশ্চিত করুন যে আপনি একটি কাস্টম কালার "
+"প্যালেট তৈরি করেছেন। বিকল্পভাবে, যদি আপনার প্রয়োজন হয় তবে আপনি আপনার "
+"মোডটিকে \"কালার প্রিসেট\" বা \"স্বয়ংক্রিয় কালার\"-এ পরিবর্তন করতে পারেন।"
+
+#: includes/admin/class-strings.php:152
+msgid "Choose or create your custom color presets with the power of AI."
+msgstr "এআই-এর শক্তি দিয়ে আপনার কাস্টম কালার প্রিসেট চয়ন করুন বা তৈরি করুন।"
+
+#: includes/admin/class-strings.php:153
+msgid "Your Custom Color Presets"
+msgstr "আপনার কাস্টম কালার প্রিসেটগুলো"
+
+#: includes/admin/class-strings.php:154
+msgid "Custom size"
+msgstr "কাস্টম সাইজ"
+
+#: includes/admin/class-strings.php:155
+msgid "Custom Switch Icon"
+msgstr "কাস্টম সুইচ আইকন"
+
+#: includes/admin/class-strings.php:156
+msgid "Enable to use your custom switch icon."
+msgstr "আপনার কাস্টম সুইচ আইকন ব্যবহার করতে সক্ষম করুন।"
+
+#: includes/admin/class-strings.php:157
+msgid "Custom Switch Text"
+msgstr "কাস্টম সুইচ টেক্সট"
+
+#: includes/admin/class-strings.php:158
+msgid "Customize the dark mode switch text."
+msgstr "ডার্ক মোড সুইচের টেক্সট কাস্টমাইজ করুন।"
+
+#: includes/admin/class-strings.php:159, includes/admin/class-strings.php:160
+msgid "Custom Trigger"
+msgstr "কাস্টম ট্রিগার"
+
+#: includes/admin/class-strings.php:161
+msgid "Custom Triggers"
+msgstr "কাস্টম ট্রিগারস"
+
+#: includes/admin/class-strings.php:162
+msgid "Allow any element on your site to toggle Dark Mode using CSS selectors."
+msgstr ""
+"সিএসএস সিলেক্টর ব্যবহার করে আপনার সাইটের যেকোনো উপাদানকে ডার্ক মোড টগল করার "
+"অনুমতি দিন।"
+
+#: includes/admin/class-strings.php:163
+msgid "Customer Support"
+msgstr "কাস্টমার সাপোর্ট"
+
+#: includes/admin/class-strings.php:164, includes/admin/class-strings.php:679,
+#: src/admin/routes/settings-routes.js:28
+msgid "Customization"
+msgstr "কাস্টমাইজেশন"
+
+#: includes/admin/class-strings.php:165
+msgid "Customize the selected dark mode preset color in your way"
+msgstr "নির্বাচিত ডার্ক মোড প্রিসেট কালার আপনার পছন্দমতো কাস্টমাইজ করুন"
+
+#: includes/admin/class-strings.php:166, includes/classes/class-config.php:287
+#: includes/admin/class-strings.php:44
+msgid "Dark"
+msgstr "ডার্ক"
+
+#: includes/admin/class-strings.php:169
+msgid "Dark Mode CSS"
+msgstr "ডার্ক মোড সিএসএস"
+
+#: includes/admin/class-strings.php:170
+msgid "Dark Mode Switch Icon"
+msgstr "ডার্ক মোড সুইচ আইকন"
+
+#: includes/admin/class-strings.php:171
+msgid "Dark Mode Image"
+msgstr "ডার্ক মোড ইমেজ"
+
+#: includes/admin/class-strings.php:172
+msgid "Dark Mode Switch Text"
+msgstr "ডার্ক মোড সুইচ টেক্সট"
+
+#: includes/admin/class-strings.php:173
+msgid "Add custom text for the dark mode switch"
+msgstr "ডার্ক মোড সুইচের জন্য কাস্টম টেক্সট যোগ করুন"
+
+#: includes/admin/class-strings.php:174
+msgid "Dark Mode Video :"
+msgstr "ডার্ক মোড ভিডিও :"
+
+#: includes/admin/class-strings.php:175, includes/admin/class-strings.php:658
+msgid "WP Dark Mode Usage"
+msgstr "ডব্লিউপি ডার্ক মোড ব্যবহার"
+
+#: includes/admin/class-strings.php:176
+msgid "Default app or browser"
+msgstr "ডিফল্ট অ্যাপ বা ব্রাউজার"
+
+#: includes/admin/class-strings.php:177
+msgid "Default Email App"
+msgstr "ডিফল্ট ইমেল অ্যাপ"
+
+#: includes/admin/class-strings.php:178
+msgid "Enable to show the switch after a delay when page loads."
+msgstr "পেজ লোড হওয়ার পর কিছু সময় দেরিতে সুইচ দেখানোর জন্য সক্ষম করুন।"
+
+#: includes/admin/class-strings.php:179
+msgid ""
+"Enabling this feature may delay WP Dark Mode to be applied on the frontend. "
+"Enable this feature only if you are facing issues with server-side caching."
+msgstr ""
+"এই ফিচারটি সক্ষম করলে ফ্রন্টএন্ডে ডব্লিউপি ডার্ক মোড প্রয়োগে দেরি হতে "
+"পারে। শুধুমাত্র যদি আপনি সার্ভার-সাইড ক্যাশিং সমস্যার সম্মুখীন হন তবেই এই "
+"ফিচারটি সক্ষম করুন।"
+
+#: includes/admin/class-strings.php:180
+msgid "Delay Time"
+msgstr "দেরির সময়"
+
+#: includes/admin/class-strings.php:181
+msgid "The floating switch will appear after this delay when page loads."
+msgstr "পেজ লোড হওয়ার পর এই নির্দিষ্ট সময় দেড়ি করে ফ্লোটিং সুইচটি প্রদর্শিত হবে।"
+
+#: includes/admin/class-strings.php:182
+msgid "Delete"
+msgstr "মুছে ফেলুন"
+
+#: includes/admin/class-strings.php:183
+msgid "Delete this image group?"
+msgstr "এই ইমেজ গ্রুপটি মুছে ফেলবেন?"
+
+#: includes/admin/class-strings.php:184
+msgid ""
+"This preset will be permanently deleted. Are you sure you want to confirm "
+"this deletion?"
+msgstr ""
+"এই প্রিসেটটি স্থায়ীভাবে মুছে ফেলা হবে। আপনি কি নিশ্চিত যে এটি মুছে ফেলতে "
+"চান?"
+
+#: includes/admin/class-strings.php:185
+msgid "Do you want to delete this preset?"
+msgstr "আপনি কি এই প্রিসেটটি মুছে ফেলতে চান?"
+
+#: includes/admin/class-strings.php:186
+msgid "Delete this trigger?"
+msgstr "এই ট্রিগারটি মুছে ফেলবেন?"
+
+#: includes/admin/class-strings.php:187
+msgid "Are you sure you want to delete this trigger?"
+msgstr "আপনি কি নিশ্চিত যে এই ট্রিগারটি মুছতে চান?"
+
+#: includes/admin/class-strings.php:188
+msgid "Delete this video group?"
+msgstr "এই ভিডিও গ্রুপটি মুছে ফেলবেন?"
+
+#: includes/admin/class-strings.php:189, includes/admin/class-strings.php:701
+msgid "Desktop"
+msgstr "ডেস্কটপ"
+
+#: includes/admin/class-strings.php:190
+msgid "Disable"
+msgstr "নিষ্ক্রিয় করুন"
+
+#: includes/admin/class-strings.php:191, includes/admin/class-strings.php:597
+msgid ""
+"Disabling typography settings will not make the text size increase "
+"automatically when text toggle is pressed on accessibility switches"
+msgstr ""
+"টাইপোগ্রাফি সেটিংস নিষ্ক্রিয় করলে অ্যাক্সেসিবিলিটি সুইচে টেক্সট টগল প্রেস "
+"করলে টেক্সট সাইজ স্বয়ংক্রিয়ভাবে বৃদ্ধি পাবে না"
+
+#: includes/admin/class-strings.php:192, includes/admin/class-strings.php:598
+msgid "Do you want to disable Typography settings?"
+msgstr "আপনি কি টাইপোগ্রাফি সেটিংস নিষ্ক্রিয় করতে চান?"
+
+#: includes/admin/class-strings.php:193
+msgid "Discard Changes"
+msgstr "পরিবর্তনগুলো বাতিল করুন"
+
+#: includes/admin/class-strings.php:194
+msgid ""
+"You are about to discard all unsaved changes. All of your settings will be "
+"reset to the point where you last saved. Are you sure you want to discard "
+"all changes?"
+msgstr ""
+"আপনি সমস্ত অসংরক্ষিত পরিবর্তন বাতিল করতে চলেছেন। আপনার সমস্ত সেটিংস শেষবার "
+"সেভ করা অবস্থায় ফিরে যাবে। আপনি কি নিশ্চিত যে সমস্ত পরিবর্তন বাতিল করতে চান?"
+
+#: includes/admin/class-strings.php:195
+msgid "Discard all changes?"
+msgstr "সব পরিবর্তন বর্জন করবেন?"
+
+#: includes/admin/class-strings.php:196
+msgid "Display Chart on Dashboard"
+msgstr "ড্যাশবোর্ডে চার্ট প্রদর্শন করুন"
+
+#: includes/admin/class-strings.php:197
+msgid "Display dark mode usage chart on the WordPress dashboard"
+msgstr "ওয়ার্ডপ্রেস ড্যাশবোর্ডে ডার্ক মোড ব্যবহারের চার্ট প্রদর্শন করুন"
+
+#: includes/admin/class-strings.php:198
+msgid "Display Floating Switch"
+msgstr "ফ্লোটিং সুইচ প্রদর্শন করুন"
+
+#: includes/admin/class-strings.php:199
+msgid ""
+"Enable Floating dark mode switch in frontend for toggling between dark and "
+"light mode."
+msgstr ""
+"ডার্ক এবং লাইট মোডের মধ্যে টগল করার জন্য ফ্রন্টএন্ডে ফ্লোটিং ডার্ক মোড সুইচ "
+"সক্ষম করুন।"
+
+#: includes/admin/class-strings.php:200
+msgid "Display switch on Login/ Register pages"
+msgstr "লগইন/রেজিস্টার পেজে সুইচ প্রদর্শন করুন"
+
+#: includes/admin/class-strings.php:201
+msgid ""
+"Enable to show the floating dark-mode switch on WordPress and WooCommerce "
+"login/register screens. Hidden by default to keep the form clean."
+msgstr ""
+"ওয়ার্ডপ্রেস এবং উকমার্স লগইন/রেজিস্টার স্ক্রিনে ফ্লোটিং ডার্ক-মোড সুইচ "
+"দেখানোর জন্য সক্ষম করুন। ফর্মটি পরিষ্কার রাখতে এটি ডিফল্টভাবে লুকানো থাকে।"
+
+#: includes/admin/class-strings.php:202
+msgid "Display On"
+msgstr "প্রদর্শন করুন"
+
+#: includes/admin/class-strings.php:203
+msgid "Display Switch in Menu"
+msgstr "মেনুতে সুইচ প্রদর্শন করুন"
+
+#: includes/admin/class-strings.php:204
+msgid "Display the darkmode switch in your website menu."
+msgstr "আপনার ওয়েবসাইটের মেনুতে ডার্ক মোড সুইচ প্রদর্শন করুন।"
+
+#: includes/admin/class-strings.php:205
+msgid "The switch will be displayed in the selected menus."
+msgstr "নির্বাচিত মেনুতে সুইচটি প্রদর্শিত হবে।"
+
+#: includes/admin/class-strings.php:206
+msgid "Display Switch at Top of Pages"
+msgstr "পেজের উপরে সুইচ প্রদর্শন করুন"
+
+#: includes/admin/class-strings.php:207
+msgid "Display Switch at Top of Posts"
+msgstr "পোস্টের উপরে সুইচ প্রদর্শন করুন"
+
+#: includes/admin/class-strings.php:208
+msgid "Display Dark Mode switch using WordPress widget"
+msgstr "ওয়ার্ডপ্রেস উইজেট ব্যবহার করে ডার্ক মোড সুইচ প্রদর্শন করুন"
+
+#: includes/admin/class-strings.php:209
+msgid ""
+"If you get stuck while exploring a feature, feel free to check our docs for "
+"a step-by-step guide."
+msgstr ""
+"কোনো ফিচার বুঝতে সমস্যায় পড়লে ধাপে ধাপে নির্দেশনার জন্য আমাদের ডকুমেন্টেশন "
+"নির্দ্বিধায় দেখতে পারেন।"
+
+#: includes/admin/class-strings.php:210
+msgid "Documentations"
+msgstr "ডকুমেন্টেশন"
+
+#: includes/admin/class-strings.php:211
+msgid "Doing it all."
+msgstr "সবই করছে।"
+
+#: includes/admin/class-strings.php:212
+msgid "Edit"
+msgstr "এডিট করুন"
+
+#: includes/admin/class-strings.php:213
+msgid "Edit Preset"
+msgstr "প্রিসেট এডিট করুন"
+
+#: includes/admin/class-strings.php:214
+msgid "Edit Prompt"
+msgstr "প্রম্পট এডিট করুন"
+
+#: includes/admin/class-strings.php:215
+msgid "Element selector"
+msgstr "এলিমেন্ট সিলেক্টর"
+
+#: includes/admin/class-strings.php:216, includes/admin/class-strings.php:668
+msgid "Elementor"
+msgstr "এলিমেন্টর"
+
+#: includes/admin/class-strings.php:217
+msgid ""
+"Get step-by-step instructions on using WP Dark Mode with Elementor page "
+"builder."
+msgstr ""
+"এলিমেন্টর পেজ বিল্ডারের সাথে ডব্লিউপি ডার্ক মোড ব্যবহারের ধাপে ধাপে "
+"নির্দেশনা পান।"
+
+#: includes/admin/class-strings.php:218
+msgid "Add Dark Mode Switch widget from Basic category"
+msgstr "বেসিক ক্যাটাগরি থেকে ডার্ক মোড সুইচ উইজেট যোগ করুন"
+
+#: includes/admin/class-strings.php:219
+msgid ""
+"Navigate to the editing mode of a Post and Page using Elementor and look "
+"for Dark Mode Switch in the widget panel under Basic widgets"
+msgstr ""
+"এলিমেন্টর ব্যবহার করে কোনো পোস্ট বা পেজের এডিটিং মোডে নেভিগেট করুন এবং "
+"বেসিক উইজেটের অধীনে উইজেট প্যানেলে ডার্ক মোড সুইচ খুঁজুন"
+
+#: includes/admin/class-strings.php:220
+msgid "Choose button style from widget settings and you are done"
+msgstr "উইজেট সেটিংস থেকে বাটন স্টাইল চয়ন করুন এবং আপনার কাজ শেষ"
+
+#: includes/admin/class-strings.php:221
+msgid ""
+"Select your preferred switch from the list of switches in the widget panel "
+"and you are done!"
+msgstr ""
+"উইজেট প্যানেলে সুইচের তালিকা থেকে আপনার পছন্দের সুইচটি নির্বাচন করুন এবং "
+"আপনার কাজ শেষ!"
+
+#: includes/admin/class-strings.php:222
+msgid "Use WP Dark Mode with Elementor"
+msgstr "এলিমেন্টর-এর সাথে ডব্লিউপি ডার্ক মোড ব্যবহার করুন"
+
+#: includes/admin/class-strings.php:223, includes/admin/class-strings.php:225
+msgid "Email Reporting"
+msgstr "ইমেল রিপোর্টিং"
+
+#: includes/admin/class-strings.php:224
+msgid "Enable this feature to get the dark mode usage summary through email."
+msgstr "ইমেলের মাধ্যমে ডার্ক মোড ব্যবহারের সারাংশ পেতে এই বৈশিষ্ট্যটি সক্রিয় করুন।"
+
+#: includes/admin/class-strings.php:226
+msgid "Enable"
+msgstr "সক্ষম করুন"
+
+#: includes/admin/class-strings.php:229, includes/classes/class-config.php:314
+msgid "Enable Custom Triggers"
+msgstr "কাস্টম ট্রিগারস সক্ষম করুন"
+
+#: includes/admin/class-strings.php:249
+msgid "Enable Dark Mode on Scrollbar"
+msgstr "স্ক্রলবারে ডার্ক মোড সক্ষম করুন"
+
+#: includes/admin/class-strings.php:232, includes/admin/class-strings.php:233
+msgid "Enable Frontend Dark Mode"
+msgstr "ফ্রন্টএন্ড ডার্ক মোড সক্ষম করুন"
+
+#: includes/admin/class-strings.php:234
+msgid "Turn it ON to enable dark mode on the frontend"
+msgstr "ফ্রন্টএন্ডে ডার্ক মোড সক্ষম করতে এটি চালু করুন"
+
+#: includes/admin/class-strings.php:236, includes/admin/class-strings.php:238,
+#: includes/admin/class-strings.php:526, includes/admin/class-strings.php:527
+msgid "Enable this option to customize your scrollbar while toggling to dark mode"
+msgstr ""
+"ডার্ক মোডে পরিবর্তন করার সময় আপনার স্ক্রলবার কাস্টমাইজ করতে এই অপশনটি সক্ষম "
+"করুন"
+
+#: includes/admin/class-strings.php:239
+msgid "End Time"
+msgstr "শেষ সময়"
+
+#: includes/admin/class-strings.php:240, includes/admin/class-strings.php:569
+msgid "Enter your selected categories and tags"
+msgstr "আপনার নির্বাচিত ক্যাটাগরি এবং ট্যাগগুলো লিখুন"
+
+#: includes/admin/class-strings.php:241, includes/admin/class-strings.php:247
+msgid "Enter HTML element selectors"
+msgstr "এইচটিএমএল এলিমেন্ট সিলেক্টর লিখুন"
+
+#: includes/admin/class-strings.php:242, includes/admin/class-strings.php:251
+msgid "Enter your email"
+msgstr "আপনার ইমেল প্রবেশ করান"
+
+#: includes/admin/class-strings.php:243
+msgid "Enter image URL"
+msgstr "ইমেজের ইউআরএল লিখুন"
+
+#: includes/admin/class-strings.php:244, includes/admin/class-strings.php:429
+msgid "Enter your selected pages, posts and custom post types"
+msgstr "আপনার নির্বাচিত পেজ, পোস্ট এবং কাস্টম পোস্ট টাইপগুলো লিখুন"
+
+#: includes/admin/class-strings.php:245, includes/admin/class-strings.php:252
+msgid "Enter Your Prompt"
+msgstr "আপনার প্রম্পট লিখুন"
+
+#: includes/admin/class-strings.php:246
+msgid "Enter your selected posts"
+msgstr "আপনার নির্বাচিত পোস্টগুলি প্রবেশ করান"
+
+#: includes/admin/class-strings.php:248
+msgid "Enter video URL"
+msgstr "ভিডিওর ইউআরএল লিখুন"
+
+#: includes/admin/class-strings.php:249, includes/admin/class-strings.php:645
+msgid "Enter your selected WooCommerce categories"
+msgstr "আপনার নির্বাচিত উকমার্স ক্যাটাগরিগুলো লিখুন"
+
+#: includes/admin/class-strings.php:250, includes/admin/class-strings.php:650
+msgid "Enter your selected WooCommerce products"
+msgstr "আপনার নির্বাচিত উকমার্স প্রোডাক্টগুলো লিখুন"
+
+#: includes/admin/class-strings.php:253
+msgid "Except:"
+msgstr "ব্যতীত:"
+
+#: includes/admin/class-strings.php:254
+msgid "Exclude All"
+msgstr "সব বাদ দিন"
+
+#: includes/admin/class-strings.php:255, includes/admin/class-strings.php:260
+msgid "Exclude WP Dark Mode from Caching"
+msgstr "ডব্লিউপি ডার্ক মোড ক্যাশিং থেকে বাদ দিন"
+
+#: includes/admin/class-strings.php:256, includes/admin/class-strings.php:261
+msgid ""
+"Enable this feature to exclude WP Dark Mode from server-side caching "
+"technology like Lightspeed Cache, WPRocket etc."
+msgstr ""
+"লাইটস্পিড ক্যাশে, ডব্লিউপি রকেট ইত্যাদির মতো সার্ভার-সাইড ক্যাশিং প্রযুক্তি "
+"থেকে ডব্লিউপি ডার্ক মোডকে বাদ দিতে এই ফিচারটি সক্ষম করুন।"
+
+#: includes/admin/class-strings.php:257
+msgid "Exclude Elements"
+msgstr "এলিমেন্ট বাদ দিন (Exclude Elements)"
+
+#: includes/admin/class-strings.php:258, includes/admin/class-strings.php:368
+msgid "Exclude dark mode on HTML tags, CSS class, CSS ids and more"
+msgstr ""
+"এইচটিএমএল ট্যাগ, সিএসএস ক্লাস, সিএসএস আইডি এবং আরও অনেক কিছুতে ডার্ক মোড "
+"বাদ দিন"
+
+#: includes/admin/class-strings.php:259
+msgid ""
+"Add HTML element selectors (tags, classes, or IDs) to exclude them from "
+"being affected by dark mode."
+msgstr ""
+"ডার্ক মোড দ্বারা প্রভাবিত হওয়া থেকে বাদ দিতে এইচটিএমএল এলিমেন্ট সিলেক্টর "
+"(ট্যাগ, ক্লাস বা আইডি) যোগ করুন।"
+
+#: includes/admin/class-strings.php:262
+msgid "Exclude Low Brightness on specific images"
+msgstr "নির্দিষ্ট ছবিতে লো ব্রাইটনেস বাদ দিন"
+
+#: includes/admin/class-strings.php:263
+msgid "Exclude Low Brightness on specific videos"
+msgstr "নির্দিষ্ট ভিডিওতে লো ব্রাইটনেস বাদ দিন"
+
+#: includes/admin/class-strings.php:264
+msgid "Exclude Low Grayscale Images "
+msgstr "লো গ্রেস্কেল ছবি বাদ দিন"
+
+#: includes/admin/class-strings.php:265
+msgid "Exclude Low Grayscale Videos"
+msgstr "লো গ্রেস্কেল ভিডিও বাদ দিন"
+
+#: includes/admin/class-strings.php:266
+msgid "Exclude Pages/ Posts"
+msgstr "পেজ/পোস্ট বাদ দিন"
+
+#: includes/admin/class-strings.php:267
+msgid "Exclude dark mode on specific WordPress post type and taxonomy"
+msgstr "নির্দিষ্ট ওয়ার্ডপ্রেস পোস্ট টাইপ এবং ট্যাক্সোনমিতে ডার্ক মোড বাদ দিন"
+
+#: includes/admin/class-strings.php:268, includes/admin/class-strings.php:271
+msgid ""
+"Add pages, posts and custom post types that you want to exclude from the "
+"dark mode."
+msgstr ""
+"ডার্ক মোড থেকে আপনি যে পেজ, পোস্ট এবং কাস্টম পোস্ট টাইপগুলো বাদ দিতে চান তা "
+"যোগ করুন।"
+
+#: includes/admin/class-strings.php:269, includes/admin/class-strings.php:447
+msgid "Dark Mode will only work on the selected posts and pages."
+msgstr "ডার্ক মোড শুধুমাত্র নির্বাচিত পোস্ট এবং পেজ কাজ করবে।"
+
+#: includes/admin/class-strings.php:270
+msgid "Exclude Post Type:"
+msgstr "পোস্ট টাইপ বাদ দিন:"
+
+#: includes/admin/class-strings.php:272, src/admin/routes/settings-routes.js:77
+msgid "Exclude Settings"
+msgstr "এক্সক্লুড সেটিংস"
+
+#: includes/admin/class-strings.php:273
+msgid "Configure exclusion settings for pages, posts, and elements."
+msgstr "পেজ, পোস্ট এবং এলিমেন্টের জন্য এক্সক্লুশন সেটিংস কনফিগার করুন।"
+
+#: includes/admin/class-strings.php:274
+msgid "Exclude Taxonomies"
+msgstr "ট্যাক্সোনমি বাদ দিন"
+
+#: includes/admin/class-strings.php:275, includes/admin/class-strings.php:568
+msgid "Include the categories and tags that you want to exclude from the dark mode."
+msgstr ""
+"আপনি যে ক্যাটেগরি এবং ট্যাগগুলো ডার্ক মোড থেকে বাদ দিতে চান সেগুলো "
+"অন্তর্ভুক্ত করুন।"
+
+#: includes/admin/class-strings.php:276, includes/admin/class-strings.php:277
+msgid "Exclude Taxonomy Type:"
+msgstr "ট্যাক্সোনমি টাইপ বাদ দিন:"
+
+#: includes/admin/class-strings.php:278
+msgid "Exclude WC Categories"
+msgstr "উকমার্স ক্যাটেগরি বাদ দিন"
+
+#: includes/admin/class-strings.php:279, includes/admin/class-strings.php:644
+msgid "Add categories to exclude the dark mode from the WooCommerce categories."
+msgstr "উকমার্স ক্যাটেগরি থেকে ডার্ক মোড বাদ দিতে ক্যাটেগরি যোগ করুন।"
+
+#: includes/admin/class-strings.php:280, includes/admin/class-strings.php:448
+msgid "Dark Mode will only work on the selected WooCommerce categories."
+msgstr "ডার্ক মোড শুধুমাত্র নির্বাচিত উকমার্স ক্যাটেগরিতে কাজ করবে।"
+
+#: includes/admin/class-strings.php:281
+msgid "Exclude WC Products"
+msgstr "উকমার্স প্রোডাক্ট বাদ দিন"
+
+#: includes/admin/class-strings.php:282, includes/admin/class-strings.php:649
+msgid "Add products to exclude the dark mode from the WooCommerce categories."
+msgstr "উকমার্স ক্যাটেগরি থেকে ডার্ক মোড বাদ দিতে প্রোডাক্ট যোগ করুন।"
+
+#: includes/admin/class-strings.php:283, includes/admin/class-strings.php:449
+msgid "Dark Mode will only work on the selected WooCommerce products."
+msgstr "ডার্ক মোড শুধুমাত্র নির্বাচিত উকমার্স প্রোডাক্টে কাজ করবে।"
+
+#: includes/admin/class-strings.php:284
+msgid "Exclude WooCommerce"
+msgstr "উকমার্স বাদ দিন"
+
+#: includes/admin/class-strings.php:285
+msgid "Exclude dark mode on WooCommerce products and categories"
+msgstr "উকমার্স প্রোডাক্ট এবং ক্যাটেগরিতে ডার্ক মোড বাদ দিন"
+
+#: includes/admin/class-strings.php:286, includes/admin/class-strings.php:287
+msgid "Explore Accessibility Switches"
+msgstr "অ্যাক্সেসিবিলিটি সুইচ এক্সপ্লোর করুন"
+
+#: includes/admin/class-strings.php:288
+msgid "Explore now"
+msgstr "এখনই অন্বেষণ করুন"
+
+#: includes/admin/class-strings.php:289
+msgid "Export"
+msgstr "এক্সপোর্ট"
+
+#: includes/admin/class-strings.php:290
+msgid "Export current settings as JSON file."
+msgstr "বর্তমান সেটিংস জেএসএন ফাইল হিসেবে এক্সপোর্ট করুন।"
+
+#: includes/admin/class-strings.php:291
+msgid "Export Settings"
+msgstr "সেটিংস এক্সপোর্ট করুন"
+
+#: includes/admin/class-strings.php:292
+msgid "Default dark mode"
+msgstr "ডিফল্ট ডার্ক মোড"
+
+#: includes/admin/class-strings.php:293
+msgid "Dark mode-based image/video"
+msgstr "ডার্ক মোড ভিত্তিক ছবি/ভিডিও"
+
+#: includes/admin/class-strings.php:294
+msgid "Dark mode usage analytics"
+msgstr "ডার্ক মোড ব্যবহারের অ্যানালিটিক্স"
+
+#: includes/admin/class-strings.php:295
+msgid "24/7 live chat & VIP support"
+msgstr "২৪/৭ লাইভ চ্যাট এবং ভিআইপি সাপোর্ট"
+
+#: includes/admin/class-strings.php:296
+msgid "Gutenberg block"
+msgstr "গুটেনবার্গ ব্লক"
+
+#: includes/admin/class-strings.php:297
+msgid "Elementor widget"
+msgstr "এলিমেন্টর উইজেট"
+
+#: includes/admin/class-strings.php:298
+msgid "Dark mode for WordPress dashboard"
+msgstr "ওয়ার্ডপ্রেস ড্যাশবোর্ডের জন্য ডার্ক মোড"
+
+#: includes/admin/class-strings.php:299
+msgid "Time-based dark mode"
+msgstr "সময়-ভিত্তিক ডার্ক মোড"
+
+#: includes/admin/class-strings.php:300
+msgid "Access to 19 premium dark mode switches"
+msgstr "১৯টি প্রিমিয়াম ডার্ক মোড সুইচে অ্যাক্সেস"
+
+#: includes/admin/class-strings.php:301
+msgid "Access to 13 dark mode color scheme"
+msgstr "১৩টি ডার্ক মোড কালার স্কিমে অ্যাক্সেস"
+
+#: includes/admin/class-strings.php:302
+msgid "Manual customization with custom CSS"
+msgstr "কাস্টম সিএসএস দিয়ে ম্যানুয়াল কাস্টমাইজেশন"
+
+#: includes/admin/class-strings.php:303
+msgid "Customizable dark mode switch and CTA"
+msgstr "কাস্টমাইজযোগ্য ডার্ক মোড সুইচ এবং সিটিএ"
+
+#: includes/admin/class-strings.php:304, includes/admin/class-strings.php:669
+msgid "FAQ"
+msgstr "প্রশ্ন ও উত্তর"
+
+#: includes/admin/class-strings.php:305
+msgid "Here are some of the most frequently asked questions about WP Dark Mode"
+msgstr "ডব্লিউপি ডার্ক মোড সম্পর্কে কিছু প্রায়শই জিজ্ঞাসিত প্রশ্ন এখানে দেওয়া হলো"
+
+#: includes/admin/class-strings.php:306
+msgid "Frequently asked questions"
+msgstr "সচরাচর জিজ্ঞাসিত প্রশ্নাবলী"
+
+#: includes/admin/class-strings.php:307
+msgid "Facebook Community"
+msgstr "ফেসবুক কমিউনিটি"
+
+#: includes/admin/class-strings.php:308
+msgid ""
+"Did you know that there is a Facebook community for dark mode users like "
+"you? Feel free to join to be involved in the discussion."
+msgstr ""
+"আপনি কি জানেন যে আপনার মতো ডার্ক মোড ব্যবহারকারীদের জন্য একটি ফেসবুক "
+"কমিউনিটি আছে? আলোচনায় অংশ নিতে নির্দ্বিধায় যোগ দিন।"
+
+#: includes/admin/class-strings.php:309
+msgid "Custom CSS for advanced customization"
+msgstr "উন্নত কাস্টমাইজেশনের জন্য কাস্টম সিএসএস"
+
+#: includes/admin/class-strings.php:310
+msgid "24/7 dedicated support"
+msgstr "২৪/৭ ডেডিকেটেড সাপোর্ট"
+
+#: includes/admin/class-strings.php:311
+msgid "Exclude pages/posts from dark mode"
+msgstr "ডার্ক মোড থেকে পেজ/পোস্ট বাদ দিন"
+
+#: includes/admin/class-strings.php:312
+msgid "FEATURE LIST"
+msgstr "ফিচার তালিকা"
+
+#: includes/admin/class-strings.php:313
+msgid "No Ads! Distraction free usage"
+msgstr "কোনো বিজ্ঞাপন নেই! বিভ্রান্তিমুক্ত ব্যবহার"
+
+#: includes/admin/class-strings.php:314
+msgid "13+ dark mode color presets"
+msgstr "১৩টিরও বেশি ডার্ক মোড কালার প্রিসেট"
+
+#: includes/admin/class-strings.php:315
+msgid "19+ stunning dark mode switches"
+msgstr "১৯টিরও বেশি চমৎকার ডার্ক মোড সুইচ"
+
+#: includes/admin/class-strings.php:316
+msgid "Features"
+msgstr "ফিচারসমূহ"
+
+#: includes/admin/class-strings.php:317, includes/admin/class-strings.php:323
+msgid "Floating Switch"
+msgstr "ফ্লোটিং সুইচ"
+
+#: includes/admin/class-strings.php:318
+msgid "Floating Switch Size"
+msgstr "ফ্লোটিং সুইচ সাইজ"
+
+#: includes/admin/class-strings.php:319, includes/admin/class-strings.php:320
+msgid "Choose the size of the floating toggle switch"
+msgstr "ফ্লোটিং টগল সুইচের সাইজ চয়ন করুন"
+
+#: includes/admin/class-strings.php:321
+msgid "Floating Switch Styles"
+msgstr "ফ্লোটিং সুইচ স্টাইলস"
+
+#: includes/admin/class-strings.php:322
+msgid "Choose the style of the floating toggle switch"
+msgstr "ফ্লোটিং টগল সুইচের স্টাইল চয়ন করুন"
+
+#: includes/admin/class-strings.php:324
+msgid "Please follow the steps below"
+msgstr "অনুগ্রহ করে নিচের ধাপগুলো অনুসরণ করুন"
+
+#: includes/admin/class-strings.php:325
+msgid "Font Size"
+msgstr "ফন্ট সাইজ"
+
+#: includes/admin/class-strings.php:326
+msgid "Choose the size of the floating toggle switch."
+msgstr "ফ্লোটিং টগল সুইচের সাইজ চয়ন করুন।"
+
+#: includes/admin/class-strings.php:327
+msgid "Set the font size in percentage."
+msgstr "ফন্ট সাইজ শতাংশে সেট করুন।"
+
+#: includes/admin/class-strings.php:328
+msgid "FREE"
+msgstr "FREE"
+
+#: includes/admin/class-strings.php:329
+msgid "FREE PLAN"
+msgstr "ফ্রি প্ল্যান"
+
+#: includes/admin/class-strings.php:330, includes/admin/class-strings.php:670
+msgid "Free vs Ultimate"
+msgstr "ফ্রি বনাম আল্টিমেট"
+
+#: includes/admin/class-strings.php:331, src/admin/routes/settings-routes.js:16
+msgid "Frontend Dark Mode"
+msgstr "ফ্রন্টএন্ড ডার্ক মোড"
+
+#: includes/admin/class-strings.php:332, src/admin/routes/settings-routes.js:17
+msgid "Settings to Control Dark Mode on your Frontend Website"
+msgstr "আপনার ফ্রন্টএন্ড ওয়েবসাইটে ডার্ক মোড নিয়ন্ত্রণের সেটিংস"
+
+#: includes/admin/class-strings.php:333
+msgid "Turn it ON to enable dark mode on the Frontend"
+msgstr "ফ্রন্টএন্ডে ডার্ক মোড সক্ষম করতে এটি চালু করুন"
+
+#: includes/admin/class-strings.php:334
+msgid "Choose how you want to use Dark Mode"
+msgstr "আপনি কীভাবে ডার্ক মোড ব্যবহার করতে চান তা চয়ন করুন"
+
+#: includes/admin/class-strings.php:335
+msgid "Generate My Theme"
+msgstr "আমার থিম তৈরি করুন"
+
+#: includes/admin/class-strings.php:336
+msgid "Generate Colors"
+msgstr "কালার তৈরি করুন"
+
+#: includes/admin/class-strings.php:337
+msgid "Generating colors..."
+msgstr "কালার তৈরি হচ্ছে..."
+
+#: includes/admin/class-strings.php:338, includes/admin/class-strings.php:666
+msgid "Get in touch"
+msgstr "যোগাযোগ করুন"
+
+#: includes/admin/class-strings.php:339
+msgid "Get all popular dark mode resources in one place."
+msgstr "সব জনপ্রিয় ডার্ক মোড রিসোর্স এক জায়গায় পান।"
+
+#: includes/admin/class-strings.php:340
+msgid "Tutorial, Docs, Support & Community"
+msgstr "টিউটোরিয়াল, ডকুমেন্টেশন, সাপোর্ট এবং কমিউনিটি"
+
+#: includes/admin/class-strings.php:341
+msgid "Get Started page"
+msgstr "গেট স্টার্টেড পেজ"
+
+#: includes/admin/class-strings.php:342
+msgid "Gmail"
+msgstr "জিমেইল"
+
+#: includes/admin/class-strings.php:343
+msgid "Gmail in browser"
+msgstr "ব্রাউজারে জিমেইল"
+
+#: includes/admin/class-strings.php:344
+msgid "Go to Accessibility settings"
+msgstr "অ্যাক্সেসিবিলিটি সেটিংসে যান"
+
+#: includes/admin/class-strings.php:345
+msgid "Go to Menu Settings"
+msgstr "মেনু সেটিংসে যান"
+
+#: includes/admin/class-strings.php:346
+msgid "Got it"
+msgstr "বুঝেছি"
+
+#: includes/admin/class-strings.php:347
+msgid "Grayscale"
+msgstr "গ্রেস্কেল"
+
+#: includes/admin/class-strings.php:348
+msgid "Adjust your preferred dark mode Grayscale"
+msgstr "আপনার পছন্দের ডার্ক মোড গ্রেস্কেল সামঞ্জস্য করুন"
+
+#: includes/admin/class-strings.php:349
+msgid "Grayscale Image"
+msgstr "গ্রেস্কেল ইমেজ"
+
+#: includes/admin/class-strings.php:350
+msgid "Grayscale level"
+msgstr "গ্রেস্কেলের মাত্রা"
+
+#: includes/admin/class-strings.php:351
+msgid "Grayscale Video"
+msgstr "গ্রেস্কেল ভিডিও"
+
+#: includes/admin/class-strings.php:352, includes/admin/class-strings.php:667
+msgid "Gutenberg"
+msgstr "গুটেনবার্গ"
+
+#: includes/admin/class-strings.php:353
+msgid ""
+"Get step-by-step instructions on using WP Dark Mode with the default block "
+"editor."
+msgstr ""
+"ডিফল্ট ব্লক এডিটরের সাথে ডব্লিউপি ডার্ক মোড ব্যবহারের ধাপে ধাপে নির্দেশনা "
+"পান।"
+
+#: includes/admin/class-strings.php:354
+msgid "Go to Post/Page edit screen and and click on the ‘+’ icon to add new block"
+msgstr "পোস্ট/পেজ এডিট স্ক্রিনে যান এবং নতুন ব্লক যোগ করতে ‘+’ আইকনে ক্লিক করুন"
+
+#: includes/admin/class-strings.php:355
+msgid ""
+"Navigate to a Post and Page edit screen and click on the + icon to add a "
+"new gutenberg block"
+msgstr ""
+"কোনো পোস্ট এবং পেজ এডিট স্ক্রিনে নেভিগেট করুন এবং নতুন গুটেনবার্গ ব্লক যোগ "
+"করতে + আইকনে ক্লিক করুন"
+
+#: includes/admin/class-strings.php:356
+msgid "Search for Dark Mode Switch block in the Gutenberg block list"
+msgstr "গুটেনবার্গ ব্লক তালিকায় ডার্ক মোড সুইচ ব্লক খুঁজুন"
+
+#: includes/admin/class-strings.php:357
+msgid ""
+"Type “dark mode switch” in the block list search box and the Dark Mode "
+"Switch block will appear. Click on the block to select it"
+msgstr ""
+"ব্লক তালিকার সার্চ বক্সে “dark mode switch” টাইপ করুন এবং ডার্ক মোড সুইচ "
+"ব্লকটি উপস্থিত হবে। এটি নির্বাচন করতে ব্লকের ওপর ক্লিক করুন"
+
+#: includes/admin/class-strings.php:358
+msgid "Choose button style from block settings"
+msgstr "ব্লক সেটিংস থেকে বাটনের স্টাইল চয়ন করুন"
+
+#: includes/admin/class-strings.php:359
+msgid ""
+"Choose the button style you would like to use from the Switch Style menu on "
+"the right side and you are done!"
+msgstr ""
+"ডান দিকের সুইচ স্টাইল মেনু থেকে আপনি যে বাটন স্টাইলটি ব্যবহার করতে চান সেটি "
+"চয়ন করুন এবং আপনার কাজ শেষ!"
+
+#: includes/admin/class-strings.php:360
+msgid "Use WP Dark Mode with Gutenberg"
+msgstr "গুটেনবার্গের সাথে ডব্লিউপি ডার্ক মোড ব্যবহার করুন"
+
+#: includes/admin/class-strings.php:361
+msgid "Help"
+msgstr "সাহায্য"
+
+#: includes/admin/class-strings.php:362
+msgid "Hi, I need help with WP Dark Mode."
+msgstr "হাই, আমার ডব্লিউপি ডার্ক মোড নিয়ে সাহায্য দরকার।"
+
+#: includes/admin/class-strings.php:363
+msgid "Home"
+msgstr "হোম"
+
+#: includes/admin/class-strings.php:364
+msgid "Hover Background"
+msgstr "হোভার ব্যাকগ্রাউন্ড"
+
+#: includes/admin/class-strings.php:365
+msgid "Hover BG"
+msgstr "হোভার ব্যাকগ্রাউন্ড"
+
+#: includes/admin/class-strings.php:366
+msgid "Hover Text"
+msgstr "হোভার টেক্সট"
+
+#: includes/admin/class-strings.php:367, includes/admin/class-strings.php:369
+msgid "HTML Element"
+msgstr "এইচটিএমএল এলিমেন্ট"
+
+#: includes/admin/class-strings.php:370
+msgid "HTML Elements"
+msgstr "এইচটিএমএল এলিমেন্টস"
+
+#: includes/admin/class-strings.php:371
+msgid "Idle Timeout"
+msgstr "অলস সময়কাল"
+
+#: includes/admin/class-strings.php:372
+msgid "The floating switch will hide after this period of user inactivity."
+msgstr "ব্যবহারকারীর ইনঅ্যাক্টিভিটির এই সময় পরে ফ্লোটিং সুইচটি লুকিয়ে যাবে।"
+
+#: includes/admin/class-strings.php:373
+msgid "Image Behavior"
+msgstr "ছবির আচরণ"
+
+#: includes/admin/class-strings.php:374
+msgid "Settings to change image appearance on dark mode"
+msgstr "ডার্ক মোডে ছবির উপস্থিতি পরিবর্তনের সেটিংস"
+
+#: includes/admin/class-strings.php:375
+msgid "Image Behavior When Dark Mode Is On"
+msgstr "ডার্ক মোড চালু থাকলে ছবির আচরণ"
+
+#: includes/admin/class-strings.php:376
+msgid "Enable to set the brightness level of the images on dark mode"
+msgstr "ডার্ক মোডে ছবির ব্রাইটনেস লেভেল সেট করতে এটি সক্ষম করুন"
+
+#: includes/admin/class-strings.php:377, src/admin/routes/settings-routes.js:78
+msgid "Customize image appearance in Dark Mode"
+msgstr "ডার্ক মোডে ছবির উপস্থিতি কাস্টমাইজ করুন"
+
+#: includes/admin/class-strings.php:378
+msgid "Enable to set the grayscale level of the images on dark mode"
+msgstr "ডার্ক মোডে ছবির গ্রেস্কেল লেভেল সেট করতে এটি সক্ষম করুন"
+
+#: includes/admin/class-strings.php:379
+msgid "Image Replacement"
+msgstr "ছবি প্রতিস্থাপন"
+
+#: includes/admin/class-strings.php:380
+msgid "Replace specific images when dark mode is enabled"
+msgstr "ডার্ক মোড নিযুক্ত থাকলে নির্দিষ্ট ছবিগুলো প্রতিস্থাপন করুন"
+
+#: includes/admin/class-strings.php:381, src/admin/routes/settings-routes.js:46
+msgid "Image Settings"
+msgstr "ইমেজ সেটিংস"
+
+#: includes/admin/class-strings.php:382
+msgid "Image URL"
+msgstr "ছবির ইউআরএল"
+
+#: includes/admin/class-strings.php:383
+msgid "Import"
+msgstr "ইমপোর্ট"
+
+#: includes/admin/class-strings.php:384
+msgid "Import Anyway"
+msgstr "তবুও ইমপোর্ট করুন"
+
+#: includes/admin/class-strings.php:385
+msgid "Import settings from JSON file which is exported through WP Dark Mode."
+msgstr ""
+"ডব্লিউপি ডার্ক মোডের মাধ্যমে রফতানি করা জেএসএন ফাইল থেকে সেটিংস ইমপোর্ট "
+"করুন।"
+
+#: includes/admin/class-strings.php:386
+msgid "Import Settings"
+msgstr "সেটিংস ইমপোর্ট করুন"
+
+#: includes/admin/class-strings.php:387
+msgid "Settings imported successfully."
+msgstr "সেটিংস সফলভাবে ইমপোর্ট করা হয়েছে।"
+
+#: includes/admin/class-strings.php:388
+msgid "In all new ways"
+msgstr "সব নতুন উপায়ে"
+
+#: includes/admin/class-strings.php:389
+msgid "Include Elements"
+msgstr "এলিমেন্ট অন্তর্ভুক্ত করুন"
+
+#: includes/admin/class-strings.php:390
+msgid ""
+"Add HTML element selectors (tags, classes, or IDs) to explicitly include "
+"them in dark mode."
+msgstr ""
+"ডার্ক মোডে স্পষ্টভাবে অন্তর্ভুক্ত করতে এইচটিএমএল এলিমেন্ট সিলেক্টর (ট্যাগ, "
+"ক্লাস বা আইডি) যোগ করুন।"
+
+#: includes/admin/class-strings.php:391
+msgid "Influencer Program"
+msgstr "ইনফ্লুয়েন্সার প্রোগ্রাম"
+
+#: includes/admin/class-strings.php:392
+msgid "Input Field Colors"
+msgstr "ইনপুট ফিল্ড কালারস"
+
+#: includes/admin/class-strings.php:393
+msgid "Input Text"
+msgstr "ইনপুট টেক্সট"
+
+#: includes/admin/class-strings.php:394, includes/admin/class-strings.php:646
+msgid "Please install WooCommerce to use this feature"
+msgstr "এই ফিচারটি ব্যবহার করতে দয়া করে উকমার্স ইনস্টল করুন"
+
+#: includes/admin/class-strings.php:395
+msgid "Invalid File"
+msgstr "অবৈধ ফাইল"
+
+#: includes/admin/class-strings.php:396
+msgid "Join Community"
+msgstr "কমিউনিটিতে যোগ দিন"
+
+#: includes/admin/class-strings.php:397
+msgid "Keyboard Shortcut"
+msgstr "কীবোর্ড শর্টকাট"
+
+#: includes/admin/class-strings.php:398
+msgid "Enable keyboard shortcut to toggle dark mode Ctrl + Alt + D"
+msgstr "ডার্ক মোড টগল করতে কীবোর্ড শর্টকাট Ctrl + Alt + D সক্ষম করুন"
+
+#: includes/admin/class-strings.php:399
+msgid "Toggle Dark Mode using keyboard shortcut."
+msgstr "কীবোর্ড শর্টকাট ব্যবহার করে ডার্ক মোড টগল করুন।"
+
+#: includes/admin/class-strings.php:400
+msgid "Large"
+msgstr "বড়"
+
+#: includes/admin/class-strings.php:401
+msgid "Learn more"
+msgstr "আরও জানুন"
+
+#: includes/admin/class-strings.php:402, includes/admin/class-strings.php:684,
+#: includes/classes/class-config.php:195,
+#: includes/modules/elementor/widgets/class-elementor-widget.php:154
+msgid "Left"
+msgstr "বামে"
+
+#: includes/admin/class-strings.php:403, includes/classes/class-config.php:283
+#: includes/admin/class-strings.php:43
+#, fuzzy
+msgid "Light"
+msgstr ""
+"#-#-#-#-#  catalog.po (wp-dark-mode)  #-#-#-#-#\n"
+"লাইট\n"
+"#-#-#-#-#  catalog.po (wp-dark-mode)  #-#-#-#-#\n"
+"হালকা"
+
+#: includes/admin/class-strings.php:404
+msgid "Light Mode Switch Icon"
+msgstr "লাইট মোড সুইচ আইকন"
+
+#: includes/admin/class-strings.php:405
+msgid "Light Mode Image : "
+msgstr "লাইট মোড ইমেজ : "
+
+#: includes/admin/class-strings.php:406
+msgid "Light Mode Switch Text"
+msgstr "লাইট মোড সুইচ টেক্সট"
+
+#: includes/admin/class-strings.php:407
+msgid "Add custom text for the light mode switch"
+msgstr "লাইট মোড সুইচের জন্য কাস্টম টেক্সট যোগ করুন"
+
+#: includes/admin/class-strings.php:408
+msgid "Light Mode Video :"
+msgstr "লাইট মোড ভিডিও :"
+
+#: includes/admin/class-strings.php:409
+msgid "Link"
+msgstr "লিঙ্ক"
+
+#: includes/admin/class-strings.php:410
+msgid "Link Hover"
+msgstr "লিঙ্ক হোভার"
+
+#: includes/admin/class-strings.php:411, includes/admin/class-strings.php:413
+msgid "Load Scripts in Footer"
+msgstr "ফুটারে স্ক্রিপ্ট লোড করুন"
+
+#: includes/admin/class-strings.php:412, includes/admin/class-strings.php:414
+msgid ""
+"Enable this feature to improve page load performance and reduce "
+"render-blocking"
+msgstr ""
+"পেজ লোড পারফরম্যান্স উন্নত করতে এবং রেন্ডার-ব্লকিং কমাতে এই ফিচারটি সক্ষম "
+"করুন"
+
+#: includes/admin/class-strings.php:415
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies ex "
+"at odio porttitor, vitae commodo erat pulvinar."
+msgstr ""
+"লরেম ইপসাম ডলর সিট আমেট, কনসেক্টেটুর অ্যাডিপিস্কিং এলিট। সেড আল্ট্রিসিস "
+"এক্স অ্যাট ওডিও পর্টিটর, ভিটা কমোডো এরাট প্যালভিনার।"
+
+#: includes/admin/class-strings.php:416
+msgid "Low Brightness Image"
+msgstr "লো ব্রাইটনেস ইমেজ"
+
+#: includes/admin/class-strings.php:417
+msgid "Low Brightness Video"
+msgstr "লো ব্রাইটনেস ভিডিও"
+
+#: includes/admin/class-strings.php:418
+msgid "Choose how you want to connect to us. Select the option convenient for you"
+msgstr ""
+"আপনি কীভাবে আমাদের সাথে যুক্ত হতে চান তা চয়ন করুন। আপনার জন্য সুবিধাজনক "
+"অপশনটি নির্বাচন করুন"
+
+#: includes/admin/class-strings.php:419
+msgid "Medium"
+msgstr "মাঝারি"
+
+#: includes/admin/class-strings.php:420, includes/admin/class-strings.php:421
+msgid "Menu Switch"
+msgstr "মেনু সুইচ"
+
+#: includes/admin/class-strings.php:422
+msgid ""
+"The Menu Switch is <strong>currently unavailable</strong>. To access this "
+"feature, first you have to enable the “Frontend Dark Mode” feature from the "
+"Control settings"
+msgstr ""
+"মেনু সুইচটি <strong>বর্তমানে অনুপলব্ধ</strong>। এই ফিচারটি অ্যাক্সেস করতে, "
+"প্রথমে আপনাকে কন্ট্রোল সেটিংস থেকে “ফ্রন্টএন্ড ডার্ক মোড” ফিচারটি সক্ষম "
+"করতে হবে"
+
+#: includes/admin/class-strings.php:423
+msgid "Menu switches won’t be visible anymore"
+msgstr "মেনু সুইচগুলো আর দেখা যাবে না"
+
+#: includes/admin/class-strings.php:424
+msgid "min"
+msgstr "মিনিট"
+
+#: includes/admin/class-strings.php:425, includes/admin/class-strings.php:700
+msgid "Mobile"
+msgstr "মোবাইল"
+
+#: includes/admin/class-strings.php:426
+msgid "Mode Image"
+msgstr "মোড ইমেজ"
+
+#: includes/admin/class-strings.php:427
+msgid "Mode Video"
+msgstr "মোড ভিডিও"
+
+#: includes/admin/class-strings.php:428
+msgid "More accessibility features"
+msgstr "আরও অ্যাক্সেসিবিলিটি ফিচার"
+
+#: includes/admin/class-strings.php:430 includes/admin/class-strings.php:45
+msgid "New"
+msgstr "নতুন"
+
+#: includes/admin/class-strings.php:431
+msgid "New Preset "
+msgstr "নতুন প্রিসেট "
+
+#: includes/admin/class-strings.php:432
+msgid "No, continue editing"
+msgstr "না, সম্পাদনা চালিয়ে যান"
+
+#: includes/admin/class-strings.php:433
+msgid "No custom color presets is created"
+msgstr "কোনো কাস্টম কালার প্রিসেট তৈরি করা হয়নি"
+
+#: includes/admin/class-strings.php:434
+msgid "No Image"
+msgstr "কোনো ছবি নেই"
+
+#: includes/admin/class-strings.php:435
+msgid "No Images Added"
+msgstr "কোনো ছবি যোগ করা হয়নি"
+
+#: includes/admin/class-strings.php:436
+msgid "No Result found for %s"
+msgstr "%s এর জন্য কোনো ফলাফল পাওয়া যায়নি"
+
+#: includes/admin/class-strings.php:437
+msgid "No Result found"
+msgstr "কোনো ফলাফল পাওয়া যায়নি"
+
+#: includes/admin/class-strings.php:438
+msgid "No Triggers Added"
+msgstr "কোনো ট্রিগার যোগ করা হয়নি"
+
+#: includes/admin/class-strings.php:439
+msgid "No Video"
+msgstr "কোনো ভিডিও নেই"
+
+#: includes/admin/class-strings.php:440
+msgid "No Videos Added"
+msgstr "কোনো ভিডিও যোগ করা হয়নি"
+
+#: includes/admin/class-strings.php:441
+msgid "Normal"
+msgstr "স্বাভাবিক"
+
+#: includes/admin/class-strings.php:442
+msgid "Normal Mode Image"
+msgstr "নরমাল মোড ইমেজ"
+
+#: includes/admin/class-strings.php:443
+msgid "Normal Mode Video"
+msgstr "নরমাল মোড ভিডিও"
+
+#: includes/admin/class-strings.php:444
+msgid "Normal Switches"
+msgstr "নরমাল সুইচ"
+
+#: includes/admin/class-strings.php:445
+msgid "Not Found"
+msgstr "পাওয়া যায়নি"
+
+#: includes/admin/class-strings.php:446
+msgid "Ok"
+msgstr "ঠিক আছে"
+
+#: includes/admin/class-strings.php:450
+msgid "Open Docs"
+msgstr "ডকুমেন্টেশন দেখুন"
+
+#: includes/admin/class-strings.php:451, includes/admin/class-strings.php:452
+msgid "Other Accessibility Settings"
+msgstr "অন্যান্য অ্যাক্সেসিবিলিটি সেটিংস"
+
+#: includes/admin/class-strings.php:453, includes/admin/class-strings.php:454
+msgid "Other Performance Settings"
+msgstr "অন্যান্য পারফরম্যান্স সেটিংস"
+
+#: includes/admin/class-strings.php:455
+msgid "Outlook"
+msgstr "আউটলুক"
+
+#: includes/admin/class-strings.php:456
+msgid "Outlook in browser"
+msgstr "ব্রাউজারে আউটলুক"
+
+#: includes/admin/class-strings.php:457
+msgid "This will override all your current settings."
+msgstr "এটি আপনার বর্তমান সমস্ত সেটিংসকে ওভাররাইড করবে।"
+
+#: includes/admin/class-strings.php:458
+msgid "Pages/Posts"
+msgstr "পেজ/পোস্ট"
+
+#: includes/admin/class-strings.php:459
+msgid "Palette %s"
+msgstr "প্যালেট %s"
+
+#: includes/admin/class-strings.php:460, includes/admin/class-strings.php:524
+msgid "Scale in percentage relative to normal size"
+msgstr "স্বভাবিক আকারের তুলনায় শতাংশে স্কেল করুন"
+
+#: includes/admin/class-strings.php:461, src/admin/routes/settings-routes.js:72
+msgid "Performance"
+msgstr "পারফরম্যান্স"
+
+#: includes/admin/class-strings.php:462, includes/admin/class-strings.php:463
+msgid "Choose Dark Mode behavior to enhance the performance"
+msgstr "পারফরম্যান্স উন্নত করতে ডার্ক মোড আচরণ চয়ন করুন"
+
+#: includes/admin/class-strings.php:464, src/admin/routes/settings-routes.js:73
+msgid "Configure performance settings."
+msgstr "পারফরম্যান্স সেটিংস কনফিগার করুন।"
+
+#: includes/admin/class-strings.php:465
+msgid "Placeholder"
+msgstr "প্লেসহোল্ডার"
+
+#: includes/admin/class-strings.php:466
+msgid "PM"
+msgstr "অপরাহ্ণ"
+
+#: includes/admin/class-strings.php:467
+msgid "Preset Color Customization"
+msgstr "প্রিসেট কালার কাস্টমাইজেশন"
+
+#: includes/admin/class-strings.php:468
+msgid ""
+"You cannot delete this preset as it is currently in use. Please select "
+"another preset or change the \"Color Mode\" before deleting this preset."
+msgstr ""
+"আপনি এই প্রিসেটটি মুছতে পারবেন না কারণ এটি বর্তমানে ব্যবহৃত হচ্ছে। দয়া করে "
+"অন্য একটি প্রিসেট নির্বাচন করুন বা এই প্রিসেটটি মোছার আগে \"কালার মোড\" "
+"পরিবর্তন করুন।"
+
+#: includes/admin/class-strings.php:469
+msgid "Preset is already in use!"
+msgstr "প্রিসেটটি ইতিমধ্যে ব্যবহৃত হচ্ছে!"
+
+#: includes/admin/class-strings.php:470
+msgid "Preset name"
+msgstr "প্রিসেটের নাম"
+
+#: includes/admin/class-strings.php:471, includes/admin/class-strings.php:474
+msgid "Preset name is required. Please enter a name for your preset."
+msgstr "প্রিসেটের নাম আবশ্যক। দয়া করে আপনার প্রিসেটের জন্য একটি নাম লিখুন।"
+
+#: includes/admin/class-strings.php:472
+msgid "Preset Name"
+msgstr "প্রিসেট নাম"
+
+#: includes/admin/class-strings.php:473
+msgid "e.g., Blue Night Theme"
+msgstr "যেমন: ব্লু নাইট থিম"
+
+#: includes/admin/class-strings.php:475, includes/admin/class-strings.php:680
+msgid "Preview"
+msgstr "প্রিভিউ"
+
+#: includes/admin/class-strings.php:476
+msgid "Pricing"
+msgstr "প্রাইসিং"
+
+#: includes/admin/class-strings.php:477
+msgid "Pro"
+msgstr "প্রো"
+
+#: includes/admin/class-strings.php:478
+msgid "e.g., Modern dark theme with blue accents and high contrast..."
+msgstr "যেমন: নীল অ্যাকসেন্ট এবং উচ্চ কন্ট্রাস্ট সহ আধুনিক ডার্ক থিম..."
+
+#: includes/admin/class-strings.php:479
+msgid "px"
+msgstr "পিক্সেল"
+
+#: includes/admin/class-strings.php:480
+msgid "How to enable dark mode on my website?"
+msgstr "আমার ওয়েবসাইটে ডার্ক মোড কীভাবে সক্ষম করব?"
+
+#: includes/admin/class-strings.php:481
+msgid "How do I activate PRO plan?"
+msgstr "আমি কীভাবে প্রো প্ল্যান সক্রিয় করব?"
+
+#: includes/admin/class-strings.php:482
+msgid "How do I activate the Ultimate plan?"
+msgstr "আমি কীভাবে আল্টিমেট প্ল্যান সক্রিয় করব?"
+
+#: includes/admin/class-strings.php:483
+msgid "Can I use it with popular page builders like Gutenberg or Elementor?"
+msgstr ""
+"আমি কি এটি জনপ্রিয় পেজ বিল্ডার যেমন গুটেনবার্গ বা এলিমেন্টর-এর সাথে "
+"ব্যবহার করতে পারি?"
+
+#: includes/admin/class-strings.php:484
+msgid "Is WP Dark Mode compatible with my theme?"
+msgstr "ডব্লিউপি ডার্ক মোড কি আমার থিমের সাথে সামঞ্জস্যপূর্ণ?"
+
+#: includes/admin/class-strings.php:485
+msgid "Is this plugin compatible with all modern browsers?"
+msgstr "এই প্লাগইনটি কি সব আধুনিক ব্রাউজারের সাথে সামঞ্জস্যপূর্ণ?"
+
+#: includes/admin/class-strings.php:486
+msgid "Does the WP Dark Mode plugin have any impact on page loading?"
+msgstr "ডব্লিউপি ডার্ক মোড প্লাগইন কি পেজ লোডিংয়ের ওপর কোনো প্রভাব ফেলে?"
+
+#: includes/admin/class-strings.php:487
+msgid "Can I change the image for dark mode using this plugin?"
+msgstr "আমি কি এই প্লাগইন ব্যবহার করে ডার্ক মোডের জন্য ইমেজ পরিবর্তন করতে পারি?"
+
+#: includes/admin/class-strings.php:488
+msgid ""
+"How can I prevent any specific elements, sections, or from turning into "
+"dark?"
+msgstr "আমি কীভাবে নির্দিষ্ট উপাদান, বিভাগ বা পেজকে ডার্ক হওয়া থেকে আটকাতে পারি?"
+
+#: includes/admin/class-strings.php:489
+msgid "Where can I find the tutorials about using the plugin?"
+msgstr "প্লাগইন ব্যবহারের টিউটোরিয়াল কোথায় পাব?"
+
+#: includes/admin/class-strings.php:490
+msgid "I want a refund for my purchase of the plugin. What’s the procedure?"
+msgstr "আমি প্লাগইন কেনার রিফান্ড চাই। এর পদ্ধতি কী?"
+
+#: includes/admin/class-strings.php:491
+msgid "Please Rate Us:"
+msgstr "আমাদের রেটিং দিন:"
+
+#: includes/admin/class-strings.php:492
+msgid "Recommended"
+msgstr "সুপারিশকৃত"
+
+#: includes/admin/class-strings.php:494
+msgid "Recommended Plugins page"
+msgstr "সুপারিশকৃত প্লাগইন পেজ"
+
+#: includes/admin/class-strings.php:495
+msgid "14 days"
+msgstr "১৪ দিন"
+
+#: includes/admin/class-strings.php:496
+msgid "7 days"
+msgstr "৭ দিন"
+
+#: includes/admin/class-strings.php:497
+msgid "Remind me After:"
+msgstr "পরে মনে করিয়ে দিন:"
+
+#: includes/admin/class-strings.php:498
+msgid "Would you like to be remind in the future?"
+msgstr "আপনি কি ভবিষ্যতে মনে করিয়ে দিতে চান?"
+
+#: includes/admin/class-strings.php:499
+msgid "Remind me never"
+msgstr "আর কখনও মনে করাবেন না"
+
+#: includes/admin/class-strings.php:500
+msgid "Replaced Images"
+msgstr "প্রতিস্থাপিত ছবি"
+
+#: includes/admin/class-strings.php:501
+msgid "The following added images will be replaced when dark mode is enabled"
+msgstr "ডার্ক মোড সক্ষম হলে নিচের যোগ করা ছবিগুলোর পরিবর্তে অন্য ছবি দেখা যাবে"
+
+#: includes/admin/class-strings.php:502
+msgid "Replaced Videos"
+msgstr "প্রতিস্থাপিত ভিডিও"
+
+#: includes/admin/class-strings.php:503
+msgid "These videos will be replaced in the dark mode"
+msgstr "এই ভিডিওগুলো ডার্ক মোডে প্রতিস্থাপিত হবে"
+
+#: includes/admin/class-strings.php:504, includes/admin/class-strings.php:508
+msgid "Reporting Email"
+msgstr "রিপোর্টিং ইমেল"
+
+#: includes/admin/class-strings.php:505
+msgid "Enter the email where the analytics report will be sent."
+msgstr "যে ইমেলে অ্যানালিটিক্স রিপোর্ট পাঠানো হবে তা লিখুন।"
+
+#: includes/admin/class-strings.php:506, includes/admin/class-strings.php:514
+msgid "Reporting Email Subject"
+msgstr "রিপোর্টিং ইমেল সাবজেক্ট"
+
+#: includes/admin/class-strings.php:507
+msgid "Subject of the analytics report email."
+msgstr "অ্যানালিটিক্স রিপোর্ট ইমেলের সাবজেক্ট।"
+
+#: includes/admin/class-strings.php:509
+msgid "Select the reporting frequency when the email will be send."
+msgstr "ইমেল পাঠানোর ফ্রিকুয়েন্সি নির্বাচন করুন।"
+
+#: includes/admin/class-strings.php:510, includes/admin/class-strings.php:511
+msgid "Reporting Frequency"
+msgstr "রিপোর্টিং ফ্রিকুয়েন্সি"
+
+#: includes/admin/class-strings.php:512
+msgid "Select the reporting frequency for the email."
+msgstr "ইমেলের জন্য রিপোর্টিং ফ্রিকোয়েন্সি নির্বাচন করুন।"
+
+#: includes/admin/class-strings.php:513
+msgid "Subject of the analytics report mail"
+msgstr "অ্যানালিটিক্স রিপোর্ট ইমেলের বিষয়"
+
+#: includes/admin/class-strings.php:515
+msgid "Reset"
+msgstr "রিসেট"
+
+#: includes/admin/class-strings.php:516
+msgid ""
+"Are you sure you want to reset all settings to default? We suggest you to "
+"export current settings before you reset the settings."
+msgstr ""
+"আপনি কি নিশ্চিত যে সমস্ত সেটিংস ডিফল্টে রিসেট করতে চান? আমরা আপনাকে সেটিংস "
+"রিসেট করার আগে বর্তমান সেটিংস এক্সপোর্ট করার পরামর্শ দিই।"
+
+#: includes/admin/class-strings.php:517
+msgid ""
+"Reset all settings to default. We recommend to export current settings "
+"before you reset the settings."
+msgstr ""
+"সমস্ত সেটিংস ডিফল্টে রিসেট করুন। আমরা সেটিংস রিসেট করার আগে বর্তমান সেটিংস "
+"এক্সপোর্ট করার সুপারিশ করি।"
+
+#: includes/admin/class-strings.php:518
+msgid "Reset Settings"
+msgstr "সেটিংস রিসেট করুন"
+
+#: includes/admin/class-strings.php:520
+msgid "Reset to original"
+msgstr "মূল অবস্থায় ফিরিয়ে আনুন"
+
+#: includes/admin/class-strings.php:521, includes/admin/class-strings.php:686,
+#: includes/classes/class-config.php:202,
+#: includes/modules/elementor/widgets/class-elementor-widget.php:162
+msgid "Right"
+msgstr "ডানে"
+
+#: includes/admin/class-strings.php:522
+msgid "Save Changes"
+msgstr "পরিবর্তনগুলো সংরক্ষণ করুন"
+
+#: includes/admin/class-strings.php:523, includes/admin/class-strings.php:705
+msgid "Saved Successfully"
+msgstr "সফলভাবে সংরক্ষিত হয়েছে"
+
+#: includes/admin/class-strings.php:525
+msgid "Scrollbar Customization"
+msgstr "স্ক্রলবার কাস্টমাইজেশন"
+
+#: includes/admin/class-strings.php:528, includes/admin/class-strings.php:573
+msgid "Thumb BG"
+msgstr "থাম্ব ব্যাকগ্রাউন্ড"
+
+#: includes/admin/class-strings.php:529
+msgid "Secondary Background Color"
+msgstr "সেকেন্ডারি ব্যাকগ্রাউন্ড কালার"
+
+#: includes/admin/class-strings.php:530
+msgid "seconds"
+msgstr "সেকেন্ড"
+
+#: includes/admin/class-strings.php:531
+msgid "Select"
+msgstr "নির্বাচন করুন"
+
+#: includes/admin/class-strings.php:532
+msgid "Select Animation"
+msgstr "অ্যানিমেশন নির্বাচন করুন"
+
+#: includes/admin/class-strings.php:533, includes/admin/class-strings.php:566
+msgid ""
+"Click on the WP Darkmode Widget and you will see the available switches on "
+"the right side of the screen. Select the one that you like"
+msgstr ""
+"ডব্লিউপি ডার্ক মোড উইজেটে ক্লিক করুন এবং আপনি স্ক্রিনের ডান পাশে উপলব্ধ "
+"সুইচগুলো দেখতে পাবেন। আপনার পছন্দমতো একটি নির্বাচন করুন"
+
+#: includes/admin/class-strings.php:534, includes/admin/class-strings.php:536
+msgid "Select a switch style for the menu"
+msgstr "মেনুর জন্য একটি সুইচ স্টাইল নির্বাচন করুন"
+
+#: includes/admin/class-strings.php:535
+msgid "Select Switch Style"
+msgstr "সুইচ স্টাইল নির্বাচন করুন"
+
+#: includes/admin/class-strings.php:537
+msgid "Select Switches"
+msgstr "সুইচগুলো নির্বাচন করুন"
+
+#: includes/admin/class-strings.php:538
+msgid "Select time"
+msgstr "সময় নির্বাচন করুন"
+
+#: includes/admin/class-strings.php:539
+msgid "Enter CSS Selector (e.g., .my-class, #my-id)"
+msgstr "সিএসএস সিলেক্টর লিখুন (যেমন: .my-class, #my-id)"
+
+#: includes/admin/class-strings.php:540
+msgid "Sepia"
+msgstr "সেপিয়া"
+
+#: includes/admin/class-strings.php:541
+msgid "Adjust your preferred dark mode Sepia"
+msgstr "আপনার পছন্দের ডার্ক মোড সেপিয়া সামঞ্জস্য করুন"
+
+#: includes/admin/class-strings.php:543, src/admin/routes/settings-routes.js:92
+msgid "Shortcode"
+msgstr "শর্টকোড"
+
+#: includes/admin/class-strings.php:544
+msgid "Select a switch from below and a shortcode will be generated"
+msgstr "নিচে থেকে একটি সুইচ নির্বাচন করুন এবং একটি শর্টকোড তৈরি করা হবে"
+
+#: includes/admin/class-strings.php:545, src/admin/routes/settings-routes.js:93
+msgid "Generate shortcodes for dark mode switches"
+msgstr "ডার্ক মোড সুইচের জন্য শর্টকোড তৈরি করুন"
+
+#: includes/admin/class-strings.php:546
+msgid "Show Switch after delay"
+msgstr "দেড়ি করে সুইচ প্রদর্শন করুন"
+
+#: includes/admin/class-strings.php:547
+msgid "Side Selection"
+msgstr "সাইড সিলেকশন"
+
+#: includes/admin/class-strings.php:548, src/admin/routes/settings-routes.js:56
+msgid "Site Animation"
+msgstr "সাইট অ্যানিমেশন"
+
+#: includes/admin/class-strings.php:549
+msgid "Small"
+msgstr "ছোট"
+
+#: includes/admin/class-strings.php:550
+msgid "Social Share page"
+msgstr "সোশ্যাল শেয়ার পেজ"
+
+#: includes/admin/class-strings.php:551
+msgid "Spacing from bottom"
+msgstr "নিচে থেকে স্পেসিং"
+
+#: includes/admin/class-strings.php:552
+msgid "Spacing from %s"
+msgstr "%s থেকে স্পেসিং"
+
+#: includes/admin/class-strings.php:553
+msgid "Start Time"
+msgstr "শুরুর সময়"
+
+#: includes/admin/class-strings.php:554, includes/admin/class-strings.php:664
+msgid "Support"
+msgstr "সাপোর্ট"
+
+#: includes/admin/class-strings.php:555
+msgid "Switch Customization"
+msgstr "সুইচ কাস্টমাইজেশন"
+
+#: includes/admin/class-strings.php:556, src/admin/routes/settings-routes.js:37
+msgid "Configure the dark mode switch for your website"
+msgstr "আপনার ওয়েবসাইটের জন্য ডার্ক মোড সুইচ কনফিগার করুন"
+
+#: includes/admin/class-strings.php:557
+msgid "Switch Position"
+msgstr "সুইচের অবস্থান"
+
+#: includes/admin/class-strings.php:558
+msgid "Choose the alignment of the floating toggle switch"
+msgstr "ফ্লোটিং টগল সুইচের অ্যালাইনমেন্ট চয়ন করুন"
+
+#: includes/admin/class-strings.php:559, src/admin/routes/settings-routes.js:36
+msgid "Switch Settings"
+msgstr "সুইচ সেটিংস"
+
+#: includes/admin/class-strings.php:560, includes/admin/class-strings.php:561
+msgid "Switch to Dark Mode"
+msgstr "ডার্ক মোড চালু করুন"
+
+#: includes/admin/class-strings.php:562, includes/admin/class-strings.php:563
+msgid "Switch to Light Mode"
+msgstr "লাইট মোড চালু করুন"
+
+#: includes/admin/class-strings.php:564, src/admin/routes/settings-routes.js:97
+msgid "Switch Widget"
+msgstr "সুইচ উইজেট"
+
+#: includes/admin/class-strings.php:565, src/admin/routes/settings-routes.js:98
+msgid "Display dark mode switch using WordPress widget"
+msgstr "ওয়ার্ডপ্রেস উইজেট ব্যবহার করে ডার্ক মোড সুইচ প্রদর্শন করুন"
+
+#: includes/admin/class-strings.php:567
+msgid "Tablet"
+msgstr "ট্যাবলেট"
+
+#: includes/admin/class-strings.php:570
+msgid "Text"
+msgstr "টেক্সট"
+
+#: includes/admin/class-strings.php:571
+msgid "Text & Link Colors"
+msgstr "টেক্সট এবং লিঙ্ক কালারস"
+
+#: includes/admin/class-strings.php:572
+msgid "Thumb Background"
+msgstr "থাম্ব ব্যাকগ্রাউন্ড"
+
+#: includes/admin/class-strings.php:574, includes/admin/class-strings.php:575
+msgid "Start time and end time cannot be same."
+msgstr "শুরুর সময় এবং শেষ সময় অভিন্ন হতে পারে না।"
+
+#: includes/admin/class-strings.php:576
+msgid "To"
+msgstr "প্রতি"
+
+#: includes/admin/class-strings.php:577
+msgid "to enable dark mode"
+msgstr "ডার্ক মোড সক্ষম করতে"
+
+#: includes/admin/class-strings.php:578
+msgid "to enable light mode"
+msgstr "লাইট মোড সক্ষম করতে"
+
+#: includes/admin/class-strings.php:579
+msgid "Toggle Dark Mode"
+msgstr "ডার্ক মোড টগল করুন"
+
+#: includes/admin/class-strings.php:580, src/admin/routes/settings-routes.js:138,
+#: src/admin/routes/settings-routes.js:146
+msgid "Tools"
+msgstr "টুলস"
+
+#: includes/admin/class-strings.php:581
+msgid "WP Dark Mode Tools"
+msgstr "ডব্লিউপি ডার্ক মোড টুলস"
+
+#: includes/admin/class-strings.php:582
+msgid "Track Background"
+msgstr "ট্র্যাক ব্যাকগ্রাউন্ড"
+
+#: includes/admin/class-strings.php:583
+msgid "Track BG"
+msgstr "ট্র্যাক ব্যাকগ্রাউন্ড"
+
+#: includes/admin/class-strings.php:584, includes/admin/class-strings.php:585
+msgid "Track Dynamic Content"
+msgstr "ডায়নামিক কন্টেন্ট ট্র্যাক করুন"
+
+#: includes/admin/class-strings.php:586, includes/admin/class-strings.php:587
+msgid ""
+"Please turn on this feature only if you have any Ajax Loaded dynamic "
+"content like ajax product filters, ajax page loader, ajax image "
+"loaders/sliders, lazy loaded images etc."
+msgstr ""
+"শুধুমাত্র যদি আপনার কাছে অ্যাজাক্স লোড করা ডায়নামিক কন্টেন্ট যেমন "
+"অ্যাজাক্স প্রোডাক্ট ফিল্টার, অ্যাজাক্স পেজ লোডার, অ্যাজাক্স ইমেজ "
+"লোডার/স্লাইডার, লেজি লোডেড ইমেজ ইত্যাদি থাকে তবেই এই ফিচারটি চালু করুন।"
+
+#: includes/admin/class-strings.php:588
+msgid "The following triggers will toggle dark mode when clicked"
+msgstr "নিচের ট্রিগারগুলোতে ক্লিক করলে ডার্ক মোড টগল হবে"
+
+#: includes/admin/class-strings.php:589
+msgid "Try Live Demo"
+msgstr "লাইভ ডেমো ট্রাই করুন"
+
+#: includes/admin/class-strings.php:590
+msgid "Tutorial"
+msgstr "টিউটোরিয়াল"
+
+#: includes/admin/class-strings.php:591
+msgid ""
+"Here is a small full video tutorial for you incase you don’t like to go "
+"through all the textual instruction"
+msgstr ""
+"আপনি যদি সমস্ত টেক্সট নির্দেশনা পড়তে না চান তবে এখানে আপনার জন্য একটি ছোট "
+"ভিডিও টিউটোরিয়াল দেওয়া হল"
+
+#: includes/admin/class-strings.php:592
+msgid "Check the WP Dark Mode playlist to become an expert dark mode user."
+msgstr "ডার্ক মোড ব্যবহারে বিশেষজ্ঞ হতে ডব্লিউপি ডার্ক মোড প্লেলিস্টটি দেখুন।"
+
+#: includes/admin/class-strings.php:593
+msgid ""
+"Typography features are only available for <strong>Accessibility "
+"Switches</strong>"
+msgstr ""
+"টাইপোগ্রাফি ফিচার শুধুমাত্র <strong>অ্যাক্সেসিবিলিটি সুইচের</strong> জন্য "
+"উপলব্ধ"
+
+#: includes/admin/class-strings.php:595, includes/admin/class-strings.php:600
+msgid "Typography Settings"
+msgstr "টাইপোগ্রাফি সেটিংস"
+
+#: includes/admin/class-strings.php:596
+msgid "Typography features are only available for"
+msgstr "টাইপোগ্রাফি ফিচার শুধুমাত্র এর জন্য উপলব্ধ"
+
+#: includes/admin/class-strings.php:599
+msgid ""
+"Typography option is disabled in Accessibility Settings. Text scaling "
+"feature won’t work."
+msgstr ""
+"অ্যাক্সেসিবিলিটি সেটিংসে টাইপোগ্রাফি অপশনটি নিষ্ক্রিয় করা আছে। টেক্সট "
+"স্কেলিং ফিচারটি কাজ করবে না।"
+
+#: includes/admin/class-strings.php:601
+msgid "ULTIMATE"
+msgstr "ULTIMATE"
+
+#: includes/admin/class-strings.php:602
+msgid ""
+"Advanced dark mode customizations are available in <span "
+"class=\"font-semibold\">WP Dark Mode Ultimate</span> 😍"
+msgstr "ডব্লিউপি ডার্ক মোড আল্টিমেট-এ উন্নত ডার্ক মোড কাস্টমাইজেশন উপলব্ধ 😍"
+
+#: includes/admin/class-strings.php:603
+msgid "ULTIMATE PLAN"
+msgstr "আল্টিমেট প্ল্যান"
+
+#: includes/admin/class-strings.php:604
+msgid ""
+"The Floating Switch is <strong>currently unavailable</strong>. To access "
+"this feature, first you have to enable the “Frontend Dark Mode” feature "
+"from the Control settings"
+msgstr ""
+"ফ্লোটিং সুইচটি <strong>বর্তমানে অনুপলব্ধ</strong>। এই ফিচারটি অ্যাক্সেস "
+"করতে, প্রথমে আপনাকে কন্ট্রোল সেটিংস থেকে “ফ্রন্টএন্ড ডার্ক মোড” ফিচারটি "
+"সক্রিয় করতে হবে।"
+
+#: includes/admin/class-strings.php:605
+msgid "This action cannot be undone."
+msgstr "এই কাজটি আর পূর্বাবস্থায় ফিরিয়ে আনা যাবে না।"
+
+#: includes/admin/class-strings.php:606
+msgid "Not sure about upgrading to Ultimate yet?"
+msgstr "এখনও আল্টিমেট-এ আপগ্রেড করার ব্যাপারে নিশ্চিত হতে পারছেন না?"
+
+#: includes/admin/class-strings.php:607
+msgid ""
+"If you are having a second thought about upgrading, you can explore all the "
+"premium features on our demo website. Feel free to try every feature before "
+"making the decision."
+msgstr ""
+"আপনি যদি আপগ্রেড করার বিষয়ে দ্বিধায় থাকেন তবে আপনি আমাদের ডেমো ওয়েবসাইটে "
+"সমস্ত প্রিমিয়াম ফিচারগুলো পরখ করে দেখতে পারেন। সিদ্ধান্ত নেওয়ার আগে "
+"নির্দ্বিধায় প্রতিটি ফিচার ট্রাই করুন।"
+
+#: includes/admin/class-strings.php:608
+msgid "Untitled"
+msgstr "শিরোনামহীন"
+
+#: includes/admin/class-strings.php:609
+msgid "Upcoming"
+msgstr "আসছে"
+
+#: includes/admin/class-strings.php:610, includes/admin/class-strings.php:611
+msgid ""
+"Click update and you are done! The switch will now be visible in the menu "
+"where you placed."
+msgstr ""
+"আপডেট ক্লিক করুন এবং আপনার কাজ শেষ! আপনি যেখানে রেখেছেন সেখানে মেনুতে "
+"সুইচটি এখন দৃশ্যমান হবে।"
+
+#: includes/admin/class-strings.php:612, includes/admin/class-strings.php:613
+msgid "Click update and you are done!"
+msgstr "আপডেট ক্লিক করুন এবং আপনার কাজ শেষ!"
+
+#: includes/admin/class-strings.php:614
+msgid "Upgrade"
+msgstr "আপগ্রেড"
+
+#: includes/admin/class-strings.php:615
+msgid "Upgrade All Features"
+msgstr "সব ফিচার আপগ্রেড করুন"
+
+#: includes/admin/class-strings.php:616
+msgid "Upgrade to ultimate to get access to reports"
+msgstr "রিপোর্টগুলোতে অ্যাক্সেস পেতে আল্টিমেট-এ আপগ্রেড করুন"
+
+#: includes/admin/class-strings.php:617, includes/wppool/class-plugin.php:371
+msgid "Upgrade to Pro"
+msgstr "প্রো-তে আপগ্রেড করুন"
+
+#: includes/admin/class-strings.php:637
+msgid "Upgrade to WP Dark Mode Ultimate"
+msgstr "ডব্লিউপি ডার্ক মোড আল্টিমেট-এ আপগ্রেড করুন"
+
+#: includes/admin/class-strings.php:619
+msgid "URL Parameter"
+msgstr "ইউআরেল প্যারামিটার"
+
+#: includes/admin/class-strings.php:620
+msgid "Enable/Disable the dark mode using URL/domain parameter"
+msgstr "ইউআরএল/ডোমেইন প্যারামিটার ব্যবহার করে ডার্ক মোড সক্ষম/নিষ্ক্রিয় করুন"
+
+#: includes/admin/class-strings.php:621
+msgid "Toggle Dark Mode using URL parameter."
+msgstr "ইউআরএল প্যারামিটার ব্যবহার করে ডার্ক মোড টগল করুন।"
+
+#: includes/admin/class-strings.php:622
+msgid "Use"
+msgstr "ব্যবহার করুন"
+
+#: includes/admin/class-strings.php:623
+msgid "Use %s?darkmode to enable dark mode and %s?lightmode to enable light mode"
+msgstr ""
+"ডার্ক মোড সক্ষম করতে %s?darkmode এবং লাইট মোড সক্ষম করতে %s?lightmode "
+"ব্যবহার করুন"
+
+#: includes/admin/class-strings.php:624
+msgid "Please upload a valid file."
+msgstr "দয়া করে একটি বৈধ ফাইল আপলোড করুন।"
+
+#: includes/admin/class-strings.php:625
+msgid "Seems like <strong>WP Dark Mode</strong> is bringing you value 🥳"
+msgstr "মনে হচ্ছে <strong>ডব্লিউপি ডার্ক মোড</strong> আপনার কাজে লাগছে 🥳"
+
+#: includes/admin/class-strings.php:626
+msgid ""
+"The version of the file you are trying to import is not compatible with the "
+"current version of WP Dark Mode."
+msgstr ""
+"আপনি যে ফাইলটির ভার্সন ইমপোর্ট করার চেষ্টা করছেন তা ডব্লিউপি ডার্ক মোডের "
+"বর্তমান ভার্সনের সাথে সামঞ্জস্যপূর্ণ নয়।"
+
+#: includes/admin/class-strings.php:627
+msgid "Version Mismatch"
+msgstr "ভার্সন মিসম্যাচ"
+
+#: includes/admin/class-strings.php:628
+msgid "Video Behavior"
+msgstr "ভিডিও আচরণ"
+
+#: includes/admin/class-strings.php:629
+msgid "Settings to change video appearance on dark mode"
+msgstr "ডার্ক মোডে ভিডিও-র উপস্থিতি পরিবর্তনের সেটিংস"
+
+#: includes/admin/class-strings.php:630
+msgid "Video Behavior When Dark Mode Is On"
+msgstr "ডার্ক মোড চালু থাকলে ভিডিও-র আচরণ"
+
+#: includes/admin/class-strings.php:631
+msgid "Enable to set the brightness level of the videos on dark mode"
+msgstr "ডার্ক মোডে ভিডিও-র উজ্জ্বলতার মাত্রা সেট করতে সক্ষম করুন"
+
+#: includes/admin/class-strings.php:632, src/admin/routes/settings-routes.js:52
+msgid "Customize video appearance in Dark Mode"
+msgstr "ডার্ক মোডে ভিডিও-র উপস্থিতি কাস্টমাইজ করুন"
+
+#: includes/admin/class-strings.php:633
+msgid "Enable to set the grayscale level of the videos on dark mode"
+msgstr "ডার্ক মোডে ভিডিও-র গ্রেস্কেল মাত্রা সেট করতে সক্ষম করুন"
+
+#: includes/admin/class-strings.php:634
+msgid "Video Replacement"
+msgstr "ভিডিও প্রতিস্থাপন"
+
+#: includes/admin/class-strings.php:635
+msgid "Replace specific videos when dark mode is enabled"
+msgstr "ডার্ক মোড নিযুক্ত থাকলে নির্দিষ্ট ভিডিওগুলো প্রতিস্থাপন করুন"
+
+#: includes/admin/class-strings.php:636, src/admin/routes/settings-routes.js:51
+msgid "Video Settings"
+msgstr "ভিডিও সেটিংস"
+
+#: includes/admin/class-strings.php:637
+msgid "Video Tutorial"
+msgstr "ভিডিও টিউটোরিয়াল"
+
+#: includes/admin/class-strings.php:638
+msgid "Video URL"
+msgstr "ভিডিও ইউআরএল"
+
+#: includes/admin/class-strings.php:639
+msgid "View Dark Mode Usages inside WordPress Dashboard"
+msgstr "ওয়ার্ডপ্রেস ড্যাশবোর্ডের ভিতরে ডার্ক মোড ব্যবহার দেখুন"
+
+#: includes/admin/class-strings.php:641
+msgid "Watch Video Tutorial"
+msgstr "ভিডিও টিউটোরিয়াল দেখুন"
+
+#: includes/admin/class-strings.php:642
+msgid "Watch Videos"
+msgstr "ভিডিওগুলো দেখুন"
+
+#: includes/admin/class-strings.php:647, includes/admin/class-strings.php:654
+msgid "WooCommerce is not active"
+msgstr "উকমার্স সক্রিয় নয়"
+
+#: includes/admin/class-strings.php:648, includes/admin/class-strings.php:655
+msgid "WooCommerce is not installed"
+msgstr "উকমার্স ইনস্টল করা নেই"
+
+#: includes/admin/class-strings.php:651
+msgid "What is WP Dark Mode?"
+msgstr "ডব্লিউপি ডার্ক মোড কি?"
+
+#: includes/admin/class-strings.php:653
+msgid "WooCommerce"
+msgstr "উকমার্স"
+
+#: includes/admin/class-strings.php:657
+msgid "WP Dark Mode Support"
+msgstr "ডব্লিউপি ডার্ক মোড সাপোর্ট"
+
+#: includes/admin/class-strings.php:659
+msgid "Yahoo"
+msgstr "ইয়াহু"
+
+#: includes/admin/class-strings.php:660
+msgid "Yahoo in browser"
+msgstr "ব্রাউজারে ইয়াহু"
+
+#: includes/admin/class-strings.php:661
+msgid "Yes, discard changes"
+msgstr "হ্যাঁ, পরিবর্তন বর্জন করুন"
+
+#: includes/admin/class-strings.php:663
+msgid "Welcome to the #1 dark mode plugin for WordPress. Let's get started!"
+msgstr "Welcome to the #1 dark mode plugin for WordPress. Let's get started!"
+
+#: includes/admin/class-strings.php:671
+msgid "You might be looking for"
+msgstr "আপনি খুঁজছেন হতে পারে"
+
+#: includes/admin/class-strings.php:672
+msgid ""
+"Our support team is here 24/7 to answer your queries and resolve your "
+"issues. Don't hesitate to reach out to us!"
+msgstr ""
+"Our support team is here 24/7 to answer your queries and resolve your "
+"issues. Don't hesitate to reach out to us!"
+
+#: includes/admin/class-strings.php:673
+msgid ""
+"If you don't have the time to go through the docs, check our tutorial to "
+"start using WP Dark Mode on Gutenberg."
+msgstr ""
+"If you don't have the time to go through the docs, check our tutorial to "
+"start using WP Dark Mode on Gutenberg."
+
+#: includes/admin/class-strings.php:674
+msgid ""
+"If you don't have the time to go through the docs, check our tutorial to "
+"start using WP Dark Mode on Elementor."
+msgstr ""
+"If you don't have the time to go through the docs, check our tutorial to "
+"start using WP Dark Mode on Elementor."
+
+#: includes/admin/class-strings.php:677
+msgid "Social Share (Inline Button)"
+msgstr "সোশ্যাল শেয়ার (ইনলাইন বাটন)"
+
+#: includes/admin/class-strings.php:678
+msgid "Social Channels"
+msgstr "সামাজিক চ্যানেল"
+
+#: includes/admin/class-strings.php:681
+msgid "Above"
+msgstr "উপরে"
+
+#: includes/admin/class-strings.php:682
+msgid "Below"
+msgstr "নিচে"
+
+#: includes/admin/class-strings.php:683
+msgid "Above & Below"
+msgstr "উপরে এবং নিচে"
+
+#: includes/admin/class-strings.php:685,
+#: includes/modules/elementor/widgets/class-elementor-widget.php:158
+msgid "Center"
+msgstr "কেন্দ্রে"
+
+#: includes/admin/class-strings.php:687
+msgid "Stretch"
+msgstr "প্রসারিত"
+
+#: includes/admin/class-strings.php:688
+msgid "Rounded"
+msgstr "গোলাকার"
+
+#: includes/admin/class-strings.php:689
+msgid "Circle"
+msgstr "বৃত্তাকার"
+
+#: includes/admin/class-strings.php:690
+msgid "Rectangular"
+msgstr "আয়তাকার"
+
+#: includes/admin/class-strings.php:691
+msgid "Slanted"
+msgstr "ঢালু"
+
+#: includes/admin/class-strings.php:692
+msgid "Channel Label"
+msgstr "চ্যানেলের নাম"
+
+#: includes/admin/class-strings.php:693
+msgid "Share Count"
+msgstr "শেয়ার সংখ্যা"
+
+#: includes/admin/class-strings.php:694
+msgid "Both"
+msgstr "উভয়ই"
+
+#: includes/admin/class-strings.php:695
+msgid "None"
+msgstr "কোনোটিই নয়"
+
+#: includes/admin/class-strings.php:696
+msgid "More"
+msgstr "আরও"
+
+#: includes/admin/class-strings.php:697
+msgid "Share"
+msgstr "Share"
+
+#: includes/admin/class-strings.php:698
+msgid "Shares"
+msgstr "Shares"
+
+#: includes/admin/class-strings.php:699
+msgid "Ultimate"
+msgstr "আল্টিমেট"
+
+#: includes/admin/class-strings.php:702
+msgid "Saved"
+msgstr "Saved"
+
+#: includes/admin/class-strings.php:703
+msgid "Published"
+msgstr "Published"
+
+#: includes/admin/class-strings.php:704
+msgid "Save & Publish"
+msgstr "সংরক্ষণ ও প্রকাশ করুন"
+
+#: includes/admin/class-strings.php:706
+msgid "Enable Social Share (Inline Button)"
+msgstr "সোশ্যাল শেয়ার (ইনলাইন বাটন) সক্ষম করুন"
+
+#: includes/admin/class-strings.php:707
+msgid "Inline Button Template"
+msgstr "ইনলাইন বাটন টেমপ্লেট"
+
+#: includes/admin/class-strings.php:708
+msgid "Choose any inline button template that suits your style"
+msgstr "আপনার স্টাইলের সাথে মানানসই যেকোনো ইনলাইন বাটন টেমপ্লেট চয়ন করুন"
+
+#: includes/admin/class-strings.php:709
+msgid "Share Label"
+msgstr "শেয়ার লেবেল"
+
+#: includes/admin/class-strings.php:710
+msgid ""
+"Share label appears before the inline button. Provide engaging texts to "
+"make sure your visitors are sharing the content!"
+msgstr ""
+"ইনলাইন বাটনের আগে শেয়ার লেবেল উপস্থিত হয়। আপনার ভিজিটররা কন্টেন্টটি "
+"শেয়ার করছে কিনা তা নিশ্চিত করতে আকর্ষক টেক্সট প্রদান করুন!"
+
+#: includes/admin/class-strings.php:711
+msgid "Sharing is Caring: "
+msgstr "শেয়ার করাই হলো যত্ন নেওয়া: "
+
+#: includes/admin/class-strings.php:712
+msgid "Button Position"
+msgstr "বাটনের অবস্থান"
+
+#: includes/admin/class-strings.php:713
+msgid "Choose the position where you want show your inline button."
+msgstr "আপনি যেখানে আপনার ইনলাইন বাটন দেখাতে চান সেই অবস্থানটি চয়ন করুন।"
+
+#: includes/admin/class-strings.php:714
+msgid "Button Alignment"
+msgstr "বাটনের অ্যালাইনমেন্ট"
+
+#: includes/admin/class-strings.php:715
+msgid "Choose the alignment of the button."
+msgstr "বাটনের অ্যালাইনমেন্ট চয়ন করুন।"
+
+#: includes/admin/class-strings.php:716
+msgid "Button Shape"
+msgstr "বাটনের শেপ"
+
+#: includes/admin/class-strings.php:717
+msgid "Choose the button shape that matches your site content."
+msgstr "আপনার সাইটের কন্টেন্টের সাথে মেলে এমন বাটন শেপ চয়ন করুন।"
+
+#: includes/admin/class-strings.php:718
+msgid "Button Size"
+msgstr "বাটনের সাইজ"
+
+#: includes/admin/class-strings.php:719
+msgid "Choose the default size for your inline button."
+msgstr "আপনার ইনলাইন বাটনের জন্য ডিফল্ট সাইজ চয়ন করুন।"
+
+#: includes/admin/class-strings.php:720
+msgid "Button Label"
+msgstr "বাটন লেবেল"
+
+#: includes/admin/class-strings.php:721
+msgid "Button labels can display your channel’s name and share count."
+msgstr "বাটন লেবেল আপনার চ্যানেলের নাম এবং শেয়ার সংখ্যা প্রদর্শন করতে পারে।"
+
+#: includes/admin/class-strings.php:722
+msgid "Hide Buttons on"
+msgstr "যেখান বাটন লুকাবেন"
+
+#: includes/admin/class-strings.php:723
+msgid "Select where you want to hide your inline button."
+msgstr "আপনি যেখানে আপনার ইনলাইন বাটন লুকাতে চান তা নির্বাচন করুন।"
+
+#: includes/admin/class-strings.php:724
+msgid "Display Buttons on"
+msgstr "যেখানে বাটন প্রদর্শন করবেন"
+
+#: includes/admin/class-strings.php:725
+msgid "Choose where the inline button will appear on your website."
+msgstr "আপনার ওয়েবসাইটে ইনলাইন বাটনটি কোথায় প্রদর্শিত হবে তা চয়ন করুন।"
+
+#: includes/admin/class-strings.php:726
+msgid "Button Spacing"
+msgstr "বাটনের স্পেসিং"
+
+#: includes/admin/class-strings.php:727
+msgid "Select default spacing between each channel."
+msgstr "প্রতিটি চ্যানেলের মধ্যে ডিফল্ট স্পেসিং নির্বাচন করুন।"
+
+#: includes/admin/class-strings.php:728
+msgid "Total Shares"
+msgstr "মোট শেয়ার"
+
+#: includes/admin/class-strings.php:729
+msgid ""
+"Enable total share counter. It will show how many times your content is "
+"shared via enabled channels."
+msgstr ""
+"মোট শেয়ার কাউন্টার সক্ষম করুন। এটি দেখাবে যে সক্ষম করা চ্যানেলগুলোর "
+"মাধ্যমে আপনার কন্টেন্ট কতবার শেয়ার করা হয়েছে।"
+
+#: includes/admin/class-strings.php:730
+msgid "Minimum Share Count"
+msgstr "সর্বনিম্ন শেয়ার সংখ্যা"
+
+#: includes/admin/class-strings.php:731
+msgid ""
+"This is the minimum number of shares a page needs to have before the share "
+"counter is shown."
+msgstr "শেয়ার কাউন্টার দেখানোর আগে একটি পেজের ন্যূনতম যতগুলো শেয়ার থাকা প্রয়োজন।"
+
+#: includes/admin/class-strings.php:732
+msgid "Maximum Share Click"
+msgstr "সর্বোচ্চ শেয়ার ক্লিক"
+
+#: includes/admin/class-strings.php:733
+msgid ""
+"This is the maximum number of click count on a social channel you want to "
+"show your visitors"
+msgstr "সোশ্যাল চ্যানেলে ক্লিকে সর্বোচ্চ যে সংখ্যাটি আপনি আপনার ভিজিটরদের দেখাতে চান"
+
+#: includes/admin/class-strings.php:734
+msgid "Channel Visibility Count"
+msgstr "চ্যানেলের ভিজিবিলিটি সংখ্যা"
+
+#: includes/admin/class-strings.php:735
+msgid ""
+"Set the number of channels that you want to show on your website. The rest "
+"will be shown after clicking on the 'More' button."
+msgstr ""
+"আপনার ওয়েবসাইটে আপনি কতটি চ্যানেল দেখাতে চান তা সেট করুন। বাকিগুলো 'More' "
+"বাটনে ক্লিক করার পরে দেখানো হবে।"
+
+#: includes/admin/class-strings.php:736
+msgid "Search Channel"
+msgstr "চ্যানেল খুঁজুন"
+
+#: includes/admin/class-strings.php:737
+msgid "See less channels"
+msgstr "কম চ্যানেল দেখুন"
+
+#: includes/admin/class-strings.php:738
+msgid "See more channels"
+msgstr "আরও চ্যানেল দেখুন"
+
+#: includes/admin/class-strings.php:739
+msgid "Unlock all channels"
+msgstr "সব চ্যানেল আনলক করুন"
+
+#: includes/admin/class-strings.php:740
+msgid "Manage channels"
+msgstr "চ্যানেলগুলো পরিচালনা করুন"
+
+#: includes/admin/class-strings.php:741
+msgid ""
+"Reorder your social channels. You can edit the channel label and device "
+"visibility for each. Drag channels to change their order."
+msgstr ""
+"আপনার সোশ্যাল চ্যানেলগুলো রিঅর্ডার করুন। আপনি প্রত্যেকের জন্য চ্যানেল লেবেল "
+"এবং ডিভাইস ভিজিবিলিটি এডিট করতে পারেন। তাদের ক্রম পরিবর্তন করতে "
+"চ্যানেলগুলোকে ড্র্যাগ করুন।"
+
+#: includes/admin/class-strings.php:742
+msgid "Visit this URL: {page_url} and summarize the content for me."
+msgstr "এই ইউআরএলটি দেখুন: {page_url} এবং আমার জন্য কন্টেন্টটি সারসংক্ষেপ করুন।"
+
+#: includes/admin/class-strings.php:743
+msgid "Available variables:"
+msgstr "উপলব্ধ ভেরিয়েবলগুলো:"
+
+#: includes/admin/class-strings.php:744
+msgid "Reset to default"
+msgstr "ডিফল্টে রিসেট করুন"
+
+#: includes/admin/class-strings.php:745
+msgid "Enable Preferred Channels"
+msgstr "পছন্দের চ্যানেলগুলো সক্ষম করুন"
+
+#: includes/admin/class-strings.php:746
+msgid "Not found"
+msgstr "পাওয়া যায়নি"
+
+#: includes/admin/class-strings.php:747
+msgid "Done"
+msgstr "সম্পন্ন"
+
+#: includes/admin/class-strings.php:748
+msgid "Plan"
+msgstr "প্ল্যান"
+
+#: includes/admin/class-strings.php:750
+msgid "Frequently Asked Questions"
+msgstr "সচরাচর জিজ্ঞাসিত প্রশ্নাবলী"
+
+#: includes/admin/class-strings.php:751
+msgid "official documentation"
+msgstr "অফিসিয়াল ডকুমেন্টেশন"
+
+#: includes/admin/class-strings.php:752
+msgid "and"
+msgstr "এবং"
+
+#: includes/admin/class-strings.php:753
+msgid "YouTube Playlist"
+msgstr "ইউটিউব প্লেলিস্ট"
+
+#: includes/admin/class-strings.php:754
+msgid "customer support team"
+msgstr "কাস্টমার সাপোর্ট টিম"
+
+#: includes/admin/class-strings.php:755
+msgid "pricing page"
+msgstr "মূল্য তালিকা পাতা"
+
+#: includes/admin/class-strings.php:756
+msgid "For refunds on the premium plan, please contact our"
+msgstr "প্রিমিয়াম প্ল্যানের রিফান্ডের জন্য, অনুগ্রহ করে আমাদের সাথে যোগাযোগ করুন"
+
+#: includes/admin/class-strings.php:757
+msgid ""
+"directly. The procedure will be based on the terms of service in effect at "
+"the time of purchase."
+msgstr ""
+"সরাসরি। রিফান্ড পদ্ধতিটি ক্রয়ের সময় কার্যকর পরিষেবার শর্তাবলীর উপর ভিত্তি "
+"করে নির্ধারিত হবে।"
+
+#: includes/admin/class-strings.php:758
+msgid "Enabling dark mode on your website is easy and simple."
+msgstr "আপনার ওয়েবসাইটে ডার্ক মোড সক্ষম করা সহজ এবং সাশ্রয়ী।"
+
+#: includes/admin/class-strings.php:759
+msgid "Learn how to get started with WP Dark Mode within minutes."
+msgstr "কয়েক মিনিটের মধ্যে কীভাবে WP ডার্ক মোড ব্যবহার শুরু করবেন তা জানুন।"
+
+#: includes/classes/class-config.php:68
+msgid "Default Light Mode"
+msgstr "ডিফল্ট লাইট মোড"
+
+#: includes/classes/class-config.php:69
+msgid ""
+"Enable this setting if you want light mode as the default mode of your "
+"site. Visitors will find the website in light mode first."
+msgstr ""
+"আপনার সাইটের ডিফল্ট মোড হিসেবে লাইট মোড চাইলে এই সেটিংসটি সক্রিয় করুন। "
+"ভিজিটররা প্রথমে ওয়েবসাইটটি লাইট মোডে দেখতে পাবেন।"
+
+#: includes/classes/class-config.php:72
+msgid "Default Dark Mode"
+msgstr "ডিফল্ট ডার্ক মোড"
+
+#: includes/classes/class-config.php:73
+msgid ""
+"Enable this setting if you want dark mode as the default mode of your site. "
+"Visitors will find the website in dark mode first."
+msgstr ""
+"আপনার সাইটের ডিফল্ট মোড হিসেবে ডার্ক মোড চাইলে এই সেটিংসটি সক্রিয় করুন। "
+"ভিজিটররা প্রথমে ওয়েবসাইটটি ডার্ক মোডে দেখতে পাবেন।"
+
+#: includes/classes/class-config.php:76
+msgid "Use system settings"
+msgstr "সিস্টেম সেটিংস ব্যবহার করুন"
+
+#: includes/classes/class-config.php:77
+msgid "Dark mode will be enabled/disabled depending on the user's device settings."
+msgstr ""
+"ব্যবহারকারীর ডিভাইস সেটিংসের ওপর ভিত্তি করে ডার্ক মোড সক্রিয় অথবা নিষ্ক্রিয় "
+"হবে।"
+
+#: includes/classes/class-config.php:80
+msgid "Time based dark mode"
+msgstr "সময় ভিত্তিক ডার্ক মোড"
+
+#: includes/classes/class-config.php:81
+msgid "Automatically enable dark mode based on user's given time."
+msgstr ""
+"ব্যবহারকারীর দেওয়া সময়ের ওপর ভিত্তি করে ডার্ক মোড স্বয়ংক্রিয়ভাবে সক্রিয় "
+"হবে।"
+
+#: includes/classes/class-config.php:84
+msgid "Sunset Mode"
+msgstr "সূর্যাস্ত মোড"
+
+#: includes/classes/class-config.php:85
+msgid "Automatically enable dark mode at sunset based on the user's location."
+msgstr ""
+"ব্যবহারকারীর অবস্থানের ওপর ভিত্তি করে সূর্যাস্তের সময় ডার্ক মোড "
+"স্বয়ংক্রিয়ভাবে সক্রিয় হবে।"
+
+#: includes/classes/class-config.php:162
+msgid "S"
+msgstr "S"
+
+#: includes/classes/class-config.php:166
+msgid "M"
+msgstr "M"
+
+#: includes/classes/class-config.php:170
+msgid "L"
+msgstr "L"
+
+#: includes/classes/class-config.php:174,
+#: includes/modules/elementor/widgets/class-elementor-widget.php:139
+msgid "XL"
+msgstr "বড় (XL)"
+
+#: includes/classes/class-config.php:178
+msgid "XXL"
+msgstr "XXL"
+
+#: includes/classes/class-config.php:238
+msgid "Wobble"
+msgstr "ওয়োবল"
+
+#: includes/classes/class-config.php:239
+msgid "Vibrate"
+msgstr "ভাইব্রেট"
+
+#: includes/classes/class-config.php:240
+msgid "Flicker"
+msgstr "ফ্লিকার"
+
+#: includes/classes/class-config.php:241
+msgid "Shake"
+msgstr "শেক"
+
+#: includes/classes/class-config.php:242
+msgid "Jello"
+msgstr "জেলো"
+
+#: includes/classes/class-config.php:243
+msgid "Bounce"
+msgstr "বাউন্স"
+
+#: includes/classes/class-config.php:244
+msgid "Heartbeat"
+msgstr "হার্টবিট"
+
+#: includes/classes/class-config.php:245
+msgid "Blink"
+msgstr "ব্লিঙ্ক"
+
+#: includes/classes/class-config.php:255
+msgid "Enable Dark Mode"
+msgstr "ডার্ক মোড সক্রিয় করুন"
+
+#: includes/classes/class-config.php:315
+msgid "Allow custom elements to toggle dark mode"
+msgstr "কাস্টম এলিমেন্টগুলোকে ডার্ক মোড টগল করার অনুমতি দিন"
+
+#: includes/classes/class-config.php:320
+msgid "Custom Triggers List"
+msgstr "কাস্টম ট্রিগার তালিকা"
+
+#: includes/classes/class-config.php:321
+msgid "List of custom trigger configurations"
+msgstr "কাস্টম ট্রিগার কনফিগারেশনের তালিকা"
+
+#: includes/classes/class-config.php:425
+msgid "Fade In"
+msgstr "ফেড ইন"
+
+#: includes/classes/class-config.php:426
+msgid "Pulse"
+msgstr "পালস"
+
+#: includes/classes/class-config.php:427
+msgid "Flip"
+msgstr "ফ্লিপ"
+
+#: includes/classes/class-config.php:428
+msgid "Roll"
+msgstr "রোল"
+
+#: includes/classes/class-config.php:429
+msgid "Slide Left"
+msgstr "স্লাইড লেফট"
+
+#: includes/classes/class-config.php:430
+msgid "Slide Up"
+msgstr "স্লাইড আপ"
+
+#: includes/classes/class-config.php:431
+msgid "Slide Right"
+msgstr "স্লাইড রাইট"
+
+#: includes/classes/class-config.php:432
+msgid "Slide Down"
+msgstr "স্লাইড ডাউন"
+
+#: includes/classes/class-config.php:450
+msgid "Best Dark Mode Performance"
+msgstr "সেরা ডার্ক মোড পারফরম্যান্স"
+
+#: includes/classes/class-config.php:451
+msgid ""
+"The dark mode scripts will load before the parsing and rendering of your "
+"page. Choose this option when executing dark mode is the first priority for "
+"you."
+msgstr ""
+"আপনার পেজের পার্সিং এবং রেন্ডারিংয়ের আগে ডার্ক মোড স্ক্রিপ্টগুলো লোড হবে। "
+"যখন ডার্ক মোড এক্সিকিউশন আপনার কাছে প্রথম অগ্রাধিকার হয় তখন এই অপশনটি বেছে "
+"নিন।"
+
+#: includes/classes/class-config.php:454
+msgid "Balanced Performance for My Website and Dark Mode"
+msgstr "আমার ওয়েবসাইট এবং ডার্ক মোডের জন্য ভারসাম্যপূর্ণ পারফরম্যান্স"
+
+#: includes/classes/class-config.php:455
+msgid ""
+"The dark mode scripts will be executed at the same time as your page. "
+"Choose this option to get a moderate dark mode loading time without "
+"compromising website loading speed."
+msgstr ""
+"আপনার পেজের সাথে ডার্ক মোড স্ক্রিপ্টগুলো একই সময়ে চালু হবে। ওয়েবসাইট লোডিং "
+"স্পিডের সাথে আপস না করে মাঝারি মানের ডার্ক মোড লোডিং টাইম পেতে এই অপশনটি "
+"বেছে নিন।"
+
+#: includes/classes/class-config.php:458
+msgid "Prioritize My Website Loading"
+msgstr "আমার ওয়েবসাইট লোডিংকে অগ্রাধিকার দিন"
+
+#: includes/classes/class-config.php:459
+msgid ""
+"The dark mode script will be fetched asynchronously and executed after page "
+"parsing, just before the \"DOMContentLoaded\" event. Choose this option if "
+"your focus is on optimizing your website's performance over the WP Dark "
+"Mode."
+msgstr ""
+"ডার্ক মোড স্ক্রিপ্ট অ্যাসিনক্রোনাসলি ফেচ করা হবে এবং পেজ পার্সিং করার পরে, "
+"\"DOMContentLoaded\" ইভেন্টের ঠিক আগে এক্সিকিউট হবে। আপনি যদি ডব্লিউপি "
+"ডার্ক মোডের চেয়ে আপনার ওয়েবসাইটের পারফরম্যান্স অপ্টিমাইজ করার ওপর গুরুত্ব "
+"দেন তবে এই অপশনটি বেছে নিন।"
+
+#: includes/classes/class-config.php:571
+msgid "Daily"
+msgstr "দৈনিক"
+
+#: includes/classes/class-config.php:572
+msgid "Weekly"
+msgstr "সাপ্তাহিক"
+
+#: includes/classes/class-config.php:573
+msgid "Bi-Weekly"
+msgstr "দ্বি-সাপ্তাহিক"
+
+#: includes/classes/class-config.php:574
+msgid "Monthly"
+msgstr "মাসিক"
+
+#: includes/classes/class-config.php:575
+msgid "Quarterly"
+msgstr "ত্রৈমাসিক"
+
+#: includes/classes/class-config.php:576
+msgid "Yearly"
+msgstr "বার্ষিক"
+
+#: includes/classes/class-config.php:586
+msgid "WP Dark Mode Analytics Report"
+msgstr "ডব্লিউপি ডার্ক মোড অ্যানালিটিক্স রিপোর্ট"
+
+#: includes/models/class-visitor.php:97
+msgid "Failed to insert visitor data."
+msgstr "ভিজিটর ডেটা ঢোকাতে ব্যর্থ হয়েছে।"
+
+#: includes/models/class-visitor.php:118
+msgid "Failed to update visitor data."
+msgstr "ভিজিটর ডেটা আপডেট করতে ব্যর্থ হয়েছে।"
+
+#: includes/modules/class-shortcode.php:82
+msgid "Dark Mode Settings"
+msgstr "ডার্ক মোড সেটিংস"
+
+#: includes/modules/class-shortcode.php:82, src/gutenberg/block/index.js:36
+msgid "Dark Mode Toggle"
+msgstr "ডার্ক মোড টগল"
+
+#: includes/modules/elementor/widgets/class-elementor-widget.php:50,
+#: includes/modules/elementor/widgets/class-elementor-widget.php:104,
+#: src/gutenberg/block/index.js:9
+msgid "Dark Mode Switch"
+msgstr "ডার্ক মোড সুইচ"
+
+#: includes/modules/elementor/widgets/class-elementor-widget.php:113,
+#: src/gutenberg/block/DarkModeSwitchEditor.js:29
+msgid "Switch Style"
+msgstr "সুইচ স্টাইল"
+
+#: includes/modules/elementor/widgets/class-elementor-widget.php:133,
+#: src/gutenberg/block/DarkModeSwitchEditor.js:37
+msgid "Switch Size"
+msgstr "সুইচ সাইজ"
+
+#: includes/modules/elementor/widgets/class-elementor-widget.php:136
+msgid "XS"
+msgstr "অতি ক্ষুদ্র (XS)"
+
+#: includes/modules/elementor/widgets/class-elementor-widget.php:137
+msgid "SM"
+msgstr "ক্ষুদ্র (SM)"
+
+#: includes/modules/elementor/widgets/class-elementor-widget.php:138
+msgid "MD"
+msgstr "মাঝারি (MD)"
+
+#: includes/modules/elementor/widgets/class-elementor-widget.php:140
+msgid "2XL"
+msgstr "অতি বড় (2XL)"
+
+#: includes/modules/elementor/widgets/class-elementor-widget.php:141
+msgid "3XL"
+msgstr "বিশাল (3XL)"
+
+#: includes/modules/elementor/widgets/class-elementor-widget.php:150
+msgid "Alignment"
+msgstr "অ্যালাইনমেন্ট"
+
+#: includes/modules/social-share/class-social-share.php:462
+msgid "Social Share - WP Dark Mode"
+msgstr "সোশ্যাল শেয়ার - ডব্লিউপি ডার্ক মোড"
+
+#: includes/modules/social-share/class-social-share.php:641
+msgid "Invalid security key"
+msgstr "অবৈধ সিকিউরিটি কী"
+
+#: includes/modules/social-share/class-social-share.php:646
+msgid "Permission denied"
+msgstr "অনুমতি নেই (Permission denied)"
+
+#: includes/modules/social-share/class-social-share.php:827
+msgid "Invalid permission"
+msgstr "অবৈধ অনুমতি"
+
+#: includes/modules/social-share/class-social-share.php:834
+msgid "Invalid channel"
+msgstr "অবৈধ চ্যানেল"
+
+#: includes/modules/social-share/class-social-share.php:868
+msgid "Something went wrong"
+msgstr "কিছু ভুল হয়েছে"
+
+#: includes/wppool/class-plugin.php:329
+msgid "Deal Ends In"
+msgstr "ডিল শেষ হবে"
+
+#: includes/wppool/class-plugin.php:334, includes/wppool/class-plugin.php:343,
+#: includes/wppool/class-plugin.php:352, includes/wppool/class-plugin.php:361
+msgid "00"
+msgstr "০০"
+
+#: includes/wppool/class-plugin.php:337
+msgid "Days"
+msgstr "দিন"
+
+#: includes/wppool/class-plugin.php:346
+msgid "Hours"
+msgstr "ঘণ্টা"
+
+#: includes/wppool/class-plugin.php:355
+msgid "Minutes"
+msgstr "মিনিট"
+
+#: includes/wppool/class-plugin.php:364
+msgid "Seconds"
+msgstr "সেকেন্ড"
+
+#: includes/wppool/class-plugin.php:375
+msgid "Try a free demo"
+msgstr "ফ্রি ডেমো ট্রাই করুন"
+
+#: templates/admin/upgrade-popup.php:54
+msgid "Black Friday & Cyber Monday"
+msgstr "ব্ল্যাক ফ্রাইডে এবং সাইবার মানডে"
+
+#: templates/admin/upgrade-popup.php:54
+msgid "Unlock all the features"
+msgstr "সব ফিচার আনলক করুন"
+
+#: templates/admin/upgrade-popup.php:57
+msgid "Flash Sale"
+msgstr "ফ্ল্যাশ সেল"
+
+#: templates/admin/upgrade-popup.php:57
+msgid "SPECIAL"
+msgstr "বিশেষ"
+
+#: templates/admin/upgrade-popup.php:64
+msgid "DAYS"
+msgstr "দিন"
+
+#: templates/admin/upgrade-popup.php:68
+msgid "HOURS"
+msgstr "ঘণ্টা"
+
+#: templates/admin/upgrade-popup.php:72
+msgid "MINUTES"
+msgstr "মিনিট"
+
+#: templates/admin/upgrade-popup.php:76
+msgid "SECONDS"
+msgstr "সেকেন্ড"
+
+#: templates/admin/upgrade-popup.php:80
+msgid "Claim 50% Discount"
+msgstr "৫০% ডিসকাউন্ট দাবি করুন"
+
+#: templates/frontend/social-share.php:209
+msgid "Share via:"
+msgstr "শেয়ার করুন:"
+
+#: includes/admin/class-strings.php:763
+msgid "What's New"
+msgstr "নতুন কি আছে?"
+
+#: templates/admin/upgrade-popup.php:82
+msgid "Try a FREE demo"
+msgstr "একটি বিনামূল্যে ডেমো চেষ্টা করুন"
+
+#: templates/admin/upgrade-popup.php:58
+msgid "%1$s%2$s OFF"
+msgstr "%1$s%2$s ছাড়"
+
+#: templates/admin/upgrade-popup.php:80
+msgid "Claim %1$s%2$s Discount"
+msgstr "%1$s%2$s ডিসকাউন্ট দাবি করুন"
+
+#: includes/admin/class-strings.php:27
+msgid "Sweet Dark"
+msgstr "মিষ্টি অন্ধকার"
+
+#: includes/admin/class-strings.php:28
+msgid "Gold"
+msgstr "সোনালী"
+
+#: includes/admin/class-strings.php:29
+msgid "Sapphire"
+msgstr "নীলকান্তমণি"
+
+#: includes/admin/class-strings.php:30
+msgid "Tailwind"
+msgstr "টেলউইন্ড"
+
+#: includes/admin/class-strings.php:31
+msgid "Midnight Bloom"
+msgstr "মধ্যরাতের প্রস্ফুটন"
+
+#: includes/admin/class-strings.php:32
+msgid "Fuchsia"
+msgstr "ফুচিয়া"
+
+#: includes/admin/class-strings.php:33
+msgid "Rose"
+msgstr "গোলাপ"
+
+#: includes/admin/class-strings.php:34
+msgid "Violet"
+msgstr "বেগুনি"
+
+#: includes/admin/class-strings.php:35
+msgid "Pink"
+msgstr "গোলাপী"
+
+#: includes/admin/class-strings.php:36
+msgid "Kelly"
+msgstr "কেলি"
+
+#: includes/admin/class-strings.php:37
+msgid "Magenta"
+msgstr "ম্যাজেন্টা"
+
+#: includes/admin/class-strings.php:38
+msgid "Green"
+msgstr "সবুজ"
+
+#: includes/admin/class-strings.php:39
+msgid "Orange"
+msgstr "কমলা"
+
+#: includes/admin/class-strings.php:40
+msgid "Yellow"
+msgstr "হলুদ"
+
+#: includes/admin/class-strings.php:41
+msgid "Facebook"
+msgstr "ফেসবুক"
+
+#: includes/admin/class-strings.php:42
+msgid "Twitter"
+msgstr "টুইটার"
+
+#: includes/admin/class-strings.php:783
+msgid "Last 24 Hours"
+msgstr "গত ২৪ ঘণ্টা"
+
+#: includes/admin/class-strings.php:784
+msgid "Last 7 Days"
+msgstr "গত ৭ দিন"
+
+#: includes/admin/class-strings.php:785
+msgid "Last 30 Days"
+msgstr "গত ৩০ দিন"
+
+#: includes/admin/class-strings.php:786
+msgid "Last 1 Year"
+msgstr "গত ১ বছর"
+
+#: includes/admin/class-strings.php:787
+msgid "Dark Mode Users"
+msgstr "ডার্ক মোড ব্যবহারকারী"
+
+#: includes/admin/class-strings.php:788
+msgid "Total Visitors"
+msgstr "মোট দর্শক"
+
+#: includes/admin/class-strings.php:789
+msgid "12 AM"
+msgstr "১২ AM"
+
+#: includes/admin/class-strings.php:790
+msgid "1 AM"
+msgstr "১ AM"
+
+#: includes/admin/class-strings.php:791
+msgid "2 AM"
+msgstr "২ AM"
+
+#: includes/admin/class-strings.php:792
+msgid "3 AM"
+msgstr "৩ AM"
+
+#: includes/admin/class-strings.php:793
+msgid "4 AM"
+msgstr "৪ AM"
+
+#: includes/admin/class-strings.php:794
+msgid "5 AM"
+msgstr "৫ AM"
+
+#: includes/admin/class-strings.php:795
+msgid "6 AM"
+msgstr "৬ AM"
+
+#: includes/admin/class-strings.php:796
+msgid "7 AM"
+msgstr "৭ AM"
+
+#: includes/admin/class-strings.php:797
+msgid "8 AM"
+msgstr "৮ AM"
+
+#: includes/admin/class-strings.php:798
+msgid "9 AM"
+msgstr "৯ AM"
+
+#: includes/admin/class-strings.php:799
+msgid "10 AM"
+msgstr "১০ AM"
+
+#: includes/admin/class-strings.php:800
+msgid "11 AM"
+msgstr "১১ AM"
+
+#: includes/admin/class-strings.php:801
+msgid "12 PM"
+msgstr "১২ PM"
+
+#: includes/admin/class-strings.php:802
+msgid "1 PM"
+msgstr "১ PM"
+
+#: includes/admin/class-strings.php:803
+msgid "2 PM"
+msgstr "২ PM"
+
+#: includes/admin/class-strings.php:804
+msgid "3 PM"
+msgstr "৩ PM"
+
+#: includes/admin/class-strings.php:805
+msgid "4 PM"
+msgstr "৪ PM"
+
+#: includes/admin/class-strings.php:806
+msgid "5 PM"
+msgstr "৫ PM"
+
+#: includes/admin/class-strings.php:807
+msgid "6 PM"
+msgstr "৬ PM"
+
+#: includes/admin/class-strings.php:808
+msgid "7 PM"
+msgstr "৭ PM"
+
+#: includes/admin/class-strings.php:809
+msgid "8 PM"
+msgstr "৮ PM"
+
+#: includes/admin/class-strings.php:810
+msgid "9 PM"
+msgstr "৯ PM"
+
+#: includes/admin/class-strings.php:811
+msgid "10 PM"
+msgstr "১০ PM"
+
+#: includes/admin/class-strings.php:812
+msgid "11 PM"
+msgstr "১১ PM"
+
+#: includes/admin/class-strings.php:813
+msgid "Sun"
+msgstr "রবি"
+
+#: includes/admin/class-strings.php:814
+msgid "Mon"
+msgstr "সোম"
+
+#: includes/admin/class-strings.php:815
+msgid "Tue"
+msgstr "মঙ্গল"
+
+#: includes/admin/class-strings.php:816
+msgid "Wed"
+msgstr "বুধ"
+
+#: includes/admin/class-strings.php:817
+msgid "Thu"
+msgstr "বৃহস্পতি"
+
+#: includes/admin/class-strings.php:818
+msgid "Fri"
+msgstr "শুক্র"
+
+#: includes/admin/class-strings.php:819
+msgid "Sat"
+msgstr "শনি"
+
+#: includes/admin/class-strings.php:820
+msgid "Jan"
+msgstr "জানু"
+
+#: includes/admin/class-strings.php:821
+msgid "Feb"
+msgstr "ফেব"
+
+#: includes/admin/class-strings.php:822
+msgid "Mar"
+msgstr "মার্চ"
+
+#: includes/admin/class-strings.php:823
+msgid "Apr"
+msgstr "এপ্রি"
+
+#: includes/admin/class-strings.php:824
+msgid "May"
+msgstr "মে"
+
+#: includes/admin/class-strings.php:825
+msgid "Jun"
+msgstr "জুন"
+
+#: includes/admin/class-strings.php:826
+msgid "Jul"
+msgstr "জুলাই"
+
+#: includes/admin/class-strings.php:827
+msgid "Aug"
+msgstr "আগস্ট"
+
+#: includes/admin/class-strings.php:828
+msgid "Sep"
+msgstr "সেপ্টে"
+
+#: includes/admin/class-strings.php:829
+msgid "Oct"
+msgstr "অক্টো"
+
+#: includes/admin/class-strings.php:830
+msgid "Nov"
+msgstr "নভে"
+
+#: includes/admin/class-strings.php:831
+msgid "Dec"
+msgstr "ডিসে"
+
+#: includes/admin/class-strings.php:836
+msgid "No results found"
+msgstr "কোনো ফলাফল পাওয়া যায়নি"
+
+
+#: includes/admin/class-strings.php:837
+msgid "No results found for \"{search}\""
+msgstr "\"{search}\" এর জন্য কোনো ফলাফল পাওয়া যায়নি"
